@@ -1,0 +1,42 @@
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 1rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.app-shell h1 {
+  margin: 0;
+  font-size: clamp(2.75rem, 9vw, 6rem);
+  line-height: 0.95;
+}
+
+.tagline {
+  color: var(--muted);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+}
+
+.api-status {
+  margin-top: 2rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.api-status--ok {
+  color: var(--success);
+}
+
+.api-status--error {
+  color: var(--error);
+}
