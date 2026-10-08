@@ -4,6 +4,6 @@ import { defineConfig } from 'vitest/config'
 export default defineConfig({
   plugins: [react()],
   test: {
-    include: ['api/**/*.test.ts'],
+    include: ['{api,lib,src,tests}/**/*.test.{ts,tsx}'],
   },
 })

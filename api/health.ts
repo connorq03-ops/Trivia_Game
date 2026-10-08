@@ -1,14 +1,11 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node'
-import { sql } from '../lib/db'
+import { getSql } from '../lib/db'
 
-export default async function handler(
-  _req: VercelRequest,
-  res: VercelResponse,
-) {
+export async function GET(): Promise<Response> {
   try {
+    const sql = getSql()
     await sql`select 1`
-    return res.status(200).json({ ok: true, db: true })
+    return Response.json({ ok: true, db: true })
   } catch {
-    return res.status(500).json({ ok: false, db: false })
+    return Response.json({ ok: false, db: false }, { status: 500 })
   }
 }

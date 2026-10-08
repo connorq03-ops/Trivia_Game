@@ -29,7 +29,7 @@ function App() {
 
   return (
     <main className="app-shell">
-      <p className="eyebrow">Sports trivia, no strings attached</p>
+      <p className="eyebrow">Football · Basketball · Baseball trivia</p>
       <h1>Streaking Sports</h1>
       <p className="tagline">No rulebook when you're streaking.</p>
       <p className={`api-status api-status--${apiStatus}`} role="status">

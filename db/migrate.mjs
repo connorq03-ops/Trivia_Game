@@ -10,17 +10,30 @@ const migrationsDirectory = join(
   'migrations',
 )
 
+function getErrorMessage(error, connectionString) {
+  const message = error instanceof Error ? error.message : String(error)
+  return message.split(connectionString).join('[redacted]')
+}
+
 async function migrate() {
   const connectionString =
     process.env.DATABASE_URL_DIRECT || process.env.DATABASE_URL
   if (!connectionString) {
-    throw new Error('DATABASE_URL_DIRECT or DATABASE_URL must be set.')
+    console.error(
+      'Migration failed: connection: DATABASE_URL_DIRECT or DATABASE_URL must be set.',
+    )
+    process.exitCode = 1
+    return
   }
 
-  const client = new Client({ connectionString })
+  let client
+  let context = 'connection'
+  let transactionOpen = false
 
   try {
+    client = new Client({ connectionString })
     await client.connect()
+    context = 'schema_migrations'
     await client.query(`
       create table if not exists schema_migrations (
         filename text primary key,
@@ -32,6 +45,7 @@ async function migrate() {
       'select filename from schema_migrations',
     )
     const applied = new Set(rows.map(({ filename }) => filename))
+    context = 'migrations'
     const filenames = (await readdir(migrationsDirectory))
       .filter((filename) => filename.endsWith('.sql'))
       .sort()
@@ -42,30 +56,44 @@ async function migrate() {
         continue
       }
 
+      context = filename
       const migration = await readFile(
         join(migrationsDirectory, filename),
         'utf8',
       )
       await client.query('begin')
-      try {
-        await client.query(migration)
-        await client.query(
-          'insert into schema_migrations (filename) values ($1)',
-          [filename],
+      transactionOpen = true
+      await client.query(migration)
+      await client.query(
+        'insert into schema_migrations (filename) values ($1)',
+        [filename],
+      )
+      await client.query('commit')
+      transactionOpen = false
+      console.log(`Applied ${filename}`)
+    }
+  } catch (error) {
+    if (transactionOpen) {
+      await client.query('rollback').catch(() => {})
+    }
+    console.error(
+      `Migration failed: ${context}: ${getErrorMessage(error, connectionString)}`,
+    )
+    process.exitCode = 1
+  }
+
+  if (client) {
+    try {
+      await client.end()
+    } catch (error) {
+      if (process.exitCode !== 1) {
+        console.error(
+          `Migration failed: connection: ${getErrorMessage(error, connectionString)}`,
         )
-        await client.query('commit')
-        console.log(`Applied ${filename}`)
-      } catch {
-        await client.query('rollback')
-        throw new Error('Migration failed.')
+        process.exitCode = 1
       }
     }
-  } finally {
-    await client.end()
   }
 }
 
-migrate().catch(() => {
-  console.error('Migration failed.')
-  process.exitCode = 1
-})
+migrate()
