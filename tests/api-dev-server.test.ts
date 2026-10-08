@@ -18,7 +18,7 @@ beforeAll(async () => {
   server = await createServer({
     configFile: resolve(repositoryRoot, 'vite.config.ts'),
     envDir: envDirectory,
-    server: { port: 0 },
+    server: { host: '127.0.0.1', port: 0 },
     logLevel: 'silent',
   })
   await server.listen()
