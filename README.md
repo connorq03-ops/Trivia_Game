@@ -19,7 +19,7 @@ npm run dev
 
 ## Scripts
 
-- `npm run dev` — start the local app.
+- `npm run dev` — start the local app and API (serves `api/*` through Vite).
 - `npm run build` — typecheck and build for production.
 - `npm run lint` — lint the project.
 - `npm run typecheck` — typecheck the app, functions, and shared code.

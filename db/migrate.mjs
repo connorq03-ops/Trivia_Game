@@ -9,6 +9,8 @@ const migrationsDirectory = join(
   dirname(fileURLToPath(import.meta.url)),
   'migrations',
 )
+// Shared by all migration processes to serialize schema changes.
+const LOCK_KEY = 727001
 
 function getErrorMessage(error, connectionString) {
   const message = error instanceof Error ? error.message : String(error)
@@ -34,35 +36,42 @@ async function migrate() {
     client = new Client({ connectionString })
     await client.connect()
     context = 'schema_migrations'
+    await client.query('begin')
+    transactionOpen = true
+    await client.query('select pg_advisory_xact_lock($1)', [LOCK_KEY])
     await client.query(`
       create table if not exists schema_migrations (
         filename text primary key,
         applied_at timestamptz not null default now()
       )
     `)
-
-    const { rows } = await client.query(
-      'select filename from schema_migrations',
-    )
-    const applied = new Set(rows.map(({ filename }) => filename))
+    await client.query('commit')
+    transactionOpen = false
     context = 'migrations'
     const filenames = (await readdir(migrationsDirectory))
       .filter((filename) => filename.endsWith('.sql'))
       .sort()
 
     for (const filename of filenames) {
-      if (applied.has(filename)) {
+      context = filename
+      await client.query('begin')
+      transactionOpen = true
+      await client.query('select pg_advisory_xact_lock($1)', [LOCK_KEY])
+      const { rows } = await client.query(
+        'select 1 from schema_migrations where filename = $1',
+        [filename],
+      )
+      if (rows.length > 0) {
+        await client.query('commit')
+        transactionOpen = false
         console.log(`Skipped ${filename}`)
         continue
       }
 
-      context = filename
       const migration = await readFile(
         join(migrationsDirectory, filename),
         'utf8',
       )
-      await client.query('begin')
-      transactionOpen = true
       await client.query(migration)
       await client.query(
         'insert into schema_migrations (filename) values ($1)',
