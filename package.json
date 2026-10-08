@@ -13,6 +13,7 @@
     "typecheck": "tsc -b --noEmit",
     "test": "vitest run",
     "db:migrate": "node db/migrate.mjs",
+    "db:seed": "node db/seed.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

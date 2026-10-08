@@ -11,6 +11,9 @@
   --muted: #aebbb1;
   --success: #d0ef71;
   --error: #ff9b8f;
+  --ink: #f4f1e7;
+  --line: #2c4738;
+  --panel: #172f24;
 }
 
 * {

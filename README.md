@@ -25,3 +25,4 @@ npm run dev
 - `npm run typecheck` — typecheck the app, functions, and shared code.
 - `npm test` — run tests.
 - `npm run db:migrate` — apply database migrations.
+- Phase 3 moves question content behind the server.
