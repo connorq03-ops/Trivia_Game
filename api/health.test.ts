@@ -1,8 +1,8 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { getSql } from '../lib/db'
-import { GET } from './health'
+import { getSql } from '../lib/db.js'
+import { GET } from './health.js'
 
-vi.mock('../lib/db', () => ({
+vi.mock('../lib/db.js', () => ({
   getSql: vi.fn(),
 }))
 
