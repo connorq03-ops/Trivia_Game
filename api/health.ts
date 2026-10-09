@@ -1,4 +1,4 @@
-import { getSql } from '../lib/db'
+import { getSql } from '../lib/db.js'
 
 export async function GET(): Promise<Response> {
   try {
