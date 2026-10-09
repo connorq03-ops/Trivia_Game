@@ -1,5 +1,5 @@
-import { questionBank } from '../src/game/content'
-import { getSql } from '../lib/db'
+import { questionBank } from '../src/game/content.js'
+import { getSql } from '../lib/db.js'
 
 const UUID_PATTERN =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i

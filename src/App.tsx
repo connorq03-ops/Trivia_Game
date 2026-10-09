@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import type { CSSProperties } from 'react'
 import {
   answerQuestion,
@@ -11,11 +11,17 @@ import {
   type RunProgress,
 } from './game/engine'
 import { questionBank } from './game/content'
+import {
+  dailyStorageKey,
+  msUntilNextUtcMidnight,
+  readDailySummary,
+  saveDailySummaryIfFirst,
+  type GameSummary,
+} from './game/dailyStore'
 import type { Question, Side, Sport } from './game/types'
 import './App.css'
 
 const REEL_MS = 1200
-const DAILY_STORAGE_KEY = 'streaking-sports:daily:'
 
 type Screen = 'home' | 'reel' | 'question' | 'teach' | 'over'
 type Mode = 'classic' | 'daily'
@@ -34,33 +40,21 @@ type GameSession = {
   dailyQuestions: Question[]
 }
 
-type GameSummary = {
-  mode: Mode
-  date: string
-  score: number
-  bestStreak: number
-  questionsAnswered: number
-  answeredCount: number
-  totalAnswerMs: number
-  missed: Question[]
-  reason: EndReason
-}
-
 function utcDate(): string {
   return new Date().toISOString().slice(0, 10)
 }
 
-function dailyStorageKey(date: string): string {
-  return `${DAILY_STORAGE_KEY}${date}`
-}
-
-function readDailySummary(date: string): GameSummary | null {
+function browserStorage(): Pick<Storage, 'getItem' | 'setItem'> | null {
   try {
-    const value = window.localStorage.getItem(dailyStorageKey(date))
-    return value ? (JSON.parse(value) as GameSummary) : null
+    return window.localStorage
   } catch {
     return null
   }
+}
+
+function storedSummary(date: string): GameSummary | null {
+  const storage = browserStorage()
+  return storage ? readDailySummary(storage, date) : null
 }
 
 function shuffleChoices(question: Question): string[] {
@@ -87,9 +81,9 @@ function App() {
   )
   const [sport, setSport] = useState<'all' | Sport>('all')
   const [side, setSide] = useState<'both' | Side>('both')
-  const [today] = useState(utcDate)
+  const [today, setToday] = useState(utcDate)
   const [todaySummary, setTodaySummary] = useState<GameSummary | null>(() =>
-    typeof window === 'undefined' ? null : readDailySummary(utcDate()),
+    typeof window === 'undefined' ? null : storedSummary(utcDate()),
   )
   const [session, setSession] = useState<GameSession | null>(null)
   const [summary, setSummary] = useState<GameSummary | null>(null)
@@ -100,6 +94,14 @@ function App() {
     () => {},
   )
   const continueAfterTeachRef = useRef<() => void>(() => {})
+
+  const refreshToday = useCallback(() => {
+    const date = utcDate()
+    if (date !== today) {
+      setToday(date)
+      setTodaySummary(storedSummary(date))
+    }
+  }, [today])
 
   useEffect(() => {
     const controller = new AbortController()
@@ -117,6 +119,34 @@ function App() {
     return () => controller.abort()
   }, [])
 
+  useEffect(() => {
+    const onVisibilityChange = () => {
+      if (document.visibilityState === 'visible') refreshToday()
+    }
+    const onStorage = (event: StorageEvent) => {
+      if (event.key === dailyStorageKey(today)) {
+        setTodaySummary(storedSummary(today))
+      }
+    }
+    window.addEventListener('focus', refreshToday)
+    document.addEventListener('visibilitychange', onVisibilityChange)
+    window.addEventListener('storage', onStorage)
+    let timer = 0
+    const armMidnightTimer = () => {
+      timer = window.setTimeout(() => {
+        refreshToday()
+        armMidnightTimer()
+      }, msUntilNextUtcMidnight(Date.now()) + 1000)
+    }
+    armMidnightTimer()
+    return () => {
+      window.removeEventListener('focus', refreshToday)
+      document.removeEventListener('visibilitychange', onVisibilityChange)
+      window.removeEventListener('storage', onStorage)
+      window.clearTimeout(timer)
+    }
+  }, [refreshToday, today])
+
   const finishRun = (completed: GameSession, reason: EndReason) => {
     const result: GameSummary = {
       mode: completed.mode,
@@ -133,15 +163,11 @@ function App() {
     setSession(completed)
     setScreen('over')
     if (completed.mode === 'daily') {
-      try {
-        window.localStorage.setItem(
-          dailyStorageKey(completed.date),
-          JSON.stringify(result),
-        )
-      } catch {
-        // The result still remains available in memory.
-      }
-      if (completed.date === today) setTodaySummary(result)
+      const storage = browserStorage()
+      const winner = storage
+        ? saveDailySummaryIfFirst(storage, completed.date, result)
+        : result
+      if (completed.date === utcDate()) setTodaySummary(winner)
     }
   }
 
@@ -253,7 +279,7 @@ function App() {
         {
           mode: 'classic',
           runId: crypto.randomUUID(),
-          date: today,
+          date: utcDate(),
           progress: createRunProgress(),
           questionIndex: 0,
           question: questionBank[0],
@@ -270,7 +296,7 @@ function App() {
     setSession({
       mode: 'classic',
       runId: crypto.randomUUID(),
-      date: today,
+      date: utcDate(),
       progress: createRunProgress(),
       questionIndex: 0,
       question: selection.question,
@@ -283,21 +309,23 @@ function App() {
   }
 
   const openDaily = () => {
-    const previous = readDailySummary(today)
+    const date = utcDate()
+    setToday(date)
+    const previous = storedSummary(date)
+    setTodaySummary(previous)
     if (previous) {
-      setTodaySummary(previous)
       setSummary(previous)
       setScreen('over')
       return
     }
 
-    const questions = dailyQuestions(today, questionBank)
+    const questions = dailyQuestions(date, questionBank)
     const question = questions[0]
     setSummary(null)
     setSession({
       mode: 'daily',
       runId: crypto.randomUUID(),
-      date: today,
+      date,
       progress: createRunProgress(),
       questionIndex: 0,
       question,

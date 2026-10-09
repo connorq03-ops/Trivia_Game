@@ -13,7 +13,7 @@ Vite/React PWA, Vercel functions, Neon Postgres.
 ```sh
 npm ci
 cp .env.example .env
-npm run db:migrate
+npm run db:setup
 npm run dev
 ```
 
@@ -25,4 +25,6 @@ npm run dev
 - `npm run typecheck` — typecheck the app, functions, and shared code.
 - `npm test` — run tests.
 - `npm run db:migrate` — apply database migrations.
+- `npm run db:seed` — seed question content into the database.
+- `npm run db:setup` — apply migrations and seed question content.
 - Phase 3 moves question content behind the server.
