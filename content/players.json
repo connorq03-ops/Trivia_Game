@@ -1,0 +1,3026 @@
+[
+  {
+    "id": "p-nfl-tom-brady-college",
+    "factId": "nfl-tom-brady-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Alma mater",
+    "prompt": "Where did Tom Brady play college ball?",
+    "answer": "Michigan",
+    "wrong": [
+      "Ohio State",
+      "Notre Dame",
+      "Purdue"
+    ],
+    "teach": "Tom Brady played college ball at Michigan.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Tom_Brady",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2007,
+      "player": "Tom Brady"
+    }
+  },
+  {
+    "id": "p-nfl-tom-brady-draft",
+    "factId": "nfl-tom-brady-draft",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Tom Brady?",
+    "answer": "Patriots",
+    "wrong": [
+      "Buccaneers",
+      "Colts",
+      "49ers"
+    ],
+    "teach": "The Patriots took Brady 199th overall, in the 6th round, in 2000.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Tom_Brady",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2010,
+      "player": "Tom Brady"
+    }
+  },
+  {
+    "id": "p-nfl-peyton-manning-college",
+    "factId": "nfl-peyton-manning-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Alma mater",
+    "prompt": "Where did Peyton Manning play college ball?",
+    "answer": "Tennessee",
+    "wrong": [
+      "Ole Miss",
+      "Florida",
+      "LSU"
+    ],
+    "teach": "Peyton Manning played college ball at Tennessee.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Peyton_Manning",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2004,
+      "player": "Peyton Manning"
+    }
+  },
+  {
+    "id": "p-nfl-peyton-manning-draft",
+    "factId": "nfl-peyton-manning-draft",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Peyton Manning?",
+    "answer": "Colts",
+    "wrong": [
+      "Broncos",
+      "Chargers",
+      "Titans"
+    ],
+    "teach": "The Colts drafted Peyton Manning.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Peyton_Manning",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2013,
+      "player": "Peyton Manning"
+    }
+  },
+  {
+    "id": "p-nfl-peyton-manning-jersey",
+    "factId": "nfl-peyton-manning-jersey",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Jersey number",
+    "prompt": "Peyton Manning's jersey number in 2004?",
+    "answer": "18",
+    "wrong": [
+      "16",
+      "12",
+      "10"
+    ],
+    "teach": "Peyton Manning wore No. 18 in 2004.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Peyton_Manning",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2004,
+      "player": "Peyton Manning"
+    }
+  },
+  {
+    "id": "p-nfl-patrick-mahomes-college",
+    "factId": "nfl-patrick-mahomes-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Alma mater",
+    "prompt": "Where did Patrick Mahomes play college ball?",
+    "answer": "Texas Tech",
+    "wrong": [
+      "Texas",
+      "TCU",
+      "Baylor"
+    ],
+    "teach": "Patrick Mahomes played college ball at Texas Tech.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Patrick_Mahomes",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2018,
+      "player": "Patrick Mahomes"
+    }
+  },
+  {
+    "id": "p-nfl-patrick-mahomes-jersey",
+    "factId": "nfl-patrick-mahomes-jersey",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Jersey number",
+    "prompt": "Patrick Mahomes's jersey number in 2020?",
+    "answer": "15",
+    "wrong": [
+      "5",
+      "12",
+      "10"
+    ],
+    "teach": "Patrick Mahomes wore No. 15 in 2020.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Patrick_Mahomes",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2020,
+      "player": "Patrick Mahomes"
+    }
+  },
+  {
+    "id": "p-nfl-aaron-rodgers-college",
+    "factId": "nfl-aaron-rodgers-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did Aaron Rodgers play college ball?",
+    "answer": "California",
+    "wrong": [
+      "Fresno State",
+      "Oregon",
+      "Stanford"
+    ],
+    "teach": "Rodgers played at Butte College, then at Cal (California) in 2003–04.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Aaron_Rodgers",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2011,
+      "player": "Aaron Rodgers"
+    }
+  },
+  {
+    "id": "p-nfl-aaron-rodgers-jersey",
+    "factId": "nfl-aaron-rodgers-jersey",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Jersey number",
+    "prompt": "Aaron Rodgers's jersey number in 2011?",
+    "answer": "12",
+    "wrong": [
+      "4",
+      "8",
+      "10"
+    ],
+    "teach": "Rodgers wore No. 12 in Green Bay.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Aaron_Rodgers",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2011,
+      "player": "Aaron Rodgers"
+    }
+  },
+  {
+    "id": "p-nfl-drew-brees-college",
+    "factId": "nfl-drew-brees-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did Drew Brees play college ball?",
+    "answer": "Purdue",
+    "wrong": [
+      "Michigan",
+      "Texas",
+      "Iowa"
+    ],
+    "teach": "Drew Brees played college ball at Purdue.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Drew_Brees",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2009,
+      "player": "Drew Brees"
+    }
+  },
+  {
+    "id": "p-nfl-drew-brees-draft",
+    "factId": "nfl-drew-brees-draft",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Drew Brees?",
+    "answer": "Chargers",
+    "wrong": [
+      "Saints",
+      "Dolphins",
+      "Cowboys"
+    ],
+    "teach": "The San Diego Chargers took Brees in the 2nd round in 2001.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Drew_Brees",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2004,
+      "player": "Drew Brees"
+    }
+  },
+  {
+    "id": "p-nfl-josh-allen-college",
+    "factId": "nfl-josh-allen-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did Josh Allen play college ball?",
+    "answer": "Wyoming",
+    "wrong": [
+      "Boise State",
+      "Fresno State",
+      "Utah State"
+    ],
+    "teach": "Allen played at Reedley College, then at Wyoming from 2015 to 2017.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Josh_Allen",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2020,
+      "player": "Josh Allen"
+    }
+  },
+  {
+    "id": "p-nfl-josh-allen-draft",
+    "factId": "nfl-josh-allen-draft",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Josh Allen?",
+    "answer": "Bills",
+    "wrong": [
+      "Browns",
+      "Jets",
+      "Broncos"
+    ],
+    "teach": "The Bills drafted Josh Allen.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Josh_Allen",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2020,
+      "player": "Josh Allen"
+    }
+  },
+  {
+    "id": "p-nfl-lamar-jackson-college",
+    "factId": "nfl-lamar-jackson-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Alma mater",
+    "prompt": "Where did Lamar Jackson play college ball?",
+    "answer": "Louisville",
+    "wrong": [
+      "Florida State",
+      "Clemson",
+      "Miami (FL)"
+    ],
+    "teach": "Lamar Jackson played college ball at Louisville.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Lamar_Jackson",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2019,
+      "player": "Lamar Jackson"
+    }
+  },
+  {
+    "id": "p-nfl-lamar-jackson-jersey",
+    "factId": "nfl-lamar-jackson-jersey",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "Lamar Jackson's jersey number in 2019?",
+    "answer": "8",
+    "wrong": [
+      "5",
+      "1",
+      "7"
+    ],
+    "teach": "Lamar Jackson wore No. 8 in 2019.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Lamar_Jackson",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2019,
+      "player": "Lamar Jackson"
+    }
+  },
+  {
+    "id": "p-nfl-jerry-rice-college",
+    "factId": "nfl-jerry-rice-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did Jerry Rice play college ball?",
+    "answer": "Mississippi Valley State",
+    "wrong": [
+      "Jackson State",
+      "Grambling State",
+      "Alcorn State"
+    ],
+    "teach": "Jerry Rice played college ball at Mississippi Valley State.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jerry_Rice",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 1995,
+      "player": "Jerry Rice"
+    }
+  },
+  {
+    "id": "p-nfl-randy-moss-college",
+    "factId": "nfl-randy-moss-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Alma mater",
+    "prompt": "Where did Randy Moss play college ball?",
+    "answer": "Marshall",
+    "wrong": [
+      "West Virginia",
+      "Cincinnati",
+      "Toledo"
+    ],
+    "teach": "Moss starred at Marshall in 1996–97 after a stop at Florida State.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Randy_Moss",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 1998,
+      "player": "Randy Moss"
+    }
+  },
+  {
+    "id": "p-nfl-randy-moss-draft",
+    "factId": "nfl-randy-moss-draft",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Randy Moss?",
+    "answer": "Vikings",
+    "wrong": [
+      "Cowboys",
+      "Packers",
+      "Patriots"
+    ],
+    "teach": "The Vikings drafted Randy Moss.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Randy_Moss",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2003,
+      "player": "Randy Moss"
+    }
+  },
+  {
+    "id": "p-nfl-calvin-johnson-college",
+    "factId": "nfl-calvin-johnson-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Alma mater",
+    "prompt": "Where did Calvin Johnson play college ball?",
+    "answer": "Georgia Tech",
+    "wrong": [
+      "Georgia",
+      "Clemson",
+      "Miami (FL)"
+    ],
+    "teach": "Calvin Johnson played college ball at Georgia Tech.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Calvin_Johnson_(American_football)",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2011,
+      "player": "Calvin Johnson"
+    }
+  },
+  {
+    "id": "p-nfl-calvin-johnson-jersey",
+    "factId": "nfl-calvin-johnson-jersey",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "Calvin Johnson's jersey number in 2012?",
+    "answer": "81",
+    "wrong": [
+      "80",
+      "84",
+      "88"
+    ],
+    "teach": "Calvin Johnson wore No. 81 in 2012.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Calvin_Johnson_(American_football)",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2012,
+      "player": "Calvin Johnson"
+    }
+  },
+  {
+    "id": "p-nfl-larry-fitzgerald-college",
+    "factId": "nfl-larry-fitzgerald-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did Larry Fitzgerald play college ball?",
+    "answer": "Pittsburgh",
+    "wrong": [
+      "Penn State",
+      "Syracuse",
+      "Minnesota"
+    ],
+    "teach": "Larry Fitzgerald played college ball at Pittsburgh.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Larry_Fitzgerald",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2008,
+      "player": "Larry Fitzgerald"
+    }
+  },
+  {
+    "id": "p-nfl-larry-fitzgerald-jersey",
+    "factId": "nfl-larry-fitzgerald-jersey",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "Larry Fitzgerald's jersey number in 2009?",
+    "answer": "11",
+    "wrong": [
+      "1",
+      "13",
+      "81"
+    ],
+    "teach": "Larry Fitzgerald wore No. 11 in 2009.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Larry_Fitzgerald",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2009,
+      "player": "Larry Fitzgerald"
+    }
+  },
+  {
+    "id": "p-nfl-julio-jones-college",
+    "factId": "nfl-julio-jones-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Alma mater",
+    "prompt": "Where did Julio Jones play college ball?",
+    "answer": "Alabama",
+    "wrong": [
+      "Auburn",
+      "LSU",
+      "Georgia"
+    ],
+    "teach": "Julio Jones played college ball at Alabama.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Julio_Jones",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2015,
+      "player": "Julio Jones"
+    }
+  },
+  {
+    "id": "p-nfl-travis-kelce-college",
+    "factId": "nfl-travis-kelce-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did Travis Kelce play college ball?",
+    "answer": "Cincinnati",
+    "wrong": [
+      "Ohio State",
+      "Toledo",
+      "Kent State"
+    ],
+    "teach": "Travis Kelce played college ball at Cincinnati.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Travis_Kelce",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2020,
+      "player": "Travis Kelce"
+    }
+  },
+  {
+    "id": "p-nfl-travis-kelce-jersey",
+    "factId": "nfl-travis-kelce-jersey",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Jersey number",
+    "prompt": "Travis Kelce's jersey number in 2022?",
+    "answer": "87",
+    "wrong": [
+      "85",
+      "88",
+      "89"
+    ],
+    "teach": "Travis Kelce wore No. 87 in 2022.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Travis_Kelce",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2022,
+      "player": "Travis Kelce"
+    }
+  },
+  {
+    "id": "p-nfl-rob-gronkowski-college",
+    "factId": "nfl-rob-gronkowski-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did Rob Gronkowski play college ball?",
+    "answer": "Arizona",
+    "wrong": [
+      "Arizona State",
+      "UCLA",
+      "Pittsburgh"
+    ],
+    "teach": "Rob Gronkowski played college ball at Arizona.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Rob_Gronkowski",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2011,
+      "player": "Rob Gronkowski"
+    }
+  },
+  {
+    "id": "p-nfl-tony-gonzalez-college",
+    "factId": "nfl-tony-gonzalez-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Alma mater",
+    "prompt": "Where did Tony Gonzalez play college ball?",
+    "answer": "California",
+    "wrong": [
+      "USC",
+      "Stanford",
+      "Oregon"
+    ],
+    "teach": "Tony Gonzalez played college ball at California.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Tony_Gonzalez",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2000,
+      "player": "Tony Gonzalez"
+    }
+  },
+  {
+    "id": "p-nfl-tony-gonzalez-draft",
+    "factId": "nfl-tony-gonzalez-draft",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Tony Gonzalez?",
+    "answer": "Chiefs",
+    "wrong": [
+      "Falcons",
+      "Chargers",
+      "Broncos"
+    ],
+    "teach": "The Chiefs took Gonzalez in the 1st round in 1997; he joined Atlanta in 2009.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Tony_Gonzalez",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2010,
+      "player": "Tony Gonzalez"
+    }
+  },
+  {
+    "id": "p-nfl-adrian-peterson-college",
+    "factId": "nfl-adrian-peterson-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Alma mater",
+    "prompt": "Where did Adrian Peterson play college ball?",
+    "answer": "Oklahoma",
+    "wrong": [
+      "Texas",
+      "Oklahoma State",
+      "Texas A&M"
+    ],
+    "teach": "Adrian Peterson played college ball at Oklahoma.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Adrian_Peterson",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2008,
+      "player": "Adrian Peterson"
+    }
+  },
+  {
+    "id": "p-nfl-adrian-peterson-jersey",
+    "factId": "nfl-adrian-peterson-jersey",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "Adrian Peterson's jersey number in 2012?",
+    "answer": "28",
+    "wrong": [
+      "23",
+      "26",
+      "32"
+    ],
+    "teach": "Adrian Peterson wore No. 28 in 2012.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Adrian_Peterson",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2012,
+      "player": "Adrian Peterson"
+    }
+  },
+  {
+    "id": "p-nfl-ladainian-tomlinson-college",
+    "factId": "nfl-ladainian-tomlinson-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did LaDainian Tomlinson play college ball?",
+    "answer": "TCU",
+    "wrong": [
+      "Baylor",
+      "Texas",
+      "SMU"
+    ],
+    "teach": "LaDainian Tomlinson played college ball at TCU.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/LaDainian_Tomlinson",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2006,
+      "player": "LaDainian Tomlinson"
+    }
+  },
+  {
+    "id": "p-nfl-ladainian-tomlinson-draft",
+    "factId": "nfl-ladainian-tomlinson-draft",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Drafted by",
+    "prompt": "Which team drafted LaDainian Tomlinson?",
+    "answer": "Chargers",
+    "wrong": [
+      "Chiefs",
+      "Cowboys",
+      "Jets"
+    ],
+    "teach": "The San Diego Chargers took Tomlinson 5th in 2001.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/LaDainian_Tomlinson",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2004,
+      "player": "LaDainian Tomlinson"
+    }
+  },
+  {
+    "id": "p-nfl-barry-sanders-college",
+    "factId": "nfl-barry-sanders-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Alma mater",
+    "prompt": "Where did Barry Sanders play college ball?",
+    "answer": "Oklahoma State",
+    "wrong": [
+      "Oklahoma",
+      "Kansas State",
+      "Texas Tech"
+    ],
+    "teach": "Barry Sanders played college ball at Oklahoma State.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Barry_Sanders",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 1997,
+      "player": "Barry Sanders"
+    }
+  },
+  {
+    "id": "p-nfl-emmitt-smith-college",
+    "factId": "nfl-emmitt-smith-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did Emmitt Smith play college ball?",
+    "answer": "Florida",
+    "wrong": [
+      "Florida State",
+      "Miami (FL)",
+      "Auburn"
+    ],
+    "teach": "Emmitt Smith played college ball at Florida.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Emmitt_Smith",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 1995,
+      "player": "Emmitt Smith"
+    }
+  },
+  {
+    "id": "p-nfl-marshall-faulk-college",
+    "factId": "nfl-marshall-faulk-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did Marshall Faulk play college ball?",
+    "answer": "San Diego State",
+    "wrong": [
+      "Fresno State",
+      "UNLV",
+      "Utah"
+    ],
+    "teach": "Marshall Faulk played college ball at San Diego State.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Marshall_Faulk",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2000,
+      "player": "Marshall Faulk"
+    }
+  },
+  {
+    "id": "p-nfl-marshall-faulk-draft",
+    "factId": "nfl-marshall-faulk-draft",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Marshall Faulk?",
+    "answer": "Colts",
+    "wrong": [
+      "Rams",
+      "Patriots",
+      "Chargers"
+    ],
+    "teach": "The Colts took Faulk 2nd in 1994; he was traded to the Rams in 1999.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Marshall_Faulk",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 1998,
+      "player": "Marshall Faulk"
+    }
+  },
+  {
+    "id": "p-nfl-derrick-henry-college",
+    "factId": "nfl-derrick-henry-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Alma mater",
+    "prompt": "Where did Derrick Henry play college ball?",
+    "answer": "Alabama",
+    "wrong": [
+      "Georgia",
+      "Florida",
+      "Tennessee"
+    ],
+    "teach": "Derrick Henry played college ball at Alabama.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Derrick_Henry",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2020,
+      "player": "Derrick Henry"
+    }
+  },
+  {
+    "id": "p-nfl-christian-mccaffrey-college",
+    "factId": "nfl-christian-mccaffrey-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Alma mater",
+    "prompt": "Where did Christian McCaffrey play college ball?",
+    "answer": "Stanford",
+    "wrong": [
+      "Notre Dame",
+      "Oregon",
+      "USC"
+    ],
+    "teach": "Christian McCaffrey played college ball at Stanford.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Christian_McCaffrey",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2019,
+      "player": "Christian McCaffrey"
+    }
+  },
+  {
+    "id": "p-nfl-christian-mccaffrey-draft",
+    "factId": "nfl-christian-mccaffrey-draft",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Christian McCaffrey?",
+    "answer": "Panthers",
+    "wrong": [
+      "49ers",
+      "Broncos",
+      "Seahawks"
+    ],
+    "teach": "The Panthers drafted Christian McCaffrey.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Christian_McCaffrey",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2023,
+      "player": "Christian McCaffrey"
+    }
+  },
+  {
+    "id": "p-nfl-ray-lewis-college",
+    "factId": "nfl-ray-lewis-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Alma mater",
+    "prompt": "Where did Ray Lewis play college ball?",
+    "answer": "Miami (FL)",
+    "wrong": [
+      "Florida State",
+      "Florida",
+      "Georgia"
+    ],
+    "teach": "Ray Lewis played college ball at Miami (FL).",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Ray_Lewis",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2003,
+      "player": "Ray Lewis"
+    }
+  },
+  {
+    "id": "p-nfl-ray-lewis-jersey",
+    "factId": "nfl-ray-lewis-jersey",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "Ray Lewis's jersey number in 2003?",
+    "answer": "52",
+    "wrong": [
+      "54",
+      "55",
+      "56"
+    ],
+    "teach": "Ray Lewis wore No. 52 in 2003.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Ray_Lewis",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2003,
+      "player": "Ray Lewis"
+    }
+  },
+  {
+    "id": "p-nfl-reggie-white-college",
+    "factId": "nfl-reggie-white-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Alma mater",
+    "prompt": "Where did Reggie White play college ball?",
+    "answer": "Tennessee",
+    "wrong": [
+      "Alabama",
+      "Auburn",
+      "Georgia"
+    ],
+    "teach": "Reggie White played college ball at Tennessee.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Reggie_White",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 1995,
+      "player": "Reggie White"
+    }
+  },
+  {
+    "id": "p-nfl-j-j-watt-college",
+    "factId": "nfl-j-j-watt-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did J. J. Watt play college ball?",
+    "answer": "Wisconsin",
+    "wrong": [
+      "Iowa",
+      "Minnesota",
+      "Michigan State"
+    ],
+    "teach": "J. J. Watt played college ball at Wisconsin.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/J._J._Watt",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2014,
+      "player": "J. J. Watt"
+    }
+  },
+  {
+    "id": "p-nfl-j-j-watt-jersey",
+    "factId": "nfl-j-j-watt-jersey",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Jersey number",
+    "prompt": "J. J. Watt's jersey number in 2014?",
+    "answer": "99",
+    "wrong": [
+      "90",
+      "97",
+      "94"
+    ],
+    "teach": "J. J. Watt wore No. 99 in 2014.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/J._J._Watt",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2014,
+      "player": "J. J. Watt"
+    }
+  },
+  {
+    "id": "p-nfl-aaron-donald-college",
+    "factId": "nfl-aaron-donald-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did Aaron Donald play college ball?",
+    "answer": "Pittsburgh",
+    "wrong": [
+      "Penn State",
+      "West Virginia",
+      "Ohio State"
+    ],
+    "teach": "Aaron Donald played college ball at Pittsburgh.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Aaron_Donald",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2018,
+      "player": "Aaron Donald"
+    }
+  },
+  {
+    "id": "p-nfl-aaron-donald-draft",
+    "factId": "nfl-aaron-donald-draft",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Aaron Donald?",
+    "answer": "Rams",
+    "wrong": [
+      "Steelers",
+      "Bills",
+      "Giants"
+    ],
+    "teach": "The St. Louis Rams took Donald 13th in 2014.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Aaron_Donald",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2018,
+      "player": "Aaron Donald"
+    }
+  },
+  {
+    "id": "p-nfl-ed-reed-college",
+    "factId": "nfl-ed-reed-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did Ed Reed play college ball?",
+    "answer": "Miami (FL)",
+    "wrong": [
+      "Florida",
+      "Tulane",
+      "LSU"
+    ],
+    "teach": "Ed Reed played college ball at Miami (FL).",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Ed_Reed",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2004,
+      "player": "Ed Reed"
+    }
+  },
+  {
+    "id": "p-nfl-troy-polamalu-college",
+    "factId": "nfl-troy-polamalu-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did Troy Polamalu play college ball?",
+    "answer": "USC",
+    "wrong": [
+      "UCLA",
+      "Oregon",
+      "Utah"
+    ],
+    "teach": "Troy Polamalu played college ball at USC.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Troy_Polamalu",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2005,
+      "player": "Troy Polamalu"
+    }
+  },
+  {
+    "id": "p-nfl-troy-polamalu-jersey",
+    "factId": "nfl-troy-polamalu-jersey",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "Troy Polamalu's jersey number in 2010?",
+    "answer": "43",
+    "wrong": [
+      "42",
+      "41",
+      "33"
+    ],
+    "teach": "Troy Polamalu wore No. 43 in 2010.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Troy_Polamalu",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2010,
+      "player": "Troy Polamalu"
+    }
+  },
+  {
+    "id": "p-nfl-deion-sanders-college",
+    "factId": "nfl-deion-sanders-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Alma mater",
+    "prompt": "Where did Deion Sanders play college ball?",
+    "answer": "Florida State",
+    "wrong": [
+      "Miami (FL)",
+      "Florida",
+      "Florida A&M"
+    ],
+    "teach": "Deion Sanders played college ball at Florida State.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Deion_Sanders",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 1998,
+      "player": "Deion Sanders"
+    }
+  },
+  {
+    "id": "p-nfl-deion-sanders-draft",
+    "factId": "nfl-deion-sanders-draft",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Deion Sanders?",
+    "answer": "Falcons",
+    "wrong": [
+      "Cowboys",
+      "49ers",
+      "Ravens"
+    ],
+    "teach": "The Falcons took Sanders 5th in 1989.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Deion_Sanders",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 1997,
+      "player": "Deion Sanders"
+    }
+  },
+  {
+    "id": "p-nfl-justin-jefferson-college",
+    "factId": "nfl-justin-jefferson-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Alma mater",
+    "prompt": "Where did Justin Jefferson play college ball?",
+    "answer": "LSU",
+    "wrong": [
+      "Alabama",
+      "Ole Miss",
+      "Texas A&M"
+    ],
+    "teach": "Justin Jefferson played college ball at LSU.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Justin_Jefferson",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2022,
+      "player": "Justin Jefferson"
+    }
+  },
+  {
+    "id": "p-nfl-tony-romo-college",
+    "factId": "nfl-tony-romo-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did Tony Romo play college ball?",
+    "answer": "Eastern Illinois",
+    "wrong": [
+      "Illinois State",
+      "Northern Iowa",
+      "Southern Illinois"
+    ],
+    "teach": "Tony Romo played college ball at Eastern Illinois.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Tony_Romo",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2006,
+      "player": "Tony Romo"
+    }
+  },
+  {
+    "id": "p-nfl-kurt-warner-college",
+    "factId": "nfl-kurt-warner-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did Kurt Warner play college ball?",
+    "answer": "Northern Iowa",
+    "wrong": [
+      "Iowa",
+      "Iowa State",
+      "Drake"
+    ],
+    "teach": "Kurt Warner played college ball at Northern Iowa.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Kurt_Warner",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 1999,
+      "player": "Kurt Warner"
+    }
+  },
+  {
+    "id": "p-nfl-brett-favre-college",
+    "factId": "nfl-brett-favre-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did Brett Favre play college ball?",
+    "answer": "Southern Miss",
+    "wrong": [
+      "Ole Miss",
+      "Mississippi State",
+      "Alabama"
+    ],
+    "teach": "Brett Favre played college ball at Southern Miss.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Brett_Favre",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 1995,
+      "player": "Brett Favre"
+    }
+  },
+  {
+    "id": "p-nfl-brett-favre-draft",
+    "factId": "nfl-brett-favre-draft",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Brett Favre?",
+    "answer": "Falcons",
+    "wrong": [
+      "Packers",
+      "Saints",
+      "Jets"
+    ],
+    "teach": "The Falcons took Favre in the 2nd round in 1991 and traded him to Green Bay in 1992.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Brett_Favre",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 1996,
+      "player": "Brett Favre"
+    }
+  },
+  {
+    "id": "p-nfl-steve-young-college",
+    "factId": "nfl-steve-young-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did Steve Young play college ball?",
+    "answer": "BYU",
+    "wrong": [
+      "Utah",
+      "Stanford",
+      "USC"
+    ],
+    "teach": "Steve Young played college ball at BYU.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Steve_Young",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 1995,
+      "player": "Steve Young"
+    }
+  },
+  {
+    "id": "p-nfl-michael-strahan-college",
+    "factId": "nfl-michael-strahan-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Alma mater",
+    "prompt": "Where did Michael Strahan play college ball?",
+    "answer": "Texas Southern",
+    "wrong": [
+      "Prairie View A&M",
+      "Houston",
+      "Grambling State"
+    ],
+    "teach": "Michael Strahan played college ball at Texas Southern.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Michael_Strahan",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2001,
+      "player": "Michael Strahan"
+    }
+  },
+  {
+    "id": "p-nba-lebron-james-draft",
+    "factId": "nba-lebron-james-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Drafted by",
+    "prompt": "Which team drafted LeBron James?",
+    "answer": "Cavaliers",
+    "wrong": [
+      "Heat",
+      "Lakers",
+      "Nuggets"
+    ],
+    "teach": "The Cavaliers drafted LeBron James.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/LeBron_James",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2005,
+      "player": "LeBron James"
+    }
+  },
+  {
+    "id": "p-nba-lebron-james-jersey",
+    "factId": "nba-lebron-james-jersey",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "LeBron James's jersey number in 2012?",
+    "answer": "6",
+    "wrong": [
+      "23",
+      "32",
+      "3"
+    ],
+    "teach": "LeBron wore No. 6 with the Heat from 2010 to 2014.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/LeBron_James",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2012,
+      "player": "LeBron James"
+    }
+  },
+  {
+    "id": "p-nba-kobe-bryant-jersey",
+    "factId": "nba-kobe-bryant-jersey",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "Kobe Bryant's jersey number in 2001?",
+    "answer": "8",
+    "wrong": [
+      "24",
+      "33",
+      "32"
+    ],
+    "teach": "Kobe wore No. 8 from 1996 to 2006, then No. 24.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Kobe_Bryant",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2001,
+      "player": "Kobe Bryant"
+    }
+  },
+  {
+    "id": "p-nba-kobe-bryant-draft",
+    "factId": "nba-kobe-bryant-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Kobe Bryant?",
+    "answer": "Hornets",
+    "wrong": [
+      "Lakers",
+      "Nets",
+      "76ers"
+    ],
+    "teach": "The Hornets took Kobe 13th in 1996, then traded him to the Lakers.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Kobe_Bryant",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 1998,
+      "player": "Kobe Bryant"
+    }
+  },
+  {
+    "id": "p-nba-michael-jordan-college",
+    "factId": "nba-michael-jordan-college",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Alma mater",
+    "prompt": "Where did Michael Jordan play college ball?",
+    "answer": "North Carolina",
+    "wrong": [
+      "Duke",
+      "Kentucky",
+      "NC State"
+    ],
+    "teach": "Michael Jordan played college ball at North Carolina.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Michael_Jordan",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 1996,
+      "player": "Michael Jordan"
+    }
+  },
+  {
+    "id": "p-nba-michael-jordan-jersey",
+    "factId": "nba-michael-jordan-jersey",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Jersey number",
+    "prompt": "Michael Jordan's jersey number in 1996?",
+    "answer": "23",
+    "wrong": [
+      "45",
+      "33",
+      "32"
+    ],
+    "teach": "Jordan wore No. 23 in 1996; he briefly wore No. 45 in 1995.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Michael_Jordan",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 1996,
+      "player": "Michael Jordan"
+    }
+  },
+  {
+    "id": "p-nba-stephen-curry-college",
+    "factId": "nba-stephen-curry-college",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Alma mater",
+    "prompt": "Where did Stephen Curry play college ball?",
+    "answer": "Davidson",
+    "wrong": [
+      "Virginia Tech",
+      "Butler",
+      "Gonzaga"
+    ],
+    "teach": "Stephen Curry played college ball at Davidson.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Stephen_Curry",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2015,
+      "player": "Stephen Curry"
+    }
+  },
+  {
+    "id": "p-nba-stephen-curry-jersey",
+    "factId": "nba-stephen-curry-jersey",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Jersey number",
+    "prompt": "Stephen Curry's jersey number in 2016?",
+    "answer": "30",
+    "wrong": [
+      "3",
+      "11",
+      "35"
+    ],
+    "teach": "Stephen Curry wore No. 30 in 2016.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Stephen_Curry",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2016,
+      "player": "Stephen Curry"
+    }
+  },
+  {
+    "id": "p-nba-kevin-durant-college",
+    "factId": "nba-kevin-durant-college",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Alma mater",
+    "prompt": "Where did Kevin Durant play college ball?",
+    "answer": "Texas",
+    "wrong": [
+      "Kansas",
+      "Georgetown",
+      "Texas A&M"
+    ],
+    "teach": "Kevin Durant played college ball at Texas.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Kevin_Durant",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2012,
+      "player": "Kevin Durant"
+    }
+  },
+  {
+    "id": "p-nba-kevin-durant-draft",
+    "factId": "nba-kevin-durant-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Kevin Durant?",
+    "answer": "SuperSonics",
+    "wrong": [
+      "Thunder",
+      "Trail Blazers",
+      "Hawks"
+    ],
+    "teach": "Seattle took Durant 2nd in 2007; the SuperSonics became the Thunder in 2008.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Kevin_Durant",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2014,
+      "player": "Kevin Durant"
+    }
+  },
+  {
+    "id": "p-nba-tim-duncan-college",
+    "factId": "nba-tim-duncan-college",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Alma mater",
+    "prompt": "Where did Tim Duncan play college ball?",
+    "answer": "Wake Forest",
+    "wrong": [
+      "Duke",
+      "Georgia Tech",
+      "Virginia"
+    ],
+    "teach": "Tim Duncan played college ball at Wake Forest.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Tim_Duncan",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2000,
+      "player": "Tim Duncan"
+    }
+  },
+  {
+    "id": "p-nba-dirk-nowitzki-country",
+    "factId": "nba-dirk-nowitzki-country",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Country",
+    "prompt": "Dirk Nowitzki was born in which country?",
+    "answer": "Germany",
+    "wrong": [
+      "Austria",
+      "Netherlands",
+      "Switzerland"
+    ],
+    "teach": "Nowitzki was born in Würzburg, then in West Germany.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Dirk_Nowitzki",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2006,
+      "player": "Dirk Nowitzki"
+    }
+  },
+  {
+    "id": "p-nba-dirk-nowitzki-draft",
+    "factId": "nba-dirk-nowitzki-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Dirk Nowitzki?",
+    "answer": "Bucks",
+    "wrong": [
+      "Mavericks",
+      "Celtics",
+      "Suns"
+    ],
+    "teach": "The Bucks took Dirk 9th in 1998, then traded him to Dallas.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Dirk_Nowitzki",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2006,
+      "player": "Dirk Nowitzki"
+    }
+  },
+  {
+    "id": "p-nba-giannis-antetokounmpo-country",
+    "factId": "nba-giannis-antetokounmpo-country",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Country",
+    "prompt": "Giannis Antetokounmpo was born in which country?",
+    "answer": "Greece",
+    "wrong": [
+      "Turkey",
+      "Italy",
+      "Serbia"
+    ],
+    "teach": "Giannis Antetokounmpo was born in Greece.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Giannis_Antetokounmpo",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2019,
+      "player": "Giannis Antetokounmpo"
+    }
+  },
+  {
+    "id": "p-nba-nikola-jokic-country",
+    "factId": "nba-nikola-jokic-country",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Country",
+    "prompt": "Nikola Jokić was born in which country?",
+    "answer": "Serbia",
+    "wrong": [
+      "Croatia",
+      "Montenegro",
+      "Slovenia"
+    ],
+    "teach": "Nikola Jokić was born in Serbia.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Nikola_Jokić",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2020,
+      "player": "Nikola Jokić"
+    }
+  },
+  {
+    "id": "p-nba-luka-doncic-country",
+    "factId": "nba-luka-doncic-country",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Country",
+    "prompt": "Luka Dončić was born in which country?",
+    "answer": "Slovenia",
+    "wrong": [
+      "Serbia",
+      "Croatia",
+      "Slovakia"
+    ],
+    "teach": "Luka Dončić was born in Slovenia.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Luka_Dončić",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2020,
+      "player": "Luka Dončić"
+    }
+  },
+  {
+    "id": "p-nba-luka-doncic-draft",
+    "factId": "nba-luka-doncic-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Luka Dončić?",
+    "answer": "Hawks",
+    "wrong": [
+      "Mavericks",
+      "Suns",
+      "Kings"
+    ],
+    "teach": "The Hawks took Dončić 3rd in 2018, then traded him to Dallas.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Luka_Dončić",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2020,
+      "player": "Luka Dončić"
+    }
+  },
+  {
+    "id": "p-nba-joel-embiid-country",
+    "factId": "nba-joel-embiid-country",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Country",
+    "prompt": "Joel Embiid was born in which country?",
+    "answer": "Cameroon",
+    "wrong": [
+      "Nigeria",
+      "Senegal",
+      "Ghana"
+    ],
+    "teach": "Embiid was born in Yaoundé, Cameroon.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Joel_Embiid",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2019,
+      "player": "Joel Embiid"
+    }
+  },
+  {
+    "id": "p-nba-hakeem-olajuwon-country",
+    "factId": "nba-hakeem-olajuwon-country",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Country",
+    "prompt": "Hakeem Olajuwon was born in which country?",
+    "answer": "Nigeria",
+    "wrong": [
+      "Ghana",
+      "Cameroon",
+      "Senegal"
+    ],
+    "teach": "Olajuwon was born in Lagos, Nigeria.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Hakeem_Olajuwon",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 1996,
+      "player": "Hakeem Olajuwon"
+    }
+  },
+  {
+    "id": "p-nba-hakeem-olajuwon-college",
+    "factId": "nba-hakeem-olajuwon-college",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did Hakeem Olajuwon play college ball?",
+    "answer": "Houston",
+    "wrong": [
+      "Georgetown",
+      "Texas",
+      "Louisville"
+    ],
+    "teach": "Hakeem Olajuwon played college ball at Houston.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Hakeem_Olajuwon",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 1995,
+      "player": "Hakeem Olajuwon"
+    }
+  },
+  {
+    "id": "p-nba-pau-gasol-country",
+    "factId": "nba-pau-gasol-country",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Country",
+    "prompt": "Pau Gasol was born in which country?",
+    "answer": "Spain",
+    "wrong": [
+      "Portugal",
+      "Argentina",
+      "Italy"
+    ],
+    "teach": "Pau Gasol was born in Spain.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Pau_Gasol",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2006,
+      "player": "Pau Gasol"
+    }
+  },
+  {
+    "id": "p-nba-pau-gasol-draft",
+    "factId": "nba-pau-gasol-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Pau Gasol?",
+    "answer": "Hawks",
+    "wrong": [
+      "Grizzlies",
+      "Lakers",
+      "Bulls"
+    ],
+    "teach": "The Hawks took Gasol 3rd in 2001, then traded him to Memphis.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Pau_Gasol",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2009,
+      "player": "Pau Gasol"
+    }
+  },
+  {
+    "id": "p-nba-manu-ginobili-country",
+    "factId": "nba-manu-ginobili-country",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Country",
+    "prompt": "Manu Ginóbili was born in which country?",
+    "answer": "Argentina",
+    "wrong": [
+      "Brazil",
+      "Uruguay",
+      "Spain"
+    ],
+    "teach": "Manu Ginóbili was born in Argentina.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Manu_Ginóbili",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2005,
+      "player": "Manu Ginóbili"
+    }
+  },
+  {
+    "id": "p-nba-yao-ming-country",
+    "factId": "nba-yao-ming-country",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Country",
+    "prompt": "Yao Ming was born in which country?",
+    "answer": "China",
+    "wrong": [
+      "Taiwan",
+      "Japan",
+      "South Korea"
+    ],
+    "teach": "Yao Ming was born in China.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Yao_Ming",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2003,
+      "player": "Yao Ming"
+    }
+  },
+  {
+    "id": "p-nba-shaquille-o-neal-college",
+    "factId": "nba-shaquille-o-neal-college",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Alma mater",
+    "prompt": "Where did Shaquille O'Neal play college ball?",
+    "answer": "LSU",
+    "wrong": [
+      "Kentucky",
+      "Georgia Tech",
+      "Arkansas"
+    ],
+    "teach": "Shaquille O'Neal played college ball at LSU.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Shaquille_O'Neal",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 1997,
+      "player": "Shaquille O'Neal"
+    }
+  },
+  {
+    "id": "p-nba-shaquille-o-neal-draft",
+    "factId": "nba-shaquille-o-neal-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Shaquille O'Neal?",
+    "answer": "Magic",
+    "wrong": [
+      "Lakers",
+      "Heat",
+      "Hornets"
+    ],
+    "teach": "The Magic drafted Shaquille O'Neal.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Shaquille_O'Neal",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 1995,
+      "player": "Shaquille O'Neal"
+    }
+  },
+  {
+    "id": "p-nba-shaquille-o-neal-jersey",
+    "factId": "nba-shaquille-o-neal-jersey",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "Shaquille O'Neal's jersey number in 2000?",
+    "answer": "34",
+    "wrong": [
+      "32",
+      "33",
+      "36"
+    ],
+    "teach": "Shaq wore No. 32 in Orlando and No. 34 with the Lakers.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Shaquille_O'Neal",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2000,
+      "player": "Shaquille O'Neal"
+    }
+  },
+  {
+    "id": "p-nba-allen-iverson-college",
+    "factId": "nba-allen-iverson-college",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Alma mater",
+    "prompt": "Where did Allen Iverson play college ball?",
+    "answer": "Georgetown",
+    "wrong": [
+      "Villanova",
+      "Syracuse",
+      "UConn"
+    ],
+    "teach": "Allen Iverson played college ball at Georgetown.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Allen_Iverson",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2001,
+      "player": "Allen Iverson"
+    }
+  },
+  {
+    "id": "p-nba-allen-iverson-jersey",
+    "factId": "nba-allen-iverson-jersey",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "Allen Iverson's jersey number in 2005?",
+    "answer": "3",
+    "wrong": [
+      "1",
+      "30",
+      "33"
+    ],
+    "teach": "Allen Iverson wore No. 3 in 2005.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Allen_Iverson",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2005,
+      "player": "Allen Iverson"
+    }
+  },
+  {
+    "id": "p-nba-dwyane-wade-college",
+    "factId": "nba-dwyane-wade-college",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did Dwyane Wade play college ball?",
+    "answer": "Marquette",
+    "wrong": [
+      "DePaul",
+      "Illinois",
+      "Michigan State"
+    ],
+    "teach": "Dwyane Wade played college ball at Marquette.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Dwyane_Wade",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2006,
+      "player": "Dwyane Wade"
+    }
+  },
+  {
+    "id": "p-nba-dwyane-wade-draft",
+    "factId": "nba-dwyane-wade-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Dwyane Wade?",
+    "answer": "Heat",
+    "wrong": [
+      "Nuggets",
+      "Pistons",
+      "Raptors"
+    ],
+    "teach": "The Heat drafted Dwyane Wade.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Dwyane_Wade",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2006,
+      "player": "Dwyane Wade"
+    }
+  },
+  {
+    "id": "p-nba-chris-paul-college",
+    "factId": "nba-chris-paul-college",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did Chris Paul play college ball?",
+    "answer": "Wake Forest",
+    "wrong": [
+      "Duke",
+      "NC State",
+      "Georgetown"
+    ],
+    "teach": "Chris Paul played college ball at Wake Forest.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Chris_Paul",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2008,
+      "player": "Chris Paul"
+    }
+  },
+  {
+    "id": "p-nba-chris-paul-draft",
+    "factId": "nba-chris-paul-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Chris Paul?",
+    "answer": "Hornets",
+    "wrong": [
+      "Clippers",
+      "Rockets",
+      "Suns"
+    ],
+    "teach": "The New Orleans Hornets (now Pelicans) took Paul 4th in 2005.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Chris_Paul",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2008,
+      "player": "Chris Paul"
+    }
+  },
+  {
+    "id": "p-nba-kawhi-leonard-college",
+    "factId": "nba-kawhi-leonard-college",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did Kawhi Leonard play college ball?",
+    "answer": "San Diego State",
+    "wrong": [
+      "UNLV",
+      "Fresno State",
+      "Gonzaga"
+    ],
+    "teach": "Kawhi Leonard played college ball at San Diego State.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Kawhi_Leonard",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2017,
+      "player": "Kawhi Leonard"
+    }
+  },
+  {
+    "id": "p-nba-kawhi-leonard-draft",
+    "factId": "nba-kawhi-leonard-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Kawhi Leonard?",
+    "answer": "Pacers",
+    "wrong": [
+      "Spurs",
+      "Raptors",
+      "Clippers"
+    ],
+    "teach": "The Pacers took Kawhi 15th in 2011, then traded him to San Antonio.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Kawhi_Leonard",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2017,
+      "player": "Kawhi Leonard"
+    }
+  },
+  {
+    "id": "p-nba-russell-westbrook-college",
+    "factId": "nba-russell-westbrook-college",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Alma mater",
+    "prompt": "Where did Russell Westbrook play college ball?",
+    "answer": "UCLA",
+    "wrong": [
+      "USC",
+      "Arizona",
+      "Oregon"
+    ],
+    "teach": "Russell Westbrook played college ball at UCLA.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Russell_Westbrook",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2015,
+      "player": "Russell Westbrook"
+    }
+  },
+  {
+    "id": "p-nba-james-harden-college",
+    "factId": "nba-james-harden-college",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did James Harden play college ball?",
+    "answer": "Arizona State",
+    "wrong": [
+      "Arizona",
+      "UCLA",
+      "Oregon State"
+    ],
+    "teach": "James Harden played college ball at Arizona State.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/James_Harden",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2018,
+      "player": "James Harden"
+    }
+  },
+  {
+    "id": "p-nba-james-harden-jersey",
+    "factId": "nba-james-harden-jersey",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "James Harden's jersey number in 2018?",
+    "answer": "13",
+    "wrong": [
+      "3",
+      "1",
+      "23"
+    ],
+    "teach": "James Harden wore No. 13 in 2018.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/James_Harden",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2018,
+      "player": "James Harden"
+    }
+  },
+  {
+    "id": "p-nba-damian-lillard-college",
+    "factId": "nba-damian-lillard-college",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did Damian Lillard play college ball?",
+    "answer": "Weber State",
+    "wrong": [
+      "Utah State",
+      "Boise State",
+      "Montana"
+    ],
+    "teach": "Damian Lillard played college ball at Weber State.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Damian_Lillard",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2019,
+      "player": "Damian Lillard"
+    }
+  },
+  {
+    "id": "p-nba-damian-lillard-jersey",
+    "factId": "nba-damian-lillard-jersey",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "Damian Lillard's jersey number in 2019?",
+    "answer": "0",
+    "wrong": [
+      "1",
+      "7",
+      "10"
+    ],
+    "teach": "Damian Lillard wore No. 0 in 2019.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Damian_Lillard",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2019,
+      "player": "Damian Lillard"
+    }
+  },
+  {
+    "id": "p-nba-anthony-davis-college",
+    "factId": "nba-anthony-davis-college",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Alma mater",
+    "prompt": "Where did Anthony Davis play college ball?",
+    "answer": "Kentucky",
+    "wrong": [
+      "Louisville",
+      "Kansas",
+      "Duke"
+    ],
+    "teach": "Anthony Davis played college ball at Kentucky.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Anthony_Davis",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2014,
+      "player": "Anthony Davis"
+    }
+  },
+  {
+    "id": "p-nba-kevin-garnett-jersey",
+    "factId": "nba-kevin-garnett-jersey",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "Kevin Garnett's jersey number in 2004?",
+    "answer": "21",
+    "wrong": [
+      "5",
+      "2",
+      "12"
+    ],
+    "teach": "Garnett wore No. 21 in Minnesota and No. 5 in Boston.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Kevin_Garnett",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2004,
+      "player": "Kevin Garnett"
+    }
+  },
+  {
+    "id": "p-nba-paul-pierce-college",
+    "factId": "nba-paul-pierce-college",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did Paul Pierce play college ball?",
+    "answer": "Kansas",
+    "wrong": [
+      "Kentucky",
+      "UCLA",
+      "Missouri"
+    ],
+    "teach": "Paul Pierce played college ball at Kansas.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Paul_Pierce",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2008,
+      "player": "Paul Pierce"
+    }
+  },
+  {
+    "id": "p-nba-ray-allen-college",
+    "factId": "nba-ray-allen-college",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did Ray Allen play college ball?",
+    "answer": "UConn",
+    "wrong": [
+      "Syracuse",
+      "Georgetown",
+      "Villanova"
+    ],
+    "teach": "Ray Allen played college ball at UConn.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Ray_Allen",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2001,
+      "player": "Ray Allen"
+    }
+  },
+  {
+    "id": "p-nba-ray-allen-draft",
+    "factId": "nba-ray-allen-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Ray Allen?",
+    "answer": "Timberwolves",
+    "wrong": [
+      "Bucks",
+      "SuperSonics",
+      "Celtics"
+    ],
+    "teach": "The Timberwolves took Allen 5th in 1996, then traded him to Milwaukee.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Ray_Allen",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2001,
+      "player": "Ray Allen"
+    }
+  },
+  {
+    "id": "p-nba-vince-carter-college",
+    "factId": "nba-vince-carter-college",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Alma mater",
+    "prompt": "Where did Vince Carter play college ball?",
+    "answer": "North Carolina",
+    "wrong": [
+      "Duke",
+      "Florida",
+      "Florida State"
+    ],
+    "teach": "Vince Carter played college ball at North Carolina.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Vince_Carter",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2000,
+      "player": "Vince Carter"
+    }
+  },
+  {
+    "id": "p-nba-vince-carter-draft",
+    "factId": "nba-vince-carter-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Vince Carter?",
+    "answer": "Warriors",
+    "wrong": [
+      "Raptors",
+      "Nets",
+      "Magic"
+    ],
+    "teach": "The Warriors took Carter 5th in 1998, then traded him to Toronto.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Vince_Carter",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2000,
+      "player": "Vince Carter"
+    }
+  },
+  {
+    "id": "p-nba-jayson-tatum-college",
+    "factId": "nba-jayson-tatum-college",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Alma mater",
+    "prompt": "Where did Jayson Tatum play college ball?",
+    "answer": "Duke",
+    "wrong": [
+      "Kentucky",
+      "North Carolina",
+      "Kansas"
+    ],
+    "teach": "Jayson Tatum played college ball at Duke.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jayson_Tatum",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2022,
+      "player": "Jayson Tatum"
+    }
+  },
+  {
+    "id": "p-nba-devin-booker-college",
+    "factId": "nba-devin-booker-college",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did Devin Booker play college ball?",
+    "answer": "Kentucky",
+    "wrong": [
+      "Missouri",
+      "Michigan State",
+      "Duke"
+    ],
+    "teach": "Devin Booker played college ball at Kentucky.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Devin_Booker",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2021,
+      "player": "Devin Booker"
+    }
+  },
+  {
+    "id": "p-nba-klay-thompson-college",
+    "factId": "nba-klay-thompson-college",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did Klay Thompson play college ball?",
+    "answer": "Washington State",
+    "wrong": [
+      "Washington",
+      "Oregon State",
+      "Gonzaga"
+    ],
+    "teach": "Klay Thompson played college ball at Washington State.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Klay_Thompson",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2015,
+      "player": "Klay Thompson"
+    }
+  },
+  {
+    "id": "p-nba-draymond-green-college",
+    "factId": "nba-draymond-green-college",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Alma mater",
+    "prompt": "Where did Draymond Green play college ball?",
+    "answer": "Michigan State",
+    "wrong": [
+      "Michigan",
+      "Ohio State",
+      "Louisville"
+    ],
+    "teach": "Draymond Green played college ball at Michigan State.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Draymond_Green",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2016,
+      "player": "Draymond Green"
+    }
+  },
+  {
+    "id": "p-nba-kyrie-irving-country",
+    "factId": "nba-kyrie-irving-country",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Country",
+    "prompt": "Kyrie Irving was born in which country?",
+    "answer": "Australia",
+    "wrong": [
+      "New Zealand",
+      "Canada",
+      "England"
+    ],
+    "teach": "Irving was born in Melbourne, Australia, and plays for Team USA.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Kyrie_Irving",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2014,
+      "player": "Kyrie Irving"
+    }
+  },
+  {
+    "id": "p-nba-andrew-wiggins-country",
+    "factId": "nba-andrew-wiggins-country",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Country",
+    "prompt": "Andrew Wiggins was born in which country?",
+    "answer": "Canada",
+    "wrong": [
+      "England",
+      "Australia",
+      "France"
+    ],
+    "teach": "Andrew Wiggins was born in Canada.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Andrew_Wiggins",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2022,
+      "player": "Andrew Wiggins"
+    }
+  },
+  {
+    "id": "p-nba-shai-gilgeous-alexander-draft",
+    "factId": "nba-shai-gilgeous-alexander-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Shai Gilgeous-Alexander?",
+    "answer": "Hornets",
+    "wrong": [
+      "Clippers",
+      "Thunder",
+      "Lakers"
+    ],
+    "teach": "The Hornets took SGA 11th in 2018, then traded him to the Clippers.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Shai_Gilgeous-Alexander",
+      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
+    },
+    "reel": {
+      "season": 2023,
+      "player": "Shai Gilgeous-Alexander"
+    }
+  }
+]
