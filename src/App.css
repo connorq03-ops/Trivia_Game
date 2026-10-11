@@ -437,6 +437,11 @@
   background: #254232;
 }
 
+.answer-button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
 .answer-button span {
   display: grid;
   flex: 0 0 1.9rem;
@@ -481,6 +486,22 @@
 
 .teach-overlay small {
   color: #c0b9a7;
+}
+
+.connection-note {
+  color: #ffcf9a;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.connection-note button {
+  color: inherit;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .game-over {

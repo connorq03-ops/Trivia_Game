@@ -1,16 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import type { CSSProperties } from 'react'
-import {
-  answerQuestion,
-  CLOCK_MS,
-  createRunProgress,
-  dailyQuestions,
-  selectClassicQuestion,
-  STRIKES,
-  type ClassicOptions,
-  type RunProgress,
-} from './game/engine'
-import { questionBank } from './game/content'
+import { CLOCK_MS } from './game/engine'
 import {
   dailyStorageKey,
   msUntilNextUtcMidnight,
@@ -23,21 +13,75 @@ import './App.css'
 
 const REEL_MS = 1200
 
-type Screen = 'home' | 'reel' | 'question' | 'teach' | 'over'
+type Screen =
+  | 'home'
+  | 'reel'
+  | 'question'
+  | 'teach'
+  | 'over'
+  | 'connection'
+  | 'noQuestions'
 type Mode = 'classic' | 'daily'
-type EndReason = 'strikes' | 'bank' | 'complete'
+
+type PublicQuestion = Pick<
+  Question,
+  'id' | 'side' | 'sport' | 'leagues' | 'difficulty' | 'category' | 'prompt' | 'reel'
+> & { choices: string[] }
+
+type PublicProgress = {
+  score: number
+  strikes: number
+  streak: number
+}
 
 type GameSession = {
   mode: Mode
   runId: string
+  runToken: string
   date: string
-  progress: RunProgress
+  progress: PublicProgress
   questionIndex: number
-  question: Question
-  choices: string[]
-  classicOptions: ClassicOptions
-  usedFactIds: string[]
-  dailyQuestions: Question[]
+  question: PublicQuestion
+  total: number | null
+}
+
+type AnswerBody = {
+  runId: string
+  runToken: string
+  questionIndex: number
+  choice: string | null
+  clientMs: number | null
+}
+
+type AnswerResponse = {
+  correct: boolean
+  points: number
+  answer: string
+  teach: string
+  source: Question['source']
+  progress: PublicProgress
+  next: { questionIndex: number } | null
+  summary: GameSummary | null
+}
+
+type QuestionResponse = {
+  questionIndex: number
+  question: PublicQuestion
+  elapsedMs: number
+}
+
+type PendingRequest =
+  | { kind: 'answer'; body: AnswerBody }
+  | { kind: 'question'; questionIndex: number }
+
+type RunResponse = {
+  runId: string
+  runToken: string
+  date: string
+  questionIndex: number
+  question: PublicQuestion
+  progress: PublicProgress
+  total: number | null
 }
 
 function utcDate(): string {
@@ -57,21 +101,12 @@ function storedSummary(date: string): GameSummary | null {
   return storage ? readDailySummary(storage, date) : null
 }
 
-function shuffleChoices(question: Question): string[] {
-  const choices = [question.answer, ...question.wrong]
-  for (let index = choices.length - 1; index > 0; index -= 1) {
-    const other = Math.floor(Math.random() * (index + 1))
-    ;[choices[index], choices[other]] = [choices[other], choices[index]]
-  }
-  return choices
-}
-
 function formatDuration(milliseconds: number): string {
   return `${(milliseconds / 1000).toFixed(1)}s`
 }
 
 function elapsedSince(startedAt: number): number {
-  return Math.min(CLOCK_MS, performance.now() - startedAt)
+  return Math.min(CLOCK_MS, Math.max(0, performance.now() - startedAt))
 }
 
 function App() {
@@ -87,12 +122,25 @@ function App() {
   )
   const [session, setSession] = useState<GameSession | null>(null)
   const [summary, setSummary] = useState<GameSummary | null>(null)
+  const [teachInfo, setTeachInfo] = useState<{ answer: string; teach: string } | null>(
+    null,
+  )
+  const [pendingNextIndex, setPendingNextIndex] = useState<number | null>(null)
+  const [pendingSummary, setPendingSummary] = useState<GameSummary | null>(null)
+  const [pendingRequest, setPendingRequest] = useState<PendingRequest | null>(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isStarting, setIsStarting] = useState(false)
+  const [startError, setStartError] = useState(false)
   const [elapsedMs, setElapsedMs] = useState(0)
   const answerStartedAt = useRef(0)
+  const questionClockOffset = useRef(0)
   const answered = useRef(false)
-  const submitAnswerRef = useRef<(correct: boolean, elapsed: number | null) => void>(
-    () => {},
-  )
+  // Results for any run other than this one (or after leaving a run) are dropped.
+  const activeRunId = useRef<string | null>(null)
+  const startGeneration = useRef(0)
+  const submitAnswerRef = useRef<
+    (choice: string | null, clientMs: number | null) => void
+  >(() => {})
   const continueAfterTeachRef = useRef<() => void>(() => {})
 
   const refreshToday = useCallback(() => {
@@ -147,165 +195,60 @@ function App() {
     }
   }, [refreshToday, today])
 
-  const finishRun = (completed: GameSession, reason: EndReason) => {
-    const result: GameSummary = {
-      mode: completed.mode,
-      date: completed.date,
-      score: completed.progress.score,
-      bestStreak: completed.progress.bestStreak,
-      questionsAnswered: completed.progress.questionsAnswered,
-      answeredCount: completed.progress.answeredCount,
-      totalAnswerMs: completed.progress.totalAnswerMs,
-      missed: completed.progress.missed,
-      reason,
-    }
-    setSummary(result)
-    setSession(completed)
-    setScreen('over')
-    if (completed.mode === 'daily') {
-      const storage = browserStorage()
-      const winner = storage
-        ? saveDailySummaryIfFirst(storage, completed.date, result)
-        : result
-      if (completed.date === utcDate()) setTodaySummary(winner)
-    }
-  }
-
-  const showNextQuestion = (current: GameSession) => {
-    if (current.mode === 'classic') {
-      const selection = selectClassicQuestion(
-        questionBank,
-        new Set(current.usedFactIds),
-        current.progress.questionsAnswered + 1,
-        current.classicOptions,
-        Math.random,
-      )
-      if (selection.type === 'end') {
-        finishRun(current, 'bank')
+  const startRun = async (
+    input:
+      | { mode: 'classic'; sport: 'all' | Sport; side: 'both' | Side }
+      | { mode: 'daily' },
+  ) => {
+    const generation = ++startGeneration.current
+    activeRunId.current = null
+    setPendingRequest(null)
+    setIsSubmitting(false)
+    setIsStarting(true)
+    setStartError(false)
+    setSummary(null)
+    setSession(null)
+    setScreen('home')
+    try {
+      const response = await fetch('/api/runs', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(input),
+      })
+      const result = (await response.json()) as RunResponse | { error?: string }
+      if (generation !== startGeneration.current) return
+      if (response.status === 409 && 'error' in result && result.error === 'no_questions') {
+        setSession(null)
+        setScreen('noQuestions')
         return
       }
-      const next: GameSession = {
-        ...current,
-        questionIndex: current.questionIndex + 1,
-        question: selection.question,
-        choices: selection.choices,
-        usedFactIds: [...current.usedFactIds, selection.question.factId],
-      }
-      setSession(next)
+      if (!response.ok || !('runId' in result)) throw new Error('Run creation failed')
+
+      activeRunId.current = result.runId
+      questionClockOffset.current = 0
+      setSession({
+        mode: input.mode,
+        runId: result.runId,
+        runToken: result.runToken,
+        date: result.date,
+        progress: result.progress,
+        questionIndex: result.questionIndex,
+        question: result.question,
+        total: result.total,
+      })
       setScreen('reel')
-      return
+    } catch {
+      if (generation !== startGeneration.current) return
+      setStartError(true)
+      setApiStatus('error')
+      setScreen('home')
+    } finally {
+      if (generation === startGeneration.current) setIsStarting(false)
     }
-
-    const nextIndex = current.questionIndex + 1
-    if (nextIndex >= current.dailyQuestions.length) {
-      finishRun(current, 'complete')
-      return
-    }
-    const question = current.dailyQuestions[nextIndex]
-    setSession({
-      ...current,
-      questionIndex: nextIndex,
-      question,
-      choices: shuffleChoices(question),
-    })
-    setScreen('reel')
   }
-
-  const continueAfterTeach = () => {
-    if (!session) {
-      setScreen('over')
-      return
-    }
-    if (session.mode === 'classic' && session.progress.strikes >= STRIKES) {
-      finishRun(session, 'strikes')
-      return
-    }
-    showNextQuestion(session)
-  }
-  const submitAnswer = (isCorrect: boolean, elapsed: number | null) => {
-    if (!session || screen !== 'question' || answered.current) return
-    answered.current = true
-    const outcome = answerQuestion(
-      session.progress,
-      session.question,
-      isCorrect,
-      elapsed,
-    )
-    const updatedSession = { ...session, progress: outcome.progress }
-    setSession(updatedSession)
-    void fetch('/api/answers', {
-      method: 'POST',
-      keepalive: true,
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({
-        runId: session.runId,
-        mode: session.mode,
-        questionId: session.question.id,
-        questionIndex: session.questionIndex,
-        answerMs: outcome.answerMs,
-        correct: outcome.correct,
-      }),
-    }).catch(() => {})
-
-    if (!outcome.correct) {
-      setScreen('teach')
-      return
-    }
-    if (session.mode === 'classic' && outcome.endReason === 'strikes') {
-      finishRun(updatedSession, 'strikes')
-      return
-    }
-    showNextQuestion(updatedSession)
-  }
-  useEffect(() => {
-    continueAfterTeachRef.current = continueAfterTeach
-  })
-
-  useEffect(() => {
-    submitAnswerRef.current = submitAnswer
-  })
 
   const startClassic = () => {
-    const options = { sport, side }
-    const selection = selectClassicQuestion(
-      questionBank,
-      new Set(),
-      1,
-      options,
-      Math.random,
-    )
-    if (selection.type === 'end') {
-      finishRun(
-        {
-          mode: 'classic',
-          runId: crypto.randomUUID(),
-          date: utcDate(),
-          progress: createRunProgress(),
-          questionIndex: 0,
-          question: questionBank[0],
-          choices: [],
-          classicOptions: options,
-          usedFactIds: [],
-          dailyQuestions: [],
-        },
-        'bank',
-      )
-      return
-    }
-    setSummary(null)
-    setSession({
-      mode: 'classic',
-      runId: crypto.randomUUID(),
-      date: utcDate(),
-      progress: createRunProgress(),
-      questionIndex: 0,
-      question: selection.question,
-      choices: selection.choices,
-      classicOptions: options,
-      usedFactIds: [selection.question.factId],
-      dailyQuestions: [],
-    })
-    setScreen('reel')
+    void startRun({ mode: 'classic', sport, side })
   }
 
   const openDaily = () => {
@@ -314,30 +257,157 @@ function App() {
     const previous = storedSummary(date)
     setTodaySummary(previous)
     if (previous) {
+      setSession(null)
       setSummary(previous)
       setScreen('over')
       return
     }
-
-    const questions = dailyQuestions(date, questionBank)
-    const question = questions[0]
-    setSummary(null)
-    setSession({
-      mode: 'daily',
-      runId: crypto.randomUUID(),
-      date,
-      progress: createRunProgress(),
-      questionIndex: 0,
-      question,
-      choices: shuffleChoices(question),
-      classicOptions: { sport: 'all', side: 'both' },
-      usedFactIds: [],
-      dailyQuestions: questions,
-    })
-    setScreen('reel')
+    void startRun({ mode: 'daily' })
   }
 
+  const saveDailyResult = (result: GameSummary) => {
+    if (result.mode !== 'daily') return
+    const storage = browserStorage()
+    const winner = storage
+      ? saveDailySummaryIfFirst(storage, result.date, result)
+      : result
+    if (result.date === utcDate()) setTodaySummary(winner)
+  }
+
+  const loadQuestion = async (current: GameSession, questionIndex: number) => {
+    setPendingRequest({ kind: 'question', questionIndex })
+    setIsSubmitting(true)
+    try {
+      const response = await fetch('/api/question', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          runId: current.runId,
+          runToken: current.runToken,
+          questionIndex,
+        }),
+      })
+      if (!response.ok) throw new Error('Question request failed')
+      const result = (await response.json()) as QuestionResponse
+      if (activeRunId.current !== current.runId) return
+      setPendingRequest(null)
+      setIsSubmitting(false)
+      setTeachInfo(null)
+      questionClockOffset.current = Math.min(
+        CLOCK_MS,
+        Math.max(0, result.elapsedMs),
+      )
+      setSession({
+        ...current,
+        questionIndex: result.questionIndex,
+        question: result.question,
+      })
+      setScreen('reel')
+    } catch {
+      if (activeRunId.current !== current.runId) return
+      setIsSubmitting(false)
+      setScreen('connection')
+    }
+  }
+
+  const sendAnswer = async (body: AnswerBody, current: GameSession) => {
+    try {
+      const response = await fetch('/api/answer', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(body),
+      })
+      if (!response.ok) throw new Error('Answer submission failed')
+      const result = (await response.json()) as AnswerResponse
+      if (activeRunId.current !== body.runId) return
+      const updatedCurrent = { ...current, progress: result.progress }
+      const nextIndex = result.next?.questionIndex ?? null
+
+      setPendingRequest(null)
+      setIsSubmitting(false)
+      setSession(updatedCurrent)
+      setSummary(result.summary)
+      if (result.summary) saveDailyResult(result.summary)
+
+      if (!result.correct) {
+        setTeachInfo({ answer: result.answer, teach: result.teach })
+        setPendingSummary(result.summary)
+        setPendingNextIndex(nextIndex)
+        setScreen('teach')
+        return
+      }
+
+      setTeachInfo(null)
+      if (!result.summary && nextIndex !== null) {
+        void loadQuestion(updatedCurrent, nextIndex)
+      } else {
+        setScreen('over')
+      }
+    } catch {
+      if (activeRunId.current !== body.runId) return
+      setIsSubmitting(false)
+      setScreen('connection')
+    }
+  }
+
+  const submitAnswer = (choice: string | null, clientMs: number | null) => {
+    if (!session || screen !== 'question' || answered.current) return
+    answered.current = true
+    const body: AnswerBody = {
+      runId: session.runId,
+      runToken: session.runToken,
+      questionIndex: session.questionIndex,
+      choice,
+      clientMs,
+    }
+    setPendingRequest({ kind: 'answer', body })
+    setIsSubmitting(true)
+    void sendAnswer(body, session)
+  }
+
+  const retryConnection = () => {
+    if (!pendingRequest || !session || isSubmitting) return
+    if (pendingRequest.kind === 'question') {
+      void loadQuestion(session, pendingRequest.questionIndex)
+      return
+    }
+    answered.current = true
+    setIsSubmitting(true)
+    void sendAnswer(pendingRequest.body, session)
+  }
+
+  const continueAfterTeach = () => {
+    if (isSubmitting) return
+    if (pendingSummary) {
+      setSummary(pendingSummary)
+      setPendingSummary(null)
+      setPendingNextIndex(null)
+      setScreen('over')
+    } else if (pendingNextIndex !== null && session) {
+      const nextIndex = pendingNextIndex
+      setPendingNextIndex(null)
+      void loadQuestion(session, nextIndex)
+    } else {
+      setScreen('home')
+    }
+  }
+
+  useEffect(() => {
+    continueAfterTeachRef.current = continueAfterTeach
+  })
+
+  useEffect(() => {
+    submitAnswerRef.current = submitAnswer
+  })
+
   const goHome = () => {
+    startGeneration.current += 1
+    activeRunId.current = null
+    setPendingRequest(null)
+    setPendingNextIndex(null)
+    setPendingSummary(null)
+    setIsSubmitting(false)
+    setIsStarting(false)
     setSession(null)
     setSummary(null)
     setScreen('home')
@@ -374,12 +444,12 @@ function App() {
   useEffect(() => {
     if (screen !== 'question' || !activeQuestionId) return
     answered.current = false
-    answerStartedAt.current = performance.now()
+    answerStartedAt.current = performance.now() - questionClockOffset.current
 
     const updateClock = () => {
       const elapsed = performance.now() - answerStartedAt.current
       setElapsedMs(Math.min(CLOCK_MS, elapsed))
-      if (elapsed >= CLOCK_MS) submitAnswerRef.current(false, null)
+      if (elapsed >= CLOCK_MS) submitAnswerRef.current(null, null)
     }
     const interval = window.setInterval(updateClock, 40)
     document.addEventListener('visibilitychange', updateClock)
@@ -390,8 +460,7 @@ function App() {
   }, [screen, activeQuestionId])
 
   const chooseAnswer = (choice: string) => {
-    const elapsed = elapsedSince(answerStartedAt.current)
-    submitAnswer(choice === session?.question.answer, elapsed)
+    submitAnswer(choice, Math.round(elapsedSince(answerStartedAt.current)))
   }
 
   const currentSummary = screen === 'over' ? summary : null
@@ -409,7 +478,12 @@ function App() {
           <p className="eyebrow">Football · Basketball · Baseball trivia</p>
           <h1>Streaking Sports</h1>
           <p className="tagline">No rulebook when you’re streaking.</p>
-          <button className="daily-button" onClick={openDaily}>
+          {startError && (
+            <p className="connection-note" role="alert">
+              Connection problem. Check your connection and try again.
+            </p>
+          )}
+          <button className="daily-button" onClick={openDaily} disabled={isStarting}>
             <span>{todaySummary ? 'Review today’s Daily 10' : 'Play Daily 10'}</span>
             <span aria-hidden="true">→</span>
           </button>
@@ -444,10 +518,23 @@ function App() {
                 <option value="players">Players</option>
               </select>
             </label>
-            <button className="classic-button" onClick={startClassic}>
+            <button className="classic-button" onClick={startClassic} disabled={isStarting}>
               Start classic <span aria-hidden="true">↗</span>
             </button>
           </section>
+        </section>
+      )}
+
+      {screen === 'noQuestions' && (
+        <section className="home-panel">
+          <p className="eyebrow">No questions available</p>
+          <h1>Try another matchup</h1>
+          <p className="tagline">
+            There aren’t any questions for those filters yet.
+          </p>
+          <button className="secondary-button" onClick={goHome}>
+            Back home
+          </button>
         </section>
       )}
 
@@ -487,6 +574,15 @@ function App() {
             </div>
           </div>
 
+          {screen === 'connection' && (
+            <div className="connection-note" role="alert">
+              Connection problem —{' '}
+              <button onClick={retryConnection} disabled={isSubmitting}>
+                Retry
+              </button>
+            </div>
+          )}
+
           {screen === 'reel' && (
             <div className="reel-stage" aria-live="polite">
               <p className="eyebrow">Your next question</p>
@@ -523,11 +619,12 @@ function App() {
                 </p>
                 <h2>{question.prompt}</h2>
                 <div className="answer-list">
-                  {session.choices.map((choice, index) => (
+                  {question.choices.map((choice, index) => (
                     <button
                       className="answer-button"
                       key={`${question.id}-${choice}`}
                       onClick={() => chooseAnswer(choice)}
+                      disabled={isSubmitting}
                     >
                       <span>{String.fromCharCode(65 + index)}</span>
                       {choice}
@@ -541,8 +638,8 @@ function App() {
           {screen === 'teach' && (
             <button className="teach-overlay" onClick={continueAfterTeach}>
               <span className="teach-label">THE RIGHT ANSWER</span>
-              <strong>{question.answer}</strong>
-              <span>{question.teach}</span>
+              <strong>{teachInfo?.answer}</strong>
+              <span>{teachInfo?.teach}</span>
               <small>Tap to continue · auto-continues in 2.5s</small>
             </button>
           )}
