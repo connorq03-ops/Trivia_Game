@@ -67,6 +67,7 @@ type AnswerResponse = {
 type QuestionResponse = {
   questionIndex: number
   question: PublicQuestion
+  elapsedMs: number
 }
 
 type PendingRequest =
@@ -132,6 +133,7 @@ function App() {
   const [startError, setStartError] = useState(false)
   const [elapsedMs, setElapsedMs] = useState(0)
   const answerStartedAt = useRef(0)
+  const questionClockOffset = useRef(0)
   const answered = useRef(false)
   // Results for any run other than this one (or after leaving a run) are dropped.
   const activeRunId = useRef<string | null>(null)
@@ -223,6 +225,7 @@ function App() {
       if (!response.ok || !('runId' in result)) throw new Error('Run creation failed')
 
       activeRunId.current = result.runId
+      questionClockOffset.current = 0
       setSession({
         mode: input.mode,
         runId: result.runId,
@@ -290,6 +293,10 @@ function App() {
       setPendingRequest(null)
       setIsSubmitting(false)
       setTeachInfo(null)
+      questionClockOffset.current = Math.min(
+        CLOCK_MS,
+        Math.max(0, result.elapsedMs),
+      )
       setSession({
         ...current,
         questionIndex: result.questionIndex,
@@ -437,7 +444,7 @@ function App() {
   useEffect(() => {
     if (screen !== 'question' || !activeQuestionId) return
     answered.current = false
-    answerStartedAt.current = performance.now()
+    answerStartedAt.current = performance.now() - questionClockOffset.current
 
     const updateClock = () => {
       const elapsed = performance.now() - answerStartedAt.current

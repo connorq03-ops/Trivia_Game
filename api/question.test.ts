@@ -45,6 +45,7 @@ describe('question handler', () => {
       {
         current_question_id: question.id,
         current_choices: [question.answer, ...question.wrong],
+        elapsed_ms: 0,
       },
     ])
     const response = await POST(makeRequest(validBody))
@@ -52,6 +53,7 @@ describe('question handler', () => {
 
     expect(response.status).toBe(200)
     expect(body.questionIndex).toBe(3)
+    expect(body.elapsedMs).toBe(0)
     expect(body.question.id).toBe(question.id)
     expect(body.question.choices).toHaveLength(4)
     expect(body.question).not.toHaveProperty('answer')
@@ -60,10 +62,26 @@ describe('question handler', () => {
     const [strings, ...values] = sql.mock.calls[0]
     const query = strings.join('?')
     expect(query).toContain('issued_at = coalesce(issued_at, now())')
+    expect(query).toContain('::bigint as elapsed_ms')
     expect(query).toContain('token_hash = ?')
     expect(query).toContain("status = 'active'")
     expect(values).toContain(hashRunToken(runToken))
     expect(values).toContain(3)
+  })
+
+  it("reports how long an earlier reveal's clock has run", async () => {
+    mockSql([
+      {
+        current_question_id: question.id,
+        current_choices: [question.answer, ...question.wrong],
+        elapsed_ms: '15000',
+      },
+    ])
+    const response = await POST(makeRequest(validBody))
+    const body = await response.json()
+
+    expect(response.status).toBe(200)
+    expect(body.elapsedMs).toBe(15000)
   })
 
   it('returns 409 when the run, token or index does not match', async () => {

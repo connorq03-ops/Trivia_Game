@@ -26,7 +26,8 @@ function parseQuestionInput(value: unknown): QuestionInput | null {
 }
 
 // Reveals the run's current question and starts its clock. Repeat calls
-// return the same question and keep the first start time.
+// return the same question, keep the first start time, and report how long
+// the clock has already been running.
 export async function POST(request: Request): Promise<Response> {
   let input: QuestionInput | null
   try {
@@ -45,8 +46,13 @@ export async function POST(request: Request): Promise<Response> {
         and token_hash = ${hashRunToken(input.runToken)}
         and question_index = ${input.questionIndex}
         and status = 'active'
-      returning current_question_id, current_choices
-    `) as { current_question_id: string | null; current_choices: string[] | null }[]
+      returning current_question_id, current_choices,
+        greatest(0, floor(extract(epoch from (now() - issued_at)) * 1000))::bigint as elapsed_ms
+    `) as {
+      current_question_id: string | null
+      current_choices: string[] | null
+      elapsed_ms: number | string | null
+    }[]
     const row = rows[0]
     if (!row) return Response.json({ error: 'stale' }, { status: 409 })
 
@@ -59,6 +65,7 @@ export async function POST(request: Request): Promise<Response> {
     return Response.json({
       questionIndex: input.questionIndex,
       question: publicQuestion(question, row.current_choices),
+      elapsedMs: Number(row.elapsed_ms ?? 0),
     })
   } catch {
     return Response.json({ error: 'server_error' }, { status: 500 })
