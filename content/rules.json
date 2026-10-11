@@ -1,0 +1,842 @@
+[
+  {
+    "id": "r-bb-inbound-5",
+    "factId": "bb-inbound",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA",
+      "NCAA"
+    ],
+    "difficulty": "easy",
+    "category": "Clock and timing",
+    "prompt": "Seconds a player has to inbound the ball before it's a violation?",
+    "answer": "5",
+    "wrong": [
+      "3",
+      "8",
+      "10"
+    ],
+    "teach": "The thrower-in must release the ball within 5 seconds.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-8-out-of-bounds-and-throw-in/",
+      "ref": "NBA Rule 8, Section III — The Throw-In"
+    }
+  },
+  {
+    "id": "r-nba-backcourt-8",
+    "factId": "nba-backcourt",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Clock and timing",
+    "prompt": "NBA: seconds to get the ball past half court?",
+    "answer": "8",
+    "wrong": [
+      "5",
+      "10",
+      "24"
+    ],
+    "teach": "A team can't keep the ball in its backcourt for more than 8 seconds.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-10-violations-and-penalties/",
+      "ref": "NBA Rule 10 — Violations (8-Second Rule)"
+    }
+  },
+  {
+    "id": "r-nba-shot-clock",
+    "factId": "shot-clock",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Clock and timing",
+    "prompt": "How long is the NBA shot clock?",
+    "answer": "24 seconds",
+    "wrong": [
+      "30 seconds",
+      "35 seconds",
+      "20 seconds"
+    ],
+    "teach": "The NBA shot clock starts at 24. NCAA men's uses 30.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-7-24-second-clock/",
+      "ref": "NBA Rule 7 — 24-Second Clock"
+    }
+  },
+  {
+    "id": "r-nba-lane-3",
+    "factId": "nba-three-seconds",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Clock and timing",
+    "prompt": "NBA: most seconds an offensive player can stay in the lane?",
+    "answer": "3",
+    "wrong": [
+      "5",
+      "2",
+      "4"
+    ],
+    "teach": "Offensive players can't stay in the lane for more than 3 seconds.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-10-violations-and-penalties/",
+      "ref": "NBA Rule 10, Section VI — Offensive Three-Second Rule"
+    }
+  },
+  {
+    "id": "r-nba-foul-out",
+    "factId": "foul-out",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Scoring",
+    "prompt": "NBA: personal fouls to foul out?",
+    "answer": "6",
+    "wrong": [
+      "5",
+      "4",
+      "7"
+    ],
+    "teach": "An NBA player is disqualified on his 6th personal foul. College players go at 5.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-3-players-substitutes-and-coaches/",
+      "ref": "NBA Rule 3, Section I — Team"
+    }
+  },
+  {
+    "id": "r-bb-rim-height",
+    "factId": "rim-height",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA",
+      "NCAA"
+    ],
+    "difficulty": "easy",
+    "category": "Numbers and dimensions",
+    "prompt": "How high is the basketball rim?",
+    "answer": "10 feet",
+    "wrong": [
+      "9 feet",
+      "11 feet",
+      "12 feet"
+    ],
+    "teach": "The rim is 10 feet above the floor.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-1-court-dimensions-equipment/",
+      "ref": "NBA Rule 1 — Court Dimensions, Equipment"
+    }
+  },
+  {
+    "id": "r-nba-oreb-14",
+    "factId": "nba-oreb-reset",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Clock and timing",
+    "prompt": "NBA: shot clock resets to what after an offensive rebound off the rim?",
+    "answer": "14 seconds",
+    "wrong": [
+      "24 seconds",
+      "10 seconds",
+      "18 seconds"
+    ],
+    "teach": "If the offense rebounds a shot that hit the rim, the shot clock resets to 14.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-7-24-second-clock/",
+      "ref": "NBA Rule 7, Section IV — Resetting Shot Clock"
+    },
+    "validFrom": 2018
+  },
+  {
+    "id": "r-ncaa-foul-out",
+    "factId": "foul-out",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NCAA"
+    ],
+    "difficulty": "medium",
+    "category": "Scoring",
+    "prompt": "Personal fouls to foul out in men's college basketball?",
+    "answer": "5",
+    "wrong": [
+      "6",
+      "4",
+      "7"
+    ],
+    "teach": "College players are disqualified on their 5th personal foul. The NBA allows 6.",
+    "source": {
+      "url": "https://www.ncaa.org/sports/2021/6/2/basketball-rules-of-the-game.aspx",
+      "ref": "NCAA Men's Basketball Rules — Rule 10 (Fouls and Penalties)"
+    }
+  },
+  {
+    "id": "r-nba-corner-three",
+    "factId": "nba-corner-three",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Numbers and dimensions",
+    "prompt": "How far is the NBA corner three?",
+    "answer": "22 feet",
+    "wrong": [
+      "23 ft 9 in",
+      "21 feet",
+      "20 ft 9 in"
+    ],
+    "teach": "The three-point line runs 3 feet from the sideline in the corners: 22 feet.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-1-court-dimensions-equipment/",
+      "ref": "NBA Rule 1 — Court Dimensions, Equipment"
+    }
+  },
+  {
+    "id": "r-bb-ft-line",
+    "factId": "ft-line",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA",
+      "NCAA"
+    ],
+    "difficulty": "medium",
+    "category": "Numbers and dimensions",
+    "prompt": "Distance from the free-throw line to the backboard?",
+    "answer": "15 feet",
+    "wrong": [
+      "12 feet",
+      "18 feet",
+      "19 ft 9 in"
+    ],
+    "teach": "The free-throw line is 15 feet from the face of the backboard.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-1-court-dimensions-equipment/",
+      "ref": "NBA Rule 1 — Court Dimensions, Equipment"
+    }
+  },
+  {
+    "id": "r-nba-top-three",
+    "factId": "nba-top-three",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "NBA three-point distance at the top of the arc?",
+    "answer": "23 ft 9 in",
+    "wrong": [
+      "22 feet",
+      "22 ft 1¾ in",
+      "25 feet"
+    ],
+    "teach": "The arc is 23 feet 9 inches from the middle of the basket.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-1-court-dimensions-equipment/",
+      "ref": "NBA Rule 1 — Court Dimensions, Equipment"
+    }
+  },
+  {
+    "id": "r-nba-penalty-5th",
+    "factId": "nba-penalty",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Scoring",
+    "prompt": "NBA, before the last 2 minutes: penalty free throws start on which team foul of a quarter?",
+    "answer": "5th",
+    "wrong": [
+      "4th",
+      "6th",
+      "7th"
+    ],
+    "teach": "Team fouls past 4 in a quarter give free throws. In the last 2 minutes, a team's 2nd foul can trigger them.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-12-fouls-and-penalties/",
+      "ref": "NBA Rule 12B — Penalty Situations"
+    }
+  },
+  {
+    "id": "r-fb-safety",
+    "factId": "fb-safety",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL",
+      "NCAA"
+    ],
+    "difficulty": "easy",
+    "category": "Scoring",
+    "prompt": "How many points is a safety worth?",
+    "answer": "2",
+    "wrong": [
+      "1",
+      "3",
+      "6"
+    ],
+    "teach": "A safety scores 2 points for the defense.",
+    "source": {
+      "url": "https://operations.nfl.com/the-rules/nfl-rulebook/",
+      "ref": "NFL Rule 11, Section 1 — Value of Scores"
+    }
+  },
+  {
+    "id": "r-fb-first-down",
+    "factId": "fb-first-down",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL",
+      "NCAA"
+    ],
+    "difficulty": "easy",
+    "category": "Numbers and dimensions",
+    "prompt": "Yards needed for a first down?",
+    "answer": "10",
+    "wrong": [
+      "5",
+      "15",
+      "20"
+    ],
+    "teach": "The offense must gain 10 yards in four downs.",
+    "source": {
+      "url": "https://operations.nfl.com/the-rules/nfl-rulebook/",
+      "ref": "NFL Rule 7 — Series of Downs"
+    }
+  },
+  {
+    "id": "r-nfl-timeouts",
+    "factId": "nfl-timeouts",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Clock and timing",
+    "prompt": "NFL: timeouts per team per half?",
+    "answer": "3",
+    "wrong": [
+      "2",
+      "4",
+      "5"
+    ],
+    "teach": "Each NFL team gets three timeouts per half.",
+    "source": {
+      "url": "https://operations.nfl.com/the-rules/nfl-rulebook/",
+      "ref": "NFL Rule 4, Section 5 — Timeouts"
+    }
+  },
+  {
+    "id": "r-nfl-two-feet",
+    "factId": "feet-in-bounds",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "What's the call?",
+    "prompt": "NFL: how many feet must a receiver get down in bounds for a catch?",
+    "answer": "2",
+    "wrong": [
+      "1",
+      "3",
+      "0"
+    ],
+    "teach": "NFL receivers need both feet (or another body part besides hands) down in bounds.",
+    "source": {
+      "url": "https://operations.nfl.com/the-rules/nfl-rulebook/",
+      "ref": "NFL Rule 8, Section 1 — Forward Pass"
+    }
+  },
+  {
+    "id": "r-ncaa-one-foot",
+    "factId": "feet-in-bounds",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NCAA"
+    ],
+    "difficulty": "medium",
+    "category": "What's the call?",
+    "prompt": "College football: feet a receiver must get down in bounds for a catch?",
+    "answer": "1",
+    "wrong": [
+      "2",
+      "3",
+      "0"
+    ],
+    "teach": "In college, one foot in bounds is enough for a catch.",
+    "source": {
+      "url": "https://www.ncaa.org/sports/2021/6/2/football-rules-of-the-game.aspx",
+      "ref": "NCAA Football Rules — Rule 2 (Catch)"
+    }
+  },
+  {
+    "id": "r-nfl-play-clock",
+    "factId": "nfl-play-clock",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Clock and timing",
+    "prompt": "NFL play clock after a play ends?",
+    "answer": "40 seconds",
+    "wrong": [
+      "25 seconds",
+      "30 seconds",
+      "45 seconds"
+    ],
+    "teach": "The play clock is 40 seconds after a play; 25 after administrative stoppages.",
+    "source": {
+      "url": "https://operations.nfl.com/the-rules/nfl-rulebook/",
+      "ref": "NFL Rule 4, Section 6 — Delay of Game"
+    }
+  },
+  {
+    "id": "r-nfl-pat-15",
+    "factId": "nfl-pat-line",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Numbers and dimensions",
+    "prompt": "NFL: the extra-point kick is snapped from which yard line?",
+    "answer": "15",
+    "wrong": [
+      "2",
+      "3",
+      "10"
+    ],
+    "teach": "Since 2015, NFL extra-point kicks are snapped from the 15-yard line.",
+    "source": {
+      "url": "https://operations.nfl.com/the-rules/nfl-rulebook/",
+      "ref": "NFL Rule 11, Section 3 — Try"
+    },
+    "validFrom": 2015
+  },
+  {
+    "id": "r-nfl-two-pt",
+    "factId": "nfl-two-point-line",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Numbers and dimensions",
+    "prompt": "NFL: a two-point try is snapped from which yard line?",
+    "answer": "2",
+    "wrong": [
+      "3",
+      "5",
+      "15"
+    ],
+    "teach": "Two-point tries are snapped from the 2-yard line.",
+    "source": {
+      "url": "https://operations.nfl.com/the-rules/nfl-rulebook/",
+      "ref": "NFL Rule 11, Section 3 — Try"
+    }
+  },
+  {
+    "id": "r-nfl-ot-length",
+    "factId": "nfl-ot",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Clock and timing",
+    "prompt": "NFL: how long is regular-season overtime?",
+    "answer": "10 minutes",
+    "wrong": [
+      "15 minutes",
+      "12 minutes",
+      "5 minutes"
+    ],
+    "teach": "Regular-season OT is one 10-minute period; it can end in a tie. Playoff OT periods are 15.",
+    "source": {
+      "url": "https://operations.nfl.com/the-rules/nfl-rulebook/",
+      "ref": "NFL Rule 16, Section 1 — Overtime Procedures"
+    },
+    "validFrom": 2017
+  },
+  {
+    "id": "r-fb-field-width",
+    "factId": "fb-field-width",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL",
+      "NCAA"
+    ],
+    "difficulty": "medium",
+    "category": "Numbers and dimensions",
+    "prompt": "How wide is the football field?",
+    "answer": "53⅓ yards",
+    "wrong": [
+      "50 yards",
+      "60 yards",
+      "65 yards"
+    ],
+    "teach": "The field is 160 feet (53⅓ yards) wide. The CFL field is 65 yards wide.",
+    "source": {
+      "url": "https://operations.nfl.com/the-rules/nfl-rulebook/",
+      "ref": "NFL Rule 1, Section 1 — Dimensions"
+    }
+  },
+  {
+    "id": "r-nfl-grounding-ez",
+    "factId": "nfl-grounding-ez",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "What's the call?",
+    "prompt": "QB intentionally grounds the ball from his own end zone. The call?",
+    "answer": "Safety",
+    "wrong": [
+      "Touchback",
+      "Loss of down",
+      "10-yard penalty"
+    ],
+    "teach": "Intentional grounding from your own end zone is a safety.",
+    "source": {
+      "url": "https://operations.nfl.com/the-rules/nfl-rulebook/",
+      "ref": "NFL Rule 8, Section 2 — Intentional Grounding"
+    }
+  },
+  {
+    "id": "r-nfl-dpi-spot",
+    "factId": "nfl-dpi",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "NFL: defensive pass interference 40 yards downfield. Where's the ball placed?",
+    "answer": "Spot of the foul",
+    "wrong": [
+      "15 yards from scrimmage",
+      "Line of scrimmage",
+      "Half the distance"
+    ],
+    "teach": "NFL DPI is a first down at the spot of the foul; in the end zone, at the 1.",
+    "source": {
+      "url": "https://operations.nfl.com/the-rules/nfl-rulebook/",
+      "ref": "NFL Rule 8, Section 5 — Pass Interference"
+    }
+  },
+  {
+    "id": "r-mlb-walk",
+    "factId": "mlb-walk",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "Scoring",
+    "prompt": "How many balls for a walk?",
+    "answer": "4",
+    "wrong": [
+      "3",
+      "5",
+      "6"
+    ],
+    "teach": "Four balls outside the zone award the batter first base.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rules — Definition of Terms (Base on Balls); 9.14"
+    }
+  },
+  {
+    "id": "r-mlb-bases-90",
+    "factId": "mlb-base-distance",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "Numbers and dimensions",
+    "prompt": "Distance between bases in MLB?",
+    "answer": "90 feet",
+    "wrong": [
+      "60 feet",
+      "100 feet",
+      "80 feet"
+    ],
+    "teach": "The bases are 90 feet apart.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rules 2.01 — Layout of the Field"
+    }
+  },
+  {
+    "id": "r-mlb-grd",
+    "factId": "mlb-grd",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "What's the call?",
+    "prompt": "A fair ball bounces over the outfield fence. The call?",
+    "answer": "Ground-rule double",
+    "wrong": [
+      "Home run",
+      "Triple",
+      "Single"
+    ],
+    "teach": "A fair ball that bounces out of play gives the batter and runners two bases.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rules 5.05(a)(6)"
+    }
+  },
+  {
+    "id": "r-mlb-xtra-runner",
+    "factId": "mlb-xtra-runner",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "What's the call?",
+    "prompt": "Regular-season extra innings: where does the automatic runner start?",
+    "answer": "2nd base",
+    "wrong": [
+      "1st base",
+      "3rd base",
+      "No runner"
+    ],
+    "teach": "Each extra half-inning in the regular season starts with a runner on 2nd.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rules 7.01(b)(2)"
+    },
+    "validFrom": 2023
+  },
+  {
+    "id": "r-mlb-foul-tip",
+    "factId": "mlb-foul-tip",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "What's the call?",
+    "prompt": "Foul tip with 2 strikes, caught by the catcher. The call?",
+    "answer": "Strike three, ball live",
+    "wrong": [
+      "Foul ball",
+      "Strike three, dead ball",
+      "Ball"
+    ],
+    "teach": "A caught foul tip is a strike and the ball stays in play, so 2 strikes means strikeout.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rules — Definition of Terms (Foul Tip)"
+    }
+  },
+  {
+    "id": "r-mlb-rubber",
+    "factId": "mlb-rubber",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Numbers and dimensions",
+    "prompt": "Distance from the pitching rubber to home plate?",
+    "answer": "60 ft 6 in",
+    "wrong": [
+      "60 feet",
+      "58 ft 6 in",
+      "62 feet"
+    ],
+    "teach": "The pitcher's plate is 60 feet 6 inches from the rear point of home plate.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rules 2.01 — Layout of the Field"
+    }
+  },
+  {
+    "id": "r-mlb-clock-empty",
+    "factId": "mlb-pitch-clock",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Clock and timing",
+    "prompt": "MLB pitch clock with the bases empty?",
+    "answer": "15 seconds",
+    "wrong": [
+      "18 seconds",
+      "20 seconds",
+      "12 seconds"
+    ],
+    "teach": "The pitch timer is 15 seconds with the bases empty and 18 with runners on.",
+    "source": {
+      "url": "https://www.mlb.com/glossary/rules/pitch-timer",
+      "ref": "MLB Glossary — Pitch Timer"
+    },
+    "validFrom": 2023
+  },
+  {
+    "id": "r-mlb-clock-runners",
+    "factId": "mlb-pitch-clock",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Clock and timing",
+    "prompt": "MLB pitch clock with runners on base?",
+    "answer": "18 seconds",
+    "wrong": [
+      "15 seconds",
+      "20 seconds",
+      "25 seconds"
+    ],
+    "teach": "Since 2024 it's 18 seconds with runners on (20 in 2023).",
+    "source": {
+      "url": "https://www.mlb.com/glossary/rules/pitch-timer",
+      "ref": "MLB Glossary — Pitch Timer"
+    },
+    "validFrom": 2024
+  },
+  {
+    "id": "r-mlb-balk",
+    "factId": "mlb-balk",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "What's the call?",
+    "prompt": "Pitcher balks with runners on. The call?",
+    "answer": "Runners move up 1 base",
+    "wrong": [
+      "Ball to the batter",
+      "Batter to 1st",
+      "Runner nearest home out"
+    ],
+    "teach": "On a balk with runners on, the ball is dead and each runner advances one base.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rules 6.02(a)"
+    }
+  },
+  {
+    "id": "r-mlb-runner-hit",
+    "factId": "mlb-runner-hit",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "What's the call?",
+    "prompt": "Runner off the base is hit by a fair grounder before it passes an infielder. The call?",
+    "answer": "Runner is out",
+    "wrong": [
+      "Ball is live",
+      "Dead ball, do-over",
+      "Batter is out"
+    ],
+    "teach": "A runner touched by a fair ball before it passes an infielder is out.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rules 5.09(b)(7)"
+    }
+  },
+  {
+    "id": "r-mlb-infield-fly",
+    "factId": "mlb-infield-fly",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "Runners on 1st and 2nd, 1 out, routine pop-up to short. The call?",
+    "answer": "Infield fly, batter out",
+    "wrong": [
+      "Live ball",
+      "Force at 2nd",
+      "Runners must tag"
+    ],
+    "teach": "With 1st and 2nd occupied and under 2 outs, a catchable infield pop-up is an infield fly.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rules — Definition of Terms (Infield Fly)"
+    }
+  },
+  {
+    "id": "r-mlb-d3k",
+    "factId": "mlb-dropped-third",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "2 outs, runner on 1st, catcher drops strike three. Can the batter run?",
+    "answer": "Yes",
+    "wrong": [
+      "No",
+      "Only on a wild pitch",
+      "Only if 1st is empty"
+    ],
+    "teach": "With 2 outs the batter can run on a dropped third strike even if 1st is occupied.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rules 5.05(a)(2)"
+    }
+  }
+]
