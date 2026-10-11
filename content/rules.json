@@ -838,5 +838,1364 @@
       "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
       "ref": "MLB Rules 5.05(a)(2)"
     }
+  },
+  {
+    "id": "r-nba-quarter-length-1",
+    "factId": "nba-quarter-length",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Clock and timing",
+    "prompt": "How long is an NBA quarter?",
+    "answer": "12 minutes",
+    "wrong": [
+      "10 minutes",
+      "15 minutes",
+      "20 minutes"
+    ],
+    "teach": "NBA quarters are 12 minutes, so regulation is 48 minutes.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
+      "ref": "NBA Rule 5, Section II — Timing"
+    }
+  },
+  {
+    "id": "r-nba-quarter-length-2",
+    "factId": "nba-quarter-length",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Clock and timing",
+    "prompt": "NBA: minutes in a regulation quarter?",
+    "answer": "12",
+    "wrong": [
+      "10",
+      "15",
+      "20"
+    ],
+    "teach": "NBA quarters are 12 minutes, so regulation is 48 minutes.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
+      "ref": "NBA Rule 5, Section II — Timing"
+    }
+  },
+  {
+    "id": "r-nba-quarter-length-3",
+    "factId": "nba-quarter-length",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Clock and timing",
+    "prompt": "NBA regulation is 48 minutes. How long is each quarter?",
+    "answer": "12 minutes",
+    "wrong": [
+      "10 minutes",
+      "16 minutes",
+      "24 minutes"
+    ],
+    "teach": "NBA quarters are 12 minutes, so regulation is 48 minutes.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
+      "ref": "NBA Rule 5, Section II — Timing"
+    }
+  },
+  {
+    "id": "r-nba-ot-length-1",
+    "factId": "nba-ot-length",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Clock and timing",
+    "prompt": "How long is an NBA overtime period?",
+    "answer": "5 minutes",
+    "wrong": [
+      "3 minutes",
+      "10 minutes",
+      "12 minutes"
+    ],
+    "teach": "Every NBA overtime period is 5 minutes.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
+      "ref": "NBA Rule 5, Section II — Timing"
+    }
+  },
+  {
+    "id": "r-nba-ot-length-2",
+    "factId": "nba-ot-length",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Clock and timing",
+    "prompt": "NBA game tied after regulation. How long is the overtime?",
+    "answer": "5 minutes",
+    "wrong": [
+      "4 minutes",
+      "6 minutes",
+      "10 minutes"
+    ],
+    "teach": "Every NBA overtime period is 5 minutes.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
+      "ref": "NBA Rule 5, Section II — Timing"
+    }
+  },
+  {
+    "id": "r-nba-ot-length-3",
+    "factId": "nba-ot-length",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Clock and timing",
+    "prompt": "NBA: minutes in each overtime period?",
+    "answer": "5",
+    "wrong": [
+      "3",
+      "4",
+      "6"
+    ],
+    "teach": "Every NBA overtime period is 5 minutes.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
+      "ref": "NBA Rule 5, Section II — Timing"
+    }
+  },
+  {
+    "id": "r-nba-halftime-1",
+    "factId": "nba-halftime",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Clock and timing",
+    "prompt": "How long is NBA halftime?",
+    "answer": "15 minutes",
+    "wrong": [
+      "10 minutes",
+      "12 minutes",
+      "20 minutes"
+    ],
+    "teach": "The NBA allows 15 minutes between halves.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
+      "ref": "NBA Rule 5, Section II — Timing"
+    }
+  },
+  {
+    "id": "r-nba-halftime-2",
+    "factId": "nba-halftime",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Clock and timing",
+    "prompt": "NBA: minutes allowed between halves?",
+    "answer": "15",
+    "wrong": [
+      "10",
+      "12",
+      "20"
+    ],
+    "teach": "The NBA allows 15 minutes between halves.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
+      "ref": "NBA Rule 5, Section II — Timing"
+    }
+  },
+  {
+    "id": "r-nba-timeouts-1",
+    "factId": "nba-timeouts",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Clock and timing",
+    "prompt": "NBA: charged timeouts per team in regulation?",
+    "answer": "7",
+    "wrong": [
+      "5",
+      "6",
+      "8"
+    ],
+    "teach": "Each NBA team gets 7 charged timeouts in regulation, with at most 4 in the 4th quarter.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
+      "ref": "NBA Rule 5, Section VI — Timeouts"
+    }
+  },
+  {
+    "id": "r-nba-timeouts-2",
+    "factId": "nba-timeouts",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Clock and timing",
+    "prompt": "How many timeouts does each NBA team get in regulation?",
+    "answer": "7",
+    "wrong": [
+      "4",
+      "6",
+      "9"
+    ],
+    "teach": "Each NBA team gets 7 charged timeouts in regulation, with at most 4 in the 4th quarter.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
+      "ref": "NBA Rule 5, Section VI — Timeouts"
+    }
+  },
+  {
+    "id": "r-nba-4q-timeouts-1",
+    "factId": "nba-4q-timeouts",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Clock and timing",
+    "prompt": "NBA: most timeouts a team can use in the 4th quarter?",
+    "answer": "4",
+    "wrong": [
+      "2",
+      "3",
+      "7"
+    ],
+    "teach": "NBA teams may use no more than 4 timeouts in the 4th quarter.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
+      "ref": "NBA Rule 5, Section VI — Timeouts"
+    }
+  },
+  {
+    "id": "r-nba-ot-timeouts-1",
+    "factId": "nba-ot-timeouts",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Clock and timing",
+    "prompt": "NBA: team timeouts allowed in each overtime period?",
+    "answer": "2",
+    "wrong": [
+      "1",
+      "3",
+      "4"
+    ],
+    "teach": "Each NBA team gets 2 team timeouts in every overtime period.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
+      "ref": "NBA Rule 5, Section VI — Timeouts"
+    }
+  },
+  {
+    "id": "r-nba-ot-timeouts-2",
+    "factId": "nba-ot-timeouts",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Clock and timing",
+    "prompt": "NBA overtime starts. Timeouts each team gets for the period?",
+    "answer": "2",
+    "wrong": [
+      "0",
+      "1",
+      "3"
+    ],
+    "teach": "Each NBA team gets 2 team timeouts in every overtime period.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
+      "ref": "NBA Rule 5, Section VI — Timeouts"
+    }
+  },
+  {
+    "id": "r-nba-mandatory-timeouts-1",
+    "factId": "nba-mandatory-timeouts",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Clock and timing",
+    "prompt": "NBA: mandatory timeouts in each period?",
+    "answer": "2",
+    "wrong": [
+      "1",
+      "3",
+      "4"
+    ],
+    "teach": "Every NBA period must have two mandatory timeouts; the scorer takes one if no team has.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
+      "ref": "NBA Rule 5, Section VI — Timeouts"
+    }
+  },
+  {
+    "id": "r-nba-ft-tap-in-1",
+    "factId": "nba-ft-tap-in",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Scoring",
+    "prompt": "NBA: a missed free throw is tapped in by a player. Points?",
+    "answer": "2",
+    "wrong": [
+      "1",
+      "3",
+      "0"
+    ],
+    "teach": "A missed free throw tapped into the basket counts 2 points for the player who tapped it.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
+      "ref": "NBA Rule 5, Section I — Scoring"
+    }
+  },
+  {
+    "id": "r-nba-ft-tap-in-2",
+    "factId": "nba-ft-tap-in",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Scoring",
+    "prompt": "NBA: missed free throw, a teammate taps it in. How many points?",
+    "answer": "2",
+    "wrong": [
+      "0",
+      "1",
+      "3"
+    ],
+    "teach": "A missed free throw tapped into the basket counts 2 points for the player who tapped it.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
+      "ref": "NBA Rule 5, Section I — Scoring"
+    }
+  },
+  {
+    "id": "r-nba-goaltending-1",
+    "factId": "nba-goaltending",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "What's the call?",
+    "prompt": "NBA: defender goaltends a 3-point attempt. Points awarded?",
+    "answer": "3",
+    "wrong": [
+      "0",
+      "1",
+      "2"
+    ],
+    "teach": "Goaltending awards the shot's value: 2 points from inside the arc, 3 from beyond it.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-11-basket-interference-goaltending/",
+      "ref": "NBA Rule 11, Section I — Basket Interference, Goaltending"
+    }
+  },
+  {
+    "id": "r-nba-goaltending-2",
+    "factId": "nba-goaltending",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "What's the call?",
+    "prompt": "NBA: defender goaltends a 2-point try. The call?",
+    "answer": "2 points awarded",
+    "wrong": [
+      "Jump ball",
+      "Shot clock reset",
+      "Technical foul"
+    ],
+    "teach": "Goaltending awards the shot's value: 2 points from inside the arc, 3 from beyond it.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-11-basket-interference-goaltending/",
+      "ref": "NBA Rule 11, Section I — Basket Interference, Goaltending"
+    }
+  },
+  {
+    "id": "r-nba-backboard-width-1",
+    "factId": "nba-backboard-width",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "How wide is an NBA backboard?",
+    "answer": "6 feet",
+    "wrong": [
+      "4 feet",
+      "5 feet",
+      "8 feet"
+    ],
+    "teach": "An NBA backboard is 6 feet wide and 3½ feet tall.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-1-court-dimensions-equipment/",
+      "ref": "NBA Rule 1, Section II — Equipment"
+    }
+  },
+  {
+    "id": "r-nba-backboard-height-1",
+    "factId": "nba-backboard-height",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "How tall is an NBA backboard, top to bottom?",
+    "answer": "3½ feet",
+    "wrong": [
+      "2½ feet",
+      "3 feet",
+      "4 feet"
+    ],
+    "teach": "An NBA backboard is 6 feet wide and 3½ feet tall.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-1-court-dimensions-equipment/",
+      "ref": "NBA Rule 1, Section II — Equipment"
+    }
+  },
+  {
+    "id": "r-nba-restricted-area-1",
+    "factId": "nba-restricted-area",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Numbers and dimensions",
+    "prompt": "NBA restricted area: radius from the center of the rim?",
+    "answer": "4 feet",
+    "wrong": [
+      "3 feet",
+      "5 feet",
+      "6 feet"
+    ],
+    "teach": "The restricted-area arc is 4 feet from the center of the rim.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-1-court-dimensions-equipment/",
+      "ref": "NBA Rule 1, Section I — Court and Dimensions"
+    }
+  },
+  {
+    "id": "r-nba-restricted-area-2",
+    "factId": "nba-restricted-area",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Numbers and dimensions",
+    "prompt": "How far from the rim's center is the NBA restricted-area arc?",
+    "answer": "4 feet",
+    "wrong": [
+      "2 feet",
+      "6 feet",
+      "8 feet"
+    ],
+    "teach": "The restricted-area arc is 4 feet from the center of the rim.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-1-court-dimensions-equipment/",
+      "ref": "NBA Rule 1, Section I — Court and Dimensions"
+    }
+  },
+  {
+    "id": "r-nba-two-techs-1",
+    "factId": "nba-two-techs",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "What's the call?",
+    "prompt": "NBA: unsportsmanlike technicals that mean automatic ejection?",
+    "answer": "2",
+    "wrong": [
+      "1",
+      "3",
+      "4"
+    ],
+    "teach": "Two unsportsmanlike technical fouls mean an automatic ejection in the NBA.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-12-fouls-and-penalties/",
+      "ref": "NBA Rule 12A, Section V — Conduct"
+    }
+  },
+  {
+    "id": "r-nba-two-techs-2",
+    "factId": "nba-two-techs",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "What's the call?",
+    "prompt": "NBA player gets his 2nd unsportsmanlike technical. The call?",
+    "answer": "Ejection",
+    "wrong": [
+      "One free throw only",
+      "Loss of possession",
+      "Benched a quarter"
+    ],
+    "teach": "Two unsportsmanlike technical fouls mean an automatic ejection in the NBA.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-12-fouls-and-penalties/",
+      "ref": "NBA Rule 12A, Section V — Conduct"
+    }
+  },
+  {
+    "id": "r-nba-two-techs-3",
+    "factId": "nba-two-techs",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "What's the call?",
+    "prompt": "NBA coach gets a 2nd unsportsmanlike technical. Result?",
+    "answer": "Ejected",
+    "wrong": [
+      "Fined only",
+      "A warning",
+      "Loses a timeout"
+    ],
+    "teach": "Two unsportsmanlike technical fouls mean an automatic ejection in the NBA.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-12-fouls-and-penalties/",
+      "ref": "NBA Rule 12A, Section V — Conduct"
+    }
+  },
+  {
+    "id": "r-nba-flagrant-2-1",
+    "factId": "nba-flagrant-2",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "What's the call?",
+    "prompt": "NBA: a player is called for a Flagrant 2. What happens to him?",
+    "answer": "Ejected",
+    "wrong": [
+      "Benched 5 minutes",
+      "Nothing extra",
+      "Loses a timeout"
+    ],
+    "teach": "A Flagrant 2 (unnecessary and excessive contact) means ejection, plus 2 free throws and the ball.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-12-fouls-and-penalties/",
+      "ref": "NBA Rule 12B, Section IV — Flagrant Foul"
+    }
+  },
+  {
+    "id": "r-nba-flagrant-2-2",
+    "factId": "nba-flagrant-2",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "What's the call?",
+    "prompt": "NBA: which foul means automatic ejection for the fouler?",
+    "answer": "Flagrant 2",
+    "wrong": [
+      "Flagrant 1",
+      "Clear-path foul",
+      "Loose-ball foul"
+    ],
+    "teach": "A Flagrant 2 (unnecessary and excessive contact) means ejection, plus 2 free throws and the ball.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-12-fouls-and-penalties/",
+      "ref": "NBA Rule 12B, Section IV — Flagrant Foul"
+    }
+  },
+  {
+    "id": "r-nba-min-players-1",
+    "factId": "nba-min-players",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "NBA: fewest players a team must dress for a regular-season game?",
+    "answer": "8",
+    "wrong": [
+      "5",
+      "7",
+      "10"
+    ],
+    "teach": "NBA teams must dress at least 8 players for preseason and regular-season games, 9 in the playoffs.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-12-fouls-and-penalties/",
+      "ref": "NBA Rule 12A, Section VII"
+    }
+  },
+  {
+    "id": "r-nba-challenge-1",
+    "factId": "nba-challenge",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "What's the call?",
+    "prompt": "NBA: coach's challenges each team starts the game with?",
+    "answer": "1",
+    "wrong": [
+      "0",
+      "2",
+      "3"
+    ],
+    "teach": "Each NBA team gets 1 challenge per game. If it succeeds, the team gets a second one.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-14-coachs-challenge/",
+      "ref": "NBA Rule 14, Section I — Overview"
+    }
+  },
+  {
+    "id": "r-nba-challenge-2",
+    "factId": "nba-challenge",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "NBA: a team's first coach's challenge succeeds. What does it earn?",
+    "answer": "A second challenge",
+    "wrong": [
+      "Two free throws",
+      "Possession",
+      "Nothing more"
+    ],
+    "teach": "Each NBA team gets 1 challenge per game. If it succeeds, the team gets a second one.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-14-coachs-challenge/",
+      "ref": "NBA Rule 14, Section I — Overview"
+    }
+  },
+  {
+    "id": "r-nba-clear-path-1",
+    "factId": "nba-clear-path",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "NBA clear-path foul. The penalty?",
+    "answer": "2 FTs and the ball",
+    "wrong": [
+      "1 FT and the ball",
+      "2 free throws only",
+      "Ejection"
+    ],
+    "teach": "A clear-path foul gives 2 free throws plus possession on the sideline.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-12-fouls-and-penalties/",
+      "ref": "NBA Rule 12B, Section I — Types"
+    }
+  },
+  {
+    "id": "r-mlb-mound-height-1",
+    "factId": "mlb-mound-height",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "MLB: how high is the pitcher's plate above home plate?",
+    "answer": "10 inches",
+    "wrong": [
+      "6 inches",
+      "12 inches",
+      "15 inches"
+    ],
+    "teach": "The pitcher's plate sits 10 inches above the level of home plate.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rules 2.01 — Layout of the Field"
+    }
+  },
+  {
+    "id": "r-mlb-mound-height-2",
+    "factId": "mlb-mound-height",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "Height of an MLB mound's rubber, measured from home plate level?",
+    "answer": "10 inches",
+    "wrong": [
+      "8 inches",
+      "13 inches",
+      "18 inches"
+    ],
+    "teach": "The pitcher's plate sits 10 inches above the level of home plate.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rules 2.01 — Layout of the Field"
+    }
+  },
+  {
+    "id": "r-mlb-fence-min-1",
+    "factId": "mlb-fence-min",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "MLB rules: minimum distance from home plate to the nearest fence?",
+    "answer": "250 feet",
+    "wrong": [
+      "200 feet",
+      "300 feet",
+      "325 feet"
+    ],
+    "teach": "The nearest fair-territory fence must be 250+ feet from home; 320 down the lines and 400 to center are preferred.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rules 2.01 — Layout of the Field"
+    }
+  },
+  {
+    "id": "r-mlb-plate-width-1",
+    "factId": "mlb-plate-width",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Numbers and dimensions",
+    "prompt": "How wide is home plate?",
+    "answer": "17 inches",
+    "wrong": [
+      "12 inches",
+      "15 inches",
+      "18 inches"
+    ],
+    "teach": "Home plate is a five-sided slab with a 17-inch front edge.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rules 2.02 — Home Base"
+    }
+  },
+  {
+    "id": "r-mlb-plate-width-2",
+    "factId": "mlb-plate-width",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Numbers and dimensions",
+    "prompt": "Home plate's front edge measures how many inches?",
+    "answer": "17",
+    "wrong": [
+      "15",
+      "16",
+      "18"
+    ],
+    "teach": "Home plate is a five-sided slab with a 17-inch front edge.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rules 2.02 — Home Base"
+    }
+  },
+  {
+    "id": "r-mlb-ball-weight-1",
+    "factId": "mlb-ball-weight",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "How much does an MLB baseball weigh?",
+    "answer": "5 to 5¼ oz",
+    "wrong": [
+      "3 to 3¼ oz",
+      "4 to 4¼ oz",
+      "6 to 6¼ oz"
+    ],
+    "teach": "A baseball weighs 5 to 5¼ ounces and measures 9 to 9¼ inches around.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rules 3.01 — The Ball"
+    }
+  },
+  {
+    "id": "r-mlb-ball-circ-1",
+    "factId": "mlb-ball-circ",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "Circumference of an MLB baseball?",
+    "answer": "9 to 9¼ inches",
+    "wrong": [
+      "8 to 8¼ inches",
+      "10 to 10¼ inches",
+      "11 to 11¼ inches"
+    ],
+    "teach": "A baseball weighs 5 to 5¼ ounces and measures 9 to 9¼ inches around.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rules 3.01 — The Ball"
+    }
+  },
+  {
+    "id": "r-mlb-bat-length-1",
+    "factId": "mlb-bat-length",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Numbers and dimensions",
+    "prompt": "Longest bat allowed in MLB?",
+    "answer": "42 inches",
+    "wrong": [
+      "36 inches",
+      "38 inches",
+      "40 inches"
+    ],
+    "teach": "A bat can be at most 42 inches long and 2.61 inches thick, from one piece of solid wood.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rules 3.02(a) — The Bat"
+    }
+  },
+  {
+    "id": "r-mlb-bat-length-2",
+    "factId": "mlb-bat-length",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Numbers and dimensions",
+    "prompt": "MLB: maximum bat length?",
+    "answer": "42 inches",
+    "wrong": [
+      "34 inches",
+      "39 inches",
+      "45 inches"
+    ],
+    "teach": "A bat can be at most 42 inches long and 2.61 inches thick, from one piece of solid wood.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rules 3.02(a) — The Bat"
+    }
+  },
+  {
+    "id": "r-mlb-bat-diameter-1",
+    "factId": "mlb-bat-diameter",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "MLB: max bat diameter at its thickest part?",
+    "answer": "2.61 inches",
+    "wrong": [
+      "2.25 inches",
+      "2.75 inches",
+      "3 inches"
+    ],
+    "teach": "A bat can be at most 42 inches long and 2.61 inches thick, from one piece of solid wood.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rules 3.02(a) — The Bat"
+    }
+  },
+  {
+    "id": "r-mlb-three-batter-1",
+    "factId": "mlb-three-batter",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Numbers and dimensions",
+    "prompt": "MLB: fewest batters a new pitcher must face (unless the inning ends)?",
+    "answer": "3",
+    "wrong": [
+      "1",
+      "2",
+      "4"
+    ],
+    "teach": "A pitcher must face 3 straight batters unless the inning ends first or he's hurt.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rules 5.10(g) — Minimum Batters Faced"
+    }
+  },
+  {
+    "id": "r-mlb-three-batter-2",
+    "factId": "mlb-three-batter",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Numbers and dimensions",
+    "prompt": "MLB reliever enters mid-inning. Batters he must face before removal?",
+    "answer": "3",
+    "wrong": [
+      "1",
+      "2",
+      "5"
+    ],
+    "teach": "A pitcher must face 3 straight batters unless the inning ends first or he's hurt.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rules 5.10(g) — Minimum Batters Faced"
+    }
+  },
+  {
+    "id": "r-mlb-mound-visits-1",
+    "factId": "mlb-mound-visits",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "MLB: mound visits per team per 9 innings, without a pitching change?",
+    "answer": "4",
+    "wrong": [
+      "3",
+      "5",
+      "6"
+    ],
+    "teach": "Teams get 4 mound visits without a pitching change per 9 innings, plus 1 per extra inning.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rules 5.10(m) — Mound Visits"
+    }
+  },
+  {
+    "id": "r-mlb-regulation-1",
+    "factId": "mlb-regulation",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "Numbers and dimensions",
+    "prompt": "How many innings in a regulation MLB game?",
+    "answer": "9",
+    "wrong": [
+      "7",
+      "8",
+      "10"
+    ],
+    "teach": "A regulation MLB game is 9 innings unless tied or shortened.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rules 7.01(a) — Regulation Games"
+    }
+  },
+  {
+    "id": "r-mlb-called-game-1",
+    "factId": "mlb-called-game",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Numbers and dimensions",
+    "prompt": "MLB: innings that must be done for a rain-shortened game to count?",
+    "answer": "5",
+    "wrong": [
+      "3",
+      "4",
+      "6"
+    ],
+    "teach": "A called game counts after 5 innings, or 4½ if the home team leads.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rules 7.01(d) — Regulation Games"
+    }
+  },
+  {
+    "id": "r-mlb-called-game-2",
+    "factId": "mlb-called-game",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Numbers and dimensions",
+    "prompt": "Rain stops an MLB game. Fewest full innings for it to be official?",
+    "answer": "5",
+    "wrong": [
+      "4",
+      "6",
+      "7"
+    ],
+    "teach": "A called game counts after 5 innings, or 4½ if the home team leads.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rules 7.01(d) — Regulation Games"
+    }
+  },
+  {
+    "id": "r-nfl-quarter-length-1",
+    "factId": "nfl-quarter-length",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Clock and timing",
+    "prompt": "How long is an NFL quarter?",
+    "answer": "15 minutes",
+    "wrong": [
+      "10 minutes",
+      "12 minutes",
+      "20 minutes"
+    ],
+    "teach": "NFL games are 60 minutes: four 15-minute quarters.",
+    "source": {
+      "url": "https://operations.nfl.com/rules-officiating/nfl-football-basics/football-terms/",
+      "ref": "NFL Football Terms — Quarter; NFL Rule 4, Section 1"
+    }
+  },
+  {
+    "id": "r-nfl-quarter-length-2",
+    "factId": "nfl-quarter-length",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Clock and timing",
+    "prompt": "NFL: minutes of regulation game time?",
+    "answer": "60",
+    "wrong": [
+      "48",
+      "40",
+      "90"
+    ],
+    "teach": "NFL games are 60 minutes: four 15-minute quarters.",
+    "source": {
+      "url": "https://operations.nfl.com/rules-officiating/nfl-football-basics/football-terms/",
+      "ref": "NFL Football Terms — Quarter; NFL Rule 4, Section 1"
+    }
+  },
+  {
+    "id": "r-nfl-25-clock-1",
+    "factId": "nfl-25-clock",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Clock and timing",
+    "prompt": "NFL: play clock after an official stoppage or game delay?",
+    "answer": "25 seconds",
+    "wrong": [
+      "15 seconds",
+      "30 seconds",
+      "40 seconds"
+    ],
+    "teach": "After official stoppages and delays the play clock is 25 seconds; after a normal play it is 40.",
+    "source": {
+      "url": "https://operations.nfl.com/rules-officiating/nfl-football-basics/football-terms/",
+      "ref": "NFL Football Terms — 25-Second Clock; NFL Rule 4, Section 6"
+    }
+  },
+  {
+    "id": "r-nfl-delay-of-game-1",
+    "factId": "nfl-delay-of-game",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "What's the call?",
+    "prompt": "NFL: offense doesn't snap before the play clock expires. Penalty?",
+    "answer": "5 yards",
+    "wrong": [
+      "2 yards",
+      "10 yards",
+      "15 yards"
+    ],
+    "teach": "Failing to snap before the play clock hits zero is a 5-yard delay of game.",
+    "source": {
+      "url": "https://operations.nfl.com/rules-officiating/nfl-football-basics/football-terms/",
+      "ref": "NFL Football Terms — 40-Second Clock; NFL Rule 4, Section 6"
+    }
+  },
+  {
+    "id": "r-nfl-delay-of-game-2",
+    "factId": "nfl-delay-of-game",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "What's the call?",
+    "prompt": "NFL delay of game penalty?",
+    "answer": "5 yards",
+    "wrong": [
+      "Loss of down",
+      "10 yards",
+      "15 yards"
+    ],
+    "teach": "Failing to snap before the play clock hits zero is a 5-yard delay of game.",
+    "source": {
+      "url": "https://operations.nfl.com/rules-officiating/nfl-football-basics/football-terms/",
+      "ref": "NFL Football Terms — 40-Second Clock; NFL Rule 4, Section 6"
+    }
+  },
+  {
+    "id": "r-nfl-two-minute-1",
+    "factId": "nfl-two-minute",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Clock and timing",
+    "prompt": "NFL: in which quarters is there a two-minute warning?",
+    "answer": "2nd and 4th",
+    "wrong": [
+      "4th only",
+      "1st and 3rd",
+      "All four"
+    ],
+    "teach": "The two-minute warning comes only in the 2nd and 4th quarters.",
+    "source": {
+      "url": "https://operations.nfl.com/rules-officiating/nfl-football-basics/football-terms/",
+      "ref": "NFL Football Terms — Two-Minute Warning"
+    }
+  },
+  {
+    "id": "r-nfl-field-goal-1",
+    "factId": "nfl-field-goal",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Scoring",
+    "prompt": "NFL: points for a field goal?",
+    "answer": "3",
+    "wrong": [
+      "1",
+      "2",
+      "4"
+    ],
+    "teach": "A field goal is worth 3 points.",
+    "source": {
+      "url": "https://operations.nfl.com/rules-officiating/nfl-football-basics/football-terms/",
+      "ref": "NFL Football Terms — Field Goal; NFL Rule 11, Section 1"
+    }
+  },
+  {
+    "id": "r-nfl-touchdown-1",
+    "factId": "nfl-touchdown",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Scoring",
+    "prompt": "NFL: points for a touchdown, before the try?",
+    "answer": "6",
+    "wrong": [
+      "5",
+      "7",
+      "8"
+    ],
+    "teach": "A touchdown is worth 6 points, before the try.",
+    "source": {
+      "url": "https://operations.nfl.com/rules-officiating/nfl-football-basics/football-terms/",
+      "ref": "NFL Football Terms — Touchdown; NFL Rule 11, Section 1"
+    }
+  },
+  {
+    "id": "r-nfl-endzone-depth-1",
+    "factId": "nfl-endzone-depth",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Numbers and dimensions",
+    "prompt": "How deep is an NFL end zone?",
+    "answer": "10 yards",
+    "wrong": [
+      "5 yards",
+      "15 yards",
+      "20 yards"
+    ],
+    "teach": "End lines sit 10 yards beyond the goal lines, so each end zone is 10 yards deep.",
+    "source": {
+      "url": "https://operations.nfl.com/rules-officiating/nfl-football-basics/football-terms/",
+      "ref": "NFL Football Terms — End Line; NFL Rule 1, Section 1"
+    }
+  },
+  {
+    "id": "r-nfl-hash-marks-1",
+    "factId": "nfl-hash-marks",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "NFL hash marks: distance from each sideline?",
+    "answer": "70 ft 9 in",
+    "wrong": [
+      "60 feet",
+      "66 ft 3 in",
+      "75 feet"
+    ],
+    "teach": "NFL hash marks are 70 feet 9 inches from each sideline.",
+    "source": {
+      "url": "https://operations.nfl.com/rules-officiating/nfl-football-basics/football-terms/",
+      "ref": "NFL Football Terms — Hash Marks; NFL Rule 1, Section 2"
+    }
+  },
+  {
+    "id": "r-nfl-ot-both-possess-1",
+    "factId": "nfl-ot-both-possess",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "NFL regular-season OT: opening drive ends in a TD. Is the game over?",
+    "answer": "No",
+    "wrong": [
+      "Yes",
+      "Only after a 2-pt try",
+      "Only in the playoffs"
+    ],
+    "teach": "Since 2025 both teams get the ball in NFL overtime, even after an opening-drive TD.",
+    "source": {
+      "url": "https://operations.nfl.com/rules-officiating/featured-rules/",
+      "ref": "NFL Featured Rules — Overtime Procedures; NFL Rule 16"
+    },
+    "validFrom": 2025
+  },
+  {
+    "id": "r-nfl-ot-both-possess-2",
+    "factId": "nfl-ot-both-possess",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "NFL OT: the first team scores a TD. What happens next?",
+    "answer": "Other team gets the ball",
+    "wrong": [
+      "Game over",
+      "Sudden death",
+      "Other team gets a FG try"
+    ],
+    "teach": "Since 2025 both teams get the ball in NFL overtime, even after an opening-drive TD.",
+    "source": {
+      "url": "https://operations.nfl.com/rules-officiating/featured-rules/",
+      "ref": "NFL Featured Rules — Overtime Procedures; NFL Rule 16"
+    },
+    "validFrom": 2025
   }
 ]
