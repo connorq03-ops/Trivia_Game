@@ -140,11 +140,18 @@ describe('answer handler', () => {
     const sql = mockSql()
     const response = await POST(makeRequest(validBody))
     const body = await response.json()
+    const persistedProgress = sql.mock.calls[1]
+      .slice(1)
+      .find(
+        (value): value is string =>
+          typeof value === 'string' && value.includes('"results"'),
+      )
 
     expect(response.status).toBe(200)
     expect(body.correct).toBe(true)
     expect(body.points).toBeGreaterThan(0)
     expect(body.answer).toBe(questionBank[0].answer)
+    expect(JSON.parse(persistedProgress ?? '{}').results).toEqual(['hit'])
     expect(sql.mock.calls.some(([strings]) => strings.join(' ').includes('insert into answer_log'))).toBe(true)
   })
 
@@ -259,6 +266,7 @@ describe('answer handler', () => {
         ...makeRun(question).progress,
         questionsAnswered: 9,
         strikes: 2,
+        results: Array(9).fill('hit'),
       },
     })
     mockSql({ rows: [run] })
@@ -276,5 +284,6 @@ describe('answer handler', () => {
     expect(body.next).toBeNull()
     expect(body.summary.reason).toBe('complete')
     expect(body.summary.questionsAnswered).toBe(10)
+    expect(body.summary.results).toHaveLength(10)
   })
 })

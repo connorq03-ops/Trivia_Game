@@ -7,6 +7,7 @@ import {
   presentQuestion,
   resolveAnswerMs,
   selectClassicQuestion,
+  type AnswerResult,
   type RunProgress,
 } from '../src/game/engine.js'
 import type { Question } from '../src/game/types.js'
@@ -22,7 +23,10 @@ type AnswerInput = {
   clientMs: number | null
 }
 
-type StoredProgress = Omit<RunProgress, 'missed'> & { missed: string[] }
+type StoredProgress = Omit<RunProgress, 'missed' | 'results'> & {
+  missed: string[]
+  results?: AnswerResult[]
+}
 
 type RunRow = {
   mode: 'classic' | 'daily'
@@ -83,7 +87,7 @@ function deserializeProgress(value: RunRow['progress']): RunProgress {
   const missed = stored.missed
     .map((id) => questionsById.get(id))
     .filter((question): question is Question => question !== undefined)
-  return { ...stored, missed }
+  return { ...stored, missed, results: stored.results ?? [] }
 }
 
 function serializeProgress(progress: RunProgress): StoredProgress {
@@ -218,6 +222,7 @@ export async function POST(request: Request): Promise<Response> {
             answeredCount: outcome.progress.answeredCount,
             totalAnswerMs: outcome.progress.totalAnswerMs,
             missed: outcome.progress.missed,
+            results: outcome.progress.results,
             reason: endReason,
           }
     const nextPublic = next ? { questionIndex: nextQuestionIndex } : null

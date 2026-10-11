@@ -555,6 +555,47 @@
   letter-spacing: 0.09em;
 }
 
+.result-share {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 0.75rem;
+  padding: 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 0.8rem;
+  background: var(--panel);
+}
+
+.result-squares {
+  margin: 0;
+  font-size: clamp(1.35rem, 7vw, 2rem);
+  letter-spacing: 0.2em;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.result-meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.result-share-button {
+  justify-self: start;
+}
+
+.result-share > span {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.daily-meta {
+  margin: -0.55rem 0 1.25rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
 .missed-list {
   margin-top: 1.6rem;
 }

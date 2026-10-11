@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import {
+  dailyStreak,
   dailyStorageKey,
   msUntilNextUtcMidnight,
   readDailySummary,
@@ -68,5 +69,42 @@ describe('daily store', () => {
     expect(
       msUntilNextUtcMidnight(Date.parse('2026-06-02T00:00:00.000Z')),
     ).toBe(86_400_000)
+  })
+
+  it('counts consecutive Daily summaries and stops at gaps or corrupt entries', () => {
+    const { storage, values } = makeStorage()
+
+    expect(dailyStreak(storage, '2026-06-03')).toBe(0)
+
+    values.set(dailyStorageKey('2026-06-03'), JSON.stringify(result(100)))
+    expect(dailyStreak(storage, '2026-06-03')).toBe(1)
+
+    values.set(dailyStorageKey('2026-06-02'), JSON.stringify(result(100)))
+    values.set(dailyStorageKey('2026-06-01'), JSON.stringify(result(100)))
+    expect(dailyStreak(storage, '2026-06-03')).toBe(3)
+
+    values.delete(dailyStorageKey('2026-06-02'))
+    expect(dailyStreak(storage, '2026-06-03')).toBe(1)
+
+    values.delete(dailyStorageKey('2026-06-03'))
+    expect(dailyStreak(storage, '2026-06-03')).toBe(0)
+  })
+
+  it('keeps a streak alive through today until a full day is missed', () => {
+    const { storage, values } = makeStorage()
+    values.set(dailyStorageKey('2026-06-02'), JSON.stringify(result(100)))
+    values.set(dailyStorageKey('2026-06-01'), JSON.stringify(result(100)))
+
+    expect(dailyStreak(storage, '2026-06-03')).toBe(2)
+  })
+
+  it('walks across month and year boundaries and stops on corrupt JSON', () => {
+    const { storage, values } = makeStorage()
+    values.set(dailyStorageKey('2027-01-01'), JSON.stringify(result(100)))
+    values.set(dailyStorageKey('2026-12-31'), JSON.stringify(result(100)))
+    expect(dailyStreak(storage, '2027-01-01')).toBe(2)
+
+    values.set(dailyStorageKey('2026-12-31'), '{')
+    expect(dailyStreak(storage, '2027-01-01')).toBe(1)
   })
 })
