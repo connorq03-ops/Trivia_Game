@@ -20,6 +20,19 @@ const sports = ['football', 'basketball', 'baseball']
 const difficulties = ['easy', 'medium', 'hard']
 const allQuestions = [...rules, ...players] as Question[]
 
+const stopwords = new Set([
+  'a', 'an', 'and', 'at', 'by', 'did', 'for', 'from', 'he', 'his', 'in',
+  'is', 'it', 'of', 'on', 'or', 'the', 'then', 'to', 'was', 'what',
+  'where', 'which', 'who', 'with', 'wore', 'no', 'number', 'country',
+])
+const words = (text: string) =>
+  text
+    .normalize('NFD')
+    .replace(/\p{M}/gu, '')
+    .toLowerCase()
+    .match(/[\p{L}\p{N}]+/gu)
+    ?.map((word) => word.replace(/(?<=\p{L}{3})(ed|es|s|ing)$/u, '')) ?? []
+
 describe('question content', () => {
   it('keeps the rules and players banks on their declared sides', () => {
     expect(rules.length).toBeGreaterThanOrEqual(30)
@@ -67,6 +80,25 @@ describe('question content', () => {
       if (question.validFrom !== undefined) {
         expect(Number.isInteger(question.validFrom)).toBe(true)
       }
+    }
+  })
+
+  it('gives every player teach line a fact beyond the question and answer', () => {
+    for (const question of players as Question[]) {
+      const known = new Set(
+        words(
+          [
+            question.prompt,
+            question.answer,
+            question.reel?.player ?? '',
+            String(question.reel?.season ?? ''),
+          ].join(' '),
+        ),
+      )
+      const added = words(question.teach).filter(
+        (word) => !known.has(word) && !stopwords.has(word),
+      )
+      expect(added, `${question.id}: ${question.teach}`).not.toEqual([])
     }
   })
 })
