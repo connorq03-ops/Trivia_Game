@@ -1815,7 +1815,7 @@
     ],
     "difficulty": "medium",
     "category": "Numbers and dimensions",
-    "prompt": "MLB reliever enters mid-inning. Batters he must face before removal?",
+    "prompt": "MLB reliever enters mid-inning. Batters he must face if the inning goes on?",
     "answer": "3",
     "wrong": [
       "1",
@@ -1884,7 +1884,7 @@
     ],
     "difficulty": "medium",
     "category": "Numbers and dimensions",
-    "prompt": "MLB: innings that must be done for a rain-shortened game to count?",
+    "prompt": "MLB: rain stops play with the visitors ahead. Innings needed for it to count?",
     "answer": "5",
     "wrong": [
       "3",
@@ -1907,7 +1907,7 @@
     ],
     "difficulty": "medium",
     "category": "Numbers and dimensions",
-    "prompt": "Rain stops an MLB game. Fewest full innings for it to be official?",
+    "prompt": "Rain stops an MLB game, road team leading. Fewest full innings to be official?",
     "answer": "5",
     "wrong": [
       "4",
@@ -2160,14 +2160,14 @@
     ],
     "difficulty": "hard",
     "category": "What's the call?",
-    "prompt": "NFL regular-season OT: opening drive ends in a TD. Is the game over?",
+    "prompt": "NFL regular-season OT: opening-drive TD with time left. Is the game over?",
     "answer": "No",
     "wrong": [
       "Yes",
       "Only after a 2-pt try",
       "Only in the playoffs"
     ],
-    "teach": "Since 2025 both teams get the ball in NFL overtime, even after an opening-drive TD.",
+    "teach": "Since 2025 both teams get a possession in NFL OT, even after an opening TD, if time remains.",
     "source": {
       "url": "https://operations.nfl.com/rules-officiating/featured-rules/",
       "ref": "NFL Featured Rules — Overtime Procedures; NFL Rule 16"
@@ -2184,14 +2184,14 @@
     ],
     "difficulty": "hard",
     "category": "What's the call?",
-    "prompt": "NFL OT: the first team scores a TD. What happens next?",
+    "prompt": "NFL OT: first team scores a TD with time left. What happens next?",
     "answer": "Other team gets the ball",
     "wrong": [
       "Game over",
       "Sudden death",
       "Other team gets a FG try"
     ],
-    "teach": "Since 2025 both teams get the ball in NFL overtime, even after an opening-drive TD.",
+    "teach": "Since 2025 both teams get a possession in NFL OT, even after an opening TD, if time remains.",
     "source": {
       "url": "https://operations.nfl.com/rules-officiating/featured-rules/",
       "ref": "NFL Featured Rules — Overtime Procedures; NFL Rule 16"
