@@ -1,4 +1,5 @@
 import { getSql } from '../lib/db.js'
+import { hashRunToken, isRunToken } from '../lib/runToken.js'
 import { questionBank, questionsById } from '../lib/questions.js'
 import {
   answerQuestion,
@@ -15,6 +16,7 @@ const UUID_PATTERN =
 
 type AnswerInput = {
   runId: string
+  runToken: string
   questionIndex: number
   choice: string | null
   clientMs: number | null
@@ -34,7 +36,7 @@ type RunRow = {
   current_question_id: string | null
   current_choices: string[] | null
   last_response: unknown
-  server_ms: number | string
+  server_ms: number | string | null
   created_at: string | Date
 }
 
@@ -47,6 +49,7 @@ function parseAnswerInput(value: unknown): AnswerInput | null {
     !isRecord(value) ||
     typeof value.runId !== 'string' ||
     !UUID_PATTERN.test(value.runId) ||
+    !isRunToken(value.runToken) ||
     !Number.isInteger(value.questionIndex) ||
     (value.questionIndex as number) < 0 ||
     (value.questionIndex as number) > 500 ||
@@ -62,6 +65,7 @@ function parseAnswerInput(value: unknown): AnswerInput | null {
   }
   return {
     runId: value.runId,
+    runToken: value.runToken as string,
     questionIndex: value.questionIndex as number,
     choice: value.choice,
     clientMs: value.clientMs as number | null,
@@ -91,22 +95,6 @@ function dateOnly(value: string | Date | null): string {
   return String(value ?? '').slice(0, 10)
 }
 
-function publicQuestion(
-  question: Question,
-  choices: string[],
-): Record<string, unknown> {
-  return {
-    id: question.id,
-    side: question.side,
-    sport: question.sport,
-    leagues: question.leagues,
-    difficulty: question.difficulty,
-    category: question.category,
-    prompt: question.prompt,
-    choices,
-    ...(question.reel ? { reel: question.reel } : {}),
-  }
-}
 
 export async function POST(request: Request): Promise<Response> {
   let input: AnswerInput | null
@@ -133,12 +121,16 @@ export async function POST(request: Request): Promise<Response> {
         current_choices,
         last_response,
         created_at,
-        greatest(
-          0,
-          floor(extract(epoch from (now() - issued_at)) * 1000)
-        )::int as server_ms
+        case
+          when issued_at is null then null
+          else greatest(
+            0,
+            floor(extract(epoch from (now() - issued_at)) * 1000)
+          )::bigint
+        end as server_ms
       from runs
       where id = ${input.runId}
+        and token_hash = ${hashRunToken(input.runToken)}
       limit 1
     `) as RunRow[]
     const run = rows[0]
@@ -159,6 +151,9 @@ export async function POST(request: Request): Promise<Response> {
       : undefined
     if (!question || !run.current_choices) {
       return Response.json({ error: 'server_error' }, { status: 500 })
+    }
+    if (run.server_ms === null) {
+      return Response.json({ error: 'not_revealed' }, { status: 409 })
     }
     if (input.choice !== null && !run.current_choices.includes(input.choice)) {
       return Response.json({ error: 'invalid_choice' }, { status: 400 })
@@ -186,7 +181,7 @@ export async function POST(request: Request): Promise<Response> {
         const selection = selectClassicQuestion(
           questionBank,
           usedFactIds,
-          nextQuestionIndex,
+          nextQuestionIndex + 1,
           {
             sport: run.sport as 'all' | Question['sport'],
             side: run.side as 'both' | Question['side'],
@@ -225,12 +220,7 @@ export async function POST(request: Request): Promise<Response> {
             missed: outcome.progress.missed,
             reason: endReason,
           }
-    const nextPublic = next
-      ? {
-          questionIndex: nextQuestionIndex,
-          question: publicQuestion(next.question, next.choices),
-        }
-      : null
+    const nextPublic = next ? { questionIndex: nextQuestionIndex } : null
     const responseBody = {
       correct: outcome.correct,
       points: outcome.points,
@@ -253,54 +243,50 @@ export async function POST(request: Request): Promise<Response> {
       null,
     ]
     const status = endReason === null ? 'active' : 'ended'
-    const updated = (await sql`
-      update runs
-      set
-        progress = ${JSON.stringify(serializeProgress(outcome.progress))}::jsonb,
-        used_fact_ids = case
-          when ${question.factId} = any(used_fact_ids) then used_fact_ids
-          else array_append(used_fact_ids, ${question.factId})
-        end,
-        current_question_id = ${nextQuestionId},
-        current_choices = case
-          when ${nextQuestionId}::text is null then null
-          else ARRAY[${choice0}, ${choice1}, ${choice2}, ${choice3}]::text[]
-        end,
-        status = ${status},
-        end_reason = ${endReason},
-        question_index = question_index + 1,
-        last_response = ${JSON.stringify(responseBody)}::jsonb,
-        issued_at = now(),
-        ended_at = case when ${status} = 'ended' then now() else null end
-      where id = ${input.runId}
-        and question_index = ${input.questionIndex}
-        and status = 'active'
-      returning id
-    `) as { id: string }[]
-    if (!updated[0]) return Response.json({ error: 'stale' }, { status: 409 })
-
-    try {
-      await sql`
-        insert into answer_log (
-          run_id,
-          mode,
-          question_id,
-          question_index,
-          answer_ms,
-          correct
-        )
-        values (
-          ${input.runId},
-          ${run.mode},
-          ${question.id},
-          ${input.questionIndex},
-          ${outcome.answerMs},
-          ${outcome.correct}
-        )
-      `
-    } catch {
-      return Response.json(responseBody)
-    }
+    const logged = (await sql`
+      with updated as (
+        update runs
+        set
+          progress = ${JSON.stringify(serializeProgress(outcome.progress))}::jsonb,
+          used_fact_ids = case
+            when ${question.factId} = any(used_fact_ids) then used_fact_ids
+            else array_append(used_fact_ids, ${question.factId})
+          end,
+          current_question_id = ${nextQuestionId},
+          current_choices = case
+            when ${nextQuestionId}::text is null then null
+            else ARRAY[${choice0}, ${choice1}, ${choice2}, ${choice3}]::text[]
+          end,
+          status = ${status},
+          end_reason = ${endReason},
+          question_index = question_index + 1,
+          last_response = ${JSON.stringify(responseBody)}::jsonb,
+          issued_at = null,
+          ended_at = case when ${status} = 'ended' then now() else null end
+        where id = ${input.runId}
+          and question_index = ${input.questionIndex}
+          and status = 'active'
+        returning id
+      )
+      insert into answer_log (
+        run_id,
+        mode,
+        question_id,
+        question_index,
+        answer_ms,
+        correct
+      )
+      select
+        id,
+        ${run.mode},
+        ${question.id},
+        ${input.questionIndex},
+        ${outcome.answerMs},
+        ${outcome.correct}
+      from updated
+      returning run_id
+    `) as { run_id: string }[]
+    if (!logged[0]) return Response.json({ error: 'stale' }, { status: 409 })
 
     return Response.json(responseBody)
   } catch {

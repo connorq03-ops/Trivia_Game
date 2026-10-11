@@ -37,6 +37,7 @@ type PublicProgress = {
 type GameSession = {
   mode: Mode
   runId: string
+  runToken: string
   date: string
   progress: PublicProgress
   questionIndex: number
@@ -46,6 +47,7 @@ type GameSession = {
 
 type AnswerBody = {
   runId: string
+  runToken: string
   questionIndex: number
   choice: string | null
   clientMs: number | null
@@ -58,12 +60,22 @@ type AnswerResponse = {
   teach: string
   source: Question['source']
   progress: PublicProgress
-  next: { questionIndex: number; question: PublicQuestion } | null
+  next: { questionIndex: number } | null
   summary: GameSummary | null
 }
 
+type QuestionResponse = {
+  questionIndex: number
+  question: PublicQuestion
+}
+
+type PendingRequest =
+  | { kind: 'answer'; body: AnswerBody }
+  | { kind: 'question'; questionIndex: number }
+
 type RunResponse = {
   runId: string
+  runToken: string
   date: string
   questionIndex: number
   question: PublicQuestion
@@ -112,17 +124,18 @@ function App() {
   const [teachInfo, setTeachInfo] = useState<{ answer: string; teach: string } | null>(
     null,
   )
-  const [pendingNextSession, setPendingNextSession] = useState<GameSession | null>(
-    null,
-  )
+  const [pendingNextIndex, setPendingNextIndex] = useState<number | null>(null)
   const [pendingSummary, setPendingSummary] = useState<GameSummary | null>(null)
-  const [pendingAnswer, setPendingAnswer] = useState<AnswerBody | null>(null)
+  const [pendingRequest, setPendingRequest] = useState<PendingRequest | null>(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isStarting, setIsStarting] = useState(false)
   const [startError, setStartError] = useState(false)
   const [elapsedMs, setElapsedMs] = useState(0)
   const answerStartedAt = useRef(0)
   const answered = useRef(false)
+  // Results for any run other than this one (or after leaving a run) are dropped.
+  const activeRunId = useRef<string | null>(null)
+  const startGeneration = useRef(0)
   const submitAnswerRef = useRef<
     (choice: string | null, clientMs: number | null) => void
   >(() => {})
@@ -185,6 +198,10 @@ function App() {
       | { mode: 'classic'; sport: 'all' | Sport; side: 'both' | Side }
       | { mode: 'daily' },
   ) => {
+    const generation = ++startGeneration.current
+    activeRunId.current = null
+    setPendingRequest(null)
+    setIsSubmitting(false)
     setIsStarting(true)
     setStartError(false)
     setSummary(null)
@@ -197,6 +214,7 @@ function App() {
         body: JSON.stringify(input),
       })
       const result = (await response.json()) as RunResponse | { error?: string }
+      if (generation !== startGeneration.current) return
       if (response.status === 409 && 'error' in result && result.error === 'no_questions') {
         setSession(null)
         setScreen('noQuestions')
@@ -204,9 +222,11 @@ function App() {
       }
       if (!response.ok || !('runId' in result)) throw new Error('Run creation failed')
 
+      activeRunId.current = result.runId
       setSession({
         mode: input.mode,
         runId: result.runId,
+        runToken: result.runToken,
         date: result.date,
         progress: result.progress,
         questionIndex: result.questionIndex,
@@ -215,11 +235,12 @@ function App() {
       })
       setScreen('reel')
     } catch {
+      if (generation !== startGeneration.current) return
       setStartError(true)
       setApiStatus('error')
       setScreen('home')
     } finally {
-      setIsStarting(false)
+      if (generation === startGeneration.current) setIsStarting(false)
     }
   }
 
@@ -250,6 +271,38 @@ function App() {
     if (result.date === utcDate()) setTodaySummary(winner)
   }
 
+  const loadQuestion = async (current: GameSession, questionIndex: number) => {
+    setPendingRequest({ kind: 'question', questionIndex })
+    setIsSubmitting(true)
+    try {
+      const response = await fetch('/api/question', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          runId: current.runId,
+          runToken: current.runToken,
+          questionIndex,
+        }),
+      })
+      if (!response.ok) throw new Error('Question request failed')
+      const result = (await response.json()) as QuestionResponse
+      if (activeRunId.current !== current.runId) return
+      setPendingRequest(null)
+      setIsSubmitting(false)
+      setTeachInfo(null)
+      setSession({
+        ...current,
+        questionIndex: result.questionIndex,
+        question: result.question,
+      })
+      setScreen('reel')
+    } catch {
+      if (activeRunId.current !== current.runId) return
+      setIsSubmitting(false)
+      setScreen('connection')
+    }
+  }
+
   const sendAnswer = async (body: AnswerBody, current: GameSession) => {
     try {
       const response = await fetch('/api/answer', {
@@ -259,41 +312,32 @@ function App() {
       })
       if (!response.ok) throw new Error('Answer submission failed')
       const result = (await response.json()) as AnswerResponse
+      if (activeRunId.current !== body.runId) return
       const updatedCurrent = { ...current, progress: result.progress }
-      const nextSession = result.next
-        ? {
-            ...updatedCurrent,
-            questionIndex: result.next.questionIndex,
-            question: result.next.question,
-          }
-        : null
+      const nextIndex = result.next?.questionIndex ?? null
 
-      setPendingAnswer(null)
+      setPendingRequest(null)
       setIsSubmitting(false)
+      setSession(updatedCurrent)
       setSummary(result.summary)
       if (result.summary) saveDailyResult(result.summary)
 
       if (!result.correct) {
-        setSession(updatedCurrent)
         setTeachInfo({ answer: result.answer, teach: result.teach })
         setPendingSummary(result.summary)
-        setPendingNextSession(nextSession)
+        setPendingNextIndex(nextIndex)
         setScreen('teach')
         return
       }
 
       setTeachInfo(null)
-      if (result.summary) {
-        setSession(updatedCurrent)
-        setScreen('over')
-      } else if (nextSession) {
-        setSession(nextSession)
-        setScreen('reel')
+      if (!result.summary && nextIndex !== null) {
+        void loadQuestion(updatedCurrent, nextIndex)
       } else {
-        setSession(updatedCurrent)
         setScreen('over')
       }
     } catch {
+      if (activeRunId.current !== body.runId) return
       setIsSubmitting(false)
       setScreen('connection')
     }
@@ -304,33 +348,38 @@ function App() {
     answered.current = true
     const body: AnswerBody = {
       runId: session.runId,
+      runToken: session.runToken,
       questionIndex: session.questionIndex,
       choice,
       clientMs,
     }
-    setPendingAnswer(body)
+    setPendingRequest({ kind: 'answer', body })
     setIsSubmitting(true)
     void sendAnswer(body, session)
   }
 
   const retryConnection = () => {
-    if (!pendingAnswer || !session || isSubmitting) return
+    if (!pendingRequest || !session || isSubmitting) return
+    if (pendingRequest.kind === 'question') {
+      void loadQuestion(session, pendingRequest.questionIndex)
+      return
+    }
     answered.current = true
     setIsSubmitting(true)
-    void sendAnswer(pendingAnswer, session)
+    void sendAnswer(pendingRequest.body, session)
   }
 
   const continueAfterTeach = () => {
+    if (isSubmitting) return
     if (pendingSummary) {
       setSummary(pendingSummary)
       setPendingSummary(null)
-      setPendingNextSession(null)
+      setPendingNextIndex(null)
       setScreen('over')
-    } else if (pendingNextSession) {
-      setSession(pendingNextSession)
-      setPendingNextSession(null)
-      setTeachInfo(null)
-      setScreen('reel')
+    } else if (pendingNextIndex !== null && session) {
+      const nextIndex = pendingNextIndex
+      setPendingNextIndex(null)
+      void loadQuestion(session, nextIndex)
     } else {
       setScreen('home')
     }
@@ -345,6 +394,13 @@ function App() {
   })
 
   const goHome = () => {
+    startGeneration.current += 1
+    activeRunId.current = null
+    setPendingRequest(null)
+    setPendingNextIndex(null)
+    setPendingSummary(null)
+    setIsSubmitting(false)
+    setIsStarting(false)
     setSession(null)
     setSummary(null)
     setScreen('home')

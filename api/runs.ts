@@ -1,6 +1,7 @@
 import { createHash } from 'node:crypto'
 import { getSql } from '../lib/db.js'
-import { questionBank } from '../lib/questions.js'
+import { createRunToken, hashRunToken } from '../lib/runToken.js'
+import { publicQuestion, questionBank } from '../lib/questions.js'
 import {
   createRunProgress,
   dailyQuestions,
@@ -37,22 +38,6 @@ function parseStartInput(value: unknown): StartInput | null {
   }
 }
 
-function publicQuestion(
-  question: Question,
-  choices: string[],
-): Record<string, unknown> {
-  return {
-    id: question.id,
-    side: question.side,
-    sport: question.sport,
-    leagues: question.leagues,
-    difficulty: question.difficulty,
-    category: question.category,
-    prompt: question.prompt,
-    choices,
-    ...(question.reel ? { reel: question.reel } : {}),
-  }
-}
 
 function utcDate(): string {
   return new Date().toISOString().slice(0, 10)
@@ -69,7 +54,10 @@ export async function POST(request: Request): Promise<Response> {
 
   try {
     const sql = getSql()
-    const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim()
+    // On Vercel these headers come from the edge, not from the client.
+    const ip =
+      request.headers.get('x-real-ip')?.trim() ||
+      request.headers.get('x-forwarded-for')?.split(',')[0]?.trim()
     const salt = process.env.RUN_HASH_SALT || 'streaking-sports-development-salt'
     const ipHash = createHash('sha256').update(`${salt}${ip || 'local'}`).digest('hex')
     const rawLimit = process.env.RUNS_PER_IP_PER_DAY
@@ -78,15 +66,6 @@ export async function POST(request: Request): Promise<Response> {
       Number.isInteger(configuredLimit) && configuredLimit >= 0
         ? configuredLimit
         : 100
-    const rateRows = (await sql`
-      select count(*)::int as count
-      from runs
-      where ip_hash = ${ipHash}
-        and created_at >= now() - interval '24 hours'
-    `) as { count: number | string }[]
-    if (Number(rateRows[0]?.count ?? 0) >= limit) {
-      return Response.json({ error: 'rate_limited' }, { status: 429 })
-    }
 
     const date = utcDate()
     let question: Question
@@ -103,7 +82,7 @@ export async function POST(request: Request): Promise<Response> {
       const selection = selectClassicQuestion(
         questionBank,
         new Set(),
-        0,
+        1,
         options,
         Math.random,
       )
@@ -116,43 +95,58 @@ export async function POST(request: Request): Promise<Response> {
 
     const initialProgress = createRunProgress()
     const [choice0, choice1, choice2, choice3] = choices
-    const inserted = (await sql`
-      insert into runs (
-        mode,
-        sport,
-        side,
-        daily_date,
-        status,
-        progress,
-        used_fact_ids,
-        question_index,
-        current_question_id,
-        current_choices,
-        issued_at,
-        ip_hash
-      )
-      values (
-        ${input.mode},
-        ${options.sport},
-        ${options.side},
-        ${dailyDate},
-        'active',
-        ${JSON.stringify({ ...initialProgress, missed: [] })}::jsonb,
-        ARRAY[${question.factId}]::text[],
-        0,
-        ${question.id},
-        ARRAY[${choice0}, ${choice1}, ${choice2}, ${choice3}]::text[],
-        now(),
-        ${ipHash}
-      )
-      returning id
-    `) as { id: string }[]
+    const runToken = createRunToken()
+    const [, inserted] = (await sql.transaction([
+      sql`select pg_advisory_xact_lock(hashtextextended(${ipHash}, 0))`,
+      sql`
+        insert into runs (
+          mode,
+          sport,
+          side,
+          daily_date,
+          status,
+          progress,
+          used_fact_ids,
+          question_index,
+          current_question_id,
+          current_choices,
+          issued_at,
+          ip_hash,
+          token_hash
+        )
+        select
+          ${input.mode},
+          ${options.sport},
+          ${options.side},
+          ${dailyDate}::date,
+          'active',
+          ${JSON.stringify({ ...initialProgress, missed: [] })}::jsonb,
+          ARRAY[${question.factId}]::text[],
+          0,
+          ${question.id},
+          ARRAY[${choice0}, ${choice1}, ${choice2}, ${choice3}]::text[],
+          now(),
+          ${ipHash},
+          ${hashRunToken(runToken)}
+        where (
+          select count(*)
+          from runs
+          where ip_hash = ${ipHash}
+            and created_at >= now() - interval '24 hours'
+        ) < ${limit}
+        returning id
+      `,
+    ])) as [unknown, { id: string }[]]
+    if (!inserted[0]) {
+      return Response.json({ error: 'rate_limited' }, { status: 429 })
+    }
     const runId = inserted[0]?.id
     if (!runId) throw new Error('Run insert returned no id')
 
     return Response.json(
       {
         runId,
+        runToken,
         date,
         questionIndex: 0,
         question: publicQuestion(question, choices),
