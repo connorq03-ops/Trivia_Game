@@ -15,6 +15,7 @@
     "db:migrate": "node db/migrate.mjs",
     "db:seed": "node db/seed.mjs",
     "db:setup": "npm run db:migrate && npm run db:seed",
+    "check:bundle": "node scripts/check-bundle.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

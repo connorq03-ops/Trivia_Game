@@ -3,6 +3,8 @@ import {
   answerQuestion,
   createRunProgress,
   dailyQuestions,
+  presentQuestion,
+  resolveAnswerMs,
   scoreAnswer,
   selectClassicQuestion,
   streakMultiplier,
@@ -76,6 +78,37 @@ describe('scoreAnswer', () => {
     [30, 2],
   ])('uses multiplier %s at streak %i', (streak, expectedMultiplier) => {
     expect(streakMultiplier(streak)).toBe(expectedMultiplier)
+  })
+})
+
+describe('resolveAnswerMs', () => {
+  it('accepts an honest client time despite reel/network slack', () => {
+    expect(resolveAnswerMs(4800, 6000)).toBe(4800)
+  })
+
+  it('raises an implausibly fast client time to the slack floor', () => {
+    expect(resolveAnswerMs(0, 6000)).toBe(3000)
+  })
+
+  it('caps a slower client time at server elapsed time', () => {
+    expect(resolveAnswerMs(8000, 6000)).toBe(6000)
+  })
+
+  it('preserves timeouts and expires at the server clock limit', () => {
+    expect(resolveAnswerMs(null, 1000)).toBeNull()
+    expect(resolveAnswerMs(5000, 13_000)).toBeNull()
+  })
+})
+
+describe('presentQuestion', () => {
+  it('returns the question with a shuffled set of its four choices', () => {
+    const question = makeQuestion(1)
+    const presented = presentQuestion(question, seededRandom(1))
+
+    expect(presented.question).toBe(question)
+    expect([...presented.choices].sort()).toEqual(
+      [question.answer, ...question.wrong].sort(),
+    )
   })
 })
 

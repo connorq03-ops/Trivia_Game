@@ -1,9 +1,10 @@
-import type { Difficulty, Question, Side, Sport } from './types'
+import type { Difficulty, Question, Side, Sport } from './types.js'
 
 export const STRIKES = 3
 export const STRIKE_BACK_EVERY = 15
 export const CLOCK_MS = 10_000
 export const GRACE_MS = 1_500
+export const SLACK_MS = 3_000
 export const BASE: Record<Difficulty, number> = {
   easy: 100,
   medium: 150,
@@ -103,12 +104,28 @@ function fallbackOrder(difficulty: Difficulty): Difficulty[] {
   return ['hard', 'medium', 'easy']
 }
 
-function present(question: Question, rng: () => number): ClassicSelection {
+export function presentQuestion(
+  question: Question,
+  rng: () => number,
+): { question: Question; choices: string[] } {
   return {
-    type: 'question',
     question,
     choices: shuffle([question.answer, ...question.wrong], rng),
   }
+}
+
+function present(question: Question, rng: () => number): ClassicSelection {
+  return { type: 'question', ...presentQuestion(question, rng) }
+}
+
+export function resolveAnswerMs(
+  clientMs: number | null,
+  serverMs: number,
+): number | null {
+  if (clientMs === null || serverMs - SLACK_MS >= CLOCK_MS) return null
+  const lowerBound = Math.max(0, serverMs - SLACK_MS)
+  const adjusted = Math.min(serverMs, Math.max(lowerBound, clientMs))
+  return Math.min(CLOCK_MS, Math.max(0, adjusted))
 }
 
 export function selectClassicQuestion(
