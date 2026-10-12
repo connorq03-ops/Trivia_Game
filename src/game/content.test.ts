@@ -1,6 +1,7 @@
 import rules from '../../content/rules.json'
 import players from '../../content/players.json'
 import { describe, expect, it } from 'vitest'
+import { dailyQuestions } from './engine'
 import type { Question } from './types'
 
 const ruleCategories = [
@@ -81,7 +82,23 @@ describe('question content', () => {
       if (question.validFrom !== undefined) {
         expect(Number.isInteger(question.validFrom)).toBe(true)
       }
+
+      if (question.dailyFrom !== undefined) {
+        expect(question.dailyFrom).toMatch(/^\d{4}-\d{2}-\d{2}$/)
+        const date = new Date(`${question.dailyFrom}T00:00:00Z`)
+        expect(Number.isNaN(date.getTime())).toBe(false)
+        expect(date.toISOString().slice(0, 10)).toBe(question.dailyFrom)
+      }
     }
+  })
+
+  it('keeps the real Daily bank unchanged before the new questions launch', () => {
+    expect(dailyQuestions('2026-10-13', allQuestions)).toEqual(
+      dailyQuestions(
+        '2026-10-13',
+        allQuestions.filter((question) => !question.dailyFrom),
+      ),
+    )
   })
 
   it('gives every teach line a fact beyond the question and answer', () => {

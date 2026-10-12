@@ -15,5 +15,6 @@ export interface Question {
   teach: string // <= 140 chars, shown after a miss
   source: { url: string; ref: string }
   validFrom?: number // season year the fact holds from
+  dailyFrom?: string
   reel?: { season: number; player: string } // required when side === 'players'
 }
