@@ -195,8 +195,8 @@
 }
 
 .back-button {
-  width: 2.65rem;
-  height: 2.65rem;
+  width: 2.75rem;
+  height: 2.75rem;
   border: 1px solid var(--line);
   border-radius: 0.8rem;
   color: var(--accent);
@@ -461,6 +461,19 @@
   font-weight: 850;
 }
 
+.key-hint {
+  margin-top: 0.9rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .key-hint {
+    display: none;
+  }
+}
+
 .teach-overlay {
   display: flex;
   width: 100%;
@@ -500,6 +513,9 @@
 }
 
 .connection-note button {
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  padding: 0 0.5rem;
   color: inherit;
   border: 0;
   background: transparent;
@@ -929,5 +945,15 @@
       transform: scale(1.09);
       box-shadow: 0 0 1rem #a8d77666;
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reel-card {
+    animation: none;
+  }
+
+  .clock-fill {
+    transition: none;
   }
 }

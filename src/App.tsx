@@ -130,6 +130,17 @@ function formatDuration(milliseconds: number): string {
   return `${(milliseconds / 1000).toFixed(1)}s`
 }
 
+const ANSWER_KEYS = ['a', 'b', 'c', 'd']
+
+function answerIndexForKey(key: string): number {
+  const letter = ANSWER_KEYS.indexOf(key.toLowerCase())
+  if (letter !== -1) return letter
+  const digit = Number(key)
+  return Number.isInteger(digit) && digit >= 1 && digit <= ANSWER_KEYS.length
+    ? digit - 1
+    : -1
+}
+
 function elapsedSince(startedAt: number): number {
   return Math.min(CLOCK_MS, Math.max(0, performance.now() - startedAt))
 }
@@ -162,6 +173,7 @@ function App() {
   } | null>(null)
   const [picked, setPicked] = useState<string | null>(null)
   const [reveal, setReveal] = useState<AnswerReveal | null>(null)
+  const [announcement, setAnnouncement] = useState('')
   const [pendingNextIndex, setPendingNextIndex] = useState<number | null>(null)
   const [pendingSummary, setPendingSummary] = useState<GameSummary | null>(null)
   const [pendingRequest, setPendingRequest] = useState<PendingRequest | null>(null)
@@ -181,6 +193,15 @@ function App() {
   const loadQuestionRef = useRef<
     (current: GameSession, questionIndex: number) => void
   >(() => {})
+  const questionHeadingRef = useRef<HTMLHeadingElement>(null)
+  const teachButtonRef = useRef<HTMLButtonElement>(null)
+  const resultHeadingRef = useRef<HTMLHeadingElement>(null)
+  const retryButtonRef = useRef<HTMLButtonElement>(null)
+  const serverErrorButtonRef = useRef<HTMLButtonElement>(null)
+  const noQuestionsButtonRef = useRef<HTMLButtonElement>(null)
+  const dailyButtonRef = useRef<HTMLButtonElement>(null)
+  const classicButtonRef = useRef<HTMLButtonElement>(null)
+  const homeFocusMode = useRef<Mode | null>(null)
 
   const refreshToday = useCallback(() => {
     setNow(Date.now())
@@ -264,6 +285,7 @@ function App() {
     setStartError(false)
     setSummary(null)
     setSession(null)
+    setAnnouncement('')
     setPendingSummary(null)
     setPendingNextIndex(null)
     setScreen('home')
@@ -422,6 +444,15 @@ function App() {
           : [],
       })
       setScreen('reveal')
+      setAnnouncement(
+        result.correct
+          ? `Correct! Plus ${result.points}. Streak ${result.progress.streak}.`
+          : `${body.choice === null || body.choice === result.answer ? 'Time’s up' : 'Wrong'}. ${
+              current.mode === 'classic'
+                ? `Strike ${result.progress.strikes} of ${STRIKES}.`
+                : `${result.progress.strikes} missed.`
+            }`,
+      )
     } catch {
       if (activeRunId.current !== body.runId) return
       setIsSubmitting(false)
@@ -481,6 +512,7 @@ function App() {
   })
 
   const goHome = () => {
+    homeFocusMode.current = session?.mode ?? summary?.mode ?? null
     startGeneration.current += 1
     activeRunId.current = null
     setPendingRequest(null)
@@ -492,6 +524,7 @@ function App() {
     setIsStarting(false)
     setSession(null)
     setSummary(null)
+    setAnnouncement('')
     setScreen('home')
   }
 
@@ -547,6 +580,51 @@ function App() {
     }
   }, [screen, activeQuestionId])
 
+  useEffect(() => {
+    const target =
+      screen === 'question'
+        ? questionHeadingRef.current
+        : screen === 'teach'
+          ? teachButtonRef.current
+          : screen === 'over'
+            ? resultHeadingRef.current
+            : screen === 'connection'
+              ? retryButtonRef.current
+              : screen === 'serverError'
+                ? serverErrorButtonRef.current
+                : screen === 'noQuestions'
+                  ? noQuestionsButtonRef.current
+                  : null
+    if (target) {
+      target.focus()
+      return
+    }
+    if (screen === 'home' && homeFocusMode.current) {
+      const mode = homeFocusMode.current
+      homeFocusMode.current = null
+      ;(mode === 'daily' ? dailyButtonRef : classicButtonRef).current?.focus()
+    }
+  }, [screen, activeQuestionId])
+
+  const questionChoices = screen === 'question' ? session?.question.choices : undefined
+
+  useEffect(() => {
+    if (!questionChoices) return
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.altKey || event.ctrlKey || event.metaKey || event.repeat) return
+      const index = answerIndexForKey(event.key)
+      const choice = index === -1 ? undefined : questionChoices[index]
+      if (choice === undefined) return
+      event.preventDefault()
+      submitAnswerRef.current(
+        choice,
+        Math.round(elapsedSince(answerStartedAt.current)),
+      )
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [questionChoices])
+
   const chooseAnswer = (choice: string) => {
     submitAnswer(choice, Math.round(elapsedSince(answerStartedAt.current)))
   }
@@ -557,12 +635,24 @@ function App() {
   const lateCorrect =
     reveal !== null && !reveal.correct && reveal.picked === reveal.answer
   const remainingSeconds = Math.max(0, Math.ceil((CLOCK_MS - elapsedMs) / 1000))
+  const resultLabel = currentSummary
+    ? currentSummary.mode === 'daily'
+      ? currentSummary.reason === 'complete'
+        ? 'DAILY 10 COMPLETE'
+        : 'DAILY 10 · SAVED RESULT'
+      : currentSummary.reason === 'strikes'
+        ? 'THREE STRIKES'
+        : 'QUESTION BANK CLEARED'
+    : ''
   const clockStyle = {
     '--clock-progress': `${Math.max(0, 100 - (elapsedMs / CLOCK_MS) * 100)}%`,
   } as CSSProperties
 
   return (
     <main className="app-shell">
+      <p className="sr-only" aria-live="polite" aria-atomic="true">
+        {announcement}
+      </p>
       {screen === 'home' && (
         <section className="home-panel">
           <p className="eyebrow">Football · Basketball · Baseball trivia</p>
@@ -573,7 +663,12 @@ function App() {
               Connection problem. Check your connection and try again.
             </p>
           )}
-          <button className="daily-button" onClick={openDaily} disabled={isStarting}>
+          <button
+            className="daily-button"
+            onClick={openDaily}
+            disabled={isStarting}
+            ref={dailyButtonRef}
+          >
             <span className="daily-button-label">
               <span>{todaySummary ? 'Review today’s Daily 10' : 'Play Daily 10'}</span>
               <span className="mode-subtitle">{modeSubtitle('daily')}</span>
@@ -618,7 +713,12 @@ function App() {
                 <option value="players">Players</option>
               </select>
             </label>
-            <button className="classic-button" onClick={startClassic} disabled={isStarting}>
+            <button
+              className="classic-button"
+              onClick={startClassic}
+              disabled={isStarting}
+              ref={classicButtonRef}
+            >
               Start classic <span aria-hidden="true">↗</span>
             </button>
           </section>
@@ -638,7 +738,11 @@ function App() {
           <p className="tagline">
             There aren’t any questions for those filters yet.
           </p>
-          <button className="secondary-button" onClick={goHome}>
+          <button
+            className="secondary-button"
+            onClick={goHome}
+            ref={noQuestionsButtonRef}
+          >
             Back home
           </button>
         </section>
@@ -673,6 +777,7 @@ function App() {
                   <span className="strike-caption">STRIKES</span>
                   <div
                     className="strike-group"
+                    role="img"
                     aria-label={`${progress.strikes} of ${STRIKES} strikes`}
                   >
                     {[0, 1, 2].map((strike) => (
@@ -695,6 +800,7 @@ function App() {
                 style={{
                   '--streak-fill': `${streakFill(progress.streak) * 100}%`,
                 } as CSSProperties}
+                role="img"
                 aria-label={`${progress.streak} streak, strike back at ${STRIKE_BACK_EVERY}`}
               >
                 <span>{progress.streak}</span>
@@ -706,7 +812,11 @@ function App() {
           {screen === 'connection' && (
             <div className="connection-note" role="alert">
               Connection problem —{' '}
-              <button onClick={retryConnection} disabled={isSubmitting}>
+              <button
+                onClick={retryConnection}
+                disabled={isSubmitting}
+                ref={retryButtonRef}
+              >
                 Retry
               </button>
             </div>
@@ -716,12 +826,18 @@ function App() {
             <div className="server-error" role="alert">
               <strong>Something went wrong</strong>
               <span>This run can't continue. Your score so far is {progress.score}.</span>
-              <button className="classic-button" onClick={goHome}>Back home</button>
+              <button
+                className="classic-button"
+                onClick={goHome}
+                ref={serverErrorButtonRef}
+              >
+                Back home
+              </button>
             </div>
           )}
 
           {screen === 'reel' && (
-            <div className="reel-stage" aria-live="polite">
+            <div className="reel-stage">
               <p className="eyebrow">Your next question</p>
               <div className={`reel-stack ${question.side === 'players' ? 'reel-stack--player' : ''}`}>
                 {question.side === 'players' ? (
@@ -747,7 +863,15 @@ function App() {
                 <span>{question.sport} <i>·</i> {question.category}</span>
                 <strong>{remainingSeconds}<small>s</small></strong>
               </div>
-              <div className="clock-track" aria-label={`${remainingSeconds} seconds remaining`}>
+              <div
+                className="clock-track"
+                role="progressbar"
+                aria-label="Time remaining"
+                aria-valuemin={0}
+                aria-valuemax={CLOCK_MS / 1000}
+                aria-valuenow={remainingSeconds}
+                aria-valuetext={`${remainingSeconds} seconds remaining`}
+              >
                 <div className="clock-fill" style={clockStyle} />
               </div>
               {screen === 'reveal' && reveal?.callouts.map((callout) => (
@@ -764,7 +888,10 @@ function App() {
                 <p className="question-kicker">
                   {question.side === 'rules' ? 'RULEBOOK' : question.reel?.player}
                 </p>
-                <h2>{question.prompt}</h2>
+                <h2 tabIndex={-1} ref={questionHeadingRef}>
+                  <span className="sr-only">Question {session.questionIndex + 1}: </span>
+                  {question.prompt}
+                </h2>
                 {screen === 'reveal' && reveal && (reveal.picked === null || lateCorrect) && (
                   <div className="times-up">Time's up</div>
                 )}
@@ -788,26 +915,34 @@ function App() {
                       key={`${question.id}-${choice}`}
                       onClick={() => chooseAnswer(choice)}
                       disabled={isSubmitting || screen !== 'question'}
+                      aria-keyshortcuts={
+                        index < ANSWER_KEYS.length
+                          ? `${ANSWER_KEYS[index].toUpperCase()} ${index + 1}`
+                          : undefined
+                      }
                     >
                       <span>{String.fromCharCode(65 + index)}</span>
                       {choice}
                     </button>
                   ))}
                 </div>
+                <p className="key-hint" aria-hidden="true">
+                  Press A–D or 1–4 to answer
+                </p>
               </article>
             </section>
           )}
 
           {screen === 'teach' && (
-            <section className="teach-overlay" aria-live="polite">
+            <section className="teach-overlay">
               <p className="teach-prompt">{question.prompt}</p>
-              <p className="teach-pick">
+              <p className="teach-pick" id="teach-pick">
                 {picked === null || picked === teachInfo?.answer
                   ? "Time's up"
                   : `Your pick: ${picked}`}
               </p>
-              <p className="teach-answer">Right answer: {teachInfo?.answer}</p>
-              <span>{teachInfo?.teach}</span>
+              <p className="teach-answer" id="teach-answer">Right answer: {teachInfo?.answer}</p>
+              <span id="teach-text">{teachInfo?.teach}</span>
               {teachInfo?.source && (
                 <a
                   className="teach-source"
@@ -818,7 +953,12 @@ function App() {
                   Source: {teachInfo.source.ref}
                 </a>
               )}
-              <button className="classic-button" onClick={continueAfterTeach}>
+              <button
+                className="classic-button"
+                onClick={continueAfterTeach}
+                ref={teachButtonRef}
+                aria-describedby="teach-pick teach-answer teach-text"
+              >
                 {pendingSummary ? 'See results' : 'Continue'}
               </button>
             </section>
@@ -826,16 +966,11 @@ function App() {
 
           {screen === 'over' && currentSummary && (
             <section className="game-over">
-              <p className="eyebrow">
-                {currentSummary.mode === 'daily'
-                  ? currentSummary.reason === 'complete'
-                    ? 'DAILY 10 COMPLETE'
-                    : 'DAILY 10 · SAVED RESULT'
-                  : currentSummary.reason === 'strikes'
-                    ? 'THREE STRIKES'
-                    : 'QUESTION BANK CLEARED'}
-              </p>
-              <h2>{currentSummary.score.toLocaleString()}<span> pts</span></h2>
+              <p className="eyebrow" aria-hidden="true">{resultLabel}</p>
+              <h2 tabIndex={-1} ref={resultHeadingRef}>
+                <span className="sr-only">{resultLabel}. Final score </span>
+                {currentSummary.score.toLocaleString()}<span> pts</span>
+              </h2>
               <div className="summary-grid">
                 <div><strong>{currentSummary.bestStreak}</strong><span>BEST STREAK</span></div>
                 <div><strong>{currentSummary.questionsAnswered}</strong><span>QUESTIONS</span></div>
@@ -884,8 +1019,11 @@ function App() {
             <div className="score-label"><span>SCORE</span><strong>{currentSummary.score.toLocaleString()}</strong></div>
           </header>
           <section className="game-over">
-            <p className="eyebrow">You’ve already played today</p>
-            <h2>{currentSummary.score.toLocaleString()}<span> pts</span></h2>
+            <p className="eyebrow" aria-hidden="true">You’ve already played today</p>
+            <h2 tabIndex={-1} ref={resultHeadingRef}>
+              <span className="sr-only">You’ve already played today. Score </span>
+              {currentSummary.score.toLocaleString()}<span> pts</span>
+            </h2>
             <div className="summary-grid">
               <div><strong>{currentSummary.bestStreak}</strong><span>BEST STREAK</span></div>
               <div><strong>{currentSummary.questionsAnswered}</strong><span>QUESTIONS</span></div>
