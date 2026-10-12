@@ -83,8 +83,8 @@ describe('question content', () => {
     }
   })
 
-  it('gives every player teach line a fact beyond the question and answer', () => {
-    for (const question of players as Question[]) {
+  it('gives every teach line a fact beyond the question and answer', () => {
+    for (const question of allQuestions) {
       const known = new Set(
         words(
           [
