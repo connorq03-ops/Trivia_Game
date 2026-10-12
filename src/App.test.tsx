@@ -128,38 +128,37 @@ describe('App keyboard and screen-reader play', () => {
     expect(answerBodies[0].choice).toBe('D0')
   })
 
-  it('focuses the teach card with the verdict after a wrong answer', async () => {
+  it('announces a wrong answer and focuses the Teach Continue button', async () => {
     mockApi([{ correct: false, strikes: 1, streak: 0 }])
     await startClassic()
 
     fireEvent.keyDown(window, { key: 'a' })
 
-    const teach = await screen.findByRole('button', {
-      name: /^Wrong\. Strike 1 of 3\.\s*THE RIGHT ANSWER\s*B0/,
-    })
-    await waitFor(() => expect(document.activeElement).toBe(teach))
+    await waitFor(() => expect(screen.getByText('Wrong. Strike 1 of 3.')).toBeTruthy())
+    const next = await screen.findByRole('button', { name: 'Continue' }, { timeout: 3000 })
+    await waitFor(() => expect(document.activeElement).toBe(next))
+    expect(next.getAttribute('aria-describedby')).toBe('teach-pick teach-answer teach-text')
+    expect(screen.getByText('Right answer: B0')).toBeTruthy()
 
-    fireEvent.click(teach)
-    const next = await screen.findByRole(
+    fireEvent.click(next)
+    const heading = await screen.findByRole(
       'heading',
       { level: 2, name: /Question 2:\s*Prompt 1\?/ },
       { timeout: 3000 },
     )
-    await waitFor(() => expect(document.activeElement).toBe(next))
+    await waitFor(() => expect(document.activeElement).toBe(heading))
   })
 
-  it('keeps a keyboard-answered teach card until the player continues', async () => {
+  it('keeps the Teach card until the player continues', async () => {
     vi.useFakeTimers({ shouldAdvanceTime: true })
     mockApi([{ correct: false, strikes: 1, streak: 0 }])
     await startClassic()
 
     fireEvent.keyDown(window, { key: 'a' })
-    fireEvent.pointerDown(window)
-    const teach = await screen.findByRole('button', { name: /^Wrong\./ })
-    expect(screen.getByText('Press Enter to continue')).toBeTruthy()
+    const next = await screen.findByRole('button', { name: 'Continue' }, { timeout: 3000 })
 
     await act(() => vi.advanceTimersByTimeAsync(5000))
-    expect(teach.isConnected).toBe(true)
+    expect(next.isConnected).toBe(true)
     vi.useRealTimers()
   })
 
@@ -168,9 +167,9 @@ describe('App keyboard and screen-reader play', () => {
     await startClassic()
 
     fireEvent.keyDown(window, { key: 'b' })
-    expect(
-      await screen.findByRole('button', { name: /^Time’s up\. Strike 1 of 3\./ }),
-    ).toBeTruthy()
+    await waitFor(() =>
+      expect(screen.getByText('Time’s up. Strike 1 of 3.')).toBeTruthy(),
+    )
   })
 
   it('leaves a run without a blocking confirm and returns focus to the start button', async () => {
