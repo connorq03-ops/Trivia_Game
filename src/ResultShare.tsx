@@ -1,6 +1,13 @@
 import { useEffect, useRef, useState } from 'react'
 import { msUntilNextUtcMidnight, type GameSummary } from './game/dailyStore'
-import { buildShareText, formatCountdown, resultSquares } from './game/share'
+import type { AnswerResult } from './game/engine'
+import { buildShareText, formatCountdown } from './game/share'
+
+const resultLabels: Record<AnswerResult, string> = {
+  hit: 'Correct',
+  miss: 'Wrong',
+  timeout: 'Time ran out',
+}
 
 export function ResultShare({
   summary,
@@ -66,23 +73,28 @@ export function ResultShare({
     await copyToClipboard(text)
   }
 
-  const squares = summary.results?.length
-    ? resultSquares(summary.results)
-    : null
-  const hits = summary.results?.filter((result) => result === 'hit').length ?? 0
+  const results = summary.results ?? []
+  const hits = results.filter((result) => result === 'hit').length
 
   return (
     <div className="result-share">
-      {squares && (
-        <p
+      {results.length > 0 && (
+        <ol
           className="result-squares"
-          aria-label={`${hits} of ${summary.results?.length} correct`}
+          aria-label={`${hits} of ${results.length} correct`}
         >
-          {squares}
-        </p>
+          {results.map((result, index) => (
+            <li
+              className={`result-square result-square--${result}`}
+              key={`${result}-${index}`}
+              title={resultLabels[result]}
+              aria-label={resultLabels[result]}
+            />
+          ))}
+        </ol>
       )}
       <p className="result-meta">
-        {dayStreak > 0 && <>🔥 {dayStreak}-day streak · </>}
+        {dayStreak > 0 && <>{dayStreak}-day streak · </>}
         Next Daily in {formatCountdown(msUntilNextUtcMidnight(now))}
       </p>
       <button

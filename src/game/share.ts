@@ -3,6 +3,7 @@ import type { GameSummary } from './dailyStore'
 
 // Swap to https://streakingsports.com once the domain is live.
 export const SHARE_URL = 'https://streaking-sports.vercel.app'
+export const MAX_SHARE_SQUARES = 30
 
 export function resultSquares(results: AnswerResult[]): string {
   return results
@@ -30,7 +31,12 @@ export function buildShareText(
       ? `Streaking Sports Daily 10 · ${summary.date}`
       : 'Streaking Sports Classic',
   ]
-  if (summary.results?.length) lines.push(resultSquares(summary.results))
+  if (
+    summary.results?.length &&
+    summary.results.length <= MAX_SHARE_SQUARES
+  ) {
+    lines.push(resultSquares(summary.results))
+  }
 
   let meta = `${summary.score.toLocaleString('en-US')} pts · Best streak ${summary.bestStreak}`
   if (summary.mode === 'daily' && dayStreak > 0) {

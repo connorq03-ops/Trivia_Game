@@ -564,7 +564,7 @@ function App() {
           </button>
           {todaySummary && (
             <p className="daily-meta">
-              {dayStreak > 0 && <>🔥 {dayStreak}-day streak · </>}
+              {dayStreak > 0 && <>{dayStreak}-day streak · </>}
               Next Daily in {formatCountdown(msUntilNextUtcMidnight(now))}
             </p>
           )}

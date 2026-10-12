@@ -566,11 +566,31 @@
 }
 
 .result-squares {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  list-style: none;
   margin: 0;
-  font-size: clamp(1.35rem, 7vw, 2rem);
-  letter-spacing: 0.2em;
-  line-height: 1.5;
-  overflow-wrap: anywhere;
+  padding: 0;
+}
+
+.result-square {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex: 0 0 1.5rem;
+  border-radius: 0.3rem;
+}
+
+.result-square--hit {
+  background: var(--accent);
+}
+
+.result-square--miss {
+  background: #f08e76;
+}
+
+.result-square--timeout {
+  background: var(--muted);
 }
 
 .result-meta {

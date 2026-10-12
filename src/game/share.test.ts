@@ -53,6 +53,20 @@ describe('share helpers', () => {
     )
   })
 
+  it('omits the squares line for a Classic run with more than 30 results', () => {
+    const longClassic = summary({
+      mode: 'classic',
+      results: Array.from({ length: 31 }, () => 'hit'),
+    })
+    expect(buildShareText(longClassic, 0)).toBe(
+      [
+        'Streaking Sports Classic',
+        '1,234 pts · Best streak 4',
+        SHARE_URL,
+      ].join('\n'),
+    )
+  })
+
   it('omits the squares line for a legacy summary without results', () => {
     expect(buildShareText(summary({ results: undefined }), 0)).toBe(
       [
