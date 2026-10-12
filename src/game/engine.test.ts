@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import {
   answerQuestion,
+  CLOCK_MS,
   createRunProgress,
   dailyQuestions,
   presentQuestion,
@@ -114,6 +115,22 @@ describe('presentQuestion', () => {
 
 describe('answerQuestion', () => {
   const question = makeQuestion(0, { side: 'rules', difficulty: 'medium' })
+
+  it('records answer results, including timeouts', () => {
+    expect(createRunProgress().results).toEqual([])
+    expect(answerQuestion(createRunProgress(), question, true, 1000).progress.results).toEqual([
+      'hit',
+    ])
+    expect(answerQuestion(createRunProgress(), question, false, 1000).progress.results).toEqual([
+      'miss',
+    ])
+    expect(answerQuestion(createRunProgress(), question, true, null).progress.results).toEqual([
+      'timeout',
+    ])
+    expect(answerQuestion(createRunProgress(), question, true, CLOCK_MS).progress.results).toEqual([
+      'timeout',
+    ])
+  })
 
   it('backs off a strike at streaks 15 and 30 without banking', () => {
     let progress = { ...createRunProgress(), strikes: 1 }
