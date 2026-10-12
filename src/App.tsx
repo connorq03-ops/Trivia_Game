@@ -148,6 +148,8 @@ function App() {
   const dayStreak = useMemo(() => {
     const storage = browserStorage()
     return storage ? dailyStreak(storage, today) : 0
+    // todaySummary is a recompute trigger: the streak reads storage, which changes when a Daily is saved.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [today, todaySummary])
   const [session, setSession] = useState<GameSession | null>(null)
   const [summary, setSummary] = useState<GameSummary | null>(null)
