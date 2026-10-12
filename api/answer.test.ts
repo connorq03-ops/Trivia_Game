@@ -230,6 +230,36 @@ describe('answer handler', () => {
     expect(vi.mocked(selectClassicQuestion).mock.calls.at(-1)?.[2]).toBe(16)
   })
 
+  it('omits partial results when a legacy Daily run completes', async () => {
+    const dailyDate = '2099-12-31'
+    const daily = dailyQuestions(dailyDate, questionBank)
+    const question = daily[9]
+    const run = makeRun(question, {
+      mode: 'daily',
+      daily_date: dailyDate,
+      question_index: 9,
+      used_fact_ids: daily.map((item) => item.factId),
+      progress: {
+        ...makeRun(question).progress,
+        questionsAnswered: 9,
+      },
+    })
+    mockSql({ rows: [run] })
+    const response = await POST(
+      makeRequest({
+        ...validBody,
+        questionIndex: 9,
+        choice: question.wrong[0],
+      }),
+    )
+    const body = await response.json()
+
+    expect(response.status).toBe(200)
+    expect(body.summary.reason).toBe('complete')
+    expect(body.summary.questionsAnswered).toBe(10)
+    expect(body.summary.results).toBeUndefined()
+  })
+
   it('ends a Classic run on its third strike', async () => {
     const question = questionBank[0]
     mockSql({

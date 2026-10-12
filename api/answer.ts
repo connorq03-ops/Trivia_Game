@@ -222,7 +222,11 @@ export async function POST(request: Request): Promise<Response> {
             answeredCount: outcome.progress.answeredCount,
             totalAnswerMs: outcome.progress.totalAnswerMs,
             missed: outcome.progress.missed,
-            results: outcome.progress.results,
+            results:
+              outcome.progress.results.length ===
+              outcome.progress.questionsAnswered
+                ? outcome.progress.results
+                : undefined,
             reason: endReason,
           }
     const nextPublic = next ? { questionIndex: nextQuestionIndex } : null

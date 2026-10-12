@@ -12,6 +12,7 @@ import {
   type Callout,
 } from './game/reveal'
 import {
+  DAILY_STORAGE_PREFIX,
   dailyStreak,
   dailyStorageKey,
   msUntilNextUtcMidnight,
@@ -145,12 +146,13 @@ function App() {
   const [todaySummary, setTodaySummary] = useState<GameSummary | null>(() =>
     typeof window === 'undefined' ? null : storedSummary(utcDate()),
   )
+  const [dailyStorageVersion, setDailyStorageVersion] = useState(0)
   const dayStreak = useMemo(() => {
     const storage = browserStorage()
     return storage ? dailyStreak(storage, today) : 0
-    // todaySummary is a recompute trigger: the streak reads storage, which changes when a Daily is saved.
+    // todaySummary and dailyStorageVersion trigger recomputation for storage changes.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [today, todaySummary])
+  }, [today, todaySummary, dailyStorageVersion])
   const [session, setSession] = useState<GameSession | null>(null)
   const [summary, setSummary] = useState<GameSummary | null>(null)
   const [teachInfo, setTeachInfo] = useState<{
@@ -210,7 +212,13 @@ function App() {
       if (document.visibilityState === 'visible') refreshToday()
     }
     const onStorage = (event: StorageEvent) => {
-      if (event.key === dailyStorageKey(today)) {
+      if (
+        event.key === null ||
+        event.key.startsWith(DAILY_STORAGE_PREFIX)
+      ) {
+        setDailyStorageVersion((version) => version + 1)
+      }
+      if (event.key === null || event.key === dailyStorageKey(today)) {
         setTodaySummary(storedSummary(today))
       }
     }
@@ -232,6 +240,14 @@ function App() {
       window.clearTimeout(timer)
     }
   }, [refreshToday, today])
+
+  useEffect(() => {
+    if (screen !== 'home' || !todaySummary) return
+    const updateNow = () => setNow(Date.now())
+    updateNow()
+    const interval = window.setInterval(updateNow, 30_000)
+    return () => window.clearInterval(interval)
+  }, [screen, todaySummary])
 
   const startRun = async (
     input:

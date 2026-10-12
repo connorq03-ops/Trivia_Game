@@ -16,6 +16,8 @@ export type GameSummary = {
 
 type StorageLike = Pick<Storage, 'getItem' | 'setItem'>
 
+export const DAILY_STORAGE_PREFIX = 'streaking-sports:daily:'
+
 function dateOffset(date: string, days: number): string {
   const [year, month, day] = date.split('-').map(Number)
   return new Date(Date.UTC(year, month - 1, day + days))
@@ -24,7 +26,7 @@ function dateOffset(date: string, days: number): string {
 }
 
 export function dailyStorageKey(date: string): string {
-  return `streaking-sports:daily:${date}`
+  return `${DAILY_STORAGE_PREFIX}${date}`
 }
 
 export function readDailySummary(
