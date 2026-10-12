@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { CSSProperties } from 'react'
-import { CLOCK_MS, STRIKES, STRIKE_BACK_EVERY } from './game/engine'
+import { CLOCK_MS, REEL_MS, STRIKES, STRIKE_BACK_EVERY } from './game/engine'
 import {
   modeSubtitle,
   multiplierLabel,
@@ -24,8 +24,6 @@ import { formatCountdown } from './game/share'
 import type { Question, Side, Sport } from './game/types'
 import { ResultShare } from './ResultShare'
 import './App.css'
-
-const REEL_MS = 1200
 
 type Screen =
   | 'home'
@@ -568,6 +566,7 @@ function App() {
     answerStartedAt.current = performance.now() - questionClockOffset.current
 
     const updateClock = () => {
+      if (answered.current) return
       const elapsed = performance.now() - answerStartedAt.current
       setElapsedMs(Math.min(CLOCK_MS, elapsed))
       if (elapsed >= CLOCK_MS) submitAnswerRef.current(null, null)

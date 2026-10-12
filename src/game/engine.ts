@@ -3,6 +3,7 @@ import type { Difficulty, Question, Side, Sport } from './types.js'
 export const STRIKES = 3
 export const STRIKE_BACK_EVERY = 15
 export const CLOCK_MS = 10_000
+export const REEL_MS = 2_000
 export const GRACE_MS = 1_500
 export const SLACK_MS = 3_000
 export const MULTIPLIER_TIERS = [
