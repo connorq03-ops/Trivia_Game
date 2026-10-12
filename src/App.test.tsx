@@ -154,6 +154,7 @@ describe('App keyboard and screen-reader play', () => {
     await startClassic()
 
     fireEvent.keyDown(window, { key: 'a' })
+    fireEvent.pointerDown(window)
     const teach = await screen.findByRole('button', { name: /^Wrong\./ })
     expect(screen.getByText('Press Enter to continue')).toBeTruthy()
 

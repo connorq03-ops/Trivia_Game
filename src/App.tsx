@@ -166,6 +166,7 @@ function App() {
   const classicButtonRef = useRef<HTMLButtonElement>(null)
   const homeFocusMode = useRef<Mode | null>(null)
   const lastInputWasPointer = useRef(true)
+  const answeredWithPointer = useRef(true)
   const teachAutoContinue = teachInfo?.autoContinue ?? true
 
   const refreshToday = useCallback(() => {
@@ -361,7 +362,7 @@ function App() {
           answer: result.answer,
           teach: result.teach,
           verdict: `${body.choice === null || body.choice === result.answer ? 'Time’s up' : 'Wrong'}. Strike ${result.progress.strikes} of ${STRIKES}.`,
-          autoContinue: lastInputWasPointer.current,
+          autoContinue: answeredWithPointer.current,
         })
         setPendingSummary(result.summary)
         setPendingNextIndex(nextIndex)
@@ -388,6 +389,7 @@ function App() {
   const submitAnswer = (choice: string | null, clientMs: number | null) => {
     if (!session || screen !== 'question' || answered.current) return
     answered.current = true
+    answeredWithPointer.current = lastInputWasPointer.current
     const body: AnswerBody = {
       runId: session.runId,
       runToken: session.runToken,
