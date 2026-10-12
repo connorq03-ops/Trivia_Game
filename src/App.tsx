@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { CSSProperties } from 'react'
 import { CLOCK_MS, STRIKES, STRIKE_BACK_EVERY } from './game/engine'
 import {
@@ -12,13 +12,17 @@ import {
   type Callout,
 } from './game/reveal'
 import {
+  DAILY_STORAGE_PREFIX,
+  dailyStreak,
   dailyStorageKey,
   msUntilNextUtcMidnight,
   readDailySummary,
   saveDailySummaryIfFirst,
   type GameSummary,
 } from './game/dailyStore'
+import { formatCountdown } from './game/share'
 import type { Question, Side, Sport } from './game/types'
+import { ResultShare } from './ResultShare'
 import './App.css'
 
 const REEL_MS = 1200
@@ -149,9 +153,17 @@ function App() {
   const [sport, setSport] = useState<'all' | Sport>('all')
   const [side, setSide] = useState<'both' | Side>('both')
   const [today, setToday] = useState(utcDate)
+  const [now, setNow] = useState(() => Date.now())
   const [todaySummary, setTodaySummary] = useState<GameSummary | null>(() =>
     typeof window === 'undefined' ? null : storedSummary(utcDate()),
   )
+  const [dailyStorageVersion, setDailyStorageVersion] = useState(0)
+  const dayStreak = useMemo(() => {
+    const storage = browserStorage()
+    return storage ? dailyStreak(storage, today) : 0
+    // todaySummary and dailyStorageVersion trigger recomputation for storage changes.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [today, todaySummary, dailyStorageVersion])
   const [session, setSession] = useState<GameSession | null>(null)
   const [summary, setSummary] = useState<GameSummary | null>(null)
   const [teachInfo, setTeachInfo] = useState<{
@@ -192,6 +204,7 @@ function App() {
   const homeFocusMode = useRef<Mode | null>(null)
 
   const refreshToday = useCallback(() => {
+    setNow(Date.now())
     const date = utcDate()
     if (date !== today) {
       setToday(date)
@@ -220,7 +233,13 @@ function App() {
       if (document.visibilityState === 'visible') refreshToday()
     }
     const onStorage = (event: StorageEvent) => {
-      if (event.key === dailyStorageKey(today)) {
+      if (
+        event.key === null ||
+        event.key.startsWith(DAILY_STORAGE_PREFIX)
+      ) {
+        setDailyStorageVersion((version) => version + 1)
+      }
+      if (event.key === null || event.key === dailyStorageKey(today)) {
         setTodaySummary(storedSummary(today))
       }
     }
@@ -242,6 +261,14 @@ function App() {
       window.clearTimeout(timer)
     }
   }, [refreshToday, today])
+
+  useEffect(() => {
+    if (screen !== 'home' || !todaySummary) return
+    const updateNow = () => setNow(Date.now())
+    updateNow()
+    const interval = window.setInterval(updateNow, 30_000)
+    return () => window.clearInterval(interval)
+  }, [screen, todaySummary])
 
   const startRun = async (
     input:
@@ -501,13 +528,7 @@ function App() {
     setScreen('home')
   }
 
-  const playAgain = () => {
-    if (summary?.mode === 'daily') {
-      openDaily()
-    } else {
-      startClassic()
-    }
-  }
+  const playAgain = () => startClassic()
 
   const activeQuestionId = session?.question.id
 
@@ -654,6 +675,12 @@ function App() {
             </span>
             <span aria-hidden="true">→</span>
           </button>
+          {todaySummary && (
+            <p className="daily-meta">
+              {dayStreak > 0 && <>{dayStreak}-day streak · </>}
+              Next Daily in {formatCountdown(msUntilNextUtcMidnight(now))}
+            </p>
+          )}
           <section className="classic-panel" aria-labelledby="classic-title">
             <div className="section-heading">
               <div>
@@ -729,7 +756,7 @@ function App() {
             </button>
             <div className="game-mode-label">
               {session.mode === 'daily' ? 'DAILY 10' : 'CLASSIC'}
-              <span>QUESTION {session.questionIndex + 1}</span>
+              {screen !== 'over' && <span>QUESTION {session.questionIndex + 1}</span>}
             </div>
             <div className="score-label">
               <span>SCORE</span>
@@ -743,42 +770,44 @@ function App() {
             </div>
           </header>
 
-          <div className="game-stats">
-            {session.mode === 'classic' ? (
-              <div className="strike-display">
-                <span className="strike-caption">STRIKES</span>
-                <div
-                  className="strike-group"
-                  role="img"
-                  aria-label={`${progress.strikes} of ${STRIKES} strikes`}
-                >
-                  {[0, 1, 2].map((strike) => (
-                    <span
-                      className={`strike-slot ${strike < progress.strikes ? 'is-active' : ''}`}
-                      key={strike}
-                      aria-label={strikeLabel(strike + 1)}
-                      title={strikeLabel(strike + 1)}
-                    >
-                      K
-                    </span>
-                  ))}
+          {screen !== 'over' && (
+            <div className="game-stats">
+              {session.mode === 'classic' ? (
+                <div className="strike-display">
+                  <span className="strike-caption">STRIKES</span>
+                  <div
+                    className="strike-group"
+                    role="img"
+                    aria-label={`${progress.strikes} of ${STRIKES} strikes`}
+                  >
+                    {[0, 1, 2].map((strike) => (
+                      <span
+                        className={`strike-slot ${strike < progress.strikes ? 'is-active' : ''}`}
+                        key={strike}
+                        aria-label={strikeLabel(strike + 1)}
+                        title={strikeLabel(strike + 1)}
+                      >
+                        K
+                      </span>
+                    ))}
+                  </div>
                 </div>
+              ) : (
+                <div className="daily-misses">{progress.strikes} missed</div>
+              )}
+              <div
+                className={`streak-ring ${screen === 'reveal' && reveal?.correct ? 'is-pulsing' : ''}`}
+                style={{
+                  '--streak-fill': `${streakFill(progress.streak) * 100}%`,
+                } as CSSProperties}
+                role="img"
+                aria-label={`${progress.streak} streak, strike back at ${STRIKE_BACK_EVERY}`}
+              >
+                <span>{progress.streak}</span>
+                <small>/{STRIKE_BACK_EVERY}</small>
               </div>
-            ) : (
-              <div className="daily-misses">{progress.strikes} missed</div>
-            )}
-            <div
-              className={`streak-ring ${screen === 'reveal' && reveal?.correct ? 'is-pulsing' : ''}`}
-              style={{
-                '--streak-fill': `${streakFill(progress.streak) * 100}%`,
-              } as CSSProperties}
-              role="img"
-              aria-label={`${progress.streak} streak, strike back at ${STRIKE_BACK_EVERY}`}
-            >
-              <span>{progress.streak}</span>
-              <small>/{STRIKE_BACK_EVERY}</small>
             </div>
-          </div>
+          )}
 
           {screen === 'connection' && (
             <div className="connection-note" role="alert">
@@ -956,6 +985,7 @@ function App() {
                   <span>AVG ANSWER</span>
                 </div>
               </div>
+              <ResultShare summary={currentSummary} dayStreak={dayStreak} />
               {currentSummary.missed.length > 0 && (
                 <div className="missed-list">
                   <h3>Review the misses</h3>
@@ -969,7 +999,11 @@ function App() {
                 </div>
               )}
               <div className="result-actions">
-                <button className="classic-button" onClick={playAgain}>Play again</button>
+                {currentSummary.mode === 'daily' ? (
+                  <button className="classic-button" onClick={startClassic}>Play Classic</button>
+                ) : (
+                  <button className="classic-button" onClick={playAgain}>Play again</button>
+                )}
                 <button className="secondary-button" onClick={goHome}>Home</button>
               </div>
             </section>
@@ -1002,6 +1036,7 @@ function App() {
                 <span>AVG ANSWER</span>
               </div>
             </div>
+            <ResultShare summary={currentSummary} dayStreak={dayStreak} />
             {currentSummary.missed.length > 0 && (
               <div className="missed-list">
                 <h3>Review the misses</h3>
@@ -1013,7 +1048,7 @@ function App() {
               </div>
             )}
             <div className="result-actions">
-              <button className="classic-button" onClick={openDaily}>View result</button>
+              <button className="classic-button" onClick={startClassic}>Play Classic</button>
               <button className="secondary-button" onClick={goHome}>Home</button>
             </div>
           </section>

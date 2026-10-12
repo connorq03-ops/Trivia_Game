@@ -29,6 +29,8 @@ export type ClassicOptions = {
   side: 'both' | Side
 }
 
+export type AnswerResult = 'hit' | 'miss' | 'timeout'
+
 export type RunProgress = {
   score: number
   strikes: number
@@ -38,6 +40,7 @@ export type RunProgress = {
   answeredCount: number
   totalAnswerMs: number
   missed: Question[]
+  results: AnswerResult[]
 }
 
 export type ClassicSelection =
@@ -222,6 +225,7 @@ export function createRunProgress(): RunProgress {
     answeredCount: 0,
     totalAnswerMs: 0,
     missed: [],
+    results: [],
   }
 }
 
@@ -257,6 +261,10 @@ export function answerQuestion(
     answeredCount: progress.answeredCount + (timedOut ? 0 : 1),
     totalAnswerMs: progress.totalAnswerMs + (timedOut ? 0 : normalizedAnswerMs ?? 0),
     missed: correct ? progress.missed : [...progress.missed, question],
+    results: [
+      ...progress.results,
+      timedOut ? 'timeout' : correct ? 'hit' : 'miss',
+    ],
   }
 
   return {

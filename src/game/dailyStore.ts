@@ -1,3 +1,4 @@
+import type { AnswerResult } from './engine'
 import type { Question } from './types'
 
 export type GameSummary = {
@@ -9,13 +10,23 @@ export type GameSummary = {
   answeredCount: number
   totalAnswerMs: number
   missed: Question[]
+  results?: AnswerResult[]
   reason: 'strikes' | 'bank' | 'complete'
 }
 
 type StorageLike = Pick<Storage, 'getItem' | 'setItem'>
 
+export const DAILY_STORAGE_PREFIX = 'streaking-sports:daily:'
+
+function dateOffset(date: string, days: number): string {
+  const [year, month, day] = date.split('-').map(Number)
+  return new Date(Date.UTC(year, month - 1, day + days))
+    .toISOString()
+    .slice(0, 10)
+}
+
 export function dailyStorageKey(date: string): string {
-  return `streaking-sports:daily:${date}`
+  return `${DAILY_STORAGE_PREFIX}${date}`
 }
 
 export function readDailySummary(
@@ -43,6 +54,19 @@ export function saveDailySummaryIfFirst(
     return result
   }
   return result
+}
+
+export function dailyStreak(storage: StorageLike, today: string): number {
+  let date = readDailySummary(storage, today) ? today : dateOffset(today, -1)
+  let streak = 0
+
+  for (let day = 0; day < 366; day += 1) {
+    if (!readDailySummary(storage, date)) break
+    streak += 1
+    date = dateOffset(date, -1)
+  }
+
+  return streak
 }
 
 export function msUntilNextUtcMidnight(nowMs: number): number {
