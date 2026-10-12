@@ -2,6 +2,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { getSql } from '../lib/db.js'
 import { questionBank } from '../lib/questions.js'
 import { hashRunToken } from '../lib/runToken.js'
+import { REEL_MS } from '../src/game/engine.js'
 import { POST } from './question.js'
 
 vi.mock('../lib/db.js', () => ({
@@ -61,7 +62,10 @@ describe('question handler', () => {
 
     const [strings, ...values] = sql.mock.calls[0]
     const query = strings.join('?')
-    expect(query).toContain('issued_at = coalesce(issued_at, now())')
+    expect(query).toContain(
+      'issued_at = coalesce(issued_at, now() + make_interval(secs => ?))',
+    )
+    expect(values).toContain(REEL_MS / 1000)
     expect(query).toContain('::bigint as elapsed_ms')
     expect(query).toContain('token_hash = ?')
     expect(query).toContain("status = 'active'")
