@@ -3313,7 +3313,7 @@
     "difficulty": "hard",
     "category": "What's the call?",
     "prompt": "A pitch hits the MLB batter while it's in the strike zone. The call?",
-    "answer": "Strike",
+    "answer": "Called strike",
     "wrong": [
       "Hit by pitch, 1st base",
       "Ball",
@@ -3336,7 +3336,7 @@
     "difficulty": "hard",
     "category": "What's the call?",
     "prompt": "An MLB batter leans into the strike zone and is hit by the pitch. Ruling?",
-    "answer": "Strike",
+    "answer": "Called strike",
     "wrong": [
       "Hit by pitch",
       "Ball",
