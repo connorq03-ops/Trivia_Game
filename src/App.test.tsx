@@ -151,6 +151,22 @@ describe('App keyboard and screen-reader play', () => {
     expect(clock.getAttribute('aria-valuenow')).toBe(secondsAtPick)
   })
 
+  it('zeros the clock for a late correct pick', async () => {
+    vi.useFakeTimers({ shouldAdvanceTime: true })
+    mockApi([{ correct: false, strikes: 1, streak: 0 }])
+    await startClassic()
+
+    await act(() => vi.advanceTimersByTimeAsync(REEL_MS / 2))
+    const clock = screen.getByRole('progressbar', { name: 'Time remaining' })
+    expect(Number(clock.getAttribute('aria-valuenow'))).toBeGreaterThan(0)
+    expect(Number(clock.getAttribute('aria-valuenow'))).toBeLessThan(10)
+
+    fireEvent.click(screen.getByRole('button', { name: 'BB0' }))
+
+    expect(await screen.findByText("Time's up")).toBeTruthy()
+    expect(clock.getAttribute('aria-valuenow')).toBe('0')
+  })
+
   it('announces a wrong answer and focuses the Teach Continue button', async () => {
     mockApi([{ correct: false, strikes: 1, streak: 0 }])
     await startClassic()

@@ -414,6 +414,9 @@ function App() {
       if (!response.ok) throw new Error('Answer submission failed')
       const result = (await response.json()) as AnswerResponse
       if (activeRunId.current !== body.runId) return
+      const timedOut =
+        !result.correct &&
+        (body.choice === null || body.choice === result.answer)
       const updatedCurrent = { ...current, progress: result.progress }
       const nextIndex = result.next?.questionIndex ?? null
 
@@ -441,11 +444,12 @@ function App() {
           ? revealCallouts(current.progress, result.progress)
           : [],
       })
+      if (timedOut) setElapsedMs(CLOCK_MS)
       setScreen('reveal')
       setAnnouncement(
         result.correct
           ? `Correct! Plus ${result.points}. Streak ${result.progress.streak}.`
-          : `${body.choice === null || body.choice === result.answer ? 'Time’s up' : 'Wrong'}. ${
+          : `${timedOut ? 'Time’s up' : 'Wrong'}. ${
               current.mode === 'classic'
                 ? `Strike ${result.progress.strikes} of ${STRIKES}.`
                 : `${result.progress.strikes} missed.`
