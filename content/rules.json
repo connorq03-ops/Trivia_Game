@@ -925,7 +925,7 @@
       "10 minutes",
       "12 minutes"
     ],
-    "teach": "Every NBA overtime period is 5 minutes.",
+    "teach": "Each NBA overtime period is 5 minutes, with a 2:30 break before it.",
     "source": {
       "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
       "ref": "NBA Rule 5, Section II — Timing"
@@ -948,7 +948,7 @@
       "6 minutes",
       "10 minutes"
     ],
-    "teach": "Every NBA overtime period is 5 minutes.",
+    "teach": "Each NBA overtime period is 5 minutes, with a 2:30 break before it.",
     "source": {
       "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
       "ref": "NBA Rule 5, Section II — Timing"
@@ -971,7 +971,7 @@
       "4",
       "6"
     ],
-    "teach": "Every NBA overtime period is 5 minutes.",
+    "teach": "Each NBA overtime period is 5 minutes, with a 2:30 break before it.",
     "source": {
       "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
       "ref": "NBA Rule 5, Section II — Timing"
@@ -1109,7 +1109,7 @@
       "3",
       "4"
     ],
-    "teach": "Each NBA team gets 2 team timeouts in every overtime period.",
+    "teach": "Each NBA team gets 2 team timeouts per overtime period, versus 7 in regulation.",
     "source": {
       "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
       "ref": "NBA Rule 5, Section VI — Timeouts"
@@ -1132,7 +1132,7 @@
       "1",
       "3"
     ],
-    "teach": "Each NBA team gets 2 team timeouts in every overtime period.",
+    "teach": "Each NBA team gets 2 team timeouts per overtime period, versus 7 in regulation.",
     "source": {
       "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
       "ref": "NBA Rule 5, Section VI — Timeouts"
@@ -2075,7 +2075,7 @@
       "2",
       "4"
     ],
-    "teach": "A field goal is worth 3 points.",
+    "teach": "A field goal is 3 points: the placekicker must kick it over the crossbar and between the uprights.",
     "source": {
       "url": "https://operations.nfl.com/rules-officiating/nfl-football-basics/football-terms/",
       "ref": "NFL Football Terms — Field Goal; NFL Rule 11, Section 1"
@@ -2098,7 +2098,7 @@
       "7",
       "8"
     ],
-    "teach": "A touchdown is worth 6 points, before the try.",
+    "teach": "A touchdown is 6 points: carry the ball across the goal line or catch it in the end zone.",
     "source": {
       "url": "https://operations.nfl.com/rules-officiating/nfl-football-basics/football-terms/",
       "ref": "NFL Football Terms — Touchdown; NFL Rule 11, Section 1"

@@ -24,6 +24,7 @@ const stopwords = new Set([
   'a', 'an', 'and', 'at', 'by', 'did', 'for', 'from', 'he', 'his', 'in',
   'is', 'it', 'of', 'on', 'or', 'the', 'then', 'to', 'was', 'what',
   'where', 'which', 'who', 'with', 'wore', 'no', 'number', 'country',
+  'every', 'worth',
 ])
 const words = (text: string) =>
   text
