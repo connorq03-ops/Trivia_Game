@@ -533,6 +533,8 @@ function App() {
   const currentSummary = screen === 'over' ? summary : null
   const progress = session?.progress
   const question = session?.question
+  const lateCorrect =
+    reveal !== null && !reveal.correct && reveal.picked === reveal.answer
   const remainingSeconds = Math.max(0, Math.ceil((CLOCK_MS - elapsedMs) / 1000))
   const clockStyle = {
     '--clock-progress': `${Math.max(0, 100 - (elapsedMs / CLOCK_MS) * 100)}%`,
@@ -734,7 +736,7 @@ function App() {
                   {question.side === 'rules' ? 'RULEBOOK' : question.reel?.player}
                 </p>
                 <h2>{question.prompt}</h2>
-                {screen === 'reveal' && reveal?.picked === null && (
+                {screen === 'reveal' && reveal && (reveal.picked === null || lateCorrect) && (
                   <div className="times-up">Time's up</div>
                 )}
                 <div className="answer-list">
@@ -749,7 +751,8 @@ function App() {
                         screen === 'reveal' &&
                         reveal !== null &&
                         !reveal.correct &&
-                        reveal.picked === choice
+                        reveal.picked === choice &&
+                        choice !== reveal.answer
                           ? 'is-wrong'
                           : '',
                       ].filter(Boolean).join(' ')}
@@ -770,7 +773,9 @@ function App() {
             <section className="teach-overlay" aria-live="polite">
               <p className="teach-prompt">{question.prompt}</p>
               <p className="teach-pick">
-                {picked === null ? "Time's up" : `Your pick: ${picked}`}
+                {picked === null || picked === teachInfo?.answer
+                  ? "Time's up"
+                  : `Your pick: ${picked}`}
               </p>
               <p className="teach-answer">Right answer: {teachInfo?.answer}</p>
               <span>{teachInfo?.teach}</span>
