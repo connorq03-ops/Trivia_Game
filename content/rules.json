@@ -2415,7 +2415,7 @@
     ],
     "difficulty": "easy",
     "category": "What's the call?",
-    "prompt": "NFL penalty yards for grabbing an opponent's facemask?",
+    "prompt": "NFL penalty yards for twisting or pulling an opponent's facemask?",
     "answer": "15",
     "wrong": [
       "5",
@@ -2530,7 +2530,7 @@
     ],
     "difficulty": "hard",
     "category": "What's the call?",
-    "prompt": "NFL intentional grounding, thrown 5 yards behind the line. Result?",
+    "prompt": "NFL intentional grounding near midfield, thrown 5 yards behind the line. Result?",
     "answer": "Loss of down + 10 yds",
     "wrong": [
       "5 yards, replay down",
@@ -2599,7 +2599,7 @@
     ],
     "difficulty": "hard",
     "category": "What's the call?",
-    "prompt": "NFL defensive pass interference in the end zone. Where's the ball?",
+    "prompt": "NFL DPI in the end zone on a snap from outside the defense's 2. Where's the ball?",
     "answer": "The 1-yard line",
     "wrong": [
       "The 2-yard line",
