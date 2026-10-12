@@ -315,4 +315,34 @@ describe('Daily 10', () => {
       ),
     ).toBe(true)
   })
+
+  it('keeps the same questions when future-gated questions are appended', () => {
+    const date = '2099-12-31'
+    const extra = bank
+      .filter((question) => question.side === 'rules')
+      .slice(0, 10)
+      .map((question, index) => ({
+        ...question,
+        id: `${question.id}-future-${index}`,
+        factId: `${question.factId}-future-${index}`,
+        dailyFrom: '2100-01-01',
+      }))
+
+    expect(dailyQuestions(date, [...bank, ...extra])).toEqual(
+      dailyQuestions(date, bank),
+    )
+  })
+
+  it('includes questions whose dailyFrom is the current date', () => {
+    const date = '2099-12-31'
+    const eligibleBank = bank.map((question) =>
+      question.side === 'rules' ? { ...question, dailyFrom: date } : question,
+    )
+
+    expect(
+      dailyQuestions(date, eligibleBank).filter(
+        (question) => question.side === 'rules',
+      ),
+    ).toHaveLength(5)
+  })
 })

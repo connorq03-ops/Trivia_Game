@@ -190,13 +190,16 @@ export function selectClassicQuestion(
 }
 
 export function dailyQuestions(dateUtc: string, bank: Question[]): Question[] {
+  const eligible = bank.filter(
+    (question) => !question.dailyFrom || question.dailyFrom <= dateUtc,
+  )
   const rng = createSeededRandom(hashString(dateUtc))
   const usedFactIds = new Set<string>()
   const selected: Question[] = []
 
   for (const side of ['rules', 'players'] as const) {
     const candidates = shuffle(
-      bank.filter((question) => question.side === side),
+      eligible.filter((question) => question.side === side),
       rng,
     )
     for (const question of candidates) {
