@@ -6,6 +6,7 @@ import {
   createRunProgress,
   dailyQuestions,
   presentQuestion,
+  REEL_MS,
   selectClassicQuestion,
   type ClassicOptions,
 } from '../src/game/engine.js'
@@ -125,7 +126,7 @@ export async function POST(request: Request): Promise<Response> {
           0,
           ${question.id},
           ARRAY[${choice0}, ${choice1}, ${choice2}, ${choice3}]::text[],
-          now(),
+          now() + make_interval(secs => ${REEL_MS / 1000}),
           ${ipHash},
           ${hashRunToken(runToken)}
         where (

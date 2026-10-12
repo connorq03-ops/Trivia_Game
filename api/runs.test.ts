@@ -1,6 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { getSql } from '../lib/db.js'
 import { hashRunToken } from '../lib/runToken.js'
+import { REEL_MS } from '../src/game/engine.js'
 import { POST } from './runs.js'
 
 vi.mock('../lib/db.js', () => ({
@@ -112,8 +113,11 @@ describe('runs handler', () => {
     expect(response.status).toBe(201)
     expect(body.runId).toBe(runId)
     expect(body.runToken).toMatch(/^[A-Za-z0-9_-]{43}$/)
-    expect(insertQuery(sql)[1].values).toContain(hashRunToken(body.runToken))
-    expect(insertQuery(sql)[1].values).not.toContain(body.runToken)
+    const insert = insertQuery(sql)[1]
+    expect(insert.query).toContain('now() + make_interval(secs => ?)')
+    expect(insert.values).toContain(REEL_MS / 1000)
+    expect(insert.values).toContain(hashRunToken(body.runToken))
+    expect(insert.values).not.toContain(body.runToken)
     expect(body.question.choices).toHaveLength(4)
     expect(body.progress).toEqual({ score: 0, strikes: 0, streak: 0 })
     expect(body.total).toBeNull()
