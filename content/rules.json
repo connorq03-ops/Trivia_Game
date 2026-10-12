@@ -2197,5 +2197,1615 @@
       "ref": "NFL Featured Rules — Overtime Procedures; NFL Rule 16"
     },
     "validFrom": 2025
+  },
+  {
+    "id": "r-fb-off-holding-1",
+    "factId": "fb-off-holding",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "What's the call?",
+    "prompt": "NFL penalty yards for offensive holding?",
+    "answer": "10",
+    "wrong": [
+      "5",
+      "15",
+      "20"
+    ],
+    "teach": "Holding by the defense is 5 yards plus an automatic first down.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 12-1-3 — Holding by the offense (2026)"
+    }
+  },
+  {
+    "id": "r-fb-off-holding-2",
+    "factId": "fb-off-holding",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "What's the call?",
+    "prompt": "An NFL offensive lineman is flagged for holding. How many yards?",
+    "answer": "10 yards",
+    "wrong": [
+      "5 yards",
+      "15 yards",
+      "20 yards"
+    ],
+    "teach": "Defensive holding is only 5 yards but adds an automatic first down.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 12-1-3 — Holding by the offense (2026)"
+    }
+  },
+  {
+    "id": "r-fb-def-holding-1",
+    "factId": "fb-def-holding",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "What's the call?",
+    "prompt": "NFL defensive holding: what's the penalty?",
+    "answer": "5 yds + auto 1st down",
+    "wrong": [
+      "10 yards",
+      "15 yds + auto 1st down",
+      "5 yards, replay down"
+    ],
+    "teach": "Offensive holding is 10 yards with no automatic first down.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 12-1-6 — Defensive holding (2026)"
+    }
+  },
+  {
+    "id": "r-fb-def-holding-2",
+    "factId": "fb-def-holding",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "What's the call?",
+    "prompt": "NFL defensive holding gives the offense 5 yards plus what?",
+    "answer": "Automatic first down",
+    "wrong": [
+      "Loss of down",
+      "Free timeout",
+      "Untimed down"
+    ],
+    "teach": "Offensive holding costs 10 yards instead.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 12-1-6 — Defensive holding (2026)"
+    }
+  },
+  {
+    "id": "r-fb-false-start-1",
+    "factId": "fb-false-start",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "What's the call?",
+    "prompt": "NFL penalty yards for a false start?",
+    "answer": "5",
+    "wrong": [
+      "10",
+      "15",
+      "2"
+    ],
+    "teach": "The yards are walked off from the line of scrimmage before the snap.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 7-4-2 — False start (2026)"
+    }
+  },
+  {
+    "id": "r-fb-false-start-2",
+    "factId": "fb-false-start",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "What's the call?",
+    "prompt": "An NFL offensive lineman flinches before the snap. Penalty?",
+    "answer": "False start, 5 yards",
+    "wrong": [
+      "Offside, 10 yards",
+      "Holding, 10 yards",
+      "Delay, 15 yards"
+    ],
+    "teach": "The penalty is enforced from the line of scrimmage.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 7-4-2 — False start (2026)"
+    }
+  },
+  {
+    "id": "r-fb-encroachment-1",
+    "factId": "fb-encroachment",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "What's the call?",
+    "prompt": "NFL encroachment costs how many yards?",
+    "answer": "5",
+    "wrong": [
+      "10",
+      "15",
+      "2"
+    ],
+    "teach": "Officials blow the whistle immediately, so the play never starts.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 7-4-3 — Encroachment (2026)"
+    }
+  },
+  {
+    "id": "r-fb-too-many-men-1",
+    "factId": "fb-too-many-men",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "What's the call?",
+    "prompt": "NFL defense has 12 men in its formation at the snap. Yards?",
+    "answer": "5",
+    "wrong": [
+      "10",
+      "15",
+      "2"
+    ],
+    "teach": "It's still 5 yards if the 12th man is caught during the play.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 5-1-1 — Number of players (2026)"
+    }
+  },
+  {
+    "id": "r-fb-too-many-men-2",
+    "factId": "fb-too-many-men",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "What's the call?",
+    "prompt": "NFL penalty for 12 offensive players in the formation before the snap?",
+    "answer": "5 yards",
+    "wrong": [
+      "10 yards",
+      "15 yards",
+      "Loss of down"
+    ],
+    "teach": "If 12 are on the field while the ball is live, it's 5 from the previous spot.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 5-1-1 — Number of players (2026)"
+    }
+  },
+  {
+    "id": "r-fb-facemask-1",
+    "factId": "fb-facemask",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "What's the call?",
+    "prompt": "NFL penalty yards for grabbing an opponent's facemask?",
+    "answer": "15",
+    "wrong": [
+      "5",
+      "10",
+      "20"
+    ],
+    "teach": "A flagrant facemask foul can also get the player disqualified.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 12-2-15 — Face mask (2026)"
+    }
+  },
+  {
+    "id": "r-fb-facemask-2",
+    "factId": "fb-facemask",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "What's the call?",
+    "prompt": "A tackler twists a runner's facemask in the NFL. How many yards?",
+    "answer": "15 yards",
+    "wrong": [
+      "5 yards",
+      "10 yards",
+      "20 yards"
+    ],
+    "teach": "It also gives the offense an automatic first down when the defense commits it.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 12-2-15 — Face mask (2026)"
+    }
+  },
+  {
+    "id": "r-fb-horse-collar-1",
+    "factId": "fb-horse-collar",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "What's the call?",
+    "prompt": "NFL horse-collar tackle: what's the penalty?",
+    "answer": "15 yds + auto 1st down",
+    "wrong": [
+      "5 yards",
+      "10 yards",
+      "15 yds, loss of down"
+    ],
+    "teach": "It's grabbing the back or side collar of the pads or jersey and pulling the runner down.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 12-2-16 — Horse-collar tackle (2026)"
+    }
+  },
+  {
+    "id": "r-fb-roughing-passer-1",
+    "factId": "fb-roughing-passer",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "What's the call?",
+    "prompt": "NFL penalty for roughing the passer?",
+    "answer": "15 yds + auto 1st down",
+    "wrong": [
+      "5 yds + auto 1st down",
+      "10 yards",
+      "Loss of down"
+    ],
+    "teach": "A flagrant hit can also get the defender disqualified.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 12-2-11 — Roughing the passer (2026)"
+    }
+  },
+  {
+    "id": "r-fb-roughing-passer-2",
+    "factId": "fb-roughing-passer",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "What's the call?",
+    "prompt": "NFL defender is flagged for roughing the passer. How many yards?",
+    "answer": "15",
+    "wrong": [
+      "5",
+      "10",
+      "20"
+    ],
+    "teach": "The offense also gets an automatic first down.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 12-2-11 — Roughing the passer (2026)"
+    }
+  },
+  {
+    "id": "r-fb-grounding-penalty-1",
+    "factId": "fb-grounding-penalty",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "NFL intentional grounding, thrown 5 yards behind the line. Result?",
+    "answer": "Loss of down + 10 yds",
+    "wrong": [
+      "5 yards, replay down",
+      "15 yds + loss of down",
+      "Loss of down only"
+    ],
+    "teach": "If the pass spot is over 10 yards back, it's loss of down at that spot instead.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 8-2-1 — Intentional grounding (2026)"
+    }
+  },
+  {
+    "id": "r-fb-grounding-penalty-2",
+    "factId": "fb-grounding-penalty",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "NFL QB grounds it 20 yards behind the line near midfield. Where's the next snap?",
+    "answer": "Spot of the pass",
+    "wrong": [
+      "10 yds from prev spot",
+      "Previous spot",
+      "Line of scrimmage"
+    ],
+    "teach": "Grounding also costs the down; the pass spot is used when it's more than 10 yards back.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 8-2-1 — Intentional grounding (2026)"
+    }
+  },
+  {
+    "id": "r-fb-ineligible-downfield-1",
+    "factId": "fb-ineligible-downfield",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "NFL penalty for an ineligible lineman downfield on a pass?",
+    "answer": "5 yards",
+    "wrong": [
+      "10 yards",
+      "15 yards",
+      "Loss of down"
+    ],
+    "teach": "Linemen can't be more than a yard past the line before the pass is thrown.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 7-5-2 — Ineligible player downfield (2026)"
+    }
+  },
+  {
+    "id": "r-fb-dpi-end-zone-1",
+    "factId": "fb-dpi-end-zone",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "NFL defensive pass interference in the end zone. Where's the ball?",
+    "answer": "The 1-yard line",
+    "wrong": [
+      "The 2-yard line",
+      "The 5-yard line",
+      "Touchdown awarded"
+    ],
+    "teach": "The offense also gets a first down; elsewhere NFL DPI is a spot foul.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 8-5-5 — Pass interference in the end zone (2026)"
+    }
+  },
+  {
+    "id": "r-fb-fourth-down-fumble-1",
+    "factId": "fb-fourth-down-fumble",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "NFL 4th down: a teammate recovers the fumble 5 yards ahead. Next snap is at?",
+    "answer": "Spot of the fumble",
+    "wrong": [
+      "Spot of recovery",
+      "Line of scrimmage",
+      "15 yards back"
+    ],
+    "teach": "Only the fumbler himself may recover and advance a 4th-down fumble.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 8-7-5 — Fourth down fumble (2026)"
+    }
+  },
+  {
+    "id": "r-fb-fourth-down-fumble-2",
+    "factId": "fb-fourth-down-fumble",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "On an NFL 4th down, which offensive player may recover and advance a fumble?",
+    "answer": "Only the fumbler",
+    "wrong": [
+      "Any teammate",
+      "Any back",
+      "Nobody"
+    ],
+    "teach": "If a teammate recovers it ahead of the fumble, the ball comes back to that spot.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 8-7-5 — Fourth down fumble (2026)"
+    }
+  },
+  {
+    "id": "r-fb-fair-catch-kick-1",
+    "factId": "fb-fair-catch-kick",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "An NFL team tries a fair catch kick for 3 points. May it use a kicking tee?",
+    "answer": "No",
+    "wrong": [
+      "Yes",
+      "Only indoors",
+      "Only in overtime"
+    ],
+    "teach": "It must be a drop kick or a place kick without a tee.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 3-17-4 — Fair catch kick (2026)"
+    }
+  },
+  {
+    "id": "r-fb-punt-touchback-1",
+    "factId": "fb-punt-touchback",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "What's the call?",
+    "prompt": "A punt is downed in the NFL end zone. Where does the offense start?",
+    "answer": "Own 20-yard line",
+    "wrong": [
+      "Own 25-yard line",
+      "Own 30-yard line",
+      "Own 35-yard line"
+    ],
+    "teach": "The ball is dead in the end zone, so the play is ruled a touchback.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 11-6 — Touchback (2026)"
+    }
+  },
+  {
+    "id": "r-fb-punt-touchback-2",
+    "factId": "fb-punt-touchback",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "What's the call?",
+    "prompt": "NFL punt touchback: the receiving team starts at its own what?",
+    "answer": "20-yard line",
+    "wrong": [
+      "25-yard line",
+      "30-yard line",
+      "35-yard line"
+    ],
+    "teach": "A punt that's downed in the end zone is ruled a touchback.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 11-6 — Touchback (2026)"
+    }
+  },
+  {
+    "id": "r-fb-ot-tie-1",
+    "factId": "fb-ot-tie",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Clock and timing",
+    "prompt": "NFL regular-season game is still tied after the overtime period. Result?",
+    "answer": "It's a tie",
+    "wrong": [
+      "Another OT period",
+      "Kicking contest",
+      "Coin flip winner"
+    ],
+    "teach": "Each team gets two timeouts in that overtime period.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 16-1 — Overtime, preseason and regular season (2026)"
+    }
+  },
+  {
+    "id": "r-fb-crossbar-height-1",
+    "factId": "fb-crossbar-height",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Numbers and dimensions",
+    "prompt": "How high is an NFL crossbar above the ground?",
+    "answer": "10 feet",
+    "wrong": [
+      "8 feet",
+      "12 feet",
+      "15 feet"
+    ],
+    "teach": "The uprights are 18 feet, 6 inches apart.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 1-3-1 — Goal posts (2026)"
+    }
+  },
+  {
+    "id": "r-fb-crossbar-height-2",
+    "factId": "fb-crossbar-height",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Numbers and dimensions",
+    "prompt": "An NFL crossbar sits how many feet above the ground?",
+    "answer": "10",
+    "wrong": [
+      "8",
+      "12",
+      "15"
+    ],
+    "teach": "The uprights rise 35 feet above it.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 1-3-1 — Goal posts (2026)"
+    }
+  },
+  {
+    "id": "r-fb-upright-width-1",
+    "factId": "fb-upright-width",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "How far apart are the uprights on an NFL goal post?",
+    "answer": "18 ft 6 in",
+    "wrong": [
+      "20 ft",
+      "23 ft 4 in",
+      "16 ft"
+    ],
+    "teach": "The crossbar sits 10 feet above the ground.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 1-3-1 — Goal posts (2026)"
+    }
+  },
+  {
+    "id": "r-fb-upright-width-2",
+    "factId": "fb-upright-width",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "Inside width between NFL goal post uprights?",
+    "answer": "18 feet, 6 inches",
+    "wrong": [
+      "20 feet",
+      "23 feet, 4 inches",
+      "16 feet"
+    ],
+    "teach": "The uprights extend 35 feet above the 10-foot crossbar.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 1-3-1 — Goal posts (2026)"
+    }
+  },
+  {
+    "id": "r-fb-upright-height-1",
+    "factId": "fb-upright-height",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "How far do NFL uprights extend above the crossbar?",
+    "answer": "35 feet",
+    "wrong": [
+      "20 feet",
+      "30 feet",
+      "40 feet"
+    ],
+    "teach": "They're bright gold, padded, and offset from the end line.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 1-3-2 — Goal posts (2026)"
+    }
+  },
+  {
+    "id": "r-fb-ball-weight-1",
+    "factId": "fb-ball-weight",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "Weight range of an official NFL football?",
+    "answer": "14 to 15 ounces",
+    "wrong": [
+      "12 to 13 ounces",
+      "16 to 17 ounces",
+      "18 to 20 ounces"
+    ],
+    "teach": "It's also 11 to 11¼ inches long on its long axis.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 2-1 — The ball (2026)"
+    }
+  },
+  {
+    "id": "r-fb-ball-length-1",
+    "factId": "fb-ball-length",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "Long-axis length of an official NFL football?",
+    "answer": "11 to 11¼ inches",
+    "wrong": [
+      "10 to 10¼ inches",
+      "12 to 12¼ inches",
+      "13 to 13¼ inches"
+    ],
+    "teach": "An official NFL ball weighs 14 to 15 ounces.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 2-1 — The ball (2026)"
+    }
+  },
+  {
+    "id": "r-fb-field-total-length-1",
+    "factId": "fb-field-total-length",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Numbers and dimensions",
+    "prompt": "Total length of an NFL field, end zones included?",
+    "answer": "120 yards",
+    "wrong": [
+      "100 yards",
+      "110 yards",
+      "130 yards"
+    ],
+    "teach": "That's 360 feet long by 160 feet wide.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 1-1-1 — Playing lines (2026)"
+    }
+  },
+  {
+    "id": "r-fb-players-per-side-1",
+    "factId": "fb-players-per-side",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Numbers and dimensions",
+    "prompt": "Most players a team may have on the field at the NFL snap?",
+    "answer": "11",
+    "wrong": [
+      "10",
+      "12",
+      "9"
+    ],
+    "teach": "More than 11 in the formation is a 5-yard penalty.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 5-1-1 — Number of players (2026)"
+    }
+  },
+  {
+    "id": "r-fb-halftime-1",
+    "factId": "fb-halftime",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Clock and timing",
+    "prompt": "How long is NFL halftime?",
+    "answer": "13 minutes",
+    "wrong": [
+      "10 minutes",
+      "15 minutes",
+      "20 minutes"
+    ],
+    "teach": "Play is suspended between the 2nd and 3rd periods, and teams may leave the field.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 4-1-3 — Halftime (2026)"
+    }
+  },
+  {
+    "id": "r-fb-halftime-2",
+    "factId": "fb-halftime",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Clock and timing",
+    "prompt": "NFL halftime lasts how many minutes?",
+    "answer": "13",
+    "wrong": [
+      "10",
+      "12",
+      "15"
+    ],
+    "teach": "Quarters are 15 minutes, so halftime is two minutes shorter.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 4-1-3 — Halftime (2026)"
+    }
+  },
+  {
+    "id": "r-fb-challenges-1",
+    "factId": "fb-challenges",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Clock and timing",
+    "prompt": "How many coach's challenges does an NFL team start a game with?",
+    "answer": "2",
+    "wrong": [
+      "1",
+      "3",
+      "4"
+    ],
+    "teach": "Win at least one and you get a third.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 15-1-1 — Coach’s challenge (2026)"
+    }
+  },
+  {
+    "id": "r-fb-challenges-2",
+    "factId": "fb-challenges",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Clock and timing",
+    "prompt": "An NFL coach wins one of his first two challenges. What does he earn?",
+    "answer": "A third challenge",
+    "wrong": [
+      "An extra timeout",
+      "A free first down",
+      "Nothing"
+    ],
+    "teach": "Every team starts with two challenges per game.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 15-1-1 — Coach’s challenge (2026)"
+    }
+  },
+  {
+    "id": "r-fb-failed-challenge-1",
+    "factId": "fb-failed-challenge",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "What's the call?",
+    "prompt": "An NFL coach loses a challenge. What does it cost his team?",
+    "answer": "A timeout",
+    "wrong": [
+      "15 yards",
+      "A down",
+      "Nothing"
+    ],
+    "teach": "Win at least one of your two challenges and you get a third.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 15-1-1 — Coach’s challenge (2026)"
+    }
+  },
+  {
+    "id": "r-fb-ot-timeouts-1",
+    "factId": "fb-ot-timeouts",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Clock and timing",
+    "prompt": "Timeouts per team in NFL regular-season overtime?",
+    "answer": "2",
+    "wrong": [
+      "1",
+      "3",
+      "0"
+    ],
+    "teach": "If it's still tied after that period, the game ends in a tie.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 4-5-1 — Timeouts (2026)"
+    }
+  },
+  {
+    "id": "r-bs-base-size-1",
+    "factId": "bs-base-size",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Numbers and dimensions",
+    "prompt": "MLB first, second and third base bags are how many inches square?",
+    "answer": "18",
+    "wrong": [
+      "15",
+      "12",
+      "24"
+    ],
+    "teach": "Bases are 3 to 5 inches thick.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 2.03 — The bases"
+    }
+  },
+  {
+    "id": "r-bs-base-thickness-1",
+    "factId": "bs-base-thickness",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "An MLB base bag is 18 inches square. How thick can it be?",
+    "answer": "3 to 5 inches",
+    "wrong": [
+      "1 to 2 inches",
+      "6 to 8 inches",
+      "Exactly 4 inches"
+    ],
+    "teach": "They're canvas or rubber-covered bags anchored to the ground.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 2.03 — The bases"
+    }
+  },
+  {
+    "id": "r-bs-rubber-size-1",
+    "factId": "bs-rubber-size",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "Size of the MLB pitcher's plate (rubber)?",
+    "answer": "24 x 6 inches",
+    "wrong": [
+      "18 x 4 inches",
+      "24 x 8 inches",
+      "30 x 6 inches"
+    ],
+    "teach": "Its front edge is 60 feet, 6 inches from the back point of home plate.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 2.04 — The pitcher's plate"
+    }
+  },
+  {
+    "id": "r-bs-rubber-size-2",
+    "factId": "bs-rubber-size",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "The MLB pitcher's rubber is 6 inches deep. How wide is it?",
+    "answer": "24 inches",
+    "wrong": [
+      "18 inches",
+      "30 inches",
+      "36 inches"
+    ],
+    "teach": "Its front edge is 60 feet, 6 inches from the back point of home plate.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 2.04 — The pitcher's plate"
+    }
+  },
+  {
+    "id": "r-bs-pine-tar-1",
+    "factId": "bs-pine-tar",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "How far up the bat handle can an MLB hitter apply pine tar?",
+    "answer": "18 inches",
+    "wrong": [
+      "12 inches",
+      "24 inches",
+      "No limit"
+    ],
+    "teach": "The limit is measured from the end of the handle.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 3.02(c) — Bat handle treatment"
+    }
+  },
+  {
+    "id": "r-bs-plate-sides-1",
+    "factId": "bs-plate-sides",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "Numbers and dimensions",
+    "prompt": "How many sides does MLB home plate have?",
+    "answer": "5",
+    "wrong": [
+      "4",
+      "6",
+      "8"
+    ],
+    "teach": "It's a whitened rubber slab: a 17-inch square with two corners removed.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 2.02 — Home base"
+    }
+  },
+  {
+    "id": "r-bs-bat-wood-1",
+    "factId": "bs-bat-wood",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "Numbers and dimensions",
+    "prompt": "An MLB bat must be made of what?",
+    "answer": "One piece of solid wood",
+    "wrong": [
+      "Laminated wood",
+      "Aluminum",
+      "Composite"
+    ],
+    "teach": "Laminated or experimental bats need MLB approval of the design first.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 3.02(a) — The bat"
+    }
+  },
+  {
+    "id": "r-bs-pitcher-limit-1",
+    "factId": "bs-pitcher-limit",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "Most pitchers an MLB club may carry for a game, Opening Day to Aug 31?",
+    "answer": "13",
+    "wrong": [
+      "12",
+      "14",
+      "15"
+    ],
+    "teach": "From September 1, the limit rises to 14.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 4.03(c) — Lineup cards; Major League Rule 2(b)(2)"
+    }
+  },
+  {
+    "id": "r-bs-bunt-foul-two-strikes-1",
+    "factId": "bs-bunt-foul-two-strikes",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "What's the call?",
+    "prompt": "An MLB batter bunts foul with two strikes. The call?",
+    "answer": "Strikeout",
+    "wrong": [
+      "Foul, still two strikes",
+      "Ball one",
+      "Batter's interference"
+    ],
+    "teach": "Unlike a swung-at foul, a two-strike foul bunt counts as strike three.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rules — Definition of Terms (Strike)"
+    }
+  },
+  {
+    "id": "r-bs-hbp-in-zone-1",
+    "factId": "bs-hbp-in-zone",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "A pitch hits the MLB batter while it's in the strike zone. The call?",
+    "answer": "Strike",
+    "wrong": [
+      "Hit by pitch, 1st base",
+      "Ball",
+      "No pitch"
+    ],
+    "teach": "It's a strike even if the batter tries to get out of the way.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 5.05(b)(2) — Hit by pitch"
+    }
+  },
+  {
+    "id": "r-bs-hbp-in-zone-2",
+    "factId": "bs-hbp-in-zone",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "An MLB batter leans into the strike zone and is hit by the pitch. Ruling?",
+    "answer": "Strike",
+    "wrong": [
+      "Hit by pitch",
+      "Ball",
+      "Balk"
+    ],
+    "teach": "The ball is dead, so no runner may advance on the play.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 5.05(b)(2) — Hit by pitch"
+    }
+  },
+  {
+    "id": "r-bs-hbp-no-avoid-1",
+    "factId": "bs-hbp-no-avoid",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "MLB pitch outside the zone hits a batter who made no try to avoid it. Call?",
+    "answer": "Ball",
+    "wrong": [
+      "Hit by pitch, 1st base",
+      "Strike",
+      "No pitch"
+    ],
+    "teach": "The ball is dead and no runner may advance.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 5.05(b)(2) — Hit by pitch"
+    }
+  },
+  {
+    "id": "r-bs-ball-in-vines-1",
+    "factId": "bs-ball-in-vines",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "What's the call?",
+    "prompt": "A fair ball rolls into the outfield ivy and sticks. MLB award?",
+    "answer": "Two bases",
+    "wrong": [
+      "Home run",
+      "One base",
+      "Three bases"
+    ],
+    "teach": "The same goes for a ball stuck in the fence or a scoreboard.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 5.05(a)(7) — Ball lodged in fence or vines"
+    }
+  },
+  {
+    "id": "r-bs-ball-in-vines-2",
+    "factId": "bs-ball-in-vines",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "What's the call?",
+    "prompt": "MLB fair ball gets stuck in the outfield fence. Batter gets?",
+    "answer": "Second base",
+    "wrong": [
+      "First base",
+      "Third base",
+      "Home run"
+    ],
+    "teach": "Balls stuck in vines or a scoreboard also earn two bases.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 5.05(a)(7) — Ball lodged in fence or vines"
+    }
+  },
+  {
+    "id": "r-bs-deflected-over-fence-1",
+    "factId": "bs-deflected-over-fence",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "A fair fly bounces off a fielder over the fence in fair territory. MLB call?",
+    "answer": "Home run",
+    "wrong": [
+      "Ground-rule double",
+      "Triple",
+      "Dead ball, 1 base"
+    ],
+    "teach": "If it goes over in foul territory, the batter gets two bases instead.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 5.05(a)(9) — Deflected fair fly ball"
+    }
+  },
+  {
+    "id": "r-bs-deflected-over-fence-2",
+    "factId": "bs-deflected-over-fence",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "A fair fly glances off an outfielder over the fence in foul ground. MLB award?",
+    "answer": "Two bases",
+    "wrong": [
+      "Home run",
+      "One base",
+      "Three bases"
+    ],
+    "teach": "Had it gone over in fair territory, it would be a home run.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 5.05(a)(9) — Deflected fair fly ball"
+    }
+  },
+  {
+    "id": "r-bs-catcher-interference-1",
+    "factId": "bs-catcher-interference",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "What's the call?",
+    "prompt": "Catcher's mitt touches the bat during an MLB swing. Batter's default award?",
+    "answer": "First base",
+    "wrong": [
+      "A strike",
+      "Second base",
+      "A do-over"
+    ],
+    "teach": "If the play goes on, the offense's manager can take the result of the play instead.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 5.05(b)(3) — Catcher's interference"
+    }
+  },
+  {
+    "id": "r-bs-catcher-interference-2",
+    "factId": "bs-catcher-interference",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "What's the call?",
+    "prompt": "On MLB catcher's interference, who may take the play's result instead?",
+    "answer": "Offensive manager",
+    "wrong": [
+      "Home plate umpire",
+      "Defensive manager",
+      "The catcher"
+    ],
+    "teach": "Otherwise the batter is awarded first base.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 5.05(b)(3) — Catcher's interference"
+    }
+  },
+  {
+    "id": "r-bs-obstruction-1",
+    "factId": "bs-obstruction",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "MLB runner is obstructed while a play is being made on him. Minimum award?",
+    "answer": "One base",
+    "wrong": [
+      "Two bases",
+      "No award",
+      "Home plate"
+    ],
+    "teach": "He gets at least one base past the last base he legally touched.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 6.01(h)(1) — Obstruction"
+    }
+  },
+  {
+    "id": "r-bs-passing-runner-1",
+    "factId": "bs-passing-runner",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "What's the call?",
+    "prompt": "An MLB runner passes the runner ahead of him on the bases. The call?",
+    "answer": "Trailing runner is out",
+    "wrong": [
+      "Lead runner is out",
+      "Both runners out",
+      "No call"
+    ],
+    "teach": "He's out if he gets ahead before the lead runner is retired.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 5.09(b)(9) — Passing a preceding runner"
+    }
+  },
+  {
+    "id": "r-bs-passing-runner-2",
+    "factId": "bs-passing-runner",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "What's the call?",
+    "prompt": "Which MLB runner is out when one runner passes another on the bases?",
+    "answer": "The trailing runner",
+    "wrong": [
+      "The lead runner",
+      "Both runners",
+      "Neither runner"
+    ],
+    "teach": "He's out if he gets ahead before the lead runner is retired.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 5.09(b)(9) — Passing a preceding runner"
+    }
+  },
+  {
+    "id": "r-bs-force-third-out-1",
+    "factId": "bs-force-third-out",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Scoring",
+    "prompt": "A run crosses, but the 3rd out is a force at 2nd. MLB: does the run count?",
+    "answer": "No",
+    "wrong": [
+      "Yes",
+      "Only if he scored first",
+      "Only on a hit"
+    ],
+    "teach": "Runs also don't count if the batter is the 3rd out before reaching 1st.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 5.08(a) — How a team scores"
+    }
+  },
+  {
+    "id": "r-bs-force-third-out-2",
+    "factId": "bs-force-third-out",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Scoring",
+    "prompt": "Runner scores from 3rd, then the batter is out at 1st for the 3rd out. MLB run?",
+    "answer": "Doesn't count",
+    "wrong": [
+      "Counts",
+      "Counts if earned",
+      "Umpire decides"
+    ],
+    "teach": "A run never counts when the 3rd out is a force or the batter before 1st.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 5.08(a) — How a team scores"
+    }
+  },
+  {
+    "id": "r-bs-foot-out-of-box-1",
+    "factId": "bs-foot-out-of-box",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "What's the call?",
+    "prompt": "MLB batter hits the ball with one foot fully out of the box. The call?",
+    "answer": "Batter is out",
+    "wrong": [
+      "Foul ball",
+      "Strike",
+      "Ball in play"
+    ],
+    "teach": "The foot must be entirely outside the box lines for the out.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 6.03(a)(1) — Batter's illegal action"
+    }
+  },
+  {
+    "id": "r-bs-switching-boxes-1",
+    "factId": "bs-switching-boxes",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "Pitcher is set and the MLB batter steps to the other box. The call?",
+    "answer": "Batter is out",
+    "wrong": [
+      "Ball",
+      "Strike",
+      "Balk"
+    ],
+    "teach": "Switch-hitters must change boxes before the pitcher is in position to pitch.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 6.03(a)(2) — Batter's illegal action"
+    }
+  },
+  {
+    "id": "r-bs-pitch-lodged-1",
+    "factId": "bs-pitch-lodged",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "With runners on, a pitch lodges in the umpire's mask. MLB call?",
+    "answer": "Runners move up 1 base",
+    "wrong": [
+      "Ball is live",
+      "Batter takes 1st",
+      "Runners stay put"
+    ],
+    "teach": "The ball is dead; the same applies if it sticks in the catcher's gear.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 5.06(c)(7) — Pitch lodged in equipment"
+    }
+  },
+  {
+    "id": "r-bs-throw-into-stands-1",
+    "factId": "bs-throw-into-stands",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "What's the call?",
+    "prompt": "An infielder's throw sails into the MLB stands. Runners get how many bases?",
+    "answer": "Two",
+    "wrong": [
+      "One",
+      "Three",
+      "None"
+    ],
+    "teach": "It's dead too if the throw lands in a bench, even if it bounces back.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 5.06(b)(4)(G) — Thrown ball out of play"
+    }
+  },
+  {
+    "id": "r-bs-pitch-into-stands-1",
+    "factId": "bs-pitch-into-stands",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "A pickoff throw from the MLB pitcher's rubber goes into the stands. Runners get?",
+    "answer": "One base",
+    "wrong": [
+      "Two bases",
+      "No bases",
+      "Three bases"
+    ],
+    "teach": "A pitch to the batter that goes into the stands is also a one-base award.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 5.06(b)(4)(H) — Pitch or pickoff out of play"
+    }
+  },
+  {
+    "id": "r-bs-pitch-into-stands-2",
+    "factId": "bs-pitch-into-stands",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "MLB pitch to the batter goes into the stands with runners on. Award?",
+    "answer": "One base",
+    "wrong": [
+      "Two bases",
+      "No bases",
+      "Ball four"
+    ],
+    "teach": "The same one-base award applies to a pickoff throw from the rubber.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 5.06(b)(4)(H) — Pitch or pickoff out of play"
+    }
+  },
+  {
+    "id": "r-bs-thrown-glove-1",
+    "factId": "bs-thrown-glove",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "An MLB fielder throws his glove and hits a fair batted ball. Award?",
+    "answer": "Three bases",
+    "wrong": [
+      "Two bases",
+      "One base",
+      "Home run"
+    ],
+    "teach": "If the glove deflects a fly that would've left the park, it's a home run.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 5.06(b)(4)(C) — Thrown glove"
+    }
+  },
+  {
+    "id": "r-bs-over-the-bag-1",
+    "factId": "bs-over-the-bag",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "What's the call?",
+    "prompt": "A grounder bounces over the 1st-base bag, then lands foul. MLB call?",
+    "answer": "Fair ball",
+    "wrong": [
+      "Foul ball",
+      "Ground-rule double",
+      "Dead ball"
+    ],
+    "teach": "It's foul only if it bounces past the bag over foul territory.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rules — Definition of Terms (Fair ball, Foul ball)"
+    }
   }
 ]
