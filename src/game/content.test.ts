@@ -24,6 +24,7 @@ const stopwords = new Set([
   'a', 'an', 'and', 'at', 'by', 'did', 'for', 'from', 'he', 'his', 'in',
   'is', 'it', 'of', 'on', 'or', 'the', 'then', 'to', 'was', 'what',
   'where', 'which', 'who', 'with', 'wore', 'no', 'number', 'country',
+  'every', 'worth',
 ])
 const words = (text: string) =>
   text
@@ -83,8 +84,8 @@ describe('question content', () => {
     }
   })
 
-  it('gives every player teach line a fact beyond the question and answer', () => {
-    for (const question of players as Question[]) {
+  it('gives every teach line a fact beyond the question and answer', () => {
+    for (const question of allQuestions) {
       const known = new Set(
         words(
           [

@@ -925,7 +925,7 @@
       "10 minutes",
       "12 minutes"
     ],
-    "teach": "Every NBA overtime period is 5 minutes.",
+    "teach": "Each NBA overtime period is 5 minutes, with a 2:30 break before it.",
     "source": {
       "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
       "ref": "NBA Rule 5, Section II — Timing"
@@ -948,7 +948,7 @@
       "6 minutes",
       "10 minutes"
     ],
-    "teach": "Every NBA overtime period is 5 minutes.",
+    "teach": "Each NBA overtime period is 5 minutes, with a 2:30 break before it.",
     "source": {
       "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
       "ref": "NBA Rule 5, Section II — Timing"
@@ -971,7 +971,7 @@
       "4",
       "6"
     ],
-    "teach": "Every NBA overtime period is 5 minutes.",
+    "teach": "Each NBA overtime period is 5 minutes, with a 2:30 break before it.",
     "source": {
       "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
       "ref": "NBA Rule 5, Section II — Timing"
@@ -994,7 +994,7 @@
       "12 minutes",
       "20 minutes"
     ],
-    "teach": "The NBA allows 15 minutes between halves.",
+    "teach": "Halftime is 15 minutes. The break after the 1st and 3rd quarters is 2:30, or 3:30 on national TV.",
     "source": {
       "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
       "ref": "NBA Rule 5, Section II — Timing"
@@ -1017,7 +1017,7 @@
       "12",
       "20"
     ],
-    "teach": "The NBA allows 15 minutes between halves.",
+    "teach": "Halftime is 15 minutes. The break after the 1st and 3rd quarters is 2:30, or 3:30 on national TV.",
     "source": {
       "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
       "ref": "NBA Rule 5, Section II — Timing"
@@ -1109,7 +1109,7 @@
       "3",
       "4"
     ],
-    "teach": "Each NBA team gets 2 team timeouts in every overtime period.",
+    "teach": "Each NBA team gets 2 team timeouts per overtime period, versus 7 in regulation.",
     "source": {
       "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
       "ref": "NBA Rule 5, Section VI — Timeouts"
@@ -1132,7 +1132,7 @@
       "1",
       "3"
     ],
-    "teach": "Each NBA team gets 2 team timeouts in every overtime period.",
+    "teach": "Each NBA team gets 2 team timeouts per overtime period, versus 7 in regulation.",
     "source": {
       "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
       "ref": "NBA Rule 5, Section VI — Timeouts"
@@ -1316,7 +1316,7 @@
       "5 feet",
       "6 feet"
     ],
-    "teach": "The restricted-area arc is 4 feet from the center of the rim.",
+    "teach": "The arc is 4 feet from the rim's center, then runs straight to the backboard face, marked with a 2-inch line.",
     "source": {
       "url": "https://official.nba.com/rule-no-1-court-dimensions-equipment/",
       "ref": "NBA Rule 1, Section I — Court and Dimensions"
@@ -1339,7 +1339,7 @@
       "6 feet",
       "8 feet"
     ],
-    "teach": "The restricted-area arc is 4 feet from the center of the rim.",
+    "teach": "The arc is 4 feet from the rim's center, then runs straight to the backboard face, marked with a 2-inch line.",
     "source": {
       "url": "https://official.nba.com/rule-no-1-court-dimensions-equipment/",
       "ref": "NBA Rule 1, Section I — Court and Dimensions"
@@ -2075,7 +2075,7 @@
       "2",
       "4"
     ],
-    "teach": "A field goal is worth 3 points.",
+    "teach": "A field goal is 3 points: a place kick or drop kick must pass over the crossbar and between the uprights.",
     "source": {
       "url": "https://operations.nfl.com/rules-officiating/nfl-football-basics/football-terms/",
       "ref": "NFL Football Terms — Field Goal; NFL Rule 11, Section 1"
@@ -2098,7 +2098,7 @@
       "7",
       "8"
     ],
-    "teach": "A touchdown is worth 6 points, before the try.",
+    "teach": "A touchdown is 6 points: possess the ball across the opponent's goal line or recover a loose ball in their end zone.",
     "source": {
       "url": "https://operations.nfl.com/rules-officiating/nfl-football-basics/football-terms/",
       "ref": "NFL Football Terms — Touchdown; NFL Rule 11, Section 1"
