@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react'
+import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import App from './App'
 
@@ -148,20 +148,38 @@ describe('App keyboard and screen-reader play', () => {
     await waitFor(() => expect(document.activeElement).toBe(next))
   })
 
-  it('confirms before leaving a run and returns focus to the start button', async () => {
+  it('keeps a keyboard-answered teach card until the player continues', async () => {
+    vi.useFakeTimers({ shouldAdvanceTime: true })
+    mockApi([{ correct: false, strikes: 1, streak: 0 }])
+    await startClassic()
+
+    fireEvent.keyDown(window, { key: 'a' })
+    const teach = await screen.findByRole('button', { name: /^Wrong\./ })
+    expect(screen.getByText('Press Enter to continue')).toBeTruthy()
+
+    await act(() => vi.advanceTimersByTimeAsync(5000))
+    expect(teach.isConnected).toBe(true)
+    vi.useRealTimers()
+  })
+
+  it("says Time's up when the chosen answer was correct but late", async () => {
+    mockApi([{ correct: false, strikes: 1, streak: 0 }])
+    await startClassic()
+
+    fireEvent.keyDown(window, { key: 'b' })
+    expect(
+      await screen.findByRole('button', { name: /^Time’s up\. Strike 1 of 3\./ }),
+    ).toBeTruthy()
+  })
+
+  it('leaves a run without a blocking confirm and returns focus to the start button', async () => {
     mockApi([])
     await startClassic()
-    const confirm = vi
-      .spyOn(window, 'confirm')
-      .mockReturnValueOnce(false)
-      .mockReturnValueOnce(true)
-
-    fireEvent.click(screen.getByRole('button', { name: 'Back home' }))
-    expect(confirm).toHaveBeenCalledTimes(1)
-    expect(screen.getByRole('heading', { level: 2, name: /Prompt 0/ })).toBeTruthy()
+    const confirm = vi.spyOn(window, 'confirm')
 
     fireEvent.click(screen.getByRole('button', { name: 'Back home' }))
     const start = await screen.findByRole('button', { name: 'Start classic' })
     await waitFor(() => expect(document.activeElement).toBe(start))
+    expect(confirm).not.toHaveBeenCalled()
   })
 })

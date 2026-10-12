@@ -137,6 +137,7 @@ function App() {
     answer: string
     teach: string
     verdict: string
+    autoContinue: boolean
   } | null>(null)
   const [announcement, setAnnouncement] = useState('')
   const [pendingNextIndex, setPendingNextIndex] = useState<number | null>(null)
@@ -164,6 +165,8 @@ function App() {
   const dailyButtonRef = useRef<HTMLButtonElement>(null)
   const classicButtonRef = useRef<HTMLButtonElement>(null)
   const homeFocusMode = useRef<Mode | null>(null)
+  const lastInputWasPointer = useRef(true)
+  const teachAutoContinue = teachInfo?.autoContinue ?? true
 
   const refreshToday = useCallback(() => {
     const date = utcDate()
@@ -357,7 +360,8 @@ function App() {
         setTeachInfo({
           answer: result.answer,
           teach: result.teach,
-          verdict: `${body.choice === null ? 'Time’s up' : 'Wrong'}. Strike ${result.progress.strikes} of ${STRIKES}.`,
+          verdict: `${body.choice === null || body.choice === result.answer ? 'Time’s up' : 'Wrong'}. Strike ${result.progress.strikes} of ${STRIKES}.`,
+          autoContinue: lastInputWasPointer.current,
         })
         setPendingSummary(result.summary)
         setPendingNextIndex(nextIndex)
@@ -431,17 +435,6 @@ function App() {
     submitAnswerRef.current = submitAnswer
   })
 
-  const leaveRun = () => {
-    const runInProgress = session !== null && screen !== 'over'
-    if (
-      runInProgress &&
-      !window.confirm('Leave this run? Your progress won’t be saved.')
-    ) {
-      return
-    }
-    goHome()
-  }
-
   const goHome = () => {
     homeFocusMode.current = session?.mode ?? summary?.mode ?? null
     startGeneration.current += 1
@@ -477,13 +470,28 @@ function App() {
   }, [screen, activeQuestionId])
 
   useEffect(() => {
-    if (screen !== 'teach') return
+    const onPointerDown = () => {
+      lastInputWasPointer.current = true
+    }
+    const onKeyDown = () => {
+      lastInputWasPointer.current = false
+    }
+    window.addEventListener('pointerdown', onPointerDown, true)
+    window.addEventListener('keydown', onKeyDown, true)
+    return () => {
+      window.removeEventListener('pointerdown', onPointerDown, true)
+      window.removeEventListener('keydown', onKeyDown, true)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (screen !== 'teach' || !teachAutoContinue) return
     const timeout = window.setTimeout(
       () => continueAfterTeachRef.current(),
       2500,
     )
     return () => window.clearTimeout(timeout)
-  }, [screen, session?.questionIndex])
+  }, [screen, session?.questionIndex, teachAutoContinue])
 
   useEffect(() => {
     if (screen !== 'question' || !activeQuestionId) return
@@ -654,7 +662,7 @@ function App() {
       {screen !== 'home' && session && question && progress && (
         <section className="game-panel">
           <header className="game-header">
-            <button className="back-button" onClick={leaveRun} aria-label="Back home">
+            <button className="back-button" onClick={goHome} aria-label="Back home">
               SS
             </button>
             <div className="game-mode-label">
@@ -756,7 +764,10 @@ function App() {
                     <button
                       className="answer-button"
                       key={`${question.id}-${choice}`}
-                      onClick={() => chooseAnswer(choice)}
+                      onClick={(event) => {
+                        if (event.detail === 0) lastInputWasPointer.current = false
+                        chooseAnswer(choice)
+                      }}
                       disabled={isSubmitting}
                       aria-keyshortcuts={
                         index < ANSWER_KEYS.length
@@ -786,7 +797,11 @@ function App() {
               <span className="teach-label">THE RIGHT ANSWER</span>
               <strong>{teachInfo?.answer}</strong>
               <span>{teachInfo?.teach}</span>
-              <small>Tap to continue · auto-continues in 2.5s</small>
+              <small>
+                {teachAutoContinue
+                  ? 'Tap to continue · auto-continues in 2.5s'
+                  : 'Press Enter to continue'}
+              </small>
             </button>
           )}
 
