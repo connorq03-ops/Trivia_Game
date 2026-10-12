@@ -5,6 +5,11 @@ export const STRIKE_BACK_EVERY = 15
 export const CLOCK_MS = 10_000
 export const GRACE_MS = 1_500
 export const SLACK_MS = 3_000
+export const MULTIPLIER_TIERS = [
+  { streak: 30, multiplier: 2 },
+  { streak: 20, multiplier: 1.5 },
+  { streak: 10, multiplier: 1.25 },
+] as const
 export const BASE: Record<Difficulty, number> = {
   easy: 100,
   medium: 150,
@@ -65,10 +70,9 @@ function shuffle<T>(items: T[], rng: () => number): T[] {
 }
 
 export function streakMultiplier(streakBefore: number): number {
-  if (streakBefore >= 30) return 2
-  if (streakBefore >= 20) return 1.5
-  if (streakBefore >= 10) return 1.25
-  return 1
+  return (
+    MULTIPLIER_TIERS.find((tier) => streakBefore >= tier.streak)?.multiplier ?? 1
+  )
 }
 
 export function scoreAnswer(
