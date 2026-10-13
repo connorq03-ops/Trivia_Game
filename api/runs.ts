@@ -2,14 +2,20 @@ import { createHash } from 'node:crypto'
 import { getSql } from '../lib/db.js'
 import { bossQuestionsEnabled } from '../lib/flags.js'
 import { createRunToken, hashRunToken } from '../lib/runToken.js'
-import { publicQuestion, questionBank } from '../lib/questions.js'
+import {
+  publicQuestion,
+  questionBank,
+  questionsById,
+} from '../lib/questions.js'
 import { dailyDateKey } from '../src/game/dailyStore.js'
 import {
+  correctCount,
   createRunProgress,
   dailyQuestions,
   presentQuestion,
   REEL_MS,
   selectClassicQuestion,
+  type AnswerResult,
   type ClassicOptions,
 } from '../src/game/engine.js'
 import type { Question, Side, Sport } from '../src/game/types.js'
@@ -100,8 +106,28 @@ export async function POST(request: Request): Promise<Response> {
     if (dailyQuestionIds) initialProgress.dailyQuestionIds = dailyQuestionIds
     const [choice0, choice1, choice2, choice3] = choices
     const runToken = createRunToken()
-    const [, inserted] = (await sql.transaction([
+    // Resume instead of replace: an active run with this ip's filters keeps
+    // its strikes/score, so backing out or refreshing can't dodge a miss.
+    const activeFilter =
+      input.mode === 'daily'
+        ? sql`mode = 'daily' and daily_date = ${date}::date`
+        : sql`mode = 'classic' and sport = ${options.sport} and side = ${options.side}`
+    const [, resumed, inserted] = (await sql.transaction([
       sql`select pg_advisory_xact_lock(hashtextextended(${ipHash}, 0))`,
+      sql`
+        update runs
+        set token_hash = ${hashRunToken(runToken)}
+        where id = (
+          select id from runs
+          where ip_hash = ${ipHash}
+            and status = 'active'
+            and ${activeFilter}
+          order by created_at desc
+          limit 1
+        )
+        returning id, question_index, current_question_id, current_choices,
+          progress, daily_date
+      `,
       sql`
         insert into runs (
           mode,
@@ -138,9 +164,80 @@ export async function POST(request: Request): Promise<Response> {
           where ip_hash = ${ipHash}
             and created_at >= now() - interval '24 hours'
         ) < ${limit}
+          and not exists (
+            select 1 from runs
+            where ip_hash = ${ipHash}
+              and status = 'active'
+              and ${activeFilter}
+          )
         returning id
       `,
-    ])) as [unknown, { id: string }[]]
+    ])) as [
+      unknown,
+      {
+        id: string
+        question_index: number
+        current_question_id: string | null
+        current_choices: string[] | null
+        progress: {
+          score: number
+          strikes: number
+          streak: number
+          results?: string[]
+          questionsAnswered: number
+          missed: string[]
+          bossMisses?: number
+        } | string | null
+        daily_date: string | Date | null
+      }[],
+      { id: string }[],
+    ]
+    const resumedRun = resumed[0]
+    if (resumedRun) {
+      const stored = (
+        typeof resumedRun.progress === 'string'
+          ? JSON.parse(resumedRun.progress)
+          : resumedRun.progress
+      ) as {
+        score?: number
+        strikes?: number
+        streak?: number
+        results?: AnswerResult[]
+        questionsAnswered?: number
+        missed?: Question[]
+        bossMisses?: number
+      } | null
+      const liveQuestion = resumedRun.current_question_id
+        ? questionsById.get(resumedRun.current_question_id)
+        : undefined
+      if (!liveQuestion || !resumedRun.current_choices) {
+        return Response.json({ error: 'server_error' }, { status: 500 })
+      }
+      return Response.json({
+        runId: resumedRun.id,
+        runToken,
+        date: resumedRun.daily_date
+          ? String(resumedRun.daily_date).slice(0, 10)
+          : date,
+        questionIndex: resumedRun.question_index,
+        question: publicQuestion(liveQuestion, resumedRun.current_choices, {
+          bonus: input.mode === 'daily',
+        }),
+        progress: {
+          score: stored?.score ?? 0,
+          strikes: stored?.strikes ?? 0,
+          streak: stored?.streak ?? 0,
+          correct: correctCount({
+            results: stored?.results ?? [],
+            questionsAnswered: stored?.questionsAnswered ?? 0,
+            missed: stored?.missed ?? [],
+            bossMisses: stored?.bossMisses ?? 0,
+          }),
+        },
+        total: input.mode === 'daily' ? 10 : null,
+        bosses: bossQuestionsEnabled(),
+      })
+    }
     if (!inserted[0]) {
       return Response.json({ error: 'rate_limited' }, { status: 429 })
     }
