@@ -71,7 +71,7 @@ try {
       q.difficulty,
       count(*)::int as answers,
       round(100.0 * avg(s.correct::int))::int as correct_pct,
-      round(100.0 * count(*) filter (where s.result = 'timeout')
+      round(100.0 * count(*) filter (where s.result in ('timeout', 'boss-timeout'))
         / nullif(count(s.result), 0))::int as timeout_pct_logged,
       round(avg(s.answer_ms) filter (where s.correct))::int as avg_correct_ms
     from scoped s
@@ -87,7 +87,7 @@ try {
         count(*)::int as answers,
         avg(s.correct::int) as correct_ratio,
         round(100.0 * avg(s.correct::int))::int as correct_pct,
-        round(100.0 * count(*) filter (where s.result = 'timeout')
+        round(100.0 * count(*) filter (where s.result in ('timeout', 'boss-timeout'))
           / nullif(count(s.result), 0))::int as timeout_pct_logged,
         round(avg(s.answer_ms) filter (where s.correct))::int as avg_correct_ms
       from scoped s
@@ -100,7 +100,7 @@ try {
           partition by question_id order by count(*) desc, choice
         ) as rank
       from scoped
-      where result = 'miss' and choice is not null
+      where result in ('miss', 'boss-miss') and choice is not null
       group by question_id, choice
     )
     select

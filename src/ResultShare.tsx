@@ -7,6 +7,9 @@ const resultLabels: Record<AnswerResult, string> = {
   hit: 'Correct',
   miss: 'Wrong',
   timeout: 'Time ran out',
+  'boss-hit': 'Boss: correct',
+  'boss-miss': 'Boss: wrong',
+  'boss-timeout': 'Boss: time ran out',
 }
 
 export function ResultShare({
@@ -74,7 +77,9 @@ export function ResultShare({
   }
 
   const results = summary.results ?? []
-  const hits = results.filter((result) => result === 'hit').length
+  const hits = results.filter(
+    (result) => result === 'hit' || result === 'boss-hit',
+  ).length
 
   return (
     <div className="result-share">

@@ -37,12 +37,13 @@ type AnswerInput = {
 
 type StoredProgress = Omit<
   RunProgress,
-  'missed' | 'results' | 'bossLevelsConsumed' | 'bossMisses'
+  'missed' | 'results' | 'bossLevelsConsumed' | 'bossMisses' | 'bossMissed'
 > & {
   missed: string[]
   results?: AnswerResult[]
   bossLevelsConsumed?: number[]
   bossMisses?: number
+  bossMissed?: string[]
 }
 
 type RunRow = {
@@ -110,11 +111,18 @@ function deserializeProgress(value: RunRow['progress']): RunProgress {
     results: stored.results ?? [],
     bossLevelsConsumed: stored.bossLevelsConsumed ?? [],
     bossMisses: stored.bossMisses ?? 0,
+    bossMissed: (stored.bossMissed ?? [])
+      .map((id) => questionsById.get(id))
+      .filter((question): question is Question => question !== undefined),
   }
 }
 
 function serializeProgress(progress: RunProgress): StoredProgress {
-  return { ...progress, missed: progress.missed.map((question) => question.id) }
+  return {
+    ...progress,
+    missed: progress.missed.map((question) => question.id),
+    bossMissed: progress.bossMissed.map((question) => question.id),
+  }
 }
 
 function dateOnly(value: string | Date | null): string {
@@ -194,7 +202,7 @@ export async function POST(request: Request): Promise<Response> {
       boss ? BOSS_CLOCK_MS : CLOCK_MS,
     )
     const answered = boss
-      ? answerBossQuestion(deserializeProgress(run.progress), correct, answerMs)
+      ? answerBossQuestion(deserializeProgress(run.progress), question, correct, answerMs)
       : answerQuestion(
           deserializeProgress(run.progress),
           question,
@@ -271,7 +279,7 @@ export async function POST(request: Request): Promise<Response> {
             questionsAnswered: outcome.progress.questionsAnswered,
             answeredCount: outcome.progress.answeredCount,
             totalAnswerMs: outcome.progress.totalAnswerMs,
-            missed: outcome.progress.missed,
+            missed: [...outcome.progress.missed, ...outcome.progress.bossMissed],
             results:
               outcome.progress.results.length ===
               outcome.progress.questionsAnswered

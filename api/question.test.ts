@@ -2,7 +2,13 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { getSql } from '../lib/db.js'
 import { bossQuestions, questionBank } from '../lib/questions.js'
 import { hashRunToken } from '../lib/runToken.js'
-import { BOSS_CLOCK_MS, BOSS_REEL_MS, REEL_MS } from '../src/game/engine.js'
+import {
+  BOSS_CLOCK_MS,
+  BOSS_HIT_POINTS,
+  BOSS_MISS_POINTS,
+  BOSS_REEL_MS,
+  REEL_MS,
+} from '../src/game/engine.js'
 import { POST } from './question.js'
 
 vi.mock('../lib/db.js', () => ({
@@ -113,6 +119,8 @@ describe('question handler', () => {
       category: boss.category,
       clockMs: BOSS_CLOCK_MS,
       reelMs: BOSS_REEL_MS,
+      hitPoints: BOSS_HIT_POINTS,
+      missPoints: BOSS_MISS_POINTS,
     })
     expect(body.question).not.toHaveProperty('answer')
   })
