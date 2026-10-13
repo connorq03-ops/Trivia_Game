@@ -30,6 +30,24 @@
   --error-line: #8a3329;
   --error-ink: #ffe1dd;
   --panel: var(--surface);
+
+  --sunset-blush: #e0b4b2;
+  --sunset-orange: #e99856;
+  --sunset-rose: #a54055;
+  --sunset-wine: #622347;
+  --sunset-plum: #42164b;
+  --sunset-night: #1a1836;
+  --sunset-text: linear-gradient(100deg, var(--sunset-blush), var(--sunset-orange) 45%, var(--sunset-rose));
+  --sunset-fill: linear-gradient(100deg, var(--sunset-blush), var(--sunset-orange));
+  --sunset-shadow: #e99856aa;
+  --sunset-pulse: #e9985688;
+  --daily-panel: #0e0b1c;
+  --daily-surface-2: #16122a;
+  --daily-surface-3: #241c3c;
+  --daily-line: #2a2142;
+  --daily-line-strong: #46345f;
+  --sunset-glow: radial-gradient(120% 55% at 50% -12%, #42164b99, transparent 62%),
+    radial-gradient(70% 35% at 105% 0%, #e998561f, transparent 70%);
 }
 
 * {
