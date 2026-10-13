@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { msUntilNextUtcMidnight, type GameSummary } from './game/dailyStore'
+import { msUntilNextDailyReset, type GameSummary } from './game/dailyStore'
 import type { AnswerResult } from './game/engine'
 import { buildShareText, formatCountdown } from './game/share'
 
@@ -100,7 +100,7 @@ export function ResultShare({
       )}
       <p className="result-meta">
         {dayStreak > 0 && <>{dayStreak}-day streak · </>}
-        Next Daily in {formatCountdown(msUntilNextUtcMidnight(now))}
+        Next Daily in {formatCountdown(msUntilNextDailyReset(now))}
       </p>
       <button
         className="secondary-button result-share-button"

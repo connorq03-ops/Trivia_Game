@@ -3,6 +3,7 @@ import { getSql } from '../lib/db.js'
 import { bossQuestionsEnabled } from '../lib/flags.js'
 import { createRunToken, hashRunToken } from '../lib/runToken.js'
 import { publicQuestion, questionBank } from '../lib/questions.js'
+import { dailyDateKey } from '../src/game/dailyStore.js'
 import {
   createRunProgress,
   dailyQuestions,
@@ -41,9 +42,6 @@ function parseStartInput(value: unknown): StartInput | null {
 }
 
 
-function utcDate(): string {
-  return new Date().toISOString().slice(0, 10)
-}
 
 export async function POST(request: Request): Promise<Response> {
   let input: StartInput | null
@@ -69,7 +67,7 @@ export async function POST(request: Request): Promise<Response> {
         ? configuredLimit
         : 100
 
-    const date = utcDate()
+    const date = dailyDateKey()
     let question: Question
     let choices: string[]
     let options: ClassicOptions = { sport: 'all', side: 'both' }

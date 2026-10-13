@@ -21,7 +21,8 @@ import {
   DAILY_STORAGE_PREFIX,
   dailyStreak,
   dailyStorageKey,
-  msUntilNextUtcMidnight,
+  dailyDateKey,
+  msUntilNextDailyReset,
   readDailySummary,
   saveDailySummaryIfFirst,
   type GameSummary,
@@ -127,10 +128,6 @@ type RunResponse = {
   bosses?: boolean
 }
 
-function utcDate(): string {
-  return new Date().toISOString().slice(0, 10)
-}
-
 function browserStorage(): Pick<Storage, 'getItem' | 'setItem'> | null {
   try {
     return window.localStorage
@@ -215,10 +212,10 @@ function App() {
     'checking',
   )
   const [bossesEnabled, setBossesEnabled] = useState(false)
-  const [today, setToday] = useState(utcDate)
+  const [today, setToday] = useState(dailyDateKey)
   const [now, setNow] = useState(() => Date.now())
   const [todaySummary, setTodaySummary] = useState<GameSummary | null>(() =>
-    typeof window === 'undefined' ? null : storedSummary(utcDate()),
+    typeof window === 'undefined' ? null : storedSummary(dailyDateKey()),
   )
   const [dailyStorageVersion, setDailyStorageVersion] = useState(0)
   const dayStreak = useMemo(() => {
@@ -268,7 +265,7 @@ function App() {
 
   const refreshToday = useCallback(() => {
     setNow(Date.now())
-    const date = utcDate()
+    const date = dailyDateKey()
     if (date !== today) {
       setToday(date)
       setTodaySummary(storedSummary(date))
@@ -315,7 +312,7 @@ function App() {
       timer = window.setTimeout(() => {
         refreshToday()
         armMidnightTimer()
-      }, msUntilNextUtcMidnight(Date.now()) + 1000)
+      }, msUntilNextDailyReset(Date.now()) + 1000)
     }
     armMidnightTimer()
     return () => {
@@ -397,7 +394,7 @@ function App() {
   }
 
   const openDaily = () => {
-    const date = utcDate()
+    const date = dailyDateKey()
     setToday(date)
     const previous = storedSummary(date)
     setTodaySummary(previous)
@@ -416,7 +413,7 @@ function App() {
     const winner = storage
       ? saveDailySummaryIfFirst(storage, result.date, result)
       : result
-    if (result.date === utcDate()) setTodaySummary(winner)
+    if (result.date === dailyDateKey()) setTodaySummary(winner)
   }
 
   const loadQuestion = async (current: GameSession, questionIndex: number) => {
@@ -791,7 +788,7 @@ function App() {
             </button>
             <p className="daily-meta">
               {dayStreak > 0 && <>{dayStreak}-day streak · </>}
-              Next Daily in {formatCountdown(msUntilNextUtcMidnight(now))}
+              Next Daily in {formatCountdown(msUntilNextDailyReset(now))}
             </p>
           </div>
           <button

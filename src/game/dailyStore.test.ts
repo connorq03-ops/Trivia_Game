@@ -2,7 +2,8 @@ import { describe, expect, it } from 'vitest'
 import {
   dailyStreak,
   dailyStorageKey,
-  msUntilNextUtcMidnight,
+  dailyDateKey,
+  msUntilNextDailyReset,
   readDailySummary,
   saveDailySummaryIfFirst,
   type GameSummary,
@@ -62,13 +63,37 @@ describe('daily store', () => {
     expect(readDailySummary(storage, '2026-06-01')).toBeNull()
   })
 
-  it('calculates the next UTC midnight delay', () => {
+  it('labels the daily date by the 5pm Central reset', () => {
+    // 4:54pm CT on Oct 13 (CDT, UTC-5) -> still the previous daily date.
+    expect(dailyDateKey(Date.parse('2026-10-13T21:54:00.000Z'))).toBe(
+      '2026-10-12',
+    )
+    // 5:00pm CT on Oct 13 -> the Oct 13 daily goes live.
+    expect(dailyDateKey(Date.parse('2026-10-13T22:00:00.000Z'))).toBe(
+      '2026-10-13',
+    )
+    // Same wall time in CST (UTC-6): 4:54pm vs 5:00pm CT on Dec 1.
+    expect(dailyDateKey(Date.parse('2026-12-01T22:54:00.000Z'))).toBe(
+      '2026-11-30',
+    )
+    expect(dailyDateKey(Date.parse('2026-12-01T23:00:00.000Z'))).toBe(
+      '2026-12-01',
+    )
+  })
+
+  it('calculates the delay to the next 5pm Central reset', () => {
+    // 4:00pm CT on Oct 13 (CDT) -> 1 hour until the 5pm reset.
     expect(
-      msUntilNextUtcMidnight(Date.parse('2026-06-01T23:59:59.000Z')),
-    ).toBe(1000)
+      msUntilNextDailyReset(Date.parse('2026-10-13T21:00:00.000Z')),
+    ).toBe(3_600_000)
+    // Right at 5pm CT -> a full day until the next reset.
     expect(
-      msUntilNextUtcMidnight(Date.parse('2026-06-02T00:00:00.000Z')),
+      msUntilNextDailyReset(Date.parse('2026-10-13T22:00:00.000Z')),
     ).toBe(86_400_000)
+    // 4:30pm CT on Dec 1 (CST, UTC-6) -> 30 minutes.
+    expect(
+      msUntilNextDailyReset(Date.parse('2026-12-01T22:30:00.000Z')),
+    ).toBe(1_800_000)
   })
 
   it('counts consecutive Daily summaries and stops at gaps or corrupt entries', () => {
