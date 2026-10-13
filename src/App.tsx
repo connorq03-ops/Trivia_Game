@@ -129,11 +129,49 @@ type RunResponse = {
   bosses?: boolean
 }
 
-function browserStorage(): Pick<Storage, 'getItem' | 'setItem'> | null {
+function browserStorage(): Pick<
+  Storage,
+  'getItem' | 'setItem' | 'removeItem'
+> | null {
   try {
     return window.localStorage
   } catch {
     return null
+  }
+}
+
+const RUN_STORAGE_PREFIX = 'streaking-sports:run:'
+
+type StoredRun = { runId: string; runToken: string }
+
+function storedRun(mode: Mode): StoredRun | null {
+  const storage = browserStorage()
+  if (!storage) return null
+  try {
+    const value = storage.getItem(`${RUN_STORAGE_PREFIX}${mode}`)
+    const parsed = value ? (JSON.parse(value) as StoredRun) : null
+    return parsed?.runId && parsed?.runToken ? parsed : null
+  } catch {
+    return null
+  }
+}
+
+function saveRun(mode: Mode, run: StoredRun) {
+  try {
+    browserStorage()?.setItem(
+      `${RUN_STORAGE_PREFIX}${mode}`,
+      JSON.stringify(run),
+    )
+  } catch {
+    // Session stays in memory; resume just won't survive a refresh.
+  }
+}
+
+function clearRun(mode: Mode) {
+  try {
+    browserStorage()?.removeItem(`${RUN_STORAGE_PREFIX}${mode}`)
+  } catch {
+    // ignore
   }
 }
 
@@ -354,10 +392,11 @@ function App() {
     setPendingNextIndex(null)
     setScreen('home')
     try {
+      const resume = storedRun(input.mode)
       const response = await fetch('/api/runs', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify(input),
+        body: JSON.stringify(resume ? { ...input, resume } : input),
       })
       const result = (await response.json()) as RunResponse | { error?: string }
       if (generation !== startGeneration.current) return
@@ -369,6 +408,7 @@ function App() {
       if (!response.ok || !('runId' in result)) throw new Error('Run creation failed')
 
       activeRunId.current = result.runId
+      saveRun(input.mode, { runId: result.runId, runToken: result.runToken })
       questionClockOffset.current = 0
       setBossesEnabled(result.bosses === true)
       setSession({
@@ -503,7 +543,10 @@ function App() {
       setIsSubmitting(false)
       setSession(updatedCurrent)
       setSummary(result.summary)
-      if (result.summary) saveDailyResult(result.summary)
+      if (result.summary) {
+        saveDailyResult(result.summary)
+        clearRun(current.mode)
+      }
       setPendingSummary(result.summary)
       setPendingNextIndex(nextIndex)
       setTeachInfo(

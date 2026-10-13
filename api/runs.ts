@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto'
 import { getSql } from '../lib/db.js'
 import { bossQuestionsEnabled } from '../lib/flags.js'
-import { createRunToken, hashRunToken } from '../lib/runToken.js'
+import { createRunToken, hashRunToken, isRunToken } from '../lib/runToken.js'
 import {
   publicQuestion,
   questionBank,
@@ -21,16 +21,39 @@ import {
 import type { Question, Side, Sport } from '../src/game/types.js'
 
 type StartInput =
-  | { mode: 'daily' }
-  | { mode: 'classic'; sport: 'all' | Sport; side: 'both' | Side }
+  | { mode: 'daily'; resume?: ResumeInput }
+  | { mode: 'classic'; sport: 'all' | Sport; side: 'both' | Side; resume?: ResumeInput }
+
+type ResumeInput = { runId: string; runToken: string }
+
+const UUID_PATTERN =
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
+const NO_RUN_ID = '00000000-0000-0000-0000-000000000000'
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value)
 }
 
+function parseResume(value: unknown): ResumeInput | null | 'invalid' {
+  if (value === undefined || value === null) return null
+  if (
+    !isRecord(value) ||
+    typeof value.runId !== 'string' ||
+    !UUID_PATTERN.test(value.runId) ||
+    !isRunToken(value.runToken)
+  ) {
+    return 'invalid'
+  }
+  return { runId: value.runId, runToken: value.runToken as string }
+}
+
 function parseStartInput(value: unknown): StartInput | null {
   if (!isRecord(value)) return null
-  if (value.mode === 'daily') return { mode: 'daily' }
+  const resume = parseResume(value.resume)
+  if (resume === 'invalid') return null
+  if (value.mode === 'daily') {
+    return resume ? { mode: 'daily', resume } : { mode: 'daily' }
+  }
   if (
     value.mode !== 'classic' ||
     !['all', 'football', 'basketball', 'baseball'].includes(
@@ -44,6 +67,7 @@ function parseStartInput(value: unknown): StartInput | null {
     mode: 'classic',
     sport: value.sport as 'all' | Sport,
     side: value.side as 'both' | Side,
+    ...(resume ? { resume } : {}),
   }
 }
 
@@ -106,27 +130,45 @@ export async function POST(request: Request): Promise<Response> {
     if (dailyQuestionIds) initialProgress.dailyQuestionIds = dailyQuestionIds
     const [choice0, choice1, choice2, choice3] = choices
     const runToken = createRunToken()
-    // Resume instead of replace: an active run with this ip's filters keeps
-    // its strikes/score, so backing out or refreshing can't dodge a miss.
-    const activeFilter =
+    // Resume instead of replace: a client that still holds the runToken for
+    // an active run gets that run back, so backing out or refreshing can't
+    // dodge a miss. The token is the credential — matching on ip_hash alone
+    // would let a shared-IP player take over someone else's run.
+    const resumeId = input.resume?.runId ?? NO_RUN_ID
+    const resumeTokenHash = hashRunToken(input.resume?.runToken ?? '')
+    const resumeQuery =
       input.mode === 'daily'
-        ? sql`mode = 'daily' and daily_date = ${date}::date`
-        : sql`mode = 'classic' and sport = ${options.sport} and side = ${options.side}`
-    const [, resumed, inserted] = (await sql.transaction([
+        ? sql`
+          select id, question_index, current_question_id, current_choices,
+            progress, daily_date
+          from runs
+          where id = ${resumeId}::uuid
+            and token_hash = ${resumeTokenHash}
+            and status = 'active'
+            and mode = 'daily'
+            and daily_date = ${date}::date
+          limit 1
+        `
+        : sql`
+          select id, question_index, current_question_id, current_choices,
+            progress, daily_date
+          from runs
+          where id = ${resumeId}::uuid
+            and token_hash = ${resumeTokenHash}
+            and status = 'active'
+            and mode = 'classic'
+          limit 1
+        `
+    const [, resumed, , inserted] = (await sql.transaction([
       sql`select pg_advisory_xact_lock(hashtextextended(${ipHash}, 0))`,
+      resumeQuery,
       sql`
         update runs
-        set token_hash = ${hashRunToken(runToken)}
-        where id = (
-          select id from runs
-          where ip_hash = ${ipHash}
-            and status = 'active'
-            and ${activeFilter}
-          order by created_at desc
-          limit 1
-        )
-        returning id, question_index, current_question_id, current_choices,
-          progress, daily_date
+        set status = 'ended', ended_at = now()
+        where ip_hash = ${ipHash}
+          and status = 'active'
+          and mode = ${input.mode}
+          and id <> ${resumeId}::uuid
       `,
       sql`
         insert into runs (
@@ -166,9 +208,8 @@ export async function POST(request: Request): Promise<Response> {
         ) < ${limit}
           and not exists (
             select 1 from runs
-            where ip_hash = ${ipHash}
+            where id = ${resumeId}::uuid
               and status = 'active'
-              and ${activeFilter}
           )
         returning id
       `,
@@ -190,6 +231,7 @@ export async function POST(request: Request): Promise<Response> {
         } | string | null
         daily_date: string | Date | null
       }[],
+      unknown,
       { id: string }[],
     ]
     const resumedRun = resumed[0]
@@ -215,7 +257,7 @@ export async function POST(request: Request): Promise<Response> {
       }
       return Response.json({
         runId: resumedRun.id,
-        runToken,
+        runToken: input.resume?.runToken ?? runToken,
         date: resumedRun.daily_date
           ? String(resumedRun.daily_date).slice(0, 10)
           : date,

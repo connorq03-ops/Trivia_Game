@@ -36,7 +36,7 @@ function mockSql(
       query: strings.join('?'),
       values,
     })),
-    { transaction: vi.fn().mockResolvedValue([[], resumed, inserted]) },
+    { transaction: vi.fn().mockResolvedValue([[], resumed, [], inserted]) },
   )
   vi.mocked(getSql).mockReturnValue(sql as never)
   return sql
@@ -86,12 +86,12 @@ describe('runs handler', () => {
 
     await POST(makeRequest({ mode: 'classic', sport: 'all', side: 'both' }))
 
-    const [lock, resume, insert] = insertQuery(sql)
+    const [lock, resume, , insert] = insertQuery(sql)
     expect(lock.query).toContain('pg_advisory_xact_lock')
-    expect(resume.query).toMatch(/update runs[\s\S]*token_hash/)
+    expect(resume.query).toMatch(/from runs[\s\S]*token_hash/)
     expect(insert.query).toMatch(/insert into runs[\s\S]*select[\s\S]*where \([\s\S]*count\(\*\)[\s\S]*\) </)
     expect(insert.values).toContain(7)
-    expect(lock.values[0]).toBe(insert.values.at(-2))
+    expect(insert.values).toContain(lock.values[0])
   })
 
   it('keys quota on x-real-ip and ignores a spoofed x-forwarded-for', async () => {
@@ -124,7 +124,7 @@ describe('runs handler', () => {
     expect(body.runId).toBe(runId)
     expect(body.runToken).toMatch(/^[A-Za-z0-9_-]{43}$/)
     expect(body.bosses).toBe(false)
-    const insert = insertQuery(sql)[2]
+    const insert = insertQuery(sql)[3]
     expect(insert.query).toContain('now() + make_interval(secs => ?)')
     expect(insert.values).toContain(REEL_MS / 1000)
     expect(insert.values).toContain(hashRunToken(body.runToken))
@@ -147,7 +147,8 @@ describe('runs handler', () => {
     visit(body)
   })
 
-  it('resumes an active run instead of letting a fresh one wipe its strikes', async () => {
+  it('resumes an active run for the stored-token holder instead of a fresh one', async () => {
+    const resumeToken = 'a'.repeat(43)
     const liveQuestion = questionBank[0]
     const sql = mockSql([], [
       {
@@ -168,12 +169,18 @@ describe('runs handler', () => {
     ])
 
     const response = await POST(
-      makeRequest({ mode: 'classic', sport: 'all', side: 'both' }),
+      makeRequest({
+        mode: 'classic',
+        sport: 'all',
+        side: 'both',
+        resume: { runId, runToken: resumeToken },
+      }),
     )
     const body = await response.json()
 
     expect(response.status).toBe(200)
     expect(body.runId).toBe(runId)
+    expect(body.runToken).toBe(resumeToken)
     expect(body.questionIndex).toBe(4)
     expect(body.question.id).toBe(liveQuestion.id)
     expect(body.progress).toEqual({
@@ -182,9 +189,28 @@ describe('runs handler', () => {
       streak: 0,
       correct: 3,
     })
-    // The resume update rotated the token hash and no insert ran.
+    // Resume matched on the presented token hash, not just the ip.
     const resume = insertQuery(sql)[1]
-    expect(resume.values).toContain(hashRunToken(body.runToken))
+    expect(resume.values).toContain(runId)
+    expect(resume.values).toContain(hashRunToken(resumeToken))
+    // The end-stale update protects the resumed run.
+    const endStale = insertQuery(sql)[2]
+    expect(endStale.query).toMatch(/update runs[\s\S]*status = 'ended'/)
+    expect(endStale.values).toContain(runId)
+  })
+
+  it('rejects a malformed resume payload', async () => {
+    const response = await POST(
+      makeRequest({
+        mode: 'classic',
+        sport: 'all',
+        side: 'both',
+        resume: { runId: 'not-a-uuid', runToken: 'a'.repeat(43) },
+      }),
+    )
+
+    expect(response.status).toBe(400)
+    expect(await response.json()).toEqual({ error: 'invalid_body' })
   })
 
   it('returns no_questions without inserting a run when filters have no bank', async () => {
