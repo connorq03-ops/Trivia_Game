@@ -8,14 +8,17 @@ import {
   questionsById,
 } from '../lib/questions.js'
 import {
+  answerBonusBossQuestion,
   answerBossQuestion,
   answerQuestion,
   BOSS_CLOCK_MS,
   CLOCK_MS,
   correctCount,
   DAILY_STREAK_STEP,
+  dailyBonusBoss,
   dailyQuestions,
   presentQuestion,
+  qualifiesForDailyBonus,
   resolveAnswerMs,
   selectClassicQuestion,
   type AnswerResult,
@@ -203,7 +206,9 @@ export async function POST(request: Request): Promise<Response> {
     )
     const progress = deserializeProgress(run.progress)
     const answered = boss
-      ? answerBossQuestion(progress, question, correct, answerMs)
+      ? run.mode === 'daily'
+        ? answerBonusBossQuestion(progress, question, correct, answerMs)
+        : answerBossQuestion(progress, question, correct, answerMs)
       : answerQuestion(
           progress,
           question,
@@ -268,7 +273,15 @@ export async function POST(request: Request): Promise<Response> {
         stored && stored.length === 10
           ? stored
           : dailyQuestions(date, questionBank)
-      if (nextQuestionIndex >= questions.length) {
+      const bonusBoss =
+        nextQuestionIndex === questions.length &&
+        qualifiesForDailyBonus(outcome.progress) &&
+        bossQuestionsEnabled()
+          ? dailyBonusBoss(date, bossQuestions, usedFactIds)
+          : null
+      if (bonusBoss) {
+        next = presentQuestion(bonusBoss, Math.random)
+      } else if (nextQuestionIndex >= questions.length) {
         endReason = 'complete'
       } else {
         next = presentQuestion(questions[nextQuestionIndex], Math.random)
@@ -363,7 +376,7 @@ export async function POST(request: Request): Promise<Response> {
         ${outcome.answerMs},
         ${outcome.correct},
         ${input.choice},
-        ${outcome.progress.results.at(-1)}
+        ${outcome.progress.dailyBonusResult ?? outcome.progress.results.at(-1)}
       from updated
       returning run_id
     `) as { run_id: string }[]

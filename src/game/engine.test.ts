@@ -1,10 +1,15 @@
 import { describe, expect, it } from 'vitest'
 import {
+  answerBonusBossQuestion,
   answerBossQuestion,
   answerQuestion,
   BOSS_CATEGORIES,
   BOSS_CLOCK_MS,
+  BOSS_HIT_POINTS,
   CLOCK_MS,
+  DAILY_BONUS_AVG_MS,
+  dailyBonusBoss,
+  qualifiesForDailyBonus,
   correctCount,
   createRunProgress,
   DAILY_STREAK_STEP,
@@ -635,5 +640,89 @@ describe('Boss questions', () => {
     expect(correctCount(outcome.progress)).toBe(10)
     const hit = answerBossQuestion(outcome.progress, bossBank[1], true, 2_000)
     expect(correctCount(hit.progress)).toBe(11)
+  })
+})
+
+describe('Daily bonus boss', () => {
+  const fastPerfect = progressWith({
+    questionsAnswered: 10,
+    answeredCount: 10,
+    totalAnswerMs: 10 * (DAILY_BONUS_AVG_MS - 1),
+    results: Array(10).fill('hit'),
+    streak: 10,
+    bestStreak: 10,
+    score: 3000,
+  })
+
+  it('qualifies only on a perfect run faster than the average limit', () => {
+    expect(qualifiesForDailyBonus(fastPerfect)).toBe(true)
+    expect(
+      qualifiesForDailyBonus(
+        progressWith({
+          ...fastPerfect,
+          results: [...Array(9).fill('hit'), 'miss'],
+          answeredCount: 10,
+        }),
+      ),
+    ).toBe(false)
+    expect(
+      qualifiesForDailyBonus(
+        progressWith({ ...fastPerfect, totalAnswerMs: 10 * DAILY_BONUS_AVG_MS }),
+      ),
+    ).toBe(false)
+  })
+
+  it('draws the same unused boss for everyone on a date', () => {
+    const first = dailyBonusBoss('2099-12-31', bossBank, new Set())
+    const second = dailyBonusBoss('2099-12-31', bossBank, new Set())
+    expect(first).toEqual(second)
+    const used = new Set(bossBank.map((question) => question.factId))
+    used.delete(bossBank[0].factId)
+    expect(dailyBonusBoss('2099-12-31', bossBank, used)).toEqual(bossBank[0])
+    expect(
+      dailyBonusBoss(
+        '2099-12-31',
+        bossBank,
+        new Set(bossBank.map((question) => question.factId)),
+      ),
+    ).toBeNull()
+  })
+
+  it('scores a hit as +500 and a miss or timeout as zero', () => {
+    const hit = answerBonusBossQuestion(fastPerfect, bossBank[0], true, 4_000)
+    expect(hit.correct).toBe(true)
+    expect(hit.points).toBe(BOSS_HIT_POINTS)
+    expect(hit.progress).toMatchObject({
+      score: 3500,
+      streak: 11,
+      bestStreak: 11,
+      dailyBonusResult: 'boss-hit',
+    })
+
+    const miss = answerBonusBossQuestion(fastPerfect, bossBank[0], false, 4_000)
+    expect(miss.correct).toBe(false)
+    expect(miss.points).toBe(0)
+    expect(miss.progress.score).toBe(3000)
+    expect(miss.progress.streak).toBe(10)
+    expect(miss.progress.dailyBonusResult).toBe('boss-miss')
+    expect(miss.progress.bossMissed).toEqual([bossBank[0]])
+
+    const timeout = answerBonusBossQuestion(fastPerfect, bossBank[0], true, BOSS_CLOCK_MS)
+    expect(timeout.correct).toBe(false)
+    expect(timeout.points).toBe(0)
+    expect(timeout.progress.dailyBonusResult).toBe('boss-timeout')
+  })
+
+  it('keeps the ten-question summary intact regardless of the bonus outcome', () => {
+    for (const outcome of [
+      answerBonusBossQuestion(fastPerfect, bossBank[0], true, 4_000),
+      answerBonusBossQuestion(fastPerfect, bossBank[0], false, 4_000),
+    ]) {
+      expect(outcome.progress.questionsAnswered).toBe(10)
+      expect(outcome.progress.results).toHaveLength(10)
+      expect(
+        outcome.progress.results.every((result) => result === 'hit'),
+      ).toBe(true)
+    }
   })
 })

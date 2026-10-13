@@ -43,7 +43,7 @@ describe('howItWorks', () => {
     expect(howItWorks({ bosses: true })).toContain(
       `Each level-up brings a boss question on science, history, art or pop culture: ${BOSS_CLOCK_MS / 1000} seconds, +500 if right, −250 if wrong, no strike.`,
     )
-    expect(howItWorks({ bosses: true })).toHaveLength(howItWorks().length + 1)
+    expect(howItWorks({ bosses: true })).toHaveLength(howItWorks().length + 2)
   })
 })
 

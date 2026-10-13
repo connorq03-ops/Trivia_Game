@@ -58,12 +58,14 @@ export type PublicQuestion = Pick<
     reelMs: number
     hitPoints: number
     missPoints: number
+    bonus?: boolean
   }
 }
 
 export function publicQuestion(
   question: Question,
   choices: string[],
+  { bonus = false }: { bonus?: boolean } = {},
 ): PublicQuestion {
   return {
     id: question.id,
@@ -86,6 +88,7 @@ export function publicQuestion(
             reelMs: BOSS_REEL_MS,
             hitPoints: BOSS_HIT_POINTS,
             missPoints: BOSS_MISS_POINTS,
+            ...(bonus ? { bonus: true } : {}),
           },
         }
       : {}),

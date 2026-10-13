@@ -57,6 +57,7 @@ type PublicQuestion = Pick<
     reelMs: number
     hitPoints: number
     missPoints: number
+    bonus?: boolean
   }
 }
 
@@ -476,7 +477,11 @@ function App() {
         setAnnouncement(
           `Boss question: ${bossLabel(result.question.boss.category)}. ${
             result.question.boss.clockMs / 1000
-          } seconds. Plus 500 if right, minus 250 if wrong, no strike.`,
+          } seconds. ${
+            result.question.boss.bonus
+              ? 'Bonus round: plus 500 if right, no penalty if wrong.'
+              : 'Plus 500 if right, minus 250 if wrong, no strike.'
+          }`,
         )
       }
     } catch {
@@ -546,7 +551,9 @@ function App() {
         result.correct
           ? `Correct! Plus ${result.points}. Streak ${result.progress.streak}.`
           : `${timedOut ? 'Time’s up' : 'Wrong'}. ${
-              current.question.boss
+              current.question.boss?.bonus
+                ? 'No bonus points.'
+                : current.question.boss
                 ? `Minus ${-result.points}.`
                 : current.mode === 'classic'
                 ? `Strike ${result.progress.strikes} of ${STRIKES}.`
@@ -752,13 +759,16 @@ function App() {
     : ''
   const dailyTheme =
     session?.mode === 'daily' || (screen === 'over' && currentSummary?.mode === 'daily')
-  const dailyAnswered = !session
-    ? 0
-    : screen === 'reveal' || screen === 'teach'
-      ? session.questionIndex + 1
-      : pendingRequest?.kind === 'question'
-        ? Math.max(session.questionIndex, pendingRequest.questionIndex)
-        : session.questionIndex
+  const dailyAnswered = Math.min(
+    session?.total ?? 10,
+    !session
+      ? 0
+      : screen === 'reveal' || screen === 'teach'
+        ? session.questionIndex + 1
+        : pendingRequest?.kind === 'question'
+          ? Math.max(session.questionIndex, pendingRequest.questionIndex)
+          : session.questionIndex,
+  )
   const clockStyle = {
     '--clock-progress': `${Math.max(0, 100 - (elapsedMs / activeClockMs) * 100)}%`,
   } as CSSProperties
@@ -880,8 +890,12 @@ function App() {
               {session.mode === 'daily' ? 'DAILY 10' : 'CLASSIC'}
               {screen !== 'over' && (
                 <span>
-                  QUESTION {session.questionIndex + 1}
-                  {session.mode === 'daily' && session.total ? ` OF ${session.total}` : ''}
+                  {session.question.boss?.bonus
+                    ? 'BONUS BOSS'
+                    : `QUESTION ${session.questionIndex + 1}`}
+                  {!session.question.boss?.bonus && session.mode === 'daily' && session.total
+                    ? ` OF ${session.total}`
+                    : ''}
                 </span>
               )}
             </div>
@@ -1011,7 +1025,7 @@ function App() {
               </div>
               <p className="boss-category">{bossLabel(question.boss.category)}</p>
               <p className="reel-caption">
-                {question.boss.clockMs / 1000} seconds · +{question.boss.hitPoints} if right · −{question.boss.missPoints} if wrong · no strike
+                {question.boss.clockMs / 1000} seconds · +{question.boss.hitPoints} if right · {question.boss.bonus ? 'bonus round · no penalty if wrong' : `−${question.boss.missPoints} if wrong · no strike`}
               </p>
             </div>
           )}

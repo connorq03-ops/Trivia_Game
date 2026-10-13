@@ -20,6 +20,8 @@ export const BOSS_MISS_POINTS = 250
 // Daily 10 runs are too short for the Classic streak tiers to fire, so each
 // consecutive correct answer adds this much to the score multiplier instead.
 export const DAILY_STREAK_STEP = 0.1
+// A perfect, fast Daily 10 earns one bonus boss worth +500 with no downside.
+export const DAILY_BONUS_AVG_MS = 3_500
 export const MULTIPLIER_TIERS = [
   { streak: 30, multiplier: 2 },
   { streak: 20, multiplier: 1.5 },
@@ -85,6 +87,9 @@ export type RunProgress = {
   bossMissed: Question[] // boss misses; kept out of `missed` so correctCount stays right
   // Frozen at run creation so a mid-day deploy never reshuffles a live run.
   dailyQuestionIds?: string[]
+  // Daily bonus outcome lives outside `results` so a miss never dirties a
+  // perfect 10/10 summary or adds an eleventh share square.
+  dailyBonusResult?: AnswerResult
 }
 
 export type ClassicSelection =
@@ -422,6 +427,56 @@ export function answerQuestion(
     points,
     answerMs: normalizedAnswerMs,
     ...(strikes >= STRIKES ? { endReason: 'strikes' } : {}),
+  }
+}
+
+// Perfect 10/10 with an average answer time under the bonus threshold.
+export function qualifiesForDailyBonus(progress: RunProgress): boolean {
+  return (
+    progress.questionsAnswered === 10 &&
+    progress.results.length === 10 &&
+    progress.results.every((result) => result === 'hit') &&
+    progress.answeredCount === 10 &&
+    progress.totalAnswerMs < DAILY_BONUS_AVG_MS * progress.answeredCount
+  )
+}
+
+// Same boss for everyone that day, drawn outside the regular bank.
+export function dailyBonusBoss(
+  dateUtc: string,
+  bank: readonly BossQuestion[],
+  usedFactIds: ReadonlySet<string>,
+): BossQuestion | null {
+  const rng = createSeededRandom(hashString(`${dateUtc}:bonus`))
+  const available = bank.filter((question) => !usedFactIds.has(question.factId))
+  return available.length ? choose(available, rng) : null
+}
+
+export function answerBonusBossQuestion(
+  progress: RunProgress,
+  question: BossQuestion,
+  isCorrect: boolean,
+  elapsedMs: number | null,
+): AnswerOutcome {
+  const timedOut = elapsedMs === null || elapsedMs >= BOSS_CLOCK_MS
+  const correct = isCorrect && !timedOut
+  const points = correct ? BOSS_HIT_POINTS : 0
+  const streak = correct ? progress.streak + 1 : progress.streak
+  return {
+    progress: {
+      ...progress,
+      score: progress.score + points,
+      streak,
+      bestStreak: Math.max(progress.bestStreak, streak),
+      bossMisses: progress.bossMisses + (correct ? 0 : 1),
+      bossMissed: correct ? progress.bossMissed : [...progress.bossMissed, question],
+      dailyBonusResult: timedOut ? 'boss-timeout' : correct ? 'boss-hit' : 'boss-miss',
+    },
+    correct,
+    points,
+    answerMs: timedOut
+      ? null
+      : Math.round(Math.min(BOSS_CLOCK_MS, Math.max(0, elapsedMs))),
   }
 }
 
