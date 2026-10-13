@@ -1174,5 +1174,1853 @@
       "season": 1973,
       "player": "Bert Blyleven"
     }
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Country",
+    "prompt": "Adrián Beltré was born in which country?",
+    "answer": "Dominican Republic",
+    "wrong": [
+      "Venezuela",
+      "Cuba",
+      "Puerto Rico"
+    ],
+    "teach": "Adrián Beltré was born in Santo Domingo.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2004,
+      "player": "Adrián Beltré"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Adri%C3%A1n_Beltr%C3%A9",
+      "ref": "Wikipedia: Adrián Beltré page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-adrian-beltre-country",
+    "factId": "mlb-adrian-beltre-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Andruw Jones was born in which country?",
+    "answer": "Curaçao",
+    "wrong": [
+      "Cuba",
+      "Venezuela",
+      "Dominican Republic"
+    ],
+    "teach": "Andruw Jones was born in Willemstad.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2005,
+      "player": "Andruw Jones"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Andruw_Jones",
+      "ref": "Wikipedia: Andruw Jones page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-andruw-jones-country",
+    "factId": "mlb-andruw-jones-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Aroldis Chapman was born in which country?",
+    "answer": "Cuba",
+    "wrong": [
+      "Dominican Republic",
+      "Venezuela",
+      "Puerto Rico"
+    ],
+    "teach": "Aroldis Chapman was born in Holguín.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2012,
+      "player": "Aroldis Chapman"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Aroldis_Chapman",
+      "ref": "Wikipedia: Aroldis Chapman page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-aroldis-chapman-country",
+    "factId": "mlb-aroldis-chapman-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "José Fernández was born in which country?",
+    "answer": "Cuba",
+    "wrong": [
+      "Dominican Republic",
+      "Venezuela",
+      "Puerto Rico"
+    ],
+    "teach": "José Fernández was born in Santa Clara.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2013,
+      "player": "José Fernández"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Fern%C3%A1ndez_%28right-handed_pitcher%29",
+      "ref": "Wikipedia: José Fernández (right-handed pitcher) page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-jose-fernandez-country",
+    "factId": "mlb-jose-fernandez-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "José Ramírez was born in which country?",
+    "answer": "Dominican Republic",
+    "wrong": [
+      "Venezuela",
+      "Cuba",
+      "Puerto Rico"
+    ],
+    "teach": "José Ramírez was born in Baní.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2016,
+      "player": "José Ramírez"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Ram%C3%ADrez_%28third_baseman%29",
+      "ref": "Wikipedia: José Ramírez (third baseman) page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-jose-ramirez-country",
+    "factId": "mlb-jose-ramirez-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Fernando Tatís Jr. was born in which country?",
+    "answer": "Dominican Republic",
+    "wrong": [
+      "Venezuela",
+      "Cuba",
+      "Puerto Rico"
+    ],
+    "teach": "Fernando Tatís Jr. was born in San Pedro de Macorís.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2021,
+      "player": "Fernando Tatís Jr."
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Fernando_Tat%C3%ADs_Jr.",
+      "ref": "Wikipedia: Fernando Tatís Jr. page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-fernando-tatis-jr-country",
+    "factId": "mlb-fernando-tatis-jr-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Francisco Lindor was born in which country?",
+    "answer": "Puerto Rico",
+    "wrong": [
+      "Cuba",
+      "Venezuela",
+      "Dominican Republic"
+    ],
+    "teach": "Francisco Lindor was born in Caguas.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2016,
+      "player": "Francisco Lindor"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Francisco_Lindor",
+      "ref": "Wikipedia: Francisco Lindor page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-francisco-lindor-country",
+    "factId": "mlb-francisco-lindor-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Félix Hernández was born in which country?",
+    "answer": "Venezuela",
+    "wrong": [
+      "Cuba",
+      "Dominican Republic",
+      "Puerto Rico"
+    ],
+    "teach": "Félix Hernández was born in Valencia.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2010,
+      "player": "Félix Hernández"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/F%C3%A9lix_Hern%C3%A1ndez",
+      "ref": "Wikipedia: Félix Hernández page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-felix-hernandez-country",
+    "factId": "mlb-felix-hernandez-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Robinson Canó was born in which country?",
+    "answer": "Dominican Republic",
+    "wrong": [
+      "Venezuela",
+      "Cuba",
+      "Puerto Rico"
+    ],
+    "teach": "Robinson Canó was born in San Pedro de Macorís.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2009,
+      "player": "Robinson Canó"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Robinson_Can%C3%B3",
+      "ref": "Wikipedia: Robinson Canó page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-robinson-cano-country",
+    "factId": "mlb-robinson-cano-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Sammy Sosa was born in which country?",
+    "answer": "Dominican Republic",
+    "wrong": [
+      "Venezuela",
+      "Cuba",
+      "Puerto Rico"
+    ],
+    "teach": "Sammy Sosa was born in San Pedro de Macorís.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1998,
+      "player": "Sammy Sosa"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Sammy_Sosa",
+      "ref": "Wikipedia: Sammy Sosa page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-sammy-sosa-country",
+    "factId": "mlb-sammy-sosa-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Jorge Posada was born in which country?",
+    "answer": "Puerto Rico",
+    "wrong": [
+      "Cuba",
+      "Venezuela",
+      "Dominican Republic"
+    ],
+    "teach": "Jorge Posada was born in Santurce.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2000,
+      "player": "Jorge Posada"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jorge_Posada",
+      "ref": "Wikipedia: Jorge Posada page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-jorge-posada-country",
+    "factId": "mlb-jorge-posada-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Carlos Beltrán was born in which country?",
+    "answer": "Puerto Rico",
+    "wrong": [
+      "Cuba",
+      "Venezuela",
+      "Dominican Republic"
+    ],
+    "teach": "Carlos Beltrán was born in Manatí.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2004,
+      "player": "Carlos Beltrán"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Carlos_Beltr%C3%A1n",
+      "ref": "Wikipedia: Carlos Beltrán page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-carlos-beltran-country",
+    "factId": "mlb-carlos-beltran-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Orlando Cepeda was born in which country?",
+    "answer": "Puerto Rico",
+    "wrong": [
+      "Cuba",
+      "Venezuela",
+      "Dominican Republic"
+    ],
+    "teach": "Orlando Cepeda was born in Ponce.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1967,
+      "player": "Orlando Cepeda"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Orlando_Cepeda",
+      "ref": "Wikipedia: Orlando Cepeda page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-orlando-cepeda-country",
+    "factId": "mlb-orlando-cepeda-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Tony Pérez was born in which country?",
+    "answer": "Cuba",
+    "wrong": [
+      "Dominican Republic",
+      "Venezuela",
+      "Puerto Rico"
+    ],
+    "teach": "Tony Pérez was born in Ciego de Ávila.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1970,
+      "player": "Tony Pérez"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Tony_P%C3%A9rez",
+      "ref": "Wikipedia: Tony Pérez page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-tony-perez-country",
+    "factId": "mlb-tony-perez-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Luis Aparicio was born in which country?",
+    "answer": "Venezuela",
+    "wrong": [
+      "Cuba",
+      "Dominican Republic",
+      "Puerto Rico"
+    ],
+    "teach": "Luis Aparicio was born in Maracaibo.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1956,
+      "player": "Luis Aparicio"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Luis_Aparicio",
+      "ref": "Wikipedia: Luis Aparicio page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-luis-aparicio-country",
+    "factId": "mlb-luis-aparicio-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Didi Gregorius was born in which country?",
+    "answer": "Netherlands",
+    "wrong": [
+      "Cuba",
+      "Canada",
+      "Dominican Republic"
+    ],
+    "teach": "Didi Gregorius was born in Amsterdam.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2018,
+      "player": "Didi Gregorius"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Didi_Gregorius",
+      "ref": "Wikipedia: Didi Gregorius page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-didi-gregorius-country",
+    "factId": "mlb-didi-gregorius-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Yasiel Puig was born in which country?",
+    "answer": "Cuba",
+    "wrong": [
+      "Dominican Republic",
+      "Venezuela",
+      "Puerto Rico"
+    ],
+    "teach": "Yasiel Puig was born in Cienfuegos.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2013,
+      "player": "Yasiel Puig"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Yasiel_Puig",
+      "ref": "Wikipedia: Yasiel Puig page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-yasiel-puig-country",
+    "factId": "mlb-yasiel-puig-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Vladimir Guerrero was born in which country?",
+    "answer": "Dominican Republic",
+    "wrong": [
+      "Venezuela",
+      "Cuba",
+      "Puerto Rico"
+    ],
+    "teach": "Vladimir Guerrero was born in Nizao.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2004,
+      "player": "Vladimir Guerrero"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Vladimir_Guerrero",
+      "ref": "Wikipedia: Vladimir Guerrero page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-vladimir-guerrero-country",
+    "factId": "mlb-vladimir-guerrero-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Country",
+    "prompt": "Juan Soto was born in which country?",
+    "answer": "Dominican Republic",
+    "wrong": [
+      "Venezuela",
+      "Cuba",
+      "Puerto Rico"
+    ],
+    "teach": "Juan Soto was born in Santo Domingo.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2019,
+      "player": "Juan Soto"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Juan_Soto",
+      "ref": "Wikipedia: Juan Soto page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-juan-soto-country",
+    "factId": "mlb-juan-soto-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Ronald Acuña Jr. was born in which country?",
+    "answer": "Venezuela",
+    "wrong": [
+      "Cuba",
+      "Dominican Republic",
+      "Puerto Rico"
+    ],
+    "teach": "Ronald Acuña Jr. was born in La Guaira.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2019,
+      "player": "Ronald Acuña Jr."
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Ronald_Acu%C3%B1a_Jr.",
+      "ref": "Wikipedia: Ronald Acuña Jr. page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-ronald-acuna-jr-country",
+    "factId": "mlb-ronald-acuna-jr-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "What number did Aroldis Chapman wear in the 2023 season?",
+    "answer": "44",
+    "wrong": [
+      "22",
+      "31",
+      "50"
+    ],
+    "teach": "Aroldis Chapman was born in Holguín.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2023,
+      "player": "Aroldis Chapman"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Aroldis_Chapman",
+      "ref": "Wikipedia: Aroldis Chapman page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-aroldis-chapman-jersey",
+    "factId": "mlb-aroldis-chapman-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Jersey number",
+    "prompt": "What number did Bo Bichette wear in the 2025 season?",
+    "answer": "19",
+    "wrong": [
+      "11",
+      "10",
+      "7"
+    ],
+    "teach": "Bo Bichette was born in Orlando.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2025,
+      "player": "Bo Bichette"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Bo_Bichette",
+      "ref": "Wikipedia: Bo Bichette page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-bo-bichette-jersey",
+    "factId": "mlb-bo-bichette-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "What number did Francisco Lindor wear in the 2023 season?",
+    "answer": "12",
+    "wrong": [
+      "1",
+      "7",
+      "13"
+    ],
+    "teach": "Francisco Lindor was born in Caguas.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2023,
+      "player": "Francisco Lindor"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Francisco_Lindor",
+      "ref": "Wikipedia: Francisco Lindor page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-francisco-lindor-jersey",
+    "factId": "mlb-francisco-lindor-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "What number did Gerrit Cole wear in the 2024 season?",
+    "answer": "45",
+    "wrong": [
+      "22",
+      "31",
+      "99"
+    ],
+    "teach": "Gerrit Cole was born in Tustin.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2024,
+      "player": "Gerrit Cole"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Gerrit_Cole",
+      "ref": "Wikipedia: Gerrit Cole page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-gerrit-cole-jersey",
+    "factId": "mlb-gerrit-cole-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "What number did Paul Goldschmidt wear in the 2023 season?",
+    "answer": "48",
+    "wrong": [
+      "44",
+      "25",
+      "31"
+    ],
+    "teach": "Paul Goldschmidt was born in Wilmington.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2023,
+      "player": "Paul Goldschmidt"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Paul_Goldschmidt",
+      "ref": "Wikipedia: Paul Goldschmidt page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-paul-goldschmidt-jersey",
+    "factId": "mlb-paul-goldschmidt-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Jersey number",
+    "prompt": "What number did Max Scherzer wear in the 2023 season?",
+    "answer": "31",
+    "wrong": [
+      "22",
+      "45",
+      "48"
+    ],
+    "teach": "Max Scherzer was born in St. Louis.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2023,
+      "player": "Max Scherzer"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Max_Scherzer",
+      "ref": "Wikipedia: Max Scherzer page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-max-scherzer-jersey",
+    "factId": "mlb-max-scherzer-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "What number did Manny Machado wear in the 2023 season?",
+    "answer": "13",
+    "wrong": [
+      "7",
+      "12",
+      "22"
+    ],
+    "teach": "Manny Machado was born in Miami.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2023,
+      "player": "Manny Machado"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Manny_Machado",
+      "ref": "Wikipedia: Manny Machado page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-manny-machado-jersey",
+    "factId": "mlb-manny-machado-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "What number did Mookie Betts wear in the 2023 season?",
+    "answer": "50",
+    "wrong": [
+      "5",
+      "12",
+      "99"
+    ],
+    "teach": "Mookie Betts was born in Nashville.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2023,
+      "player": "Mookie Betts"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Mookie_Betts",
+      "ref": "Wikipedia: Mookie Betts page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-mookie-betts-jersey",
+    "factId": "mlb-mookie-betts-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "What number did Nolan Arenado wear in the 2023 season?",
+    "answer": "28",
+    "wrong": [
+      "5",
+      "13",
+      "31"
+    ],
+    "teach": "Nolan Arenado was born in Newport Beach.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2023,
+      "player": "Nolan Arenado"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Nolan_Arenado",
+      "ref": "Wikipedia: Nolan Arenado page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-nolan-arenado-jersey",
+    "factId": "mlb-nolan-arenado-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "What number did Kris Bryant wear in the 2021 season?",
+    "answer": "23",
+    "wrong": [
+      "17",
+      "24",
+      "44"
+    ],
+    "teach": "Kris Bryant was born in Las Vegas.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2021,
+      "player": "Kris Bryant"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Kris_Bryant",
+      "ref": "Wikipedia: Kris Bryant page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-kris-bryant-jersey",
+    "factId": "mlb-kris-bryant-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "What number did Juan Soto wear in the 2024 season?",
+    "answer": "22",
+    "wrong": [
+      "7",
+      "13",
+      "44"
+    ],
+    "teach": "Juan Soto was born in Santo Domingo.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2024,
+      "player": "Juan Soto"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Juan_Soto",
+      "ref": "Wikipedia: Juan Soto page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-juan-soto-jersey",
+    "factId": "mlb-juan-soto-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "What number did Ronald Acuña Jr. wear in the 2023 season?",
+    "answer": "13",
+    "wrong": [
+      "1",
+      "12",
+      "22"
+    ],
+    "teach": "Ronald Acuña Jr. was born in La Guaira.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2023,
+      "player": "Ronald Acuña Jr."
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Ronald_Acu%C3%B1a_Jr.",
+      "ref": "Wikipedia: Ronald Acuña Jr. page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-ronald-acuna-jr-jersey",
+    "factId": "mlb-ronald-acuna-jr-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "What number did Fernando Tatís Jr. wear in the 2023 season?",
+    "answer": "23",
+    "wrong": [
+      "7",
+      "11",
+      "13"
+    ],
+    "teach": "Fernando Tatís Jr. was born in San Pedro de Macorís.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2023,
+      "player": "Fernando Tatís Jr."
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Fernando_Tat%C3%ADs_Jr.",
+      "ref": "Wikipedia: Fernando Tatís Jr. page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-fernando-tatis-jr-jersey",
+    "factId": "mlb-fernando-tatis-jr-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "What number did José Ramírez wear in the 2023 season?",
+    "answer": "11",
+    "wrong": [
+      "7",
+      "12",
+      "13"
+    ],
+    "teach": "José Ramírez was born in Baní.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2023,
+      "player": "José Ramírez"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Ram%C3%ADrez_%28third_baseman%29",
+      "ref": "Wikipedia: José Ramírez (third baseman) page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-jose-ramirez-jersey",
+    "factId": "mlb-jose-ramirez-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Jersey number",
+    "prompt": "What number did Robinson Canó wear in the 2019 season?",
+    "answer": "22",
+    "wrong": [
+      "12",
+      "24",
+      "31"
+    ],
+    "teach": "Robinson Canó was born in San Pedro de Macorís.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2019,
+      "player": "Robinson Canó"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Robinson_Can%C3%B3",
+      "ref": "Wikipedia: Robinson Canó page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-robinson-cano-jersey",
+    "factId": "mlb-robinson-cano-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Jersey number",
+    "prompt": "What number did Yasiel Puig wear in the 2019 season?",
+    "answer": "66",
+    "wrong": [
+      "13",
+      "22",
+      "44"
+    ],
+    "teach": "Yasiel Puig was born in Cienfuegos.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2019,
+      "player": "Yasiel Puig"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Yasiel_Puig",
+      "ref": "Wikipedia: Yasiel Puig page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-yasiel-puig-jersey",
+    "factId": "mlb-yasiel-puig-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Ken Griffey Jr.?",
+    "answer": "Mariners",
+    "wrong": [
+      "Reds",
+      "Yankees",
+      "Mets"
+    ],
+    "teach": "Ken Griffey Jr. was born in Donora.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1995,
+      "player": "Ken Griffey Jr."
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Ken_Griffey_Jr.",
+      "ref": "Wikipedia: Ken Griffey Jr. page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-ken-griffey-jr-draft",
+    "factId": "mlb-ken-griffey-jr-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Chipper Jones?",
+    "answer": "Braves",
+    "wrong": [
+      "Mets",
+      "Cubs",
+      "Reds"
+    ],
+    "teach": "Chipper Jones was born in DeLand.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1999,
+      "player": "Chipper Jones"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Chipper_Jones",
+      "ref": "Wikipedia: Chipper Jones page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-chipper-jones-draft",
+    "factId": "mlb-chipper-jones-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Cal Ripken Jr.?",
+    "answer": "Orioles",
+    "wrong": [
+      "Yankees",
+      "Red Sox",
+      "Tigers"
+    ],
+    "teach": "Cal Ripken Jr. was born in Havre de Grace.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1983,
+      "player": "Cal Ripken Jr."
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Cal_Ripken_Jr.",
+      "ref": "Wikipedia: Cal Ripken Jr. page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-cal-ripken-jr-draft",
+    "factId": "mlb-cal-ripken-jr-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Nolan Ryan?",
+    "answer": "Mets",
+    "wrong": [
+      "Astros",
+      "Rangers",
+      "Angels"
+    ],
+    "teach": "Nolan Ryan was born in Refugio.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1969,
+      "player": "Nolan Ryan"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Nolan_Ryan",
+      "ref": "Wikipedia: Nolan Ryan page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-nolan-ryan-draft",
+    "factId": "mlb-nolan-ryan-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Tony Gwynn?",
+    "answer": "Padres",
+    "wrong": [
+      "Dodgers",
+      "Giants",
+      "Braves"
+    ],
+    "teach": "Tony Gwynn was born in Los Angeles.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1987,
+      "player": "Tony Gwynn"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Tony_Gwynn",
+      "ref": "Wikipedia: Tony Gwynn page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-tony-gwynn-draft",
+    "factId": "mlb-tony-gwynn-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Greg Maddux?",
+    "answer": "Cubs",
+    "wrong": [
+      "Braves",
+      "Dodgers",
+      "Mets"
+    ],
+    "teach": "Greg Maddux was born in San Angelo.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1995,
+      "player": "Greg Maddux"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Greg_Maddux",
+      "ref": "Wikipedia: Greg Maddux page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-greg-maddux-draft",
+    "factId": "mlb-greg-maddux-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted John Smoltz?",
+    "answer": "Tigers",
+    "wrong": [
+      "Braves",
+      "Red Sox",
+      "Blue Jays"
+    ],
+    "teach": "John Smoltz was born in Warren.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1996,
+      "player": "John Smoltz"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/John_Smoltz",
+      "ref": "Wikipedia: John Smoltz page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-john-smoltz-draft",
+    "factId": "mlb-john-smoltz-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Joe Mauer?",
+    "answer": "Twins",
+    "wrong": [
+      "Cubs",
+      "Cardinals",
+      "White Sox"
+    ],
+    "teach": "Joe Mauer was born in Saint Paul.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2009,
+      "player": "Joe Mauer"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Joe_Mauer",
+      "ref": "Wikipedia: Joe Mauer page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-joe-mauer-draft",
+    "factId": "mlb-joe-mauer-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Justin Morneau?",
+    "answer": "Twins",
+    "wrong": [
+      "Blue Jays",
+      "Red Sox",
+      "Mariners"
+    ],
+    "teach": "Justin Morneau was born in New Westminster.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2006,
+      "player": "Justin Morneau"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Justin_Morneau",
+      "ref": "Wikipedia: Justin Morneau page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-justin-morneau-draft",
+    "factId": "mlb-justin-morneau-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Jacob deGrom?",
+    "answer": "Mets",
+    "wrong": [
+      "Marlins",
+      "Rays",
+      "Braves"
+    ],
+    "teach": "Jacob deGrom was born in DeLand.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2018,
+      "player": "Jacob deGrom"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jacob_deGrom",
+      "ref": "Wikipedia: Jacob deGrom page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-jacob-degrom-draft",
+    "factId": "mlb-jacob-degrom-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Jason Heyward?",
+    "answer": "Braves",
+    "wrong": [
+      "Cubs",
+      "Cardinals",
+      "Dodgers"
+    ],
+    "teach": "Jason Heyward was born in Ridgewood.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2010,
+      "player": "Jason Heyward"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jason_Heyward",
+      "ref": "Wikipedia: Jason Heyward page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-jason-heyward-draft",
+    "factId": "mlb-jason-heyward-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Dustin Pedroia?",
+    "answer": "Red Sox",
+    "wrong": [
+      "Yankees",
+      "Orioles",
+      "Athletics"
+    ],
+    "teach": "Dustin Pedroia was born in Woodland.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2008,
+      "player": "Dustin Pedroia"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Dustin_Pedroia",
+      "ref": "Wikipedia: Dustin Pedroia page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-dustin-pedroia-draft",
+    "factId": "mlb-dustin-pedroia-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Stephen Strasburg?",
+    "answer": "Nationals",
+    "wrong": [
+      "Padres",
+      "Dodgers",
+      "Angels"
+    ],
+    "teach": "Stephen Strasburg was born in San Diego.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2019,
+      "player": "Stephen Strasburg"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Stephen_Strasburg",
+      "ref": "Wikipedia: Stephen Strasburg page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-stephen-strasburg-draft",
+    "factId": "mlb-stephen-strasburg-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Mookie Betts?",
+    "answer": "Red Sox",
+    "wrong": [
+      "Dodgers",
+      "Yankees",
+      "Rays"
+    ],
+    "teach": "Mookie Betts was born in Nashville.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2018,
+      "player": "Mookie Betts"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Mookie_Betts",
+      "ref": "Wikipedia: Mookie Betts page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-mookie-betts-draft",
+    "factId": "mlb-mookie-betts-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Clayton Kershaw?",
+    "answer": "Dodgers",
+    "wrong": [
+      "Rangers",
+      "Astros",
+      "Angels"
+    ],
+    "teach": "Clayton Kershaw was born in Dallas.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2014,
+      "player": "Clayton Kershaw"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Clayton_Kershaw",
+      "ref": "Wikipedia: Clayton Kershaw page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-clayton-kershaw-draft",
+    "factId": "mlb-clayton-kershaw-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Nolan Arenado?",
+    "answer": "Rockies",
+    "wrong": [
+      "Dodgers",
+      "Giants",
+      "Diamondbacks"
+    ],
+    "teach": "Nolan Arenado was born in Newport Beach.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2017,
+      "player": "Nolan Arenado"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Nolan_Arenado",
+      "ref": "Wikipedia: Nolan Arenado page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-nolan-arenado-draft",
+    "factId": "mlb-nolan-arenado-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Aaron Judge?",
+    "answer": "Yankees",
+    "wrong": [
+      "Red Sox",
+      "Giants",
+      "Angels"
+    ],
+    "teach": "Aaron Judge was born in Sacramento.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2022,
+      "player": "Aaron Judge"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Aaron_Judge",
+      "ref": "Wikipedia: Aaron Judge page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-aaron-judge-draft",
+    "factId": "mlb-aaron-judge-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Bo Bichette?",
+    "answer": "Blue Jays",
+    "wrong": [
+      "Marlins",
+      "Rays",
+      "Mets"
+    ],
+    "teach": "Bo Bichette was born in Orlando.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2023,
+      "player": "Bo Bichette"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Bo_Bichette",
+      "ref": "Wikipedia: Bo Bichette page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-bo-bichette-draft",
+    "factId": "mlb-bo-bichette-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Mike Piazza?",
+    "answer": "Dodgers",
+    "wrong": [
+      "Mets",
+      "Phillies",
+      "Reds"
+    ],
+    "teach": "Mike Piazza was born in Norristown.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1997,
+      "player": "Mike Piazza"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Mike_Piazza",
+      "ref": "Wikipedia: Mike Piazza page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-mike-piazza-draft",
+    "factId": "mlb-mike-piazza-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Alma mater",
+    "prompt": "Which college did Frank Thomas play for?",
+    "answer": "Auburn",
+    "wrong": [
+      "Alabama",
+      "Florida State",
+      "Tennessee"
+    ],
+    "teach": "Frank Thomas was born in Columbus.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1993,
+      "player": "Frank Thomas"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Frank_Thomas",
+      "ref": "Wikipedia: Frank Thomas page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-frank-thomas-college",
+    "factId": "mlb-frank-thomas-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Which college did Tony Gwynn play for?",
+    "answer": "San Diego State",
+    "wrong": [
+      "UCLA",
+      "Stanford",
+      "Arizona State"
+    ],
+    "teach": "Tony Gwynn was born in Los Angeles.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1987,
+      "player": "Tony Gwynn"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Tony_Gwynn",
+      "ref": "Wikipedia: Tony Gwynn page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-tony-gwynn-college",
+    "factId": "mlb-tony-gwynn-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Which college did Mike Mussina play for?",
+    "answer": "Stanford",
+    "wrong": [
+      "UCLA",
+      "Arizona State",
+      "Michigan"
+    ],
+    "teach": "Mike Mussina was born in Williamsport.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1992,
+      "player": "Mike Mussina"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Mike_Mussina",
+      "ref": "Wikipedia: Mike Mussina page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-mike-mussina-college",
+    "factId": "mlb-mike-mussina-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Alma mater",
+    "prompt": "Which college did Gerrit Cole play for?",
+    "answer": "UCLA",
+    "wrong": [
+      "USC",
+      "Stanford",
+      "Arizona State"
+    ],
+    "teach": "Gerrit Cole was born in Tustin.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2019,
+      "player": "Gerrit Cole"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Gerrit_Cole",
+      "ref": "Wikipedia: Gerrit Cole page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-gerrit-cole-college",
+    "factId": "mlb-gerrit-cole-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Alma mater",
+    "prompt": "Which college did Dustin Pedroia play for?",
+    "answer": "Arizona State",
+    "wrong": [
+      "Arizona",
+      "UCLA",
+      "Stanford"
+    ],
+    "teach": "Dustin Pedroia was born in Woodland.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2008,
+      "player": "Dustin Pedroia"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Dustin_Pedroia",
+      "ref": "Wikipedia: Dustin Pedroia page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-dustin-pedroia-college",
+    "factId": "mlb-dustin-pedroia-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Which college did Tim Lincecum play for?",
+    "answer": "Washington",
+    "wrong": [
+      "Oregon",
+      "UCLA",
+      "Stanford"
+    ],
+    "teach": "Tim Lincecum was born in Bellevue.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2008,
+      "player": "Tim Lincecum"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Tim_Lincecum",
+      "ref": "Wikipedia: Tim Lincecum page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-tim-lincecum-college",
+    "factId": "mlb-tim-lincecum-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Alma mater",
+    "prompt": "Which college did Stephen Strasburg play for?",
+    "answer": "San Diego State",
+    "wrong": [
+      "UCLA",
+      "Stanford",
+      "Missouri"
+    ],
+    "teach": "Stephen Strasburg was born in San Diego.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2019,
+      "player": "Stephen Strasburg"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Stephen_Strasburg",
+      "ref": "Wikipedia: Stephen Strasburg page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-stephen-strasburg-college",
+    "factId": "mlb-stephen-strasburg-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Which college did Barry Larkin play for?",
+    "answer": "Michigan",
+    "wrong": [
+      "Ohio State",
+      "Notre Dame",
+      "Stanford"
+    ],
+    "teach": "Barry Larkin was born in Cincinnati.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1995,
+      "player": "Barry Larkin"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Barry_Larkin",
+      "ref": "Wikipedia: Barry Larkin page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-barry-larkin-college",
+    "factId": "mlb-barry-larkin-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Which college did Randy Johnson play for?",
+    "answer": "USC",
+    "wrong": [
+      "Stanford",
+      "UCLA",
+      "Arizona State"
+    ],
+    "teach": "Randy Johnson was born in Walnut Creek.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2001,
+      "player": "Randy Johnson"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Randy_Johnson",
+      "ref": "Wikipedia: Randy Johnson page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-randy-johnson-college",
+    "factId": "mlb-randy-johnson-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Which college did Jason Giambi play for?",
+    "answer": "Long Beach State",
+    "wrong": [
+      "UCLA",
+      "Arizona State",
+      "Stanford"
+    ],
+    "teach": "Jason Giambi was born in West Covina.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2000,
+      "player": "Jason Giambi"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jason_Giambi",
+      "ref": "Wikipedia: Jason Giambi page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-jason-giambi-college",
+    "factId": "mlb-jason-giambi-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Which college did Matt Wieters play for?",
+    "answer": "Georgia Tech",
+    "wrong": [
+      "Florida State",
+      "Clemson",
+      "Virginia"
+    ],
+    "teach": "Matt Wieters was born in Goose Creek.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2011,
+      "player": "Matt Wieters"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Matt_Wieters",
+      "ref": "Wikipedia: Matt Wieters page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-mlb-matt-wieters-college",
+    "factId": "mlb-matt-wieters-college"
   }
 ]

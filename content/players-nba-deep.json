@@ -1650,5 +1650,481 @@
       "season": 1960,
       "player": "Bill Russell"
     }
+  },
+  {
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "What number did Klay Thompson wear in the 2016 season?",
+    "answer": "11",
+    "wrong": [
+      "10",
+      "20",
+      "30"
+    ],
+    "teach": "Golden State won an NBA-record 73 regular-season games.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2016,
+      "player": "Klay Thompson"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2015%E2%80%9316_Golden_State_Warriors_season",
+      "ref": "Wikipedia: 2015–16 Golden State Warriors season page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nba-klay-thompson-jersey",
+    "factId": "nba-klay-thompson-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "What number did Kyrie Irving wear in the 2016 season?",
+    "answer": "2",
+    "wrong": [
+      "0",
+      "1",
+      "3"
+    ],
+    "teach": "Cleveland won its first NBA championship in 2016.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2016,
+      "player": "Kyrie Irving"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2015%E2%80%9316_Cleveland_Cavaliers_season",
+      "ref": "Wikipedia: 2015–16 Cleveland Cavaliers season page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nba-kyrie-irving-jersey",
+    "factId": "nba-kyrie-irving-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "What number did Chris Paul wear in the 2018 season?",
+    "answer": "3",
+    "wrong": [
+      "0",
+      "1",
+      "13"
+    ],
+    "teach": "Houston finished the season with 65 wins.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2018,
+      "player": "Chris Paul"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2017%E2%80%9318_Houston_Rockets_season",
+      "ref": "Wikipedia: 2017–18 Houston Rockets season page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nba-chris-paul-jersey",
+    "factId": "nba-chris-paul-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "What number did Giannis Antetokounmpo wear in the 2019 season?",
+    "answer": "34",
+    "wrong": [
+      "7",
+      "22",
+      "43"
+    ],
+    "teach": "Milwaukee won 60 regular-season games.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2019,
+      "player": "Giannis Antetokounmpo"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2018%E2%80%9319_Milwaukee_Bucks_season",
+      "ref": "Wikipedia: 2018–19 Milwaukee Bucks season page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nba-giannis-antetokounmpo-jersey",
+    "factId": "nba-giannis-antetokounmpo-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "What number did Nikola Jokić wear in the 2020 season?",
+    "answer": "15",
+    "wrong": [
+      "7",
+      "27",
+      "32"
+    ],
+    "teach": "Denver became the first team to overcome two 3–1 deficits in one playoff run.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2020,
+      "player": "Nikola Jokić"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2019%E2%80%9320_Denver_Nuggets_season",
+      "ref": "Wikipedia: 2019–20 Denver Nuggets season page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nba-nikola-jokic-jersey",
+    "factId": "nba-nikola-jokic-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "What number did Joel Embiid wear in the 2021 season?",
+    "answer": "21",
+    "wrong": [
+      "11",
+      "23",
+      "31"
+    ],
+    "teach": "Philadelphia finished the regular season 49–23.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2021,
+      "player": "Joel Embiid"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2020%E2%80%9321_Philadelphia_76ers_season",
+      "ref": "Wikipedia: 2020–21 Philadelphia 76ers season page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nba-joel-embiid-jersey",
+    "factId": "nba-joel-embiid-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "What number did Kevin Durant wear in the 2013 season?",
+    "answer": "35",
+    "wrong": [
+      "0",
+      "7",
+      "30"
+    ],
+    "teach": "Oklahoma City won 60 games and earned the West's top seed.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2013,
+      "player": "Kevin Durant"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2012%E2%80%9313_Oklahoma_City_Thunder_season",
+      "ref": "Wikipedia: 2012–13 Oklahoma City Thunder season page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nba-kevin-durant-jersey",
+    "factId": "nba-kevin-durant-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "What number did Russell Westbrook wear in the 2013 season?",
+    "answer": "0",
+    "wrong": [
+      "1",
+      "3",
+      "35"
+    ],
+    "teach": "Oklahoma City finished second in the Western Conference.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2013,
+      "player": "Russell Westbrook"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2012%E2%80%9313_Oklahoma_City_Thunder_season",
+      "ref": "Wikipedia: 2012–13 Oklahoma City Thunder season page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nba-russell-westbrook-jersey",
+    "factId": "nba-russell-westbrook-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "What number did Tim Duncan wear in the 2003 season?",
+    "answer": "21",
+    "wrong": [
+      "20",
+      "24",
+      "34"
+    ],
+    "teach": "San Antonio won the 2003 NBA championship.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2003,
+      "player": "Tim Duncan"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2002%E2%80%9303_San_Antonio_Spurs_season",
+      "ref": "Wikipedia: 2002–03 San Antonio Spurs season page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nba-tim-duncan-jersey",
+    "factId": "nba-tim-duncan-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "What number did Blake Griffin wear in the 2013 season?",
+    "answer": "32",
+    "wrong": [
+      "3",
+      "23",
+      "35"
+    ],
+    "teach": "The Clippers finished 56–26 and won their first Pacific Division title.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2013,
+      "player": "Blake Griffin"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2012%E2%80%9313_Los_Angeles_Clippers_season",
+      "ref": "Wikipedia: 2012–13 Los Angeles Clippers season page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nba-blake-griffin-jersey",
+    "factId": "nba-blake-griffin-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "What number did Kyle Lowry wear in the 2016 season?",
+    "answer": "7",
+    "wrong": [
+      "3",
+      "10",
+      "15"
+    ],
+    "teach": "Toronto reached the Eastern Conference finals.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2016,
+      "player": "Kyle Lowry"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2015%E2%80%9316_Toronto_Raptors_season",
+      "ref": "Wikipedia: 2015–16 Toronto Raptors season page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nba-kyle-lowry-jersey",
+    "factId": "nba-kyle-lowry-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "What number did DeMar DeRozan wear in the 2016 season?",
+    "answer": "10",
+    "wrong": [
+      "3",
+      "7",
+      "15"
+    ],
+    "teach": "Toronto reached the Eastern Conference finals.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2016,
+      "player": "DeMar DeRozan"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2015%E2%80%9316_Toronto_Raptors_season",
+      "ref": "Wikipedia: 2015–16 Toronto Raptors season page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nba-demar-derozan-jersey",
+    "factId": "nba-demar-derozan-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Giannis Antetokounmpo?",
+    "answer": "Bucks",
+    "wrong": [
+      "Hawks",
+      "Celtics",
+      "Suns"
+    ],
+    "teach": "Giannis Antetokounmpo was born in Athens.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2019,
+      "player": "Giannis Antetokounmpo"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Giannis_Antetokounmpo",
+      "ref": "Wikipedia: Giannis Antetokounmpo page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nba-giannis-antetokounmpo-draft",
+    "factId": "nba-giannis-antetokounmpo-draft"
+  },
+  {
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Nikola Jokić?",
+    "answer": "Nuggets",
+    "wrong": [
+      "Bulls",
+      "Celtics",
+      "Heat"
+    ],
+    "teach": "Nikola Jokić was born in Sombor.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2020,
+      "player": "Nikola Jokić"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Nikola_Joki%C4%87",
+      "ref": "Wikipedia: Nikola Jokić page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nba-nikola-jokic-draft",
+    "factId": "nba-nikola-jokic-draft"
+  },
+  {
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Joel Embiid?",
+    "answer": "76ers",
+    "wrong": [
+      "Cavaliers",
+      "Bucks",
+      "Hawks"
+    ],
+    "teach": "Joel Embiid was born in Yaoundé.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2021,
+      "player": "Joel Embiid"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Joel_Embiid",
+      "ref": "Wikipedia: Joel Embiid page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nba-joel-embiid-draft",
+    "factId": "nba-joel-embiid-draft"
+  },
+  {
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Blake Griffin?",
+    "answer": "Clippers",
+    "wrong": [
+      "Thunder",
+      "Lakers",
+      "Warriors"
+    ],
+    "teach": "Blake Griffin was born in Oklahoma City.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2011,
+      "player": "Blake Griffin"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Blake_Griffin",
+      "ref": "Wikipedia: Blake Griffin page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nba-blake-griffin-draft",
+    "factId": "nba-blake-griffin-draft"
+  },
+  {
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Klay Thompson?",
+    "answer": "Warriors",
+    "wrong": [
+      "Kings",
+      "Clippers",
+      "Lakers"
+    ],
+    "teach": "Klay Thompson was born in Los Angeles.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2015,
+      "player": "Klay Thompson"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Klay_Thompson",
+      "ref": "Wikipedia: Klay Thompson page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nba-klay-thompson-draft",
+    "factId": "nba-klay-thompson-draft"
   }
 ]

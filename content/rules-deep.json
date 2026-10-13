@@ -1271,5 +1271,197 @@
       "ref": "Official Baseball Rules — Definitions of Terms (Strike)"
     },
     "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-mlb-infield-dirt-grass-line-radius-1",
+    "factId": "mlb-infield-dirt-grass-line-radius",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "Under 2026 OBR 2.01(a), what radius is specified for the grass line at the outer boundary of the infield dirt?",
+    "answer": "95 feet",
+    "wrong": [
+      "90 feet",
+      "100 feet",
+      "105 feet"
+    ],
+    "teach": "The average measurement may be more than 94 feet and less than 96 feet to comply.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "2026 Official Baseball Rules, Rule 2.01(a)"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-mlb-recommended-foul-territory-space-1",
+    "factId": "mlb-recommended-foul-territory-space",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Numbers and dimensions",
+    "prompt": "What foul-territory distance does OBR 2.01 recommend from home plate or a base line to an obstruction?",
+    "answer": "60 feet minimum",
+    "wrong": [
+      "30 feet or more",
+      "50 feet or more",
+      "90 feet or more"
+    ],
+    "teach": "The rule separately requires at least 325 feet down each foul line for fields built after June 1, 1958.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "2026 Official Baseball Rules, Rule 2.01"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-mlb-home-plate-adjacent-side-1",
+    "factId": "mlb-home-plate-adjacent-side",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Numbers and dimensions",
+    "prompt": "Under OBR 2.02, how long is either of the two adjacent sides of home plate?",
+    "answer": "8½ inches",
+    "wrong": [
+      "6 inches",
+      "12 inches",
+      "17 inches"
+    ],
+    "teach": "The edge facing the pitcher is 17 inches long.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "2026 Official Baseball Rules, Rule 2.02"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nfl-professional-hash-mark-size-1",
+    "factId": "nfl-professional-hash-mark-size",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "On an NFL field, what width and length are specified for each inbounds hash mark?",
+    "answer": "4 in. wide, 2 ft. long",
+    "wrong": [
+      "4 in. wide, 1 ft. long",
+      "2 in. wide, 2 ft. long",
+      "6 in. wide, 1 ft. long"
+    ],
+    "teach": "The rulebook separately describes the college marks as 12 inches long.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "2026 NFL Rulebook, Rule 1, The Field"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nfl-defensive-touchdown-on-try-1",
+    "factId": "nfl-defensive-touchdown-on-try",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Scoring",
+    "prompt": "On an NFL Try, how many points does the defense score by returning a turnover for a touchdown?",
+    "answer": "Two points",
+    "wrong": [
+      "One point",
+      "Six points",
+      "No points"
+    ],
+    "teach": "A Try is one untimed scrimmage down after a touchdown.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "2026 NFL Rulebook, Rule 11, Section 3"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nba-lane-space-mark-size-1",
+    "factId": "nba-lane-space-mark-size",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "How large are the NBA lane-space markings beside the free-throw lane?",
+    "answer": "2 inches by 6 inches",
+    "wrong": [
+      "2 inches by 4 inches",
+      "3 inches by 6 inches",
+      "6 inches by 12 inches"
+    ],
+    "teach": "The lane boundary lines are part of the lane, but the lane-space and neutral-zone marks are not.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-1-court-dimensions-equipment/",
+      "ref": "NBA Official Rules, Rule No. 1"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nba-defensive-three-second-shot-clock-1",
+    "factId": "nba-defensive-three-second-shot-clock",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Clock and timing",
+    "prompt": "After a defensive three-second violation on a frontcourt inbounds, how is the NBA shot clock set?",
+    "answer": "Max of 14s and time left",
+    "wrong": [
+      "Reset to 24 seconds",
+      "Always reset to 14s",
+      "It is not reset"
+    ],
+    "teach": "The 14-second reset also applies when the offense first gains possession after a missed shot that contacts the rim.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-7-24-second-clock/",
+      "ref": "NBA Official Rules, Rule No. 7"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nba-first-delay-of-game-penalty-1",
+    "factId": "nba-first-delay-of-game-penalty",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "What's the call?",
+    "prompt": "What is the penalty for a team's first NBA delay-of-game offense?",
+    "answer": "A warning",
+    "wrong": [
+      "A technical foul",
+      "One free throw",
+      "Loss of possession"
+    ],
+    "teach": "Each successive delay-of-game offense is assessed a team technical foul.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-12-fouls-and-penalties/",
+      "ref": "NBA Official Rules, Rule No. 12"
+    },
+    "dailyFrom": "2026-10-27"
   }
 ]

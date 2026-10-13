@@ -1678,5 +1678,537 @@
       "season": 2019,
       "player": "Jimmy Garoppolo"
     }
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Daniel Faalele was born in which country?",
+    "answer": "Australia",
+    "wrong": [
+      "New Zealand",
+      "Canada",
+      "England"
+    ],
+    "teach": "Daniel Faalele was born in Melbourne.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2024,
+      "player": "Daniel Faalele"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Daniel_Faalele",
+      "ref": "Wikipedia: Daniel Faalele page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nfl-daniel-faalele-country",
+    "factId": "nfl-daniel-faalele-country"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Cairo Santos was born in which country?",
+    "answer": "Brazil",
+    "wrong": [
+      "Mexico",
+      "Argentina",
+      "Australia"
+    ],
+    "teach": "Cairo Santos was born in Limeira.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2017,
+      "player": "Cairo Santos"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Cairo_Santos",
+      "ref": "Wikipedia: Cairo Santos page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nfl-cairo-santos-country",
+    "factId": "nfl-cairo-santos-country"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Sav Rocca was born in which country?",
+    "answer": "Australia",
+    "wrong": [
+      "New Zealand",
+      "Canada",
+      "England"
+    ],
+    "teach": "Sav Rocca was born in Melbourne.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2007,
+      "player": "Sav Rocca"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Sav_Rocca",
+      "ref": "Wikipedia: Sav Rocca page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nfl-sav-rocca-country",
+    "factId": "nfl-sav-rocca-country"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Efe Obada was born in which country?",
+    "answer": "Nigeria",
+    "wrong": [
+      "Ghana",
+      "England",
+      "Australia"
+    ],
+    "teach": "Efe Obada was born in Lagos.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2020,
+      "player": "Efe Obada"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Efe_Obada",
+      "ref": "Wikipedia: Efe Obada page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nfl-efe-obada-country",
+    "factId": "nfl-efe-obada-country"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Sebastian Vollmer was born in which country?",
+    "answer": "Germany",
+    "wrong": [
+      "Austria",
+      "Switzerland",
+      "Australia"
+    ],
+    "teach": "Sebastian Vollmer was born in Kaarst.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2014,
+      "player": "Sebastian Vollmer"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Sebastian_Vollmer",
+      "ref": "Wikipedia: Sebastian Vollmer page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nfl-sebastian-vollmer-country",
+    "factId": "nfl-sebastian-vollmer-country"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Mitch Wishnowsky was born in which country?",
+    "answer": "Australia",
+    "wrong": [
+      "New Zealand",
+      "Canada",
+      "England"
+    ],
+    "teach": "Mitch Wishnowsky was born in Gosnells.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2020,
+      "player": "Mitch Wishnowsky"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Mitch_Wishnowsky",
+      "ref": "Wikipedia: Mitch Wishnowsky page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nfl-mitch-wishnowsky-country",
+    "factId": "nfl-mitch-wishnowsky-country"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Tom Fears was born in which country?",
+    "answer": "Mexico",
+    "wrong": [
+      "Cuba",
+      "Canada",
+      "Brazil"
+    ],
+    "teach": "Tom Fears was born in Guadalajara.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1950,
+      "player": "Tom Fears"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Tom_Fears",
+      "ref": "Wikipedia: Tom Fears page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nfl-tom-fears-country",
+    "factId": "nfl-tom-fears-country"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "What number did Drew Brees wear in the 2009 season?",
+    "answer": "9",
+    "wrong": [
+      "12",
+      "15",
+      "18"
+    ],
+    "teach": "Drew Brees was born in Dallas.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2009,
+      "player": "Drew Brees"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Drew_Brees",
+      "ref": "Wikipedia: Drew Brees page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nfl-drew-brees-jersey",
+    "factId": "nfl-drew-brees-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "What number did Emmitt Smith wear in the 1995 season?",
+    "answer": "22",
+    "wrong": [
+      "20",
+      "34",
+      "80"
+    ],
+    "teach": "Emmitt Smith was born in Pensacola.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1995,
+      "player": "Emmitt Smith"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Emmitt_Smith",
+      "ref": "Wikipedia: Emmitt Smith page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nfl-emmitt-smith-jersey",
+    "factId": "nfl-emmitt-smith-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "What number did Barry Sanders wear in the 1997 season?",
+    "answer": "20",
+    "wrong": [
+      "22",
+      "34",
+      "80"
+    ],
+    "teach": "Barry Sanders was born in Wichita.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1997,
+      "player": "Barry Sanders"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Barry_Sanders",
+      "ref": "Wikipedia: Barry Sanders page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nfl-barry-sanders-jersey",
+    "factId": "nfl-barry-sanders-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "What number did Jerry Rice wear in the 1994 season?",
+    "answer": "80",
+    "wrong": [
+      "22",
+      "34",
+      "81"
+    ],
+    "teach": "Jerry Rice was born in Starkville.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1994,
+      "player": "Jerry Rice"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jerry_Rice",
+      "ref": "Wikipedia: Jerry Rice page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nfl-jerry-rice-jersey",
+    "factId": "nfl-jerry-rice-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Jersey number",
+    "prompt": "What number did Tom Brady wear in the 2017 season?",
+    "answer": "12",
+    "wrong": [
+      "10",
+      "15",
+      "18"
+    ],
+    "teach": "Tom Brady was born in San Mateo.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2017,
+      "player": "Tom Brady"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Tom_Brady",
+      "ref": "Wikipedia: Tom Brady page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nfl-tom-brady-jersey",
+    "factId": "nfl-tom-brady-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Jersey number",
+    "prompt": "What number did Jason Kelce wear in the 2017 season?",
+    "answer": "62",
+    "wrong": [
+      "52",
+      "68",
+      "76"
+    ],
+    "teach": "Jason Kelce was born in Cleveland Heights.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2017,
+      "player": "Jason Kelce"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jason_Kelce",
+      "ref": "Wikipedia: Jason Kelce page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nfl-jason-kelce-jersey",
+    "factId": "nfl-jason-kelce-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "What number did Walter Payton wear in the 1985 season?",
+    "answer": "34",
+    "wrong": [
+      "22",
+      "20",
+      "80"
+    ],
+    "teach": "Walter Payton was born in Columbia.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1985,
+      "player": "Walter Payton"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Walter_Payton",
+      "ref": "Wikipedia: Walter Payton page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nfl-walter-payton-jersey",
+    "factId": "nfl-walter-payton-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "What number did Derrick Henry wear in the 2019 season?",
+    "answer": "22",
+    "wrong": [
+      "20",
+      "23",
+      "34"
+    ],
+    "teach": "Derrick Henry was born in Yulee.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2019,
+      "player": "Derrick Henry"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Derrick_Henry",
+      "ref": "Wikipedia: Derrick Henry page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nfl-derrick-henry-jersey",
+    "factId": "nfl-derrick-henry-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "What number did Christian McCaffrey wear in the 2024 season?",
+    "answer": "23",
+    "wrong": [
+      "22",
+      "24",
+      "26"
+    ],
+    "teach": "Christian McCaffrey was born in Castle Rock.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2024,
+      "player": "Christian McCaffrey"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Christian_McCaffrey",
+      "ref": "Wikipedia: Christian McCaffrey page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nfl-christian-mccaffrey-jersey",
+    "factId": "nfl-christian-mccaffrey-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Jersey number",
+    "prompt": "What number did Daniel Faalele wear in the 2024 season?",
+    "answer": "68",
+    "wrong": [
+      "62",
+      "76",
+      "77"
+    ],
+    "teach": "Daniel Faalele was born in Melbourne.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2024,
+      "player": "Daniel Faalele"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Daniel_Faalele",
+      "ref": "Wikipedia: Daniel Faalele page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nfl-daniel-faalele-jersey",
+    "factId": "nfl-daniel-faalele-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Jersey number",
+    "prompt": "What number did Cairo Santos wear in the 2017 season?",
+    "answer": "8",
+    "wrong": [
+      "3",
+      "7",
+      "9"
+    ],
+    "teach": "Cairo Santos was born in Limeira.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2017,
+      "player": "Cairo Santos"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Cairo_Santos",
+      "ref": "Wikipedia: Cairo Santos page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nfl-cairo-santos-jersey",
+    "factId": "nfl-cairo-santos-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Jersey number",
+    "prompt": "What number did Mitch Wishnowsky wear in the 2020 season?",
+    "answer": "19",
+    "wrong": [
+      "6",
+      "8",
+      "18"
+    ],
+    "teach": "Mitch Wishnowsky was born in Gosnells.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2020,
+      "player": "Mitch Wishnowsky"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Mitch_Wishnowsky",
+      "ref": "Wikipedia: Mitch Wishnowsky page (saved API wikitext and prose), checked 2026-10-13"
+    },
+    "id": "p-nfl-mitch-wishnowsky-jersey",
+    "factId": "nfl-mitch-wishnowsky-jersey"
   }
 ]
