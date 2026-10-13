@@ -1,1 +1,963 @@
-[]
+[
+  {
+    "id": "r-nfl-goal-line-width-1",
+    "factId": "nfl-goal-line-width",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Numbers and dimensions",
+    "prompt": "NFL field markings: how wide is the painted goal line?",
+    "answer": "8 inches",
+    "wrong": [
+      "4 inches",
+      "6 inches",
+      "12 inches"
+    ],
+    "teach": "Other field lines are 4 inches wide; the goal line is double that.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rulebook — Field Markings, note 2"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-nfl-ball-inflation-1",
+    "factId": "nfl-ball-inflation",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "Inflation range for an official NFL game ball?",
+    "answer": "12½ to 13½ psi",
+    "wrong": [
+      "10 to 11 psi",
+      "14 to 15 psi",
+      "8½ to 9½ psi"
+    ],
+    "teach": "The Referee is the sole judge of whether game balls meet the specs.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 2, Section 1 — The Ball, Dimensions"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-nfl-seven-on-line-1",
+    "factId": "nfl-seven-on-line",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "NFL offense at the snap: fewest players it must have on the line of scrimmage?",
+    "answer": "7",
+    "wrong": [
+      "5",
+      "6",
+      "8"
+    ],
+    "teach": "Eligible receivers must be on both ends of the line; those between them are ineligible.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 7, Section 5, Article 1 — Offensive Team"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-nfl-invalid-fair-catch-signal-1",
+    "factId": "nfl-invalid-fair-catch-signal",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "What's the call?",
+    "prompt": "NFL punt returner gives an invalid fair-catch signal. Penalty?",
+    "answer": "5 yards",
+    "wrong": [
+      "10 yards",
+      "15 yards",
+      "Loss of down"
+    ],
+    "teach": "It's marked off from where he signaled, not where the play ended.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 10, Section 2 — Invalid Fair Catch Signal"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-nfl-try-safety-1",
+    "factId": "nfl-try-safety",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Scoring",
+    "prompt": "NFL try: the play ends in what would normally be a safety by the defense. Offense scores?",
+    "answer": "1 point",
+    "wrong": [
+      "2 points",
+      "0 points",
+      "3 points"
+    ],
+    "teach": "A defensive touchdown during a try, like a blocked-kick return, is worth 2.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 11, Section 3, Article 2 — Results of a Try"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-nfl-fumble-out-end-zone-1",
+    "factId": "nfl-fumble-out-end-zone",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "NFL runner fumbles forward out of the opponent's end zone. The call?",
+    "answer": "Touchback",
+    "wrong": [
+      "Safety",
+      "Spot of the fumble",
+      "Offense keeps the ball"
+    ],
+    "teach": "Fumbling out of your own end zone, if you sent it there, is a safety instead.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 8, Section 7 — Fumble out of bounds in end zone"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-nfl-missed-fg-spot-1",
+    "factId": "nfl-missed-fg-spot",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "Untouched missed NFL field goal, kicked from beyond the 20. Defense takes over where?",
+    "answer": "Spot of the kick",
+    "wrong": [
+      "Line of scrimmage",
+      "Its own 20-yard line",
+      "Its own 25-yard line"
+    ],
+    "teach": "If the kick came from inside the 20, they get it at the 20 instead.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 11, Section 4, Article 2 — Missed Field Goals"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-nfl-double-unsportsmanlike-1",
+    "factId": "nfl-double-unsportsmanlike",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "NFL player is flagged for taunting twice in the same game. Result?",
+    "answer": "Disqualified",
+    "wrong": [
+      "15 yards, stays in",
+      "Benched one series",
+      "Warning from referee"
+    ],
+    "teach": "It applies even if the penalty is declined, and pregame-warmup fouls carry over.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 12, Section 4, Article 1 — Automatic Disqualification"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-nfl-postseason-ot-1",
+    "factId": "nfl-postseason-ot",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Clock and timing",
+    "prompt": "How long is an NFL postseason overtime period?",
+    "answer": "15 minutes",
+    "wrong": [
+      "10 minutes",
+      "12 minutes",
+      "5 minutes"
+    ],
+    "teach": "Both teams must get the opportunity to possess the ball in it.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 16, Section 1, Article 4 — Overtime in Postseason"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-nfl-quarter-break-1",
+    "factId": "nfl-quarter-break",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Clock and timing",
+    "prompt": "NFL: minimum break between the 1st and 2nd quarters?",
+    "answer": "2 minutes",
+    "wrong": [
+      "1 minute",
+      "3 minutes",
+      "5 minutes"
+    ],
+    "teach": "Only the head coach, not an assistant, may enter then to check an injured player.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 4, Section 1, Article 2 — Intermissions"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-nfl-chop-block-1",
+    "factId": "nfl-chop-block",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "NFL penalty for an offensive chop block?",
+    "answer": "15 yards",
+    "wrong": [
+      "5 yards",
+      "10 yards",
+      "Loss of down"
+    ],
+    "teach": "It's a high-low double team: one blocker hits the thigh or below while another goes high.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 12, Section 2, Article 5 — Chop Block"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-nfl-fumble-two-minute-1",
+    "factId": "nfl-fumble-two-minute",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "What's the call?",
+    "prompt": "NFL, after the 2-minute warning: a teammate recovers a 2nd-down fumble 5 yards ahead. Next snap?",
+    "answer": "Spot of the fumble",
+    "wrong": [
+      "Spot of the recovery",
+      "Previous spot",
+      "Line to gain"
+    ],
+    "teach": "Only the fumbler may recover and advance it, the same as on 4th down and tries.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 8, Section 7, Article 6 — Fumble After Two-Minute Warning"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-nfl-field-numerals-1",
+    "factId": "nfl-field-numerals",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Numbers and dimensions",
+    "prompt": "NFL yard-line numbers: how far in from the sideline do their bottoms start?",
+    "answer": "12 yards",
+    "wrong": [
+      "9 yards",
+      "10 yards",
+      "15 yards"
+    ],
+    "teach": "Each white numeral measures 2 yards tall.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 1 — Additional Field Markings, Field Numerals"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-nfl-field-border-1",
+    "factId": "nfl-field-border",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Numbers and dimensions",
+    "prompt": "Width of the solid white border around an NFL field?",
+    "answer": "6 feet",
+    "wrong": [
+      "4 feet",
+      "8 feet",
+      "3 feet"
+    ],
+    "teach": "A broken yellow line runs farther out along the non-bench sidelines.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rulebook — Field Markings, note 1"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-nba-rim-diameter-1",
+    "factId": "nba-rim-diameter",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "Inside diameter of an NBA rim?",
+    "answer": "18 inches",
+    "wrong": [
+      "16 inches",
+      "20 inches",
+      "24 inches"
+    ],
+    "teach": "The white cord net hanging from it is also 18 inches long.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-1-court-dimensions-equipment/",
+      "ref": "NBA Rule 1, Section II — Equipment"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-nba-rim-offset-1",
+    "factId": "nba-rim-offset",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Numbers and dimensions",
+    "prompt": "NBA: gap from the backboard face to the nearest inside edge of the rim?",
+    "answer": "6 inches",
+    "wrong": [
+      "4 inches",
+      "8 inches",
+      "12 inches"
+    ],
+    "teach": "The ring must be painted orange.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-1-court-dimensions-equipment/",
+      "ref": "NBA Rule 1, Section II — Equipment"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-nba-ball-pressure-1",
+    "factId": "nba-ball-pressure",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Numbers and dimensions",
+    "prompt": "Air pressure range for an official NBA game ball?",
+    "answer": "7½ to 8½ lbs",
+    "wrong": [
+      "6 to 7 lbs",
+      "9 to 10 lbs",
+      "12½ to 13½ lbs"
+    ],
+    "teach": "Each team must get at least nine balls for pregame warmups.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-1-court-dimensions-equipment/",
+      "ref": "NBA Rule 1, Section II — Equipment"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-nba-hash-28-1",
+    "factId": "nba-hash-28",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Numbers and dimensions",
+    "prompt": "NBA sideline hash marks for advanced throw-ins sit how far from the baseline?",
+    "answer": "28 feet",
+    "wrong": [
+      "19 feet",
+      "24 feet",
+      "32 feet"
+    ],
+    "teach": "Late-game timeouts let a team inbound there in its frontcourt.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-1-court-dimensions-equipment/",
+      "ref": "NBA Rule 1, Section I; Rule 5, Section VI"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-nba-sixth-foul-no-subs-1",
+    "factId": "nba-sixth-foul-no-subs",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "What's the call?",
+    "prompt": "NBA player picks up his 6th foul, but every sub has already fouled out. Result?",
+    "answer": "He stays in the game",
+    "wrong": [
+      "Team plays 4-on-5",
+      "Game is forfeited",
+      "A fouled-out sub returns"
+    ],
+    "teach": "His team is charged a technical foul, and again for each later foul he commits.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-3-players-substitutes-and-coaches/",
+      "ref": "NBA Rule 3, Section I — Team"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-nba-ft-10-1",
+    "factId": "nba-ft-10",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Clock and timing",
+    "prompt": "NBA: seconds a shooter has to attempt a free throw once he controls the ball?",
+    "answer": "10",
+    "wrong": [
+      "5",
+      "8",
+      "15"
+    ],
+    "teach": "He can't cross the line's plane until the ball touches the ring or backboard.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-9-free-throws-and-penalties/",
+      "ref": "NBA Rule 9, Section I — Positions and Violations"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-nba-shot-clock-tenths-1",
+    "factId": "nba-shot-clock-tenths",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Clock and timing",
+    "prompt": "NBA shot clock starts showing tenths of a second at what reading?",
+    "answer": "4.9 seconds",
+    "wrong": [
+      "9.9 seconds",
+      "2.9 seconds",
+      "1.0 second"
+    ],
+    "teach": "The game clock shows tenths only in the last minute of each period.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-7-24-second-clock/",
+      "ref": "NBA Rule 7, Section I — Definition"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-nba-made-basket-clock-1",
+    "factId": "nba-made-basket-clock",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Clock and timing",
+    "prompt": "NBA, 1st through 3rd quarters: a made basket stops the clock during the final what?",
+    "answer": "1 minute",
+    "wrong": [
+      "2 minutes",
+      "30 seconds",
+      "5 minutes"
+    ],
+    "teach": "In the 4th quarter and overtime it stops after makes in the last 2 minutes.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
+      "ref": "NBA Rule 5, Section V — Stoppage of Timing Devices"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-nba-own-basket-1",
+    "factId": "nba-own-basket",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Scoring",
+    "prompt": "NBA player accidentally scores in his own basket. Who's credited?",
+    "answer": "Nearest opponent",
+    "wrong": [
+      "No one",
+      "The team only",
+      "Last opposing shooter"
+    ],
+    "teach": "Shooting at the wrong basket on purpose is a violation instead.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
+      "ref": "NBA Rule 5, Section I — Scoring"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-nba-delay-of-game-1",
+    "factId": "nba-delay-of-game",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "NBA team commits its 2nd delay-of-game violation of the game. The call?",
+    "answer": "Technical foul",
+    "wrong": [
+      "Warning",
+      "Loss of possession",
+      "Flagrant 1"
+    ],
+    "teach": "The first is a warning; checking in with an untucked jersey can count as one.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-12-fouls-and-penalties/",
+      "ref": "NBA Rule 12A, Section II — Delay-of-Game"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-nba-defensive-three-1",
+    "factId": "nba-defensive-three",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "NBA defensive 3-second violation. The penalty?",
+    "answer": "1 FT and the ball",
+    "wrong": [
+      "Loss of possession",
+      "2 FTs and the ball",
+      "Shot clock reset to 24"
+    ],
+    "teach": "The shot clock stays the same or resets to 14, whichever is greater.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-10-violations-and-penalties/",
+      "ref": "NBA Rule 10, Section VII — Defensive Three-Second Rule"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-nba-back-to-basket-1",
+    "factId": "nba-back-to-basket",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Clock and timing",
+    "prompt": "NBA: max seconds a player below the FT line extended may dribble with his back to the basket?",
+    "answer": "5",
+    "wrong": [
+      "3",
+      "8",
+      "10"
+    ],
+    "teach": "Picking up the ball or a defensive deflection ends the count.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-10-violations-and-penalties/",
+      "ref": "NBA Rule 10, Section XVI — Five-Second Back-to-the-Basket"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-nba-ot-penalty-1",
+    "factId": "nba-ot-penalty",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Numbers and dimensions",
+    "prompt": "NBA overtime, first 3 minutes: penalty free throws start on which team foul?",
+    "answer": "4th",
+    "wrong": [
+      "3rd",
+      "5th",
+      "2nd"
+    ],
+    "teach": "A team under that quota may commit one foul without penalty in the last 2 minutes.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-12-fouls-and-penalties/",
+      "ref": "NBA Rule 12B, Section V — Free Throw Penalty Situations"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-mlb-home-to-second-1",
+    "factId": "mlb-home-to-second",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "MLB: distance from home plate to second base?",
+    "answer": "127 ft 3⅜ in",
+    "wrong": [
+      "120 ft",
+      "130 ft 6 in",
+      "125 ft 5⅝ in"
+    ],
+    "teach": "First to third base is the same distance across the diamond.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 2.01 — Layout of the Field"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-mlb-new-park-foul-lines-1",
+    "factId": "mlb-new-park-foul-lines",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Numbers and dimensions",
+    "prompt": "MLB parks built after June 1, 1958: minimum distance down each foul line?",
+    "answer": "325 feet",
+    "wrong": [
+      "300 feet",
+      "315 feet",
+      "350 feet"
+    ],
+    "teach": "Those parks also need at least 400 feet to center field.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 2.01 — Note (a)"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-mlb-mound-slope-1",
+    "factId": "mlb-mound-slope",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Numbers and dimensions",
+    "prompt": "MLB mound: slope from 6 inches in front of the rubber toward home?",
+    "answer": "1 inch per foot",
+    "wrong": [
+      "½ inch per foot",
+      "2 inches per foot",
+      "1 inch per yard"
+    ],
+    "teach": "It runs 6 feet toward the plate and must be uniform.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 2.01 — Layout of the Field"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-mlb-cupped-bat-1",
+    "factId": "mlb-cupped-bat",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Numbers and dimensions",
+    "prompt": "MLB: deepest cup (indentation) allowed in the end of a bat?",
+    "answer": "1¼ inches",
+    "wrong": [
+      "½ inch",
+      "2 inches",
+      "¾ inch"
+    ],
+    "teach": "The cup must be 1 to 2 inches across and curved, with nothing added.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 3.02(b) — Cupped Bats"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-mlb-first-base-mitt-1",
+    "factId": "mlb-first-base-mitt",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Numbers and dimensions",
+    "prompt": "Max length of an MLB first baseman's mitt, top to bottom?",
+    "answer": "13 inches",
+    "wrong": [
+      "12 inches",
+      "14 inches",
+      "15½ inches"
+    ],
+    "teach": "It can be no more than 8 inches wide across the palm.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 3.05 — First Baseman's Glove"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-mlb-catcher-mitt-1",
+    "factId": "mlb-catcher-mitt",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Numbers and dimensions",
+    "prompt": "Max circumference of an MLB catcher's mitt?",
+    "answer": "38 inches",
+    "wrong": [
+      "34 inches",
+      "36 inches",
+      "42 inches"
+    ],
+    "teach": "It can't be more than 15½ inches from top to bottom either.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 3.04 — Catcher's Mitt"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-mlb-batting-out-of-order-1",
+    "factId": "mlb-batting-out-of-order",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "MLB: batting out of order is appealed after the improper batter singles. Who's out?",
+    "answer": "The proper batter",
+    "wrong": [
+      "The improper batter",
+      "No one",
+      "The next batter"
+    ],
+    "teach": "Any advance or run made because of the improper batter's hit is wiped out.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 6.03(b) — Batting Out of Turn"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-mlb-bat-hits-twice-1",
+    "factId": "mlb-bat-hits-twice",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "Still holding his bat, an MLB batter-runner hits his own fair ball again in fair ground. Call?",
+    "answer": "Batter is out",
+    "wrong": [
+      "Foul ball",
+      "Fair ball, play on",
+      "Dead ball, re-pitch"
+    ],
+    "teach": "If a dropped bat rolls into the ball with no intent, the ball stays alive.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 5.09(a)(8) — Retiring the Batter"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-mlb-infield-fly-on-base-1",
+    "factId": "mlb-infield-fly-on-base",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "What's the call?",
+    "prompt": "A declared infield fly hits a runner while he's touching his base. MLB call?",
+    "answer": "Only the batter is out",
+    "wrong": [
+      "Runner is out",
+      "Both are out",
+      "Dead ball, no outs"
+    ],
+    "teach": "Off the base, that same runner would be out along with the batter.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 5.09(b)(7) — Retiring a Runner"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-mlb-coach-assist-1",
+    "factId": "mlb-coach-assist",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "MLB third-base coach grabs the runner and helps him back to the bag. The call?",
+    "answer": "Runner is out",
+    "wrong": [
+      "Warning to the coach",
+      "Coach is ejected",
+      "No call, play on"
+    ],
+    "teach": "Leaving the box to draw a throw with a man on 3rd is also interference.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 6.01(a)(8) — Interference"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-mlb-fair-ball-hits-umpire-1",
+    "factId": "mlb-fair-ball-hits-umpire",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "Fair grounder hits an MLB umpire before passing any infielder. Batter gets?",
+    "answer": "First base",
+    "wrong": [
+      "Second base",
+      "Nothing, ball is live",
+      "A do-over pitch"
+    ],
+    "teach": "Once it has passed an infielder other than the pitcher, it stays in play.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rules 5.05(b)(4) and 5.05(b)(4)(d)"
+    },
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-mlb-two-way-dh-1",
+    "factId": "mlb-two-way-dh",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "What's the call?",
+    "prompt": "MLB starting pitcher is also his team's DH, then gets pulled from the mound. Can he keep batting?",
+    "answer": "Yes, as the DH",
+    "wrong": [
+      "No, he's out",
+      "Only as a pinch-hitter",
+      "Only in extra innings"
+    ],
+    "teach": "He's listed twice on a 10-name lineup card, but can't pitch again that game.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 5.11(b) — Starting Pitcher as Designated Hitter"
+    },
+    "validFrom": 2022,
+    "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-mlb-quick-pitch-1",
+    "factId": "mlb-quick-pitch",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "What's the call?",
+    "prompt": "MLB pitcher quick-pitches the batter with the bases empty. The call?",
+    "answer": "Ball",
+    "wrong": [
+      "Balk",
+      "No pitch",
+      "Called strike"
+    ],
+    "teach": "With runners on base, a quick pitch is a balk instead.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "MLB Rule 6.02(a)(5) Comment — Quick Pitch"
+    },
+    "dailyFrom": "2026-10-20"
+  }
+]
