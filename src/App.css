@@ -1090,6 +1090,30 @@
   pointer-events: none;
 }
 
+/* Homescreen: the sunset palette drives the whole layout. */
+.home-hero {
+  position: relative;
+  margin: -1.25rem -1.25rem 0;
+  padding: 1.75rem 1.25rem 1.6rem;
+  border-bottom: 1px solid var(--daily-line);
+  background:
+    radial-gradient(90% 120% at 15% 0%, #62234766, transparent 60%),
+    radial-gradient(70% 90% at 90% 10%, #e9985633, transparent 55%),
+    linear-gradient(180deg, var(--sunset-night) 0%, transparent 100%);
+}
+
+.home-hero::after {
+  position: absolute;
+  right: 1.25rem;
+  bottom: -1px;
+  left: 1.25rem;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--sunset-text);
+  content: '';
+  opacity: 0.8;
+}
+
 .home-panel .eyebrow,
 .classic-panel .eyebrow {
   color: var(--sunset-orange);
@@ -1100,6 +1124,10 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+.home-panel .tagline {
+  color: var(--sunset-blush);
 }
 
 .daily-button {
@@ -1114,6 +1142,78 @@
 
 .daily-meta {
   color: var(--sunset-blush);
+}
+
+.classic-panel {
+  position: relative;
+  overflow: hidden;
+  border-color: var(--daily-line-strong);
+  background: linear-gradient(170deg, var(--daily-panel), var(--panel) 70%);
+}
+
+.classic-panel::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+  background: var(--sunset-fill);
+  content: '';
+  opacity: 0.85;
+}
+
+.classic-panel .mode-chip {
+  border-color: var(--sunset-wine);
+  color: var(--sunset-blush);
+  background: #42164b55;
+}
+
+.classic-panel .chip span {
+  border-color: var(--daily-line-strong);
+  background: var(--daily-surface-2);
+}
+
+.classic-panel .chip input:checked + span {
+  border-color: transparent;
+  color: var(--sunset-night);
+  background: var(--sunset-fill);
+}
+
+.classic-panel .chip input:focus-visible + span {
+  outline-color: var(--sunset-orange);
+}
+
+.classic-panel > .classic-button {
+  color: var(--sunset-night);
+  background: var(--sunset-fill);
+  box-shadow: 0 0.5rem 1.6rem -0.8rem var(--sunset-shadow);
+}
+
+.home-panel .how-it-works {
+  border-color: var(--daily-line);
+  background: var(--daily-panel);
+}
+
+.app-credit {
+  background: var(--sunset-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  white-space: nowrap;
+}
+
+@media (max-width: 380px) {
+  .home-hero {
+    margin-right: -0.9rem;
+    margin-left: -0.9rem;
+    padding-right: 0.9rem;
+    padding-left: 0.9rem;
+  }
+
+  .home-hero::after {
+    right: 0.9rem;
+    left: 0.9rem;
+  }
 }
 
 /* Daily 10: the sunset palette takes over the accent tokens. */
