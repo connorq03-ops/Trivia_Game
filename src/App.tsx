@@ -42,7 +42,11 @@ type Mode = 'classic' | 'daily'
 type PublicQuestion = Pick<
   Question,
   'id' | 'side' | 'sport' | 'leagues' | 'difficulty' | 'category' | 'prompt' | 'reel'
-> & { choices: string[]; choiceBadges?: (ChoiceBadge | null)[] }
+> & {
+  choices: string[]
+  choiceBadges?: (ChoiceBadge | null)[]
+  boss?: { category: string; clockMs: number; reelMs: number }
+}
 
 type PublicProgress = {
   score: number
@@ -142,8 +146,12 @@ function answerIndexForKey(key: string): number {
     : -1
 }
 
-function elapsedSince(startedAt: number): number {
-  return Math.min(CLOCK_MS, Math.max(0, performance.now() - startedAt))
+function clockMsFor(question: PublicQuestion | undefined): number {
+  return question?.boss?.clockMs ?? CLOCK_MS
+}
+
+function elapsedSince(startedAt: number, clockMs: number): number {
+  return Math.min(clockMs, Math.max(0, performance.now() - startedAt))
 }
 
 const SPORT_OPTIONS: ['all' | Sport, string][] = [
@@ -423,7 +431,7 @@ function App() {
       setPicked(null)
       setReveal(null)
       questionClockOffset.current = Math.min(
-        CLOCK_MS,
+        clockMsFor(result.question),
         Math.max(0, result.elapsedMs),
       )
       setSession({
@@ -479,7 +487,7 @@ function App() {
         answer: result.answer,
         picked: body.choice,
         points: result.points,
-        multiplier: result.correct
+        multiplier: result.correct && !current.question.boss
           ? multiplierLabel(current.progress.streak)
           : null,
         callouts: result.correct
@@ -488,13 +496,15 @@ function App() {
             })
           : [],
       })
-      if (timedOut) setElapsedMs(CLOCK_MS)
+      if (timedOut) setElapsedMs(clockMsFor(current.question))
       setScreen('reveal')
       setAnnouncement(
         result.correct
           ? `Correct! Plus ${result.points}. Streak ${result.progress.streak}.`
           : `${timedOut ? 'Time’s up' : 'Wrong'}. ${
-              current.mode === 'classic'
+              current.question.boss
+                ? `Minus ${-result.points}.`
+                : current.mode === 'classic'
                 ? `Strike ${result.progress.strikes} of ${STRIKES}.`
                 : `${result.progress.strikes} missed.`
             }`,
@@ -577,15 +587,17 @@ function App() {
   const playAgain = () => startClassic()
 
   const activeQuestionId = session?.question.id
+  const activeClockMs = clockMsFor(session?.question)
+  const activeReelMs = session?.question.boss?.reelMs ?? REEL_MS
 
   useEffect(() => {
     if (screen !== 'reel' || !activeQuestionId) return
     const timeout = window.setTimeout(() => {
       setElapsedMs(0)
       setScreen('question')
-    }, REEL_MS)
+    }, activeReelMs)
     return () => window.clearTimeout(timeout)
-  }, [screen, activeQuestionId])
+  }, [screen, activeQuestionId, activeReelMs])
 
   useEffect(() => {
     if (screen !== 'reveal' || !reveal) return
@@ -616,8 +628,8 @@ function App() {
     const updateClock = () => {
       if (answered.current) return
       const elapsed = performance.now() - answerStartedAt.current
-      setElapsedMs(Math.min(CLOCK_MS, elapsed))
-      if (elapsed >= CLOCK_MS) submitAnswerRef.current(null, null)
+      setElapsedMs(Math.min(activeClockMs, elapsed))
+      if (elapsed >= activeClockMs) submitAnswerRef.current(null, null)
     }
     const interval = window.setInterval(updateClock, 40)
     document.addEventListener('visibilitychange', updateClock)
@@ -625,7 +637,7 @@ function App() {
       window.clearInterval(interval)
       document.removeEventListener('visibilitychange', updateClock)
     }
-  }, [screen, activeQuestionId])
+  }, [screen, activeQuestionId, activeClockMs])
 
   useEffect(() => {
     const target =
@@ -665,15 +677,18 @@ function App() {
       event.preventDefault()
       submitAnswerRef.current(
         choice,
-        Math.round(elapsedSince(answerStartedAt.current)),
+        Math.round(elapsedSince(answerStartedAt.current, activeClockMs)),
       )
     }
     window.addEventListener('keydown', onKeyDown)
     return () => window.removeEventListener('keydown', onKeyDown)
-  }, [questionChoices])
+  }, [questionChoices, activeClockMs])
 
   const chooseAnswer = (choice: string) => {
-    submitAnswer(choice, Math.round(elapsedSince(answerStartedAt.current)))
+    submitAnswer(
+      choice,
+      Math.round(elapsedSince(answerStartedAt.current, activeClockMs)),
+    )
   }
 
   const currentSummary = screen === 'over' ? summary : null
@@ -681,7 +696,7 @@ function App() {
   const question = session?.question
   const lateCorrect =
     reveal !== null && !reveal.correct && reveal.picked === reveal.answer
-  const remainingSeconds = Math.max(0, Math.ceil((CLOCK_MS - elapsedMs) / 1000))
+  const remainingSeconds = Math.max(0, Math.ceil((activeClockMs - elapsedMs) / 1000))
   const resultLabel = currentSummary
     ? currentSummary.mode === 'daily'
       ? currentSummary.reason === 'complete'
@@ -701,7 +716,7 @@ function App() {
         ? Math.max(session.questionIndex, pendingRequest.questionIndex)
         : session.questionIndex
   const clockStyle = {
-    '--clock-progress': `${Math.max(0, 100 - (elapsedMs / CLOCK_MS) * 100)}%`,
+    '--clock-progress': `${Math.max(0, 100 - (elapsedMs / activeClockMs) * 100)}%`,
   } as CSSProperties
 
   return (
@@ -831,6 +846,11 @@ function App() {
               <strong>{progress.score.toLocaleString()}</strong>
               {screen === 'reveal' && reveal && reveal.points > 0 && (
                 <span className="points-pop">+{reveal.points}</span>
+              )}
+              {screen === 'reveal' && reveal && reveal.points < 0 && (
+                <span className="points-pop points-pop--loss">
+                  −{-reveal.points}
+                </span>
               )}
               {screen === 'reveal' && reveal?.multiplier && (
                 <span className="multiplier-chip">{reveal.multiplier}</span>
@@ -967,7 +987,7 @@ function App() {
                 role="progressbar"
                 aria-label="Time remaining"
                 aria-valuemin={0}
-                aria-valuemax={CLOCK_MS / 1000}
+                aria-valuemax={activeClockMs / 1000}
                 aria-valuenow={remainingSeconds}
                 aria-valuetext={`${remainingSeconds} seconds remaining`}
               >

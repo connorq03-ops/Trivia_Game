@@ -1,19 +1,32 @@
 import { describe, expect, it } from 'vitest'
 import {
+  answerBossQuestion,
   answerQuestion,
+  BOSS_CATEGORIES,
+  BOSS_CLOCK_MS,
   CLOCK_MS,
   createRunProgress,
   dailyQuestions,
   LEVELS,
   levelFor,
+  levelIndexFor,
   presentQuestion,
   resolveAnswerMs,
   scoreAnswer,
   selectClassicQuestion,
   streakMultiplier,
+  type BossOptions,
   type ClassicOptions,
+  type RunProgress,
 } from './engine'
-import type { Difficulty, Question, Side, Sport } from './types'
+import type {
+  BossCategory,
+  BossQuestion,
+  Difficulty,
+  Question,
+  Side,
+  Sport,
+} from './types'
 
 const difficulties: Difficulty[] = ['easy', 'medium', 'hard', 'expert']
 const sports: Sport[] = ['football', 'basketball', 'baseball']
@@ -374,5 +387,181 @@ describe('Daily 10', () => {
         (question) => question.side === 'rules',
       ),
     ).toHaveLength(5)
+  })
+})
+
+function makeBoss(index: number, category: BossCategory): BossQuestion {
+  return {
+    ...makeQuestion(index),
+    id: `boss-${index}`,
+    factId: `boss-fact-${index}`,
+    side: 'boss',
+    sport: 'boss',
+    leagues: [],
+    difficulty: 'expert',
+    category,
+    reel: undefined,
+  }
+}
+
+const bossBank = BOSS_CATEGORIES.flatMap((category, offset) =>
+  [0, 1].map((index) => makeBoss(offset * 2 + index, category)),
+)
+
+function bossOptions(levelsConsumed: number[] = []): BossOptions {
+  return { bank: bossBank, levelsConsumed }
+}
+
+function progressWith(overrides: Partial<RunProgress>): RunProgress {
+  return { ...createRunProgress(), ...overrides }
+}
+
+describe('Boss questions', () => {
+  const bank = makeLargeBank(200)
+
+  it('maps correct counts to level indexes', () => {
+    expect(LEVELS.map(({ minCorrect }) => levelIndexFor(minCorrect))).toEqual([
+      0, 1, 2, 3, 4,
+    ])
+    expect(levelIndexFor(9)).toBe(0)
+    expect(levelIndexFor(19)).toBe(1)
+  })
+
+  it('triggers once at each level threshold after the first', () => {
+    const consumed: number[] = []
+    const triggeredAt: number[] = []
+    for (let correct = 0; correct <= 60; correct += 1) {
+      const selection = selectClassicQuestion(
+        bank,
+        new Set(),
+        correct,
+        defaultOptions,
+        seededRandom(correct),
+        bossOptions(consumed),
+      )
+      if (selection.type === 'boss') {
+        consumed.push(selection.level)
+        triggeredAt.push(correct)
+      }
+    }
+    expect(triggeredAt).toEqual([10, 20, 35, 50])
+    expect(consumed).toEqual([1, 2, 3, 4])
+  })
+
+  it('serves a regular question once the level is consumed or bosses are off', () => {
+    expect(
+      selectClassicQuestion(bank, new Set(), 10, defaultOptions, seededRandom(1), bossOptions([1]))
+        .type,
+    ).toBe('question')
+    expect(
+      selectClassicQuestion(bank, new Set(), 10, defaultOptions, seededRandom(1)).type,
+    ).toBe('question')
+  })
+
+  it('catches up on a level skipped by a legacy run', () => {
+    const selection = selectClassicQuestion(
+      bank,
+      new Set(),
+      23,
+      defaultOptions,
+      seededRandom(2),
+      bossOptions([1]),
+    )
+    expect(selection.type === 'boss' && selection.level).toBe(2)
+  })
+
+  it('draws an unused boss with four shuffled choices from a category that has one', () => {
+    const used = new Set(
+      bossBank.filter((question) => question.category !== 'art').map((question) => question.factId),
+    )
+    for (let seed = 0; seed < 20; seed += 1) {
+      const selection = selectClassicQuestion(
+        bank,
+        used,
+        10,
+        defaultOptions,
+        seededRandom(seed),
+        bossOptions(),
+      )
+      expect(selection.type).toBe('boss')
+      if (selection.type !== 'boss') return
+      expect(selection.question.category).toBe('art')
+      expect([...selection.choices].sort()).toEqual(
+        [selection.question.answer, ...selection.question.wrong].sort(),
+      )
+    }
+  })
+
+  it('falls back to a regular question when the boss pool is empty', () => {
+    const used = new Set(bossBank.map((question) => question.factId))
+    const selection = selectClassicQuestion(
+      bank,
+      used,
+      10,
+      defaultOptions,
+      seededRandom(3),
+      bossOptions(),
+    )
+    expect(selection.type).toBe('question')
+  })
+
+  it('scores a hit as a flat 500 and extends the streak', () => {
+    const outcome = answerBossQuestion(
+      progressWith({ score: 1000, streak: 12, bestStreak: 12, questionsAnswered: 12 }),
+      true,
+      14_000,
+    )
+    expect(outcome.correct).toBe(true)
+    expect(outcome.points).toBe(500)
+    expect(outcome.answerMs).toBe(14_000)
+    expect(outcome.progress).toMatchObject({
+      score: 1500,
+      streak: 13,
+      bestStreak: 13,
+      questionsAnswered: 13,
+      answeredCount: 0,
+      totalAnswerMs: 0,
+      results: ['hit'],
+    })
+  })
+
+  it('backs off a strike when a boss hit reaches a strike-back streak', () => {
+    const outcome = answerBossQuestion(
+      progressWith({ score: 1000, streak: 14, strikes: 2 }),
+      true,
+      2_000,
+    )
+    expect(outcome.progress.strikes).toBe(1)
+  })
+
+  it('takes 250 on a miss without a strike, streak reset, or review entry', () => {
+    const progress = progressWith({ score: 1000, streak: 12, strikes: 1 })
+    const outcome = answerBossQuestion(progress, false, 3_000)
+    expect(outcome.correct).toBe(false)
+    expect(outcome.points).toBe(-250)
+    expect(outcome.endReason).toBeUndefined()
+    expect(outcome.progress).toMatchObject({
+      score: 750,
+      strikes: 1,
+      streak: 12,
+      missed: [],
+      results: ['miss'],
+    })
+  })
+
+  it('floors the score at zero and records timeouts', () => {
+    const outcome = answerBossQuestion(progressWith({ score: 100 }), true, BOSS_CLOCK_MS)
+    expect(outcome.correct).toBe(false)
+    expect(outcome.points).toBe(-100)
+    expect(outcome.answerMs).toBeNull()
+    expect(outcome.progress.score).toBe(0)
+    expect(outcome.progress.results).toEqual(['timeout'])
+  })
+
+  it('accepts boss answers past the regular clock', () => {
+    expect(resolveAnswerMs(12_000, 12_500)).toBe(CLOCK_MS)
+    expect(resolveAnswerMs(12_000, 12_500, BOSS_CLOCK_MS)).toBe(12_000)
+    expect(resolveAnswerMs(20_000, 20_000, BOSS_CLOCK_MS)).toBeNull()
+    expect(resolveAnswerMs(9_000, 9_500, CLOCK_MS)).toBe(9_000)
   })
 })

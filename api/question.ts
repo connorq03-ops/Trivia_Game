@@ -1,7 +1,7 @@
 import { getSql } from '../lib/db.js'
 import { hashRunToken, isRunToken } from '../lib/runToken.js'
 import { publicQuestion, questionsById } from '../lib/questions.js'
-import { REEL_MS } from '../src/game/engine.js'
+import { BOSS_REEL_MS, REEL_MS } from '../src/game/engine.js'
 
 const UUID_PATTERN =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
@@ -42,7 +42,14 @@ export async function POST(request: Request): Promise<Response> {
     const sql = getSql()
     const rows = (await sql`
       update runs
-      set issued_at = coalesce(issued_at, now() + make_interval(secs => ${REEL_MS / 1000}))
+      set issued_at = coalesce(
+        issued_at,
+        now() + make_interval(secs => case
+          when current_question_id like 'boss-%'
+            then ${BOSS_REEL_MS / 1000}::double precision
+          else ${REEL_MS / 1000}::double precision
+        end)
+      )
       where id = ${input.runId}
         and token_hash = ${hashRunToken(input.runToken)}
         and question_index = ${input.questionIndex}

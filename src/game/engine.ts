@@ -1,4 +1,11 @@
-import type { BossCategory, Difficulty, Question, Side, Sport } from './types.js'
+import type {
+  BossCategory,
+  BossQuestion,
+  Difficulty,
+  Question,
+  Side,
+  Sport,
+} from './types.js'
 
 export const STRIKES = 3
 export const STRIKE_BACK_EVERY = 15
@@ -6,6 +13,10 @@ export const CLOCK_MS = 10_000
 export const REEL_MS = 2_000
 export const GRACE_MS = 1_500
 export const SLACK_MS = 3_000
+export const BOSS_CLOCK_MS = 15_000
+export const BOSS_REEL_MS = 4_500
+export const BOSS_HIT_POINTS = 500
+export const BOSS_MISS_POINTS = 250
 export const MULTIPLIER_TIERS = [
   { streak: 30, multiplier: 2 },
   { streak: 20, multiplier: 1.5 },
@@ -65,7 +76,13 @@ export type RunProgress = {
 
 export type ClassicSelection =
   | { type: 'question'; question: Question; choices: string[] }
+  | { type: 'boss'; question: BossQuestion; choices: string[]; level: number }
   | { type: 'end'; reason: 'bank' }
+
+export type BossOptions = {
+  bank: readonly BossQuestion[]
+  levelsConsumed: readonly number[]
+}
 
 export type AnswerOutcome = {
   progress: RunProgress
@@ -164,11 +181,42 @@ function present(question: Question, rng: () => number): ClassicSelection {
 export function resolveAnswerMs(
   clientMs: number | null,
   serverMs: number,
+  clockMs: number = CLOCK_MS,
 ): number | null {
-  if (clientMs === null || serverMs - SLACK_MS >= CLOCK_MS) return null
+  if (clientMs === null || serverMs - SLACK_MS >= clockMs) return null
   const lowerBound = Math.max(0, serverMs - SLACK_MS)
   const adjusted = Math.min(serverMs, Math.max(lowerBound, clientMs))
-  return Math.min(CLOCK_MS, Math.max(0, adjusted))
+  return Math.min(clockMs, Math.max(0, adjusted))
+}
+
+export function levelIndexFor(correctCount: number): number {
+  return levelFor(correctCount) - 1
+}
+
+function selectBossQuestion(
+  usedFactIds: ReadonlySet<string>,
+  correct: number,
+  boss: BossOptions,
+  rng: () => number,
+): ClassicSelection | null {
+  const level = levelIndexFor(correct)
+  if (level === 0 || boss.levelsConsumed.includes(level)) return null
+  const available = boss.bank.filter((question) => !usedFactIds.has(question.factId))
+  const categories = BOSS_CATEGORIES.filter((category) =>
+    available.some((question) => question.category === category),
+  )
+  if (categories.length === 0) return null
+  const category = choose(categories, rng)
+  const question = choose(
+    available.filter((candidate) => candidate.category === category),
+    rng,
+  )
+  return {
+    type: 'boss',
+    question,
+    choices: shuffle([question.answer, ...question.wrong], rng),
+    level,
+  }
 }
 
 export function selectClassicQuestion(
@@ -177,7 +225,12 @@ export function selectClassicQuestion(
   correct: number,
   options: ClassicOptions,
   rng: () => number,
+  boss?: BossOptions,
 ): ClassicSelection {
+  const bossSelection = boss
+    ? selectBossQuestion(usedFactIds, correct, boss, rng)
+    : null
+  if (bossSelection) return bossSelection
   const available = bank.filter((question) => !usedFactIds.has(question.factId))
   const selectedSide: Side =
     options.side === 'both'
@@ -314,6 +367,41 @@ export function answerQuestion(
     points,
     answerMs: normalizedAnswerMs,
     ...(strikes >= STRIKES ? { endReason: 'strikes' } : {}),
+  }
+}
+
+export function answerBossQuestion(
+  progress: RunProgress,
+  isCorrect: boolean,
+  elapsedMs: number | null,
+): AnswerOutcome {
+  const timedOut = elapsedMs === null || elapsedMs >= BOSS_CLOCK_MS
+  const correct = isCorrect && !timedOut
+  const points = correct
+    ? BOSS_HIT_POINTS
+    : -Math.min(BOSS_MISS_POINTS, progress.score)
+  const streak = correct ? progress.streak + 1 : progress.streak
+  let strikes = progress.strikes
+  if (correct && streak % STRIKE_BACK_EVERY === 0 && strikes > 0) strikes -= 1
+
+  return {
+    progress: {
+      ...progress,
+      score: progress.score + points,
+      strikes,
+      streak,
+      bestStreak: Math.max(progress.bestStreak, streak),
+      questionsAnswered: progress.questionsAnswered + 1,
+      results: [
+        ...progress.results,
+        timedOut ? 'timeout' : correct ? 'hit' : 'miss',
+      ],
+    },
+    correct,
+    points,
+    answerMs: timedOut
+      ? null
+      : Math.round(Math.min(BOSS_CLOCK_MS, Math.max(0, elapsedMs))),
   }
 }
 

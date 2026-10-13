@@ -1,6 +1,6 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { getSql } from '../lib/db.js'
-import { questionBank } from '../lib/questions.js'
+import { bossQuestions, questionBank } from '../lib/questions.js'
 import { hashRunToken } from '../lib/runToken.js'
 import { dailyQuestions, selectClassicQuestion } from '../src/game/engine.js'
 import { POST } from './answer.js'
@@ -85,9 +85,38 @@ const validBody = {
   clientMs: 1000,
 }
 
+function storedUpdate(sql: ReturnType<typeof mockSql>) {
+  const call = sql.mock.calls.find(([strings]) =>
+    (strings as TemplateStringsArray).join(' ').toLowerCase().includes('update runs'),
+  )
+  const values = (call ?? []).slice(1) as unknown[]
+  const progress = values.find(
+    (value) => typeof value === 'string' && value.includes('"bossLevelsConsumed"'),
+  ) as string
+  return { values, progress: JSON.parse(progress) }
+}
+
+function runAtCorrect(correct: number, overrides: Record<string, unknown> = {}) {
+  const question = questionBank[0]
+  const run = makeRun(question, { question_index: correct })
+  return {
+    ...run,
+    progress: {
+      ...run.progress,
+      questionsAnswered: correct,
+      results: Array(correct).fill('hit'),
+      ...overrides,
+    },
+  }
+}
+
 describe('answer handler', () => {
   beforeEach(() => {
     vi.resetAllMocks()
+  })
+
+  afterEach(() => {
+    vi.unstubAllEnvs()
   })
 
   it('returns 404 for a missing run', async () => {
@@ -383,5 +412,93 @@ describe('answer handler', () => {
     expect(body.summary.reason).toBe('complete')
     expect(body.summary.questionsAnswered).toBe(10)
     expect(body.summary.results).toHaveLength(10)
+  })
+
+  describe('boss questions', () => {
+    const boss = bossQuestions[0]
+    const bossRun = (progress: Record<string, unknown>, overrides: Record<string, unknown> = {}) => {
+      const run = makeRun(boss, { question_index: 10, ...overrides })
+      return {
+        ...run,
+        progress: {
+          ...run.progress,
+          questionsAnswered: 10,
+          results: Array(10).fill('hit'),
+          streak: 10,
+          bestStreak: 10,
+          score: 3000,
+          bossLevelsConsumed: [1],
+          ...progress,
+        },
+      }
+    }
+
+    it('serves a boss after the answer that reaches a new level', async () => {
+      vi.stubEnv('BOSS_QUESTIONS', 'true')
+      const sql = mockSql({ rows: [runAtCorrect(9)] })
+      const body = await (
+        await POST(makeRequest({ ...validBody, questionIndex: 9 }))
+      ).json()
+
+      expect(body.next).toEqual({ questionIndex: 10 })
+      const { values, progress } = storedUpdate(sql)
+      expect(progress.bossLevelsConsumed).toEqual([1])
+      expect(values.some((value) => bossQuestions.some((question) => question.id === value))).toBe(
+        true,
+      )
+    })
+
+    it('does not serve a boss when the flag is off', async () => {
+      const sql = mockSql({ rows: [runAtCorrect(9)] })
+      await POST(makeRequest({ ...validBody, questionIndex: 9 }))
+
+      const { values, progress } = storedUpdate(sql)
+      expect(progress.bossLevelsConsumed).toEqual([])
+      expect(values.some((value) => bossQuestions.some((question) => question.id === value))).toBe(
+        false,
+      )
+    })
+
+    it('does not serve a second boss for a consumed level', async () => {
+      vi.stubEnv('BOSS_QUESTIONS', 'true')
+      const sql = mockSql({ rows: [runAtCorrect(10, { bossLevelsConsumed: [1] })] })
+      await POST(makeRequest({ ...validBody, questionIndex: 10 }))
+
+      const { values, progress } = storedUpdate(sql)
+      expect(progress.bossLevelsConsumed).toEqual([1])
+      expect(values.some((value) => bossQuestions.some((question) => question.id === value))).toBe(
+        false,
+      )
+    })
+
+    it('scores a boss hit as a flat 500 on the 15-second clock', async () => {
+      mockSql({ rows: [bossRun({}, { server_ms: 12_500 })] })
+      const body = await (
+        await POST(
+          makeRequest({ ...validBody, questionIndex: 10, choice: boss.answer, clientMs: 12_000 }),
+        )
+      ).json()
+
+      expect(body.correct).toBe(true)
+      expect(body.points).toBe(500)
+      expect(body.progress).toMatchObject({ score: 3500, streak: 11, strikes: 0, correct: 11 })
+    })
+
+    it('takes 250 for a boss miss without a strike or review entry', async () => {
+      const sql = mockSql({ rows: [bossRun({ strikes: 2 })] })
+      const body = await (
+        await POST(makeRequest({ ...validBody, questionIndex: 10, choice: boss.wrong[0] }))
+      ).json()
+
+      expect(body.correct).toBe(false)
+      expect(body.points).toBe(-250)
+      expect(body.teach).toBe(boss.teach)
+      expect(body.progress).toMatchObject({ score: 2750, streak: 10, strikes: 2 })
+      expect(body.summary).toBeNull()
+      expect(body.next).toEqual({ questionIndex: 11 })
+      const { progress } = storedUpdate(sql)
+      expect(progress.missed).toEqual([])
+      expect(progress.results.at(-1)).toBe('miss')
+    })
   })
 })

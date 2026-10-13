@@ -5,7 +5,13 @@ import playersMlb from '../content/players-mlb.json' with { type: 'json' }
 import players from '../content/players.json' with { type: 'json' }
 import rulesDeep from '../content/rules-deep.json' with { type: 'json' }
 import rules from '../content/rules.json' with { type: 'json' }
-import type { BossQuestion, ChoiceBadge, Question } from '../src/game/types.js'
+import { BOSS_CLOCK_MS, BOSS_REEL_MS } from '../src/game/engine.js'
+import type {
+  BossCategory,
+  BossQuestion,
+  ChoiceBadge,
+  Question,
+} from '../src/game/types.js'
 import { badgeCategory, badgeFor } from './badges.js'
 
 // Every content/*.json file is in contentFiles or bossContentFiles;
@@ -38,7 +44,11 @@ export function isBossQuestion(question: Question): question is BossQuestion {
 export type PublicQuestion = Pick<
   Question,
   'id' | 'side' | 'sport' | 'leagues' | 'difficulty' | 'category' | 'prompt' | 'reel'
-> & { choices: string[]; choiceBadges?: (ChoiceBadge | null)[] }
+> & {
+  choices: string[]
+  choiceBadges?: (ChoiceBadge | null)[]
+  boss?: { category: BossCategory; clockMs: number; reelMs: number }
+}
 
 export function publicQuestion(
   question: Question,
@@ -57,5 +67,14 @@ export function publicQuestion(
       ? { choiceBadges: choices.map((choice) => badgeFor(question, choice)) }
       : {}),
     ...(question.reel ? { reel: question.reel } : {}),
+    ...(isBossQuestion(question)
+      ? {
+          boss: {
+            category: question.category,
+            clockMs: BOSS_CLOCK_MS,
+            reelMs: BOSS_REEL_MS,
+          },
+        }
+      : {}),
   }
 }

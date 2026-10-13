@@ -914,6 +914,10 @@
   letter-spacing: 0;
 }
 
+.score-label .points-pop--loss {
+  color: var(--error-ink);
+}
+
 .multiplier-chip {
   display: inline-flex;
   align-items: center;
