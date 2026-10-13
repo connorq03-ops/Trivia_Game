@@ -1,4 +1,5 @@
 // Read-only answer report: npm run stats:answers -- [--since=YYYY-MM-DD] [--min=3]
+// timeout_pct_logged only counts answers logged with a result (migration 0006+).
 import 'dotenv/config'
 import pg from 'pg'
 
@@ -71,7 +72,7 @@ try {
       count(*)::int as answers,
       round(100.0 * avg(s.correct::int))::int as correct_pct,
       round(100.0 * count(*) filter (where s.result = 'timeout')
-        / nullif(count(s.result), 0))::int as timeout_pct,
+        / nullif(count(s.result), 0))::int as timeout_pct_logged,
       round(avg(s.answer_ms) filter (where s.correct))::int as avg_correct_ms
     from scoped s
     join questions q on q.id = s.question_id
@@ -84,9 +85,10 @@ try {
       select
         s.question_id,
         count(*)::int as answers,
+        avg(s.correct::int) as correct_ratio,
         round(100.0 * avg(s.correct::int))::int as correct_pct,
         round(100.0 * count(*) filter (where s.result = 'timeout')
-          / nullif(count(s.result), 0))::int as timeout_pct,
+          / nullif(count(s.result), 0))::int as timeout_pct_logged,
         round(avg(s.answer_ms) filter (where s.correct))::int as avg_correct_ms
       from scoped s
       group by s.question_id
@@ -98,7 +100,7 @@ try {
           partition by question_id order by count(*) desc, choice
         ) as rank
       from scoped
-      where result = 'miss'
+      where result = 'miss' and choice is not null
       group by question_id, choice
     )
     select
@@ -107,7 +109,7 @@ try {
       left(q.data->>'prompt', 60) as prompt,
       p.answers,
       p.correct_pct,
-      p.timeout_pct,
+      p.timeout_pct_logged,
       p.avg_correct_ms,
       w.choice as top_wrong_pick,
       w.picks as top_wrong_picks
@@ -117,16 +119,16 @@ try {
 
   await section(
     'Hardest questions (lowest correct %)',
-    `${perQuestion} order by p.correct_pct, p.answers desc, p.question_id limit 25`,
+    `${perQuestion} order by p.correct_ratio, p.answers desc, p.question_id limit 25`,
     [since, minAttempts],
   )
 
   await section(
     'Tier check (easy/medium under 50% correct, hard/expert at 90%+)',
     `${perQuestion}
-    where (q.difficulty in ('easy', 'medium') and p.correct_pct < 50)
-       or (q.difficulty in ('hard', 'expert') and p.correct_pct >= 90)
-    order by q.difficulty, p.correct_pct, p.question_id`,
+    where (q.difficulty in ('easy', 'medium') and p.correct_ratio < 0.5)
+       or (q.difficulty in ('hard', 'expert') and p.correct_ratio >= 0.9)
+    order by q.difficulty, p.correct_ratio, p.question_id`,
     [since, minAttempts],
   )
 
