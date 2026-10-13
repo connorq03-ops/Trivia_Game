@@ -4,15 +4,15 @@
   width: min(100%, 560px);
   min-height: 100vh;
   margin: 0 auto;
-  padding: 2rem 1.25rem 1rem;
+  padding: 1.25rem 1.25rem 1rem;
 }
 
 .home-panel {
   display: flex;
   flex: 1;
   flex-direction: column;
-  justify-content: center;
-  padding: 2rem 0 3rem;
+  justify-content: flex-start;
+  padding: 1.25rem 0 2rem;
 }
 
 .eyebrow {
@@ -25,8 +25,8 @@
 
 .home-panel h1 {
   max-width: 10ch;
-  margin: 0.8rem 0 0.55rem;
-  font-size: clamp(3.1rem, 15vw, 5.3rem);
+  margin: 0.6rem 0 0.45rem;
+  font-size: clamp(2.5rem, 12vw, 4rem);
   font-weight: 900;
   letter-spacing: -0.075em;
   line-height: 0.86;
@@ -52,7 +52,7 @@
   justify-content: space-between;
   width: 100%;
   min-height: 4.6rem;
-  margin: 2.1rem 0 1.25rem;
+  margin: 1.5rem 0 1rem;
   padding: 0 1.25rem;
   border: 0;
   border-radius: 1rem;
@@ -104,25 +104,58 @@
   letter-spacing: 0.1em;
 }
 
-.select-label {
-  display: block;
-  margin: 0.95rem 0;
+.chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  min-width: 0;
+  margin: 0 0 1rem;
+  padding: 0;
+  border: 0;
+}
+
+.chip-group legend {
+  margin-bottom: 0.5rem;
+  padding: 0;
   color: var(--muted);
   font-size: 0.75rem;
   font-weight: 700;
 }
 
-.select-label select {
-  display: block;
-  width: 100%;
-  height: 2.9rem;
-  margin-top: 0.45rem;
-  padding: 0 0.8rem;
+.chip {
+  position: relative;
+}
+
+.chip input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.chip span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0 0.95rem;
   border: 1px solid var(--line-strong);
-  border-radius: 0.7rem;
+  border-radius: 999px;
   color: var(--ink);
   background: var(--surface-2);
-  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.chip input:checked + span {
+  border-color: var(--accent);
+  color: var(--on-accent);
+  background: var(--accent);
+}
+
+.chip input:focus-visible + span {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
 }
 
 .classic-button,
@@ -191,7 +224,7 @@
   grid-template-columns: 2.75rem minmax(0, 1fr) auto;
   align-items: center;
   gap: 0.8rem;
-  min-height: 3.4rem;
+  min-height: 2.75rem;
 }
 
 .back-button {
@@ -201,7 +234,7 @@
   border-radius: 0.8rem;
   color: var(--accent);
   background: var(--panel);
-  font-size: 0.8rem;
+  font-size: 1.15rem;
   font-weight: 900;
   cursor: pointer;
 }
@@ -236,11 +269,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 1.4rem 0 1.2rem;
-  padding: 0.9rem 1rem;
-  border: 1px solid var(--line);
-  border-radius: 1rem;
-  background: var(--panel);
+  margin: 0.6rem 0 0.9rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--line);
 }
 
 .strike-group {
@@ -250,13 +281,13 @@
 
 .strike-slot {
   display: grid;
-  width: 2rem;
-  height: 2rem;
+  width: 1.6rem;
+  height: 1.6rem;
   place-items: center;
   border: 1px solid var(--line-strong);
-  border-radius: 0.55rem;
+  border-radius: 0.45rem;
   color: var(--faint);
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 900;
 }
 
@@ -270,9 +301,9 @@
   display: flex;
   align-items: baseline;
   justify-content: center;
-  width: 3.4rem;
-  height: 3.4rem;
-  padding-top: 1.08rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding-top: 0.78rem;
   border: 3px solid var(--line-strong);
   border-right-color: var(--accent);
   border-radius: 50%;
@@ -775,8 +806,8 @@
 
 .strike-display {
   display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .strike-caption {
@@ -795,7 +826,7 @@
 .streak-ring {
   border: 3px solid transparent;
   background:
-    linear-gradient(var(--panel), var(--panel)) padding-box,
+    linear-gradient(var(--bg), var(--bg)) padding-box,
     conic-gradient(
       var(--accent) 0 var(--streak-fill),
       var(--line-strong) var(--streak-fill) 100%

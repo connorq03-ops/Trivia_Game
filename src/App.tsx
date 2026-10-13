@@ -146,6 +146,19 @@ function elapsedSince(startedAt: number): number {
   return Math.min(CLOCK_MS, Math.max(0, performance.now() - startedAt))
 }
 
+const SPORT_OPTIONS: ['all' | Sport, string][] = [
+  ['all', 'All sports'],
+  ['football', 'Football'],
+  ['basketball', 'Basketball'],
+  ['baseball', 'Baseball'],
+]
+
+const SIDE_OPTIONS: ['both' | Side, string][] = [
+  ['both', 'Both'],
+  ['rules', 'Rulebook'],
+  ['players', 'Players'],
+]
+
 function Badge({ badge }: { badge: ChoiceBadge }) {
   if (badge.kind === 'flag') {
     return (
@@ -724,29 +737,36 @@ function App() {
               </div>
               <span className="mode-chip">ENDLESS RUN</span>
             </div>
-            <label className="select-label">
-              Sport
-              <select
-                value={sport}
-                onChange={(event) => setSport(event.target.value as 'all' | Sport)}
-              >
-                <option value="all">All sports</option>
-                <option value="football">Football</option>
-                <option value="basketball">Basketball</option>
-                <option value="baseball">Baseball</option>
-              </select>
-            </label>
-            <label className="select-label">
-              Question side
-              <select
-                value={side}
-                onChange={(event) => setSide(event.target.value as 'both' | Side)}
-              >
-                <option value="both">Both</option>
-                <option value="rules">Rulebook</option>
-                <option value="players">Players</option>
-              </select>
-            </label>
+            <fieldset className="chip-group">
+              <legend>Sport</legend>
+              {SPORT_OPTIONS.map(([value, label]) => (
+                <label className="chip" key={value}>
+                  <input
+                    type="radio"
+                    name="sport"
+                    value={value}
+                    checked={sport === value}
+                    onChange={() => setSport(value)}
+                  />
+                  <span>{label}</span>
+                </label>
+              ))}
+            </fieldset>
+            <fieldset className="chip-group">
+              <legend>Question side</legend>
+              {SIDE_OPTIONS.map(([value, label]) => (
+                <label className="chip" key={value}>
+                  <input
+                    type="radio"
+                    name="side"
+                    value={value}
+                    checked={side === value}
+                    onChange={() => setSide(value)}
+                  />
+                  <span>{label}</span>
+                </label>
+              ))}
+            </fieldset>
             <button
               className="classic-button"
               onClick={startClassic}
@@ -786,7 +806,7 @@ function App() {
         <section className="game-panel">
           <header className="game-header">
             <button className="back-button" onClick={goHome} aria-label="Back home">
-              SS
+              <span aria-hidden="true">←</span>
             </button>
             <div className="game-mode-label">
               {session.mode === 'daily' ? 'DAILY 10' : 'CLASSIC'}
@@ -1056,6 +1076,14 @@ function App() {
                 </div>
               </div>
               <ResultShare summary={currentSummary} dayStreak={dayStreak} />
+              <div className="result-actions">
+                {currentSummary.mode === 'daily' ? (
+                  <button className="classic-button" onClick={startClassic}>Play Classic</button>
+                ) : (
+                  <button className="classic-button" onClick={playAgain}>Play again</button>
+                )}
+                <button className="secondary-button" onClick={goHome}>Home</button>
+              </div>
               {currentSummary.missed.length > 0 && (
                 <div className="missed-list">
                   <h3>Review the misses</h3>
@@ -1068,14 +1096,6 @@ function App() {
                   ))}
                 </div>
               )}
-              <div className="result-actions">
-                {currentSummary.mode === 'daily' ? (
-                  <button className="classic-button" onClick={startClassic}>Play Classic</button>
-                ) : (
-                  <button className="classic-button" onClick={playAgain}>Play again</button>
-                )}
-                <button className="secondary-button" onClick={goHome}>Home</button>
-              </div>
             </section>
           )}
         </section>
@@ -1084,7 +1104,7 @@ function App() {
       {screen === 'over' && !session && currentSummary && (
         <section className="game-panel game-panel--stored">
           <header className="game-header">
-            <button className="back-button" onClick={goHome} aria-label="Back home">SS</button>
+            <button className="back-button" onClick={goHome} aria-label="Back home"><span aria-hidden="true">←</span></button>
             <div className="game-mode-label">DAILY 10<span>SAVED RESULT · {currentSummary.date}</span></div>
             <div className="score-label"><span>SCORE</span><strong>{currentSummary.score.toLocaleString()}</strong></div>
           </header>
@@ -1107,6 +1127,10 @@ function App() {
               </div>
             </div>
             <ResultShare summary={currentSummary} dayStreak={dayStreak} />
+            <div className="result-actions">
+              <button className="classic-button" onClick={startClassic}>Play Classic</button>
+              <button className="secondary-button" onClick={goHome}>Home</button>
+            </div>
             {currentSummary.missed.length > 0 && (
               <div className="missed-list">
                 <h3>Review the misses</h3>
@@ -1117,19 +1141,17 @@ function App() {
                 ))}
               </div>
             )}
-            <div className="result-actions">
-              <button className="classic-button" onClick={startClassic}>Play Classic</button>
-              <button className="secondary-button" onClick={goHome}>Home</button>
-            </div>
           </section>
         </section>
       )}
 
       <footer className="app-footer">
         <span>BUILT FOR THE LOVE OF THE GAME</span>
-        <span className={`api-status api-status--${apiStatus}`} role="status">
-          API · {apiStatus}
-        </span>
+        {apiStatus === 'error' && (
+          <span className="api-status api-status--error" role="status">
+            Can’t reach the server
+          </span>
+        )}
       </footer>
     </main>
   )
