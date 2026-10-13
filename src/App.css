@@ -1099,15 +1099,6 @@
   color: var(--sunset-blush);
 }
 
-.streak-ring {
-  background:
-    linear-gradient(var(--bg), var(--bg)) padding-box,
-    conic-gradient(
-      var(--sunset-orange) 0 var(--streak-fill),
-      var(--line-strong) var(--streak-fill) 100%
-    ) border-box;
-}
-
 /* Daily 10: the sunset palette takes over the accent tokens. */
 .theme-daily {
   --accent: var(--sunset-orange);

@@ -693,10 +693,13 @@ function App() {
     : ''
   const dailyTheme =
     session?.mode === 'daily' || (screen === 'over' && currentSummary?.mode === 'daily')
-  const dailyAnswered =
-    session && (screen === 'reveal' || screen === 'teach')
+  const dailyAnswered = !session
+    ? 0
+    : screen === 'reveal' || screen === 'teach'
       ? session.questionIndex + 1
-      : (session?.questionIndex ?? 0)
+      : pendingRequest?.kind === 'question'
+        ? Math.max(session.questionIndex, pendingRequest.questionIndex)
+        : session.questionIndex
   const clockStyle = {
     '--clock-progress': `${Math.max(0, 100 - (elapsedMs / CLOCK_MS) * 100)}%`,
   } as CSSProperties
