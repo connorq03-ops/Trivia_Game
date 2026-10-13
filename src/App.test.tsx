@@ -52,7 +52,7 @@ function mockApi(grades: Grade[], answerPending = false, withBadges = false) {
           questionIndex: 0,
           question: publicQuestion(0, withBadges),
           progress: { score: 0, strikes: 0, streak: 0 },
-          total: null,
+          total: JSON.parse(String(init?.body)).mode === 'daily' ? 10 : null,
         },
         201,
       )
@@ -126,6 +126,27 @@ describe('App keyboard and screen-reader play', () => {
     await waitFor(() =>
       expect(screen.getByText('Correct! Plus 300. Streak 1.')).toBeTruthy(),
     )
+  })
+
+  it('shows the streak ring in Classic and the 10-step track in Daily 10', async () => {
+    mockApi([])
+    await startClassic()
+    expect(screen.getByRole('img', { name: /streak, strike back at/ })).toBeTruthy()
+    cleanup()
+
+    render(<App />)
+    fireEvent.click(screen.getByRole('button', { name: /Play Daily 10/ }))
+    await screen.findByRole(
+      'heading',
+      { level: 2, name: /Question 1:\s*Prompt 0\?/ },
+      { timeout: 3000 },
+    )
+    expect(screen.getByText('0 missed')).toBeTruthy()
+    expect(screen.queryByRole('img', { name: /streak/ })).toBeNull()
+    expect(screen.getByText('QUESTION 1 OF 10')).toBeTruthy()
+    const track = screen.getByRole('progressbar', { name: 'Daily 10 progress' })
+    expect(track.getAttribute('aria-valuenow')).toBe('0')
+    expect(track.getAttribute('aria-valuemax')).toBe('10')
   })
 
   it('answers with number keys and ignores modified keys', async () => {
