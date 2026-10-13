@@ -1,12 +1,17 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { getSql } from '../lib/db.js'
 import { hashRunToken } from '../lib/runToken.js'
-import { REEL_MS } from '../src/game/engine.js'
+import { REEL_MS, selectClassicQuestion } from '../src/game/engine.js'
 import { POST } from './runs.js'
 
 vi.mock('../lib/db.js', () => ({
   getSql: vi.fn(),
 }))
+
+vi.mock('../src/game/engine.js', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('../src/game/engine.js')>()
+  return { ...actual, selectClassicQuestion: vi.fn(actual.selectClassicQuestion) }
+})
 
 function makeRequest(
   body: unknown,
@@ -138,6 +143,10 @@ describe('runs handler', () => {
 
   it('returns no_questions without inserting a run when filters have no bank', async () => {
     const sql = mockSql()
+    vi.mocked(selectClassicQuestion).mockReturnValueOnce({
+      type: 'end',
+      reason: 'bank',
+    })
 
     const response = await POST(
       makeRequest({ mode: 'classic', sport: 'baseball', side: 'players' }),

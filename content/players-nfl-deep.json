@@ -1118,5 +1118,565 @@
       "season": 2010,
       "player": "Joe Thomas"
     }
+  },
+  {
+    "id": "p-nfl-hines-ward-country",
+    "factId": "nfl-hines-ward-country",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Hines Ward was born in which country?",
+    "answer": "South Korea",
+    "wrong": [
+      "Japan",
+      "Germany",
+      "Jamaica"
+    ],
+    "teach": "Ward was born in Seoul to a Korean mother and was Super Bowl XL MVP.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Hines_Ward",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2005,
+      "player": "Hines Ward"
+    }
+  },
+  {
+    "id": "p-nfl-patrick-chung-country",
+    "factId": "nfl-patrick-chung-country",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Patrick Chung was born in which country?",
+    "answer": "Jamaica",
+    "wrong": [
+      "Haiti",
+      "Bahamas",
+      "Trinidad and Tobago"
+    ],
+    "teach": "Chung was born in Kingston and won three Super Bowls with New England.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Patrick_Chung",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2014,
+      "player": "Patrick Chung"
+    }
+  },
+  {
+    "id": "p-nfl-osi-umenyiora-country",
+    "factId": "nfl-osi-umenyiora-country",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Osi Umenyiora was born in which country?",
+    "answer": "England",
+    "wrong": [
+      "Nigeria",
+      "Ghana",
+      "Jamaica"
+    ],
+    "teach": "Umenyiora was born in London and spent part of his childhood in Nigeria before Troy.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Osi_Umenyiora",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2007,
+      "player": "Osi Umenyiora"
+    }
+  },
+  {
+    "id": "p-nfl-christian-okoye-country",
+    "factId": "nfl-christian-okoye-country",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Christian Okoye was born in which country?",
+    "answer": "Nigeria",
+    "wrong": [
+      "Ghana",
+      "Cameroon",
+      "Senegal"
+    ],
+    "teach": "The 'Nigerian Nightmare' led the NFL in rushing for Kansas City in 1989.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Christian_Okoye",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1989,
+      "player": "Christian Okoye"
+    }
+  },
+  {
+    "id": "p-nfl-ezekiel-ansah-country",
+    "factId": "nfl-ezekiel-ansah-country",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Ezekiel Ansah was born in which country?",
+    "answer": "Ghana",
+    "wrong": [
+      "Nigeria",
+      "Cameroon",
+      "Senegal"
+    ],
+    "teach": "Ansah was born in Accra and went to BYU hoping to play basketball; Detroit took him 5th in 2013.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Ezekiel_Ansah",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2015,
+      "player": "Ezekiel Ansah"
+    }
+  },
+  {
+    "id": "p-nfl-younghoe-koo-country",
+    "factId": "nfl-younghoe-koo-country",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Younghoe Koo was born in which country?",
+    "answer": "South Korea",
+    "wrong": [
+      "Japan",
+      "Taiwan",
+      "China"
+    ],
+    "teach": "Koo was born in Seoul, moved to New Jersey as a boy and kicked at Georgia Southern.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Younghoe_Koo",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2020,
+      "player": "Younghoe Koo"
+    }
+  },
+  {
+    "id": "p-nfl-jordan-mailata-country",
+    "factId": "nfl-jordan-mailata-country",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Jordan Mailata was born in which country?",
+    "answer": "Australia",
+    "wrong": [
+      "New Zealand",
+      "Fiji",
+      "England"
+    ],
+    "teach": "Mailata played rugby league in Sydney and never played college football before the Eagles drafted him.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jordan_Mailata",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2022,
+      "player": "Jordan Mailata"
+    }
+  },
+  {
+    "id": "p-nfl-jay-ajayi-country",
+    "factId": "nfl-jay-ajayi-country",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Jay Ajayi was born in which country?",
+    "answer": "England",
+    "wrong": [
+      "Nigeria",
+      "Ghana",
+      "Jamaica"
+    ],
+    "teach": "Ajayi was born in London, moved to the US as a boy and played at Boise State.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jay_Ajayi",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2016,
+      "player": "Jay Ajayi"
+    }
+  },
+  {
+    "id": "p-nfl-joe-montana-jersey",
+    "factId": "nfl-joe-montana-jersey",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "Joe Montana's jersey number in 1994?",
+    "answer": "19",
+    "wrong": [
+      "16",
+      "12",
+      "3"
+    ],
+    "teach": "Montana wore No. 16 in San Francisco; Kansas City had retired 16 for Len Dawson.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Joe_Montana",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1994,
+      "player": "Joe Montana"
+    }
+  },
+  {
+    "id": "p-nfl-randy-moss-jersey",
+    "factId": "nfl-randy-moss-jersey",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "Randy Moss's jersey number in 2007?",
+    "answer": "81",
+    "wrong": [
+      "84",
+      "18",
+      "80"
+    ],
+    "teach": "Moss caught a then-record 23 touchdown passes for New England that season.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Randy_Moss",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2007,
+      "player": "Randy Moss"
+    }
+  },
+  {
+    "id": "p-nfl-terrell-owens-jersey",
+    "factId": "nfl-terrell-owens-jersey",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Jersey number",
+    "prompt": "Terrell Owens's jersey number in 2006?",
+    "answer": "81",
+    "wrong": [
+      "80",
+      "88",
+      "82"
+    ],
+    "teach": "Owens signed with Dallas in 2006 and led the NFL with 13 touchdown catches.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Terrell_Owens",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2006,
+      "player": "Terrell Owens"
+    }
+  },
+  {
+    "id": "p-nfl-michael-vick-jersey",
+    "factId": "nfl-michael-vick-jersey",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "Michael Vick's jersey number in 2010?",
+    "answer": "7",
+    "wrong": [
+      "8",
+      "5",
+      "11"
+    ],
+    "teach": "Vick also wore No. 7 in Atlanta and was the 2010 Comeback Player of the Year.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2010_Philadelphia_Eagles_season",
+      "ref": "Wikipedia 2010 Philadelphia Eagles season roster, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2010,
+      "player": "Michael Vick"
+    }
+  },
+  {
+    "id": "p-nfl-darrelle-revis-jersey",
+    "factId": "nfl-darrelle-revis-jersey",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Jersey number",
+    "prompt": "Darrelle Revis's jersey number in 2009?",
+    "answer": "24",
+    "wrong": [
+      "21",
+      "26",
+      "31"
+    ],
+    "teach": "Revis finished second in 2009 Defensive Player of the Year voting with the Jets.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Darrelle_Revis",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2009,
+      "player": "Darrelle Revis"
+    }
+  },
+  {
+    "id": "p-nfl-marshawn-lynch-jersey",
+    "factId": "nfl-marshawn-lynch-jersey",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "Marshawn Lynch's jersey number in 2013?",
+    "answer": "24",
+    "wrong": [
+      "23",
+      "28",
+      "34"
+    ],
+    "teach": "Lynch led the NFL in rushing touchdowns in 2013 as Seattle won the Super Bowl.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Marshawn_Lynch",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2013,
+      "player": "Marshawn Lynch"
+    }
+  },
+  {
+    "id": "p-nfl-john-elway-draft",
+    "factId": "nfl-john-elway-draft",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted John Elway?",
+    "answer": "Colts",
+    "wrong": [
+      "Broncos",
+      "Raiders",
+      "Chargers"
+    ],
+    "teach": "Baltimore took Elway 1st overall in 1983; he refused to play there and was traded to Denver.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/John_Elway",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1997,
+      "player": "John Elway"
+    }
+  },
+  {
+    "id": "p-nfl-eli-manning-draft",
+    "factId": "nfl-2004-qb-trade",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Eli Manning?",
+    "answer": "Chargers",
+    "wrong": [
+      "Giants",
+      "Browns",
+      "Raiders"
+    ],
+    "teach": "San Diego took Manning 1st overall in 2004 and traded him to New York for Philip Rivers.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Eli_Manning",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2007,
+      "player": "Eli Manning"
+    }
+  },
+  {
+    "id": "p-nfl-philip-rivers-draft",
+    "factId": "nfl-2004-qb-trade",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Philip Rivers?",
+    "answer": "Giants",
+    "wrong": [
+      "Chargers",
+      "Colts",
+      "Raiders"
+    ],
+    "teach": "New York took Rivers 4th overall in 2004 and traded him to San Diego for Eli Manning.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Philip_Rivers",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2008,
+      "player": "Philip Rivers"
+    }
+  },
+  {
+    "id": "p-nfl-marshawn-lynch-draft",
+    "factId": "nfl-marshawn-lynch-draft",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Marshawn Lynch?",
+    "answer": "Bills",
+    "wrong": [
+      "Seahawks",
+      "Raiders",
+      "Saints"
+    ],
+    "teach": "Buffalo took Lynch 12th overall in 2007 out of Cal, then traded him to Seattle in 2010.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Marshawn_Lynch",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2008,
+      "player": "Marshawn Lynch"
+    }
+  },
+  {
+    "id": "p-nfl-ricky-williams-draft",
+    "factId": "nfl-ricky-williams-draft",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Ricky Williams?",
+    "answer": "Saints",
+    "wrong": [
+      "Dolphins",
+      "Ravens",
+      "Rams"
+    ],
+    "teach": "Mike Ditka traded all of New Orleans' 1999 picks plus two more to move up for Williams.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Ricky_Williams",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2002,
+      "player": "Ricky Williams"
+    }
+  },
+  {
+    "id": "p-nfl-jimmy-garoppolo-draft",
+    "factId": "nfl-jimmy-garoppolo-draft",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Jimmy Garoppolo?",
+    "answer": "Patriots",
+    "wrong": [
+      "49ers",
+      "Raiders",
+      "Bears"
+    ],
+    "teach": "New England took Garoppolo in the 2nd round in 2014 out of Eastern Illinois.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jimmy_Garoppolo",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2019,
+      "player": "Jimmy Garoppolo"
+    }
   }
 ]
