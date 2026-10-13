@@ -763,18 +763,6 @@
     padding-left: 0.9rem;
   }
 
-  .home-hero {
-    margin-right: -0.9rem;
-    margin-left: -0.9rem;
-    padding-right: 0.9rem;
-    padding-left: 0.9rem;
-  }
-
-  .home-hero::after {
-    right: 0.9rem;
-    left: 0.9rem;
-  }
-
   .game-header {
     gap: 0.5rem;
   }
@@ -1212,6 +1200,20 @@
   background-clip: text;
   color: transparent;
   white-space: nowrap;
+}
+
+@media (max-width: 380px) {
+  .home-hero {
+    margin-right: -0.9rem;
+    margin-left: -0.9rem;
+    padding-right: 0.9rem;
+    padding-left: 0.9rem;
+  }
+
+  .home-hero::after {
+    right: 0.9rem;
+    left: 0.9rem;
+  }
 }
 
 /* Daily 10: the sunset palette takes over the accent tokens. */
