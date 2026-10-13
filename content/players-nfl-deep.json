@@ -1,1 +1,1122 @@
-[]
+[
+  {
+    "id": "p-nfl-jamal-lewis-college",
+    "factId": "nfl-jamal-lewis-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Alma mater",
+    "prompt": "Where did Jamal Lewis play college ball?",
+    "answer": "Tennessee",
+    "wrong": [
+      "Florida",
+      "Georgia",
+      "Alabama"
+    ],
+    "teach": "The Ravens took Lewis 5th overall in 2000 after three seasons in Knoxville (1997–1999).",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jamal_Lewis_(American_football)",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2003,
+      "player": "Jamal Lewis"
+    }
+  },
+  {
+    "id": "p-nfl-fred-taylor-college",
+    "factId": "nfl-fred-taylor-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Alma mater",
+    "prompt": "Where did Fred Taylor play college ball?",
+    "answer": "Florida",
+    "wrong": [
+      "Florida State",
+      "Miami (FL)",
+      "Georgia"
+    ],
+    "teach": "Jacksonville took Taylor 9th overall in 1998 with a pick acquired in a trade with Buffalo.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Fred_Taylor_(running_back)",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2003,
+      "player": "Fred Taylor"
+    }
+  },
+  {
+    "id": "p-nfl-brian-dawkins-jersey",
+    "factId": "nfl-brian-dawkins-jersey",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "Brian Dawkins's jersey number in 2004?",
+    "answer": "20",
+    "wrong": [
+      "21",
+      "24",
+      "26"
+    ],
+    "teach": "The Eagles retired Dawkins's No. 20; they took him 61st in 1996 out of Clemson.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Brian_Dawkins",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2004,
+      "player": "Brian Dawkins"
+    }
+  },
+  {
+    "id": "p-nfl-jerome-bettis-draft",
+    "factId": "nfl-jerome-bettis-draft",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Jerome Bettis?",
+    "answer": "Rams",
+    "wrong": [
+      "Steelers",
+      "Lions",
+      "Bears"
+    ],
+    "teach": "The Los Angeles Rams took Bettis 10th overall in 1993, then traded him to Pittsburgh on 1996 draft day.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jerome_Bettis",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2000,
+      "player": "Jerome Bettis"
+    }
+  },
+  {
+    "id": "p-nfl-terrell-davis-college",
+    "factId": "nfl-terrell-davis-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Alma mater",
+    "prompt": "Where did Terrell Davis play college ball?",
+    "answer": "Georgia",
+    "wrong": [
+      "Florida",
+      "Auburn",
+      "Tennessee"
+    ],
+    "teach": "Davis began at Long Beach State, which dropped football after 1991; Denver took him 196th in 1995.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Terrell_Davis",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 1998,
+      "player": "Terrell Davis"
+    }
+  },
+  {
+    "id": "p-nfl-curtis-martin-college",
+    "factId": "nfl-curtis-martin-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Alma mater",
+    "prompt": "Where did Curtis Martin play college ball?",
+    "answer": "Pittsburgh",
+    "wrong": [
+      "Penn State",
+      "Syracuse",
+      "West Virginia"
+    ],
+    "teach": "Martin was a hometown Panther out of Allderdice High; New England took him in round 3 of the 1995 draft.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Curtis_Martin",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2004,
+      "player": "Curtis Martin"
+    }
+  },
+  {
+    "id": "p-nfl-demarcus-ware-college",
+    "factId": "nfl-demarcus-ware-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Alma mater",
+    "prompt": "Where did DeMarcus Ware play college ball?",
+    "answer": "Troy",
+    "wrong": [
+      "Auburn",
+      "UAB",
+      "Southern Miss"
+    ],
+    "teach": "Jerry Jones overruled Bill Parcells to take Ware 11th overall in 2005.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/DeMarcus_Ware",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2008,
+      "player": "DeMarcus Ware"
+    }
+  },
+  {
+    "id": "p-nfl-antonio-brown-college",
+    "factId": "nfl-antonio-brown-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Alma mater",
+    "prompt": "Where did Antonio Brown play college ball?",
+    "answer": "Central Michigan",
+    "wrong": [
+      "Western Michigan",
+      "Eastern Michigan",
+      "Toledo"
+    ],
+    "teach": "Pittsburgh took Brown 195th in 2010 with a pick acquired in a trade with Arizona.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Antonio_Brown",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2015,
+      "player": "Antonio Brown"
+    }
+  },
+  {
+    "id": "p-nfl-cooper-kupp-college",
+    "factId": "nfl-cooper-kupp-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Alma mater",
+    "prompt": "Where did Cooper Kupp play college ball?",
+    "answer": "Eastern Washington",
+    "wrong": [
+      "Montana",
+      "Idaho",
+      "Weber State"
+    ],
+    "teach": "The Rams took Kupp 69th in 2017; his family has three generations of NFL draft picks.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Cooper_Kupp",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2021,
+      "player": "Cooper Kupp"
+    }
+  },
+  {
+    "id": "p-nfl-matt-hasselbeck-draft",
+    "factId": "nfl-matt-hasselbeck-draft",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Matt Hasselbeck?",
+    "answer": "Packers",
+    "wrong": [
+      "Seahawks",
+      "Patriots",
+      "Chiefs"
+    ],
+    "teach": "Green Bay took Hasselbeck 187th, in the 6th round, in 1998 out of Boston College.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Matt_Hasselbeck",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2005,
+      "player": "Matt Hasselbeck"
+    }
+  },
+  {
+    "id": "p-nfl-zach-thomas-college",
+    "factId": "nfl-zach-thomas-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Alma mater",
+    "prompt": "Where did Zach Thomas play college ball?",
+    "answer": "Texas Tech",
+    "wrong": [
+      "Texas",
+      "Texas A&M",
+      "Baylor"
+    ],
+    "teach": "Miami took Thomas 154th in 1996, and he spent his first 12 seasons as a Dolphin.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Zach_Thomas",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2003,
+      "player": "Zach Thomas"
+    }
+  },
+  {
+    "id": "p-nfl-steve-smith-sr-college",
+    "factId": "nfl-steve-smith-sr-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Alma mater",
+    "prompt": "Where did Steve Smith Sr. play college ball?",
+    "answer": "Utah",
+    "wrong": [
+      "BYU",
+      "Utah State",
+      "Fresno State"
+    ],
+    "teach": "Smith started at Santa Monica College, alongside Chad Johnson; Carolina took him in round 3 in 2001.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Steve_Smith_Sr.",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2005,
+      "player": "Steve Smith Sr."
+    }
+  },
+  {
+    "id": "p-nfl-chad-johnson-college",
+    "factId": "nfl-chad-johnson-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Alma mater",
+    "prompt": "Where did Chad Johnson play college ball?",
+    "answer": "Oregon State",
+    "wrong": [
+      "Oregon",
+      "Washington State",
+      "Arizona State"
+    ],
+    "teach": "Johnson first played at Santa Monica College; Cincinnati took him 36th in 2001.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Chad_Johnson",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2005,
+      "player": "Chad Johnson"
+    }
+  },
+  {
+    "id": "p-nfl-julian-edelman-college",
+    "factId": "nfl-julian-edelman-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Alma mater",
+    "prompt": "Where did Julian Edelman play college ball?",
+    "answer": "Kent State",
+    "wrong": [
+      "Toledo",
+      "Akron",
+      "Bowling Green"
+    ],
+    "teach": "Edelman was a three-year starting quarterback there; New England took him 232nd in 2009.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Julian_Edelman",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2016,
+      "player": "Julian Edelman"
+    }
+  },
+  {
+    "id": "p-nfl-jason-witten-college",
+    "factId": "nfl-jason-witten-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Alma mater",
+    "prompt": "Where did Jason Witten play college ball?",
+    "answer": "Tennessee",
+    "wrong": [
+      "Georgia",
+      "Florida",
+      "Kentucky"
+    ],
+    "teach": "Dallas took Witten 69th in 2003, the fifth tight end selected that year.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jason_Witten",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2010,
+      "player": "Jason Witten"
+    }
+  },
+  {
+    "id": "p-nfl-rudi-johnson-jersey",
+    "factId": "nfl-rudi-johnson-jersey",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Jersey number",
+    "prompt": "Rudi Johnson's jersey number in 2004?",
+    "answer": "32",
+    "wrong": [
+      "28",
+      "33",
+      "34"
+    ],
+    "teach": "Johnson made the Pro Bowl after the 2004 season; Cincinnati took him 100th in 2001 out of Auburn.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Rudi_Johnson",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2004,
+      "player": "Rudi Johnson"
+    }
+  },
+  {
+    "id": "p-nfl-antonio-freeman-college",
+    "factId": "nfl-antonio-freeman-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Antonio Freeman play college ball?",
+    "answer": "Virginia Tech",
+    "wrong": [
+      "West Virginia",
+      "Virginia",
+      "Maryland"
+    ],
+    "teach": "Green Bay took Freeman 90th, in the 3rd round, in 1995; he grew up in Baltimore.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Antonio_Freeman",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 1997,
+      "player": "Antonio Freeman"
+    }
+  },
+  {
+    "id": "p-nfl-mike-alstott-jersey",
+    "factId": "nfl-mike-alstott-jersey",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Jersey number",
+    "prompt": "Mike Alstott's jersey number in 2002?",
+    "answer": "40",
+    "wrong": [
+      "32",
+      "44",
+      "45"
+    ],
+    "teach": "Tampa Bay took Alstott 35th in 1996 after he made third-team All-American at Purdue.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Mike_Alstott",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2002,
+      "player": "Mike Alstott"
+    }
+  },
+  {
+    "id": "p-nfl-kevin-faulk-college",
+    "factId": "nfl-kevin-faulk-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Kevin Faulk play college ball?",
+    "answer": "LSU",
+    "wrong": [
+      "Tulane",
+      "Southern Miss",
+      "Ole Miss"
+    ],
+    "teach": "Faulk went to Carencro High in Louisiana; New England took him 46th in 1999.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Kevin_Faulk",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2004,
+      "player": "Kevin Faulk"
+    }
+  },
+  {
+    "id": "p-nfl-troy-brown-college",
+    "factId": "nfl-troy-brown-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Troy Brown play college ball?",
+    "answer": "Marshall",
+    "wrong": [
+      "West Virginia",
+      "Ohio",
+      "Appalachian State"
+    ],
+    "teach": "Brown began at Lees–McRae College; the Patriots took him 198th, in the 8th round, in 1993.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Troy_Brown",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2001,
+      "player": "Troy Brown"
+    }
+  },
+  {
+    "id": "p-nfl-takeo-spikes-draft",
+    "factId": "nfl-takeo-spikes-draft",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Takeo Spikes?",
+    "answer": "Bengals",
+    "wrong": [
+      "Bills",
+      "Falcons",
+      "49ers"
+    ],
+    "teach": "Cincinnati took Spikes 13th overall in 1998 out of Auburn.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Takeo_Spikes",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2004,
+      "player": "Takeo Spikes"
+    }
+  },
+  {
+    "id": "p-nfl-london-fletcher-college",
+    "factId": "nfl-london-fletcher-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did London Fletcher play college ball?",
+    "answer": "John Carroll",
+    "wrong": [
+      "Mount Union",
+      "Baldwin Wallace",
+      "Youngstown State"
+    ],
+    "teach": "Fletcher first played basketball at Saint Francis, then signed with the Rams as an undrafted free agent in 1998.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/London_Fletcher",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2010,
+      "player": "London Fletcher"
+    }
+  },
+  {
+    "id": "p-nfl-kevin-mawae-draft",
+    "factId": "nfl-kevin-mawae-draft",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Kevin Mawae?",
+    "answer": "Seahawks",
+    "wrong": [
+      "Jets",
+      "Titans",
+      "Saints"
+    ],
+    "teach": "Seattle took Mawae 36th, in the 2nd round, in 1994 out of LSU.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Kevin_Mawae",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2001,
+      "player": "Kevin Mawae"
+    }
+  },
+  {
+    "id": "p-nfl-jeff-saturday-college",
+    "factId": "nfl-jeff-saturday-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Jeff Saturday play college ball?",
+    "answer": "North Carolina",
+    "wrong": [
+      "NC State",
+      "Virginia",
+      "Georgia Tech"
+    ],
+    "teach": "Undrafted, Saturday was signed and cut by Baltimore in 1998 before 13 seasons with Indianapolis.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jeff_Saturday",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2006,
+      "player": "Jeff Saturday"
+    }
+  },
+  {
+    "id": "p-nfl-donald-driver-college",
+    "factId": "nfl-donald-driver-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Donald Driver play college ball?",
+    "answer": "Alcorn State",
+    "wrong": [
+      "Jackson State",
+      "Southern",
+      "Texas Southern"
+    ],
+    "teach": "Green Bay took Driver 213th, in the 7th round, in 1999; he went to Milby High in Houston.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Donald_Driver",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2006,
+      "player": "Donald Driver"
+    }
+  },
+  {
+    "id": "p-nfl-brian-westbrook-college",
+    "factId": "nfl-brian-westbrook-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Brian Westbrook play college ball?",
+    "answer": "Villanova",
+    "wrong": [
+      "Delaware",
+      "Richmond",
+      "Temple"
+    ],
+    "teach": "Andy Reid's Eagles took Westbrook 91st in 2002; he went to DeMatha Catholic in Maryland.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Brian_Westbrook",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2007,
+      "player": "Brian Westbrook"
+    }
+  },
+  {
+    "id": "p-nfl-marques-colston-college",
+    "factId": "nfl-marques-colston-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Marques Colston play college ball?",
+    "answer": "Hofstra",
+    "wrong": [
+      "Delaware",
+      "Villanova",
+      "Rhode Island"
+    ],
+    "teach": "New Orleans took Colston 252nd, in the 7th round, in 2006; he never made a Pro Bowl.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Marques_Colston",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2007,
+      "player": "Marques Colston"
+    }
+  },
+  {
+    "id": "p-nfl-danny-woodhead-college",
+    "factId": "nfl-danny-woodhead-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Danny Woodhead play college ball?",
+    "answer": "Chadron State",
+    "wrong": [
+      "Nebraska–Kearney",
+      "Fort Hays State",
+      "Pittsburg State"
+    ],
+    "teach": "Woodhead won Division II's Harlon Hill Trophy in 2006 and 2007, then signed with the Jets undrafted.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Danny_Woodhead",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2012,
+      "player": "Danny Woodhead"
+    }
+  },
+  {
+    "id": "p-nfl-jared-allen-draft",
+    "factId": "nfl-jared-allen-draft",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Jared Allen?",
+    "answer": "Chiefs",
+    "wrong": [
+      "Vikings",
+      "Bears",
+      "Raiders"
+    ],
+    "teach": "Kansas City took Allen 126th in 2004 out of Idaho State; he led the NFL in sacks in 2007.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jared_Allen",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2011,
+      "player": "Jared Allen"
+    }
+  },
+  {
+    "id": "p-nfl-tedy-bruschi-college",
+    "factId": "nfl-tedy-bruschi-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Tedy Bruschi play college ball?",
+    "answer": "Arizona",
+    "wrong": [
+      "Arizona State",
+      "UCLA",
+      "Washington"
+    ],
+    "teach": "New England took Bruschi 86th in 1996, and he spent his whole career there.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Tedy_Bruschi",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2003,
+      "player": "Tedy Bruschi"
+    }
+  },
+  {
+    "id": "p-nfl-mike-vrabel-draft",
+    "factId": "nfl-mike-vrabel-draft",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Mike Vrabel?",
+    "answer": "Steelers",
+    "wrong": [
+      "Patriots",
+      "Chiefs",
+      "Browns"
+    ],
+    "teach": "Pittsburgh took Vrabel in round 3 of 1997 out of Ohio State; he played four seasons there.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Mike_Vrabel",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2004,
+      "player": "Mike Vrabel"
+    }
+  },
+  {
+    "id": "p-nfl-adam-thielen-college",
+    "factId": "nfl-adam-thielen-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Adam Thielen play college ball?",
+    "answer": "Minnesota State",
+    "wrong": [
+      "North Dakota State",
+      "South Dakota State",
+      "Minnesota"
+    ],
+    "teach": "Thielen grew up in Detroit Lakes, Minnesota, and made the Vikings through a 2013 rookie tryout.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Adam_Thielen",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2017,
+      "player": "Adam Thielen"
+    }
+  },
+  {
+    "id": "p-nfl-austin-ekeler-college",
+    "factId": "nfl-austin-ekeler-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Austin Ekeler play college ball?",
+    "answer": "Western Colorado",
+    "wrong": [
+      "Colorado Mesa",
+      "Northern Colorado",
+      "Fort Lewis"
+    ],
+    "teach": "Ekeler left as the Mountaineers' all-time rushing leader and signed with the Chargers undrafted in 2017.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Austin_Ekeler",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2019,
+      "player": "Austin Ekeler"
+    }
+  },
+  {
+    "id": "p-nfl-darren-waller-draft",
+    "factId": "nfl-darren-waller-draft",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Darren Waller?",
+    "answer": "Ravens",
+    "wrong": [
+      "Raiders",
+      "Falcons",
+      "Giants"
+    ],
+    "teach": "Baltimore took Waller in round 6 of 2015 as a wide receiver out of Georgia Tech.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Darren_Waller",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2020,
+      "player": "Darren Waller"
+    }
+  },
+  {
+    "id": "p-nfl-trent-green-draft",
+    "factId": "nfl-trent-green-draft",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Trent Green?",
+    "answer": "Chargers",
+    "wrong": [
+      "Chiefs",
+      "Rams",
+      "Raiders"
+    ],
+    "teach": "San Diego took Green 222nd, in the 8th round, in 1993; he spent 1994 with the CFL's BC Lions.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Trent_Green",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2003,
+      "player": "Trent Green"
+    }
+  },
+  {
+    "id": "p-nfl-jon-kitna-college",
+    "factId": "nfl-jon-kitna-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Jon Kitna play college ball?",
+    "answer": "Central Washington",
+    "wrong": [
+      "Eastern Washington",
+      "Western Washington",
+      "Montana State"
+    ],
+    "teach": "Seattle signed Kitna undrafted in 1996, and he played for the Barcelona Dragons in 1997.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jon_Kitna",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2003,
+      "player": "Jon Kitna"
+    }
+  },
+  {
+    "id": "p-nfl-joey-porter-college",
+    "factId": "nfl-joey-porter-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Joey Porter play college ball?",
+    "answer": "Colorado State",
+    "wrong": [
+      "Colorado",
+      "Wyoming",
+      "Air Force"
+    ],
+    "teach": "Pittsburgh took Porter 73rd in 1999 and drafted his son, Joey Porter Jr., in 2023.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Joey_Porter",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2005,
+      "player": "Joey Porter"
+    }
+  },
+  {
+    "id": "p-nfl-kyle-juszczyk-college",
+    "factId": "nfl-kyle-juszczyk-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Kyle Juszczyk play college ball?",
+    "answer": "Harvard",
+    "wrong": [
+      "Yale",
+      "Princeton",
+      "Penn"
+    ],
+    "teach": "Baltimore took Juszczyk in round 4 of 2013, the first fullback ever drafted out of Harvard.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Kyle_Juszczyk",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2019,
+      "player": "Kyle Juszczyk"
+    }
+  },
+  {
+    "id": "p-nfl-rodney-harrison-college",
+    "factId": "nfl-rodney-harrison-college",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Rodney Harrison play college ball?",
+    "answer": "Western Illinois",
+    "wrong": [
+      "Northern Illinois",
+      "Illinois State",
+      "Southern Illinois"
+    ],
+    "teach": "San Diego took Harrison 145th in 1994, the year the Chargers reached Super Bowl XXIX.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Rodney_Harrison",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2004,
+      "player": "Rodney Harrison"
+    }
+  },
+  {
+    "id": "p-nfl-joe-thomas-jersey",
+    "factId": "nfl-joe-thomas-jersey",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Jersey number",
+    "prompt": "Joe Thomas's jersey number in 2010?",
+    "answer": "73",
+    "wrong": [
+      "71",
+      "74",
+      "77"
+    ],
+    "teach": "Cleveland took Thomas 3rd overall in 2007, and he learned he'd been drafted by cell phone.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Joe_Thomas_(offensive_tackle)",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2010,
+      "player": "Joe Thomas"
+    }
+  }
+]
