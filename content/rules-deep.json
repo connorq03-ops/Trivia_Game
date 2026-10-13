@@ -1390,7 +1390,8 @@
       "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
       "ref": "2026 NFL Rulebook, Rule 11, Section 3"
     },
-    "dailyFrom": "2026-10-27"
+    "dailyFrom": "2026-10-27",
+    "validFrom": 2015
   },
   {
     "id": "r-nba-lane-space-mark-size-1",
@@ -1486,7 +1487,8 @@
       "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
       "ref": "2026 Official Baseball Rules, Rule 5.02(c)"
     },
-    "dailyFrom": "2026-10-27"
+    "dailyFrom": "2026-10-27",
+    "validFrom": 2023
   },
   {
     "id": "r-mlb-strike-zone-upper-boundary-1",
@@ -1582,7 +1584,8 @@
       "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
       "ref": "2026 Official Baseball Rules, Rule 5.05(b)(1)"
     },
-    "dailyFrom": "2026-10-27"
+    "dailyFrom": "2026-10-27",
+    "validFrom": 2017
   },
   {
     "id": "r-mlb-substituted-player-reentry-1",
@@ -1798,7 +1801,8 @@
       "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
       "ref": "2026 Official Baseball Rules, Rule 5.02(c)"
     },
-    "dailyFrom": "2026-10-27"
+    "dailyFrom": "2026-10-27",
+    "validFrom": 2023
   },
   {
     "id": "r-mlb-batter-refuses-box-1",
