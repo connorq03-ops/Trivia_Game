@@ -1,5 +1,6 @@
 import playersNbaDeep from '../content/players-nba-deep.json' with { type: 'json' }
 import playersNflDeep from '../content/players-nfl-deep.json' with { type: 'json' }
+import playersMlb from '../content/players-mlb.json' with { type: 'json' }
 import players from '../content/players.json' with { type: 'json' }
 import rulesDeep from '../content/rules-deep.json' with { type: 'json' }
 import rules from '../content/rules.json' with { type: 'json' }
@@ -11,6 +12,7 @@ export const contentFiles: Record<string, Question[]> = {
   'rules.json': rules as Question[],
   'rules-deep.json': rulesDeep as Question[],
   'players.json': players as Question[],
+  'players-mlb.json': playersMlb as Question[],
   'players-nfl-deep.json': playersNflDeep as Question[],
   'players-nba-deep.json': playersNbaDeep as Question[],
 }

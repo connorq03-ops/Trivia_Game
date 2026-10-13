@@ -959,5 +959,341 @@
       "ref": "MLB Rule 6.02(a)(5) Comment — Quick Pitch"
     },
     "dailyFrom": "2026-10-20"
+  },
+  {
+    "id": "r-nfl-game-officials-count-1",
+    "factId": "nfl-game-officials-count",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Numbers and dimensions",
+    "prompt": "NFL: how many officials work a game?",
+    "answer": "7",
+    "wrong": [
+      "5",
+      "6",
+      "8"
+    ],
+    "teach": "Referee, Umpire, Down Judge, Line Judge, Field Judge, Side Judge and Back Judge.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 19, Section 1, Article 1 — Game Officials"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nfl-no-runoff-against-defense-1",
+    "factId": "nfl-no-runoff-against-defense",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Clock and timing",
+    "prompt": "NFL: can a 10-second runoff ever be charged against the defense?",
+    "answer": "No",
+    "wrong": [
+      "Yes",
+      "Only after a timeout",
+      "Only in overtime"
+    ],
+    "teach": "The timing rules say a runoff can never be assessed against the defensive team.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 4, Section 5, Article 4, Note 9 — Injury Timeouts after Two-Minute Warning"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nfl-conical-cleat-tip-diameter-1",
+    "factId": "nfl-conical-cleat-tip-diameter",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Numbers and dimensions",
+    "prompt": "NFL: minimum tip diameter of a conical cleat?",
+    "answer": "⅜ inch",
+    "wrong": [
+      "¼ inch",
+      "½ inch",
+      "⅝ inch"
+    ],
+    "teach": "Cleats made of metal or anything that may chip or fracture are banned.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 5, Section 4, Article 4, Item 4 — Improper Cleats"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nfl-safety-kick-line-1",
+    "factId": "nfl-safety-kick-line",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Numbers and dimensions",
+    "prompt": "NFL: after a safety, the free kick comes from which yard line?",
+    "answer": "Its own 20",
+    "wrong": [
+      "Its own 35",
+      "Its own 30",
+      "Its own 25"
+    ],
+    "teach": "The safety kick may be a punt, drop kick or place kick, and a tee may be used.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 11, Section 5, Article 2 — Ball in Play after Safety"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nfl-missed-field-goal-spot-beyond-20-1",
+    "factId": "nfl-missed-field-goal-spot-beyond-20",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "What's the call?",
+    "prompt": "NFL field goal missed from beyond the 20. Where does the defense take over?",
+    "answer": "Spot of the kick",
+    "wrong": [
+      "Line of scrimmage",
+      "The 20-yard line",
+      "Previous spot"
+    ],
+    "teach": "Misses from inside the 20 go to the 20-yard line instead.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "NFL Rule 11, Section 4, Article 2 — Missed Field Goals"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nba-substitution-box-length-1",
+    "factId": "nba-substitution-box-length",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Numbers and dimensions",
+    "prompt": "NBA: how long is the substitution box in front of the scorer's table?",
+    "answer": "8 feet",
+    "wrong": [
+      "6 feet",
+      "10 feet",
+      "12 feet"
+    ],
+    "teach": "Its hash marks sit 4 feet on each side of the midcourt line.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-1-court-dimensions-equipment/",
+      "ref": "NBA Rule 1, Section I; Rule 3"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nba-pregame-warmup-balls-1",
+    "factId": "nba-pregame-warmup-balls",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Numbers and dimensions",
+    "prompt": "NBA: fewest balls each team must get for pregame warmups?",
+    "answer": "9",
+    "wrong": [
+      "6",
+      "10",
+      "12"
+    ],
+    "teach": "The game ball must be inflated to between 7½ and 8½ pounds of pressure.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-1-court-dimensions-equipment/",
+      "ref": "NBA Rule 1, Section II"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nba-backboard-target-width-1",
+    "factId": "nba-backboard-target-width",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Numbers and dimensions",
+    "prompt": "NBA backboard: width of the white rectangle behind the rim?",
+    "answer": "24 inches",
+    "wrong": [
+      "18 inches",
+      "20 inches",
+      "30 inches"
+    ],
+    "teach": "Its 2-inch lines frame a box 18 inches tall.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-1-court-dimensions-equipment/",
+      "ref": "NBA Rule 1, Section II"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nba-net-length-1",
+    "factId": "nba-net-length",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Numbers and dimensions",
+    "prompt": "NBA: how long is the net hanging from the rim?",
+    "answer": "18 inches",
+    "wrong": [
+      "12 inches",
+      "15 inches",
+      "24 inches"
+    ],
+    "teach": "The cord must be 30 to 120 thread, built to check the ball momentarily.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-1-court-dimensions-equipment/",
+      "ref": "NBA Rule 1, Section II"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-mlb-strikes-to-strikeout-1",
+    "factId": "mlb-strikes-to-strikeout",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "Scoring",
+    "prompt": "How many strikes for a strikeout?",
+    "answer": "3",
+    "wrong": [
+      "2",
+      "4",
+      "5"
+    ],
+    "teach": "A foul tip caught with two strikes also counts as strike three.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "Official Baseball Rules 9.15 — Strikeouts"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-mlb-outs-per-half-inning-1",
+    "factId": "mlb-outs-per-half-inning",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "Scoring",
+    "prompt": "Outs per team in each half-inning?",
+    "answer": "3",
+    "wrong": [
+      "2",
+      "4",
+      "5"
+    ],
+    "teach": "When three offensive players are legally put out, that team takes the field.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "Official Baseball Rules 5.09(e) — Retiring the Side"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-mlb-defensive-players-1",
+    "factId": "mlb-defensive-players",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "Numbers and dimensions",
+    "prompt": "Players per team in the field on defense?",
+    "answer": "9",
+    "wrong": [
+      "8",
+      "10",
+      "11"
+    ],
+    "teach": "Rule 1.01: baseball is a game between two teams of nine players each.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "Official Baseball Rules 1.01"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-mlb-hit-batter-avoids-pitch-1",
+    "factId": "mlb-hit-batter-avoids-pitch",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "What's the call?",
+    "prompt": "A pitch hits a batter who tried to avoid it. The call?",
+    "answer": "Batter takes first base",
+    "wrong": [
+      "Ball, count continues",
+      "Strike",
+      "Dead ball, repitch"
+    ],
+    "teach": "If he makes no try to avoid it, it's only a ball; in the zone, it's a strike.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "Official Baseball Rules 5.05(b)(2) — Hit by pitch"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-mlb-foul-first-pitch-count-1",
+    "factId": "mlb-foul-first-pitch-count",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "What's the call?",
+    "prompt": "Batter fouls off the first pitch. The call?",
+    "answer": "Strike one",
+    "wrong": [
+      "Ball one",
+      "No pitch",
+      "Batter is out"
+    ],
+    "teach": "Fouls count as strikes until two; after that the count holds, except on a bunt.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "Official Baseball Rules — Definitions of Terms (Strike)"
+    },
+    "dailyFrom": "2026-10-27"
   }
 ]

@@ -1118,5 +1118,565 @@
       "season": 2001,
       "player": "Derek Fisher"
     }
+  },
+  {
+    "id": "p-nba-nikola-vucevic-country",
+    "factId": "nba-nikola-vucevic-country",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Nikola Vučević was born in which country?",
+    "answer": "Switzerland",
+    "wrong": [
+      "Serbia",
+      "Montenegro",
+      "Belgium"
+    ],
+    "teach": "Vučević was born in Morges while his father played there, and he represents Montenegro.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Nikola_Vučević",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2019,
+      "player": "Nikola Vučević"
+    }
+  },
+  {
+    "id": "p-nba-thabo-sefolosha-country",
+    "factId": "nba-thabo-sefolosha-country",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Thabo Sefolosha was born in which country?",
+    "answer": "Switzerland",
+    "wrong": [
+      "South Africa",
+      "France",
+      "Belgium"
+    ],
+    "teach": "Sefolosha, born in Vevey to a South African father, was the first Swiss player in the NBA.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Thabo_Sefolosha",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2010,
+      "player": "Thabo Sefolosha"
+    }
+  },
+  {
+    "id": "p-nba-toni-kukoc-country",
+    "factId": "nba-toni-kukoc-country",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Toni Kukoč was born in which country?",
+    "answer": "Croatia",
+    "wrong": [
+      "Serbia",
+      "Slovenia",
+      "Montenegro"
+    ],
+    "teach": "Kukoč was born in Split, then part of Yugoslavia, and won three titles with Chicago.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Toni_Kukoč",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1996,
+      "player": "Toni Kukoč"
+    }
+  },
+  {
+    "id": "p-nba-steven-adams-country",
+    "factId": "nba-steven-adams-country",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Steven Adams was born in which country?",
+    "answer": "New Zealand",
+    "wrong": [
+      "Australia",
+      "Fiji",
+      "England"
+    ],
+    "teach": "Adams was born in Rotorua; his half-sister Valerie Adams won Olympic shot put gold.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Steven_Adams",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2017,
+      "player": "Steven Adams"
+    }
+  },
+  {
+    "id": "p-nba-ben-simmons-country",
+    "factId": "nba-ben-simmons-country",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Ben Simmons was born in which country?",
+    "answer": "Australia",
+    "wrong": [
+      "New Zealand",
+      "England",
+      "Canada"
+    ],
+    "teach": "Simmons was born in Melbourne and played one season at LSU before going 1st overall in 2016.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Ben_Simmons",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2018,
+      "player": "Ben Simmons"
+    }
+  },
+  {
+    "id": "p-nba-andrea-bargnani-country",
+    "factId": "nba-andrea-bargnani-country",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Andrea Bargnani was born in which country?",
+    "answer": "Italy",
+    "wrong": [
+      "Spain",
+      "Greece",
+      "France"
+    ],
+    "teach": "Born in Rome, Bargnani was the first European taken 1st overall, by Toronto in 2006.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Andrea_Bargnani",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2010,
+      "player": "Andrea Bargnani"
+    }
+  },
+  {
+    "id": "p-nba-carmelo-anthony-jersey",
+    "factId": "nba-carmelo-anthony-jersey",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "Carmelo Anthony's jersey number in 2005?",
+    "answer": "15",
+    "wrong": [
+      "7",
+      "00",
+      "3"
+    ],
+    "teach": "Anthony wore No. 15 in Denver and No. 7 with the Knicks.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Carmelo_Anthony",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2005,
+      "player": "Carmelo Anthony"
+    }
+  },
+  {
+    "id": "p-nba-charles-barkley-jersey",
+    "factId": "nba-charles-barkley-jersey",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Jersey number",
+    "prompt": "Charles Barkley's jersey number in 1997?",
+    "answer": "4",
+    "wrong": [
+      "34",
+      "32",
+      "14"
+    ],
+    "teach": "Barkley wore 34 in Philadelphia and Phoenix, but Hakeem Olajuwon had 34 in Houston.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/1996–97_Houston_Rockets_season",
+      "ref": "Wikipedia 1996–97 Houston Rockets season roster, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1997,
+      "player": "Charles Barkley"
+    }
+  },
+  {
+    "id": "p-nba-ray-allen-jersey",
+    "factId": "nba-ray-allen-jersey",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Jersey number",
+    "prompt": "Ray Allen's jersey number in 2010?",
+    "answer": "20",
+    "wrong": [
+      "34",
+      "30",
+      "3"
+    ],
+    "teach": "Allen wore No. 34 in Milwaukee and Seattle; Paul Pierce had 34 in Boston.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Ray_Allen",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2010,
+      "player": "Ray Allen"
+    }
+  },
+  {
+    "id": "p-nba-jimmy-butler-jersey",
+    "factId": "nba-jimmy-butler-jersey",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Jersey number",
+    "prompt": "Jimmy Butler's jersey number in 2021?",
+    "answer": "22",
+    "wrong": [
+      "21",
+      "23",
+      "13"
+    ],
+    "teach": "Butler wore No. 21 in Chicago and 23 in Minnesota and Philadelphia.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2020–21_Miami_Heat_season",
+      "ref": "Wikipedia 2020–21 Miami Heat season roster, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2021,
+      "player": "Jimmy Butler"
+    }
+  },
+  {
+    "id": "p-nba-yao-ming-jersey",
+    "factId": "nba-yao-ming-jersey",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "Yao Ming's jersey number in 2005?",
+    "answer": "11",
+    "wrong": [
+      "15",
+      "13",
+      "9"
+    ],
+    "teach": "The Rockets retired Yao's No. 11 in 2017.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2004–05_Houston_Rockets_season",
+      "ref": "Wikipedia 2004–05 Houston Rockets season roster, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2005,
+      "player": "Yao Ming"
+    }
+  },
+  {
+    "id": "p-nba-vince-carter-jersey",
+    "factId": "nba-vince-carter-jersey",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "Vince Carter's jersey number in 2001?",
+    "answer": "15",
+    "wrong": [
+      "25",
+      "21",
+      "32"
+    ],
+    "teach": "Carter won the 2000 dunk contest wearing No. 15 for Toronto.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2000–01_Toronto_Raptors_season",
+      "ref": "Wikipedia 2000–01 Toronto Raptors season roster, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2001,
+      "player": "Vince Carter"
+    }
+  },
+  {
+    "id": "p-nba-hakeem-olajuwon-jersey",
+    "factId": "nba-hakeem-olajuwon-jersey",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "Hakeem Olajuwon's jersey number in 1994?",
+    "answer": "34",
+    "wrong": [
+      "32",
+      "33",
+      "44"
+    ],
+    "teach": "Olajuwon was 1994 MVP, Finals MVP and Defensive Player of the Year.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Hakeem_Olajuwon",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1994,
+      "player": "Hakeem Olajuwon"
+    }
+  },
+  {
+    "id": "p-nba-kareem-abdul-jabbar-jersey",
+    "factId": "nba-kareem-abdul-jabbar-jersey",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "Kareem Abdul-Jabbar's jersey number in 1980?",
+    "answer": "33",
+    "wrong": [
+      "32",
+      "34",
+      "13"
+    ],
+    "teach": "Kareem wore No. 33 at UCLA, Milwaukee and Los Angeles, and won six MVP awards.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Kareem_Abdul-Jabbar",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1980,
+      "player": "Kareem Abdul-Jabbar"
+    }
+  },
+  {
+    "id": "p-nba-steve-nash-draft",
+    "factId": "nba-steve-nash-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Steve Nash?",
+    "answer": "Suns",
+    "wrong": [
+      "Mavericks",
+      "Raptors",
+      "Lakers"
+    ],
+    "teach": "Phoenix took Nash 15th in 1996, traded him to Dallas in 1998, then signed him back in 2004.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Steve_Nash",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2005,
+      "player": "Steve Nash"
+    }
+  },
+  {
+    "id": "p-nba-tracy-mcgrady-draft",
+    "factId": "nba-tracy-mcgrady-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Tracy McGrady?",
+    "answer": "Raptors",
+    "wrong": [
+      "Magic",
+      "Rockets",
+      "Heat"
+    ],
+    "teach": "Toronto took McGrady 9th in 1997 straight out of Mount Zion Christian Academy.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Tracy_McGrady",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2003,
+      "player": "Tracy McGrady"
+    }
+  },
+  {
+    "id": "p-nba-jason-kidd-draft",
+    "factId": "nba-jason-kidd-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Jason Kidd?",
+    "answer": "Mavericks",
+    "wrong": [
+      "Nets",
+      "Suns",
+      "Warriors"
+    ],
+    "teach": "Dallas took Kidd 2nd in 1994 out of Cal; he shared Rookie of the Year with Grant Hill.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jason_Kidd",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2002,
+      "player": "Jason Kidd"
+    }
+  },
+  {
+    "id": "p-nba-chris-webber-draft",
+    "factId": "nba-chris-webber-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Chris Webber?",
+    "answer": "Magic",
+    "wrong": [
+      "Warriors",
+      "Kings",
+      "Wizards"
+    ],
+    "teach": "Orlando took Webber 1st in 1993 and traded him to Golden State for Penny Hardaway's rights.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Chris_Webber",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2001,
+      "player": "Chris Webber"
+    }
+  },
+  {
+    "id": "p-nba-bill-russell-draft",
+    "factId": "nba-bill-russell-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Bill Russell?",
+    "answer": "Hawks",
+    "wrong": [
+      "Celtics",
+      "Lakers",
+      "Warriors"
+    ],
+    "teach": "The St. Louis Hawks took Russell 2nd in 1956 and traded him to Boston.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Bill_Russell",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1960,
+      "player": "Bill Russell"
+    }
+  },
+  {
+    "id": "p-nba-vince-carter-draft-2",
+    "factId": "nba-vince-carter-draft-2",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Vince Carter?",
+    "answer": "Warriors",
+    "wrong": [
+      "Raptors",
+      "Nets",
+      "Magic"
+    ],
+    "teach": "Golden State took Carter 5th in 1998 and traded him to Toronto for Antawn Jamison.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Vince_Carter",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2001,
+      "player": "Vince Carter"
+    }
   }
 ]
