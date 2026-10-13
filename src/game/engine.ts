@@ -17,6 +17,9 @@ export const BOSS_CLOCK_MS = 15_000
 export const BOSS_REEL_MS = 4_500
 export const BOSS_HIT_POINTS = 500
 export const BOSS_MISS_POINTS = 250
+// Daily 10 runs are too short for the Classic streak tiers to fire, so each
+// consecutive correct answer adds this much to the score multiplier instead.
+export const DAILY_STREAK_STEP = 0.1
 export const MULTIPLIER_TIERS = [
   { streak: 30, multiplier: 2 },
   { streak: 20, multiplier: 1.5 },
@@ -127,10 +130,13 @@ export function scoreAnswer(
   elapsedMs: number,
   difficulty: Difficulty,
   streakBefore: number,
+  bonusMultiplier = 1,
 ): number {
   const timeSeconds = Math.min(10, Math.max(0, elapsedMs / 1000))
   const speed = 1 + Math.min(1, (10 - timeSeconds) / 8.5)
-  return Math.round(BASE[difficulty] * speed * streakMultiplier(streakBefore))
+  return Math.round(
+    BASE[difficulty] * speed * streakMultiplier(streakBefore) * bonusMultiplier,
+  )
 }
 
 export function levelFor(correctCount: number): number {
@@ -343,6 +349,7 @@ export function answerQuestion(
   question: Question,
   isCorrect: boolean,
   elapsedMs: number | null,
+  streakStep = 0,
 ): AnswerOutcome {
   const timedOut = elapsedMs === null || elapsedMs >= CLOCK_MS
   const correct = isCorrect && !timedOut
@@ -350,7 +357,12 @@ export function answerQuestion(
     ? null
     : Math.round(Math.min(CLOCK_MS, Math.max(0, elapsedMs)))
   const points = correct
-    ? scoreAnswer(normalizedAnswerMs ?? CLOCK_MS, question.difficulty, progress.streak)
+    ? scoreAnswer(
+        normalizedAnswerMs ?? CLOCK_MS,
+        question.difficulty,
+        progress.streak,
+        1 + streakStep * progress.streak,
+      )
     : 0
   const streak = correct ? progress.streak + 1 : 0
   let strikes = progress.strikes

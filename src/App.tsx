@@ -1,6 +1,12 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { CSSProperties } from 'react'
-import { CLOCK_MS, REEL_MS, STRIKES, STRIKE_BACK_EVERY } from './game/engine'
+import {
+  CLOCK_MS,
+  DAILY_STREAK_STEP,
+  REEL_MS,
+  STRIKES,
+  STRIKE_BACK_EVERY,
+} from './game/engine'
 import {
   difficultyLabel,
   modeSubtitle,
@@ -521,7 +527,10 @@ function App() {
         picked: body.choice,
         points: result.points,
         multiplier: result.correct && !current.question.boss
-          ? multiplierLabel(current.progress.streak)
+          ? multiplierLabel(
+              current.progress.streak,
+              current.mode === 'daily' ? DAILY_STREAK_STEP : 0,
+            )
           : null,
         callouts: result.correct
           ? revealCallouts(current.progress, result.progress, {

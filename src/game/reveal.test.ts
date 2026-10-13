@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 import {
   BOSS_CLOCK_MS,
   CLOCK_MS,
+  DAILY_STREAK_STEP,
   LEVELS,
   MULTIPLIER_TIERS,
   STRIKES,
@@ -34,7 +35,7 @@ describe('howItWorks', () => {
       `Get ${STRIKE_BACK_EVERY} in a row to clear a strike.`,
       `Streaks of ${streaks} multiply your points by ${multipliers}.`,
       `Classic starts easy and levels up at ${levelSteps} correct answers. Harder questions score more.`,
-      'Daily 10: the same 10 questions for everyone today, easy to hard. No strikes.',
+      `Daily 10: the same 10 questions for everyone today, easy to hard. No strikes. Each correct answer in a row adds +${Math.round(DAILY_STREAK_STEP * 100)}% to your points.`,
     ])
   })
 
@@ -58,6 +59,13 @@ describe('multiplierLabel', () => {
     expect(multiplierLabel(9)).toBeNull()
     expect(multiplierLabel(10)).toBe('×1.25')
     expect(multiplierLabel(30)).toBe('×2')
+  })
+
+  it('shows the daily streak step as a multiplier chip', () => {
+    expect(multiplierLabel(0, DAILY_STREAK_STEP)).toBeNull()
+    expect(multiplierLabel(1, DAILY_STREAK_STEP)).toBe('×1.1')
+    expect(multiplierLabel(7, DAILY_STREAK_STEP)).toBe('×1.7')
+    expect(multiplierLabel(9, DAILY_STREAK_STEP)).toBe('×1.9')
   })
 })
 
