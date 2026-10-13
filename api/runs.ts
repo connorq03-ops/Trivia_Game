@@ -74,10 +74,13 @@ export async function POST(request: Request): Promise<Response> {
     let choices: string[]
     let options: ClassicOptions = { sport: 'all', side: 'both' }
     let dailyDate: string | null = null
+    let dailyQuestionIds: string[] | undefined
 
     if (input.mode === 'daily') {
       dailyDate = date
-      question = dailyQuestions(date, questionBank)[0]
+      const questions = dailyQuestions(date, questionBank)
+      question = questions[0]
+      dailyQuestionIds = questions.map((item) => item.id)
       ;({ choices } = presentQuestion(question, Math.random))
     } else {
       options = { sport: input.sport, side: input.side }
@@ -96,6 +99,7 @@ export async function POST(request: Request): Promise<Response> {
     }
 
     const initialProgress = createRunProgress()
+    if (dailyQuestionIds) initialProgress.dailyQuestionIds = dailyQuestionIds
     const [choice0, choice1, choice2, choice3] = choices
     const runToken = createRunToken()
     const [, inserted] = (await sql.transaction([
