@@ -1,4 +1,7 @@
 export type Sport = 'football' | 'basketball' | 'baseball'
+export type ChoiceBadge =
+  | { kind: 'team'; abbr: string; primary: string; secondary: string } // #rrggbb
+  | { kind: 'flag'; code: string } // file under public/flags
 export type Side = 'rules' | 'players'
 export type Difficulty = 'easy' | 'medium' | 'hard' | 'expert'
 export interface Question {

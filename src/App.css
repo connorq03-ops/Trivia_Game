@@ -469,7 +469,7 @@
   opacity: 0.45;
 }
 
-.answer-button span {
+.answer-button .answer-key {
   display: grid;
   flex: 0 0 1.9rem;
   width: 1.9rem;
@@ -480,6 +480,27 @@
   background: #294333;
   font-size: 0.7rem;
   font-weight: 850;
+}
+
+.answer-badge {
+  flex: 0 0 auto;
+  height: 1.9rem;
+  border-radius: 0.4rem;
+}
+
+.answer-badge--team {
+  display: grid;
+  width: 2.6rem;
+  place-items: center;
+  border: 2px solid;
+  font-size: 0.62rem;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+}
+
+.answer-badge--flag {
+  width: auto;
+  border-radius: 0.3rem;
 }
 
 .key-hint {
@@ -799,7 +820,7 @@
   opacity: 1;
 }
 
-.answer-button.is-correct span {
+.answer-button.is-correct .answer-key {
   color: #f2fff5;
   background: #43845a;
 }
@@ -813,7 +834,7 @@
   opacity: 1;
 }
 
-.answer-button.is-wrong span {
+.answer-button.is-wrong .answer-key {
   color: #fff2ee;
   background: #743f37;
 }
@@ -895,15 +916,35 @@
 }
 
 .teach-pick {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
   color: #f3a091;
   font-size: 0.85rem;
   font-weight: 800;
 }
 
 .teach-answer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
   color: #a8e0b2;
   font-size: 0.9rem;
   font-weight: 850;
+}
+
+.teach-pick .answer-badge,
+.teach-answer .answer-badge {
+  height: 1.3rem;
+}
+
+.teach-pick .answer-badge--team,
+.teach-answer .answer-badge--team {
+  width: 1.95rem;
+  border-width: 1.5px;
+  font-size: 0.52rem;
 }
 
 .teach-overlay > span:not(.teach-label) {

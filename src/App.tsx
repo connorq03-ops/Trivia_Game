@@ -22,7 +22,8 @@ import {
   type GameSummary,
 } from './game/dailyStore'
 import { formatCountdown } from './game/share'
-import type { Question, Side, Sport } from './game/types'
+import { badgeInk } from './game/badgeInk'
+import type { ChoiceBadge, Question, Side, Sport } from './game/types'
 import { ResultShare } from './ResultShare'
 import './App.css'
 
@@ -41,7 +42,7 @@ type Mode = 'classic' | 'daily'
 type PublicQuestion = Pick<
   Question,
   'id' | 'side' | 'sport' | 'leagues' | 'difficulty' | 'category' | 'prompt' | 'reel'
-> & { choices: string[] }
+> & { choices: string[]; choiceBadges?: (ChoiceBadge | null)[] }
 
 type PublicProgress = {
   score: number
@@ -143,6 +144,32 @@ function answerIndexForKey(key: string): number {
 
 function elapsedSince(startedAt: number): number {
   return Math.min(CLOCK_MS, Math.max(0, performance.now() - startedAt))
+}
+
+function Badge({ badge }: { badge: ChoiceBadge }) {
+  if (badge.kind === 'flag') {
+    return (
+      <img
+        className="answer-badge answer-badge--flag"
+        src={`/flags/${badge.code}.svg`}
+        alt=""
+        aria-hidden="true"
+      />
+    )
+  }
+  return (
+    <span
+      className="answer-badge answer-badge--team"
+      aria-hidden="true"
+      style={{
+        backgroundColor: badge.primary,
+        borderColor: badge.secondary,
+        color: badgeInk(badge.primary),
+      }}
+    >
+      {badge.abbr}
+    </span>
+  )
 }
 
 function App() {
@@ -933,7 +960,12 @@ function App() {
                           : undefined
                       }
                     >
-                      <span>{String.fromCharCode(65 + index)}</span>
+                      <span className="answer-key">
+                        {String.fromCharCode(65 + index)}
+                      </span>
+                      {question.choiceBadges?.[index] && (
+                        <Badge badge={question.choiceBadges[index]} />
+                      )}
                       {choice}
                     </button>
                   ))}
@@ -949,11 +981,37 @@ function App() {
             <section className="teach-overlay">
               <p className="teach-prompt">{question.prompt}</p>
               <p className="teach-pick" id="teach-pick">
-                {picked === null || picked === teachInfo?.answer
-                  ? "Time's up"
-                  : `Your pick: ${picked}`}
+                {picked === null || picked === teachInfo?.answer ? (
+                  "Time's up"
+                ) : (
+                  <>
+                    Your pick:{' '}
+                    {question.choiceBadges?.[question.choices.indexOf(picked)] && (
+                      <Badge
+                        badge={
+                          question.choiceBadges[question.choices.indexOf(picked)]!
+                        }
+                      />
+                    )}
+                    {picked}
+                  </>
+                )}
               </p>
-              <p className="teach-answer" id="teach-answer">Right answer: {teachInfo?.answer}</p>
+              <p className="teach-answer" id="teach-answer">
+                Right answer:{' '}
+                {question.choiceBadges?.[
+                  question.choices.indexOf(teachInfo?.answer ?? '')
+                ] && (
+                  <Badge
+                    badge={
+                      question.choiceBadges[
+                        question.choices.indexOf(teachInfo?.answer ?? '')
+                      ]!
+                    }
+                  />
+                )}
+                {teachInfo?.answer}
+              </p>
               <span id="teach-text">{teachInfo?.teach}</span>
               {teachInfo?.source && (
                 <a
