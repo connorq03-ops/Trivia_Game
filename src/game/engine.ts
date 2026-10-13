@@ -1,4 +1,4 @@
-import type { Difficulty, Question, Side, Sport } from './types.js'
+import type { BossCategory, Difficulty, Question, Side, Sport } from './types.js'
 
 export const STRIKES = 3
 export const STRIKE_BACK_EVERY = 15
@@ -11,6 +11,12 @@ export const MULTIPLIER_TIERS = [
   { streak: 20, multiplier: 1.5 },
   { streak: 10, multiplier: 1.25 },
 ] as const
+export const BOSS_CATEGORIES: readonly BossCategory[] = [
+  'science',
+  'history',
+  'art',
+  'pop-culture',
+]
 export const BASE: Record<Difficulty, number> = {
   easy: 100,
   medium: 150,
@@ -54,6 +60,7 @@ export type RunProgress = {
   totalAnswerMs: number
   missed: Question[]
   results: AnswerResult[]
+  bossLevelsConsumed: number[] // LEVELS indexes that already had their boss
 }
 
 export type ClassicSelection =
@@ -258,6 +265,7 @@ export function createRunProgress(): RunProgress {
     totalAnswerMs: 0,
     missed: [],
     results: [],
+    bossLevelsConsumed: [],
   }
 }
 
@@ -297,6 +305,7 @@ export function answerQuestion(
       ...progress.results,
       timedOut ? 'timeout' : correct ? 'hit' : 'miss',
     ],
+    bossLevelsConsumed: progress.bossLevelsConsumed,
   }
 
   return {

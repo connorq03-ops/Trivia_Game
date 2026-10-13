@@ -1,0 +1,422 @@
+[
+  {
+    "id": "boss-sci-tungsten-symbol",
+    "factId": "boss-tungsten-symbol",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "science",
+    "prompt": "Which element has the chemical symbol W?",
+    "answer": "Tungsten",
+    "wrong": [
+      "Vanadium",
+      "Xenon",
+      "Titanium"
+    ],
+    "teach": "W comes from wolfram, its German name. Tungsten has the highest melting point of any element.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Tungsten",
+      "ref": "Wikipedia — Tungsten"
+    }
+  },
+  {
+    "id": "boss-sci-fastest-spin",
+    "factId": "boss-fastest-spin",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "science",
+    "prompt": "Which planet spins the fastest, with a day under 10 hours?",
+    "answer": "Jupiter",
+    "wrong": [
+      "Saturn",
+      "Mercury",
+      "Neptune"
+    ],
+    "teach": "The rapid spin flattens Jupiter: its equator is about 7% wider than its poles.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jupiter",
+      "ref": "Wikipedia — Jupiter"
+    }
+  },
+  {
+    "id": "boss-sci-universal-donor",
+    "factId": "boss-universal-donor",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "science",
+    "prompt": "Which blood type is called the universal red-cell donor?",
+    "answer": "O negative",
+    "wrong": [
+      "AB positive",
+      "A negative",
+      "O positive"
+    ],
+    "teach": "AB positive is the universal recipient. O-negative red cells are used in emergencies before testing.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Blood_type",
+      "ref": "Wikipedia — Blood type"
+    }
+  },
+  {
+    "id": "boss-sci-adult-bones",
+    "factId": "boss-adult-bones",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "science",
+    "prompt": "How many bones does a typical adult human skeleton have?",
+    "answer": "206",
+    "wrong": [
+      "186",
+      "212",
+      "230"
+    ],
+    "teach": "Babies are born with around 270 bones; some fuse together by adulthood.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Human_skeleton",
+      "ref": "Wikipedia — Human skeleton"
+    }
+  },
+  {
+    "id": "boss-sci-crust-element",
+    "factId": "boss-crust-element",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "science",
+    "prompt": "What is the most abundant element in Earth's crust by mass?",
+    "answer": "Oxygen",
+    "wrong": [
+      "Silicon",
+      "Iron",
+      "Aluminium"
+    ],
+    "teach": "Oxygen makes up almost half the crust, bound in oxides and silicate minerals.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Oxygen",
+      "ref": "Wikipedia — Oxygen"
+    }
+  },
+  {
+    "id": "boss-his-berlin-wall",
+    "factId": "boss-berlin-wall",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "history",
+    "prompt": "In what year did the Berlin Wall fall?",
+    "answer": "1989",
+    "wrong": [
+      "1987",
+      "1991",
+      "1985"
+    ],
+    "teach": "East Germany opened the crossings on 9 November; Germany reunified on 3 October 1990.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Berlin_Wall",
+      "ref": "Wikipedia — Berlin Wall"
+    }
+  },
+  {
+    "id": "boss-his-first-emperor",
+    "factId": "boss-first-emperor",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "history",
+    "prompt": "Who was the first Roman emperor?",
+    "answer": "Augustus",
+    "wrong": [
+      "Julius Caesar",
+      "Nero",
+      "Tiberius"
+    ],
+    "teach": "Julius Caesar was dictator, never emperor. His heir Octavian ruled as Augustus from 27 BC.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Augustus",
+      "ref": "Wikipedia — Augustus"
+    }
+  },
+  {
+    "id": "boss-his-pilgrim-ship",
+    "factId": "boss-pilgrim-ship",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "history",
+    "prompt": "Which ship carried the Pilgrims to Cape Cod in 1620?",
+    "answer": "Mayflower",
+    "wrong": [
+      "Speedwell",
+      "Santa María",
+      "Endeavour"
+    ],
+    "teach": "Speedwell was meant to sail with it but proved unseaworthy and was left behind in England.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Mayflower",
+      "ref": "Wikipedia — Mayflower"
+    }
+  },
+  {
+    "id": "boss-his-shortest-war",
+    "factId": "boss-shortest-war",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "history",
+    "prompt": "The shortest war on record (1896) was Britain vs. which sultanate?",
+    "answer": "Zanzibar",
+    "wrong": [
+      "Oman",
+      "Brunei",
+      "Johor"
+    ],
+    "teach": "The Anglo-Zanzibar War lasted between 38 and 45 minutes.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Anglo-Zanzibar_War",
+      "ref": "Wikipedia — Anglo-Zanzibar War"
+    }
+  },
+  {
+    "id": "boss-his-first-woman-nobel",
+    "factId": "boss-first-woman-nobel",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "history",
+    "prompt": "Who was the first woman to win a Nobel Prize?",
+    "answer": "Marie Curie",
+    "wrong": [
+      "Rosalind Franklin",
+      "Ada Lovelace",
+      "Lise Meitner"
+    ],
+    "teach": "Curie shared the 1903 Physics prize, then won Chemistry in 1911: the first person to win twice.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Marie_Curie",
+      "ref": "Wikipedia — Marie Curie"
+    }
+  },
+  {
+    "id": "boss-art-sistine-ceiling",
+    "factId": "boss-sistine-ceiling",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "art",
+    "prompt": "Who painted the Sistine Chapel ceiling?",
+    "answer": "Michelangelo",
+    "wrong": [
+      "Raphael",
+      "Leonardo da Vinci",
+      "Botticelli"
+    ],
+    "teach": "He painted the fresco from 1508 to 1512 for Pope Julius II.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Sistine_Chapel_ceiling",
+      "ref": "Wikipedia — Sistine Chapel ceiling"
+    }
+  },
+  {
+    "id": "boss-art-melting-clocks",
+    "factId": "boss-melting-clocks",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "art",
+    "prompt": "Dalí's 1931 melting-clocks painting is The ___ of Memory?",
+    "answer": "Persistence",
+    "wrong": [
+      "Erosion",
+      "Weight",
+      "Triumph"
+    ],
+    "teach": "It has hung at MoMA in New York since an anonymous donor gave it in 1934.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/The_Persistence_of_Memory",
+      "ref": "Wikipedia — The Persistence of Memory"
+    }
+  },
+  {
+    "id": "boss-art-severed-ear",
+    "factId": "boss-severed-ear",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "art",
+    "prompt": "Which painter severed part of his own ear with a razor?",
+    "answer": "Vincent van Gogh",
+    "wrong": [
+      "Paul Gauguin",
+      "Claude Monet",
+      "Paul Cézanne"
+    ],
+    "teach": "It happened on 23 December 1888, after an altercation with his friend Gauguin.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Vincent_van_Gogh",
+      "ref": "Wikipedia — Vincent van Gogh"
+    }
+  },
+  {
+    "id": "boss-art-pearl-earring",
+    "factId": "boss-pearl-earring",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "art",
+    "prompt": "Who painted Girl with a Pearl Earring?",
+    "answer": "Johannes Vermeer",
+    "wrong": [
+      "Rembrandt",
+      "Frans Hals",
+      "Jan van Eyck"
+    ],
+    "teach": "Painted around 1665, it has hung in the Mauritshuis in The Hague since 1902.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Girl_with_a_Pearl_Earring",
+      "ref": "Wikipedia — Girl with a Pearl Earring"
+    }
+  },
+  {
+    "id": "boss-art-soup-cans",
+    "factId": "boss-soup-cans",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "art",
+    "prompt": "Which pop artist painted the 32 Campbell's Soup Cans?",
+    "answer": "Andy Warhol",
+    "wrong": [
+      "Roy Lichtenstein",
+      "Jasper Johns",
+      "Keith Haring"
+    ],
+    "teach": "Each canvas shows a different variety; they debuted at LA's Ferus Gallery in July 1962.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Campbell%27s_Soup_Cans",
+      "ref": "Wikipedia — Campbell's Soup Cans"
+    }
+  },
+  {
+    "id": "boss-pop-first-pixar",
+    "factId": "boss-first-pixar",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "pop-culture",
+    "prompt": "What was Pixar's first feature film?",
+    "answer": "Toy Story",
+    "wrong": [
+      "A Bug's Life",
+      "Monsters, Inc.",
+      "Finding Nemo"
+    ],
+    "teach": "Toy Story (1995) was also the first entirely computer-animated feature film.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Toy_Story",
+      "ref": "Wikipedia — Toy Story"
+    }
+  },
+  {
+    "id": "boss-pop-zebra-crossing",
+    "factId": "boss-zebra-crossing",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "pop-culture",
+    "prompt": "Which Beatles album cover shows the band on a zebra crossing?",
+    "answer": "Abbey Road",
+    "wrong": [
+      "Let It Be",
+      "Revolver",
+      "Help!"
+    ],
+    "teach": "It was the last album they recorded; Let It Be came out later but was mostly recorded earlier.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Abbey_Road",
+      "ref": "Wikipedia — Abbey Road"
+    }
+  },
+  {
+    "id": "boss-pop-jumpman",
+    "factId": "boss-jumpman",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "pop-culture",
+    "prompt": "Which Nintendo hero was called Jumpman in Donkey Kong's English instructions?",
+    "answer": "Mario",
+    "wrong": [
+      "Luigi",
+      "Link",
+      "Kirby"
+    ],
+    "teach": "He debuted in 1981 as a carpenter and became a plumber in Mario Bros.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Mario",
+      "ref": "Wikipedia — Mario"
+    }
+  },
+  {
+    "id": "boss-pop-infinity-stones",
+    "factId": "boss-infinity-stones",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "pop-culture",
+    "prompt": "How many Infinity Stones are there in the Marvel films?",
+    "answer": "Six",
+    "wrong": [
+      "Five",
+      "Seven",
+      "Four"
+    ],
+    "teach": "Space, Mind, Reality, Power, Time and Soul; Thanos set out to collect them all.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Infinity_Stones",
+      "ref": "Wikipedia — Infinity Stones"
+    }
+  },
+  {
+    "id": "boss-pop-ross-monkey",
+    "factId": "boss-ross-monkey",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "pop-culture",
+    "prompt": "In Friends, what is the name of Ross's pet monkey?",
+    "answer": "Marcel",
+    "wrong": [
+      "Bubbles",
+      "Abu",
+      "Jack"
+    ],
+    "teach": "Marcel was a white-headed capuchin, played mostly by a female monkey named Katie.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Ross_Geller",
+      "ref": "Wikipedia — Ross Geller"
+    }
+  }
+]
