@@ -147,23 +147,23 @@
     "leagues": [
       "MLB"
     ],
-    "difficulty": "medium",
+    "difficulty": "hard",
     "category": "Alma mater",
     "prompt": "Where did Todd Helton play college ball?",
     "answer": "Tennessee",
     "wrong": [
       "Florida",
-      "Georgia Tech",
-      "Stanford"
+      "Georgia",
+      "Auburn"
     ],
-    "teach": "Helton attended Central High School in Knoxville, Tennessee and was a letterman in football and baseball.",
+    "teach": "Helton also played quarterback for the Volunteers before Colorado took him 8th overall in 1995.",
     "source": {
       "url": "https://en.wikipedia.org/wiki/Todd_Helton",
-      "ref": "Wikipedia: Todd Helton page (saved API wikitext and prose), teach source: Todd Helton, checked 2026-10-13"
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
     },
     "dailyFrom": "2026-10-27",
     "reel": {
-      "season": 1999,
+      "season": 2000,
       "player": "Todd Helton"
     }
   },
@@ -175,19 +175,19 @@
     "leagues": [
       "MLB"
     ],
-    "difficulty": "expert",
+    "difficulty": "hard",
     "category": "Alma mater",
     "prompt": "Where did Justin Verlander play college ball?",
     "answer": "Old Dominion",
     "wrong": [
-      "Miami (FL)",
-      "Texas",
-      "UCLA"
+      "Virginia",
+      "Virginia Tech",
+      "Richmond"
     ],
-    "teach": "\"The legend of Justin Verlander at Old Dominion: Vanity plates, house parties and high heat\".",
+    "teach": "Detroit took Verlander 2nd overall in 2004 out of the Monarchs' program in Norfolk.",
     "source": {
       "url": "https://en.wikipedia.org/wiki/Justin_Verlander",
-      "ref": "Wikipedia: Justin Verlander page (saved API wikitext and prose), teach source: Justin Verlander, checked 2026-10-13"
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
     },
     "dailyFrom": "2026-10-27",
     "reel": {
@@ -292,14 +292,14 @@
     "prompt": "Which team drafted Derek Jeter?",
     "answer": "Yankees",
     "wrong": [
-      "Mets",
-      "Red Sox",
-      "Orioles"
+      "Tigers",
+      "Astros",
+      "Reds"
     ],
-    "teach": "The Yankees drafted Jeter out of high school in 1992, and he debuted in the major leagues at age 20 in 1995.",
+    "teach": "New York took Jeter 6th overall in 1992 out of Kalamazoo Central High School in Michigan.",
     "source": {
       "url": "https://en.wikipedia.org/wiki/Derek_Jeter",
-      "ref": "Wikipedia: Derek Jeter page (saved API wikitext and prose), teach source: Derek Jeter, checked 2026-10-13"
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
     },
     "dailyFrom": "2026-10-27",
     "reel": {
@@ -1190,7 +1190,7 @@
       "Cuba",
       "Puerto Rico"
     ],
-    "teach": "Beltré played for the Dominican Republic in the 2006 World Baseball Classic (WBC).",
+    "teach": "Beltré was born in Santo Domingo.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2004,
@@ -1218,7 +1218,7 @@
       "Venezuela",
       "Dominican Republic"
     ],
-    "teach": "He had a strong throwing arm in addition to his elite fielding.",
+    "teach": "Jones was born in Willemstad.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2005,
@@ -1246,7 +1246,7 @@
       "Venezuela",
       "Puerto Rico"
     ],
-    "teach": "He defected from Cuba in 2009 and signed a contract with the Reds in 2010.",
+    "teach": "Chapman was born in Holguín.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2012,
@@ -1274,7 +1274,7 @@
       "Venezuela",
       "Puerto Rico"
     ],
-    "teach": "Fernández escaped Cuba at 15 with his mother and sister.",
+    "teach": "Fernández was born in Santa Clara.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2013,
@@ -1302,7 +1302,7 @@
       "Cuba",
       "Puerto Rico"
     ],
-    "teach": "As a teenager, Ramírez played baseball in the Dominican Prospect League.",
+    "teach": "Ramírez was born in Baní.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2016,
@@ -1330,7 +1330,7 @@
       "Cuba",
       "Puerto Rico"
     ],
-    "teach": "List of Major League Baseball players from the Dominican Republic",
+    "teach": "Tatís was born in San Pedro de Macorís.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2021,
@@ -1358,7 +1358,7 @@
       "Venezuela",
       "Dominican Republic"
     ],
-    "teach": "Lindor planned to reprise his role as team captain for Puerto Rico in the 2026 World Baseball Classic.",
+    "teach": "Lindor was born in Caguas.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2016,
@@ -1386,7 +1386,7 @@
       "Dominican Republic",
       "Puerto Rico"
     ],
-    "teach": "He also played on the Venezuela national team at two editions of the World Baseball Classic.",
+    "teach": "Hernández was born in Valencia.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2010,
@@ -1414,7 +1414,7 @@
       "Cuba",
       "Puerto Rico"
     ],
-    "teach": "After the 2020 season, he played for Dominican Republic in the 2021 Caribbean Series.",
+    "teach": "Canó was born in San Pedro de Macorís.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2009,
@@ -1442,7 +1442,7 @@
       "Cuba",
       "Puerto Rico"
     ],
-    "teach": "I have not broken the laws of the United States or the laws of the Dominican Republic.",
+    "teach": "Sosa was born in San Pedro de Macorís.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1998,
@@ -1470,7 +1470,7 @@
       "Venezuela",
       "Dominican Republic"
     ],
-    "teach": "Posada recorded a .273 batting average, 275 home runs, and 1,065 runs batted in (RBIs) during his career.",
+    "teach": "Posada was born in Santurce.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2000,
@@ -1498,7 +1498,7 @@
       "Venezuela",
       "Dominican Republic"
     ],
-    "teach": "He was briefly an analyst for YES Network, and has been a member of the Mets front office since 2023.",
+    "teach": "Beltrán was born in Manatí.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2004,
@@ -1526,7 +1526,7 @@
       "Venezuela",
       "Dominican Republic"
     ],
-    "teach": "After the couple separated, he met Nydia Fernandez, who was from Carolina, Puerto Rico.",
+    "teach": "Cepeda was born in Ponce.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1967,
@@ -1554,7 +1554,7 @@
       "Venezuela",
       "Puerto Rico"
     ],
-    "teach": "As a teenager, Pérez worked alongside his father at a sugar factory in Camagüey.",
+    "teach": "Pérez was born in Ciego de Ávila.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1970,
@@ -1582,7 +1582,7 @@
       "Dominican Republic",
       "Puerto Rico"
     ],
-    "teach": "Aparicio played his last game in the Venezuelan Professional Baseball League on December 23, 1974.",
+    "teach": "Aparicio was born in Maracaibo.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1956,
@@ -1610,7 +1610,7 @@
       "Canada",
       "Dominican Republic"
     ],
-    "teach": "Gregorius played for the Dutch in the 2023 WBC and 2024 WBSC Premier12.",
+    "teach": "Gregorius was born in Amsterdam.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2018,
@@ -1638,7 +1638,7 @@
       "Venezuela",
       "Puerto Rico"
     ],
-    "teach": "Puig played for the Cuba national baseball team in the 2008 World Junior Baseball Championship, winning a bronze medal.",
+    "teach": "Puig was born in Cienfuegos.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2013,
@@ -1666,7 +1666,7 @@
       "Cuba",
       "Puerto Rico"
     ],
-    "teach": "In 2004, he was voted the American League (AL) Most Valuable Player (MVP).",
+    "teach": "Guerrero was born in Nizao.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2004,
@@ -1694,7 +1694,7 @@
       "Cuba",
       "Puerto Rico"
     ],
-    "teach": "List of Major League Baseball players from the Dominican Republic",
+    "teach": "Soto was born in Santo Domingo.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2019,
@@ -1722,7 +1722,7 @@
       "Dominican Republic",
       "Puerto Rico"
     ],
-    "teach": "represented Venezuela at the 2011 Pan American Games.",
+    "teach": "Acuña was born in La Guaira.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2019,
@@ -1750,7 +1750,7 @@
       "31",
       "50"
     ],
-    "teach": "Aroldis Chapman wore No. 54 for New York Yankees in 2022.",
+    "teach": "The New York Yankees finished 99–63 in 2022.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2022,
@@ -1778,7 +1778,7 @@
       "7",
       "15"
     ],
-    "teach": "Bo Bichette wore No. 11 for Toronto Blue Jays in 2023.",
+    "teach": "The Toronto Blue Jays finished 89–73 in 2023.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2023,
@@ -1806,7 +1806,7 @@
       "7",
       "13"
     ],
-    "teach": "Francisco Lindor wore No. 12 for New York Mets in 2023.",
+    "teach": "The New York Mets finished 75–87 in 2023.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2023,
@@ -1834,7 +1834,7 @@
       "31",
       "99"
     ],
-    "teach": "Gerrit Cole wore No. 45 for New York Yankees in 2024.",
+    "teach": "The New York Yankees finished 94–68 in 2024.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2024,
@@ -1862,7 +1862,7 @@
       "25",
       "31"
     ],
-    "teach": "Paul Goldschmidt wore No. 46 for St. Louis Cardinals in 2023.",
+    "teach": "The St. Louis Cardinals finished 71–91 in 2023.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2023,
@@ -1890,7 +1890,7 @@
       "45",
       "48"
     ],
-    "teach": "Max Scherzer wore No. 21 for New York Mets in 2022.",
+    "teach": "The New York Mets finished 101–61 in 2022.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2022,
@@ -1918,7 +1918,7 @@
       "12",
       "22"
     ],
-    "teach": "Manny Machado wore No. 13 for San Diego Padres in 2023.",
+    "teach": "The San Diego Padres finished 82–80 in 2023.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2023,
@@ -1946,7 +1946,7 @@
       "12",
       "99"
     ],
-    "teach": "Mookie Betts wore No. 50 for Los Angeles Dodgers in 2023.",
+    "teach": "The Los Angeles Dodgers finished 100–62 in 2023.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2023,
@@ -1974,7 +1974,7 @@
       "13",
       "31"
     ],
-    "teach": "Nolan Arenado wore No. 28 for St. Louis Cardinals in 2023.",
+    "teach": "The St. Louis Cardinals finished 71–91 in 2023.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2023,
@@ -2002,7 +2002,7 @@
       "24",
       "44"
     ],
-    "teach": "Kris Bryant wore No. 23 for Colorado Rockies in 2022.",
+    "teach": "The Colorado Rockies finished 68–94 in 2022.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2022,
@@ -2030,7 +2030,7 @@
       "13",
       "44"
     ],
-    "teach": "Juan Soto wore No. 22 for New York Yankees in 2024.",
+    "teach": "The New York Yankees finished 94–68 in 2024.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2024,
@@ -2058,7 +2058,7 @@
       "12",
       "22"
     ],
-    "teach": "Ronald Acuña Jr. wore No. 13 for Atlanta Braves in 2023.",
+    "teach": "The Atlanta Braves finished 104–58 in 2023.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2023,
@@ -2086,7 +2086,7 @@
       "11",
       "13"
     ],
-    "teach": "Fernando Tatís Jr. wore No. 23 for San Diego Padres in 2023.",
+    "teach": "The San Diego Padres finished 82–80 in 2023.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2023,
@@ -2114,7 +2114,7 @@
       "12",
       "13"
     ],
-    "teach": "José Ramírez wore No. 11 for Cleveland Guardians in 2023.",
+    "teach": "The Cleveland Guardians finished 76–86 in 2023.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2023,
@@ -2142,7 +2142,7 @@
       "31",
       "10"
     ],
-    "teach": "Robinson Canó wore No. 24 for New York Mets in 2019.",
+    "teach": "The New York Mets finished 86–76 in 2019.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2019,
@@ -2170,7 +2170,7 @@
       "22",
       "44"
     ],
-    "teach": "Yasiel Puig wore No. 66 for Los Angeles Dodgers in 2018.",
+    "teach": "The Los Angeles Dodgers finished 92–71 in 2018.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2018,
@@ -2198,7 +2198,7 @@
       "Yankees",
       "Mets"
     ],
-    "teach": "The Mariners selected Griffey first overall in the 1987 draft.",
+    "teach": "Born in Donora, Griffey went first overall to the Mariners in 1987.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1995,
@@ -2226,7 +2226,7 @@
       "Cubs",
       "Reds"
     ],
-    "teach": "The Braves chose Jones with the first overall pick in the 1990 MLB draft.",
+    "teach": "Born in DeLand, Jones went first overall to the Braves in 1990.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1999,
@@ -2254,7 +2254,7 @@
       "Red Sox",
       "Tigers"
     ],
-    "teach": "was drafted by the Orioles in the second round of the 1978 MLB draft.",
+    "teach": "Born in Havre de Grace, Ripken went in the second round to the Orioles in 1978.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1983,
@@ -2282,7 +2282,7 @@
       "Rangers",
       "Angels"
     ],
-    "teach": "After Alvin, the Mets selected Ryan 295th overall in 1965.",
+    "teach": "Born in Refugio, Ryan went 295th overall to the Mets in 1965.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1969,
@@ -2310,7 +2310,7 @@
       "Dodgers",
       "Mets"
     ],
-    "teach": "Maddux signed with the Cubs instead of honoring his Arizona commitment.",
+    "teach": "Born in San Angelo, Maddux went in the second round to the Cubs in 1984.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1995,
@@ -2338,7 +2338,7 @@
       "Red Sox",
       "Blue Jays"
     ],
-    "teach": "The Detroit Tigers selected him in the 22nd round of the 1985 amateur draft.",
+    "teach": "Born in Warren, Smoltz went in the 22nd round to the Tigers in 1985.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1996,
@@ -2366,7 +2366,7 @@
       "Cardinals",
       "White Sox"
     ],
-    "teach": "In the 2001 draft, the Twins also selected Joe's older brother Jake in the 23rd round (677th overall).",
+    "teach": "Born in Saint Paul, Mauer went first overall to the Twins in 2001.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2009,
@@ -2394,7 +2394,7 @@
       "Red Sox",
       "Mariners"
     ],
-    "teach": "At 6 feet 4 inches (1.93 m) and 220 pounds (100 kg), Morneau was drafted as a catcher by the Twins in 1999.",
+    "teach": "Born in New Westminster, Morneau went 89th overall to the Twins in 1999.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2006,
@@ -2422,7 +2422,7 @@
       "Rays",
       "Braves"
     ],
-    "teach": "The Mets chose deGrom in the ninth round, 272nd overall, in 2010.",
+    "teach": "Born in DeLand, deGrom went in the ninth round to the Mets in 2010.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2018,
@@ -2450,7 +2450,7 @@
       "Cardinals",
       "Dodgers"
     ],
-    "teach": "Heyward was the 14th overall selection by Atlanta in the 2007 Major League Baseball draft.",
+    "teach": "Born in Ridgewood, Heyward went in the first round to the Braves in 2007.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2010,
@@ -2478,7 +2478,7 @@
       "Orioles",
       "Athletics"
     ],
-    "teach": "Pedroia was selected by the Red Sox in the 2004 MLB draft and made his major league debut in 2006.",
+    "teach": "Born in Woodland, Pedroia went 65th overall to the Red Sox in 2004.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2008,
@@ -2506,7 +2506,7 @@
       "Dodgers",
       "Angels"
     ],
-    "teach": "Strasburg was selected by Washington with the first overall pick in 2009.",
+    "teach": "Born in San Diego, Strasburg went first overall to the Nationals in 2009.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2019,
@@ -2534,7 +2534,7 @@
       "Yankees",
       "Rays"
     ],
-    "teach": "Betts was drafted by the Red Sox in 2011 and made his MLB debut in 2014.",
+    "teach": "Born in Nashville, Betts went 172nd overall to the Red Sox in 2011.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2018,
@@ -2562,7 +2562,7 @@
       "Astros",
       "Angels"
     ],
-    "teach": "Kershaw was drafted by the Dodgers with the seventh overall pick in the first round of the 2006 MLB draft.",
+    "teach": "Born in Dallas, Kershaw went seventh overall to the Dodgers in 2006.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2014,
@@ -2590,7 +2590,7 @@
       "Giants",
       "Diamondbacks"
     ],
-    "teach": "The Colorado Rockies selected Arenado in the second round with the 59th overall selection of the 2009 MLB draft.",
+    "teach": "Born in Newport Beach, Arenado went in the second round to the Rockies in 2009.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2017,
@@ -2618,7 +2618,7 @@
       "Rays",
       "Mets"
     ],
-    "teach": "The Toronto Blue Jays selected Bichette in the second round of the 2016 MLB draft.",
+    "teach": "Born in Orlando, Bichette went in the second round to the Blue Jays in 2016.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2023,
@@ -2646,7 +2646,7 @@
       "Phillies",
       "Reds"
     ],
-    "teach": "Piazza was drafted by the Dodgers in the 1988 MLB draft as a favor from Tommy Lasorda to Piazza's father.",
+    "teach": "Born in Norristown, Piazza went in the 62nd round to the Dodgers in 1988.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1997,
@@ -2674,7 +2674,7 @@
       "Florida State",
       "Tennessee"
     ],
-    "teach": "In the autumn of 1986, Thomas accepted a scholarship to play football at Auburn University.",
+    "teach": "Thomas played tight end for Auburn before switching to baseball full-time.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1993,
@@ -2702,7 +2702,7 @@
       "Stanford",
       "Arizona State"
     ],
-    "teach": "Gwynn attended San Diego State University (SDSU), where he played both college baseball and basketball for the Aztecs.",
+    "teach": "Gwynn played three seasons of baseball and four of basketball at San Diego State.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1987,
@@ -2730,7 +2730,7 @@
       "Arizona State",
       "Michigan"
     ],
-    "teach": "Mussina enrolled at Stanford University, where he played college baseball for the Stanford Cardinal baseball team.",
+    "teach": "Mussina went 31–16 in three seasons at Stanford.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1992,
@@ -2758,7 +2758,7 @@
       "Stanford",
       "Arizona State"
     ],
-    "teach": "Cole is a member of the 2022 class of the UCLA Athletics Hall of Fame.",
+    "teach": "Cole turned down the Yankees after high school and went to UCLA.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2019,
@@ -2786,7 +2786,7 @@
       "UCLA",
       "Stanford"
     ],
-    "teach": "He has also received four Gold Glove Awards and was named AL Defensive Player of the Year in 2013.",
+    "teach": "Pedroia never hit below .347 in three Arizona State seasons.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2008,
@@ -2814,7 +2814,7 @@
       "UCLA",
       "Stanford"
     ],
-    "teach": "Lincecum attended Liberty Senior High School in Renton, Washington, where he played two seasons of varsity baseball.",
+    "teach": "Lincecum won the 2006 Golden Spikes Award at Washington.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2008,
@@ -2842,7 +2842,7 @@
       "Stanford",
       "Missouri"
     ],
-    "teach": "He played college baseball for the San Diego State Aztecs, coached by Baseball Hall of Fame player Tony Gwynn.",
+    "teach": "Strasburg played for a San Diego State team coached by Tony Gwynn.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2019,
@@ -2870,7 +2870,7 @@
       "Notre Dame",
       "Stanford"
     ],
-    "teach": "As a player he spent his entire 19-year Major League Baseball (MLB) career with the Cincinnati Reds from 1986 to 2004.",
+    "teach": "Larkin left football for baseball during his freshman year at Michigan.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1995,
@@ -2898,7 +2898,7 @@
       "UCLA",
       "Arizona State"
     ],
-    "teach": "Johnson played college baseball for the University of Southern California (USC) Trojans.",
+    "teach": "Johnson also played two seasons of basketball at USC.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2001,
@@ -2926,7 +2926,7 @@
       "Arizona State",
       "Stanford"
     ],
-    "teach": "Giambi attended Cal State Long Beach, where he played college baseball for the Long Beach State 49ers baseball team.",
+    "teach": "The Athletics took Giambi 58th overall in 1992 after Long Beach State.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2000,
@@ -2954,7 +2954,7 @@
       "Clemson",
       "Virginia"
     ],
-    "teach": "Wieters attended the Georgia Institute of Technology and played college baseball for the Georgia Tech Yellow Jackets.",
+    "teach": "Wieters earned first-team All-America honors twice at Georgia Tech.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2011,
@@ -2982,7 +2982,7 @@
       "Florida State",
       "Miami (FL)"
     ],
-    "teach": "At Stetson, deGrom began to grow out his hair.",
+    "teach": "Stetson converted deGrom from shortstop to pitcher in his junior year.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2010,
@@ -3010,7 +3010,7 @@
       "Cubs",
       "Rangers"
     ],
-    "teach": "The Boston Red Sox selected Bagwell in the fourth round (110th overall) of the 1989 Major League Baseball draft.",
+    "teach": "Born in Boston, Bagwell went in the fourth round to the Red Sox in 1989.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1994,
@@ -3038,7 +3038,7 @@
       "Dodgers",
       "Blue Jays"
     ],
-    "teach": "Biggio was selected by the Houston Astros in the first round (22nd overall) of the 1987 draft.",
+    "teach": "Born in Smithtown, Biggio went 22nd overall to the Astros in 1987.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1998,
@@ -3066,7 +3066,7 @@
       "Yankees",
       "Nationals"
     ],
-    "teach": "He is known for being the fastest player in baseball history to reach both 100 home runs and 200 home runs.",
+    "teach": "Born in Florissant, Howard went in the fifth round to the Phillies in 2001.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2006,
@@ -3094,7 +3094,7 @@
       "Mets",
       "Yankees"
     ],
-    "teach": "He was selected by the Rays in the first round as the third overall pick in the 2006 MLB draft.",
+    "teach": "Born in Downey, Longoria went third overall to the Rays in 2006.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2008,
@@ -3122,7 +3122,7 @@
       "Reds",
       "Cubs"
     ],
-    "teach": "Louis Cardinals, Toronto Blue Jays, and Cincinnati Reds from 1996 to 2012.",
+    "teach": "Born in Evansville, Rolen went in the second round to the Phillies in 1993.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2004,
@@ -3150,7 +3150,7 @@
       "Red Sox",
       "Padres"
     ],
-    "teach": "The Baltimore Orioles selected Machado in the first round, with the third overall selection, in the 2010 MLB draft.",
+    "teach": "Born in Miami, Machado went third overall to the Orioles in 2010.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2013,
@@ -3178,7 +3178,7 @@
       "Vanderbilt",
       "UCLA"
     ],
-    "teach": "Jackson was inducted into the National Baseball Hall of Fame in 1993 in his first year of eligibility.",
+    "teach": "Jackson nearly hit for the cycle in his final Arizona State game.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1973,
@@ -3206,7 +3206,7 @@
       "Auburn",
       "Florida State"
     ],
-    "teach": "He was the fifth switch hitter in MLB history to reach 400 home runs.",
+    "teach": "Teixeira won the 2000 Dick Howser Trophy at Georgia Tech.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2004,
@@ -3234,7 +3234,7 @@
       "Florida",
       "Florida State"
     ],
-    "teach": "Both of the homers came off the Orioles' Steve Trachsel, also a Long Beach State alumnus.",
+    "teach": "Longoria won the 2005 Cape Cod League MVP and 2006 Big West Co-Player award.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2008,
@@ -3262,7 +3262,7 @@
       "Florida",
       "Georgia Tech"
     ],
-    "teach": "His last start at the college level came against Austin Peay in Vanderbilt's first game in the 2007 Nashville Regional.",
+    "teach": "Price won the 2007 Golden Spikes Award after three seasons at Vanderbilt.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2008,
@@ -3290,7 +3290,7 @@
       "Florida State",
       "UCLA"
     ],
-    "teach": "He became the first player to have his baseball uniform number retired at the University of Texas.",
+    "teach": "Clemens went 25–7 in two All-American seasons at Texas.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1986,
@@ -3318,7 +3318,7 @@
       "Florida State",
       "Miami (FL)"
     ],
-    "teach": "He has previously played in MLB for the Chicago White Sox and Boston Red Sox.",
+    "teach": "The White Sox drafted Sale 13th overall in 2010 after Florida Gulf Coast.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2012,
@@ -3346,7 +3346,7 @@
       "Florida",
       "Vanderbilt"
     ],
-    "teach": "Braun also played right field and first base during his career, and was a third baseman during his rookie season.",
+    "teach": "Braun was Baseball America's 2003 National Freshman of the Year at Miami.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2011,
@@ -3365,34 +3365,6 @@
     "leagues": [
       "MLB"
     ],
-    "difficulty": "medium",
-    "category": "Alma mater",
-    "prompt": "Where did Greg Maddux play college ball?",
-    "answer": "Texas",
-    "wrong": [
-      "UCLA",
-      "Florida",
-      "Georgia Tech"
-    ],
-    "teach": "Only Warren Spahn (363) recorded more career wins than Maddux since the start of the post-1920 live-ball era.",
-    "dailyFrom": "2026-10-27",
-    "reel": {
-      "season": 1995,
-      "player": "Greg Maddux"
-    },
-    "source": {
-      "url": "https://en.wikipedia.org/wiki/Greg_Maddux",
-      "ref": "Wikipedia: Greg Maddux page (saved API wikitext and prose), teach source: Greg Maddux, checked 2026-10-13"
-    },
-    "id": "p-mlb-greg-maddux-college",
-    "factId": "mlb-greg-maddux-college"
-  },
-  {
-    "side": "players",
-    "sport": "baseball",
-    "leagues": [
-      "MLB"
-    ],
     "difficulty": "hard",
     "category": "Alma mater",
     "prompt": "Where did Jackie Robinson play college ball?",
@@ -3402,7 +3374,7 @@
       "Florida",
       "Michigan"
     ],
-    "teach": "Robinson broke the color line when he started at first base for the Brooklyn Dodgers on April 15, 1947.",
+    "teach": "Robinson played four sports at UCLA before joining the Army.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1947,
@@ -3430,7 +3402,7 @@
       "Georgia Tech",
       "Tennessee"
     ],
-    "teach": "He competed for Florida in the 2015 and 2016 College World Series.",
+    "teach": "Alonso competed for Florida in the 2015 and 2016 College World Series.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2019,
@@ -3458,7 +3430,7 @@
       "20",
       "44"
     ],
-    "teach": "Reggie Jackson wore No. 9 for Oakland Athletics in 1973.",
+    "teach": "The Oakland Athletics finished 94–68 in 1973.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1973,
@@ -3486,7 +3458,7 @@
       "23",
       "42"
     ],
-    "teach": "Frank Thomas wore No. 35 for Chicago White Sox in 1993.",
+    "teach": "The Chicago White Sox finished 94–68 in 1993.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1993,
@@ -3514,7 +3486,7 @@
       "17",
       "55"
     ],
-    "teach": "Mike Piazza wore No. 31 for Los Angeles Dodgers in 1996.",
+    "teach": "The Los Angeles Dodgers finished 90–72 in 1996.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1996,
@@ -3542,7 +3514,7 @@
       "45",
       "55"
     ],
-    "teach": "Jim Thome wore No. 25 for Cleveland Indians in 2002.",
+    "teach": "The Cleveland Indians finished 74–88 in 2002.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2002,
@@ -3570,7 +3542,7 @@
       "Vanderbilt",
       "Florida State"
     ],
-    "teach": "However, he did not sign and instead attended the University of Missouri in Columbia.",
+    "teach": "Scherzer won the 2005 Big 12 Pitcher of the Year award at Missouri.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2011,
@@ -3598,7 +3570,7 @@
       "Texas",
       "Miami (FL)"
     ],
-    "teach": "Tulowitzki is currently an assistant baseball coach for the Texas Longhorns.",
+    "teach": "Tulowitzki played three seasons for Long Beach State.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2007,
@@ -3626,7 +3598,7 @@
       "Texas",
       "Long Beach State"
     ],
-    "teach": "Utley met his wife, Jennifer, while they were undergrads at UCLA.",
+    "teach": "Utley set UCLA's single-season home run record with 14.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2008,

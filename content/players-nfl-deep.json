@@ -1694,7 +1694,7 @@
       "Canada",
       "England"
     ],
-    "teach": "Following the season, he was listed as one of Australia's 50 Greatest Living Athletes by GQ Australia.",
+    "teach": "Faalele was born in Melbourne.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2024,
@@ -1722,7 +1722,7 @@
       "Switzerland",
       "Australia"
     ],
-    "teach": "His autobiography, titled German Champion: Die Geschichte meiner NFL-Karriere, was published on 8 September 2018.",
+    "teach": "Vollmer was born in Kaarst.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2014,
@@ -1741,7 +1741,7 @@
     "leagues": [
       "NFL"
     ],
-    "difficulty": "hard",
+    "difficulty": "medium",
     "category": "Jersey number",
     "prompt": "Drew Brees's jersey number in 2009?",
     "answer": "9",
@@ -1750,7 +1750,7 @@
       "15",
       "18"
     ],
-    "teach": "Drew Brees wore No. 9 for New Orleans Saints in 2009.",
+    "teach": "The New Orleans Saints finished 13–3 in 2009.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2009,
@@ -1769,7 +1769,7 @@
     "leagues": [
       "NFL"
     ],
-    "difficulty": "hard",
+    "difficulty": "medium",
     "category": "Jersey number",
     "prompt": "Emmitt Smith's jersey number in 1995?",
     "answer": "22",
@@ -1778,7 +1778,7 @@
       "34",
       "80"
     ],
-    "teach": "Emmitt Smith wore No. 22 for Dallas Cowboys in 1995.",
+    "teach": "The Dallas Cowboys finished 12–4 in 1995.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1995,
@@ -1797,7 +1797,7 @@
     "leagues": [
       "NFL"
     ],
-    "difficulty": "hard",
+    "difficulty": "medium",
     "category": "Jersey number",
     "prompt": "Barry Sanders's jersey number in 1997?",
     "answer": "20",
@@ -1806,7 +1806,7 @@
       "34",
       "80"
     ],
-    "teach": "Barry Sanders wore No. 20 for Detroit Lions in 1997.",
+    "teach": "The Detroit Lions finished 9–7 in 1997.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1997,
@@ -1825,7 +1825,7 @@
     "leagues": [
       "NFL"
     ],
-    "difficulty": "hard",
+    "difficulty": "medium",
     "category": "Jersey number",
     "prompt": "Jerry Rice's jersey number in 1994?",
     "answer": "80",
@@ -1834,7 +1834,7 @@
       "34",
       "81"
     ],
-    "teach": "Jerry Rice wore No. 80 for San Francisco 49ers in 1994.",
+    "teach": "The San Francisco 49ers finished 13–3 in 1994.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1994,
@@ -1853,7 +1853,7 @@
     "leagues": [
       "NFL"
     ],
-    "difficulty": "hard",
+    "difficulty": "easy",
     "category": "Jersey number",
     "prompt": "Tom Brady's jersey number in 2017?",
     "answer": "12",
@@ -1862,7 +1862,7 @@
       "15",
       "18"
     ],
-    "teach": "Tom Brady wore No. 12 for New England Patriots in 2017.",
+    "teach": "The New England Patriots finished 13–3 in 2017.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2017,
@@ -1881,7 +1881,7 @@
     "leagues": [
       "NFL"
     ],
-    "difficulty": "hard",
+    "difficulty": "medium",
     "category": "Jersey number",
     "prompt": "Walter Payton's jersey number in 1985?",
     "answer": "34",
@@ -1890,7 +1890,7 @@
       "20",
       "80"
     ],
-    "teach": "Walter Payton wore No. 34 for Chicago Bears in 1985.",
+    "teach": "The Chicago Bears finished 15–1 in 1985.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1985,
@@ -1918,7 +1918,7 @@
       "23",
       "34"
     ],
-    "teach": "Derrick Henry wore No. 22 for Tennessee Titans in 2019.",
+    "teach": "The Tennessee Titans finished 9–7 in 2019.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2019,
@@ -1946,7 +1946,7 @@
       "24",
       "26"
     ],
-    "teach": "Christian McCaffrey wore No. 23 for San Francisco 49ers in 2023.",
+    "teach": "The San Francisco 49ers finished 12–5 in 2023.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2023,
@@ -1974,7 +1974,7 @@
       "Germany",
       "Poland"
     ],
-    "teach": "Following a career from 1982 to 2007, Andersen holds the NFL record for regular season games played at 382.",
+    "teach": "Andersen was born in Copenhagen.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1995,
@@ -2002,7 +2002,7 @@
       "Germany",
       "Poland"
     ],
-    "teach": "The season prior to the AFL–NFL merger, he also helped the Chiefs win their first Super Bowl title in Super Bowl IV.",
+    "teach": "Stenerud was born in Fetsund.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1975,
@@ -2030,7 +2030,7 @@
       "Denmark",
       "Norway"
     ],
-    "teach": "During his final season, Janikowski played for the Seattle Seahawks.",
+    "teach": "Janikowski was born in Wałbrzych.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2009,
@@ -2058,7 +2058,7 @@
       "Mexico",
       "Canada"
     ],
-    "teach": "Van Buren was orphaned at ten and sent from Honduras to relatives in New Orleans.",
+    "teach": "Van Buren was born in La Ceiba.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1947,
@@ -2086,7 +2086,7 @@
       "Ghana",
       "Sierra Leone"
     ],
-    "teach": "He played college football for the Penn State Nittany Lions, earning unanimous All-American honors.",
+    "teach": "Hali was born in Gbarnga.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2012,
@@ -2114,7 +2114,7 @@
       "Mexico",
       "Panama"
     ],
-    "teach": "He has been awarded the Order of the Quetzal, the highest award for civilians, by his native Guatemala.",
+    "teach": "Hendricks was born in Guatemala City.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1977,
@@ -2142,7 +2142,7 @@
       "Germany",
       "Italy"
     ],
-    "teach": "Yepremian immigrated from Cyprus to the United States at 22.",
+    "teach": "Yepremian was born in Larnaca.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1972,
@@ -2170,7 +2170,7 @@
       "Austria",
       "Switzerland"
     ],
-    "teach": "In 2008, he played on the U-19 Germany national team against the Poland U-19 squad in Będzin, winning 67–0.",
+    "teach": "Werner was born in Berlin.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2013,
@@ -2198,7 +2198,7 @@
       "France",
       "Mexico"
     ],
-    "teach": "Nagurski's family moved from Canada to Minnesota when he was five.",
+    "teach": "Nagurski was born in Rainy River.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1934,
@@ -2226,7 +2226,7 @@
       "Germany",
       "Canada"
     ],
-    "teach": "After leaving South Africa, Anderson got footballs to kick on his third day in the U.S.",
+    "teach": "Anderson was born in Parys.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1998,
