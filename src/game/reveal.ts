@@ -1,10 +1,13 @@
 import {
   CLOCK_MS,
+  LEVELS,
   MULTIPLIER_TIERS,
   STRIKES,
   STRIKE_BACK_EVERY,
+  levelFor,
   streakMultiplier,
 } from './engine'
+import type { Difficulty } from './types'
 
 export const REVEAL_MS = 700
 
@@ -23,12 +26,16 @@ export function howItWorks(): string[] {
   const multipliers = andList(
     tiers.map(({ multiplier }) => formatMultiplier(multiplier)),
   )
+  const levelSteps = andList(
+    LEVELS.slice(1).map(({ minCorrect }) => String(minCorrect)),
+  )
 
   return [
     `You get ${CLOCK_MS / 1000} seconds per question. Faster answers score more.`,
     `Classic: ${STRIKES} strikes and your run is over.`,
     `Get ${STRIKE_BACK_EVERY} in a row to clear a strike.`,
     `Streaks of ${streaks} multiply your points by ${multipliers}.`,
+    `Classic starts easy and levels up at ${levelSteps} correct answers. Harder questions score more.`,
     'Daily 10: the same 10 questions for everyone today, easy to hard. No strikes.',
   ]
 }
@@ -44,13 +51,38 @@ export function multiplierLabel(streakBefore: number): string | null {
   return multiplier === 1 ? null : formatMultiplier(multiplier)
 }
 
-export type Callout = 'multiplier' | 'strikeCleared'
+const DIFFICULTY_LABELS: Record<Difficulty, string> = {
+  easy: 'Easy',
+  medium: 'Medium',
+  hard: 'Hard',
+  expert: 'Expert',
+}
+
+export function difficultyLabel(difficulty: Difficulty): string {
+  return DIFFICULTY_LABELS[difficulty]
+}
+
+export type Callout = 'multiplier' | 'strikeCleared' | 'levelUp'
+
+type CalloutProgress = { streak: number; strikes: number; correct?: number }
 
 export function revealCallouts(
-  before: { streak: number; strikes: number },
-  after: { streak: number; strikes: number },
+  before: CalloutProgress,
+  after: CalloutProgress,
+  { levels = false }: { levels?: boolean } = {},
 ): { kind: Callout; text: string }[] {
   const callouts: { kind: Callout; text: string }[] = []
+  if (
+    levels &&
+    before.correct !== undefined &&
+    after.correct !== undefined &&
+    levelFor(after.correct) > levelFor(before.correct)
+  ) {
+    callouts.push({
+      kind: 'levelUp',
+      text: `Level ${levelFor(after.correct)}! Tougher questions ahead.`,
+    })
+  }
   if (after.strikes < before.strikes) {
     callouts.push({ kind: 'strikeCleared', text: 'Strike cleared!' })
   }

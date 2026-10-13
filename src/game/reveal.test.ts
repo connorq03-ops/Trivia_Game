@@ -1,11 +1,13 @@
 import { describe, expect, it } from 'vitest'
 import {
   CLOCK_MS,
+  LEVELS,
   MULTIPLIER_TIERS,
   STRIKES,
   STRIKE_BACK_EVERY,
 } from './engine'
 import {
+  difficultyLabel,
   howItWorks,
   modeSubtitle,
   multiplierLabel,
@@ -22,6 +24,7 @@ describe('howItWorks', () => {
       `${values.slice(0, -1).join(', ')} and ${values.at(-1)}`
     const streaks = joinWithAnd(tiers.map((tier) => String(tier.streak)))
     const multipliers = joinWithAnd(tiers.map((tier) => `×${tier.multiplier}`))
+    const levelSteps = joinWithAnd(LEVELS.slice(1).map((level) => String(level.minCorrect)))
 
     expect(lines[0]).toContain(`${CLOCK_MS / 1000} seconds`)
     expect(lines).toEqual([
@@ -29,6 +32,7 @@ describe('howItWorks', () => {
       `Classic: ${STRIKES} strikes and your run is over.`,
       `Get ${STRIKE_BACK_EVERY} in a row to clear a strike.`,
       `Streaks of ${streaks} multiply your points by ${multipliers}.`,
+      `Classic starts easy and levels up at ${levelSteps} correct answers. Harder questions score more.`,
       'Daily 10: the same 10 questions for everyone today, easy to hard. No strikes.',
     ])
   })
@@ -90,6 +94,35 @@ describe('revealCallouts', () => {
         { streak: 10, strikes: 0 },
       ),
     ).toEqual([])
+  })
+})
+
+describe('level callouts', () => {
+  it('announces a new level only in Classic when correct answers cross a threshold', () => {
+    const before = { streak: 3, strikes: 0, correct: 9 }
+    const after = { streak: 4, strikes: 0, correct: 10 }
+    expect(revealCallouts(before, after, { levels: true })).toEqual([
+      { kind: 'levelUp', text: 'Level 2! Tougher questions ahead.' },
+    ])
+    expect(revealCallouts(before, after)).toEqual([])
+    expect(
+      revealCallouts({ ...before, correct: 10 }, { ...after, correct: 11 }, { levels: true }),
+    ).toEqual([])
+  })
+
+  it('skips the level callout for progress from before levels existed', () => {
+    expect(
+      revealCallouts({ streak: 9, strikes: 0 }, { streak: 10, strikes: 0, correct: 10 }, { levels: true }),
+    ).toEqual([{ kind: 'multiplier', text: '×1.25 points!' }])
+  })
+
+  it('labels every difficulty', () => {
+    expect(['easy', 'medium', 'hard', 'expert'].map((d) => difficultyLabel(d as never))).toEqual([
+      'Easy',
+      'Medium',
+      'Hard',
+      'Expert',
+    ])
   })
 })
 

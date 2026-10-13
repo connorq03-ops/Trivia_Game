@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { CSSProperties } from 'react'
 import { CLOCK_MS, REEL_MS, STRIKES, STRIKE_BACK_EVERY } from './game/engine'
 import {
+  difficultyLabel,
   modeSubtitle,
   multiplierLabel,
   REVEAL_MS,
@@ -46,6 +47,7 @@ type PublicProgress = {
   score: number
   strikes: number
   streak: number
+  correct?: number
 }
 
 type GameSession = {
@@ -441,7 +443,9 @@ function App() {
           ? multiplierLabel(current.progress.streak)
           : null,
         callouts: result.correct
-          ? revealCallouts(current.progress, result.progress)
+          ? revealCallouts(current.progress, result.progress, {
+              levels: current.mode === 'classic',
+            })
           : [],
       })
       if (timedOut) setElapsedMs(CLOCK_MS)
@@ -863,7 +867,12 @@ function App() {
           {(screen === 'question' || screen === 'reveal') && (
             <section className="question-stage">
               <div className="clock-row">
-                <span>{question.sport} <i>·</i> {question.category}</span>
+                <span>
+                  {question.sport} <i>·</i> {question.category}
+                  <b className="difficulty-chip" data-difficulty={question.difficulty}>
+                    {difficultyLabel(question.difficulty)}
+                  </b>
+                </span>
                 <strong>{remainingSeconds}<small>s</small></strong>
               </div>
               <div

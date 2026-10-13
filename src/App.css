@@ -380,6 +380,27 @@
   font-size: 0.65rem;
 }
 
+.difficulty-chip {
+  margin-left: 0.5rem;
+  padding: 0.12rem 0.45rem;
+  border: 1px solid #3e5e48;
+  border-radius: 999px;
+  color: #b7d3bd;
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+}
+
+.difficulty-chip[data-difficulty='hard'] {
+  border-color: #c99d59;
+  color: #ffe5b2;
+}
+
+.difficulty-chip[data-difficulty='expert'] {
+  border-color: #e0655a;
+  color: #ffd0c9;
+  background: #3d2422;
+}
+
 .clock-track {
   height: 0.35rem;
   overflow: hidden;
@@ -819,6 +840,12 @@
   font-size: 0.78rem;
   font-weight: 800;
   text-align: center;
+}
+
+.reveal-callout[data-kind='levelUp'] {
+  border-color: #e0655a;
+  color: #ffd0c9;
+  background: #3d2422;
 }
 
 .reveal-callout[data-kind='strikeCleared'] {

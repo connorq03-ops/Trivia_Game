@@ -3,6 +3,7 @@ import { hashRunToken, isRunToken } from '../lib/runToken.js'
 import { questionBank, questionsById } from '../lib/questions.js'
 import {
   answerQuestion,
+  correctCount,
   dailyQuestions,
   presentQuestion,
   resolveAnswerMs,
@@ -185,7 +186,7 @@ export async function POST(request: Request): Promise<Response> {
         const selection = selectClassicQuestion(
           questionBank,
           usedFactIds,
-          nextQuestionIndex + 1,
+          correctCount(outcome.progress),
           {
             sport: run.sport as 'all' | Question['sport'],
             side: run.side as 'both' | Question['side'],
@@ -240,6 +241,7 @@ export async function POST(request: Request): Promise<Response> {
         score: outcome.progress.score,
         strikes: outcome.progress.strikes,
         streak: outcome.progress.streak,
+        correct: correctCount(outcome.progress),
       },
       next: nextPublic,
       summary,

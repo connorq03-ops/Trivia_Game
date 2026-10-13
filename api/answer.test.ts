@@ -223,11 +223,27 @@ describe('answer handler', () => {
     expect(body.next).toEqual({ questionIndex: 1 })
   })
 
-  it('picks the next Classic question with its one-based question number', async () => {
-    mockSql({ rows: [makeRun(questionBank[0], { question_index: 14 })] })
-    await POST(makeRequest({ ...validBody, questionIndex: 14 }))
+  it('picks the next Classic question by the run\'s correct-answer count', async () => {
+    const question = questionBank[0]
+    const run = makeRun(question, { question_index: 14 })
+    mockSql({
+      rows: [
+        {
+          ...run,
+          progress: {
+            ...run.progress,
+            questionsAnswered: 14,
+            results: [...Array(12).fill('hit'), 'miss', 'timeout'],
+          },
+        },
+      ],
+    })
+    const body = await (
+      await POST(makeRequest({ ...validBody, questionIndex: 14, choice: question.answer }))
+    ).json()
 
-    expect(vi.mocked(selectClassicQuestion).mock.calls.at(-1)?.[2]).toBe(16)
+    expect(vi.mocked(selectClassicQuestion).mock.calls.at(-1)?.[2]).toBe(13)
+    expect(body.progress.correct).toBe(13)
   })
 
   it('omits partial results when a legacy Daily run completes', async () => {

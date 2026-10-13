@@ -83,7 +83,7 @@ export async function POST(request: Request): Promise<Response> {
       const selection = selectClassicQuestion(
         questionBank,
         new Set(),
-        1,
+        0,
         options,
         Math.random,
       )
@@ -155,6 +155,7 @@ export async function POST(request: Request): Promise<Response> {
           score: initialProgress.score,
           strikes: initialProgress.strikes,
           streak: initialProgress.streak,
+          correct: 0,
         },
         total: input.mode === 'daily' ? 10 : null,
       },
