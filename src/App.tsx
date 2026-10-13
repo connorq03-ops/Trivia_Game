@@ -774,25 +774,27 @@ function App() {
               Connection problem. Check your connection and try again.
             </p>
           )}
-          <button
-            className="daily-button"
-            onClick={openDaily}
-            disabled={isStarting}
-            ref={dailyButtonRef}
-          >
-            <span className="daily-button-label">
-              <span className="daily-button-eyebrow">Daily 10</span>
-              <span className="daily-button-title">
-                {todaySummary ? 'Review today’s Daily 10' : 'Play Daily 10'}
+          <div className="daily-block">
+            <button
+              className="daily-button"
+              onClick={openDaily}
+              disabled={isStarting}
+              ref={dailyButtonRef}
+            >
+              <span className="daily-button-label">
+                <span className="daily-button-eyebrow">Daily 10</span>
+                <span className="daily-button-title">
+                  {todaySummary ? 'Review today’s Daily 10' : 'Play Daily 10'}
+                </span>
+                <span className="mode-subtitle">{modeSubtitle('daily')}</span>
               </span>
-              <span className="mode-subtitle">{modeSubtitle('daily')}</span>
-            </span>
-            <span aria-hidden="true">→</span>
-          </button>
-          <p className="daily-meta">
-            {dayStreak > 0 && <>{dayStreak}-day streak · </>}
-            Next Daily in {formatCountdown(msUntilNextUtcMidnight(now))}
-          </p>
+              <span aria-hidden="true">→</span>
+            </button>
+            <p className="daily-meta">
+              {dayStreak > 0 && <>{dayStreak}-day streak · </>}
+              Next Daily in {formatCountdown(msUntilNextUtcMidnight(now))}
+            </p>
+          </div>
           <button
             className="secondary-button home-classic"
             onClick={startClassic}

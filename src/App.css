@@ -11,7 +11,8 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-evenly;
+  gap: 0.9rem;
   padding: 1.25rem 0 2rem;
 }
 
@@ -25,11 +26,11 @@
 
 .home-panel h1 {
   max-width: 10ch;
-  margin: 0.6rem 0 0.45rem;
+  margin: 0.6rem auto 0.5rem;
   font-size: clamp(2.5rem, 12vw, 4rem);
   font-weight: 900;
-  letter-spacing: -0.075em;
-  line-height: 0.86;
+  letter-spacing: -0.035em;
+  line-height: 0.92;
 }
 
 .tagline {
@@ -52,7 +53,7 @@
   justify-content: space-between;
   width: 100%;
   min-height: 7.5rem;
-  margin: 1.5rem 0 0.75rem;
+  margin: 0.75rem 0 0.35rem;
   padding: 1.25rem 1.4rem;
   border: 0;
   border-radius: 1.25rem;
@@ -72,6 +73,12 @@
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+}
+
+.daily-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
 }
 
 .daily-button-eyebrow {
@@ -115,7 +122,6 @@
 
 .home-classic {
   width: 100%;
-  margin-top: 1rem;
   text-align: left;
 }
 
@@ -627,7 +633,7 @@
 }
 
 .daily-meta {
-  margin: 0 0 0.25rem;
+  margin: 0;
   color: var(--muted);
   font-size: 0.72rem;
   font-weight: 700;
@@ -709,7 +715,7 @@
 }
 
 .how-it-works {
-  margin-top: 1rem;
+  margin-top: 0.4rem;
   padding: 0.9rem 1rem;
   border: 1px solid var(--line);
   border-radius: 0.9rem;
@@ -1009,7 +1015,8 @@
 .home-hero {
   position: relative;
   margin: -1.25rem -1.25rem 0;
-  padding: 1.75rem 1.25rem 1.6rem;
+  padding: 2.4rem 1.25rem 2.1rem;
+  text-align: center;
   border-bottom: 1px solid var(--daily-line);
   background:
     radial-gradient(90% 120% at 15% 0%, #62234766, transparent 60%),
