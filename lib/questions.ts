@@ -3,7 +3,8 @@ import playersNflDeep from '../content/players-nfl-deep.json' with { type: 'json
 import players from '../content/players.json' with { type: 'json' }
 import rulesDeep from '../content/rules-deep.json' with { type: 'json' }
 import rules from '../content/rules.json' with { type: 'json' }
-import type { Question } from '../src/game/types.js'
+import type { ChoiceBadge, Question } from '../src/game/types.js'
+import { badgeCategory, badgeFor } from './badges.js'
 
 // Every content/*.json file; content.test.ts fails if one is missing here.
 export const contentFiles: Record<string, Question[]> = {
@@ -22,7 +23,7 @@ export const questionsById = new Map(
 export type PublicQuestion = Pick<
   Question,
   'id' | 'side' | 'sport' | 'leagues' | 'difficulty' | 'category' | 'prompt' | 'reel'
-> & { choices: string[] }
+> & { choices: string[]; choiceBadges?: (ChoiceBadge | null)[] }
 
 export function publicQuestion(
   question: Question,
@@ -37,6 +38,9 @@ export function publicQuestion(
     category: question.category,
     prompt: question.prompt,
     choices,
+    ...(badgeCategory(question.category)
+      ? { choiceBadges: choices.map((choice) => badgeFor(question, choice)) }
+      : {}),
     ...(question.reel ? { reel: question.reel } : {}),
   }
 }

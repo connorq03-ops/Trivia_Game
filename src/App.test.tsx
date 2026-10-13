@@ -6,7 +6,7 @@ import { REEL_MS } from './game/engine'
 
 const RUN_TOKEN = 'x'.repeat(43)
 
-function publicQuestion(index: number) {
+function publicQuestion(index: number, withBadges = false) {
   return {
     id: `q${index}`,
     side: 'rules',
@@ -16,6 +16,16 @@ function publicQuestion(index: number) {
     category: 'Scoring',
     prompt: `Prompt ${index}?`,
     choices: [`A${index}`, `B${index}`, `C${index}`, `D${index}`],
+    ...(withBadges
+      ? {
+          choiceBadges: [
+            { kind: 'team', abbr: 'MIN', primary: '#4f2683', secondary: '#ffc62f' },
+            null,
+            { kind: 'flag', code: 'fr' },
+            null,
+          ],
+        }
+      : {}),
   }
 }
 
@@ -29,7 +39,7 @@ function json(body: unknown, status = 200) {
   })
 }
 
-function mockApi(grades: Grade[], answerPending = false) {
+function mockApi(grades: Grade[], answerPending = false, withBadges = false) {
   const answerBodies: Array<{ choice: string | null }> = []
   const fetchMock = vi.fn((url: string, init?: RequestInit) => {
     if (url === '/api/health') return json({ ok: true, db: true })
@@ -40,7 +50,7 @@ function mockApi(grades: Grade[], answerPending = false) {
           runToken: RUN_TOKEN,
           date: '2026-10-11',
           questionIndex: 0,
-          question: publicQuestion(0),
+          question: publicQuestion(0, withBadges),
           progress: { score: 0, strikes: 0, streak: 0 },
           total: null,
         },
@@ -209,6 +219,21 @@ describe('App keyboard and screen-reader play', () => {
     await waitFor(() =>
       expect(screen.getByText('Time’s up. Strike 1 of 3.')).toBeTruthy(),
     )
+  })
+
+  it('keeps the choice text as the accessible name when a badge is present', async () => {
+    mockApi([], false, true)
+    await startClassic()
+
+    const button = screen.getByRole('button', { name: 'AA0' })
+    expect(button.querySelectorAll('[aria-hidden="true"]').length).toBe(1)
+    const badge = button.querySelector('.answer-badge--team')
+    expect(badge?.textContent).toBe('MIN')
+    const flag = screen
+      .getByRole('button', { name: 'CC0' })
+      .querySelector('.answer-badge--flag')
+    expect(flag?.getAttribute('aria-hidden')).toBe('true')
+    expect(flag?.getAttribute('src')).toBe('/flags/fr.svg')
   })
 
   it('leaves a run without a blocking confirm and returns focus to the start button', async () => {

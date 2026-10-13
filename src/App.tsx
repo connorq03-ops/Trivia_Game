@@ -22,7 +22,7 @@ import {
   type GameSummary,
 } from './game/dailyStore'
 import { formatCountdown } from './game/share'
-import type { Question, Side, Sport } from './game/types'
+import type { ChoiceBadge, Question, Side, Sport } from './game/types'
 import { ResultShare } from './ResultShare'
 import './App.css'
 
@@ -41,7 +41,7 @@ type Mode = 'classic' | 'daily'
 type PublicQuestion = Pick<
   Question,
   'id' | 'side' | 'sport' | 'leagues' | 'difficulty' | 'category' | 'prompt' | 'reel'
-> & { choices: string[] }
+> & { choices: string[]; choiceBadges?: (ChoiceBadge | null)[] }
 
 type PublicProgress = {
   score: number
@@ -143,6 +143,46 @@ function answerIndexForKey(key: string): number {
 
 function elapsedSince(startedAt: number): number {
   return Math.min(CLOCK_MS, Math.max(0, performance.now() - startedAt))
+}
+
+// Higher-contrast pick between white and near-black ink for a badge fill.
+function badgeInk(primary: string): string {
+  const hex = primary.replace('#', '')
+  const channel = (index: number) => {
+    const value = parseInt(hex.slice(index, index + 2), 16) / 255
+    return value <= 0.03928 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4
+  }
+  const luminance =
+    0.2126 * channel(0) + 0.7152 * channel(2) + 0.0722 * channel(4)
+  const whiteRatio = (1 + 0.05) / (luminance + 0.05)
+  const blackRatio = (luminance + 0.05) / (0.06 + 0.05)
+  return whiteRatio >= blackRatio ? '#ffffff' : '#131313'
+}
+
+function Badge({ badge }: { badge: ChoiceBadge }) {
+  if (badge.kind === 'flag') {
+    return (
+      <img
+        className="answer-badge answer-badge--flag"
+        src={`/flags/${badge.code}.svg`}
+        alt=""
+        aria-hidden="true"
+      />
+    )
+  }
+  return (
+    <span
+      className="answer-badge answer-badge--team"
+      aria-hidden="true"
+      style={{
+        backgroundColor: badge.primary,
+        borderColor: badge.secondary,
+        color: badgeInk(badge.primary),
+      }}
+    >
+      {badge.abbr}
+    </span>
+  )
 }
 
 function App() {
@@ -933,7 +973,12 @@ function App() {
                           : undefined
                       }
                     >
-                      <span>{String.fromCharCode(65 + index)}</span>
+                      <span className="answer-key">
+                        {String.fromCharCode(65 + index)}
+                      </span>
+                      {question.choiceBadges?.[index] && (
+                        <Badge badge={question.choiceBadges[index]} />
+                      )}
                       {choice}
                     </button>
                   ))}
@@ -949,11 +994,37 @@ function App() {
             <section className="teach-overlay">
               <p className="teach-prompt">{question.prompt}</p>
               <p className="teach-pick" id="teach-pick">
-                {picked === null || picked === teachInfo?.answer
-                  ? "Time's up"
-                  : `Your pick: ${picked}`}
+                {picked === null || picked === teachInfo?.answer ? (
+                  "Time's up"
+                ) : (
+                  <>
+                    Your pick:{' '}
+                    {question.choiceBadges?.[question.choices.indexOf(picked)] && (
+                      <Badge
+                        badge={
+                          question.choiceBadges[question.choices.indexOf(picked)]!
+                        }
+                      />
+                    )}
+                    {picked}
+                  </>
+                )}
               </p>
-              <p className="teach-answer" id="teach-answer">Right answer: {teachInfo?.answer}</p>
+              <p className="teach-answer" id="teach-answer">
+                Right answer:{' '}
+                {question.choiceBadges?.[
+                  question.choices.indexOf(teachInfo?.answer ?? '')
+                ] && (
+                  <Badge
+                    badge={
+                      question.choiceBadges[
+                        question.choices.indexOf(teachInfo?.answer ?? '')
+                      ]!
+                    }
+                  />
+                )}
+                {teachInfo?.answer}
+              </p>
               <span id="teach-text">{teachInfo?.teach}</span>
               {teachInfo?.source && (
                 <a
