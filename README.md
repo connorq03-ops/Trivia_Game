@@ -27,4 +27,5 @@ npm run dev
 - `npm run db:migrate` — apply database migrations.
 - `npm run db:seed` — seed question content into the database.
 - `npm run db:setup` — apply migrations and seed question content.
+- `npm run stats:answers -- [--since=YYYY-MM-DD] [--min=3]` — read-only report of answer accuracy, timeouts and most-picked wrong choices per question (uses DATABASE_URL).
 - Phase 3 moves question content behind the server.

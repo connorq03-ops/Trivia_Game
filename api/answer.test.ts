@@ -152,7 +152,36 @@ describe('answer handler', () => {
     expect(body.points).toBeGreaterThan(0)
     expect(body.answer).toBe(questionBank[0].answer)
     expect(JSON.parse(persistedProgress ?? '{}').results).toEqual(['hit'])
-    expect(sql.mock.calls.some(([strings]) => strings.join(' ').includes('insert into answer_log'))).toBe(true)
+    const write = sql.mock.calls[1][0].join(' ')
+    const values = sql.mock.calls[1].slice(1)
+    expect(write).toMatch(/insert into answer_log[\s\S]*choice[\s\S]*result/)
+    expect(values).toContain(questionBank[0].answer)
+    expect(values).toContain('hit')
+  })
+
+  it('logs the wrong choice and miss result', async () => {
+    const choice = questionBank[0].wrong[0]
+    const sql = mockSql()
+    await POST(makeRequest({ ...validBody, choice }))
+
+    const write = sql.mock.calls[1][0].join(' ')
+    const values = sql.mock.calls[1].slice(1)
+    expect(write).toMatch(/insert into answer_log[\s\S]*choice[\s\S]*result/)
+    expect(values).toContain(choice)
+    expect(values).toContain('miss')
+  })
+
+  it('logs a null choice and timeout result', async () => {
+    const sql = mockSql({
+      rows: [makeRun(questionBank[0], { server_ms: '3000000000' })],
+    })
+    await POST(makeRequest({ ...validBody, choice: null }))
+
+    const write = sql.mock.calls[1][0].join(' ')
+    const values = sql.mock.calls[1].slice(1)
+    expect(write).toMatch(/insert into answer_log[\s\S]*choice[\s\S]*result/)
+    expect(values).toContain(null)
+    expect(values).toContain('timeout')
   })
 
   it('rejects a missing or malformed run token before querying', async () => {
