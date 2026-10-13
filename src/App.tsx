@@ -112,6 +112,7 @@ type RunResponse = {
   question: PublicQuestion
   progress: PublicProgress
   total: number | null
+  bosses?: boolean
 }
 
 function utcDate(): string {
@@ -144,6 +145,22 @@ function answerIndexForKey(key: string): number {
   return Number.isInteger(digit) && digit >= 1 && digit <= ANSWER_KEYS.length
     ? digit - 1
     : -1
+}
+
+const BOSS_WHEEL: [string, string][] = [
+  ['science', 'Science'],
+  ['history', 'History'],
+  ['art', 'Art'],
+  ['pop-culture', 'Pop Culture'],
+]
+
+function bossLabel(category: string): string {
+  return BOSS_WHEEL.find(([key]) => key === category)?.[1] ?? category
+}
+
+function bossWheelTurn(category: string): number {
+  const index = Math.max(0, BOSS_WHEEL.findIndex(([key]) => key === category))
+  return 360 * 4 + 360 - (index * 90 + 45)
 }
 
 function clockMsFor(question: PublicQuestion | undefined): number {
@@ -198,6 +215,7 @@ function App() {
   const [apiStatus, setApiStatus] = useState<'checking' | 'ok' | 'error'>(
     'checking',
   )
+  const [bossesEnabled, setBossesEnabled] = useState(false)
   const [sport, setSport] = useState<'all' | Sport>('all')
   const [side, setSide] = useState<'both' | Side>('both')
   const [today, setToday] = useState(utcDate)
@@ -266,8 +284,9 @@ function App() {
     fetch('/api/health', { signal: controller.signal })
       .then(async (response) => {
         if (!response.ok) throw new Error('Health check failed')
-        const result = (await response.json()) as { ok: boolean }
+        const result = (await response.json()) as { ok: boolean; bosses?: boolean }
         setApiStatus(result.ok ? 'ok' : 'error')
+        setBossesEnabled(result.bosses === true)
       })
       .catch(() => {
         if (!controller.signal.aborted) setApiStatus('error')
@@ -354,6 +373,7 @@ function App() {
 
       activeRunId.current = result.runId
       questionClockOffset.current = 0
+      setBossesEnabled(result.bosses === true)
       setSession({
         mode: input.mode,
         runId: result.runId,
@@ -440,6 +460,13 @@ function App() {
         question: result.question,
       })
       setScreen('reel')
+      if (result.question.boss) {
+        setAnnouncement(
+          `Boss question: ${bossLabel(result.question.boss.category)}. ${
+            result.question.boss.clockMs / 1000
+          } seconds. Plus 500 if right, minus 250 if wrong, no strike.`,
+        )
+      }
     } catch {
       if (activeRunId.current !== current.runId) return
       setIsSubmitting(false)
@@ -805,7 +832,7 @@ function App() {
           <details className="how-it-works">
             <summary>How it works</summary>
             <ul>
-              {howItWorks().map((line) => <li key={line}>{line}</li>)}
+              {howItWorks({ bosses: bossesEnabled }).map((line) => <li key={line}>{line}</li>)}
             </ul>
           </details>
         </section>
@@ -952,7 +979,29 @@ function App() {
             </div>
           )}
 
-          {screen === 'reel' && (
+          {screen === 'reel' && question.boss && (
+            <div
+              className="boss-reel"
+              data-category={question.boss.category}
+              style={{ '--boss-turn': `${bossWheelTurn(question.boss.category)}deg` } as CSSProperties}
+            >
+              <h2 className="boss-banner">Boss question</h2>
+              <div className="boss-wheel" aria-hidden="true">
+                <span className="boss-wheel-pointer" />
+                <div className="boss-wheel-disc">
+                  {BOSS_WHEEL.map(([key, label]) => (
+                    <span key={key} className="boss-wheel-label">{label}</span>
+                  ))}
+                </div>
+              </div>
+              <p className="boss-category">{bossLabel(question.boss.category)}</p>
+              <p className="reel-caption">
+                {question.boss.clockMs / 1000} seconds · +500 if right · −250 if wrong · no strike
+              </p>
+            </div>
+          )}
+
+          {screen === 'reel' && !question.boss && (
             <div className="reel-stage">
               <p className="eyebrow">Your next question</p>
               <div className={`reel-stack ${question.side === 'players' ? 'reel-stack--player' : ''}`}>
@@ -974,14 +1023,20 @@ function App() {
           )}
 
           {(screen === 'question' || screen === 'reveal') && (
-            <section className="question-stage">
+            <section className="question-stage" data-boss-category={question.boss?.category}>
               <div className="clock-row">
-                <span>
-                  {question.sport} <i>·</i> {question.category}
-                  <b className="difficulty-chip" data-difficulty={question.difficulty}>
-                    {difficultyLabel(question.difficulty)}
-                  </b>
-                </span>
+                {question.boss ? (
+                  <span>
+                    <b className="boss-chip">Boss</b> {bossLabel(question.boss.category)}
+                  </span>
+                ) : (
+                  <span>
+                    {question.sport} <i>·</i> {question.category}
+                    <b className="difficulty-chip" data-difficulty={question.difficulty}>
+                      {difficultyLabel(question.difficulty)}
+                    </b>
+                  </span>
+                )}
                 <strong>{remainingSeconds}<small>s</small></strong>
               </div>
               <div

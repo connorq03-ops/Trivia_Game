@@ -2,7 +2,8 @@
 import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import App from './App'
-import { REEL_MS } from './game/engine'
+import { BOSS_CLOCK_MS, BOSS_REEL_MS, REEL_MS } from './game/engine'
+import { REVEAL_MS } from './game/reveal'
 
 const RUN_TOKEN = 'x'.repeat(43)
 
@@ -29,7 +30,7 @@ function publicQuestion(index: number, withBadges = false) {
   }
 }
 
-type Grade = { correct: boolean; strikes: number; streak: number }
+type Grade = { correct: boolean; strikes: number; streak: number; points?: number }
 
 function json(body: unknown, status = 200) {
   return Promise.resolve({
@@ -39,7 +40,24 @@ function json(body: unknown, status = 200) {
   })
 }
 
-function mockApi(grades: Grade[], answerPending = false, withBadges = false) {
+function bossQuestion(index: number, category: string) {
+  return {
+    ...publicQuestion(index),
+    side: 'boss',
+    sport: 'boss',
+    leagues: [],
+    difficulty: 'expert',
+    category,
+    boss: { category, clockMs: BOSS_CLOCK_MS, reelMs: BOSS_REEL_MS },
+  }
+}
+
+function mockApi(
+  grades: Grade[],
+  answerPending = false,
+  withBadges = false,
+  bossAt: Record<number, string> = {},
+) {
   const answerBodies: Array<{ choice: string | null }> = []
   const fetchMock = vi.fn((url: string, init?: RequestInit) => {
     if (url === '/api/health') return json({ ok: true, db: true })
@@ -67,7 +85,7 @@ function mockApi(grades: Grade[], answerPending = false, withBadges = false) {
       const grade = grades.shift() ?? { correct: true, strikes: 0, streak: 1 }
       return json({
         correct: grade.correct,
-        points: grade.correct ? 300 : 0,
+        points: grade.points ?? (grade.correct ? 300 : 0),
         answer: `B${body.questionIndex}`,
         teach: `Teach ${body.questionIndex}.`,
         source: { url: 'https://example.com', ref: 'Rule 1' },
@@ -80,7 +98,10 @@ function mockApi(grades: Grade[], answerPending = false, withBadges = false) {
       const { questionIndex } = JSON.parse(String(init?.body)) as {
         questionIndex: number
       }
-      return json({ questionIndex, question: publicQuestion(questionIndex), elapsedMs: 0 })
+      const question = bossAt[questionIndex]
+        ? bossQuestion(questionIndex, bossAt[questionIndex])
+        : publicQuestion(questionIndex)
+      return json({ questionIndex, question, elapsedMs: 0 })
     }
     return json({ error: 'not_found' }, 404)
   })
@@ -147,6 +168,42 @@ describe('App keyboard and screen-reader play', () => {
     const track = screen.getByRole('progressbar', { name: 'Daily 10 progress' })
     expect(track.getAttribute('aria-valuenow')).toBe('0')
     expect(track.getAttribute('aria-valuemax')).toBe('10')
+  })
+
+  it('introduces a boss with a banner and the server-picked category, then runs a 15s clock', async () => {
+    vi.useFakeTimers({ shouldAdvanceTime: true })
+    mockApi(
+      [
+        { correct: true, strikes: 0, streak: 1 },
+        { correct: false, strikes: 0, streak: 1, points: -250 },
+      ],
+      false,
+      false,
+      { 1: 'history' },
+    )
+    await startClassic()
+
+    fireEvent.keyDown(window, { key: 'b' })
+    await act(() => vi.advanceTimersByTimeAsync(REVEAL_MS + 50))
+
+    expect(await screen.findByRole('heading', { level: 2, name: 'Boss question' })).toBeTruthy()
+    const reel = document.querySelector<HTMLElement>('.boss-reel')
+    expect(reel?.dataset.category).toBe('history')
+    expect(reel?.style.getPropertyValue('--boss-turn')).toBe('1665deg')
+    expect(document.querySelector('.boss-category')?.textContent).toBe('History')
+    expect(
+      screen.getByText('Boss question: History. 15 seconds. Plus 500 if right, minus 250 if wrong, no strike.'),
+    ).toBeTruthy()
+
+    await act(() => vi.advanceTimersByTimeAsync(BOSS_REEL_MS))
+    await screen.findByRole('heading', { level: 2, name: /Question 2:\s*Prompt 1\?/ })
+    const clock = screen.getByRole('progressbar', { name: 'Time remaining' })
+    expect(clock.getAttribute('aria-valuemax')).toBe('15')
+    expect(document.querySelector('.boss-chip')?.textContent).toBe('Boss')
+
+    fireEvent.click(screen.getByRole('button', { name: 'AA1' }))
+    expect(await screen.findByText('−250')).toBeTruthy()
+    expect(screen.getByRole('img', { name: '0 of 3 strikes' })).toBeTruthy()
   })
 
   it('answers with number keys and ignores modified keys', async () => {

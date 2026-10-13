@@ -1,11 +1,14 @@
 import {
+  BOSS_CLOCK_MS,
+  BOSS_HIT_POINTS,
+  BOSS_MISS_POINTS,
   CLOCK_MS,
+  levelFor,
   LEVELS,
   MULTIPLIER_TIERS,
-  STRIKES,
-  STRIKE_BACK_EVERY,
-  levelFor,
   streakMultiplier,
+  STRIKE_BACK_EVERY,
+  STRIKES,
 } from './engine'
 import type { Difficulty } from './types'
 
@@ -20,7 +23,7 @@ function andList(items: string[]): string {
   return `${items.slice(0, -1).join(', ')} and ${items.at(-1)}`
 }
 
-export function howItWorks(): string[] {
+export function howItWorks({ bosses = false }: { bosses?: boolean } = {}): string[] {
   const tiers = [...MULTIPLIER_TIERS].sort((left, right) => left.streak - right.streak)
   const streaks = andList(tiers.map(({ streak }) => String(streak)))
   const multipliers = andList(
@@ -36,6 +39,11 @@ export function howItWorks(): string[] {
     `Get ${STRIKE_BACK_EVERY} in a row to clear a strike.`,
     `Streaks of ${streaks} multiply your points by ${multipliers}.`,
     `Classic starts easy and levels up at ${levelSteps} correct answers. Harder questions score more.`,
+    ...(bosses
+      ? [
+          `Each level-up brings a boss question on science, history, art or pop culture: ${BOSS_CLOCK_MS / 1000} seconds, +${BOSS_HIT_POINTS} if right, −${BOSS_MISS_POINTS} if wrong, no strike.`,
+        ]
+      : []),
     'Daily 10: the same 10 questions for everyone today, easy to hard. No strikes.',
   ]
 }

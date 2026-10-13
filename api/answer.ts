@@ -1,4 +1,5 @@
 import { getSql } from '../lib/db.js'
+import { bossQuestionsEnabled } from '../lib/flags.js'
 import { hashRunToken, isRunToken } from '../lib/runToken.js'
 import {
   bossQuestions,
@@ -24,11 +25,6 @@ import type { Question } from '../src/game/types.js'
 
 const UUID_PATTERN =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
-
-function bossQuestionsEnabled(): boolean {
-  const flag = process.env.BOSS_QUESTIONS?.trim().toLowerCase()
-  return flag === '1' || flag === 'true'
-}
 
 type AnswerInput = {
   runId: string
