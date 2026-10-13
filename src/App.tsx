@@ -849,17 +849,19 @@ function App() {
               ) : (
                 <div className="daily-misses">{progress.strikes} missed</div>
               )}
-              <div
-                className={`streak-ring ${screen === 'reveal' && reveal?.correct ? 'is-pulsing' : ''}`}
-                style={{
-                  '--streak-fill': `${streakFill(progress.streak) * 100}%`,
-                } as CSSProperties}
-                role="img"
-                aria-label={`${progress.streak} streak, strike back at ${STRIKE_BACK_EVERY}`}
-              >
-                <span>{progress.streak}</span>
-                <small>/{STRIKE_BACK_EVERY}</small>
-              </div>
+              {session.mode === 'classic' && (
+                <div
+                  className={`streak-ring ${screen === 'reveal' && reveal?.correct ? 'is-pulsing' : ''}`}
+                  style={{
+                    '--streak-fill': `${streakFill(progress.streak) * 100}%`,
+                  } as CSSProperties}
+                  role="img"
+                  aria-label={`${progress.streak} streak, strike back at ${STRIKE_BACK_EVERY}`}
+                >
+                  <span>{progress.streak}</span>
+                  <small>/{STRIKE_BACK_EVERY}</small>
+                </div>
+              )}
             </div>
           )}
 
