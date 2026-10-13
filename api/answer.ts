@@ -285,7 +285,9 @@ export async function POST(request: Request): Promise<Response> {
         question_id,
         question_index,
         answer_ms,
-        correct
+        correct,
+        choice,
+        result
       )
       select
         id,
@@ -293,7 +295,9 @@ export async function POST(request: Request): Promise<Response> {
         ${question.id},
         ${input.questionIndex},
         ${outcome.answerMs},
-        ${outcome.correct}
+        ${outcome.correct},
+        ${input.choice},
+        ${outcome.progress.results.at(-1)}
       from updated
       returning run_id
     `) as { run_id: string }[]
