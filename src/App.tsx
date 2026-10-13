@@ -784,7 +784,7 @@ function App() {
               <span className="daily-button-label">
                 <span className="daily-button-eyebrow">Daily 10</span>
                 <span className="daily-button-title">
-                  {todaySummary ? 'Review today’s Daily 10' : 'Play Daily 10'}
+                  {todaySummary ? 'Previous Results' : 'Play Daily 10'}
                 </span>
                 <span className="mode-subtitle">{modeSubtitle('daily')}</span>
               </span>
