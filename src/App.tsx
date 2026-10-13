@@ -183,19 +183,6 @@ function elapsedSince(startedAt: number, clockMs: number): number {
   return Math.min(clockMs, Math.max(0, performance.now() - startedAt))
 }
 
-const SPORT_OPTIONS: ['all' | Sport, string][] = [
-  ['all', 'All sports'],
-  ['football', 'Football'],
-  ['basketball', 'Basketball'],
-  ['baseball', 'Baseball'],
-]
-
-const SIDE_OPTIONS: ['both' | Side, string][] = [
-  ['both', 'Both'],
-  ['rules', 'Rulebook'],
-  ['players', 'Players'],
-]
-
 function Badge({ badge }: { badge: ChoiceBadge }) {
   if (badge.kind === 'flag') {
     return (
@@ -228,8 +215,6 @@ function App() {
     'checking',
   )
   const [bossesEnabled, setBossesEnabled] = useState(false)
-  const [sport, setSport] = useState<'all' | Sport>('all')
-  const [side, setSide] = useState<'both' | Side>('both')
   const [today, setToday] = useState(utcDate)
   const [now, setNow] = useState(() => Date.now())
   const [todaySummary, setTodaySummary] = useState<GameSummary | null>(() =>
@@ -408,7 +393,7 @@ function App() {
   }
 
   const startClassic = () => {
-    void startRun({ mode: 'classic', sport, side })
+    void startRun({ mode: 'classic', sport: 'all', side: 'both' })
   }
 
   const openDaily = () => {
@@ -796,65 +781,26 @@ function App() {
             ref={dailyButtonRef}
           >
             <span className="daily-button-label">
-              <span>{todaySummary ? 'Review today’s Daily 10' : 'Play Daily 10'}</span>
+              <span className="daily-button-eyebrow">Daily 10</span>
+              <span className="daily-button-title">
+                {todaySummary ? 'Review today’s Daily 10' : 'Play Daily 10'}
+              </span>
               <span className="mode-subtitle">{modeSubtitle('daily')}</span>
             </span>
             <span aria-hidden="true">→</span>
           </button>
-          {todaySummary && (
-            <p className="daily-meta">
-              {dayStreak > 0 && <>{dayStreak}-day streak · </>}
-              Next Daily in {formatCountdown(msUntilNextUtcMidnight(now))}
-            </p>
-          )}
-          <section className="classic-panel" aria-labelledby="classic-title">
-            <div className="section-heading">
-              <div>
-                <p className="eyebrow">Make it your game</p>
-                <h2 id="classic-title">Classic</h2>
-                <p className="mode-subtitle">{modeSubtitle('classic')}</p>
-              </div>
-              <span className="mode-chip">ENDLESS RUN</span>
-            </div>
-            <fieldset className="chip-group">
-              <legend>Sport</legend>
-              {SPORT_OPTIONS.map(([value, label]) => (
-                <label className="chip" key={value}>
-                  <input
-                    type="radio"
-                    name="sport"
-                    value={value}
-                    checked={sport === value}
-                    onChange={() => setSport(value)}
-                  />
-                  <span>{label}</span>
-                </label>
-              ))}
-            </fieldset>
-            <fieldset className="chip-group">
-              <legend>Question side</legend>
-              {SIDE_OPTIONS.map(([value, label]) => (
-                <label className="chip" key={value}>
-                  <input
-                    type="radio"
-                    name="side"
-                    value={value}
-                    checked={side === value}
-                    onChange={() => setSide(value)}
-                  />
-                  <span>{label}</span>
-                </label>
-              ))}
-            </fieldset>
-            <button
-              className="classic-button"
-              onClick={startClassic}
-              disabled={isStarting}
-              ref={classicButtonRef}
-            >
-              Start classic <span aria-hidden="true">↗</span>
-            </button>
-          </section>
+          <p className="daily-meta">
+            {dayStreak > 0 && <>{dayStreak}-day streak · </>}
+            Next Daily in {formatCountdown(msUntilNextUtcMidnight(now))}
+          </p>
+          <button
+            className="secondary-button home-classic"
+            onClick={startClassic}
+            disabled={isStarting}
+            ref={classicButtonRef}
+          >
+            Start classic <span aria-hidden="true">↗</span>
+          </button>
           <details className="how-it-works">
             <summary>How it works</summary>
             <ul>
@@ -867,9 +813,9 @@ function App() {
       {screen === 'noQuestions' && (
         <section className="home-panel">
           <p className="eyebrow">No questions available</p>
-          <h1>Try another matchup</h1>
+          <h1>Try again later</h1>
           <p className="tagline">
-            There aren’t any questions for those filters yet.
+            There aren’t any questions available right now.
           </p>
           <button
             className="secondary-button"
