@@ -201,10 +201,11 @@ export async function POST(request: Request): Promise<Response> {
       Number(run.server_ms),
       boss ? BOSS_CLOCK_MS : CLOCK_MS,
     )
+    const progress = deserializeProgress(run.progress)
     const answered = boss
-      ? answerBossQuestion(deserializeProgress(run.progress), question, correct, answerMs)
+      ? answerBossQuestion(progress, question, correct, answerMs)
       : answerQuestion(
-          deserializeProgress(run.progress),
+          progress,
           question,
           correct,
           answerMs,
@@ -258,7 +259,15 @@ export async function POST(request: Request): Promise<Response> {
       }
     } else {
       const date = dateOnly(run.daily_date)
-      const questions = dailyQuestions(date, questionBank)
+      // Runs freeze their question list at creation; only legacy rows
+      // without one recompute the sequence (pre-deploy runs expire same day).
+      const stored = progress.dailyQuestionIds
+        ?.map((id) => questionsById.get(id))
+        .filter((item): item is Question => item !== undefined)
+      const questions =
+        stored && stored.length === 10
+          ? stored
+          : dailyQuestions(date, questionBank)
       if (nextQuestionIndex >= questions.length) {
         endReason = 'complete'
       } else {

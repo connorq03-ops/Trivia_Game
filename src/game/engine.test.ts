@@ -391,6 +391,31 @@ describe('Daily 10', () => {
     ).toBe(true)
   })
 
+  it('targets a hard mix with at most one easy question', () => {
+    const tally = { easy: 0, medium: 0, hard: 0, expert: 0 }
+    dailyQuestions('2099-12-31', bank).forEach((question) => {
+      tally[question.difficulty] += 1
+    })
+    expect(tally).toEqual({ easy: 1, medium: 3, hard: 3, expert: 3 })
+  })
+
+  it('falls back to harder questions when a side lacks a quota slot', () => {
+    const sparse = bank.filter(
+      (question) =>
+        question.side !== 'players' || question.difficulty !== 'expert',
+    )
+    const players = dailyQuestions('2099-12-31', sparse).filter(
+      (question) => question.side === 'players',
+    )
+    expect(players).toHaveLength(5)
+    // The two unfilled expert slots fall back to hard before medium.
+    const tally = { easy: 0, medium: 0, hard: 0, expert: 0 }
+    players.forEach((question) => {
+      tally[question.difficulty] += 1
+    })
+    expect(tally).toEqual({ easy: 0, medium: 2, hard: 3, expert: 0 })
+  })
+
   it('keeps the same questions when future-gated questions are appended', () => {
     const date = '2099-12-31'
     const extra = bank
