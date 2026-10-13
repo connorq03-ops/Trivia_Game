@@ -1234,7 +1234,7 @@
     ],
     "difficulty": "easy",
     "category": "What's the call?",
-    "prompt": "A pitch hits a batter who tried to avoid it. The call?",
+    "prompt": "A pitch outside the zone hits a batter who tried to avoid it. The call?",
     "answer": "Batter takes first base",
     "wrong": [
       "Ball, count continues",
