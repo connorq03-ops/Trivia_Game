@@ -45,7 +45,13 @@ type PublicQuestion = Pick<
 > & {
   choices: string[]
   choiceBadges?: (ChoiceBadge | null)[]
-  boss?: { category: string; clockMs: number; reelMs: number }
+  boss?: {
+    category: string
+    clockMs: number
+    reelMs: number
+    hitPoints: number
+    missPoints: number
+  }
 }
 
 type PublicProgress = {
@@ -996,7 +1002,7 @@ function App() {
               </div>
               <p className="boss-category">{bossLabel(question.boss.category)}</p>
               <p className="reel-caption">
-                {question.boss.clockMs / 1000} seconds · +500 if right · −250 if wrong · no strike
+                {question.boss.clockMs / 1000} seconds · +{question.boss.hitPoints} if right · −{question.boss.missPoints} if wrong · no strike
               </p>
             </div>
           )}
@@ -1206,7 +1212,7 @@ function App() {
                   <h3>Review the misses</h3>
                   {currentSummary.missed.map((missed) => (
                     <article className="missed-card" key={`${missed.id}-${missed.factId}`}>
-                      <p>{missed.prompt}</p>
+                      <p>{missed.side === 'boss' && <b className="boss-chip">Boss</b>}{missed.prompt}</p>
                       <strong>{missed.answer}</strong>
                       <span>{missed.teach}</span>
                     </article>
@@ -1253,7 +1259,7 @@ function App() {
                 <h3>Review the misses</h3>
                 {currentSummary.missed.map((missed) => (
                   <article className="missed-card" key={`${missed.id}-${missed.factId}`}>
-                    <p>{missed.prompt}</p><strong>{missed.answer}</strong><span>{missed.teach}</span>
+                    <p>{missed.side === 'boss' && <b className="boss-chip">Boss</b>}{missed.prompt}</p><strong>{missed.answer}</strong><span>{missed.teach}</span>
                   </article>
                 ))}
               </div>

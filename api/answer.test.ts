@@ -484,7 +484,7 @@ describe('answer handler', () => {
       expect(body.progress).toMatchObject({ score: 3500, streak: 11, strikes: 0, correct: 11 })
     })
 
-    it('takes 250 for a boss miss without a strike or review entry', async () => {
+    it('takes 250 for a boss miss without a strike and keeps it for review', async () => {
       const sql = mockSql({ rows: [bossRun({ strikes: 2 })] })
       const body = await (
         await POST(makeRequest({ ...validBody, questionIndex: 10, choice: boss.wrong[0] }))
@@ -498,7 +498,36 @@ describe('answer handler', () => {
       expect(body.next).toEqual({ questionIndex: 11 })
       const { progress } = storedUpdate(sql)
       expect(progress.missed).toEqual([])
-      expect(progress.results.at(-1)).toBe('miss')
+      expect(progress.bossMissed).toEqual([boss.id])
+      expect(progress.results.at(-1)).toBe('boss-miss')
+    })
+
+    it('lists missed bosses in the run summary review', async () => {
+      const question = questionBank[0]
+      const run = {
+        ...makeRun(question, { question_index: 11 }),
+        progress: {
+          ...makeRun(question, { question_index: 11 }).progress,
+          questionsAnswered: 11,
+          results: [...Array(10).fill('hit'), 'boss-miss'],
+          streak: 0,
+          bestStreak: 10,
+          score: 2750,
+          strikes: 2,
+          bossMissed: [boss.id],
+        },
+      }
+      mockSql({ rows: [run] })
+      const body = await (
+        await POST(
+          makeRequest({ ...validBody, questionIndex: 11, choice: question.wrong[0] }),
+        )
+      ).json()
+
+      expect(body.summary.missed.map((missed: { id: string }) => missed.id)).toEqual([
+        question.id,
+        boss.id,
+      ])
     })
   })
 })

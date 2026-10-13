@@ -59,7 +59,13 @@ export type ClassicOptions = {
   side: 'both' | Side
 }
 
-export type AnswerResult = 'hit' | 'miss' | 'timeout'
+export type AnswerResult =
+  | 'hit'
+  | 'miss'
+  | 'timeout'
+  | 'boss-hit'
+  | 'boss-miss'
+  | 'boss-timeout'
 
 export type RunProgress = {
   score: number
@@ -73,6 +79,7 @@ export type RunProgress = {
   results: AnswerResult[]
   bossLevelsConsumed: number[] // LEVELS indexes that already had their boss
   bossMisses: number
+  bossMissed: Question[] // boss misses; kept out of `missed` so correctCount stays right
 }
 
 export type ClassicSelection =
@@ -145,7 +152,9 @@ export function correctCount(
       progress.questionsAnswered - progress.missed.length - (progress.bossMisses ?? 0),
     )
   }
-  return progress.results.filter((result) => result === 'hit').length
+  return progress.results.filter(
+    (result) => result === 'hit' || result === 'boss-hit',
+  ).length
 }
 
 function drawDifficulty(correct: number, rng: () => number): Difficulty {
@@ -325,6 +334,7 @@ export function createRunProgress(): RunProgress {
     results: [],
     bossLevelsConsumed: [],
     bossMisses: 0,
+    bossMissed: [],
   }
 }
 
@@ -366,6 +376,7 @@ export function answerQuestion(
     ],
     bossLevelsConsumed: progress.bossLevelsConsumed,
     bossMisses: progress.bossMisses,
+    bossMissed: progress.bossMissed,
   }
 
   return {
@@ -379,6 +390,7 @@ export function answerQuestion(
 
 export function answerBossQuestion(
   progress: RunProgress,
+  question: BossQuestion,
   isCorrect: boolean,
   elapsedMs: number | null,
 ): AnswerOutcome {
@@ -401,9 +413,10 @@ export function answerBossQuestion(
       questionsAnswered: progress.questionsAnswered + 1,
       results: [
         ...progress.results,
-        timedOut ? 'timeout' : correct ? 'hit' : 'miss',
+        timedOut ? 'boss-timeout' : correct ? 'boss-hit' : 'boss-miss',
       ],
       bossMisses: progress.bossMisses + (correct ? 0 : 1),
+      bossMissed: correct ? progress.bossMissed : [...progress.bossMissed, question],
     },
     correct,
     points,

@@ -8,7 +8,13 @@ export const MAX_SHARE_SQUARES = 30
 export function resultSquares(results: AnswerResult[]): string {
   return results
     .map((result) =>
-      result === 'hit' ? '🟩' : result === 'miss' ? '🟥' : '⬛',
+      result === 'hit'
+        ? '🟩'
+        : result === 'boss-hit'
+          ? '🟦'
+          : result === 'miss' || result === 'boss-miss'
+            ? '🟥'
+            : '⬛',
     )
     .join('')
 }

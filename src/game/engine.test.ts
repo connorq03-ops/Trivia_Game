@@ -509,6 +509,7 @@ describe('Boss questions', () => {
   it('scores a hit as a flat 500 and extends the streak', () => {
     const outcome = answerBossQuestion(
       progressWith({ score: 1000, streak: 12, bestStreak: 12, questionsAnswered: 12 }),
+      bossBank[0],
       true,
       14_000,
     )
@@ -522,22 +523,23 @@ describe('Boss questions', () => {
       questionsAnswered: 13,
       answeredCount: 0,
       totalAnswerMs: 0,
-      results: ['hit'],
+      results: ['boss-hit'],
     })
   })
 
   it('backs off a strike when a boss hit reaches a strike-back streak', () => {
     const outcome = answerBossQuestion(
       progressWith({ score: 1000, streak: 14, strikes: 2 }),
+      bossBank[0],
       true,
       2_000,
     )
     expect(outcome.progress.strikes).toBe(1)
   })
 
-  it('takes 250 on a miss without a strike, streak reset, or review entry', () => {
+  it('takes 250 on a miss without a strike or streak reset, and keeps the question for review', () => {
     const progress = progressWith({ score: 1000, streak: 12, strikes: 1 })
-    const outcome = answerBossQuestion(progress, false, 3_000)
+    const outcome = answerBossQuestion(progress, bossBank[0], false, 3_000)
     expect(outcome.correct).toBe(false)
     expect(outcome.points).toBe(-250)
     expect(outcome.endReason).toBeUndefined()
@@ -546,17 +548,18 @@ describe('Boss questions', () => {
       strikes: 1,
       streak: 12,
       missed: [],
-      results: ['miss'],
+      results: ['boss-miss'],
+      bossMissed: [bossBank[0]],
     })
   })
 
   it('floors the score at zero and records timeouts', () => {
-    const outcome = answerBossQuestion(progressWith({ score: 100 }), true, BOSS_CLOCK_MS)
+    const outcome = answerBossQuestion(progressWith({ score: 100 }), bossBank[0], true, BOSS_CLOCK_MS)
     expect(outcome.correct).toBe(false)
     expect(outcome.points).toBe(-100)
     expect(outcome.answerMs).toBeNull()
     expect(outcome.progress.score).toBe(0)
-    expect(outcome.progress.results).toEqual(['timeout'])
+    expect(outcome.progress.results).toEqual(['boss-timeout'])
   })
 
   it('accepts boss answers past the regular clock', () => {
@@ -569,11 +572,12 @@ describe('Boss questions', () => {
   it('keeps the correct count for legacy runs that miss a boss', () => {
     const legacy = progressWith({ questionsAnswered: 10, results: [] })
     expect(correctCount(legacy)).toBe(10)
-    const outcome = answerBossQuestion(legacy, false, 2_000)
+    const outcome = answerBossQuestion(legacy, bossBank[0], false, 2_000)
     expect(outcome.progress.missed).toEqual([])
     expect(outcome.progress.bossMisses).toBe(1)
+    expect(outcome.progress.bossMissed).toEqual([bossBank[0]])
     expect(correctCount(outcome.progress)).toBe(10)
-    const hit = answerBossQuestion(outcome.progress, true, 2_000)
+    const hit = answerBossQuestion(outcome.progress, bossBank[1], true, 2_000)
     expect(correctCount(hit.progress)).toBe(11)
   })
 })
