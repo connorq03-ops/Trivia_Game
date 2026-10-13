@@ -214,6 +214,7 @@ function App() {
   const [apiStatus, setApiStatus] = useState<'checking' | 'ok' | 'error'>(
     'checking',
   )
+  const [bossesEnabled, setBossesEnabled] = useState(false)
   const [sport, setSport] = useState<'all' | Sport>('all')
   const [side, setSide] = useState<'both' | Side>('both')
   const [today, setToday] = useState(utcDate)
@@ -282,8 +283,9 @@ function App() {
     fetch('/api/health', { signal: controller.signal })
       .then(async (response) => {
         if (!response.ok) throw new Error('Health check failed')
-        const result = (await response.json()) as { ok: boolean }
+        const result = (await response.json()) as { ok: boolean; bosses?: boolean }
         setApiStatus(result.ok ? 'ok' : 'error')
+        setBossesEnabled(result.bosses === true)
       })
       .catch(() => {
         if (!controller.signal.aborted) setApiStatus('error')
@@ -828,7 +830,7 @@ function App() {
           <details className="how-it-works">
             <summary>How it works</summary>
             <ul>
-              {howItWorks().map((line) => <li key={line}>{line}</li>)}
+              {howItWorks({ bosses: bossesEnabled }).map((line) => <li key={line}>{line}</li>)}
             </ul>
           </details>
         </section>

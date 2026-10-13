@@ -18,7 +18,17 @@ describe('health handler', () => {
     const response = await GET()
 
     expect(response.status).toBe(200)
-    expect(await response.json()).toEqual({ ok: true, db: true })
+    expect(await response.json()).toEqual({ ok: true, db: true, bosses: false })
+  })
+
+  it('reports boss questions when BOSS_QUESTIONS is on', async () => {
+    vi.mocked(getSql).mockReturnValue(vi.fn().mockResolvedValueOnce([]) as never)
+    vi.stubEnv('BOSS_QUESTIONS', 'true')
+    try {
+      expect(await (await GET()).json()).toMatchObject({ bosses: true })
+    } finally {
+      vi.unstubAllEnvs()
+    }
   })
 
   it('returns an error when the database client cannot be created', async () => {
