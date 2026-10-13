@@ -78,6 +78,9 @@ export type RunProgress = {
   results: AnswerResult[]
   bossLevelsConsumed: number[] // LEVELS indexes that already had their boss
   bossMisses: number
+  // Daily bonus outcome lives outside `results` so a miss never dirties a
+  // perfect 10/10 summary or adds an eleventh share square.
+  dailyBonusResult?: AnswerResult
 }
 
 export type ClassicSelection =
@@ -428,11 +431,7 @@ export function answerBonusBossQuestion(
       score: progress.score + points,
       streak,
       bestStreak: Math.max(progress.bestStreak, streak),
-      questionsAnswered: progress.questionsAnswered + 1,
-      results: [
-        ...progress.results,
-        timedOut ? 'timeout' : correct ? 'hit' : 'miss',
-      ],
+      dailyBonusResult: timedOut ? 'timeout' : correct ? 'hit' : 'miss',
     },
     correct,
     points,

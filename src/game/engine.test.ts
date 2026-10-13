@@ -663,17 +663,36 @@ describe('Daily bonus boss', () => {
     const hit = answerBonusBossQuestion(fastPerfect, true, 4_000)
     expect(hit.correct).toBe(true)
     expect(hit.points).toBe(BOSS_HIT_POINTS)
-    expect(hit.progress).toMatchObject({ score: 3500, streak: 11, bestStreak: 11 })
+    expect(hit.progress).toMatchObject({
+      score: 3500,
+      streak: 11,
+      bestStreak: 11,
+      dailyBonusResult: 'hit',
+    })
 
     const miss = answerBonusBossQuestion(fastPerfect, false, 4_000)
     expect(miss.correct).toBe(false)
     expect(miss.points).toBe(0)
     expect(miss.progress.score).toBe(3000)
     expect(miss.progress.streak).toBe(10)
+    expect(miss.progress.dailyBonusResult).toBe('miss')
 
     const timeout = answerBonusBossQuestion(fastPerfect, true, BOSS_CLOCK_MS)
     expect(timeout.correct).toBe(false)
     expect(timeout.points).toBe(0)
-    expect(timeout.progress.results.at(-1)).toBe('timeout')
+    expect(timeout.progress.dailyBonusResult).toBe('timeout')
+  })
+
+  it('keeps the ten-question summary intact regardless of the bonus outcome', () => {
+    for (const outcome of [
+      answerBonusBossQuestion(fastPerfect, true, 4_000),
+      answerBonusBossQuestion(fastPerfect, false, 4_000),
+    ]) {
+      expect(outcome.progress.questionsAnswered).toBe(10)
+      expect(outcome.progress.results).toHaveLength(10)
+      expect(
+        outcome.progress.results.every((result) => result === 'hit'),
+      ).toBe(true)
+    }
   })
 })
