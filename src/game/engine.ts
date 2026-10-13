@@ -297,6 +297,12 @@ export function selectClassicQuestion(
   return present(question, rng)
 }
 
+// The daily challenge ramps hard: one easy warm-up, then medium through expert.
+const DAILY_SIDE_QUOTAS: Record<Side, Difficulty[]> = {
+  rules: ['easy', 'medium', 'hard', 'hard', 'expert'],
+  players: ['medium', 'medium', 'hard', 'expert', 'expert'],
+}
+
 export function dailyQuestions(dateUtc: string, bank: Question[]): Question[] {
   const eligible = bank.filter(
     (question) => !question.dailyFrom || question.dailyFrom <= dateUtc,
@@ -310,12 +316,28 @@ export function dailyQuestions(dateUtc: string, bank: Question[]): Question[] {
       eligible.filter((question) => question.side === side),
       rng,
     )
-    for (const question of candidates) {
-      if (usedFactIds.has(question.factId)) continue
-      selected.push(question)
-      usedFactIds.add(question.factId)
-      if (selected.filter((item) => item.side === side).length === 5) break
+    const take = (difficulty: Difficulty | null) => {
+      const order = difficulty
+        ? fallbackOrder(difficulty)
+        : [...DIFFICULTIES].reverse()
+      const pick = order
+        .map((candidate) =>
+          candidates.find(
+            (question) =>
+              question.difficulty === candidate &&
+              !usedFactIds.has(question.factId),
+          ),
+        )
+        .find(Boolean)
+      if (pick) {
+        selected.push(pick)
+        usedFactIds.add(pick.factId)
+      }
+      return pick
     }
+    for (const difficulty of DAILY_SIDE_QUOTAS[side]) take(difficulty)
+    // Tiny banks can miss a quota slot; top up with whatever is unused.
+    while (selected.filter((item) => item.side === side).length < 5 && take(null));
     if (selected.filter((item) => item.side === side).length !== 5) {
       throw new Error(`Daily 10 requires five distinct ${side} questions`)
     }
