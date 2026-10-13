@@ -684,7 +684,8 @@
 }
 
 .result-square--boss-hit {
-  background: var(--boss);
+  /* results carry no category; fall back to the boss gold */
+  background: var(--boss, #ffd60a);
 }
 
 .result-square--boss-miss {

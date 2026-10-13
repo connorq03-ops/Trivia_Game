@@ -1211,7 +1211,11 @@ function App() {
                 <div className="missed-list">
                   <h3>Review the misses</h3>
                   {currentSummary.missed.map((missed) => (
-                    <article className="missed-card" key={`${missed.id}-${missed.factId}`}>
+                    <article
+                      className="missed-card"
+                      key={`${missed.id}-${missed.factId}`}
+                      data-boss-category={missed.side === 'boss' ? missed.category : undefined}
+                    >
                       <p>{missed.side === 'boss' && <b className="boss-chip">Boss</b>}{missed.prompt}</p>
                       <strong>{missed.answer}</strong>
                       <span>{missed.teach}</span>
@@ -1258,7 +1262,11 @@ function App() {
               <div className="missed-list">
                 <h3>Review the misses</h3>
                 {currentSummary.missed.map((missed) => (
-                  <article className="missed-card" key={`${missed.id}-${missed.factId}`}>
+                  <article
+                    className="missed-card"
+                    key={`${missed.id}-${missed.factId}`}
+                    data-boss-category={missed.side === 'boss' ? missed.category : undefined}
+                  >
                     <p>{missed.side === 'boss' && <b className="boss-chip">Boss</b>}{missed.prompt}</p><strong>{missed.answer}</strong><span>{missed.teach}</span>
                   </article>
                 ))}
