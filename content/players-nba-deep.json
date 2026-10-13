@@ -1,1 +1,1122 @@
-[]
+[
+  {
+    "id": "p-nba-scottie-pippen-draft",
+    "factId": "nba-scottie-pippen-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Scottie Pippen?",
+    "answer": "SuperSonics",
+    "wrong": [
+      "Bulls",
+      "Kings",
+      "Clippers"
+    ],
+    "teach": "Seattle took Pippen 5th overall in 1987, then traded him to Chicago for the 8th pick.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Scottie_Pippen",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 1996,
+      "player": "Scottie Pippen"
+    }
+  },
+  {
+    "id": "p-nba-kyle-lowry-draft",
+    "factId": "nba-kyle-lowry-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Kyle Lowry?",
+    "answer": "Grizzlies",
+    "wrong": [
+      "Raptors",
+      "Rockets",
+      "76ers"
+    ],
+    "teach": "Memphis took Lowry 24th overall in 2006 after two seasons at Villanova.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Kyle_Lowry",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2019,
+      "player": "Kyle Lowry"
+    }
+  },
+  {
+    "id": "p-nba-rajon-rondo-draft",
+    "factId": "nba-rajon-rondo-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Rajon Rondo?",
+    "answer": "Suns",
+    "wrong": [
+      "Celtics",
+      "Hornets",
+      "Kings"
+    ],
+    "teach": "Phoenix took Rondo 21st in 2006 and traded him to Boston with Brian Grant for a 2007 first-round pick.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Rajon_Rondo",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2008,
+      "player": "Rajon Rondo"
+    }
+  },
+  {
+    "id": "p-nba-chauncey-billups-draft",
+    "factId": "nba-chauncey-billups-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Chauncey Billups?",
+    "answer": "Celtics",
+    "wrong": [
+      "Pistons",
+      "Nuggets",
+      "Raptors"
+    ],
+    "teach": "Boston took Billups 3rd overall in 1997 out of Colorado.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Chauncey_Billups",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2004,
+      "player": "Chauncey Billups"
+    }
+  },
+  {
+    "id": "p-nba-hedo-turkoglu-draft",
+    "factId": "nba-hedo-turkoglu-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Hedo Türkoğlu?",
+    "answer": "Kings",
+    "wrong": [
+      "Magic",
+      "Spurs",
+      "Raptors"
+    ],
+    "teach": "Sacramento took Türkoğlu 16th overall in 2000; he played there through 2003.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Hedo_Türkoğlu",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2008,
+      "player": "Hedo Türkoğlu"
+    }
+  },
+  {
+    "id": "p-nba-steve-nash-country",
+    "factId": "nba-steve-nash-country",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Steve Nash was born in which country?",
+    "answer": "South Africa",
+    "wrong": [
+      "Canada",
+      "England",
+      "Australia"
+    ],
+    "teach": "Born in Johannesburg, Nash moved to Canada as a toddler and grew up in Victoria, British Columbia.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Steve_Nash",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2005,
+      "player": "Steve Nash"
+    }
+  },
+  {
+    "id": "p-nba-tony-parker-country",
+    "factId": "nba-tony-parker-country",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Tony Parker was born in which country?",
+    "answer": "Belgium",
+    "wrong": [
+      "France",
+      "Netherlands",
+      "Switzerland"
+    ],
+    "teach": "Born in Bruges and raised in France, Parker is the son of a former Loyola Chicago player.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Tony_Parker",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2007,
+      "player": "Tony Parker"
+    }
+  },
+  {
+    "id": "p-nba-patrick-ewing-country",
+    "factId": "nba-patrick-ewing-country",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Patrick Ewing was born in which country?",
+    "answer": "Jamaica",
+    "wrong": [
+      "Trinidad and Tobago",
+      "Barbados",
+      "Haiti"
+    ],
+    "teach": "Ewing was born in Kingston one day before Jamaica declared independence.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Patrick_Ewing",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 1994,
+      "player": "Patrick Ewing"
+    }
+  },
+  {
+    "id": "p-nba-al-horford-country",
+    "factId": "nba-al-horford-country",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Al Horford was born in which country?",
+    "answer": "Dominican Republic",
+    "wrong": [
+      "Puerto Rico",
+      "Cuba",
+      "Venezuela"
+    ],
+    "teach": "Born in Puerto Plata, Horford is the son of Tito Horford, who played three NBA seasons.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Al_Horford",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2010,
+      "player": "Al Horford"
+    }
+  },
+  {
+    "id": "p-nba-buddy-hield-country",
+    "factId": "nba-buddy-hield-country",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Buddy Hield was born in which country?",
+    "answer": "Bahamas",
+    "wrong": [
+      "Jamaica",
+      "Haiti",
+      "Barbados"
+    ],
+    "teach": "Hield grew up in Eight Mile Rock on Grand Bahama and went to high school in Freeport.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Buddy_Hield",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2019,
+      "player": "Buddy Hield"
+    }
+  },
+  {
+    "id": "p-nba-scottie-pippen-college",
+    "factId": "nba-scottie-pippen-college",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Alma mater",
+    "prompt": "Where did Scottie Pippen play college ball?",
+    "answer": "Central Arkansas",
+    "wrong": [
+      "Arkansas",
+      "Arkansas State",
+      "Memphis"
+    ],
+    "teach": "Pippen joined the NAIA school as a walk-on and grew from 6 ft 1 in to 6 ft 8 in there.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Scottie_Pippen",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 1991,
+      "player": "Scottie Pippen"
+    }
+  },
+  {
+    "id": "p-nba-karl-malone-college",
+    "factId": "nba-karl-malone-college",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Alma mater",
+    "prompt": "Where did Karl Malone play college ball?",
+    "answer": "Louisiana Tech",
+    "wrong": [
+      "LSU",
+      "Arkansas",
+      "Grambling State"
+    ],
+    "teach": "Malone first chose Arkansas, then signed with the Bulldogs in 1981; low grades kept him out as a freshman.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Karl_Malone",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 1997,
+      "player": "Karl Malone"
+    }
+  },
+  {
+    "id": "p-nba-steve-nash-jersey",
+    "factId": "nba-steve-nash-jersey",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "Steve Nash's jersey number in 2005?",
+    "answer": "13",
+    "wrong": [
+      "10",
+      "11",
+      "1"
+    ],
+    "teach": "Nash took No. 10 with the Lakers, where 13 is retired for Wilt Chamberlain.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2004–05_Phoenix_Suns_season",
+      "ref": "Wikipedia 2004–05 Phoenix Suns season roster, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2005,
+      "player": "Steve Nash"
+    }
+  },
+  {
+    "id": "p-nba-manu-ginobili-jersey",
+    "factId": "nba-manu-ginobili-jersey",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "Manu Ginóbili's jersey number in 2005?",
+    "answer": "20",
+    "wrong": [
+      "21",
+      "9",
+      "15"
+    ],
+    "teach": "The Spurs retired Ginóbili's No. 20 on March 28, 2019.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2004–05_San_Antonio_Spurs_season",
+      "ref": "Wikipedia 2004–05 San Antonio Spurs season roster, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2005,
+      "player": "Manu Ginóbili"
+    }
+  },
+  {
+    "id": "p-nba-dennis-rodman-jersey",
+    "factId": "nba-dennis-rodman-jersey",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "Dennis Rodman's jersey number in 1996?",
+    "answer": "91",
+    "wrong": [
+      "10",
+      "19",
+      "1"
+    ],
+    "teach": "With Chicago's No. 10 retired for Bob Love, Rodman picked 91, whose digits add up to 10.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/1995–96_Chicago_Bulls_season",
+      "ref": "Wikipedia 1995–96 Chicago Bulls season roster, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 1996,
+      "player": "Dennis Rodman"
+    }
+  },
+  {
+    "id": "p-nba-marc-gasol-draft",
+    "factId": "nba-marc-gasol-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Marc Gasol?",
+    "answer": "Lakers",
+    "wrong": [
+      "Grizzlies",
+      "Raptors",
+      "Spurs"
+    ],
+    "teach": "LA took Marc 48th in 2007, then sent his rights to Memphis in 2008 in the trade for his brother Pau.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Marc_Gasol",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2013,
+      "player": "Marc Gasol"
+    }
+  },
+  {
+    "id": "p-nba-rudy-gobert-draft",
+    "factId": "nba-rudy-gobert-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Rudy Gobert?",
+    "answer": "Nuggets",
+    "wrong": [
+      "Jazz",
+      "Timberwolves",
+      "Hawks"
+    ],
+    "teach": "Denver took Gobert 27th overall in 2013 and traded him to Utah on draft night.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Rudy_Gobert",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2018,
+      "player": "Rudy Gobert"
+    }
+  },
+  {
+    "id": "p-nba-goran-dragic-draft",
+    "factId": "nba-goran-dragic-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Goran Dragić?",
+    "answer": "Spurs",
+    "wrong": [
+      "Suns",
+      "Heat",
+      "Rockets"
+    ],
+    "teach": "San Antonio took Dragić 45th in 2008 and sent his rights to Phoenix for cash and the 48th pick's rights.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Goran_Dragić",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2014,
+      "player": "Goran Dragić"
+    }
+  },
+  {
+    "id": "p-nba-serge-ibaka-draft",
+    "factId": "nba-serge-ibaka-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Serge Ibaka?",
+    "answer": "SuperSonics",
+    "wrong": [
+      "Thunder",
+      "Raptors",
+      "Magic"
+    ],
+    "teach": "Seattle took Ibaka 24th in 2008, just before the franchise relocated to Oklahoma City.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Serge_Ibaka",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2012,
+      "player": "Serge Ibaka"
+    }
+  },
+  {
+    "id": "p-nba-domantas-sabonis-draft",
+    "factId": "nba-domantas-sabonis-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Domantas Sabonis?",
+    "answer": "Magic",
+    "wrong": [
+      "Pacers",
+      "Thunder",
+      "Kings"
+    ],
+    "teach": "Orlando took Sabonis 11th overall in 2016 and traded him to Oklahoma City on draft night.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Domantas_Sabonis",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2022,
+      "player": "Domantas Sabonis"
+    }
+  },
+  {
+    "id": "p-nba-jusuf-nurkic-draft",
+    "factId": "nba-jusuf-nurkic-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Jusuf Nurkić?",
+    "answer": "Bulls",
+    "wrong": [
+      "Nuggets",
+      "Trail Blazers",
+      "Suns"
+    ],
+    "teach": "Chicago took Nurkić 16th overall in 2014 and traded him to Denver on draft night.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jusuf_Nurkić",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2018,
+      "player": "Jusuf Nurkić"
+    }
+  },
+  {
+    "id": "p-nba-bojan-bogdanovic-draft",
+    "factId": "nba-bojan-bogdanovic-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Bojan Bogdanović?",
+    "answer": "Heat",
+    "wrong": [
+      "Nets",
+      "Jazz",
+      "Pacers"
+    ],
+    "teach": "Miami took Bogdanović 31st in 2011; his rights went to Minnesota, then New Jersey, that night.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Bojan_Bogdanović",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2019,
+      "player": "Bojan Bogdanović"
+    }
+  },
+  {
+    "id": "p-nba-davis-bertans-draft",
+    "factId": "nba-davis-bertans-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Dāvis Bertāns?",
+    "answer": "Pacers",
+    "wrong": [
+      "Spurs",
+      "Wizards",
+      "Mavericks"
+    ],
+    "teach": "Indiana took the Latvian forward 42nd overall in 2011.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Dāvis_Bertāns",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2019,
+      "player": "Dāvis Bertāns"
+    }
+  },
+  {
+    "id": "p-nba-nicolas-batum-draft",
+    "factId": "nba-nicolas-batum-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Nicolas Batum?",
+    "answer": "Rockets",
+    "wrong": [
+      "Trail Blazers",
+      "Hornets",
+      "Clippers"
+    ],
+    "teach": "Houston took Batum 25th in 2008 and traded him to Portland for the rights to Darrell Arthur and Joey Dorsey.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Nicolas_Batum",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2012,
+      "player": "Nicolas Batum"
+    }
+  },
+  {
+    "id": "p-nba-nikola-mirotic-draft",
+    "factId": "nba-nikola-mirotic-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Nikola Mirotić?",
+    "answer": "Rockets",
+    "wrong": [
+      "Bulls",
+      "Pelicans",
+      "Bucks"
+    ],
+    "teach": "Houston took Mirotić 23rd in 2011; his rights went to Minnesota, then Chicago, on draft night.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Nikola_Mirotić",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2016,
+      "player": "Nikola Mirotić"
+    }
+  },
+  {
+    "id": "p-nba-nikola-vucevic-draft",
+    "factId": "nba-nikola-vucevic-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Nikola Vučević?",
+    "answer": "76ers",
+    "wrong": [
+      "Magic",
+      "Bulls",
+      "Celtics"
+    ],
+    "teach": "Philadelphia took Vučević 16th overall in 2011 out of USC.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Nikola_Vučević",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2019,
+      "player": "Nikola Vučević"
+    }
+  },
+  {
+    "id": "p-nba-kyle-korver-draft",
+    "factId": "nba-kyle-korver-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Kyle Korver?",
+    "answer": "Nets",
+    "wrong": [
+      "76ers",
+      "Jazz",
+      "Hawks"
+    ],
+    "teach": "New Jersey took Korver 51st in 2003 and sold his rights to Philadelphia for $125,000.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Kyle_Korver",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2015,
+      "player": "Kyle Korver"
+    }
+  },
+  {
+    "id": "p-nba-khris-middleton-draft",
+    "factId": "nba-khris-middleton-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Khris Middleton?",
+    "answer": "Pistons",
+    "wrong": [
+      "Bucks",
+      "Suns",
+      "Hawks"
+    ],
+    "teach": "Detroit took Middleton 39th overall in 2012 out of Texas A&M.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Khris_Middleton",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2021,
+      "player": "Khris Middleton"
+    }
+  },
+  {
+    "id": "p-nba-p-j-tucker-draft",
+    "factId": "nba-p-j-tucker-draft",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted P. J. Tucker?",
+    "answer": "Raptors",
+    "wrong": [
+      "Suns",
+      "Rockets",
+      "Bucks"
+    ],
+    "teach": "Toronto took Tucker 35th in 2006 out of Texas; he was traded back to the Raptors in 2017.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/P._J._Tucker",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2018,
+      "player": "P. J. Tucker"
+    }
+  },
+  {
+    "id": "p-nba-rony-seikaly-country",
+    "factId": "nba-rony-seikaly-country",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Rony Seikaly was born in which country?",
+    "answer": "Lebanon",
+    "wrong": [
+      "Greece",
+      "Egypt",
+      "Syria"
+    ],
+    "teach": "Born in Beirut, Seikaly moved to Athens at 14 and later starred at Syracuse.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Rony_Seikaly",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 1990,
+      "player": "Rony Seikaly"
+    }
+  },
+  {
+    "id": "p-nba-aron-baynes-country",
+    "factId": "nba-aron-baynes-country",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Aron Baynes was born in which country?",
+    "answer": "New Zealand",
+    "wrong": [
+      "Australia",
+      "Fiji",
+      "England"
+    ],
+    "teach": "Baynes was born in Gisborne and later played college ball at Washington State.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Aron_Baynes",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2018,
+      "player": "Aron Baynes"
+    }
+  },
+  {
+    "id": "p-nba-enes-kanter-freedom-country",
+    "factId": "nba-enes-kanter-freedom-country",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Enes Kanter Freedom was born in which country?",
+    "answer": "Switzerland",
+    "wrong": [
+      "Turkey",
+      "Germany",
+      "Austria"
+    ],
+    "teach": "Born in Zürich to parents from Turkey, he was raised in Turkey before moving to the U.S. as a teenager.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Enes_Kanter_Freedom",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2016,
+      "player": "Enes Kanter Freedom"
+    }
+  },
+  {
+    "id": "p-nba-bruce-bowen-college",
+    "factId": "nba-bruce-bowen-college",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Bruce Bowen play college ball?",
+    "answer": "Cal State Fullerton",
+    "wrong": [
+      "Long Beach State",
+      "UC Irvine",
+      "Fresno State"
+    ],
+    "teach": "Bowen went undrafted in 1993 and played in France and the CBA before reaching the NBA.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Bruce_Bowen",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2005,
+      "player": "Bruce Bowen"
+    }
+  },
+  {
+    "id": "p-nba-derek-fisher-college",
+    "factId": "nba-derek-fisher-college",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Derek Fisher play college ball?",
+    "answer": "Little Rock",
+    "wrong": [
+      "Arkansas",
+      "Arkansas State",
+      "Memphis"
+    ],
+    "teach": "Fisher was the 1996 Sun Belt Player of the Year at his hometown school.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Derek_Fisher",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2001,
+      "player": "Derek Fisher"
+    }
+  },
+  {
+    "id": "p-nba-pascal-siakam-college",
+    "factId": "nba-pascal-siakam-college",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Pascal Siakam play college ball?",
+    "answer": "New Mexico State",
+    "wrong": [
+      "New Mexico",
+      "UTEP",
+      "Grand Canyon"
+    ],
+    "teach": "Siakam was the 2016 WAC Player of the Year after averaging 20.2 points and 11.6 rebounds.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Pascal_Siakam",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2019,
+      "player": "Pascal Siakam"
+    }
+  },
+  {
+    "id": "p-nba-larry-nance-jr-college",
+    "factId": "nba-larry-nance-jr-college",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Larry Nance Jr. play college ball?",
+    "answer": "Wyoming",
+    "wrong": [
+      "Colorado State",
+      "Utah",
+      "Boise State"
+    ],
+    "teach": "Nance averaged 11.3 points over four college seasons before the Lakers took him 27th in 2015.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Larry_Nance_Jr.",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2017,
+      "player": "Larry Nance Jr."
+    }
+  },
+  {
+    "id": "p-nba-rik-smits-college",
+    "factId": "nba-rik-smits-college",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Rik Smits play college ball?",
+    "answer": "Marist",
+    "wrong": [
+      "Siena",
+      "Iona",
+      "Manhattan"
+    ],
+    "teach": "The Dunking Dutchman led Marist to its first NCAA tournament in 1986.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Rik_Smits",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 1998,
+      "player": "Rik Smits"
+    }
+  },
+  {
+    "id": "p-nba-andre-miller-college",
+    "factId": "nba-andre-miller-college",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Andre Miller play college ball?",
+    "answer": "Utah",
+    "wrong": [
+      "Utah State",
+      "BYU",
+      "UNLV"
+    ],
+    "teach": "Miller led the Utes to the 1998 title game and left as the school's all-time steals leader.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Andre_Miller",
+      "ref": "Wikipedia infobox and article, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2002,
+      "player": "Andre Miller"
+    }
+  },
+  {
+    "id": "p-nba-robert-horry-jersey",
+    "factId": "nba-robert-horry-jersey",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Jersey number",
+    "prompt": "Robert Horry's jersey number in 2001?",
+    "answer": "5",
+    "wrong": [
+      "25",
+      "3",
+      "15"
+    ],
+    "teach": "Horry wore No. 25 in Houston, but the Lakers had retired 25 for Gail Goodrich.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2000–01_Los_Angeles_Lakers_season",
+      "ref": "Wikipedia 2000–01 Los Angeles Lakers season roster, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2001,
+      "player": "Robert Horry"
+    }
+  },
+  {
+    "id": "p-nba-derek-fisher-jersey",
+    "factId": "nba-derek-fisher-jersey",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Jersey number",
+    "prompt": "Derek Fisher's jersey number in 2001?",
+    "answer": "2",
+    "wrong": [
+      "1",
+      "4",
+      "6"
+    ],
+    "teach": "Fisher later wore No. 6 in Dallas, chasing a sixth title, because No. 2 was unavailable there.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2000–01_Los_Angeles_Lakers_season",
+      "ref": "Wikipedia 2000–01 Los Angeles Lakers season roster, checked 2026-10-13"
+    },
+    "dailyFrom": "2026-10-20",
+    "reel": {
+      "season": 2001,
+      "player": "Derek Fisher"
+    }
+  }
+]
