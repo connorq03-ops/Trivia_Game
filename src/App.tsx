@@ -782,9 +782,8 @@ function App() {
               ref={dailyButtonRef}
             >
               <span className="daily-button-label">
-                <span className="daily-button-eyebrow">Daily 10</span>
                 <span className="daily-button-title">
-                  {todaySummary ? 'Review today’s Daily 10' : 'Play Daily 10'}
+                  {todaySummary ? 'Previous Results' : 'Play Daily 10'}
                 </span>
                 <span className="mode-subtitle">{modeSubtitle('daily')}</span>
               </span>
@@ -801,7 +800,7 @@ function App() {
             disabled={isStarting}
             ref={classicButtonRef}
           >
-            Start classic <span aria-hidden="true">↗</span>
+            Play Classic Mode <span aria-hidden="true">↗</span>
           </button>
           <details className="how-it-works">
             <summary>How it works</summary>
@@ -1170,7 +1169,7 @@ function App() {
               <ResultShare summary={currentSummary} dayStreak={dayStreak} />
               <div className="result-actions">
                 {currentSummary.mode === 'daily' ? (
-                  <button className="classic-button" onClick={startClassic}>Play Classic</button>
+                  <button className="classic-button" onClick={startClassic}>Play Classic Mode</button>
                 ) : (
                   <button className="classic-button" onClick={playAgain}>Play again</button>
                 )}
@@ -1224,7 +1223,7 @@ function App() {
             </div>
             <ResultShare summary={currentSummary} dayStreak={dayStreak} />
             <div className="result-actions">
-              <button className="classic-button" onClick={startClassic}>Play Classic</button>
+              <button className="classic-button" onClick={startClassic}>Play Classic Mode</button>
               <button className="secondary-button" onClick={goHome}>Home</button>
             </div>
             {currentSummary.missed.length > 0 && (

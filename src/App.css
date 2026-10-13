@@ -71,8 +71,11 @@
 
 .daily-button-label {
   display: flex;
+  flex: 1;
   flex-direction: column;
-  gap: 0.25rem;
+  align-items: center;
+  gap: 0.3rem;
+  text-align: center;
 }
 
 .daily-block {
@@ -81,13 +84,6 @@
   gap: 0.55rem;
 }
 
-.daily-button-eyebrow {
-  font-size: 0.66rem;
-  font-weight: 850;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  opacity: 0.75;
-}
 
 .daily-button-title {
   font-size: clamp(1.55rem, 7vw, 2rem);
@@ -122,6 +118,9 @@
 
 .home-classic {
   width: 100%;
+  border-color: var(--sunset-wine);
+  background: linear-gradient(160deg, var(--daily-surface-2), var(--daily-panel));
+  box-shadow: 0 0.35rem 1.2rem -0.7rem var(--sunset-shadow);
   text-align: left;
 }
 
@@ -633,10 +632,18 @@
 }
 
 .daily-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 2.1rem;
   margin: 0;
-  color: var(--muted);
-  font-size: 0.72rem;
-  font-weight: 700;
+  border: 1px solid var(--daily-line-strong);
+  border-radius: 999px;
+  color: var(--sunset-blush);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
   text-align: center;
 }
 
@@ -1061,15 +1068,6 @@
   color: var(--sunset-plum);
 }
 
-.daily-meta {
-  color: var(--sunset-blush);
-}
-
-.home-classic {
-  border-color: var(--daily-line-strong);
-  color: var(--sunset-blush);
-  background: var(--daily-panel);
-}
 
 .home-panel .how-it-works {
   border-color: var(--daily-line);
