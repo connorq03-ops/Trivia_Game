@@ -111,7 +111,7 @@ function mockApi(
 
 async function startClassic() {
   render(<App />)
-  fireEvent.click(screen.getByRole('button', { name: 'Start classic' }))
+  fireEvent.click(screen.getByRole('button', { name: 'Play Classic Mode' }))
   const heading = await screen.findByRole(
     'heading',
     { level: 2, name: /Question 1:\s*Prompt 0\?/ },
@@ -320,7 +320,7 @@ describe('App keyboard and screen-reader play', () => {
     const confirm = vi.spyOn(window, 'confirm')
 
     fireEvent.click(screen.getByRole('button', { name: 'Back home' }))
-    const start = await screen.findByRole('button', { name: 'Start classic' })
+    const start = await screen.findByRole('button', { name: 'Play Classic Mode' })
     await waitFor(() => expect(document.activeElement).toBe(start))
     expect(confirm).not.toHaveBeenCalled()
   })
