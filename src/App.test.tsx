@@ -52,7 +52,7 @@ function mockApi(grades: Grade[], answerPending = false, withBadges = false) {
           questionIndex: 0,
           question: publicQuestion(0, withBadges),
           progress: { score: 0, strikes: 0, streak: 0 },
-          total: null,
+          total: JSON.parse(String(init?.body)).mode === 'daily' ? 10 : null,
         },
         201,
       )
@@ -143,6 +143,7 @@ describe('App keyboard and screen-reader play', () => {
     )
     expect(screen.getByText('0 missed')).toBeTruthy()
     expect(screen.queryByRole('img', { name: /streak/ })).toBeNull()
+    expect(screen.getByText('QUESTION 1 OF 10')).toBeTruthy()
     const track = screen.getByRole('progressbar', { name: 'Daily 10 progress' })
     expect(track.getAttribute('aria-valuenow')).toBe('0')
     expect(track.getAttribute('aria-valuemax')).toBe('10')
