@@ -3,9 +3,10 @@ import {
   dailyStreak,
   dailyStorageKey,
   dailyDateKey,
+  isCurrentDailySummary,
   msUntilNextDailyReset,
   readDailySummary,
-  saveDailySummaryIfFirst,
+  saveDailySummary,
   type GameSummary,
 } from './dailyStore'
 
@@ -24,6 +25,7 @@ function result(score: number): GameSummary {
   return {
     mode: 'daily',
     date: '2026-06-01',
+    schedule: 'ct17',
     score,
     bestStreak: 0,
     questionsAnswered: 10,
@@ -39,7 +41,7 @@ describe('daily store', () => {
     const { storage, values } = makeStorage()
     const first = result(100)
 
-    expect(saveDailySummaryIfFirst(storage, first.date, first)).toEqual(first)
+    expect(saveDailySummary(storage, first.date, first)).toEqual(first)
     expect(JSON.parse(values.get(dailyStorageKey(first.date)) ?? 'null')).toEqual(
       first,
     )
@@ -50,9 +52,9 @@ describe('daily store', () => {
     const first = result(100)
     const second = result(200)
 
-    saveDailySummaryIfFirst(storage, first.date, first)
+    saveDailySummary(storage, first.date, first)
 
-    expect(saveDailySummaryIfFirst(storage, second.date, second)).toEqual(first)
+    expect(saveDailySummary(storage, second.date, second)).toEqual(first)
     expect(readDailySummary(storage, first.date)).toEqual(first)
   })
 
@@ -61,6 +63,20 @@ describe('daily store', () => {
     values.set(dailyStorageKey('2026-06-01'), '{')
 
     expect(readDailySummary(storage, '2026-06-01')).toBeNull()
+  })
+
+  it('keeps the new Daily playable when a UTC-era summary shares its key', () => {
+    const { storage, values } = makeStorage()
+    // A summary written before the 5pm-CT rollout has no schedule tag.
+    const legacy = result(100)
+    delete legacy.schedule
+    values.set(dailyStorageKey(legacy.date), JSON.stringify(legacy))
+
+    expect(isCurrentDailySummary(legacy)).toBe(false)
+
+    const fresh = result(200)
+    expect(saveDailySummary(storage, fresh.date, fresh)).toEqual(fresh)
+    expect(readDailySummary(storage, fresh.date)).toEqual(fresh)
   })
 
   it('labels the daily date by the 5pm Central reset', () => {
@@ -79,6 +95,14 @@ describe('daily store', () => {
     expect(dailyDateKey(Date.parse('2026-12-01T23:00:00.000Z'))).toBe(
       '2026-12-01',
     )
+    // Spring DST: Mar 8 2026, 22:00Z is 5pm CDT — the Mar 8 daily is live.
+    expect(dailyDateKey(Date.parse('2026-03-08T22:00:00.000Z'))).toBe(
+      '2026-03-08',
+    )
+    // One minute earlier is 4:59pm CDT — still the Mar 7 daily.
+    expect(dailyDateKey(Date.parse('2026-03-08T21:59:00.000Z'))).toBe(
+      '2026-03-07',
+    )
   })
 
   it('calculates the delay to the next 5pm Central reset', () => {
@@ -94,6 +118,14 @@ describe('daily store', () => {
     expect(
       msUntilNextDailyReset(Date.parse('2026-12-01T22:30:00.000Z')),
     ).toBe(1_800_000)
+    // Spring DST morning: 3pm CDT Mar 8 -> 2 hours until the 5pm reset.
+    expect(
+      msUntilNextDailyReset(Date.parse('2026-03-08T20:00:00.000Z')),
+    ).toBe(7_200_000)
+    // Fall-back morning: 4pm CST Nov 1 -> 1 hour until the 5pm reset.
+    expect(
+      msUntilNextDailyReset(Date.parse('2026-11-01T22:00:00.000Z')),
+    ).toBe(3_600_000)
   })
 
   it('counts consecutive Daily summaries and stops at gaps or corrupt entries', () => {

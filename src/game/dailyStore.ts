@@ -4,6 +4,9 @@ import type { Question } from './types'
 export type GameSummary = {
   mode: 'classic' | 'daily'
   date: string
+  // Marks summaries written under the 5pm-CT schedule so results saved under
+  // the old UTC-midnight schedule can't block a same-labeled new Daily.
+  schedule?: 'ct17'
   score: number
   bestStreak: number
   questionsAnswered: number
@@ -41,13 +44,15 @@ export function readDailySummary(
   }
 }
 
-export function saveDailySummaryIfFirst(
+// First-write-wins among current-schedule summaries: a same-labeled
+// UTC-era summary is overwritten so the new Daily's result still saves.
+export function saveDailySummary(
   storage: StorageLike,
   date: string,
   result: GameSummary,
 ): GameSummary {
   const existing = readDailySummary(storage, date)
-  if (existing) return existing
+  if (existing && isCurrentDailySummary(existing)) return existing
   try {
     storage.setItem(dailyStorageKey(date), JSON.stringify(result))
   } catch {
@@ -110,10 +115,22 @@ function wallToDate(wallMs: number): string {
   return `${date.getUTCFullYear()}-${pad(date.getUTCMonth() + 1)}-${pad(date.getUTCDate())}`
 }
 
-// The Daily 10 "date" for a given instant: the CT calendar date of the
-// 5pm-anchored day, i.e. today CT once it's past 5pm, else yesterday CT.
+// The Daily 10 "date" for a given instant: the CT calendar date once it's
+// past 5pm CT, else the previous CT date. Compares the CT wall hour rather
+// than shifting the instant, so a DST change can't move the boundary.
 export function dailyDateKey(nowMs: number = Date.now()): string {
-  return wallToDate(chicagoWallMs(nowMs - DAILY_RESET_HOUR_CT * 3_600_000))
+  const wall = chicagoWallMs(nowMs)
+  const day =
+    new Date(wall).getUTCHours() >= DAILY_RESET_HOUR_CT
+      ? wall
+      : wall - 86_400_000
+  return wallToDate(day)
+}
+
+// True when a stored summary was written under the current schedule; a
+// same-labeled summary from the UTC-midnight era doesn't count as played.
+export function isCurrentDailySummary(summary: GameSummary): boolean {
+  return summary.schedule === 'ct17'
 }
 
 export function msUntilNextDailyReset(nowMs: number): number {

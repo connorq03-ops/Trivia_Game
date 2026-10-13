@@ -22,9 +22,10 @@ import {
   dailyStreak,
   dailyStorageKey,
   dailyDateKey,
+  isCurrentDailySummary,
   msUntilNextDailyReset,
   readDailySummary,
-  saveDailySummaryIfFirst,
+  saveDailySummary,
   type GameSummary,
 } from './game/dailyStore'
 import { formatCountdown } from './game/share'
@@ -138,7 +139,9 @@ function browserStorage(): Pick<Storage, 'getItem' | 'setItem'> | null {
 
 function storedSummary(date: string): GameSummary | null {
   const storage = browserStorage()
-  return storage ? readDailySummary(storage, date) : null
+  if (!storage) return null
+  const summary = readDailySummary(storage, date)
+  return summary && isCurrentDailySummary(summary) ? summary : null
 }
 
 function formatDuration(milliseconds: number): string {
@@ -410,9 +413,10 @@ function App() {
   const saveDailyResult = (result: GameSummary) => {
     if (result.mode !== 'daily') return
     const storage = browserStorage()
+    const tagged = { ...result, schedule: 'ct17' as const }
     const winner = storage
-      ? saveDailySummaryIfFirst(storage, result.date, result)
-      : result
+      ? saveDailySummary(storage, result.date, tagged)
+      : tagged
     if (result.date === dailyDateKey()) setTodaySummary(winner)
   }
 
