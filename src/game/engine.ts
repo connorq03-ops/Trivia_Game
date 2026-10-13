@@ -227,6 +227,18 @@ export function bossMilestoneFor(correctCount: number): number | null {
   return 50 + Math.floor((correctCount - 50) / 25) * 25
 }
 
+// Runs saved before milestones stored LEVELS indexes (1-4 for the old
+// 10/20/35/50 thresholds). Rewrite them to the nearest new milestones so
+// an in-flight run can't re-fire a boss it already saw.
+const LEGACY_BOSS_LEVEL_MILESTONES = [10, 20, 30, 50]
+export function normalizeBossMilestones(consumed: readonly number[]): number[] {
+  return consumed.map((value) =>
+    value >= 1 && value < 10
+      ? (LEGACY_BOSS_LEVEL_MILESTONES[value - 1] ?? value)
+      : value,
+  )
+}
+
 function selectBossQuestion(
   usedFactIds: ReadonlySet<string>,
   correct: number,

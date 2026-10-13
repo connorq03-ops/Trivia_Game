@@ -17,6 +17,7 @@ import {
   LEVELS,
   levelFor,
   bossMilestoneFor,
+  normalizeBossMilestones,
   presentQuestion,
   resolveAnswerMs,
   scoreAnswer,
@@ -506,6 +507,12 @@ describe('Boss questions', () => {
     expect(bossMilestoneFor(60)).toBe(50)
     expect(bossMilestoneFor(75)).toBe(75)
     expect(bossMilestoneFor(99)).toBe(75)
+  })
+
+  it('rewrites legacy level indexes in stored boss milestones', () => {
+    expect(normalizeBossMilestones([1, 2, 3, 4])).toEqual([10, 20, 30, 50])
+    expect(normalizeBossMilestones([10, 40, 75])).toEqual([10, 40, 75])
+    expect(normalizeBossMilestones([])).toEqual([])
   })
 
   it('triggers once at each boss milestone', () => {

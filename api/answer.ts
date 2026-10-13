@@ -17,6 +17,7 @@ import {
   DAILY_STREAK_STEP,
   dailyBonusBoss,
   dailyQuestions,
+  normalizeBossMilestones,
   presentQuestion,
   qualifiesForDailyBonus,
   resolveAnswerMs,
@@ -112,7 +113,7 @@ function deserializeProgress(value: RunRow['progress']): RunProgress {
     ...stored,
     missed,
     results: stored.results ?? [],
-    bossLevelsConsumed: stored.bossLevelsConsumed ?? [],
+    bossLevelsConsumed: normalizeBossMilestones(stored.bossLevelsConsumed ?? []),
     bossMisses: stored.bossMisses ?? 0,
     bossMissed: (stored.bossMissed ?? [])
       .map((id) => questionsById.get(id))

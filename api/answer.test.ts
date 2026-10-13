@@ -471,6 +471,19 @@ describe('answer handler', () => {
       )
     })
 
+    it('treats a stored legacy level index as its milestone', async () => {
+      vi.stubEnv('BOSS_QUESTIONS', 'true')
+      // Pre-milestone runs stored LEVELS indexes: 4 meant the 50-correct boss.
+      const sql = mockSql({ rows: [runAtCorrect(49, { bossLevelsConsumed: [4] })] })
+      await POST(makeRequest({ ...validBody, questionIndex: 49 }))
+
+      const { values, progress } = storedUpdate(sql)
+      expect(progress.bossLevelsConsumed).toEqual([50])
+      expect(values.some((value) => bossQuestions.some((question) => question.id === value))).toBe(
+        false,
+      )
+    })
+
     it('scores a boss hit as a flat 500 on the 15-second clock', async () => {
       mockSql({ rows: [bossRun({}, { server_ms: 12_500 })] })
       const body = await (
