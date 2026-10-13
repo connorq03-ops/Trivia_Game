@@ -112,6 +112,7 @@ type RunResponse = {
   question: PublicQuestion
   progress: PublicProgress
   total: number | null
+  bosses?: boolean
 }
 
 function utcDate(): string {
@@ -372,6 +373,7 @@ function App() {
 
       activeRunId.current = result.runId
       questionClockOffset.current = 0
+      setBossesEnabled(result.bosses === true)
       setSession({
         mode: input.mode,
         runId: result.runId,
