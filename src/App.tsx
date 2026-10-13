@@ -327,12 +327,12 @@ function App() {
   }, [refreshToday, today])
 
   useEffect(() => {
-    if (screen !== 'home' || !todaySummary) return
+    if (screen !== 'home') return
     const updateNow = () => setNow(Date.now())
     updateNow()
     const interval = window.setInterval(updateNow, 30_000)
     return () => window.clearInterval(interval)
-  }, [screen, todaySummary])
+  }, [screen])
 
   const startRun = async (
     input:
