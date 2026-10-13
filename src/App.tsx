@@ -767,7 +767,7 @@ function App() {
           <div className="home-hero">
             <p className="eyebrow">Football · Basketball · Baseball trivia</p>
             <h1>Streaking Sports</h1>
-            <p className="tagline">No rulebook when you’re streaking.</p>
+            <p className="tagline">Know the rules when streaking.</p>
           </div>
           {startError && (
             <p className="connection-note" role="alert">
