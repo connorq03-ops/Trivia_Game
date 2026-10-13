@@ -3,6 +3,7 @@ import {
   BOSS_HIT_POINTS,
   BOSS_MISS_POINTS,
   CLOCK_MS,
+  DAILY_STREAK_STEP,
   levelFor,
   LEVELS,
   MULTIPLIER_TIERS,
@@ -44,7 +45,7 @@ export function howItWorks({ bosses = false }: { bosses?: boolean } = {}): strin
           `Each level-up brings a boss question on science, history, art or pop culture: ${BOSS_CLOCK_MS / 1000} seconds, +${BOSS_HIT_POINTS} if right, −${BOSS_MISS_POINTS} if wrong, no strike.`,
         ]
       : []),
-    'Daily 10: the same 10 questions for everyone today, easy to hard. No strikes.',
+    `Daily 10: the same 10 questions for everyone today, easy to hard. No strikes. Each correct answer in a row adds +${Math.round(DAILY_STREAK_STEP * 100)}% to your points.`,
   ]
 }
 
@@ -54,8 +55,12 @@ export function modeSubtitle(mode: 'classic' | 'daily'): string {
     : 'Same 10 questions for everyone today.'
 }
 
-export function multiplierLabel(streakBefore: number): string | null {
-  const multiplier = streakMultiplier(streakBefore)
+export function multiplierLabel(
+  streakBefore: number,
+  streakStep = 0,
+): string | null {
+  const multiplier =
+    streakMultiplier(streakBefore) * (1 + streakStep * streakBefore)
   return multiplier === 1 ? null : formatMultiplier(multiplier)
 }
 
