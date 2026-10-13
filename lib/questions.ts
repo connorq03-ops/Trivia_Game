@@ -5,7 +5,12 @@ import playersMlb from '../content/players-mlb.json' with { type: 'json' }
 import players from '../content/players.json' with { type: 'json' }
 import rulesDeep from '../content/rules-deep.json' with { type: 'json' }
 import rules from '../content/rules.json' with { type: 'json' }
-import { BOSS_CLOCK_MS, BOSS_REEL_MS } from '../src/game/engine.js'
+import {
+  BOSS_CLOCK_MS,
+  BOSS_HIT_POINTS,
+  BOSS_MISS_POINTS,
+  BOSS_REEL_MS,
+} from '../src/game/engine.js'
 import type {
   BossCategory,
   BossQuestion,
@@ -47,7 +52,14 @@ export type PublicQuestion = Pick<
 > & {
   choices: string[]
   choiceBadges?: (ChoiceBadge | null)[]
-  boss?: { category: BossCategory; clockMs: number; reelMs: number; bonus?: boolean }
+  boss?: {
+    category: BossCategory
+    clockMs: number
+    reelMs: number
+    hitPoints: number
+    missPoints: number
+    bonus?: boolean
+  }
 }
 
 export function publicQuestion(
@@ -74,6 +86,8 @@ export function publicQuestion(
             category: question.category,
             clockMs: BOSS_CLOCK_MS,
             reelMs: BOSS_REEL_MS,
+            hitPoints: BOSS_HIT_POINTS,
+            missPoints: BOSS_MISS_POINTS,
             ...(bonus ? { bonus: true } : {}),
           },
         }

@@ -683,6 +683,19 @@
   background: var(--muted);
 }
 
+.result-square--boss-hit {
+  /* results carry no category; fall back to the boss gold */
+  background: var(--boss, #ffd60a);
+}
+
+.result-square--boss-miss {
+  background: var(--error);
+}
+
+.result-square--boss-timeout {
+  background: var(--muted);
+}
+
 .result-meta {
   margin: 0;
   color: var(--muted);

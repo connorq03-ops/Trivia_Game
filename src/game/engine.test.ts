@@ -545,6 +545,7 @@ describe('Boss questions', () => {
   it('scores a hit as a flat 500 and extends the streak', () => {
     const outcome = answerBossQuestion(
       progressWith({ score: 1000, streak: 12, bestStreak: 12, questionsAnswered: 12 }),
+      bossBank[0],
       true,
       14_000,
     )
@@ -558,22 +559,23 @@ describe('Boss questions', () => {
       questionsAnswered: 13,
       answeredCount: 0,
       totalAnswerMs: 0,
-      results: ['hit'],
+      results: ['boss-hit'],
     })
   })
 
   it('backs off a strike when a boss hit reaches a strike-back streak', () => {
     const outcome = answerBossQuestion(
       progressWith({ score: 1000, streak: 14, strikes: 2 }),
+      bossBank[0],
       true,
       2_000,
     )
     expect(outcome.progress.strikes).toBe(1)
   })
 
-  it('takes 250 on a miss without a strike, streak reset, or review entry', () => {
+  it('takes 250 on a miss without a strike or streak reset, and keeps the question for review', () => {
     const progress = progressWith({ score: 1000, streak: 12, strikes: 1 })
-    const outcome = answerBossQuestion(progress, false, 3_000)
+    const outcome = answerBossQuestion(progress, bossBank[0], false, 3_000)
     expect(outcome.correct).toBe(false)
     expect(outcome.points).toBe(-250)
     expect(outcome.endReason).toBeUndefined()
@@ -582,17 +584,18 @@ describe('Boss questions', () => {
       strikes: 1,
       streak: 12,
       missed: [],
-      results: ['miss'],
+      results: ['boss-miss'],
+      bossMissed: [bossBank[0]],
     })
   })
 
   it('floors the score at zero and records timeouts', () => {
-    const outcome = answerBossQuestion(progressWith({ score: 100 }), true, BOSS_CLOCK_MS)
+    const outcome = answerBossQuestion(progressWith({ score: 100 }), bossBank[0], true, BOSS_CLOCK_MS)
     expect(outcome.correct).toBe(false)
     expect(outcome.points).toBe(-100)
     expect(outcome.answerMs).toBeNull()
     expect(outcome.progress.score).toBe(0)
-    expect(outcome.progress.results).toEqual(['timeout'])
+    expect(outcome.progress.results).toEqual(['boss-timeout'])
   })
 
   it('accepts boss answers past the regular clock', () => {
@@ -605,11 +608,12 @@ describe('Boss questions', () => {
   it('keeps the correct count for legacy runs that miss a boss', () => {
     const legacy = progressWith({ questionsAnswered: 10, results: [] })
     expect(correctCount(legacy)).toBe(10)
-    const outcome = answerBossQuestion(legacy, false, 2_000)
+    const outcome = answerBossQuestion(legacy, bossBank[0], false, 2_000)
     expect(outcome.progress.missed).toEqual([])
     expect(outcome.progress.bossMisses).toBe(1)
+    expect(outcome.progress.bossMissed).toEqual([bossBank[0]])
     expect(correctCount(outcome.progress)).toBe(10)
-    const hit = answerBossQuestion(outcome.progress, true, 2_000)
+    const hit = answerBossQuestion(outcome.progress, bossBank[1], true, 2_000)
     expect(correctCount(hit.progress)).toBe(11)
   })
 })
@@ -660,33 +664,34 @@ describe('Daily bonus boss', () => {
   })
 
   it('scores a hit as +500 and a miss or timeout as zero', () => {
-    const hit = answerBonusBossQuestion(fastPerfect, true, 4_000)
+    const hit = answerBonusBossQuestion(fastPerfect, bossBank[0], true, 4_000)
     expect(hit.correct).toBe(true)
     expect(hit.points).toBe(BOSS_HIT_POINTS)
     expect(hit.progress).toMatchObject({
       score: 3500,
       streak: 11,
       bestStreak: 11,
-      dailyBonusResult: 'hit',
+      dailyBonusResult: 'boss-hit',
     })
 
-    const miss = answerBonusBossQuestion(fastPerfect, false, 4_000)
+    const miss = answerBonusBossQuestion(fastPerfect, bossBank[0], false, 4_000)
     expect(miss.correct).toBe(false)
     expect(miss.points).toBe(0)
     expect(miss.progress.score).toBe(3000)
     expect(miss.progress.streak).toBe(10)
-    expect(miss.progress.dailyBonusResult).toBe('miss')
+    expect(miss.progress.dailyBonusResult).toBe('boss-miss')
+    expect(miss.progress.bossMissed).toEqual([bossBank[0]])
 
-    const timeout = answerBonusBossQuestion(fastPerfect, true, BOSS_CLOCK_MS)
+    const timeout = answerBonusBossQuestion(fastPerfect, bossBank[0], true, BOSS_CLOCK_MS)
     expect(timeout.correct).toBe(false)
     expect(timeout.points).toBe(0)
-    expect(timeout.progress.dailyBonusResult).toBe('timeout')
+    expect(timeout.progress.dailyBonusResult).toBe('boss-timeout')
   })
 
   it('keeps the ten-question summary intact regardless of the bonus outcome', () => {
     for (const outcome of [
-      answerBonusBossQuestion(fastPerfect, true, 4_000),
-      answerBonusBossQuestion(fastPerfect, false, 4_000),
+      answerBonusBossQuestion(fastPerfect, bossBank[0], true, 4_000),
+      answerBonusBossQuestion(fastPerfect, bossBank[0], false, 4_000),
     ]) {
       expect(outcome.progress.questionsAnswered).toBe(10)
       expect(outcome.progress.results).toHaveLength(10)

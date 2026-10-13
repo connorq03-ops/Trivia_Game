@@ -51,7 +51,14 @@ type PublicQuestion = Pick<
 > & {
   choices: string[]
   choiceBadges?: (ChoiceBadge | null)[]
-  boss?: { category: string; clockMs: number; reelMs: number; bonus?: boolean }
+  boss?: {
+    category: string
+    clockMs: number
+    reelMs: number
+    hitPoints: number
+    missPoints: number
+    bonus?: boolean
+  }
 }
 
 type PublicProgress = {
@@ -1018,7 +1025,7 @@ function App() {
               </div>
               <p className="boss-category">{bossLabel(question.boss.category)}</p>
               <p className="reel-caption">
-                {question.boss.clockMs / 1000} seconds · +500 if right · {question.boss.bonus ? 'bonus round · no penalty if wrong' : '−250 if wrong · no strike'}
+                {question.boss.clockMs / 1000} seconds · +{question.boss.hitPoints} if right · {question.boss.bonus ? 'bonus round · no penalty if wrong' : `−${question.boss.missPoints} if wrong · no strike`}
               </p>
             </div>
           )}
@@ -1227,8 +1234,12 @@ function App() {
                 <div className="missed-list">
                   <h3>Review the misses</h3>
                   {currentSummary.missed.map((missed) => (
-                    <article className="missed-card" key={`${missed.id}-${missed.factId}`}>
-                      <p>{missed.prompt}</p>
+                    <article
+                      className="missed-card"
+                      key={`${missed.id}-${missed.factId}`}
+                      data-boss-category={missed.side === 'boss' ? missed.category : undefined}
+                    >
+                      <p>{missed.side === 'boss' && <b className="boss-chip">Boss</b>}{missed.prompt}</p>
                       <strong>{missed.answer}</strong>
                       <span>{missed.teach}</span>
                     </article>
@@ -1274,8 +1285,12 @@ function App() {
               <div className="missed-list">
                 <h3>Review the misses</h3>
                 {currentSummary.missed.map((missed) => (
-                  <article className="missed-card" key={`${missed.id}-${missed.factId}`}>
-                    <p>{missed.prompt}</p><strong>{missed.answer}</strong><span>{missed.teach}</span>
+                  <article
+                    className="missed-card"
+                    key={`${missed.id}-${missed.factId}`}
+                    data-boss-category={missed.side === 'boss' ? missed.category : undefined}
+                  >
+                    <p>{missed.side === 'boss' && <b className="boss-chip">Boss</b>}{missed.prompt}</p><strong>{missed.answer}</strong><span>{missed.teach}</span>
                   </article>
                 ))}
               </div>
