@@ -13,6 +13,7 @@ import {
   BOSS_CLOCK_MS,
   CLOCK_MS,
   correctCount,
+  DAILY_STREAK_STEP,
   dailyQuestions,
   presentQuestion,
   resolveAnswerMs,
@@ -194,7 +195,13 @@ export async function POST(request: Request): Promise<Response> {
     )
     const answered = boss
       ? answerBossQuestion(deserializeProgress(run.progress), correct, answerMs)
-      : answerQuestion(deserializeProgress(run.progress), question, correct, answerMs)
+      : answerQuestion(
+          deserializeProgress(run.progress),
+          question,
+          correct,
+          answerMs,
+          run.mode === 'daily' ? DAILY_STREAK_STEP : 0,
+        )
     let outcome = answered
     const usedFactIds = new Set(run.used_fact_ids ?? [])
     usedFactIds.add(question.factId)

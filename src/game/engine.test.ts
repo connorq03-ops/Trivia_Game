@@ -7,6 +7,7 @@ import {
   CLOCK_MS,
   correctCount,
   createRunProgress,
+  DAILY_STREAK_STEP,
   dailyQuestions,
   LEVELS,
   levelFor,
@@ -84,6 +85,36 @@ describe('scoreAnswer', () => {
 
   it('applies the streak multiplier from before the answer', () => {
     expect(scoreAnswer(2500, 'easy', 12)).toBe(235)
+  })
+
+  it('stacks the daily streak step on top of speed', () => {
+    const base = scoreAnswer(2500, 'medium', 5)
+    const stepped = scoreAnswer(2500, 'medium', 5, 1 + DAILY_STREAK_STEP * 5)
+    expect(stepped).toBeGreaterThan(base)
+    expect(stepped).toBe(Math.round(150 * (1 + 7.5 / 8.5) * 1.5))
+  })
+
+  it('grows daily points with each consecutive correct answer', () => {
+    const question = makeQuestion(0, {
+      side: 'rules',
+      difficulty: 'medium',
+    })
+    const early = answerQuestion(
+      progressWith({ streak: 1 }),
+      question,
+      true,
+      2500,
+      DAILY_STREAK_STEP,
+    )
+    const late = answerQuestion(
+      progressWith({ streak: 9 }),
+      question,
+      true,
+      2500,
+      DAILY_STREAK_STEP,
+    )
+    expect(late.points).toBeGreaterThan(early.points)
+    expect(late.points).toBe(Math.round(scoreAnswer(2500, 'medium', 9, 1.9)))
   })
 
   it.each([
