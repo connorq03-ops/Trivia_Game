@@ -305,19 +305,19 @@ describe('Classic question selection', () => {
   })
 
   it('levels up on correct answers at the configured thresholds', () => {
-    expect(LEVELS.map(({ minCorrect }) => minCorrect)).toEqual([0, 10, 20, 35, 50])
+    expect(LEVELS.map(({ minCorrect }) => minCorrect)).toEqual([0, 5, 12, 25, 40])
     expect(levelFor(0)).toBe(1)
-    expect(levelFor(9)).toBe(1)
-    expect(levelFor(10)).toBe(2)
-    expect(levelFor(34)).toBe(3)
-    expect(levelFor(35)).toBe(4)
+    expect(levelFor(4)).toBe(1)
+    expect(levelFor(5)).toBe(2)
+    expect(levelFor(24)).toBe(3)
+    expect(levelFor(25)).toBe(4)
     expect(levelFor(500)).toBe(5)
     for (const { weights } of LEVELS) {
       expect(Object.values(weights).reduce((sum, weight) => sum + weight, 0)).toBeCloseTo(1)
     }
   })
 
-  it('ramps from easy-only to mostly expert as correct answers grow', () => {
+  it('ramps from easy-heavy to mostly expert as correct answers grow', () => {
     const bank = makeLargeBank()
     const counts = (correct: number) => {
       const tally: Record<Difficulty, number> = { easy: 0, medium: 0, hard: 0, expert: 0 }
@@ -329,19 +329,21 @@ describe('Classic question selection', () => {
       return tally
     }
 
-    expect(counts(0)).toEqual({ easy: 400, medium: 0, hard: 0, expert: 0 })
-    expect(counts(9).easy).toBe(400)
-    const level2 = counts(15)
-    expect(level2.easy + level2.medium).toBe(400)
-    expect(level2.medium).toBeGreaterThan(100)
-    const level3 = counts(25)
-    expect(level3.medium + level3.hard).toBe(400)
-    const level4 = counts(40)
-    expect(level4.hard + level4.expert).toBe(400)
+    const level1 = counts(0)
+    expect(level1.easy + level1.medium).toBe(400)
+    expect(level1.medium).toBeGreaterThan(60)
+    const level2 = counts(9)
+    expect(level2.expert).toBe(0)
+    expect(level2.medium + level2.hard).toBeGreaterThan(200)
+    const level3 = counts(18)
+    expect(level3.medium + level3.hard).toBeGreaterThan(300)
+    expect(level3.expert).toBe(0)
+    const level4 = counts(30)
+    expect(level4.easy).toBe(0)
     expect(counts(60).expert / 400).toBeGreaterThan(0.6)
   })
 
-  it('falls back to harder tiers before easier ones', () => {
+  it('falls back to the nearest tier, preferring harder on ties', () => {
     const bank = [
       makeQuestion(0, { sport: 'football', side: 'rules', difficulty: 'medium' }),
       makeQuestion(1, { sport: 'football', side: 'rules', difficulty: 'expert' }),
@@ -485,8 +487,9 @@ describe('Boss questions', () => {
     expect(LEVELS.map(({ minCorrect }) => levelIndexFor(minCorrect))).toEqual([
       0, 1, 2, 3, 4,
     ])
-    expect(levelIndexFor(9)).toBe(0)
-    expect(levelIndexFor(19)).toBe(1)
+    expect(levelIndexFor(4)).toBe(0)
+    expect(levelIndexFor(9)).toBe(1)
+    expect(levelIndexFor(20)).toBe(2)
   })
 
   it('triggers once at each level threshold after the first', () => {
@@ -506,7 +509,7 @@ describe('Boss questions', () => {
         triggeredAt.push(correct)
       }
     }
-    expect(triggeredAt).toEqual([10, 20, 35, 50])
+    expect(triggeredAt).toEqual([5, 12, 25, 40])
     expect(consumed).toEqual([1, 2, 3, 4])
   })
 

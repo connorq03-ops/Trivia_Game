@@ -43,11 +43,11 @@ export const LEVELS: readonly {
   minCorrect: number
   weights: Readonly<Record<Difficulty, number>>
 }[] = [
-  { minCorrect: 0, weights: { easy: 1, medium: 0, hard: 0, expert: 0 } },
-  { minCorrect: 10, weights: { easy: 0.6, medium: 0.4, hard: 0, expert: 0 } },
-  { minCorrect: 20, weights: { easy: 0, medium: 0.6, hard: 0.4, expert: 0 } },
-  { minCorrect: 35, weights: { easy: 0, medium: 0, hard: 0.6, expert: 0.4 } },
-  { minCorrect: 50, weights: { easy: 0, medium: 0, hard: 0.25, expert: 0.75 } },
+  { minCorrect: 0, weights: { easy: 0.7, medium: 0.3, hard: 0, expert: 0 } },
+  { minCorrect: 5, weights: { easy: 0.4, medium: 0.45, hard: 0.15, expert: 0 } },
+  { minCorrect: 12, weights: { easy: 0.1, medium: 0.5, hard: 0.4, expert: 0 } },
+  { minCorrect: 25, weights: { easy: 0, medium: 0.25, hard: 0.5, expert: 0.25 } },
+  { minCorrect: 40, weights: { easy: 0, medium: 0, hard: 0.25, expert: 0.75 } },
 ]
 
 const SPORTS: Sport[] = ['football', 'basketball', 'baseball']
@@ -182,13 +182,16 @@ function drawDifficulty(correct: number, rng: () => number): Difficulty {
   return DIFFICULTIES.findLast((difficulty) => weights[difficulty] > 0) ?? 'easy'
 }
 
-// Harder tiers first, so a run never drifts back to easy questions late.
+// Nearest tiers first, preferring harder on ties: a run still drifts up,
+// but expert only appears as a last resort for easy/medium targets.
 function fallbackOrder(difficulty: Difficulty): Difficulty[] {
   const rank = DIFFICULTY_RANK[difficulty]
-  return [
-    ...DIFFICULTIES.slice(rank),
-    ...DIFFICULTIES.slice(0, rank).reverse(),
-  ]
+  return [...DIFFICULTIES].sort(
+    (left, right) =>
+      Math.abs(DIFFICULTY_RANK[left] - rank) -
+        Math.abs(DIFFICULTY_RANK[right] - rank) ||
+      DIFFICULTY_RANK[right] - DIFFICULTY_RANK[left],
+  )
 }
 
 export function presentQuestion(

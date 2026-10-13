@@ -115,14 +115,14 @@ describe('revealCallouts', () => {
 
 describe('level callouts', () => {
   it('announces a new level only in Classic when correct answers cross a threshold', () => {
-    const before = { streak: 3, strikes: 0, correct: 9 }
-    const after = { streak: 4, strikes: 0, correct: 10 }
+    const before = { streak: 3, strikes: 0, correct: 4 }
+    const after = { streak: 4, strikes: 0, correct: 5 }
     expect(revealCallouts(before, after, { levels: true })).toEqual([
       { kind: 'levelUp', text: 'Level 2! Tougher questions ahead.' },
     ])
     expect(revealCallouts(before, after)).toEqual([])
     expect(
-      revealCallouts({ ...before, correct: 10 }, { ...after, correct: 11 }, { levels: true }),
+      revealCallouts({ ...before, correct: 5 }, { ...after, correct: 6 }, { levels: true }),
     ).toEqual([])
   })
 
