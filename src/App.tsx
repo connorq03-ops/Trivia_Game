@@ -691,12 +691,21 @@ function App() {
         ? 'THREE STRIKES'
         : 'QUESTION BANK CLEARED'
     : ''
+  const dailyTheme =
+    session?.mode === 'daily' || (screen === 'over' && currentSummary?.mode === 'daily')
+  const dailyAnswered = !session
+    ? 0
+    : screen === 'reveal' || screen === 'teach'
+      ? session.questionIndex + 1
+      : pendingRequest?.kind === 'question'
+        ? Math.max(session.questionIndex, pendingRequest.questionIndex)
+        : session.questionIndex
   const clockStyle = {
     '--clock-progress': `${Math.max(0, 100 - (elapsedMs / CLOCK_MS) * 100)}%`,
   } as CSSProperties
 
   return (
-    <main className="app-shell">
+    <main className={`app-shell${dailyTheme ? ' theme-daily' : ''}`}>
       <p className="sr-only" aria-live="polite" aria-atomic="true">
         {announcement}
       </p>
@@ -810,7 +819,12 @@ function App() {
             </button>
             <div className="game-mode-label">
               {session.mode === 'daily' ? 'DAILY 10' : 'CLASSIC'}
-              {screen !== 'over' && <span>QUESTION {session.questionIndex + 1}</span>}
+              {screen !== 'over' && (
+                <span>
+                  QUESTION {session.questionIndex + 1}
+                  {session.mode === 'daily' && session.total ? ` OF ${session.total}` : ''}
+                </span>
+              )}
             </div>
             <div className="score-label">
               <span>SCORE</span>
@@ -847,7 +861,31 @@ function App() {
                   </div>
                 </div>
               ) : (
-                <div className="daily-misses">{progress.strikes} missed</div>
+                <>
+                  <div
+                    className="daily-track"
+                    role="progressbar"
+                    aria-label="Daily 10 progress"
+                    aria-valuemin={0}
+                    aria-valuemax={session.total ?? 10}
+                    aria-valuenow={dailyAnswered}
+                    aria-valuetext={`${dailyAnswered} of ${session.total ?? 10} answered`}
+                  >
+                    {Array.from({ length: session.total ?? 10 }, (_, index) => (
+                      <span
+                        key={index}
+                        className={
+                          index < dailyAnswered
+                            ? 'is-done'
+                            : index === session.questionIndex
+                              ? 'is-current'
+                              : undefined
+                        }
+                      />
+                    ))}
+                  </div>
+                  <div className="daily-misses">{progress.strikes} missed</div>
+                </>
               )}
               {session.mode === 'classic' && (
                 <div

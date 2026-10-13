@@ -1061,3 +1061,147 @@
     transition: none;
   }
 }
+
+/* Sunset accents (palette tokens live in index.css). */
+.app-shell::before {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  background: var(--sunset-glow);
+  content: '';
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.home-panel .eyebrow,
+.classic-panel .eyebrow {
+  color: var(--sunset-orange);
+}
+
+.home-panel h1 {
+  background: var(--sunset-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.daily-button {
+  color: var(--sunset-night);
+  background: var(--sunset-fill);
+  box-shadow: 0 0.6rem 2rem -0.8rem var(--sunset-shadow);
+}
+
+.daily-button .mode-subtitle {
+  color: var(--sunset-plum);
+}
+
+.daily-meta {
+  color: var(--sunset-blush);
+}
+
+/* Daily 10: the sunset palette takes over the accent tokens. */
+.theme-daily {
+  --accent: var(--sunset-orange);
+  --on-accent: var(--sunset-night);
+  --panel: var(--daily-panel);
+  --surface-2: var(--daily-surface-2);
+  --surface-3: var(--daily-surface-3);
+  --line: var(--daily-line);
+  --line-strong: var(--daily-line-strong);
+}
+
+.theme-daily::before {
+  opacity: 1;
+}
+
+.theme-daily .game-mode-label {
+  background: var(--sunset-fill);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.theme-daily .game-mode-label span {
+  color: var(--sunset-blush);
+  -webkit-text-fill-color: var(--sunset-blush);
+}
+
+.theme-daily .classic-button {
+  background: var(--sunset-fill);
+}
+
+.theme-daily .clock-fill {
+  background: linear-gradient(90deg, var(--sunset-orange), var(--sunset-rose));
+}
+
+.theme-daily .question-card,
+.theme-daily .teach-overlay {
+  background: linear-gradient(160deg, var(--sunset-plum), var(--panel) 55%);
+}
+
+.theme-daily .reel-card {
+  border-color: var(--sunset-wine);
+  background: linear-gradient(160deg, var(--sunset-plum), var(--sunset-night));
+}
+
+.theme-daily .reel-card span {
+  color: var(--sunset-orange);
+}
+
+.theme-daily .game-over > h2 {
+  background: var(--sunset-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.theme-daily .game-over > h2 span {
+  -webkit-text-fill-color: var(--muted);
+}
+
+.theme-daily .game-stats {
+  gap: 1rem;
+}
+
+.daily-track {
+  display: grid;
+  flex: 1;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 0.25rem;
+}
+
+.daily-track span {
+  height: 0.45rem;
+  border-radius: 999px;
+  background: var(--surface-3);
+}
+
+.daily-track span.is-done {
+  background: var(--sunset-fill);
+}
+
+.daily-track span.is-current {
+  background: var(--sunset-wine);
+  box-shadow: inset 0 0 0 1px var(--sunset-orange);
+}
+
+.theme-daily .daily-misses {
+  color: var(--sunset-blush);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .daily-track span.is-current {
+    animation: daily-current 1.4s ease-in-out infinite;
+  }
+
+  @keyframes daily-current {
+    50% {
+      box-shadow: inset 0 0 0 1px var(--sunset-orange), 0 0 0.6rem var(--sunset-pulse);
+    }
+  }
+}
+
+.theme-daily .game-mode-label {
+  width: fit-content;
+}
