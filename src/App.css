@@ -914,6 +914,10 @@
   letter-spacing: 0;
 }
 
+.score-label .points-pop--loss {
+  color: var(--error-ink);
+}
+
 .multiplier-chip {
   display: inline-flex;
   align-items: center;
@@ -1204,4 +1208,184 @@
 
 .theme-daily .game-mode-label {
   width: fit-content;
+}
+
+/* Boss questions: one non-sports question at each Classic level-up. */
+[data-category='science'],
+[data-boss-category='science'] { --boss: #30d158; }
+[data-category='history'],
+[data-boss-category='history'] { --boss: #ff9f0a; }
+[data-category='art'],
+[data-boss-category='art'] { --boss: #ff5fa2; }
+[data-category='pop-culture'],
+[data-boss-category='pop-culture'] { --boss: #ffd60a; }
+
+.boss-reel {
+  position: relative;
+  overflow-x: clip;
+  display: flex;
+  min-height: min(64vh, 540px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.boss-banner {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(2.2rem, 11vw, 3.3rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  line-height: 0.95;
+  text-transform: uppercase;
+  text-shadow: 0 0 1.4rem #ff3b3088, 0 0.2rem 0 #ff3b30;
+}
+
+.boss-wheel {
+  position: relative;
+  width: min(64vw, 240px);
+  aspect-ratio: 1;
+  margin: 1.4rem 0 1rem;
+}
+
+.boss-wheel-pointer {
+  position: absolute;
+  top: -0.55rem;
+  left: 50%;
+  z-index: 1;
+  border-top: 1.2rem solid #fff;
+  border-right: 0.7rem solid transparent;
+  border-left: 0.7rem solid transparent;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 0.15rem 0.2rem #0009);
+}
+
+.boss-wheel-disc {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 4px solid #ffffff2e;
+  border-radius: 50%;
+  background: conic-gradient(
+    #30d158 0deg 90deg,
+    #ff9f0a 90deg 180deg,
+    #ff5fa2 180deg 270deg,
+    #ffd60a 270deg 360deg
+  );
+  background-origin: border-box;
+  box-shadow: 0 0 2rem #0008, inset 0 0 0 2px #0003;
+  transform: rotate(var(--boss-turn, 0deg));
+}
+
+.boss-wheel-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  padding-top: 17%;
+  color: #111;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.boss-wheel-label:nth-child(1) { transform: rotate(45deg); }
+.boss-wheel-label:nth-child(2) { transform: rotate(135deg); }
+.boss-wheel-label:nth-child(3) { transform: rotate(225deg); }
+.boss-wheel-label:nth-child(4) { transform: rotate(315deg); }
+
+.boss-category {
+  margin: 0 0 0.4rem;
+  color: var(--boss);
+  font-size: 1.7rem;
+  font-weight: 900;
+}
+
+.question-stage[data-boss-category] .clock-row span {
+  color: var(--boss);
+}
+
+.question-stage[data-boss-category] .clock-fill {
+  background: var(--boss);
+}
+
+.question-stage[data-boss-category] .question-card {
+  border-color: var(--boss);
+  box-shadow: 0 0 1.4rem color-mix(in srgb, var(--boss) 22%, transparent);
+}
+
+.boss-chip {
+  margin-right: 0.35rem;
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+  color: #111;
+  background: var(--boss);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .boss-reel::before {
+    position: fixed;
+    inset: 0;
+    z-index: 5;
+    background: #fff;
+    content: '';
+    opacity: 0;
+    pointer-events: none;
+    animation: boss-flash 0.5s ease-out 0.42s both;
+  }
+
+  .boss-banner {
+    animation:
+      boss-slam 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.2) both,
+      boss-shake 0.36s ease-in-out 0.48s;
+  }
+
+  .boss-wheel {
+    animation: boss-fade 0.3s ease-out 0.9s both;
+  }
+
+  .boss-wheel-disc {
+    animation: boss-spin 2.5s cubic-bezier(0.12, 0.7, 0.16, 1) 1.2s both;
+  }
+
+  .boss-category {
+    animation: boss-land 0.35s ease-out 3.7s both;
+  }
+
+  @keyframes boss-flash {
+    0% { opacity: 0; }
+    20% { opacity: 0.55; }
+    100% { opacity: 0; }
+  }
+
+  @keyframes boss-slam {
+    0% { transform: scale(2.6); opacity: 0; }
+    70% { transform: scale(0.94); opacity: 1; }
+    100% { transform: scale(1); }
+  }
+
+  @keyframes boss-shake {
+    20%, 60% { transform: translateX(-6px); }
+    40%, 80% { transform: translateX(6px); }
+  }
+
+  @keyframes boss-fade {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes boss-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(var(--boss-turn, 0deg)); }
+  }
+
+  @keyframes boss-land {
+    from { opacity: 0; transform: scale(0.7); }
+    to { opacity: 1; transform: scale(1); }
+  }
 }

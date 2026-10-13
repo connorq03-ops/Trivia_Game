@@ -1,8 +1,17 @@
 import { getSql } from '../lib/db.js'
+import { bossQuestionsEnabled } from '../lib/flags.js'
 import { hashRunToken, isRunToken } from '../lib/runToken.js'
-import { questionBank, questionsById } from '../lib/questions.js'
 import {
+  bossQuestions,
+  isBossQuestion,
+  questionBank,
+  questionsById,
+} from '../lib/questions.js'
+import {
+  answerBossQuestion,
   answerQuestion,
+  BOSS_CLOCK_MS,
+  CLOCK_MS,
   correctCount,
   dailyQuestions,
   presentQuestion,
@@ -25,10 +34,14 @@ type AnswerInput = {
   clientMs: number | null
 }
 
-type StoredProgress = Omit<RunProgress, 'missed' | 'results' | 'bossLevelsConsumed'> & {
+type StoredProgress = Omit<
+  RunProgress,
+  'missed' | 'results' | 'bossLevelsConsumed' | 'bossMisses'
+> & {
   missed: string[]
   results?: AnswerResult[]
   bossLevelsConsumed?: number[]
+  bossMisses?: number
 }
 
 type RunRow = {
@@ -95,6 +108,7 @@ function deserializeProgress(value: RunRow['progress']): RunProgress {
     missed,
     results: stored.results ?? [],
     bossLevelsConsumed: stored.bossLevelsConsumed ?? [],
+    bossMisses: stored.bossMisses ?? 0,
   }
 }
 
@@ -172,13 +186,16 @@ export async function POST(request: Request): Promise<Response> {
     }
 
     const correct = input.choice === question.answer
-    const answerMs = resolveAnswerMs(input.clientMs, Number(run.server_ms))
-    const outcome = answerQuestion(
-      deserializeProgress(run.progress),
-      question,
-      correct,
-      answerMs,
+    const boss = isBossQuestion(question)
+    const answerMs = resolveAnswerMs(
+      input.clientMs,
+      Number(run.server_ms),
+      boss ? BOSS_CLOCK_MS : CLOCK_MS,
     )
+    const answered = boss
+      ? answerBossQuestion(deserializeProgress(run.progress), correct, answerMs)
+      : answerQuestion(deserializeProgress(run.progress), question, correct, answerMs)
+    let outcome = answered
     const usedFactIds = new Set(run.used_fact_ids ?? [])
     usedFactIds.add(question.factId)
 
@@ -199,11 +216,29 @@ export async function POST(request: Request): Promise<Response> {
             side: run.side as ClassicOptions['side'],
           },
           Math.random,
+          bossQuestionsEnabled()
+            ? {
+                bank: bossQuestions,
+                levelsConsumed: answered.progress.bossLevelsConsumed,
+              }
+            : undefined,
         )
         if (selection.type === 'end') {
           endReason = 'bank'
         } else {
           next = { question: selection.question, choices: selection.choices }
+          if (selection.type === 'boss') {
+            outcome = {
+              ...answered,
+              progress: {
+                ...answered.progress,
+                bossLevelsConsumed: [
+                  ...answered.progress.bossLevelsConsumed,
+                  selection.level,
+                ],
+              },
+            }
+          }
         }
       }
     } else {

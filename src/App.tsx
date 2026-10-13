@@ -42,7 +42,11 @@ type Mode = 'classic' | 'daily'
 type PublicQuestion = Pick<
   Question,
   'id' | 'side' | 'sport' | 'leagues' | 'difficulty' | 'category' | 'prompt' | 'reel'
-> & { choices: string[]; choiceBadges?: (ChoiceBadge | null)[] }
+> & {
+  choices: string[]
+  choiceBadges?: (ChoiceBadge | null)[]
+  boss?: { category: string; clockMs: number; reelMs: number }
+}
 
 type PublicProgress = {
   score: number
@@ -108,6 +112,7 @@ type RunResponse = {
   question: PublicQuestion
   progress: PublicProgress
   total: number | null
+  bosses?: boolean
 }
 
 function utcDate(): string {
@@ -142,8 +147,28 @@ function answerIndexForKey(key: string): number {
     : -1
 }
 
-function elapsedSince(startedAt: number): number {
-  return Math.min(CLOCK_MS, Math.max(0, performance.now() - startedAt))
+const BOSS_WHEEL: [string, string][] = [
+  ['science', 'Science'],
+  ['history', 'History'],
+  ['art', 'Art'],
+  ['pop-culture', 'Pop Culture'],
+]
+
+function bossLabel(category: string): string {
+  return BOSS_WHEEL.find(([key]) => key === category)?.[1] ?? category
+}
+
+function bossWheelTurn(category: string): number {
+  const index = Math.max(0, BOSS_WHEEL.findIndex(([key]) => key === category))
+  return 360 * 4 + 360 - (index * 90 + 45)
+}
+
+function clockMsFor(question: PublicQuestion | undefined): number {
+  return question?.boss?.clockMs ?? CLOCK_MS
+}
+
+function elapsedSince(startedAt: number, clockMs: number): number {
+  return Math.min(clockMs, Math.max(0, performance.now() - startedAt))
 }
 
 const SPORT_OPTIONS: ['all' | Sport, string][] = [
@@ -190,6 +215,7 @@ function App() {
   const [apiStatus, setApiStatus] = useState<'checking' | 'ok' | 'error'>(
     'checking',
   )
+  const [bossesEnabled, setBossesEnabled] = useState(false)
   const [sport, setSport] = useState<'all' | Sport>('all')
   const [side, setSide] = useState<'both' | Side>('both')
   const [today, setToday] = useState(utcDate)
@@ -258,8 +284,9 @@ function App() {
     fetch('/api/health', { signal: controller.signal })
       .then(async (response) => {
         if (!response.ok) throw new Error('Health check failed')
-        const result = (await response.json()) as { ok: boolean }
+        const result = (await response.json()) as { ok: boolean; bosses?: boolean }
         setApiStatus(result.ok ? 'ok' : 'error')
+        setBossesEnabled(result.bosses === true)
       })
       .catch(() => {
         if (!controller.signal.aborted) setApiStatus('error')
@@ -346,6 +373,7 @@ function App() {
 
       activeRunId.current = result.runId
       questionClockOffset.current = 0
+      setBossesEnabled(result.bosses === true)
       setSession({
         mode: input.mode,
         runId: result.runId,
@@ -423,7 +451,7 @@ function App() {
       setPicked(null)
       setReveal(null)
       questionClockOffset.current = Math.min(
-        CLOCK_MS,
+        clockMsFor(result.question),
         Math.max(0, result.elapsedMs),
       )
       setSession({
@@ -432,6 +460,13 @@ function App() {
         question: result.question,
       })
       setScreen('reel')
+      if (result.question.boss) {
+        setAnnouncement(
+          `Boss question: ${bossLabel(result.question.boss.category)}. ${
+            result.question.boss.clockMs / 1000
+          } seconds. Plus 500 if right, minus 250 if wrong, no strike.`,
+        )
+      }
     } catch {
       if (activeRunId.current !== current.runId) return
       setIsSubmitting(false)
@@ -479,22 +514,26 @@ function App() {
         answer: result.answer,
         picked: body.choice,
         points: result.points,
-        multiplier: result.correct
+        multiplier: result.correct && !current.question.boss
           ? multiplierLabel(current.progress.streak)
           : null,
         callouts: result.correct
           ? revealCallouts(current.progress, result.progress, {
               levels: current.mode === 'classic',
-            })
+            }).filter(
+              (callout) => !current.question.boss || callout.kind !== 'multiplier',
+            )
           : [],
       })
-      if (timedOut) setElapsedMs(CLOCK_MS)
+      if (timedOut) setElapsedMs(clockMsFor(current.question))
       setScreen('reveal')
       setAnnouncement(
         result.correct
           ? `Correct! Plus ${result.points}. Streak ${result.progress.streak}.`
           : `${timedOut ? 'Time’s up' : 'Wrong'}. ${
-              current.mode === 'classic'
+              current.question.boss
+                ? `Minus ${-result.points}.`
+                : current.mode === 'classic'
                 ? `Strike ${result.progress.strikes} of ${STRIKES}.`
                 : `${result.progress.strikes} missed.`
             }`,
@@ -577,15 +616,17 @@ function App() {
   const playAgain = () => startClassic()
 
   const activeQuestionId = session?.question.id
+  const activeClockMs = clockMsFor(session?.question)
+  const activeReelMs = session?.question.boss?.reelMs ?? REEL_MS
 
   useEffect(() => {
     if (screen !== 'reel' || !activeQuestionId) return
     const timeout = window.setTimeout(() => {
       setElapsedMs(0)
       setScreen('question')
-    }, REEL_MS)
+    }, activeReelMs)
     return () => window.clearTimeout(timeout)
-  }, [screen, activeQuestionId])
+  }, [screen, activeQuestionId, activeReelMs])
 
   useEffect(() => {
     if (screen !== 'reveal' || !reveal) return
@@ -616,8 +657,8 @@ function App() {
     const updateClock = () => {
       if (answered.current) return
       const elapsed = performance.now() - answerStartedAt.current
-      setElapsedMs(Math.min(CLOCK_MS, elapsed))
-      if (elapsed >= CLOCK_MS) submitAnswerRef.current(null, null)
+      setElapsedMs(Math.min(activeClockMs, elapsed))
+      if (elapsed >= activeClockMs) submitAnswerRef.current(null, null)
     }
     const interval = window.setInterval(updateClock, 40)
     document.addEventListener('visibilitychange', updateClock)
@@ -625,7 +666,7 @@ function App() {
       window.clearInterval(interval)
       document.removeEventListener('visibilitychange', updateClock)
     }
-  }, [screen, activeQuestionId])
+  }, [screen, activeQuestionId, activeClockMs])
 
   useEffect(() => {
     const target =
@@ -665,15 +706,18 @@ function App() {
       event.preventDefault()
       submitAnswerRef.current(
         choice,
-        Math.round(elapsedSince(answerStartedAt.current)),
+        Math.round(elapsedSince(answerStartedAt.current, activeClockMs)),
       )
     }
     window.addEventListener('keydown', onKeyDown)
     return () => window.removeEventListener('keydown', onKeyDown)
-  }, [questionChoices])
+  }, [questionChoices, activeClockMs])
 
   const chooseAnswer = (choice: string) => {
-    submitAnswer(choice, Math.round(elapsedSince(answerStartedAt.current)))
+    submitAnswer(
+      choice,
+      Math.round(elapsedSince(answerStartedAt.current, activeClockMs)),
+    )
   }
 
   const currentSummary = screen === 'over' ? summary : null
@@ -681,7 +725,7 @@ function App() {
   const question = session?.question
   const lateCorrect =
     reveal !== null && !reveal.correct && reveal.picked === reveal.answer
-  const remainingSeconds = Math.max(0, Math.ceil((CLOCK_MS - elapsedMs) / 1000))
+  const remainingSeconds = Math.max(0, Math.ceil((activeClockMs - elapsedMs) / 1000))
   const resultLabel = currentSummary
     ? currentSummary.mode === 'daily'
       ? currentSummary.reason === 'complete'
@@ -701,7 +745,7 @@ function App() {
         ? Math.max(session.questionIndex, pendingRequest.questionIndex)
         : session.questionIndex
   const clockStyle = {
-    '--clock-progress': `${Math.max(0, 100 - (elapsedMs / CLOCK_MS) * 100)}%`,
+    '--clock-progress': `${Math.max(0, 100 - (elapsedMs / activeClockMs) * 100)}%`,
   } as CSSProperties
 
   return (
@@ -788,7 +832,7 @@ function App() {
           <details className="how-it-works">
             <summary>How it works</summary>
             <ul>
-              {howItWorks().map((line) => <li key={line}>{line}</li>)}
+              {howItWorks({ bosses: bossesEnabled }).map((line) => <li key={line}>{line}</li>)}
             </ul>
           </details>
         </section>
@@ -831,6 +875,11 @@ function App() {
               <strong>{progress.score.toLocaleString()}</strong>
               {screen === 'reveal' && reveal && reveal.points > 0 && (
                 <span className="points-pop">+{reveal.points}</span>
+              )}
+              {screen === 'reveal' && reveal && reveal.points < 0 && (
+                <span className="points-pop points-pop--loss">
+                  −{-reveal.points}
+                </span>
               )}
               {screen === 'reveal' && reveal?.multiplier && (
                 <span className="multiplier-chip">{reveal.multiplier}</span>
@@ -930,7 +979,29 @@ function App() {
             </div>
           )}
 
-          {screen === 'reel' && (
+          {screen === 'reel' && question.boss && (
+            <div
+              className="boss-reel"
+              data-category={question.boss.category}
+              style={{ '--boss-turn': `${bossWheelTurn(question.boss.category)}deg` } as CSSProperties}
+            >
+              <h2 className="boss-banner">Boss question</h2>
+              <div className="boss-wheel" aria-hidden="true">
+                <span className="boss-wheel-pointer" />
+                <div className="boss-wheel-disc">
+                  {BOSS_WHEEL.map(([key, label]) => (
+                    <span key={key} className="boss-wheel-label">{label}</span>
+                  ))}
+                </div>
+              </div>
+              <p className="boss-category">{bossLabel(question.boss.category)}</p>
+              <p className="reel-caption">
+                {question.boss.clockMs / 1000} seconds · +500 if right · −250 if wrong · no strike
+              </p>
+            </div>
+          )}
+
+          {screen === 'reel' && !question.boss && (
             <div className="reel-stage">
               <p className="eyebrow">Your next question</p>
               <div className={`reel-stack ${question.side === 'players' ? 'reel-stack--player' : ''}`}>
@@ -952,14 +1023,20 @@ function App() {
           )}
 
           {(screen === 'question' || screen === 'reveal') && (
-            <section className="question-stage">
+            <section className="question-stage" data-boss-category={question.boss?.category}>
               <div className="clock-row">
-                <span>
-                  {question.sport} <i>·</i> {question.category}
-                  <b className="difficulty-chip" data-difficulty={question.difficulty}>
-                    {difficultyLabel(question.difficulty)}
-                  </b>
-                </span>
+                {question.boss ? (
+                  <span>
+                    <b className="boss-chip">Boss</b> {bossLabel(question.boss.category)}
+                  </span>
+                ) : (
+                  <span>
+                    {question.sport} <i>·</i> {question.category}
+                    <b className="difficulty-chip" data-difficulty={question.difficulty}>
+                      {difficultyLabel(question.difficulty)}
+                    </b>
+                  </span>
+                )}
                 <strong>{remainingSeconds}<small>s</small></strong>
               </div>
               <div
@@ -967,7 +1044,7 @@ function App() {
                 role="progressbar"
                 aria-label="Time remaining"
                 aria-valuemin={0}
-                aria-valuemax={CLOCK_MS / 1000}
+                aria-valuemax={activeClockMs / 1000}
                 aria-valuenow={remainingSeconds}
                 aria-valuetext={`${remainingSeconds} seconds remaining`}
               >

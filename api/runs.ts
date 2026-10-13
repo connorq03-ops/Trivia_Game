@@ -1,5 +1,6 @@
 import { createHash } from 'node:crypto'
 import { getSql } from '../lib/db.js'
+import { bossQuestionsEnabled } from '../lib/flags.js'
 import { createRunToken, hashRunToken } from '../lib/runToken.js'
 import { publicQuestion, questionBank } from '../lib/questions.js'
 import {
@@ -158,6 +159,7 @@ export async function POST(request: Request): Promise<Response> {
           correct: 0,
         },
         total: input.mode === 'daily' ? 10 : null,
+        bosses: bossQuestionsEnabled(),
       },
       { status: 201 },
     )

@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import {
+  BOSS_CLOCK_MS,
   CLOCK_MS,
   LEVELS,
   MULTIPLIER_TIERS,
@@ -35,6 +36,13 @@ describe('howItWorks', () => {
       `Classic starts easy and levels up at ${levelSteps} correct answers. Harder questions score more.`,
       'Daily 10: the same 10 questions for everyone today, easy to hard. No strikes.',
     ])
+  })
+
+  it('adds the boss rules only when boss questions are on', () => {
+    expect(howItWorks({ bosses: true })).toContain(
+      `Each level-up brings a boss question on science, history, art or pop culture: ${BOSS_CLOCK_MS / 1000} seconds, +500 if right, −250 if wrong, no strike.`,
+    )
+    expect(howItWorks({ bosses: true })).toHaveLength(howItWorks().length + 1)
   })
 })
 

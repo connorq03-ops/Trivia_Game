@@ -1,8 +1,8 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { getSql } from '../lib/db.js'
-import { questionBank } from '../lib/questions.js'
+import { bossQuestions, questionBank } from '../lib/questions.js'
 import { hashRunToken } from '../lib/runToken.js'
-import { REEL_MS } from '../src/game/engine.js'
+import { BOSS_CLOCK_MS, BOSS_REEL_MS, REEL_MS } from '../src/game/engine.js'
 import { POST } from './question.js'
 
 vi.mock('../lib/db.js', () => ({
@@ -62,10 +62,11 @@ describe('question handler', () => {
 
     const [strings, ...values] = sql.mock.calls[0]
     const query = strings.join('?')
-    expect(query).toContain(
-      'issued_at = coalesce(issued_at, now() + make_interval(secs => ?))',
-    )
+    expect(query).toContain('issued_at = coalesce(')
+    expect(query).toContain("when current_question_id like 'boss-%'")
     expect(values).toContain(REEL_MS / 1000)
+    expect(values).toContain(BOSS_REEL_MS / 1000)
+    expect(body.question).not.toHaveProperty('boss')
     expect(query).toContain('::bigint as elapsed_ms')
     expect(query).toContain('token_hash = ?')
     expect(query).toContain("status = 'active'")
@@ -94,5 +95,25 @@ describe('question handler', () => {
 
     expect(response.status).toBe(409)
     expect(await response.json()).toEqual({ error: 'stale' })
+  })
+
+  it('sends the boss category and longer clock for a boss question', async () => {
+    const boss = bossQuestions[0]
+    mockSql([
+      {
+        current_question_id: boss.id,
+        current_choices: [boss.answer, ...boss.wrong],
+        elapsed_ms: 0,
+      },
+    ])
+    const body = await (await POST(makeRequest(validBody))).json()
+
+    expect(body.question.side).toBe('boss')
+    expect(body.question.boss).toEqual({
+      category: boss.category,
+      clockMs: BOSS_CLOCK_MS,
+      reelMs: BOSS_REEL_MS,
+    })
+    expect(body.question).not.toHaveProperty('answer')
   })
 })

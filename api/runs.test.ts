@@ -118,6 +118,7 @@ describe('runs handler', () => {
     expect(response.status).toBe(201)
     expect(body.runId).toBe(runId)
     expect(body.runToken).toMatch(/^[A-Za-z0-9_-]{43}$/)
+    expect(body.bosses).toBe(false)
     const insert = insertQuery(sql)[1]
     expect(insert.query).toContain('now() + make_interval(secs => ?)')
     expect(insert.values).toContain(REEL_MS / 1000)
