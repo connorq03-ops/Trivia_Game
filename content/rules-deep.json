@@ -321,14 +321,14 @@
     ],
     "difficulty": "expert",
     "category": "Numbers and dimensions",
-    "prompt": "Width of the solid white border around an NFL field?",
+    "prompt": "Minimum width of the solid white border around an NFL field?",
     "answer": "6 feet",
     "wrong": [
       "4 feet",
       "8 feet",
       "3 feet"
     ],
-    "teach": "A broken yellow line runs farther out along the non-bench sidelines.",
+    "teach": "Borders 12 feet or wider don't need the extra broken yellow line outside them.",
     "source": {
       "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
       "ref": "NFL Rulebook — Field Markings, note 1"
