@@ -418,5 +418,950 @@
       "url": "https://en.wikipedia.org/wiki/Ross_Geller",
       "ref": "Wikipedia — Ross Geller"
     }
+  },
+  {
+    "id": "boss-sci-hottest-planet",
+    "factId": "boss-hottest-planet",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "science",
+    "prompt": "Which planet has the hottest surface, even though it isn't the closest to the Sun?",
+    "answer": "Venus",
+    "wrong": [
+      "Mercury",
+      "Mars",
+      "Jupiter"
+    ],
+    "teach": "Its atmosphere is 96.5% carbon dioxide, trapping heat at about 464 °C.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Venus",
+      "ref": "Wikipedia — Venus"
+    }
+  },
+  {
+    "id": "boss-sci-air-nitrogen",
+    "factId": "boss-air-nitrogen",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "science",
+    "prompt": "Which gas makes up about 78% of Earth's dry air?",
+    "answer": "Nitrogen",
+    "wrong": [
+      "Oxygen",
+      "Argon",
+      "Carbon dioxide"
+    ],
+    "teach": "Oxygen is about 21% and argon 0.93%; carbon dioxide is only about 0.04%.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Atmosphere_of_Earth",
+      "ref": "Wikipedia — Atmosphere of Earth"
+    }
+  },
+  {
+    "id": "boss-sci-largest-organ",
+    "factId": "boss-largest-organ",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "science",
+    "prompt": "What is the largest organ in the human body?",
+    "answer": "Skin",
+    "wrong": [
+      "Liver",
+      "Brain",
+      "Lungs"
+    ],
+    "teach": "It makes up roughly 16% of body mass.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Human_skin",
+      "ref": "Wikipedia — Human skin"
+    }
+  },
+  {
+    "id": "boss-sci-penicillin",
+    "factId": "boss-penicillin",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "science",
+    "prompt": "Who discovered penicillin in 1928?",
+    "answer": "Alexander Fleming",
+    "wrong": [
+      "Louis Pasteur",
+      "Joseph Lister",
+      "Edward Jenner"
+    ],
+    "teach": "It came from the mould Penicillium rubens and was the first antibiotic substance discovered.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Alexander_Fleming",
+      "ref": "Wikipedia — Alexander Fleming"
+    }
+  },
+  {
+    "id": "boss-sci-sideways-planet",
+    "factId": "boss-sideways-planet",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "science",
+    "prompt": "Which planet rotates nearly on its side, its axis almost parallel to its orbit?",
+    "answer": "Uranus",
+    "wrong": [
+      "Neptune",
+      "Saturn",
+      "Venus"
+    ],
+    "teach": "Over its 84-year orbit, each pole gets about 42 years of sunlight, then 42 years of darkness.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Uranus",
+      "ref": "Wikipedia — Uranus"
+    }
+  },
+  {
+    "id": "boss-sci-longest-bone",
+    "factId": "boss-longest-bone",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "science",
+    "prompt": "What is the longest bone in the human body?",
+    "answer": "Femur",
+    "wrong": [
+      "Tibia",
+      "Humerus",
+      "Fibula"
+    ],
+    "teach": "It is the only bone in the upper leg.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Femur",
+      "ref": "Wikipedia — Femur"
+    }
+  },
+  {
+    "id": "boss-sci-sunshine-vitamin",
+    "factId": "boss-sunshine-vitamin",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "science",
+    "prompt": "Which vitamin can your skin make when it's exposed to sunlight?",
+    "answer": "Vitamin D",
+    "wrong": [
+      "Vitamin C",
+      "Vitamin A",
+      "Vitamin B12"
+    ],
+    "teach": "Ultraviolet B rays trigger it in the skin; it helps the gut absorb calcium.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Vitamin_D",
+      "ref": "Wikipedia — Vitamin D"
+    }
+  },
+  {
+    "id": "boss-sci-sunlight-travel",
+    "factId": "boss-sunlight-travel",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "science",
+    "prompt": "Light leaving the Sun's surface takes about how long to reach Earth?",
+    "answer": "About 8 minutes",
+    "wrong": [
+      "About 8 seconds",
+      "About 1 hour",
+      "About 8 hours"
+    ],
+    "teach": "A photon from the Sun's core takes 10,000 to 170,000 years just to reach the surface.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Sunlight",
+      "ref": "Wikipedia — Sunlight"
+    }
+  },
+  {
+    "id": "boss-sci-hardest-tissue",
+    "factId": "boss-hardest-tissue",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "science",
+    "prompt": "What is the hardest substance in the human body?",
+    "answer": "Tooth enamel",
+    "wrong": [
+      "Skull bone",
+      "Cartilage",
+      "Fingernails"
+    ],
+    "teach": "It is about 96% mineral, mostly hydroxyapatite, a crystalline calcium phosphate.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Tooth_enamel",
+      "ref": "Wikipedia — Tooth enamel"
+    }
+  },
+  {
+    "id": "boss-sci-absolute-zero",
+    "factId": "boss-absolute-zero",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "science",
+    "prompt": "Absolute zero, 0 kelvin, equals what temperature in degrees Celsius?",
+    "answer": "−273.15 °C",
+    "wrong": [
+      "−173.15 °C",
+      "−373.15 °C",
+      "−100 °C"
+    ],
+    "teach": "On the Fahrenheit scale, absolute zero is −459.67 °F.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Absolute_zero",
+      "ref": "Wikipedia — Absolute zero"
+    }
+  },
+  {
+    "id": "boss-sci-water-ph",
+    "factId": "boss-water-ph",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "science",
+    "prompt": "What is the pH of pure water at 25 °C?",
+    "answer": "7",
+    "wrong": [
+      "0",
+      "14",
+      "5"
+    ],
+    "teach": "Neutral pH drops below 7 as water heats above 25 °C.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/PH",
+      "ref": "Wikipedia — PH"
+    }
+  },
+  {
+    "id": "boss-his-machu-picchu",
+    "factId": "boss-machu-picchu",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "history",
+    "prompt": "Which civilization built the Peruvian mountain citadel Machu Picchu?",
+    "answer": "Inca",
+    "wrong": [
+      "Aztec",
+      "Maya",
+      "Olmec"
+    ],
+    "teach": "Built around 1450, it is believed to have been an estate for the emperor Pachacuti.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Machu_Picchu",
+      "ref": "Wikipedia — Machu Picchu"
+    }
+  },
+  {
+    "id": "boss-his-titanic-year",
+    "factId": "boss-titanic-year",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "history",
+    "prompt": "In what year did RMS Titanic sink?",
+    "answer": "1912",
+    "wrong": [
+      "1905",
+      "1915",
+      "1921"
+    ],
+    "teach": "She hit an iceberg on her maiden voyage from Southampton to New York; about 1,500 died.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Titanic",
+      "ref": "Wikipedia — Titanic"
+    }
+  },
+  {
+    "id": "boss-his-second-moonwalker",
+    "factId": "boss-second-moonwalker",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "history",
+    "prompt": "Who was the second person to walk on the Moon?",
+    "answer": "Buzz Aldrin",
+    "wrong": [
+      "Michael Collins",
+      "Pete Conrad",
+      "John Glenn"
+    ],
+    "teach": "Apollo 11's third crewman, Michael Collins, stayed in lunar orbit aboard Columbia.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Apollo_11",
+      "ref": "Wikipedia — Apollo 11"
+    }
+  },
+  {
+    "id": "boss-his-carter-tomb",
+    "factId": "boss-carter-tomb",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "history",
+    "prompt": "Which pharaoh's tomb did Howard Carter discover in 1922?",
+    "answer": "Tutankhamun",
+    "wrong": [
+      "Ramesses II",
+      "Khufu",
+      "Akhenaten"
+    ],
+    "teach": "Lord Carnarvon funded the dig; the tomb is catalogued as KV62.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Tutankhamun",
+      "ref": "Wikipedia — Tutankhamun"
+    }
+  },
+  {
+    "id": "boss-his-magna-carta",
+    "factId": "boss-magna-carta",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "history",
+    "prompt": "Which English king sealed Magna Carta in 1215?",
+    "answer": "King John",
+    "wrong": [
+      "Henry VIII",
+      "Richard I",
+      "Edward I"
+    ],
+    "teach": "He sealed it at Runnymede, near Windsor, on 15 June 1215.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Magna_Carta",
+      "ref": "Wikipedia — Magna Carta"
+    }
+  },
+  {
+    "id": "boss-his-byzantine-capital",
+    "factId": "boss-byzantine-capital",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "history",
+    "prompt": "Which city was the capital of the Byzantine Empire?",
+    "answer": "Constantinople",
+    "wrong": [
+      "Rome",
+      "Athens",
+      "Alexandria"
+    ],
+    "teach": "Now Istanbul, it fell to the Ottoman Empire in 1453.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Constantinople",
+      "ref": "Wikipedia — Constantinople"
+    }
+  },
+  {
+    "id": "boss-his-alps-elephants",
+    "factId": "boss-alps-elephants",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "history",
+    "prompt": "Which Carthaginian general crossed the Alps with war elephants?",
+    "answer": "Hannibal",
+    "wrong": [
+      "Hamilcar Barca",
+      "Scipio Africanus",
+      "Spartacus"
+    ],
+    "teach": "He invaded Italy in the Second Punic War; almost none of his 38 elephants survived the crossing.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Hannibal",
+      "ref": "Wikipedia — Hannibal"
+    }
+  },
+  {
+    "id": "boss-his-first-china-emperor",
+    "factId": "boss-first-china-emperor",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "history",
+    "prompt": "Who became the first emperor of a unified China in 221 BC?",
+    "answer": "Qin Shi Huang",
+    "wrong": [
+      "Kublai Khan",
+      "Liu Bang",
+      "Sun Yat-sen"
+    ],
+    "teach": "His city-sized mausoleum is guarded by a life-sized Terracotta Army.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Qin_Shi_Huang",
+      "ref": "Wikipedia — Qin Shi Huang"
+    }
+  },
+  {
+    "id": "boss-his-napoleon-final-defeat",
+    "factId": "boss-napoleon-final-defeat",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "history",
+    "prompt": "Napoleon's final defeat came in 1815 at which battle?",
+    "answer": "Waterloo",
+    "wrong": [
+      "Austerlitz",
+      "Leipzig",
+      "Trafalgar"
+    ],
+    "teach": "Wellington and Prussia's Blücher beat him in what is now Belgium; he was exiled to Saint Helena.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Waterloo",
+      "ref": "Wikipedia — Battle of Waterloo"
+    }
+  },
+  {
+    "id": "boss-his-first-circumnavigation",
+    "factId": "boss-first-circumnavigation",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "history",
+    "prompt": "Whose 1519–1522 expedition made the first circumnavigation of Earth?",
+    "answer": "Ferdinand Magellan",
+    "wrong": [
+      "Christopher Columbus",
+      "Vasco da Gama",
+      "Francis Drake"
+    ],
+    "teach": "Magellan was killed in the Philippines in 1521; Juan Sebastián Elcano led the crew home.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Ferdinand_Magellan",
+      "ref": "Wikipedia — Ferdinand Magellan"
+    }
+  },
+  {
+    "id": "boss-his-franz-ferdinand",
+    "factId": "boss-franz-ferdinand",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "history",
+    "prompt": "In which city was Archduke Franz Ferdinand assassinated in 1914?",
+    "answer": "Sarajevo",
+    "wrong": [
+      "Vienna",
+      "Belgrade",
+      "Budapest"
+    ],
+    "teach": "Bosnian Serb student Gavrilo Princip shot him and his wife, Sophie, on 28 June.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Assassination_of_Archduke_Franz_Ferdinand",
+      "ref": "Wikipedia — Assassination of Archduke Franz Ferdinand"
+    }
+  },
+  {
+    "id": "boss-art-the-thinker",
+    "factId": "boss-the-thinker",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "art",
+    "prompt": "Who sculpted The Thinker?",
+    "answer": "Auguste Rodin",
+    "wrong": [
+      "Michelangelo",
+      "Donatello",
+      "Bernini"
+    ],
+    "teach": "It began as a figure for his doorway The Gates of Hell, inspired by Dante's Divine Comedy.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/The_Thinker",
+      "ref": "Wikipedia — The Thinker"
+    }
+  },
+  {
+    "id": "boss-art-the-scream",
+    "factId": "boss-the-scream",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "art",
+    "prompt": "Who painted The Scream (1893)?",
+    "answer": "Edvard Munch",
+    "wrong": [
+      "Gustav Klimt",
+      "Egon Schiele",
+      "Wassily Kandinsky"
+    ],
+    "teach": "He made two painted and two pastel versions; both paintings were stolen and later recovered.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/The_Scream",
+      "ref": "Wikipedia — The Scream"
+    }
+  },
+  {
+    "id": "boss-art-great-wave",
+    "factId": "boss-great-wave",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "art",
+    "prompt": "Which artist made the woodblock print The Great Wave off Kanagawa?",
+    "answer": "Hokusai",
+    "wrong": [
+      "Hiroshige",
+      "Utamaro",
+      "Kuniyoshi"
+    ],
+    "teach": "It opens his series Thirty-six Views of Mount Fuji, noted for its use of Prussian blue.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/The_Great_Wave_off_Kanagawa",
+      "ref": "Wikipedia — The Great Wave off Kanagawa"
+    }
+  },
+  {
+    "id": "boss-art-guernica",
+    "factId": "boss-guernica",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "art",
+    "prompt": "Picasso's 1937 painting protesting the bombing of a Basque town is called what?",
+    "answer": "Guernica",
+    "wrong": [
+      "The Old Guitarist",
+      "Three Musicians",
+      "La Vie"
+    ],
+    "teach": "It hangs in Madrid's Museo Reina Sofía, moved there from the Prado in 1992.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Guernica_(Picasso)",
+      "ref": "Wikipedia — Guernica (Picasso)"
+    }
+  },
+  {
+    "id": "boss-art-birth-of-venus",
+    "factId": "boss-birth-of-venus",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "art",
+    "prompt": "Who painted The Birth of Venus in the mid-1480s?",
+    "answer": "Sandro Botticelli",
+    "wrong": [
+      "Titian",
+      "Raphael",
+      "Caravaggio"
+    ],
+    "teach": "It hangs in Florence's Uffizi Gallery beside his other large mythological work, Primavera.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/The_Birth_of_Venus",
+      "ref": "Wikipedia — The Birth of Venus"
+    }
+  },
+  {
+    "id": "boss-art-american-gothic",
+    "factId": "boss-american-gothic",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "art",
+    "prompt": "Grant Wood's painting of a farmer holding a pitchfork is called what?",
+    "answer": "American Gothic",
+    "wrong": [
+      "Christina's World",
+      "Whistler's Mother",
+      "The Gleaners"
+    ],
+    "teach": "The models were Wood's sister Nan and the family dentist, Byron McKeeby.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/American_Gothic",
+      "ref": "Wikipedia — American Gothic"
+    }
+  },
+  {
+    "id": "boss-art-nighthawks",
+    "factId": "boss-nighthawks",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "art",
+    "prompt": "Who painted Nighthawks (1942), the late-night diner scene?",
+    "answer": "Edward Hopper",
+    "wrong": [
+      "Norman Rockwell",
+      "Grant Wood",
+      "Andrew Wyeth"
+    ],
+    "teach": "It was inspired by a diner in Greenwich Village and sold to the Art Institute of Chicago.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Nighthawks_(Hopper)",
+      "ref": "Wikipedia — Nighthawks (Hopper)"
+    }
+  },
+  {
+    "id": "boss-art-night-watch",
+    "factId": "boss-night-watch",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "art",
+    "prompt": "Who painted The Night Watch (1642)?",
+    "answer": "Rembrandt",
+    "wrong": [
+      "Johannes Vermeer",
+      "Frans Hals",
+      "Hieronymus Bosch"
+    ],
+    "teach": "It belongs to the Amsterdam Museum but is displayed in the Rijksmuseum.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/The_Night_Watch",
+      "ref": "Wikipedia — The Night Watch"
+    }
+  },
+  {
+    "id": "boss-art-water-lilies",
+    "factId": "boss-water-lilies",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "art",
+    "prompt": "Who painted about 250 Water Lilies pictures of his garden at Giverny?",
+    "answer": "Claude Monet",
+    "wrong": [
+      "Pierre-Auguste Renoir",
+      "Édouard Manet",
+      "Edgar Degas"
+    ],
+    "teach": "The series was his main focus for the last 31 years of his life.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Water_Lilies_(Monet_series)",
+      "ref": "Wikipedia — Water Lilies (Monet series)"
+    }
+  },
+  {
+    "id": "boss-art-drip-technique",
+    "factId": "boss-drip-technique",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "art",
+    "prompt": "Which painter laid canvases on the floor for his famous \"drip\" technique?",
+    "answer": "Jackson Pollock",
+    "wrong": [
+      "Mark Rothko",
+      "Willem de Kooning",
+      "Roy Lichtenstein"
+    ],
+    "teach": "A leading abstract expressionist, he began it after moving to Springs, New York.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jackson_Pollock",
+      "ref": "Wikipedia — Jackson Pollock"
+    }
+  },
+  {
+    "id": "boss-art-kahlo-husband",
+    "factId": "boss-kahlo-husband",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "art",
+    "prompt": "Frida Kahlo married which Mexican muralist twice?",
+    "answer": "Diego Rivera",
+    "wrong": [
+      "José Clemente Orozco",
+      "David Alfaro Siqueiros",
+      "Rufino Tamayo"
+    ],
+    "teach": "They wed in 1929, divorced in 1939 and remarried on 8 December 1940.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Frida_Kahlo",
+      "ref": "Wikipedia — Frida Kahlo"
+    }
+  },
+  {
+    "id": "boss-art-liberty-sculptor",
+    "factId": "boss-liberty-sculptor",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "art",
+    "prompt": "Which French sculptor designed the Statue of Liberty?",
+    "answer": "Frédéric Bartholdi",
+    "wrong": [
+      "Jean-Antoine Houdon",
+      "Camille Claudel",
+      "Jean-Baptiste Carpeaux"
+    ],
+    "teach": "Gustave Eiffel built its metal framework; it was dedicated on October 28, 1886.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Statue_of_Liberty",
+      "ref": "Wikipedia — Statue of Liberty"
+    }
+  },
+  {
+    "id": "boss-pop-ruby-slippers",
+    "factId": "boss-ruby-slippers",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "pop-culture",
+    "prompt": "In the 1939 film The Wizard of Oz, what color are Dorothy's magic slippers?",
+    "answer": "Ruby red",
+    "wrong": [
+      "Emerald green",
+      "Sapphire blue",
+      "Golden yellow"
+    ],
+    "teach": "In Baum's 1900 novel they were Silver Shoes; red showed off the Technicolor process.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Ruby_slippers",
+      "ref": "Wikipedia — Ruby slippers"
+    }
+  },
+  {
+    "id": "boss-pop-rumours",
+    "factId": "boss-rumours",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "pop-culture",
+    "prompt": "Which band released the 1977 album Rumours?",
+    "answer": "Fleetwood Mac",
+    "wrong": [
+      "Eagles",
+      "Steely Dan",
+      "The Doobie Brothers"
+    ],
+    "teach": "It was recorded largely in California in 1976, starting at the Record Plant in Sausalito.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Rumours_(album)",
+      "ref": "Wikipedia — Rumours (album)"
+    }
+  },
+  {
+    "id": "boss-pop-hawkins-indiana",
+    "factId": "boss-hawkins-indiana",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "pop-culture",
+    "prompt": "Which TV series is set in the fictional town of Hawkins, Indiana?",
+    "answer": "Stranger Things",
+    "wrong": [
+      "Twin Peaks",
+      "Riverdale",
+      "Gravity Falls"
+    ],
+    "teach": "Created by the Duffer Brothers, it premiered on Netflix on July 15, 2016.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Stranger_Things",
+      "ref": "Wikipedia — Stranger Things"
+    }
+  },
+  {
+    "id": "boss-pop-vader-voice",
+    "factId": "boss-vader-voice",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "pop-culture",
+    "prompt": "Who voiced Darth Vader in the original Star Wars trilogy?",
+    "answer": "James Earl Jones",
+    "wrong": [
+      "Christopher Lee",
+      "Morgan Freeman",
+      "Orson Welles"
+    ],
+    "teach": "Bodybuilder David Prowse wore the suit; Lucas felt his West Country accent didn't fit.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Darth_Vader",
+      "ref": "Wikipedia — Darth Vader"
+    }
+  },
+  {
+    "id": "boss-pop-master-chief",
+    "factId": "boss-master-chief",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "pop-culture",
+    "prompt": "Master Chief is the hero of which video game series?",
+    "answer": "Halo",
+    "wrong": [
+      "Gears of War",
+      "Destiny",
+      "Doom"
+    ],
+    "teach": "His designation is John-117; he debuted in Halo: Combat Evolved in 2001.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Master_Chief_(Halo)",
+      "ref": "Wikipedia — Master Chief (Halo)"
+    }
+  },
+  {
+    "id": "boss-pop-walter-white-alias",
+    "factId": "boss-walter-white-alias",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "pop-culture",
+    "prompt": "In Breaking Bad, what alias does Walter White use?",
+    "answer": "Heisenberg",
+    "wrong": [
+      "Capone",
+      "Mr. Pink",
+      "Escobar"
+    ],
+    "teach": "The name refers to the theoretical physicist Werner Heisenberg.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Walter_White_(Breaking_Bad)",
+      "ref": "Wikipedia — Walter White (Breaking Bad)"
+    }
+  },
+  {
+    "id": "boss-pop-frasier-parent",
+    "factId": "boss-frasier-parent",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "pop-culture",
+    "prompt": "Which NBC sitcom spun off Frasier?",
+    "answer": "Cheers",
+    "wrong": [
+      "Taxi",
+      "Night Court",
+      "Seinfeld"
+    ],
+    "teach": "Set in a Boston bar, it ran for eleven seasons from 1982 to 1993.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Cheers",
+      "ref": "Wikipedia — Cheers"
+    }
+  },
+  {
+    "id": "boss-pop-pokedex-first",
+    "factId": "boss-pokedex-first",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "pop-culture",
+    "prompt": "Which Pokémon is the first entry in the Pokédex?",
+    "answer": "Bulbasaur",
+    "wrong": [
+      "Pikachu",
+      "Mew",
+      "Eevee"
+    ],
+    "teach": "It debuted in Pocket Monsters Red and Green as a starter alongside Charmander and Squirtle.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Bulbasaur",
+      "ref": "Wikipedia — Bulbasaur"
+    }
+  },
+  {
+    "id": "boss-pop-cap-shield-metal",
+    "factId": "boss-cap-shield-metal",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "pop-culture",
+    "prompt": "Captain America's circular shield is made with which fictional metal?",
+    "answer": "Vibranium",
+    "wrong": [
+      "Adamantium",
+      "Uru",
+      "Carbonadium"
+    ],
+    "teach": "In the comics, Wakanda's king T'Chaka gave Captain America the metal in 1941.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Captain_America%27s_shield",
+      "ref": "Wikipedia — Captain America's shield"
+    }
+  },
+  {
+    "id": "boss-pop-tardis",
+    "factId": "boss-tardis",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "pop-culture",
+    "prompt": "What is the name of the Doctor's time machine in Doctor Who?",
+    "answer": "TARDIS",
+    "wrong": [
+      "DeLorean",
+      "Serenity",
+      "Enterprise"
+    ],
+    "teach": "Short for Time And Relative Dimension in Space, it looks like a police box.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/TARDIS",
+      "ref": "Wikipedia — TARDIS"
+    }
+  },
+  {
+    "id": "boss-pop-evergreen-terrace",
+    "factId": "boss-evergreen-terrace",
+    "side": "boss",
+    "sport": "boss",
+    "leagues": [],
+    "difficulty": "expert",
+    "category": "pop-culture",
+    "prompt": "Which TV family lives at 742 Evergreen Terrace?",
+    "answer": "The Simpsons",
+    "wrong": [
+      "The Griffins",
+      "The Belchers",
+      "The Bundys"
+    ],
+    "teach": "Their town, Springfield, is in a state the show never specifies.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Simpson_family",
+      "ref": "Wikipedia — Simpson family"
+    }
   }
 ]
