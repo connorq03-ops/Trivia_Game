@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import {
+  BOSS_CLOCK_MS,
   CLOCK_MS,
   LEVELS,
   MULTIPLIER_TIERS,
@@ -33,6 +34,7 @@ describe('howItWorks', () => {
       `Get ${STRIKE_BACK_EVERY} in a row to clear a strike.`,
       `Streaks of ${streaks} multiply your points by ${multipliers}.`,
       `Classic starts easy and levels up at ${levelSteps} correct answers. Harder questions score more.`,
+      `Each level-up brings a boss question on science, history, art or pop culture: ${BOSS_CLOCK_MS / 1000} seconds, +500 if right, −250 if wrong, no strike.`,
       'Daily 10: the same 10 questions for everyone today, easy to hard. No strikes.',
     ])
   })
