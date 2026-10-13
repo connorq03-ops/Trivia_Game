@@ -1678,5 +1678,565 @@
       "season": 2019,
       "player": "Jimmy Garoppolo"
     }
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Daniel Faalele was born in which country?",
+    "answer": "Australia",
+    "wrong": [
+      "New Zealand",
+      "Canada",
+      "England"
+    ],
+    "teach": "Faalele was born in Melbourne.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2024,
+      "player": "Daniel Faalele"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Daniel_Faalele",
+      "ref": "Wikipedia: Daniel Faalele page (saved API wikitext and prose), teach source: Daniel Faalele, checked 2026-10-13"
+    },
+    "id": "p-nfl-daniel-faalele-country",
+    "factId": "nfl-daniel-faalele-country"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Sebastian Vollmer was born in which country?",
+    "answer": "Germany",
+    "wrong": [
+      "Austria",
+      "Switzerland",
+      "Australia"
+    ],
+    "teach": "Vollmer was born in Kaarst.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2014,
+      "player": "Sebastian Vollmer"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Sebastian_Vollmer",
+      "ref": "Wikipedia: Sebastian Vollmer page (saved API wikitext and prose), teach source: Sebastian Vollmer, checked 2026-10-13"
+    },
+    "id": "p-nfl-sebastian-vollmer-country",
+    "factId": "nfl-sebastian-vollmer-country"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "Drew Brees's jersey number in 2009?",
+    "answer": "9",
+    "wrong": [
+      "12",
+      "15",
+      "18"
+    ],
+    "teach": "The New Orleans Saints finished 13–3 in 2009.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2009,
+      "player": "Drew Brees"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2009_New_Orleans_Saints_season",
+      "ref": "Wikipedia: 2009 New Orleans Saints season page (saved API wikitext and prose), teach source: 2009 New Orleans Saints season, checked 2026-10-13"
+    },
+    "id": "p-nfl-drew-brees-jersey",
+    "factId": "nfl-drew-brees-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "Emmitt Smith's jersey number in 1995?",
+    "answer": "22",
+    "wrong": [
+      "20",
+      "34",
+      "80"
+    ],
+    "teach": "The Dallas Cowboys finished 12–4 in 1995.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1995,
+      "player": "Emmitt Smith"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/1995_Dallas_Cowboys_season",
+      "ref": "Wikipedia: 1995 Dallas Cowboys season page (saved API wikitext and prose), teach source: 1995 Dallas Cowboys season, checked 2026-10-13"
+    },
+    "id": "p-nfl-emmitt-smith-jersey",
+    "factId": "nfl-emmitt-smith-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "Barry Sanders's jersey number in 1997?",
+    "answer": "20",
+    "wrong": [
+      "22",
+      "34",
+      "80"
+    ],
+    "teach": "The Detroit Lions finished 9–7 in 1997.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1997,
+      "player": "Barry Sanders"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/1997_Detroit_Lions_season",
+      "ref": "Wikipedia: 1997 Detroit Lions season page (saved API wikitext and prose), teach source: 1997 Detroit Lions season, checked 2026-10-13"
+    },
+    "id": "p-nfl-barry-sanders-jersey",
+    "factId": "nfl-barry-sanders-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "Jerry Rice's jersey number in 1994?",
+    "answer": "80",
+    "wrong": [
+      "22",
+      "34",
+      "81"
+    ],
+    "teach": "The San Francisco 49ers finished 13–3 in 1994.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1994,
+      "player": "Jerry Rice"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/1994_San_Francisco_49ers_season",
+      "ref": "Wikipedia: 1994 San Francisco 49ers season page (saved API wikitext and prose), teach source: 1994 San Francisco 49ers season, checked 2026-10-13"
+    },
+    "id": "p-nfl-jerry-rice-jersey",
+    "factId": "nfl-jerry-rice-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Jersey number",
+    "prompt": "Tom Brady's jersey number in 2017?",
+    "answer": "12",
+    "wrong": [
+      "10",
+      "15",
+      "18"
+    ],
+    "teach": "The New England Patriots finished 13–3 in 2017.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2017,
+      "player": "Tom Brady"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2017_New_England_Patriots_season",
+      "ref": "Wikipedia: 2017 New England Patriots season page (saved API wikitext and prose), teach source: 2017 New England Patriots season, checked 2026-10-13"
+    },
+    "id": "p-nfl-tom-brady-jersey",
+    "factId": "nfl-tom-brady-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "Walter Payton's jersey number in 1985?",
+    "answer": "34",
+    "wrong": [
+      "22",
+      "20",
+      "80"
+    ],
+    "teach": "The Chicago Bears finished 15–1 in 1985.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1985,
+      "player": "Walter Payton"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/1985_Chicago_Bears_season",
+      "ref": "Wikipedia: 1985 Chicago Bears season page (saved API wikitext and prose), teach source: 1985 Chicago Bears season, checked 2026-10-13"
+    },
+    "id": "p-nfl-walter-payton-jersey",
+    "factId": "nfl-walter-payton-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "Derrick Henry's jersey number in 2019?",
+    "answer": "22",
+    "wrong": [
+      "20",
+      "23",
+      "34"
+    ],
+    "teach": "The Tennessee Titans finished 9–7 in 2019.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2019,
+      "player": "Derrick Henry"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2019_Tennessee_Titans_season",
+      "ref": "Wikipedia: 2019 Tennessee Titans season page (saved API wikitext and prose), teach source: 2019 Tennessee Titans season, checked 2026-10-13"
+    },
+    "id": "p-nfl-derrick-henry-jersey",
+    "factId": "nfl-derrick-henry-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "Christian McCaffrey's jersey number in 2023?",
+    "answer": "23",
+    "wrong": [
+      "22",
+      "24",
+      "26"
+    ],
+    "teach": "The San Francisco 49ers finished 12–5 in 2023.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2023,
+      "player": "Christian McCaffrey"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2023_San_Francisco_49ers_season",
+      "ref": "Wikipedia: 2023 San Francisco 49ers season page (saved API wikitext and prose), teach source: 2023 San Francisco 49ers season, checked 2026-10-13"
+    },
+    "id": "p-nfl-christian-mccaffrey-jersey",
+    "factId": "nfl-christian-mccaffrey-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Morten Andersen was born in which country?",
+    "answer": "Denmark",
+    "wrong": [
+      "Norway",
+      "Germany",
+      "Poland"
+    ],
+    "teach": "Andersen was born in Copenhagen.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1995,
+      "player": "Morten Andersen"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Morten_Andersen",
+      "ref": "Wikipedia: Morten Andersen page (saved API wikitext and prose), teach source: Morten Andersen, checked 2026-10-13"
+    },
+    "id": "p-nfl-morten-andersen-country",
+    "factId": "nfl-morten-andersen-country"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Jan Stenerud was born in which country?",
+    "answer": "Norway",
+    "wrong": [
+      "Denmark",
+      "Germany",
+      "Poland"
+    ],
+    "teach": "Stenerud was born in Fetsund.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1975,
+      "player": "Jan Stenerud"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jan_Stenerud",
+      "ref": "Wikipedia: Jan Stenerud page (saved API wikitext and prose), teach source: Jan Stenerud, checked 2026-10-13"
+    },
+    "id": "p-nfl-jan-stenerud-country",
+    "factId": "nfl-jan-stenerud-country"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Sebastian Janikowski was born in which country?",
+    "answer": "Poland",
+    "wrong": [
+      "Germany",
+      "Denmark",
+      "Norway"
+    ],
+    "teach": "Janikowski was born in Wałbrzych.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2009,
+      "player": "Sebastian Janikowski"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Sebastian_Janikowski",
+      "ref": "Wikipedia: Sebastian Janikowski page (saved API wikitext and prose), teach source: Sebastian Janikowski, checked 2026-10-13"
+    },
+    "id": "p-nfl-sebastian-janikowski-country",
+    "factId": "nfl-sebastian-janikowski-country"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Steve Van Buren was born in which country?",
+    "answer": "Honduras",
+    "wrong": [
+      "Panama",
+      "Mexico",
+      "Canada"
+    ],
+    "teach": "Van Buren was born in La Ceiba.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1947,
+      "player": "Steve Van Buren"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Steve_Van_Buren",
+      "ref": "Wikipedia: Steve Van Buren page (saved API wikitext and prose), teach source: Steve Van Buren, checked 2026-10-13"
+    },
+    "id": "p-nfl-steve-van-buren-country",
+    "factId": "nfl-steve-van-buren-country"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Tamba Hali was born in which country?",
+    "answer": "Liberia",
+    "wrong": [
+      "Nigeria",
+      "Ghana",
+      "Sierra Leone"
+    ],
+    "teach": "Hali was born in Gbarnga.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2012,
+      "player": "Tamba Hali"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Tamba_Hali",
+      "ref": "Wikipedia: Tamba Hali page (saved API wikitext and prose), teach source: Tamba Hali, checked 2026-10-13"
+    },
+    "id": "p-nfl-tamba-hali-country",
+    "factId": "nfl-tamba-hali-country"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Ted Hendricks was born in which country?",
+    "answer": "Guatemala",
+    "wrong": [
+      "Honduras",
+      "Mexico",
+      "Panama"
+    ],
+    "teach": "Hendricks was born in Guatemala City.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1977,
+      "player": "Ted Hendricks"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Ted_Hendricks",
+      "ref": "Wikipedia: Ted Hendricks page (saved API wikitext and prose), teach source: Ted Hendricks, checked 2026-10-13"
+    },
+    "id": "p-nfl-ted-hendricks-country",
+    "factId": "nfl-ted-hendricks-country"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Garo Yepremian was born in which country?",
+    "answer": "Cyprus",
+    "wrong": [
+      "Greece",
+      "Germany",
+      "Italy"
+    ],
+    "teach": "Yepremian was born in Larnaca.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1972,
+      "player": "Garo Yepremian"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Garo_Yepremian",
+      "ref": "Wikipedia: Garo Yepremian page (saved API wikitext and prose), teach source: Garo Yepremian, checked 2026-10-13"
+    },
+    "id": "p-nfl-garo-yepremian-country",
+    "factId": "nfl-garo-yepremian-country"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Björn Werner was born in which country?",
+    "answer": "Germany",
+    "wrong": [
+      "Denmark",
+      "Austria",
+      "Switzerland"
+    ],
+    "teach": "Werner was born in Berlin.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2013,
+      "player": "Björn Werner"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Bj%C3%B6rn_Werner",
+      "ref": "Wikipedia: Björn Werner page (saved API wikitext and prose), teach source: Björn Werner, checked 2026-10-13"
+    },
+    "id": "p-nfl-bjorn-werner-country",
+    "factId": "nfl-bjorn-werner-country"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Bronko Nagurski was born in which country?",
+    "answer": "Canada",
+    "wrong": [
+      "Germany",
+      "France",
+      "Mexico"
+    ],
+    "teach": "Nagurski was born in Rainy River.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1934,
+      "player": "Bronko Nagurski"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Bronko_Nagurski",
+      "ref": "Wikipedia: Bronko Nagurski page (saved API wikitext and prose), teach source: Bronko Nagurski, checked 2026-10-13"
+    },
+    "id": "p-nfl-bronko-nagurski-country",
+    "factId": "nfl-bronko-nagurski-country"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Gary Anderson was born in which country?",
+    "answer": "South Africa",
+    "wrong": [
+      "Australia",
+      "Germany",
+      "Canada"
+    ],
+    "teach": "Anderson was born in Parys.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1998,
+      "player": "Gary Anderson"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Gary_Anderson_%28placekicker%29",
+      "ref": "Wikipedia: Gary Anderson (placekicker) page (saved API wikitext and prose), teach source: Gary Anderson (placekicker), checked 2026-10-13"
+    },
+    "id": "p-nfl-gary-anderson-country",
+    "factId": "nfl-gary-anderson-country"
   }
 ]

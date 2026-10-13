@@ -1271,5 +1271,1305 @@
       "ref": "Official Baseball Rules — Definitions of Terms (Strike)"
     },
     "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-mlb-infield-dirt-grass-line-radius-1",
+    "factId": "mlb-infield-dirt-grass-line-radius",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "MLB infield: stated radius of the grass line at the outer edge of the dirt?",
+    "answer": "95 feet",
+    "wrong": [
+      "90 feet",
+      "100 feet",
+      "105 feet"
+    ],
+    "teach": "The permitted average measurement is more than 94 feet and less than 96 feet.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "2026 Official Baseball Rules, Rule 2.01(a)"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-mlb-recommended-foul-territory-space-1",
+    "factId": "mlb-recommended-foul-territory-space",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Numbers and dimensions",
+    "prompt": "MLB field: recommended minimum clearance from home plate or a base line to an obstruction?",
+    "answer": "60 feet",
+    "wrong": [
+      "30 feet or more",
+      "50 feet or more",
+      "90 feet or more"
+    ],
+    "teach": "For fields built after June 1, 1958, each foul line must extend at least 325 feet.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "2026 Official Baseball Rules, Rule 2.01"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-mlb-home-plate-adjacent-side-1",
+    "factId": "mlb-home-plate-adjacent-side",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Numbers and dimensions",
+    "prompt": "MLB home plate: length of either adjacent side?",
+    "answer": "8½ inches",
+    "wrong": [
+      "6 inches",
+      "12 inches",
+      "17 inches"
+    ],
+    "teach": "The edge facing the pitcher is 17 inches long.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "2026 Official Baseball Rules, Rule 2.02"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nfl-professional-hash-mark-size-1",
+    "factId": "nfl-professional-hash-mark-size",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "NFL field markings: width and length of each inbounds hash mark?",
+    "answer": "4 inches by 2 feet",
+    "wrong": [
+      "4 in. wide, 1 ft. long",
+      "2 in. wide, 2 ft. long",
+      "6 in. wide, 1 ft. long"
+    ],
+    "teach": "The rulebook separately describes the college marks as 12 inches long.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "2026 NFL Rulebook, Rule 1, The Field"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nfl-defensive-touchdown-on-try-1",
+    "factId": "nfl-defensive-touchdown-on-try",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Scoring",
+    "prompt": "NFL Try: points for a defensive touchdown?",
+    "answer": "2 points",
+    "wrong": [
+      "One point",
+      "Six points",
+      "No points"
+    ],
+    "teach": "A Try is one untimed scrimmage down after a touchdown.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "2026 NFL Rulebook, Rule 11, Section 3"
+    },
+    "dailyFrom": "2026-10-27",
+    "validFrom": 2015
+  },
+  {
+    "id": "r-nba-lane-space-mark-size-1",
+    "factId": "nba-lane-space-mark-size",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Numbers and dimensions",
+    "prompt": "NBA lane: size of each lane-space mark?",
+    "answer": "2 by 6 inches",
+    "wrong": [
+      "2 inches by 4 inches",
+      "3 inches by 6 inches",
+      "6 inches by 12 inches"
+    ],
+    "teach": "The lane boundary lines are part of the lane, but the lane-space and neutral-zone marks are not.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-1-court-dimensions-equipment/",
+      "ref": "NBA Official Rules, Rule No. 1"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nba-defensive-three-second-shot-clock-1",
+    "factId": "nba-defensive-three-second-shot-clock",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Clock and timing",
+    "prompt": "NBA defensive three-second violation with 10 seconds on the shot clock: reset to what?",
+    "answer": "14 seconds",
+    "wrong": [
+      "24 seconds",
+      "10 seconds",
+      "8 seconds"
+    ],
+    "teach": "The offense also gets a new 8-second count to advance the ball from the backcourt.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-12-fouls-and-penalties/",
+      "ref": "NBA Official Rules, Rule No. 12"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nba-first-delay-of-game-penalty-1",
+    "factId": "nba-first-delay-of-game-penalty",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "What's the call?",
+    "prompt": "NBA delay of game: result of the first offense?",
+    "answer": "First-offense warning",
+    "wrong": [
+      "A technical foul",
+      "One free throw",
+      "Loss of possession"
+    ],
+    "teach": "Each successive delay-of-game offense is assessed a team technical foul.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-12-fouls-and-penalties/",
+      "ref": "NBA Official Rules, Rule No. 12"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-mlb-infield-shift-two-per-side-1",
+    "factId": "mlb-infield-shift-two-per-side",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "MLB infield positioning: minimum infielders with both feet on each side of second base?",
+    "answer": "2",
+    "wrong": [
+      "1",
+      "3",
+      "4"
+    ],
+    "teach": "The two infielders on each side cannot switch sides during that inning.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "2026 Official Baseball Rules, Rule 5.02(c)"
+    },
+    "dailyFrom": "2026-10-27",
+    "validFrom": 2023
+  },
+  {
+    "id": "r-mlb-strike-zone-upper-boundary-1",
+    "factId": "mlb-strike-zone-upper-boundary",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Numbers and dimensions",
+    "prompt": "MLB strike zone: where is the upper boundary for a batter in a normal stance?",
+    "answer": "Midpoint: shoulder/pants",
+    "wrong": [
+      "Top of the shoulders",
+      "Bottom of the pants",
+      "The armpits"
+    ],
+    "teach": "The lower boundary is the hollow beneath the kneecap.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "2026 Official Baseball Rules, Definitions"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-mlb-strike-zone-lower-boundary-1",
+    "factId": "mlb-strike-zone-lower-boundary",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Numbers and dimensions",
+    "prompt": "MLB strike zone: where is the lower boundary for a batter in a normal stance?",
+    "answer": "Under kneecap",
+    "wrong": [
+      "Bottom of the shoes",
+      "Top of the knees",
+      "Top of the pants"
+    ],
+    "teach": "The upper boundary is the midpoint between the shoulders and uniform pants.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "2026 Official Baseball Rules, Definitions"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-mlb-two-base-coaches-1",
+    "factId": "mlb-two-base-coaches",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "Numbers and dimensions",
+    "prompt": "MLB: how many base coaches may the batting team provide?",
+    "answer": "2",
+    "wrong": [
+      "1",
+      "3",
+      "4"
+    ],
+    "teach": "The coaches must stay in their boxes while the pitcher is on the plate.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "2026 Official Baseball Rules, Rule 5.03(a)"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-mlb-intentional-walk-no-pitches-1",
+    "factId": "mlb-intentional-walk-no-pitches",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "What's the call?",
+    "prompt": "MLB manager signals an intentional walk. What does the umpire award?",
+    "answer": "First base",
+    "wrong": [
+      "Second base",
+      "Four pitches",
+      "A ball and strike"
+    ],
+    "teach": "The rule treats the award as if the batter received four pitches outside the zone.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "2026 Official Baseball Rules, Rule 5.05(b)(1)"
+    },
+    "dailyFrom": "2026-10-27",
+    "validFrom": 2017
+  },
+  {
+    "id": "r-mlb-substituted-player-reentry-1",
+    "factId": "mlb-substituted-player-reentry",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "What's the call?",
+    "prompt": "MLB: may a player who has been removed from a game re-enter?",
+    "answer": "No",
+    "wrong": [
+      "Once",
+      "Only as a pinch hitter",
+      "Only in extra innings"
+    ],
+    "teach": "The umpire-in-chief must direct an improperly re-entering player to leave.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "2026 Official Baseball Rules, Rule 5.10(d)"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-mlb-first-base-overrun-1",
+    "factId": "mlb-first-base-overrun",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "MLB runner returning to first overruns it with both feet in foul ground. Before advancing, what must he do?",
+    "answer": "Retouch first base",
+    "wrong": [
+      "Touch second base",
+      "Wait for the next pitch",
+      "Return to the dugout"
+    ],
+    "teach": "A runner may not take a flying start from behind his base.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "2026 Official Baseball Rules, Rule 5.09(b)(4)"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-mlb-following-runner-forced-base-1",
+    "factId": "mlb-following-runner-forced-base",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "What's the call?",
+    "prompt": "MLB: a batter forces a runner forward onto a base occupied by a runner ahead. Who is entitled to that base?",
+    "answer": "The following runner",
+    "wrong": [
+      "The runner already on it",
+      "The batter-runner",
+      "Neither runner"
+    ],
+    "teach": "When both runners are touching the base, the preceding runner is out when tagged.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "2026 Official Baseball Rules, Rule 5.06(b)(2)"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-mlb-run-on-nonforce-third-out-1",
+    "factId": "mlb-run-on-nonforce-third-out",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Scoring",
+    "prompt": "MLB time play: a runner touches home before a non-force third out. Does the run score?",
+    "answer": "Yes",
+    "wrong": [
+      "No",
+      "Only on a home run",
+      "Only with one out"
+    ],
+    "teach": "A batter-runner's third out before first base also cancels the run.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "2026 Official Baseball Rules, Rule 5.08(a)"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-mlb-runner-retreating-direction-1",
+    "factId": "mlb-runner-retreating-direction",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "What's the call?",
+    "prompt": "MLB runner deliberately runs the bases in reverse order to confuse the defense. Ruling?",
+    "answer": "Runner is out",
+    "wrong": [
+      "Safe at last base",
+      "Balk",
+      "Dead ball"
+    ],
+    "teach": "Running in reverse order to confuse the defense is an out.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "2026 Official Baseball Rules, Rule 5.09(b)(10)"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-mlb-runner-tag-up-caught-fly-1",
+    "factId": "mlb-runner-tag-up-caught-fly",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "What's the call?",
+    "prompt": "MLB runner leaves a base before a fly ball is caught. What must he do to avoid an appeal out?",
+    "answer": "Retouch the base",
+    "wrong": [
+      "Touch home plate",
+      "Return to the dugout",
+      "Wait for the next pitch"
+    ],
+    "teach": "The rule defines retouching as tagging up and starting from contact with the base after the catch.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "2026 Official Baseball Rules, Rule 5.09(c)(1)"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-mlb-batter-interference-runner-home-1",
+    "factId": "mlb-batter-interference-runner-home",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "What's the call?",
+    "prompt": "MLB catcher is hindered by batter interference and no runner is put out. Who is out?",
+    "answer": "The batter",
+    "wrong": [
+      "The runner",
+      "Both teams' players",
+      "No one"
+    ],
+    "teach": "The runner attempting to score is returned to the base he last occupied.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "2026 Official Baseball Rules, Rule 6.01(a)(3)"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-mlb-missed-base-after-runner-scores-1",
+    "factId": "mlb-missed-base-after-runner-scores",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "What's the call?",
+    "prompt": "MLB: may a runner return to touch a missed base after a following runner scores?",
+    "answer": "No",
+    "wrong": [
+      "Yes, on a dead ball",
+      "Only on a home run",
+      "Only if the ball is dead"
+    ],
+    "teach": "The defense may still appeal the missed base when a runner cannot return to correct it.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "2026 Official Baseball Rules, Rule 5.09(c)(2)"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-mlb-infield-shift-four-total-1",
+    "factId": "mlb-infield-shift-four-total",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "What's the call?",
+    "prompt": "MLB: minimum infielders besides the pitcher and catcher with both feet in front of the dirt boundary?",
+    "answer": "4",
+    "wrong": [
+      "2",
+      "3",
+      "5"
+    ],
+    "teach": "At least two of those infielders must be positioned on each side of second base.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "2026 Official Baseball Rules, Rule 5.02(c)"
+    },
+    "dailyFrom": "2026-10-27",
+    "validFrom": 2023
+  },
+  {
+    "id": "r-mlb-batter-refuses-box-1",
+    "factId": "mlb-batter-refuses-box",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "MLB batter refuses to take his position in the box. What does the umpire call?",
+    "answer": "A strike",
+    "wrong": [
+      "A ball",
+      "Immediate out",
+      "A balk"
+    ],
+    "teach": "The ball is dead and runners may not advance on this strike.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "2026 Official Baseball Rules, Rule 5.04(b)(3)"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nfl-touchdown-goal-line-possession-1",
+    "factId": "nfl-touchdown-goal-line-possession",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Scoring",
+    "prompt": "NFL touchdown: what must cross the opponent's goal line while the player has legal possession?",
+    "answer": "Any part of the ball",
+    "wrong": [
+      "The entire ball",
+      "The player's torso",
+      "The ball and both feet"
+    ],
+    "teach": "The ball must be carried by an inbounds player and the play cannot be a touchback.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "2026 NFL Rulebook, Rule 3, Section 38"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nfl-one-forward-pass-per-down-1",
+    "factId": "nfl-one-forward-pass-per-down",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "What's the call?",
+    "prompt": "NFL: maximum legal forward passes by the offense during one down?",
+    "answer": "One",
+    "wrong": [
+      "Two",
+      "Three",
+      "Unlimited passes"
+    ],
+    "teach": "A legal forward pass must be thrown from behind the line of scrimmage.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "2026 NFL Rulebook, Rule 8, Section 1, Article 2"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nfl-game-clock-out-of-bounds-early-1",
+    "factId": "nfl-game-clock-out-of-bounds-early",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Clock and timing",
+    "prompt": "NFL runner goes out of bounds early in the second quarter. When does the game clock restart?",
+    "answer": "Ready-for-play signal",
+    "wrong": [
+      "On the snap",
+      "When the ball is spotted",
+      "At the warning"
+    ],
+    "teach": "After a change of possession, the clock instead starts on the snap.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "2026 NFL Rulebook, Rule 4, Section 3, Article 2"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nfl-game-clock-out-of-bounds-final-five-1",
+    "factId": "nfl-game-clock-out-of-bounds-final-five",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Clock and timing",
+    "prompt": "NFL runner goes out of bounds during the final five minutes of the second half. Clock restarts when?",
+    "answer": "On the snap",
+    "wrong": [
+      "On the referee's signal",
+      "When the chains are set",
+      "At the next score"
+    ],
+    "teach": "Outside the final five minutes of the second half, the clock normally restarts on the referee's signal.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "2026 NFL Rulebook, Rule 4, Section 3, Article 2"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nfl-incomplete-pass-clock-1",
+    "factId": "nfl-incomplete-pass-clock",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "easy",
+    "category": "Clock and timing",
+    "prompt": "NFL incomplete forward pass: what happens to the game clock?",
+    "answer": "It stops",
+    "wrong": [
+      "It keeps running",
+      "It runs off 10 seconds",
+      "It resets to 25 seconds"
+    ],
+    "teach": "The clock also stops when the ball goes out of bounds.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "2026 NFL Rulebook, Rule 4, Section 3"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nfl-fair-catch-kick-game-clock-1",
+    "factId": "nfl-fair-catch-kick-game-clock",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Clock and timing",
+    "prompt": "NFL fair-catch kick down: when does the game clock start?",
+    "answer": "When the ball is kicked",
+    "wrong": [
+      "At the snap",
+      "On the referee's signal",
+      "When the ball is touched"
+    ],
+    "teach": "A fair-catch kick is an opportunity to score a field goal after a fair catch.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "2026 NFL Rulebook, Rule 4, Section 3, Article 3"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nfl-replay-ten-second-runoff-1",
+    "factId": "nfl-replay-ten-second-runoff",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Clock and timing",
+    "prompt": "NFL replay reverses a ruling after the two-minute warning and makes the clock restart. What runoff applies?",
+    "answer": "10 seconds",
+    "wrong": [
+      "5 seconds",
+      "15 seconds",
+      "No runoff"
+    ],
+    "teach": "If fewer than 10 seconds remain after the runoff, the half or game ends.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "2026 NFL Rulebook, Rule 15, Section 5"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nfl-runoff-avoid-timeout-review-1",
+    "factId": "nfl-runoff-avoid-timeout-review",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Clock and timing",
+    "prompt": "NFL review triggers a 10-second runoff. How can either team avoid the runoff?",
+    "answer": "Take a timeout",
+    "wrong": [
+      "Decline the review",
+      "Accept a 5-yard penalty",
+      "Substitute a player"
+    ],
+    "teach": "If a timeout avoids the runoff, the game clock starts on the snap.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "2026 NFL Rulebook, Rule 15, Section 5"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nfl-successful-field-goal-clock-cap-1",
+    "factId": "nfl-successful-field-goal-clock-cap",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Clock and timing",
+    "prompt": "NFL successful field goal: maximum time that can run off the game clock during the attempt?",
+    "answer": "5 seconds",
+    "wrong": [
+      "3 seconds",
+      "10 seconds",
+      "15 seconds"
+    ],
+    "teach": "The same five-second maximum applies to an unsuccessful kick that does not land in the field of play.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "2026 NFL Rulebook, Rule 11, Section 4, Article 2"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nfl-try-down-untimed-1",
+    "factId": "nfl-try-down-untimed",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Clock and timing",
+    "prompt": "NFL try after a touchdown: is the down timed?",
+    "answer": "No, it is untimed",
+    "wrong": [
+      "Yes, 40 seconds",
+      "Yes, 25 seconds",
+      "Only in overtime"
+    ],
+    "teach": "A Try is one scrimmage down to add one or two points.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "2026 NFL Rulebook, Rule 4, Section 3"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nfl-touchback-definition-1",
+    "factId": "nfl-touchback-definition",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "What's the call?",
+    "prompt": "NFL ball dead behind defense's goal line from opponent's impetus, not a score or incomplete pass: result?",
+    "answer": "Touchback",
+    "wrong": [
+      "Safety",
+      "Touchdown",
+      "Field goal"
+    ],
+    "teach": "A touchback is determined by the ball's status and which team supplied the impetus.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "2026 NFL Rulebook, Rule 3, Section 37"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nfl-try-touchback-unsuccessful-1",
+    "factId": "nfl-try-touchback-unsuccessful",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "NFL Try results in a touchback. Is the Try successful?",
+    "answer": "No, it is unsuccessful",
+    "wrong": [
+      "Yes, for one point",
+      "Yes, for two points",
+      "Replay the Try"
+    ],
+    "teach": "The Try ends when either team scores or the ball becomes dead by rule.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "2026 NFL Rulebook, Rule 11, Section 3"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nfl-try-after-period-ending-touchdown-1",
+    "factId": "nfl-try-after-period-ending-touchdown",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Clock and timing",
+    "prompt": "NFL touchdown on the final play of a period: is a Try normally still attempted?",
+    "answer": "Yes",
+    "wrong": [
+      "No, time expired",
+      "Only in fourth quarter",
+      "Only on a pass"
+    ],
+    "teach": "The rule has exceptions for sudden-death overtime and a fourth-period score when a Try cannot affect the outcome.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "2026 NFL Rulebook, Rule 11, Section 3, Article 1"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nfl-illegal-bat-penalty-1",
+    "factId": "nfl-illegal-bat-penalty",
+    "side": "rules",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "What's the call?",
+    "prompt": "NFL offense bats a loose ball in the field of play toward the opponent's goal line. Penalty?",
+    "answer": "10 yards",
+    "wrong": [
+      "5 yards",
+      "15 yards",
+      "Loss of down only"
+    ],
+    "teach": "The ban also covers batting a grounded loose ball in either end zone.",
+    "source": {
+      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
+      "ref": "2026 NFL Rulebook, Rule 12, Section 5"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nba-three-point-shot-value-1",
+    "factId": "nba-three-point-shot-value",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Scoring",
+    "prompt": "NBA: points for a successful field goal from outside the three-point line?",
+    "answer": "3",
+    "wrong": [
+      "2",
+      "1",
+      "4"
+    ],
+    "teach": "A field goal from on or inside the arc counts two points.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
+      "ref": "NBA Official Rules, Rule No. 5"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nba-two-point-shot-value-1",
+    "factId": "nba-two-point-shot-value",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Scoring",
+    "prompt": "NBA: points for a successful field goal on or inside the three-point line?",
+    "answer": "2",
+    "wrong": [
+      "1",
+      "3",
+      "4"
+    ],
+    "teach": "A successful shot from outside the line counts three points.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
+      "ref": "NBA Official Rules, Rule No. 5"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nba-free-throw-point-value-1",
+    "factId": "nba-free-throw-point-value",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Scoring",
+    "prompt": "NBA: how many points does a successful free throw count?",
+    "answer": "1",
+    "wrong": [
+      "2",
+      "3",
+      "0"
+    ],
+    "teach": "A missed free throw tapped into the basket by a player counts two points.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
+      "ref": "NBA Official Rules, Rule No. 5"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nba-shot-clock-start-throw-in-1",
+    "factId": "nba-shot-clock-start-throw-in",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Clock and timing",
+    "prompt": "NBA throw-in: when does the shot clock start?",
+    "answer": "Legal touch on court",
+    "wrong": [
+      "At referee handoff",
+      "At release",
+      "At the ready signal"
+    ],
+    "teach": "After a jump ball or missed free throw, it starts when a team obtains possession.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-7-24-second-clock/",
+      "ref": "NBA Official Rules, Rule No. 7"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nba-legal-shot-clock-attempt-1",
+    "factId": "nba-legal-shot-clock-attempt",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Clock and timing",
+    "prompt": "NBA shot-clock attempt: what must the ball contact after leaving the shooter's hand?",
+    "answer": "The basket ring",
+    "wrong": [
+      "The backboard",
+      "Any player",
+      "The free-throw line"
+    ],
+    "teach": "The ball must leave the player's hand before the shot clock expires.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-7-24-second-clock/",
+      "ref": "NBA Official Rules, Rule No. 7"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nba-shot-clock-reset-kicked-ball-1",
+    "factId": "nba-shot-clock-reset-kicked-ball",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Clock and timing",
+    "prompt": "NBA frontcourt defensive kick violation with 13 seconds on the shot clock: reset to what?",
+    "answer": "14 seconds",
+    "wrong": [
+      "24 seconds",
+      "13 seconds",
+      "No reset"
+    ],
+    "teach": "The shot clock is not reset to 24 seconds for this frontcourt violation.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-7-24-second-clock/",
+      "ref": "NBA Official Rules, Rule No. 7"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nba-end-period-defensive-touch-1",
+    "factId": "nba-end-period-defensive-touch",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Clock and timing",
+    "prompt": "NBA shot is in flight when the horn sounds; a defender touches it and it goes in. Does the basket count?",
+    "answer": "Yes",
+    "wrong": [
+      "No; period ended",
+      "Only for two points",
+      "Only after a foul"
+    ],
+    "teach": "If an offensive player touches the shot after the horn, the period has ended.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
+      "ref": "NBA Official Rules, Rule No. 5"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nba-technical-foul-free-throw-1",
+    "factId": "nba-technical-foul-free-throw",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Scoring",
+    "prompt": "NBA: how many free throws are awarded for one technical foul?",
+    "answer": "1",
+    "wrong": [
+      "2",
+      "3",
+      "None"
+    ],
+    "teach": "No free throws are awarded when opposing teams receive a double technical.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-12-fouls-and-penalties/",
+      "ref": "NBA Official Rules, Rule No. 12"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nba-double-technical-free-throws-1",
+    "factId": "nba-double-technical-free-throws",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Scoring",
+    "prompt": "NBA opposing players receive double technical fouls during the same dead ball. How many free throws?",
+    "answer": "None",
+    "wrong": [
+      "1",
+      "2",
+      "One for each player"
+    ],
+    "teach": "A single technical foul, unlike a double technical, awards one free throw.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-12-fouls-and-penalties/",
+      "ref": "NBA Official Rules, Rule No. 12"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nba-six-players-on-court-1",
+    "factId": "nba-six-players-on-court",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "What's the call?",
+    "prompt": "NBA ball is live with one team having six players on court. What is assessed?",
+    "answer": "Team technical foul",
+    "wrong": [
+      "A flagrant foul",
+      "A personal foul",
+      "No violation"
+    ],
+    "teach": "If that team had possession when discovered, it also loses possession.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-12-fouls-and-penalties/",
+      "ref": "NBA Official Rules, Rule No. 12"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nba-offensive-foul-during-throw-in-1",
+    "factId": "nba-offensive-foul-during-throw-in",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "NBA offensive player commits a personal foul during a throw-in before the ball is released. Call?",
+    "answer": "Offensive foul",
+    "wrong": [
+      "Defensive foul",
+      "Technical foul",
+      "No foul until release"
+    ],
+    "teach": "The throw-in foul is an offensive foul whether or not the ball has been released.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-12-fouls-and-penalties/",
+      "ref": "NBA Official Rules, Rule No. 12"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nba-dribbler-charge-penalty-1",
+    "factId": "nba-dribbler-charge-penalty",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "NBA dribbler commits a charge; what happens to the ball?",
+    "answer": "To the offended team",
+    "wrong": [
+      "Offense keeps the ball",
+      "Jump ball at center",
+      "Awarded to the shooter"
+    ],
+    "teach": "An offensive foul does not count as a team foul.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-12-fouls-and-penalties/",
+      "ref": "NBA Official Rules, Rule No. 12"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nba-game-clock-tenths-final-minute-1",
+    "factId": "nba-game-clock-tenths-final-minute",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Clock and timing",
+    "prompt": "NBA game clock: when are tenths of a second displayed?",
+    "answer": "Final minute per period",
+    "wrong": [
+      "Final 10s per period",
+      "Final minute, 4th only",
+      "Final 4.9s of game"
+    ],
+    "teach": "The shot clock shows tenths when it reaches 4.9 seconds.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
+      "ref": "NBA Official Rules, Rule No. 5"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nba-technical-after-personal-foul-order-1",
+    "factId": "nba-technical-after-personal-foul-order",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "What's the call?",
+    "prompt": "NBA technical foul follows a personal foul on the same team. Which free throw is attempted first?",
+    "answer": "Technical FT first",
+    "wrong": [
+      "Personal FT first",
+      "The shooter chooses",
+      "Neither"
+    ],
+    "teach": "A technical foul carries one free-throw attempt.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-12-fouls-and-penalties/",
+      "ref": "NBA Official Rules, Rule No. 12"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nba-period-clock-stop-made-basket-fourth-1",
+    "factId": "nba-period-clock-stop-made-basket-fourth",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Clock and timing",
+    "prompt": "NBA 4th quarter or OT: the clock stops after made baskets in the final how many minutes?",
+    "answer": "2 minutes",
+    "wrong": [
+      "1 minute",
+      "3 minutes",
+      "5 minutes"
+    ],
+    "teach": "In the first three periods, the made-basket stoppage applies during the final minute.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-5-scoring-and-timing/",
+      "ref": "NBA Official Rules, Rule No. 5"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-nba-defensive-free-throw-lane-violation-1",
+    "factId": "nba-defensive-free-throw-lane-violation",
+    "side": "rules",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Scoring",
+    "prompt": "NBA missed free throw remains live; defender violates the lane. What does the shooter receive?",
+    "answer": "Another free throw",
+    "wrong": [
+      "1 point and possession",
+      "Jump ball",
+      "Nothing; play on"
+    ],
+    "teach": "If play would stop, a violation normally brings no penalty unless an opponent commits disconcertion.",
+    "source": {
+      "url": "https://official.nba.com/rule-no-9-free-throws-and-penalties/",
+      "ref": "NBA Official Rules, Rule No. 9"
+    },
+    "dailyFrom": "2026-10-27"
+  },
+  {
+    "id": "r-mlb-runner-outside-basepath-1",
+    "factId": "mlb-runner-outside-basepath",
+    "side": "rules",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "What's the call?",
+    "prompt": "MLB runner moves more than three feet from his basepath to avoid a tag. Ruling?",
+    "answer": "Runner is out",
+    "wrong": [
+      "Runner is safe",
+      "Balk",
+      "Dead ball, no out"
+    ],
+    "teach": "A runner's basepath runs straight to the base he was trying to reach when the tag began.",
+    "source": {
+      "url": "https://mktg.mlbstatic.com/mlb/official-information/2026-official-baseball-rules.pdf",
+      "ref": "2026 Official Baseball Rules, Rule 5.09(b)(1)"
+    },
+    "dailyFrom": "2026-10-27"
   }
 ]
