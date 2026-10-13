@@ -493,7 +493,9 @@ function App() {
         callouts: result.correct
           ? revealCallouts(current.progress, result.progress, {
               levels: current.mode === 'classic',
-            })
+            }).filter(
+              (callout) => !current.question.boss || callout.kind !== 'multiplier',
+            )
           : [],
       })
       if (timedOut) setElapsedMs(clockMsFor(current.question))

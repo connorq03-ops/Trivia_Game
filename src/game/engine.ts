@@ -72,6 +72,7 @@ export type RunProgress = {
   missed: Question[]
   results: AnswerResult[]
   bossLevelsConsumed: number[] // LEVELS indexes that already had their boss
+  bossMisses: number
 }
 
 export type ClassicSelection =
@@ -134,11 +135,15 @@ export function levelFor(correctCount: number): number {
 }
 
 export function correctCount(
-  progress: Pick<RunProgress, 'results' | 'questionsAnswered' | 'missed'>,
+  progress: Pick<RunProgress, 'results' | 'questionsAnswered' | 'missed'> &
+    Partial<Pick<RunProgress, 'bossMisses'>>,
 ): number {
   // Runs started before per-answer results were stored only have a partial list.
   if (progress.results.length < progress.questionsAnswered) {
-    return Math.max(0, progress.questionsAnswered - progress.missed.length)
+    return Math.max(
+      0,
+      progress.questionsAnswered - progress.missed.length - (progress.bossMisses ?? 0),
+    )
   }
   return progress.results.filter((result) => result === 'hit').length
 }
@@ -319,6 +324,7 @@ export function createRunProgress(): RunProgress {
     missed: [],
     results: [],
     bossLevelsConsumed: [],
+    bossMisses: 0,
   }
 }
 
@@ -359,6 +365,7 @@ export function answerQuestion(
       timedOut ? 'timeout' : correct ? 'hit' : 'miss',
     ],
     bossLevelsConsumed: progress.bossLevelsConsumed,
+    bossMisses: progress.bossMisses,
   }
 
   return {
@@ -396,6 +403,7 @@ export function answerBossQuestion(
         ...progress.results,
         timedOut ? 'timeout' : correct ? 'hit' : 'miss',
       ],
+      bossMisses: progress.bossMisses + (correct ? 0 : 1),
     },
     correct,
     points,

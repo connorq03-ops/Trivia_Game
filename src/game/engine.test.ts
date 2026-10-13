@@ -5,6 +5,7 @@ import {
   BOSS_CATEGORIES,
   BOSS_CLOCK_MS,
   CLOCK_MS,
+  correctCount,
   createRunProgress,
   dailyQuestions,
   LEVELS,
@@ -563,5 +564,16 @@ describe('Boss questions', () => {
     expect(resolveAnswerMs(12_000, 12_500, BOSS_CLOCK_MS)).toBe(12_000)
     expect(resolveAnswerMs(20_000, 20_000, BOSS_CLOCK_MS)).toBeNull()
     expect(resolveAnswerMs(9_000, 9_500, CLOCK_MS)).toBe(9_000)
+  })
+
+  it('keeps the correct count for legacy runs that miss a boss', () => {
+    const legacy = progressWith({ questionsAnswered: 10, results: [] })
+    expect(correctCount(legacy)).toBe(10)
+    const outcome = answerBossQuestion(legacy, false, 2_000)
+    expect(outcome.progress.missed).toEqual([])
+    expect(outcome.progress.bossMisses).toBe(1)
+    expect(correctCount(outcome.progress)).toBe(10)
+    const hit = answerBossQuestion(outcome.progress, true, 2_000)
+    expect(correctCount(hit.progress)).toBe(11)
   })
 })

@@ -38,10 +38,14 @@ type AnswerInput = {
   clientMs: number | null
 }
 
-type StoredProgress = Omit<RunProgress, 'missed' | 'results' | 'bossLevelsConsumed'> & {
+type StoredProgress = Omit<
+  RunProgress,
+  'missed' | 'results' | 'bossLevelsConsumed' | 'bossMisses'
+> & {
   missed: string[]
   results?: AnswerResult[]
   bossLevelsConsumed?: number[]
+  bossMisses?: number
 }
 
 type RunRow = {
@@ -108,6 +112,7 @@ function deserializeProgress(value: RunRow['progress']): RunProgress {
     missed,
     results: stored.results ?? [],
     bossLevelsConsumed: stored.bossLevelsConsumed ?? [],
+    bossMisses: stored.bossMisses ?? 0,
   }
 }
 
