@@ -109,7 +109,13 @@ export function levelFor(correctCount: number): number {
   return level
 }
 
-export function correctCount(progress: Pick<RunProgress, 'results'>): number {
+export function correctCount(
+  progress: Pick<RunProgress, 'results' | 'questionsAnswered' | 'missed'>,
+): number {
+  // Runs started before per-answer results were stored only have a partial list.
+  if (progress.results.length < progress.questionsAnswered) {
+    return Math.max(0, progress.questionsAnswered - progress.missed.length)
+  }
   return progress.results.filter((result) => result === 'hit').length
 }
 

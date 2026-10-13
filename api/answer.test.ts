@@ -246,6 +246,29 @@ describe('answer handler', () => {
     expect(body.progress.correct).toBe(13)
   })
 
+  it('counts earlier correct answers for legacy Classic runs without results', async () => {
+    const question = questionBank[0]
+    const run = makeRun(question, { question_index: 36 })
+    mockSql({
+      rows: [
+        {
+          ...run,
+          progress: {
+            ...run.progress,
+            questionsAnswered: 36,
+            missed: [questionBank[1].id, questionBank[2].id],
+          },
+        },
+      ],
+    })
+    const body = await (
+      await POST(makeRequest({ ...validBody, questionIndex: 36, choice: question.answer }))
+    ).json()
+
+    expect(vi.mocked(selectClassicQuestion).mock.calls.at(-1)?.[2]).toBe(35)
+    expect(body.progress.correct).toBe(35)
+  })
+
   it('omits partial results when a legacy Daily run completes', async () => {
     const dailyDate = '2099-12-31'
     const daily = dailyQuestions(dailyDate, questionBank)
