@@ -64,6 +64,7 @@ describe('multiplierLabel', () => {
   it('shows the daily streak step as a multiplier chip', () => {
     expect(multiplierLabel(0, DAILY_STREAK_STEP)).toBeNull()
     expect(multiplierLabel(1, DAILY_STREAK_STEP)).toBe('×1.1')
+    expect(multiplierLabel(7, DAILY_STREAK_STEP)).toBe('×1.7')
     expect(multiplierLabel(9, DAILY_STREAK_STEP)).toBe('×1.9')
   })
 })

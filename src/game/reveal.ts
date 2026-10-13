@@ -16,7 +16,7 @@ import type { Difficulty } from './types'
 export const REVEAL_MS = 700
 
 function formatMultiplier(multiplier: number): string {
-  return `×${multiplier}`
+  return `×${Number(multiplier.toFixed(2))}`
 }
 
 function andList(items: string[]): string {
