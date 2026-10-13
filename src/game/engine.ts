@@ -307,6 +307,16 @@ export function selectClassicQuestion(
   return present(question, rng)
 }
 
+// Daily 10 keeps a harder-first fallback: its quotas aim for a hard mix,
+// so a missing slot should be filled from above before dropping below it.
+function harderFirstOrder(difficulty: Difficulty): Difficulty[] {
+  const rank = DIFFICULTY_RANK[difficulty]
+  return [
+    ...DIFFICULTIES.slice(rank),
+    ...DIFFICULTIES.slice(0, rank).reverse(),
+  ]
+}
+
 // The daily challenge ramps hard: one easy warm-up, then medium through expert.
 const DAILY_SIDE_QUOTAS: Record<Side, Difficulty[]> = {
   rules: ['easy', 'medium', 'hard', 'hard', 'expert'],
@@ -328,7 +338,7 @@ export function dailyQuestions(dateUtc: string, bank: Question[]): Question[] {
     )
     const take = (difficulty: Difficulty | null) => {
       const order = difficulty
-        ? fallbackOrder(difficulty)
+        ? harderFirstOrder(difficulty)
         : [...DIFFICULTIES].reverse()
       const pick = order
         .map((candidate) =>

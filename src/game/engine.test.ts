@@ -423,6 +423,20 @@ describe('Daily 10', () => {
     expect(tally).toEqual({ easy: 0, medium: 2, hard: 3, expert: 0 })
   })
 
+  it('prefers expert over extra easy questions when medium/hard run out', () => {
+    const sparse = bank.filter(
+      (question) =>
+        question.difficulty === 'easy' || question.difficulty === 'expert',
+    )
+    const tally = { easy: 0, medium: 0, hard: 0, expert: 0 }
+    dailyQuestions('2099-12-31', sparse).forEach((question) => {
+      tally[question.difficulty] += 1
+    })
+    expect(tally.medium + tally.hard).toBe(0)
+    expect(tally.easy).toBeLessThanOrEqual(2)
+    expect(tally.expert).toBeGreaterThanOrEqual(8)
+  })
+
   it('keeps the same questions when future-gated questions are appended', () => {
     const date = '2099-12-31'
     const extra = bank
