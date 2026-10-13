@@ -1657,16 +1657,16 @@
     "leagues": [
       "NBA"
     ],
-    "difficulty": "medium",
+    "difficulty": "hard",
     "category": "Jersey number",
-    "prompt": "What number did Klay Thompson wear in the 2016 season?",
+    "prompt": "Klay Thompson's jersey number in 2016?",
     "answer": "11",
     "wrong": [
       "10",
       "20",
       "30"
     ],
-    "teach": "Golden State won an NBA-record 73 regular-season games.",
+    "teach": "Klay Thompson wore No. 11 for Golden State Warriors in 2016.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2016,
@@ -1674,7 +1674,7 @@
     },
     "source": {
       "url": "https://en.wikipedia.org/wiki/2015%E2%80%9316_Golden_State_Warriors_season",
-      "ref": "Wikipedia: 2015–16 Golden State Warriors season page (saved API wikitext and prose), checked 2026-10-13"
+      "ref": "Wikipedia: 2015–16 Golden State Warriors season page (saved API wikitext and prose), teach source: 2015–16 Golden State Warriors season, checked 2026-10-13"
     },
     "id": "p-nba-klay-thompson-jersey",
     "factId": "nba-klay-thompson-jersey"
@@ -1687,14 +1687,14 @@
     ],
     "difficulty": "hard",
     "category": "Jersey number",
-    "prompt": "What number did Kyrie Irving wear in the 2016 season?",
+    "prompt": "Kyrie Irving's jersey number in 2016?",
     "answer": "2",
     "wrong": [
       "0",
       "1",
       "3"
     ],
-    "teach": "Cleveland won its first NBA championship in 2016.",
+    "teach": "Kyrie Irving wore No. 2 for Cleveland Cavaliers in 2016.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2016,
@@ -1702,7 +1702,7 @@
     },
     "source": {
       "url": "https://en.wikipedia.org/wiki/2015%E2%80%9316_Cleveland_Cavaliers_season",
-      "ref": "Wikipedia: 2015–16 Cleveland Cavaliers season page (saved API wikitext and prose), checked 2026-10-13"
+      "ref": "Wikipedia: 2015–16 Cleveland Cavaliers season page (saved API wikitext and prose), teach source: 2015–16 Cleveland Cavaliers season, checked 2026-10-13"
     },
     "id": "p-nba-kyrie-irving-jersey",
     "factId": "nba-kyrie-irving-jersey"
@@ -1715,14 +1715,14 @@
     ],
     "difficulty": "hard",
     "category": "Jersey number",
-    "prompt": "What number did Chris Paul wear in the 2018 season?",
+    "prompt": "Chris Paul's jersey number in 2018?",
     "answer": "3",
     "wrong": [
       "0",
       "1",
       "13"
     ],
-    "teach": "Houston finished the season with 65 wins.",
+    "teach": "Chris Paul wore No. 3 for Houston Rockets in 2018.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2018,
@@ -1730,7 +1730,7 @@
     },
     "source": {
       "url": "https://en.wikipedia.org/wiki/2017%E2%80%9318_Houston_Rockets_season",
-      "ref": "Wikipedia: 2017–18 Houston Rockets season page (saved API wikitext and prose), checked 2026-10-13"
+      "ref": "Wikipedia: 2017–18 Houston Rockets season page (saved API wikitext and prose), teach source: 2017–18 Houston Rockets season, checked 2026-10-13"
     },
     "id": "p-nba-chris-paul-jersey",
     "factId": "nba-chris-paul-jersey"
@@ -1741,16 +1741,16 @@
     "leagues": [
       "NBA"
     ],
-    "difficulty": "medium",
+    "difficulty": "hard",
     "category": "Jersey number",
-    "prompt": "What number did Giannis Antetokounmpo wear in the 2019 season?",
+    "prompt": "Giannis Antetokounmpo's jersey number in 2019?",
     "answer": "34",
     "wrong": [
       "7",
       "22",
       "43"
     ],
-    "teach": "Milwaukee won 60 regular-season games.",
+    "teach": "Giannis Antetokounmpo wore No. 34 for Milwaukee Bucks in 2019.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2019,
@@ -1758,7 +1758,7 @@
     },
     "source": {
       "url": "https://en.wikipedia.org/wiki/2018%E2%80%9319_Milwaukee_Bucks_season",
-      "ref": "Wikipedia: 2018–19 Milwaukee Bucks season page (saved API wikitext and prose), checked 2026-10-13"
+      "ref": "Wikipedia: 2018–19 Milwaukee Bucks season page (saved API wikitext and prose), teach source: 2018–19 Milwaukee Bucks season, checked 2026-10-13"
     },
     "id": "p-nba-giannis-antetokounmpo-jersey",
     "factId": "nba-giannis-antetokounmpo-jersey"
@@ -1771,14 +1771,14 @@
     ],
     "difficulty": "hard",
     "category": "Jersey number",
-    "prompt": "What number did Nikola Jokić wear in the 2020 season?",
+    "prompt": "Nikola Jokić's jersey number in 2020?",
     "answer": "15",
     "wrong": [
       "7",
       "27",
       "32"
     ],
-    "teach": "Denver became the first team to overcome two 3–1 deficits in one playoff run.",
+    "teach": "Nikola Jokić wore No. 15 for Denver Nuggets in 2020.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2020,
@@ -1786,7 +1786,7 @@
     },
     "source": {
       "url": "https://en.wikipedia.org/wiki/2019%E2%80%9320_Denver_Nuggets_season",
-      "ref": "Wikipedia: 2019–20 Denver Nuggets season page (saved API wikitext and prose), checked 2026-10-13"
+      "ref": "Wikipedia: 2019–20 Denver Nuggets season page (saved API wikitext and prose), teach source: 2019–20 Denver Nuggets season, checked 2026-10-13"
     },
     "id": "p-nba-nikola-jokic-jersey",
     "factId": "nba-nikola-jokic-jersey"
@@ -1799,14 +1799,14 @@
     ],
     "difficulty": "hard",
     "category": "Jersey number",
-    "prompt": "What number did Joel Embiid wear in the 2021 season?",
+    "prompt": "Joel Embiid's jersey number in 2021?",
     "answer": "21",
     "wrong": [
       "11",
       "23",
       "31"
     ],
-    "teach": "Philadelphia finished the regular season 49–23.",
+    "teach": "Joel Embiid wore No. 21 for Philadelphia 76ers in 2021.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2021,
@@ -1814,7 +1814,7 @@
     },
     "source": {
       "url": "https://en.wikipedia.org/wiki/2020%E2%80%9321_Philadelphia_76ers_season",
-      "ref": "Wikipedia: 2020–21 Philadelphia 76ers season page (saved API wikitext and prose), checked 2026-10-13"
+      "ref": "Wikipedia: 2020–21 Philadelphia 76ers season page (saved API wikitext and prose), teach source: 2020–21 Philadelphia 76ers season, checked 2026-10-13"
     },
     "id": "p-nba-joel-embiid-jersey",
     "factId": "nba-joel-embiid-jersey"
@@ -1825,16 +1825,16 @@
     "leagues": [
       "NBA"
     ],
-    "difficulty": "medium",
+    "difficulty": "hard",
     "category": "Jersey number",
-    "prompt": "What number did Kevin Durant wear in the 2013 season?",
+    "prompt": "Kevin Durant's jersey number in 2013?",
     "answer": "35",
     "wrong": [
       "0",
       "7",
       "30"
     ],
-    "teach": "Oklahoma City won 60 games and earned the West's top seed.",
+    "teach": "Kevin Durant wore No. 35 for Oklahoma City Thunder in 2013.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2013,
@@ -1842,7 +1842,7 @@
     },
     "source": {
       "url": "https://en.wikipedia.org/wiki/2012%E2%80%9313_Oklahoma_City_Thunder_season",
-      "ref": "Wikipedia: 2012–13 Oklahoma City Thunder season page (saved API wikitext and prose), checked 2026-10-13"
+      "ref": "Wikipedia: 2012–13 Oklahoma City Thunder season page (saved API wikitext and prose), teach source: 2012–13 Oklahoma City Thunder season, checked 2026-10-13"
     },
     "id": "p-nba-kevin-durant-jersey",
     "factId": "nba-kevin-durant-jersey"
@@ -1855,14 +1855,14 @@
     ],
     "difficulty": "hard",
     "category": "Jersey number",
-    "prompt": "What number did Russell Westbrook wear in the 2013 season?",
+    "prompt": "Russell Westbrook's jersey number in 2013?",
     "answer": "0",
     "wrong": [
       "1",
       "3",
       "35"
     ],
-    "teach": "Oklahoma City finished second in the Western Conference.",
+    "teach": "Russell Westbrook wore No. 0 for Oklahoma City Thunder in 2013.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2013,
@@ -1870,7 +1870,7 @@
     },
     "source": {
       "url": "https://en.wikipedia.org/wiki/2012%E2%80%9313_Oklahoma_City_Thunder_season",
-      "ref": "Wikipedia: 2012–13 Oklahoma City Thunder season page (saved API wikitext and prose), checked 2026-10-13"
+      "ref": "Wikipedia: 2012–13 Oklahoma City Thunder season page (saved API wikitext and prose), teach source: 2012–13 Oklahoma City Thunder season, checked 2026-10-13"
     },
     "id": "p-nba-russell-westbrook-jersey",
     "factId": "nba-russell-westbrook-jersey"
@@ -1881,16 +1881,16 @@
     "leagues": [
       "NBA"
     ],
-    "difficulty": "medium",
+    "difficulty": "hard",
     "category": "Jersey number",
-    "prompt": "What number did Tim Duncan wear in the 2003 season?",
+    "prompt": "Tim Duncan's jersey number in 2003?",
     "answer": "21",
     "wrong": [
       "20",
       "24",
       "34"
     ],
-    "teach": "San Antonio won the 2003 NBA championship.",
+    "teach": "Tim Duncan wore No. 21 for San Antonio Spurs in 2003.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2003,
@@ -1898,7 +1898,7 @@
     },
     "source": {
       "url": "https://en.wikipedia.org/wiki/2002%E2%80%9303_San_Antonio_Spurs_season",
-      "ref": "Wikipedia: 2002–03 San Antonio Spurs season page (saved API wikitext and prose), checked 2026-10-13"
+      "ref": "Wikipedia: 2002–03 San Antonio Spurs season page (saved API wikitext and prose), teach source: 2002–03 San Antonio Spurs season, checked 2026-10-13"
     },
     "id": "p-nba-tim-duncan-jersey",
     "factId": "nba-tim-duncan-jersey"
@@ -1911,14 +1911,14 @@
     ],
     "difficulty": "hard",
     "category": "Jersey number",
-    "prompt": "What number did Blake Griffin wear in the 2013 season?",
+    "prompt": "Blake Griffin's jersey number in 2013?",
     "answer": "32",
     "wrong": [
       "3",
       "23",
       "35"
     ],
-    "teach": "The Clippers finished 56–26 and won their first Pacific Division title.",
+    "teach": "Blake Griffin wore No. 32 for Los Angeles Clippers in 2013.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2013,
@@ -1926,7 +1926,7 @@
     },
     "source": {
       "url": "https://en.wikipedia.org/wiki/2012%E2%80%9313_Los_Angeles_Clippers_season",
-      "ref": "Wikipedia: 2012–13 Los Angeles Clippers season page (saved API wikitext and prose), checked 2026-10-13"
+      "ref": "Wikipedia: 2012–13 Los Angeles Clippers season page (saved API wikitext and prose), teach source: 2012–13 Los Angeles Clippers season, checked 2026-10-13"
     },
     "id": "p-nba-blake-griffin-jersey",
     "factId": "nba-blake-griffin-jersey"
@@ -1939,14 +1939,14 @@
     ],
     "difficulty": "hard",
     "category": "Jersey number",
-    "prompt": "What number did Kyle Lowry wear in the 2016 season?",
+    "prompt": "Kyle Lowry's jersey number in 2016?",
     "answer": "7",
     "wrong": [
       "3",
       "10",
       "15"
     ],
-    "teach": "Toronto reached the Eastern Conference finals.",
+    "teach": "Kyle Lowry wore No. 7 for Toronto Raptors in 2016.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2016,
@@ -1954,7 +1954,7 @@
     },
     "source": {
       "url": "https://en.wikipedia.org/wiki/2015%E2%80%9316_Toronto_Raptors_season",
-      "ref": "Wikipedia: 2015–16 Toronto Raptors season page (saved API wikitext and prose), checked 2026-10-13"
+      "ref": "Wikipedia: 2015–16 Toronto Raptors season page (saved API wikitext and prose), teach source: 2015–16 Toronto Raptors season, checked 2026-10-13"
     },
     "id": "p-nba-kyle-lowry-jersey",
     "factId": "nba-kyle-lowry-jersey"
@@ -1967,14 +1967,14 @@
     ],
     "difficulty": "hard",
     "category": "Jersey number",
-    "prompt": "What number did DeMar DeRozan wear in the 2016 season?",
+    "prompt": "DeMar DeRozan's jersey number in 2016?",
     "answer": "10",
     "wrong": [
       "3",
       "7",
       "15"
     ],
-    "teach": "Toronto reached the Eastern Conference finals.",
+    "teach": "DeMar DeRozan wore No. 10 for Toronto Raptors in 2016.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2016,
@@ -1982,7 +1982,7 @@
     },
     "source": {
       "url": "https://en.wikipedia.org/wiki/2015%E2%80%9316_Toronto_Raptors_season",
-      "ref": "Wikipedia: 2015–16 Toronto Raptors season page (saved API wikitext and prose), checked 2026-10-13"
+      "ref": "Wikipedia: 2015–16 Toronto Raptors season page (saved API wikitext and prose), teach source: 2015–16 Toronto Raptors season, checked 2026-10-13"
     },
     "id": "p-nba-demar-derozan-jersey",
     "factId": "nba-demar-derozan-jersey"
@@ -2002,7 +2002,7 @@
       "Celtics",
       "Suns"
     ],
-    "teach": "Giannis Antetokounmpo was born in Athens.",
+    "teach": "He fulfilled his draft projections as a first-round pick by being selected 15th overall by the Milwaukee Bucks.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2019,
@@ -2010,7 +2010,7 @@
     },
     "source": {
       "url": "https://en.wikipedia.org/wiki/Giannis_Antetokounmpo",
-      "ref": "Wikipedia: Giannis Antetokounmpo page (saved API wikitext and prose), checked 2026-10-13"
+      "ref": "Wikipedia: Giannis Antetokounmpo page (saved API wikitext and prose), teach source: Giannis Antetokounmpo, checked 2026-10-13"
     },
     "id": "p-nba-giannis-antetokounmpo-draft",
     "factId": "nba-giannis-antetokounmpo-draft"
@@ -2030,7 +2030,7 @@
       "Celtics",
       "Heat"
     ],
-    "teach": "Nikola Jokić was born in Sombor.",
+    "teach": "On June 26, 2014, Jokić was selected by the Denver Nuggets with the 41st overall pick in the 2014 NBA draft.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2020,
@@ -2038,7 +2038,7 @@
     },
     "source": {
       "url": "https://en.wikipedia.org/wiki/Nikola_Joki%C4%87",
-      "ref": "Wikipedia: Nikola Jokić page (saved API wikitext and prose), checked 2026-10-13"
+      "ref": "Wikipedia: Nikola Jokić page (saved API wikitext and prose), teach source: Nikola Jokić, checked 2026-10-13"
     },
     "id": "p-nba-nikola-jokic-draft",
     "factId": "nba-nikola-jokic-draft"
@@ -2058,7 +2058,7 @@
       "Bucks",
       "Hawks"
     ],
-    "teach": "Joel Embiid was born in Yaoundé.",
+    "teach": "Six days later, he was selected with the third overall pick by the Philadelphia 76ers.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2021,
@@ -2066,7 +2066,7 @@
     },
     "source": {
       "url": "https://en.wikipedia.org/wiki/Joel_Embiid",
-      "ref": "Wikipedia: Joel Embiid page (saved API wikitext and prose), checked 2026-10-13"
+      "ref": "Wikipedia: Joel Embiid page (saved API wikitext and prose), teach source: Joel Embiid, checked 2026-10-13"
     },
     "id": "p-nba-joel-embiid-draft",
     "factId": "nba-joel-embiid-draft"
@@ -2086,7 +2086,7 @@
       "Lakers",
       "Warriors"
     ],
-    "teach": "Blake Griffin was born in Oklahoma City.",
+    "teach": "He was selected as the first overall pick by the Los Angeles Clippers in the 2009 NBA draft.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2011,
@@ -2094,7 +2094,7 @@
     },
     "source": {
       "url": "https://en.wikipedia.org/wiki/Blake_Griffin",
-      "ref": "Wikipedia: Blake Griffin page (saved API wikitext and prose), checked 2026-10-13"
+      "ref": "Wikipedia: Blake Griffin page (saved API wikitext and prose), teach source: Blake Griffin, checked 2026-10-13"
     },
     "id": "p-nba-blake-griffin-draft",
     "factId": "nba-blake-griffin-draft"
@@ -2114,7 +2114,7 @@
       "Clippers",
       "Lakers"
     ],
-    "teach": "Klay Thompson was born in Los Angeles.",
+    "teach": "Thompson went 11th overall to Golden State in the 2011 NBA draft.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2015,
@@ -2122,9 +2122,373 @@
     },
     "source": {
       "url": "https://en.wikipedia.org/wiki/Klay_Thompson",
-      "ref": "Wikipedia: Klay Thompson page (saved API wikitext and prose), checked 2026-10-13"
+      "ref": "Wikipedia: Klay Thompson page (saved API wikitext and prose), teach source: Klay Thompson, checked 2026-10-13"
     },
     "id": "p-nba-klay-thompson-draft",
     "factId": "nba-klay-thompson-draft"
+  },
+  {
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted James Harden?",
+    "answer": "Thunder",
+    "wrong": [
+      "Rockets",
+      "76ers",
+      "Warriors"
+    ],
+    "teach": "Harden was selected with the third overall pick in the 2009 NBA draft by the Oklahoma City Thunder.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2018,
+      "player": "James Harden"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/James_Harden",
+      "ref": "Wikipedia: James Harden page (saved API wikitext and prose), teach source: James Harden, checked 2026-10-13"
+    },
+    "id": "p-nba-james-harden-draft",
+    "factId": "nba-james-harden-draft"
+  },
+  {
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Carmelo Anthony?",
+    "answer": "Nuggets",
+    "wrong": [
+      "Knicks",
+      "Lakers",
+      "Suns"
+    ],
+    "teach": "In 2009, Anthony led the Nuggets to their first conference finals appearance since 1985.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2009,
+      "player": "Carmelo Anthony"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Carmelo_Anthony",
+      "ref": "Wikipedia: Carmelo Anthony page (saved API wikitext and prose), teach source: Carmelo Anthony, checked 2026-10-13"
+    },
+    "id": "p-nba-carmelo-anthony-draft",
+    "factId": "nba-carmelo-anthony-draft"
+  },
+  {
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Allen Iverson?",
+    "answer": "76ers",
+    "wrong": [
+      "Nuggets",
+      "Lakers",
+      "Heat"
+    ],
+    "teach": "He was inducted into the Naismith Memorial Basketball Hall of Fame in 2016.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2001,
+      "player": "Allen Iverson"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Allen_Iverson",
+      "ref": "Wikipedia: Allen Iverson page (saved API wikitext and prose), teach source: Allen Iverson, checked 2026-10-13"
+    },
+    "id": "p-nba-allen-iverson-draft",
+    "factId": "nba-allen-iverson-draft"
+  },
+  {
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Yao Ming?",
+    "answer": "Rockets",
+    "wrong": [
+      "Lakers",
+      "Bulls",
+      "Heat"
+    ],
+    "teach": "At 7 feet 6 inches (2.29 m), he was the NBA's tallest active player in his final season.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2009,
+      "player": "Yao Ming"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Yao_Ming",
+      "ref": "Wikipedia: Yao Ming page (saved API wikitext and prose), teach source: Yao Ming, checked 2026-10-13"
+    },
+    "id": "p-nba-yao-ming-draft",
+    "factId": "nba-yao-ming-draft"
+  },
+  {
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Hakeem Olajuwon?",
+    "answer": "Rockets",
+    "wrong": [
+      "Bulls",
+      "Celtics",
+      "Lakers"
+    ],
+    "teach": "Olajuwon was selected first overall by the Rockets in the 1984 NBA draft.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1994,
+      "player": "Hakeem Olajuwon"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Hakeem_Olajuwon",
+      "ref": "Wikipedia: Hakeem Olajuwon page (saved API wikitext and prose), teach source: Hakeem Olajuwon, checked 2026-10-13"
+    },
+    "id": "p-nba-hakeem-olajuwon-draft",
+    "factId": "nba-hakeem-olajuwon-draft"
+  },
+  {
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted LeBron James?",
+    "answer": "Cavaliers",
+    "wrong": [
+      "Heat",
+      "Bulls",
+      "Lakers"
+    ],
+    "teach": "A prep-to-pro, the Cleveland Cavaliers selected James with the first overall pick of the 2003 NBA draft.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2012,
+      "player": "LeBron James"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/LeBron_James",
+      "ref": "Wikipedia: LeBron James page (saved API wikitext and prose), teach source: LeBron James, checked 2026-10-13"
+    },
+    "id": "p-nba-lebron-james-draft",
+    "factId": "nba-lebron-james-draft"
+  },
+  {
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Kobe Bryant?",
+    "answer": "Hornets",
+    "wrong": [
+      "Lakers",
+      "Celtics",
+      "Knicks"
+    ],
+    "teach": "He was selected by the Charlotte Hornets with the 13th pick; he was then traded to the Lakers.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2001,
+      "player": "Kobe Bryant"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Kobe_Bryant",
+      "ref": "Wikipedia: Kobe Bryant page (saved API wikitext and prose), teach source: Kobe Bryant, checked 2026-10-13"
+    },
+    "id": "p-nba-kobe-bryant-draft",
+    "factId": "nba-kobe-bryant-draft"
+  },
+  {
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Dwyane Wade?",
+    "answer": "Heat",
+    "wrong": [
+      "Bulls",
+      "Bucks",
+      "Cavaliers"
+    ],
+    "teach": "Nicknamed \"D-Wade\" and \"Flash\", he is widely regarded as one of the greatest shooting guards in NBA history.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2006,
+      "player": "Dwyane Wade"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Dwyane_Wade",
+      "ref": "Wikipedia: Dwyane Wade page (saved API wikitext and prose), teach source: Dwyane Wade, checked 2026-10-13"
+    },
+    "id": "p-nba-dwyane-wade-draft",
+    "factId": "nba-dwyane-wade-draft"
+  },
+  {
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Ray Allen?",
+    "answer": "Timberwolves",
+    "wrong": [
+      "Celtics",
+      "Bucks",
+      "SuperSonics"
+    ],
+    "teach": "Allen was drafted by the Minnesota Timberwolves with the fifth pick of the 1996 NBA draft.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2008,
+      "player": "Ray Allen"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Ray_Allen",
+      "ref": "Wikipedia: Ray Allen page (saved API wikitext and prose), teach source: Ray Allen, checked 2026-10-13"
+    },
+    "id": "p-nba-ray-allen-draft",
+    "factId": "nba-ray-allen-draft"
+  },
+  {
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Shaquille O'Neal?",
+    "answer": "Magic",
+    "wrong": [
+      "Lakers",
+      "Celtics",
+      "Heat"
+    ],
+    "teach": "The Orlando Magic selected O'Neal with the 1st overall pick in the 1992 NBA draft.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2000,
+      "player": "Shaquille O'Neal"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Shaquille_O%27Neal",
+      "ref": "Wikipedia: Shaquille O'Neal page (saved API wikitext and prose), teach source: Shaquille O'Neal, checked 2026-10-13"
+    },
+    "id": "p-nba-shaquille-o-neal-draft",
+    "factId": "nba-shaquille-o-neal-draft"
+  },
+  {
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Pau Gasol?",
+    "answer": "Hawks",
+    "wrong": [
+      "Grizzlies",
+      "Lakers",
+      "Bulls"
+    ],
+    "teach": "He was the NBA Rookie of the Year in 2002 with the Memphis Grizzlies, the first non-American to win that award.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2009,
+      "player": "Pau Gasol"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Pau_Gasol",
+      "ref": "Wikipedia: Pau Gasol page (saved API wikitext and prose), teach source: Pau Gasol, checked 2026-10-13"
+    },
+    "id": "p-nba-pau-gasol-draft",
+    "factId": "nba-pau-gasol-draft"
+  },
+  {
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Dirk Nowitzki?",
+    "answer": "Bucks",
+    "wrong": [
+      "Mavericks",
+      "Spurs",
+      "Lakers"
+    ],
+    "teach": "The first Maverick to be voted onto an All-NBA Team, he holds several all-time Mavericks franchise records.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2011,
+      "player": "Dirk Nowitzki"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Dirk_Nowitzki",
+      "ref": "Wikipedia: Dirk Nowitzki page (saved API wikitext and prose), teach source: Dirk Nowitzki, checked 2026-10-13"
+    },
+    "id": "p-nba-dirk-nowitzki-draft",
+    "factId": "nba-dirk-nowitzki-draft"
+  },
+  {
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Luka Dončić?",
+    "answer": "Hawks",
+    "wrong": [
+      "Mavericks",
+      "Celtics",
+      "Warriors"
+    ],
+    "teach": "Dončić was drafted third overall by the Atlanta Hawks in the 2018 NBA draft and then traded to the Dallas Mavericks.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2020,
+      "player": "Luka Dončić"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Luka_Don%C4%8Di%C4%87",
+      "ref": "Wikipedia: Luka Dončić page (saved API wikitext and prose), teach source: Luka Dončić, checked 2026-10-13"
+    },
+    "id": "p-nba-luka-doncic-draft",
+    "factId": "nba-luka-doncic-draft"
   }
 ]

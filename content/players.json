@@ -1566,33 +1566,6 @@
     }
   },
   {
-    "id": "p-nba-lebron-james-draft",
-    "factId": "nba-lebron-james-draft",
-    "side": "players",
-    "sport": "basketball",
-    "leagues": [
-      "NBA"
-    ],
-    "difficulty": "easy",
-    "category": "Drafted by",
-    "prompt": "Which team drafted LeBron James?",
-    "answer": "Cavaliers",
-    "wrong": [
-      "Heat",
-      "Lakers",
-      "Nuggets"
-    ],
-    "teach": "Cleveland took LeBron 1st overall in 2003, straight out of St. Vincent–St. Mary High in Akron.",
-    "source": {
-      "url": "https://en.wikipedia.org/wiki/LeBron_James",
-      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
-    },
-    "reel": {
-      "season": 2005,
-      "player": "LeBron James"
-    }
-  },
-  {
     "id": "p-nba-lebron-james-jersey",
     "factId": "nba-lebron-james-jersey",
     "side": "players",
@@ -1643,33 +1616,6 @@
     },
     "reel": {
       "season": 2001,
-      "player": "Kobe Bryant"
-    }
-  },
-  {
-    "id": "p-nba-kobe-bryant-draft",
-    "factId": "nba-kobe-bryant-draft",
-    "side": "players",
-    "sport": "basketball",
-    "leagues": [
-      "NBA"
-    ],
-    "difficulty": "medium",
-    "category": "Drafted by",
-    "prompt": "Which team drafted Kobe Bryant?",
-    "answer": "Hornets",
-    "wrong": [
-      "Lakers",
-      "Nets",
-      "76ers"
-    ],
-    "teach": "The Hornets took Kobe 13th in 1996, then traded him to the Lakers.",
-    "source": {
-      "url": "https://en.wikipedia.org/wiki/Kobe_Bryant",
-      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
-    },
-    "reel": {
-      "season": 1998,
       "player": "Kobe Bryant"
     }
   },
@@ -1890,33 +1836,6 @@
     }
   },
   {
-    "id": "p-nba-dirk-nowitzki-draft",
-    "factId": "nba-dirk-nowitzki-draft",
-    "side": "players",
-    "sport": "basketball",
-    "leagues": [
-      "NBA"
-    ],
-    "difficulty": "expert",
-    "category": "Drafted by",
-    "prompt": "Which team drafted Dirk Nowitzki?",
-    "answer": "Bucks",
-    "wrong": [
-      "Mavericks",
-      "Celtics",
-      "Suns"
-    ],
-    "teach": "The Bucks took Dirk 9th in 1998, then traded him to Dallas.",
-    "source": {
-      "url": "https://en.wikipedia.org/wiki/Dirk_Nowitzki",
-      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
-    },
-    "reel": {
-      "season": 2006,
-      "player": "Dirk Nowitzki"
-    }
-  },
-  {
     "id": "p-nba-giannis-antetokounmpo-country",
     "factId": "nba-giannis-antetokounmpo-country",
     "side": "players",
@@ -1988,33 +1907,6 @@
       "Slovakia"
     ],
     "teach": "Dončić was born in Ljubljana and played for Real Madrid from 2015 to 2018.",
-    "source": {
-      "url": "https://en.wikipedia.org/wiki/Luka_Dončić",
-      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
-    },
-    "reel": {
-      "season": 2020,
-      "player": "Luka Dončić"
-    }
-  },
-  {
-    "id": "p-nba-luka-doncic-draft",
-    "factId": "nba-luka-doncic-draft",
-    "side": "players",
-    "sport": "basketball",
-    "leagues": [
-      "NBA"
-    ],
-    "difficulty": "medium",
-    "category": "Drafted by",
-    "prompt": "Which team drafted Luka Dončić?",
-    "answer": "Hawks",
-    "wrong": [
-      "Mavericks",
-      "Suns",
-      "Kings"
-    ],
-    "teach": "The Hawks took Dončić 3rd in 2018, then traded him to Dallas.",
     "source": {
       "url": "https://en.wikipedia.org/wiki/Luka_Dončić",
       "ref": "Wikipedia infobox and lead, checked 2026-10-08"
@@ -2133,33 +2025,6 @@
     }
   },
   {
-    "id": "p-nba-pau-gasol-draft",
-    "factId": "nba-pau-gasol-draft",
-    "side": "players",
-    "sport": "basketball",
-    "leagues": [
-      "NBA"
-    ],
-    "difficulty": "expert",
-    "category": "Drafted by",
-    "prompt": "Which team drafted Pau Gasol?",
-    "answer": "Hawks",
-    "wrong": [
-      "Grizzlies",
-      "Lakers",
-      "Bulls"
-    ],
-    "teach": "The Hawks took Gasol 3rd in 2001, then traded him to Memphis.",
-    "source": {
-      "url": "https://en.wikipedia.org/wiki/Pau_Gasol",
-      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
-    },
-    "reel": {
-      "season": 2009,
-      "player": "Pau Gasol"
-    }
-  },
-  {
     "id": "p-nba-manu-ginobili-country",
     "factId": "nba-manu-ginobili-country",
     "side": "players",
@@ -2237,33 +2102,6 @@
     },
     "reel": {
       "season": 1997,
-      "player": "Shaquille O'Neal"
-    }
-  },
-  {
-    "id": "p-nba-shaquille-o-neal-draft",
-    "factId": "nba-shaquille-o-neal-draft",
-    "side": "players",
-    "sport": "basketball",
-    "leagues": [
-      "NBA"
-    ],
-    "difficulty": "easy",
-    "category": "Drafted by",
-    "prompt": "Which team drafted Shaquille O'Neal?",
-    "answer": "Magic",
-    "wrong": [
-      "Lakers",
-      "Heat",
-      "Hornets"
-    ],
-    "teach": "Orlando took Shaq 1st overall in 1992; he left for the Lakers in 1996.",
-    "source": {
-      "url": "https://en.wikipedia.org/wiki/Shaquille_O'Neal",
-      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
-    },
-    "reel": {
-      "season": 1995,
       "player": "Shaquille O'Neal"
     }
   },
@@ -2366,33 +2204,6 @@
       "Michigan State"
     ],
     "teach": "Wade, from Chicago, played at Marquette from 2001 to 2003.",
-    "source": {
-      "url": "https://en.wikipedia.org/wiki/Dwyane_Wade",
-      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
-    },
-    "reel": {
-      "season": 2006,
-      "player": "Dwyane Wade"
-    }
-  },
-  {
-    "id": "p-nba-dwyane-wade-draft",
-    "factId": "nba-dwyane-wade-draft",
-    "side": "players",
-    "sport": "basketball",
-    "leagues": [
-      "NBA"
-    ],
-    "difficulty": "easy",
-    "category": "Drafted by",
-    "prompt": "Which team drafted Dwyane Wade?",
-    "answer": "Heat",
-    "wrong": [
-      "Nuggets",
-      "Pistons",
-      "Raptors"
-    ],
-    "teach": "Miami took Wade 5th overall in 2003; he played his first 13 seasons there.",
     "source": {
       "url": "https://en.wikipedia.org/wiki/Dwyane_Wade",
       "ref": "Wikipedia infobox and lead, checked 2026-10-08"
@@ -2744,33 +2555,6 @@
       "Villanova"
     ],
     "teach": "Allen, born in Merced, California, played at UConn from 1993 to 1996.",
-    "source": {
-      "url": "https://en.wikipedia.org/wiki/Ray_Allen",
-      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
-    },
-    "reel": {
-      "season": 2001,
-      "player": "Ray Allen"
-    }
-  },
-  {
-    "id": "p-nba-ray-allen-draft",
-    "factId": "nba-ray-allen-draft",
-    "side": "players",
-    "sport": "basketball",
-    "leagues": [
-      "NBA"
-    ],
-    "difficulty": "expert",
-    "category": "Drafted by",
-    "prompt": "Which team drafted Ray Allen?",
-    "answer": "Timberwolves",
-    "wrong": [
-      "Bucks",
-      "SuperSonics",
-      "Celtics"
-    ],
-    "teach": "The Timberwolves took Allen 5th in 1996, then traded him to Milwaukee.",
     "source": {
       "url": "https://en.wikipedia.org/wiki/Ray_Allen",
       "ref": "Wikipedia infobox and lead, checked 2026-10-08"

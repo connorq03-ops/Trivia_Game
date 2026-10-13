@@ -1694,7 +1694,7 @@
       "Canada",
       "England"
     ],
-    "teach": "Daniel Faalele was born in Melbourne.",
+    "teach": "Following the season, he was listed as one of Australia's 50 Greatest Living Athletes by GQ Australia.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2024,
@@ -1702,94 +1702,10 @@
     },
     "source": {
       "url": "https://en.wikipedia.org/wiki/Daniel_Faalele",
-      "ref": "Wikipedia: Daniel Faalele page (saved API wikitext and prose), checked 2026-10-13"
+      "ref": "Wikipedia: Daniel Faalele page (saved API wikitext and prose), teach source: Daniel Faalele, checked 2026-10-13"
     },
     "id": "p-nfl-daniel-faalele-country",
     "factId": "nfl-daniel-faalele-country"
-  },
-  {
-    "side": "players",
-    "sport": "football",
-    "leagues": [
-      "NFL"
-    ],
-    "difficulty": "expert",
-    "category": "Country",
-    "prompt": "Cairo Santos was born in which country?",
-    "answer": "Brazil",
-    "wrong": [
-      "Mexico",
-      "Argentina",
-      "Australia"
-    ],
-    "teach": "Cairo Santos was born in Limeira.",
-    "dailyFrom": "2026-10-27",
-    "reel": {
-      "season": 2017,
-      "player": "Cairo Santos"
-    },
-    "source": {
-      "url": "https://en.wikipedia.org/wiki/Cairo_Santos",
-      "ref": "Wikipedia: Cairo Santos page (saved API wikitext and prose), checked 2026-10-13"
-    },
-    "id": "p-nfl-cairo-santos-country",
-    "factId": "nfl-cairo-santos-country"
-  },
-  {
-    "side": "players",
-    "sport": "football",
-    "leagues": [
-      "NFL"
-    ],
-    "difficulty": "expert",
-    "category": "Country",
-    "prompt": "Sav Rocca was born in which country?",
-    "answer": "Australia",
-    "wrong": [
-      "New Zealand",
-      "Canada",
-      "England"
-    ],
-    "teach": "Sav Rocca was born in Melbourne.",
-    "dailyFrom": "2026-10-27",
-    "reel": {
-      "season": 2007,
-      "player": "Sav Rocca"
-    },
-    "source": {
-      "url": "https://en.wikipedia.org/wiki/Sav_Rocca",
-      "ref": "Wikipedia: Sav Rocca page (saved API wikitext and prose), checked 2026-10-13"
-    },
-    "id": "p-nfl-sav-rocca-country",
-    "factId": "nfl-sav-rocca-country"
-  },
-  {
-    "side": "players",
-    "sport": "football",
-    "leagues": [
-      "NFL"
-    ],
-    "difficulty": "expert",
-    "category": "Country",
-    "prompt": "Efe Obada was born in which country?",
-    "answer": "Nigeria",
-    "wrong": [
-      "Ghana",
-      "England",
-      "Australia"
-    ],
-    "teach": "Efe Obada was born in Lagos.",
-    "dailyFrom": "2026-10-27",
-    "reel": {
-      "season": 2020,
-      "player": "Efe Obada"
-    },
-    "source": {
-      "url": "https://en.wikipedia.org/wiki/Efe_Obada",
-      "ref": "Wikipedia: Efe Obada page (saved API wikitext and prose), checked 2026-10-13"
-    },
-    "id": "p-nfl-efe-obada-country",
-    "factId": "nfl-efe-obada-country"
   },
   {
     "side": "players",
@@ -1806,7 +1722,7 @@
       "Switzerland",
       "Australia"
     ],
-    "teach": "Sebastian Vollmer was born in Kaarst.",
+    "teach": "His autobiography, titled German Champion: Die Geschichte meiner NFL-Karriere, was published on 8 September 2018.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2014,
@@ -1814,7 +1730,7 @@
     },
     "source": {
       "url": "https://en.wikipedia.org/wiki/Sebastian_Vollmer",
-      "ref": "Wikipedia: Sebastian Vollmer page (saved API wikitext and prose), checked 2026-10-13"
+      "ref": "Wikipedia: Sebastian Vollmer page (saved API wikitext and prose), teach source: Sebastian Vollmer, checked 2026-10-13"
     },
     "id": "p-nfl-sebastian-vollmer-country",
     "factId": "nfl-sebastian-vollmer-country"
@@ -1825,80 +1741,24 @@
     "leagues": [
       "NFL"
     ],
-    "difficulty": "expert",
-    "category": "Country",
-    "prompt": "Mitch Wishnowsky was born in which country?",
-    "answer": "Australia",
-    "wrong": [
-      "New Zealand",
-      "Canada",
-      "England"
-    ],
-    "teach": "Mitch Wishnowsky was born in Gosnells.",
-    "dailyFrom": "2026-10-27",
-    "reel": {
-      "season": 2020,
-      "player": "Mitch Wishnowsky"
-    },
-    "source": {
-      "url": "https://en.wikipedia.org/wiki/Mitch_Wishnowsky",
-      "ref": "Wikipedia: Mitch Wishnowsky page (saved API wikitext and prose), checked 2026-10-13"
-    },
-    "id": "p-nfl-mitch-wishnowsky-country",
-    "factId": "nfl-mitch-wishnowsky-country"
-  },
-  {
-    "side": "players",
-    "sport": "football",
-    "leagues": [
-      "NFL"
-    ],
-    "difficulty": "expert",
-    "category": "Country",
-    "prompt": "Tom Fears was born in which country?",
-    "answer": "Mexico",
-    "wrong": [
-      "Cuba",
-      "Canada",
-      "Brazil"
-    ],
-    "teach": "Tom Fears was born in Guadalajara.",
-    "dailyFrom": "2026-10-27",
-    "reel": {
-      "season": 1950,
-      "player": "Tom Fears"
-    },
-    "source": {
-      "url": "https://en.wikipedia.org/wiki/Tom_Fears",
-      "ref": "Wikipedia: Tom Fears page (saved API wikitext and prose), checked 2026-10-13"
-    },
-    "id": "p-nfl-tom-fears-country",
-    "factId": "nfl-tom-fears-country"
-  },
-  {
-    "side": "players",
-    "sport": "football",
-    "leagues": [
-      "NFL"
-    ],
-    "difficulty": "medium",
+    "difficulty": "hard",
     "category": "Jersey number",
-    "prompt": "What number did Drew Brees wear in the 2009 season?",
+    "prompt": "Drew Brees's jersey number in 2009?",
     "answer": "9",
     "wrong": [
       "12",
       "15",
       "18"
     ],
-    "teach": "Drew Brees was born in Dallas.",
+    "teach": "Drew Brees wore No. 9 for New Orleans Saints in 2009.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2009,
       "player": "Drew Brees"
     },
     "source": {
-      "url": "https://en.wikipedia.org/wiki/Drew_Brees",
-      "ref": "Wikipedia: Drew Brees page (saved API wikitext and prose), checked 2026-10-13"
+      "url": "https://en.wikipedia.org/wiki/2009_New_Orleans_Saints_season",
+      "ref": "Wikipedia: 2009 New Orleans Saints season page (saved API wikitext and prose), teach source: 2009 New Orleans Saints season, checked 2026-10-13"
     },
     "id": "p-nfl-drew-brees-jersey",
     "factId": "nfl-drew-brees-jersey"
@@ -1909,24 +1769,24 @@
     "leagues": [
       "NFL"
     ],
-    "difficulty": "medium",
+    "difficulty": "hard",
     "category": "Jersey number",
-    "prompt": "What number did Emmitt Smith wear in the 1995 season?",
+    "prompt": "Emmitt Smith's jersey number in 1995?",
     "answer": "22",
     "wrong": [
       "20",
       "34",
       "80"
     ],
-    "teach": "Emmitt Smith was born in Pensacola.",
+    "teach": "Emmitt Smith wore No. 22 for Dallas Cowboys in 1995.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1995,
       "player": "Emmitt Smith"
     },
     "source": {
-      "url": "https://en.wikipedia.org/wiki/Emmitt_Smith",
-      "ref": "Wikipedia: Emmitt Smith page (saved API wikitext and prose), checked 2026-10-13"
+      "url": "https://en.wikipedia.org/wiki/1995_Dallas_Cowboys_season",
+      "ref": "Wikipedia: 1995 Dallas Cowboys season page (saved API wikitext and prose), teach source: 1995 Dallas Cowboys season, checked 2026-10-13"
     },
     "id": "p-nfl-emmitt-smith-jersey",
     "factId": "nfl-emmitt-smith-jersey"
@@ -1937,24 +1797,24 @@
     "leagues": [
       "NFL"
     ],
-    "difficulty": "medium",
+    "difficulty": "hard",
     "category": "Jersey number",
-    "prompt": "What number did Barry Sanders wear in the 1997 season?",
+    "prompt": "Barry Sanders's jersey number in 1997?",
     "answer": "20",
     "wrong": [
       "22",
       "34",
       "80"
     ],
-    "teach": "Barry Sanders was born in Wichita.",
+    "teach": "Barry Sanders wore No. 20 for Detroit Lions in 1997.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1997,
       "player": "Barry Sanders"
     },
     "source": {
-      "url": "https://en.wikipedia.org/wiki/Barry_Sanders",
-      "ref": "Wikipedia: Barry Sanders page (saved API wikitext and prose), checked 2026-10-13"
+      "url": "https://en.wikipedia.org/wiki/1997_Detroit_Lions_season",
+      "ref": "Wikipedia: 1997 Detroit Lions season page (saved API wikitext and prose), teach source: 1997 Detroit Lions season, checked 2026-10-13"
     },
     "id": "p-nfl-barry-sanders-jersey",
     "factId": "nfl-barry-sanders-jersey"
@@ -1965,24 +1825,24 @@
     "leagues": [
       "NFL"
     ],
-    "difficulty": "medium",
+    "difficulty": "hard",
     "category": "Jersey number",
-    "prompt": "What number did Jerry Rice wear in the 1994 season?",
+    "prompt": "Jerry Rice's jersey number in 1994?",
     "answer": "80",
     "wrong": [
       "22",
       "34",
       "81"
     ],
-    "teach": "Jerry Rice was born in Starkville.",
+    "teach": "Jerry Rice wore No. 80 for San Francisco 49ers in 1994.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1994,
       "player": "Jerry Rice"
     },
     "source": {
-      "url": "https://en.wikipedia.org/wiki/Jerry_Rice",
-      "ref": "Wikipedia: Jerry Rice page (saved API wikitext and prose), checked 2026-10-13"
+      "url": "https://en.wikipedia.org/wiki/1994_San_Francisco_49ers_season",
+      "ref": "Wikipedia: 1994 San Francisco 49ers season page (saved API wikitext and prose), teach source: 1994 San Francisco 49ers season, checked 2026-10-13"
     },
     "id": "p-nfl-jerry-rice-jersey",
     "factId": "nfl-jerry-rice-jersey"
@@ -1993,24 +1853,24 @@
     "leagues": [
       "NFL"
     ],
-    "difficulty": "easy",
+    "difficulty": "hard",
     "category": "Jersey number",
-    "prompt": "What number did Tom Brady wear in the 2017 season?",
+    "prompt": "Tom Brady's jersey number in 2017?",
     "answer": "12",
     "wrong": [
       "10",
       "15",
       "18"
     ],
-    "teach": "Tom Brady was born in San Mateo.",
+    "teach": "Tom Brady wore No. 12 for New England Patriots in 2017.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2017,
       "player": "Tom Brady"
     },
     "source": {
-      "url": "https://en.wikipedia.org/wiki/Tom_Brady",
-      "ref": "Wikipedia: Tom Brady page (saved API wikitext and prose), checked 2026-10-13"
+      "url": "https://en.wikipedia.org/wiki/2017_New_England_Patriots_season",
+      "ref": "Wikipedia: 2017 New England Patriots season page (saved API wikitext and prose), teach source: 2017 New England Patriots season, checked 2026-10-13"
     },
     "id": "p-nfl-tom-brady-jersey",
     "factId": "nfl-tom-brady-jersey"
@@ -2021,52 +1881,24 @@
     "leagues": [
       "NFL"
     ],
-    "difficulty": "expert",
+    "difficulty": "hard",
     "category": "Jersey number",
-    "prompt": "What number did Jason Kelce wear in the 2017 season?",
-    "answer": "62",
-    "wrong": [
-      "52",
-      "68",
-      "76"
-    ],
-    "teach": "Jason Kelce was born in Cleveland Heights.",
-    "dailyFrom": "2026-10-27",
-    "reel": {
-      "season": 2017,
-      "player": "Jason Kelce"
-    },
-    "source": {
-      "url": "https://en.wikipedia.org/wiki/Jason_Kelce",
-      "ref": "Wikipedia: Jason Kelce page (saved API wikitext and prose), checked 2026-10-13"
-    },
-    "id": "p-nfl-jason-kelce-jersey",
-    "factId": "nfl-jason-kelce-jersey"
-  },
-  {
-    "side": "players",
-    "sport": "football",
-    "leagues": [
-      "NFL"
-    ],
-    "difficulty": "medium",
-    "category": "Jersey number",
-    "prompt": "What number did Walter Payton wear in the 1985 season?",
+    "prompt": "Walter Payton's jersey number in 1985?",
     "answer": "34",
     "wrong": [
       "22",
       "20",
       "80"
     ],
-    "teach": "Walter Payton was born in Columbia.",
+    "teach": "Walter Payton wore No. 34 for Chicago Bears in 1985.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 1985,
       "player": "Walter Payton"
     },
     "source": {
-      "url": "https://en.wikipedia.org/wiki/Walter_Payton",
-      "ref": "Wikipedia: Walter Payton page (saved API wikitext and prose), checked 2026-10-13"
+      "url": "https://en.wikipedia.org/wiki/1985_Chicago_Bears_season",
+      "ref": "Wikipedia: 1985 Chicago Bears season page (saved API wikitext and prose), teach source: 1985 Chicago Bears season, checked 2026-10-13"
     },
     "id": "p-nfl-walter-payton-jersey",
     "factId": "nfl-walter-payton-jersey"
@@ -2079,22 +1911,22 @@
     ],
     "difficulty": "hard",
     "category": "Jersey number",
-    "prompt": "What number did Derrick Henry wear in the 2019 season?",
+    "prompt": "Derrick Henry's jersey number in 2019?",
     "answer": "22",
     "wrong": [
       "20",
       "23",
       "34"
     ],
-    "teach": "Derrick Henry was born in Yulee.",
+    "teach": "Derrick Henry wore No. 22 for Tennessee Titans in 2019.",
     "dailyFrom": "2026-10-27",
     "reel": {
       "season": 2019,
       "player": "Derrick Henry"
     },
     "source": {
-      "url": "https://en.wikipedia.org/wiki/Derrick_Henry",
-      "ref": "Wikipedia: Derrick Henry page (saved API wikitext and prose), checked 2026-10-13"
+      "url": "https://en.wikipedia.org/wiki/2019_Tennessee_Titans_season",
+      "ref": "Wikipedia: 2019 Tennessee Titans season page (saved API wikitext and prose), teach source: 2019 Tennessee Titans season, checked 2026-10-13"
     },
     "id": "p-nfl-derrick-henry-jersey",
     "factId": "nfl-derrick-henry-jersey"
@@ -2107,22 +1939,22 @@
     ],
     "difficulty": "hard",
     "category": "Jersey number",
-    "prompt": "What number did Christian McCaffrey wear in the 2024 season?",
+    "prompt": "Christian McCaffrey's jersey number in 2023?",
     "answer": "23",
     "wrong": [
       "22",
       "24",
       "26"
     ],
-    "teach": "Christian McCaffrey was born in Castle Rock.",
+    "teach": "Christian McCaffrey wore No. 23 for San Francisco 49ers in 2023.",
     "dailyFrom": "2026-10-27",
     "reel": {
-      "season": 2024,
+      "season": 2023,
       "player": "Christian McCaffrey"
     },
     "source": {
-      "url": "https://en.wikipedia.org/wiki/Christian_McCaffrey",
-      "ref": "Wikipedia: Christian McCaffrey page (saved API wikitext and prose), checked 2026-10-13"
+      "url": "https://en.wikipedia.org/wiki/2023_San_Francisco_49ers_season",
+      "ref": "Wikipedia: 2023 San Francisco 49ers season page (saved API wikitext and prose), teach source: 2023 San Francisco 49ers season, checked 2026-10-13"
     },
     "id": "p-nfl-christian-mccaffrey-jersey",
     "factId": "nfl-christian-mccaffrey-jersey"
@@ -2133,27 +1965,27 @@
     "leagues": [
       "NFL"
     ],
-    "difficulty": "expert",
-    "category": "Jersey number",
-    "prompt": "What number did Daniel Faalele wear in the 2024 season?",
-    "answer": "68",
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Morten Andersen was born in which country?",
+    "answer": "Denmark",
     "wrong": [
-      "62",
-      "76",
-      "77"
+      "Norway",
+      "Germany",
+      "Poland"
     ],
-    "teach": "Daniel Faalele was born in Melbourne.",
+    "teach": "Following a career from 1982 to 2007, Andersen holds the NFL record for regular season games played at 382.",
     "dailyFrom": "2026-10-27",
     "reel": {
-      "season": 2024,
-      "player": "Daniel Faalele"
+      "season": 1995,
+      "player": "Morten Andersen"
     },
     "source": {
-      "url": "https://en.wikipedia.org/wiki/Daniel_Faalele",
-      "ref": "Wikipedia: Daniel Faalele page (saved API wikitext and prose), checked 2026-10-13"
+      "url": "https://en.wikipedia.org/wiki/Morten_Andersen",
+      "ref": "Wikipedia: Morten Andersen page (saved API wikitext and prose), teach source: Morten Andersen, checked 2026-10-13"
     },
-    "id": "p-nfl-daniel-faalele-jersey",
-    "factId": "nfl-daniel-faalele-jersey"
+    "id": "p-nfl-morten-andersen-country",
+    "factId": "nfl-morten-andersen-country"
   },
   {
     "side": "players",
@@ -2162,26 +1994,54 @@
       "NFL"
     ],
     "difficulty": "expert",
-    "category": "Jersey number",
-    "prompt": "What number did Cairo Santos wear in the 2017 season?",
-    "answer": "8",
+    "category": "Country",
+    "prompt": "Jan Stenerud was born in which country?",
+    "answer": "Norway",
     "wrong": [
-      "3",
-      "7",
-      "9"
+      "Denmark",
+      "Germany",
+      "Poland"
     ],
-    "teach": "Cairo Santos was born in Limeira.",
+    "teach": "The season prior to the AFL–NFL merger, he also helped the Chiefs win their first Super Bowl title in Super Bowl IV.",
     "dailyFrom": "2026-10-27",
     "reel": {
-      "season": 2017,
-      "player": "Cairo Santos"
+      "season": 1975,
+      "player": "Jan Stenerud"
     },
     "source": {
-      "url": "https://en.wikipedia.org/wiki/Cairo_Santos",
-      "ref": "Wikipedia: Cairo Santos page (saved API wikitext and prose), checked 2026-10-13"
+      "url": "https://en.wikipedia.org/wiki/Jan_Stenerud",
+      "ref": "Wikipedia: Jan Stenerud page (saved API wikitext and prose), teach source: Jan Stenerud, checked 2026-10-13"
     },
-    "id": "p-nfl-cairo-santos-jersey",
-    "factId": "nfl-cairo-santos-jersey"
+    "id": "p-nfl-jan-stenerud-country",
+    "factId": "nfl-jan-stenerud-country"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Sebastian Janikowski was born in which country?",
+    "answer": "Poland",
+    "wrong": [
+      "Germany",
+      "Denmark",
+      "Norway"
+    ],
+    "teach": "During his final season, Janikowski played for the Seattle Seahawks.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2009,
+      "player": "Sebastian Janikowski"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Sebastian_Janikowski",
+      "ref": "Wikipedia: Sebastian Janikowski page (saved API wikitext and prose), teach source: Sebastian Janikowski, checked 2026-10-13"
+    },
+    "id": "p-nfl-sebastian-janikowski-country",
+    "factId": "nfl-sebastian-janikowski-country"
   },
   {
     "side": "players",
@@ -2190,25 +2050,193 @@
       "NFL"
     ],
     "difficulty": "expert",
-    "category": "Jersey number",
-    "prompt": "What number did Mitch Wishnowsky wear in the 2020 season?",
-    "answer": "19",
+    "category": "Country",
+    "prompt": "Steve Van Buren was born in which country?",
+    "answer": "Honduras",
     "wrong": [
-      "6",
-      "8",
-      "18"
+      "Panama",
+      "Mexico",
+      "Canada"
     ],
-    "teach": "Mitch Wishnowsky was born in Gosnells.",
+    "teach": "Van Buren was orphaned at ten and sent from Honduras to relatives in New Orleans.",
     "dailyFrom": "2026-10-27",
     "reel": {
-      "season": 2020,
-      "player": "Mitch Wishnowsky"
+      "season": 1947,
+      "player": "Steve Van Buren"
     },
     "source": {
-      "url": "https://en.wikipedia.org/wiki/Mitch_Wishnowsky",
-      "ref": "Wikipedia: Mitch Wishnowsky page (saved API wikitext and prose), checked 2026-10-13"
+      "url": "https://en.wikipedia.org/wiki/Steve_Van_Buren",
+      "ref": "Wikipedia: Steve Van Buren page (saved API wikitext and prose), teach source: Steve Van Buren, checked 2026-10-13"
     },
-    "id": "p-nfl-mitch-wishnowsky-jersey",
-    "factId": "nfl-mitch-wishnowsky-jersey"
+    "id": "p-nfl-steve-van-buren-country",
+    "factId": "nfl-steve-van-buren-country"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Tamba Hali was born in which country?",
+    "answer": "Liberia",
+    "wrong": [
+      "Nigeria",
+      "Ghana",
+      "Sierra Leone"
+    ],
+    "teach": "He played college football for the Penn State Nittany Lions, earning unanimous All-American honors.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2012,
+      "player": "Tamba Hali"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Tamba_Hali",
+      "ref": "Wikipedia: Tamba Hali page (saved API wikitext and prose), teach source: Tamba Hali, checked 2026-10-13"
+    },
+    "id": "p-nfl-tamba-hali-country",
+    "factId": "nfl-tamba-hali-country"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Ted Hendricks was born in which country?",
+    "answer": "Guatemala",
+    "wrong": [
+      "Honduras",
+      "Mexico",
+      "Panama"
+    ],
+    "teach": "He has been awarded the Order of the Quetzal, the highest award for civilians, by his native Guatemala.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1977,
+      "player": "Ted Hendricks"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Ted_Hendricks",
+      "ref": "Wikipedia: Ted Hendricks page (saved API wikitext and prose), teach source: Ted Hendricks, checked 2026-10-13"
+    },
+    "id": "p-nfl-ted-hendricks-country",
+    "factId": "nfl-ted-hendricks-country"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Garo Yepremian was born in which country?",
+    "answer": "Cyprus",
+    "wrong": [
+      "Greece",
+      "Germany",
+      "Italy"
+    ],
+    "teach": "Yepremian immigrated from Cyprus to the United States at 22.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1972,
+      "player": "Garo Yepremian"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Garo_Yepremian",
+      "ref": "Wikipedia: Garo Yepremian page (saved API wikitext and prose), teach source: Garo Yepremian, checked 2026-10-13"
+    },
+    "id": "p-nfl-garo-yepremian-country",
+    "factId": "nfl-garo-yepremian-country"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Björn Werner was born in which country?",
+    "answer": "Germany",
+    "wrong": [
+      "Denmark",
+      "Austria",
+      "Switzerland"
+    ],
+    "teach": "In 2008, he played on the U-19 Germany national team against the Poland U-19 squad in Będzin, winning 67–0.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2013,
+      "player": "Björn Werner"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Bj%C3%B6rn_Werner",
+      "ref": "Wikipedia: Björn Werner page (saved API wikitext and prose), teach source: Björn Werner, checked 2026-10-13"
+    },
+    "id": "p-nfl-bjorn-werner-country",
+    "factId": "nfl-bjorn-werner-country"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Bronko Nagurski was born in which country?",
+    "answer": "Canada",
+    "wrong": [
+      "Germany",
+      "France",
+      "Mexico"
+    ],
+    "teach": "Nagurski's family moved from Canada to Minnesota when he was five.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1934,
+      "player": "Bronko Nagurski"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Bronko_Nagurski",
+      "ref": "Wikipedia: Bronko Nagurski page (saved API wikitext and prose), teach source: Bronko Nagurski, checked 2026-10-13"
+    },
+    "id": "p-nfl-bronko-nagurski-country",
+    "factId": "nfl-bronko-nagurski-country"
+  },
+  {
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Gary Anderson was born in which country?",
+    "answer": "South Africa",
+    "wrong": [
+      "Australia",
+      "Germany",
+      "Canada"
+    ],
+    "teach": "After leaving South Africa, Anderson got footballs to kick on his third day in the U.S.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1998,
+      "player": "Gary Anderson"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Gary_Anderson_%28placekicker%29",
+      "ref": "Wikipedia: Gary Anderson (placekicker) page (saved API wikitext and prose), teach source: Gary Anderson (placekicker), checked 2026-10-13"
+    },
+    "id": "p-nfl-gary-anderson-country",
+    "factId": "nfl-gary-anderson-country"
   }
 ]
