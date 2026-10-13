@@ -151,7 +151,9 @@ export async function POST(request: Request): Promise<Response> {
         runToken,
         date,
         questionIndex: 0,
-        question: publicQuestion(question, choices),
+        question: publicQuestion(question, choices, {
+          bonus: input.mode === 'daily',
+        }),
         progress: {
           score: initialProgress.score,
           strikes: initialProgress.strikes,

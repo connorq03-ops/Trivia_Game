@@ -47,12 +47,13 @@ export type PublicQuestion = Pick<
 > & {
   choices: string[]
   choiceBadges?: (ChoiceBadge | null)[]
-  boss?: { category: BossCategory; clockMs: number; reelMs: number }
+  boss?: { category: BossCategory; clockMs: number; reelMs: number; bonus?: boolean }
 }
 
 export function publicQuestion(
   question: Question,
   choices: string[],
+  { bonus = false }: { bonus?: boolean } = {},
 ): PublicQuestion {
   return {
     id: question.id,
@@ -73,6 +74,7 @@ export function publicQuestion(
             category: question.category,
             clockMs: BOSS_CLOCK_MS,
             reelMs: BOSS_REEL_MS,
+            ...(bonus ? { bonus: true } : {}),
           },
         }
       : {}),

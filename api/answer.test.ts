@@ -484,6 +484,70 @@ describe('answer handler', () => {
       expect(body.progress).toMatchObject({ score: 3500, streak: 11, strikes: 0, correct: 11 })
     })
 
+    it('serves a bonus boss after a perfect fast Daily run', async () => {
+      vi.stubEnv('BOSS_QUESTIONS', 'true')
+      const dailyDate = '2099-12-31'
+      const daily = dailyQuestions(dailyDate, questionBank)
+      const question = daily[9]
+      const run = makeRun(question, {
+        mode: 'daily',
+        daily_date: dailyDate,
+        question_index: 9,
+        used_fact_ids: daily.map((item) => item.factId),
+        progress: {
+          ...makeRun(question).progress,
+          questionsAnswered: 9,
+          answeredCount: 9,
+          totalAnswerMs: 9 * 3_000,
+          results: Array(9).fill('hit'),
+          streak: 9,
+          bestStreak: 9,
+          score: 2000,
+        },
+      })
+      const sql = mockSql({ rows: [run] })
+      const body = await (
+        await POST(
+          makeRequest({
+            ...validBody,
+            questionIndex: 9,
+            choice: question.answer,
+            clientMs: 2_000,
+          }),
+        )
+      ).json()
+
+      expect(body.next).toEqual({ questionIndex: 10 })
+      const { values } = storedUpdate(sql)
+      expect(
+        values.some((value) =>
+          bossQuestions.some((item) => item.id === value),
+        ),
+      ).toBe(true)
+    })
+
+    it('scores a daily bonus miss as zero and completes the run', async () => {
+      const run = bossRun(
+        {},
+        { mode: 'daily', daily_date: '2099-12-31', question_index: 10 },
+      )
+      mockSql({ rows: [run] })
+      const body = await (
+        await POST(
+          makeRequest({
+            ...validBody,
+            questionIndex: 10,
+            choice: boss.wrong[0],
+          }),
+        )
+      ).json()
+
+      expect(body.correct).toBe(false)
+      expect(body.points).toBe(0)
+      expect(body.progress.score).toBe(3000)
+      expect(body.summary.reason).toBe('complete')
+    })
+
     it('takes 250 for a boss miss without a strike or review entry', async () => {
       const sql = mockSql({ rows: [bossRun({ strikes: 2 })] })
       const body = await (

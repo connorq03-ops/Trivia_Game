@@ -1,7 +1,9 @@
 import { describe, expect, it } from 'vitest'
 import {
   BOSS_CLOCK_MS,
+  BOSS_HIT_POINTS,
   CLOCK_MS,
+  DAILY_BONUS_AVG_MS,
   DAILY_STREAK_STEP,
   LEVELS,
   MULTIPLIER_TIERS,
@@ -35,7 +37,7 @@ describe('howItWorks', () => {
       `Get ${STRIKE_BACK_EVERY} in a row to clear a strike.`,
       `Streaks of ${streaks} multiply your points by ${multipliers}.`,
       `Classic starts easy and levels up at ${levelSteps} correct answers. Harder questions score more.`,
-      `Daily 10: the same 10 questions for everyone today, easy to hard. No strikes. Each correct answer in a row adds +${Math.round(DAILY_STREAK_STEP * 100)}% to your points.`,
+      `Daily 10: the same 10 questions for everyone today, easy to hard. No strikes. Each correct answer in a row adds +${Math.round(DAILY_STREAK_STEP * 100)}% to your points. Answer all 10 right in under ${DAILY_BONUS_AVG_MS / 1000}s each on average to earn a +${BOSS_HIT_POINTS} bonus boss.`,
     ])
   })
 

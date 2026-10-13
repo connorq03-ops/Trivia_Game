@@ -54,11 +54,12 @@ export async function POST(request: Request): Promise<Response> {
         and token_hash = ${hashRunToken(input.runToken)}
         and question_index = ${input.questionIndex}
         and status = 'active'
-      returning current_question_id, current_choices,
+      returning current_question_id, current_choices, mode,
         greatest(0, floor(extract(epoch from (now() - issued_at)) * 1000))::bigint as elapsed_ms
     `) as {
       current_question_id: string | null
       current_choices: string[] | null
+      mode: 'classic' | 'daily'
       elapsed_ms: number | string | null
     }[]
     const row = rows[0]
@@ -72,7 +73,9 @@ export async function POST(request: Request): Promise<Response> {
     }
     return Response.json({
       questionIndex: input.questionIndex,
-      question: publicQuestion(question, row.current_choices),
+      question: publicQuestion(question, row.current_choices, {
+        bonus: row.mode === 'daily',
+      }),
       elapsedMs: Number(row.elapsed_ms ?? 0),
     })
   } catch {

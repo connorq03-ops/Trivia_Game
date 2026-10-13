@@ -8,14 +8,17 @@ import {
   questionsById,
 } from '../lib/questions.js'
 import {
+  answerBonusBossQuestion,
   answerBossQuestion,
   answerQuestion,
   BOSS_CLOCK_MS,
   CLOCK_MS,
   correctCount,
   DAILY_STREAK_STEP,
+  dailyBonusBoss,
   dailyQuestions,
   presentQuestion,
+  qualifiesForDailyBonus,
   resolveAnswerMs,
   selectClassicQuestion,
   type AnswerResult,
@@ -194,7 +197,13 @@ export async function POST(request: Request): Promise<Response> {
       boss ? BOSS_CLOCK_MS : CLOCK_MS,
     )
     const answered = boss
-      ? answerBossQuestion(deserializeProgress(run.progress), correct, answerMs)
+      ? run.mode === 'daily'
+        ? answerBonusBossQuestion(
+            deserializeProgress(run.progress),
+            correct,
+            answerMs,
+          )
+        : answerBossQuestion(deserializeProgress(run.progress), correct, answerMs)
       : answerQuestion(
           deserializeProgress(run.progress),
           question,
@@ -251,7 +260,15 @@ export async function POST(request: Request): Promise<Response> {
     } else {
       const date = dateOnly(run.daily_date)
       const questions = dailyQuestions(date, questionBank)
-      if (nextQuestionIndex >= questions.length) {
+      const bonusBoss =
+        nextQuestionIndex === questions.length &&
+        qualifiesForDailyBonus(outcome.progress) &&
+        bossQuestionsEnabled()
+          ? dailyBonusBoss(date, bossQuestions, usedFactIds)
+          : null
+      if (bonusBoss) {
+        next = presentQuestion(bonusBoss, Math.random)
+      } else if (nextQuestionIndex >= questions.length) {
         endReason = 'complete'
       } else {
         next = presentQuestion(questions[nextQuestionIndex], Math.random)

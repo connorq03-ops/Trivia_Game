@@ -3,6 +3,7 @@ import {
   BOSS_HIT_POINTS,
   BOSS_MISS_POINTS,
   CLOCK_MS,
+  DAILY_BONUS_AVG_MS,
   DAILY_STREAK_STEP,
   levelFor,
   LEVELS,
@@ -45,7 +46,7 @@ export function howItWorks({ bosses = false }: { bosses?: boolean } = {}): strin
           `Each level-up brings a boss question on science, history, art or pop culture: ${BOSS_CLOCK_MS / 1000} seconds, +${BOSS_HIT_POINTS} if right, −${BOSS_MISS_POINTS} if wrong, no strike.`,
         ]
       : []),
-    `Daily 10: the same 10 questions for everyone today, easy to hard. No strikes. Each correct answer in a row adds +${Math.round(DAILY_STREAK_STEP * 100)}% to your points.`,
+    `Daily 10: the same 10 questions for everyone today, easy to hard. No strikes. Each correct answer in a row adds +${Math.round(DAILY_STREAK_STEP * 100)}% to your points. Answer all 10 right in under ${DAILY_BONUS_AVG_MS / 1000}s each on average to earn a +${BOSS_HIT_POINTS} bonus boss.`,
   ]
 }
 
