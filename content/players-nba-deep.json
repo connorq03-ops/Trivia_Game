@@ -1650,33 +1650,5 @@
       "season": 1960,
       "player": "Bill Russell"
     }
-  },
-  {
-    "id": "p-nba-vince-carter-draft-2",
-    "factId": "nba-vince-carter-draft-2",
-    "side": "players",
-    "sport": "basketball",
-    "leagues": [
-      "NBA"
-    ],
-    "difficulty": "expert",
-    "category": "Drafted by",
-    "prompt": "Which team drafted Vince Carter?",
-    "answer": "Warriors",
-    "wrong": [
-      "Raptors",
-      "Nets",
-      "Magic"
-    ],
-    "teach": "Golden State took Carter 5th in 1998 and traded him to Toronto for Antawn Jamison.",
-    "source": {
-      "url": "https://en.wikipedia.org/wiki/Vince_Carter",
-      "ref": "Wikipedia infobox and article, checked 2026-10-13"
-    },
-    "dailyFrom": "2026-10-27",
-    "reel": {
-      "season": 2001,
-      "player": "Vince Carter"
-    }
   }
 ]

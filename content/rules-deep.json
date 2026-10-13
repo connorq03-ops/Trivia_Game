@@ -1057,30 +1057,6 @@
     "dailyFrom": "2026-10-27"
   },
   {
-    "id": "r-nfl-missed-field-goal-spot-beyond-20-1",
-    "factId": "nfl-missed-field-goal-spot-beyond-20",
-    "side": "rules",
-    "sport": "football",
-    "leagues": [
-      "NFL"
-    ],
-    "difficulty": "expert",
-    "category": "What's the call?",
-    "prompt": "NFL field goal missed from beyond the 20. Where does the defense take over?",
-    "answer": "Spot of the kick",
-    "wrong": [
-      "Line of scrimmage",
-      "The 20-yard line",
-      "Previous spot"
-    ],
-    "teach": "Misses from inside the 20 go to the 20-yard line instead.",
-    "source": {
-      "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
-      "ref": "NFL Rule 11, Section 4, Article 2 — Missed Field Goals"
-    },
-    "dailyFrom": "2026-10-27"
-  },
-  {
     "id": "r-nba-substitution-box-length-1",
     "factId": "nba-substitution-box-length",
     "side": "rules",
