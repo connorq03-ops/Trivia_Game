@@ -22,6 +22,7 @@ import {
   type GameSummary,
 } from './game/dailyStore'
 import { formatCountdown } from './game/share'
+import { badgeInk } from './game/badgeInk'
 import type { ChoiceBadge, Question, Side, Sport } from './game/types'
 import { ResultShare } from './ResultShare'
 import './App.css'
@@ -143,20 +144,6 @@ function answerIndexForKey(key: string): number {
 
 function elapsedSince(startedAt: number): number {
   return Math.min(CLOCK_MS, Math.max(0, performance.now() - startedAt))
-}
-
-// Higher-contrast pick between white and near-black ink for a badge fill.
-function badgeInk(primary: string): string {
-  const hex = primary.replace('#', '')
-  const channel = (index: number) => {
-    const value = parseInt(hex.slice(index, index + 2), 16) / 255
-    return value <= 0.03928 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4
-  }
-  const luminance =
-    0.2126 * channel(0) + 0.7152 * channel(2) + 0.0722 * channel(4)
-  const whiteRatio = (1 + 0.05) / (luminance + 0.05)
-  const blackRatio = (luminance + 0.05) / (0.06 + 0.05)
-  return whiteRatio >= blackRatio ? '#ffffff' : '#131313'
 }
 
 function Badge({ badge }: { badge: ChoiceBadge }) {
