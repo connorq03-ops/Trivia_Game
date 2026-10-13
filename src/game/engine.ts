@@ -43,11 +43,11 @@ export const LEVELS: readonly {
   minCorrect: number
   weights: Readonly<Record<Difficulty, number>>
 }[] = [
-  { minCorrect: 0, weights: { easy: 1, medium: 0, hard: 0, expert: 0 } },
-  { minCorrect: 10, weights: { easy: 0.6, medium: 0.4, hard: 0, expert: 0 } },
-  { minCorrect: 20, weights: { easy: 0, medium: 0.6, hard: 0.4, expert: 0 } },
-  { minCorrect: 35, weights: { easy: 0, medium: 0, hard: 0.6, expert: 0.4 } },
-  { minCorrect: 50, weights: { easy: 0, medium: 0, hard: 0.25, expert: 0.75 } },
+  { minCorrect: 0, weights: { easy: 0.7, medium: 0.3, hard: 0, expert: 0 } },
+  { minCorrect: 5, weights: { easy: 0.4, medium: 0.45, hard: 0.15, expert: 0 } },
+  { minCorrect: 12, weights: { easy: 0.1, medium: 0.5, hard: 0.4, expert: 0 } },
+  { minCorrect: 25, weights: { easy: 0, medium: 0.25, hard: 0.5, expert: 0.25 } },
+  { minCorrect: 40, weights: { easy: 0, medium: 0, hard: 0.25, expert: 0.75 } },
 ]
 
 const SPORTS: Sport[] = ['football', 'basketball', 'baseball']
@@ -82,7 +82,7 @@ export type RunProgress = {
   totalAnswerMs: number
   missed: Question[]
   results: AnswerResult[]
-  bossLevelsConsumed: number[] // LEVELS indexes that already had their boss
+  bossLevelsConsumed: number[] // boss milestones (correct counts) already served
   bossMisses: number
   bossMissed: Question[] // boss misses; kept out of `missed` so correctCount stays right
   // Frozen at run creation so a mid-day deploy never reshuffles a live run.
@@ -94,7 +94,7 @@ export type RunProgress = {
 
 export type ClassicSelection =
   | { type: 'question'; question: Question; choices: string[] }
-  | { type: 'boss'; question: BossQuestion; choices: string[]; level: number }
+  | { type: 'boss'; question: BossQuestion; choices: string[]; milestone: number }
   | { type: 'end'; reason: 'bank' }
 
 export type BossOptions = {
@@ -182,13 +182,16 @@ function drawDifficulty(correct: number, rng: () => number): Difficulty {
   return DIFFICULTIES.findLast((difficulty) => weights[difficulty] > 0) ?? 'easy'
 }
 
-// Harder tiers first, so a run never drifts back to easy questions late.
+// Nearest tiers first, preferring harder on ties: a run still drifts up,
+// but expert only appears as a last resort for easy/medium targets.
 function fallbackOrder(difficulty: Difficulty): Difficulty[] {
   const rank = DIFFICULTY_RANK[difficulty]
-  return [
-    ...DIFFICULTIES.slice(rank),
-    ...DIFFICULTIES.slice(0, rank).reverse(),
-  ]
+  return [...DIFFICULTIES].sort(
+    (left, right) =>
+      Math.abs(DIFFICULTY_RANK[left] - rank) -
+        Math.abs(DIFFICULTY_RANK[right] - rank) ||
+      DIFFICULTY_RANK[right] - DIFFICULTY_RANK[left],
+  )
 }
 
 export function presentQuestion(
@@ -216,8 +219,24 @@ export function resolveAnswerMs(
   return Math.min(clockMs, Math.max(0, adjusted))
 }
 
-export function levelIndexFor(correctCount: number): number {
-  return levelFor(correctCount) - 1
+// Bosses run on their own schedule, decoupled from the difficulty levels:
+// every 10 correct through 50, then every 25.
+export function bossMilestoneFor(correctCount: number): number | null {
+  if (correctCount < 10) return null
+  if (correctCount <= 50) return Math.floor(correctCount / 10) * 10
+  return 50 + Math.floor((correctCount - 50) / 25) * 25
+}
+
+// Runs saved before milestones stored LEVELS indexes (1-4 for the old
+// 10/20/35/50 thresholds). Rewrite them to the nearest new milestones so
+// an in-flight run can't re-fire a boss it already saw.
+const LEGACY_BOSS_LEVEL_MILESTONES = [10, 20, 30, 50]
+export function normalizeBossMilestones(consumed: readonly number[]): number[] {
+  return consumed.map((value) =>
+    value >= 1 && value < 10
+      ? (LEGACY_BOSS_LEVEL_MILESTONES[value - 1] ?? value)
+      : value,
+  )
 }
 
 function selectBossQuestion(
@@ -226,8 +245,8 @@ function selectBossQuestion(
   boss: BossOptions,
   rng: () => number,
 ): ClassicSelection | null {
-  const level = levelIndexFor(correct)
-  if (level === 0 || boss.levelsConsumed.includes(level)) return null
+  const milestone = bossMilestoneFor(correct)
+  if (milestone === null || boss.levelsConsumed.includes(milestone)) return null
   const available = boss.bank.filter((question) => !usedFactIds.has(question.factId))
   const categories = BOSS_CATEGORIES.filter((category) =>
     available.some((question) => question.category === category),
@@ -242,7 +261,7 @@ function selectBossQuestion(
     type: 'boss',
     question,
     choices: shuffle([question.answer, ...question.wrong], rng),
-    level,
+    milestone,
   }
 }
 
@@ -304,6 +323,16 @@ export function selectClassicQuestion(
   return present(question, rng)
 }
 
+// Daily 10 keeps a harder-first fallback: its quotas aim for a hard mix,
+// so a missing slot should be filled from above before dropping below it.
+function harderFirstOrder(difficulty: Difficulty): Difficulty[] {
+  const rank = DIFFICULTY_RANK[difficulty]
+  return [
+    ...DIFFICULTIES.slice(rank),
+    ...DIFFICULTIES.slice(0, rank).reverse(),
+  ]
+}
+
 // The daily challenge ramps hard: one easy warm-up, then medium through expert.
 const DAILY_SIDE_QUOTAS: Record<Side, Difficulty[]> = {
   rules: ['easy', 'medium', 'hard', 'hard', 'expert'],
@@ -325,7 +354,7 @@ export function dailyQuestions(dateUtc: string, bank: Question[]): Question[] {
     )
     const take = (difficulty: Difficulty | null) => {
       const order = difficulty
-        ? fallbackOrder(difficulty)
+        ? harderFirstOrder(difficulty)
         : [...DIFFICULTIES].reverse()
       const pick = order
         .map((candidate) =>

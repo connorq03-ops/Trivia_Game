@@ -16,7 +16,8 @@ import {
   dailyQuestions,
   LEVELS,
   levelFor,
-  levelIndexFor,
+  bossMilestoneFor,
+  normalizeBossMilestones,
   presentQuestion,
   resolveAnswerMs,
   scoreAnswer,
@@ -305,19 +306,19 @@ describe('Classic question selection', () => {
   })
 
   it('levels up on correct answers at the configured thresholds', () => {
-    expect(LEVELS.map(({ minCorrect }) => minCorrect)).toEqual([0, 10, 20, 35, 50])
+    expect(LEVELS.map(({ minCorrect }) => minCorrect)).toEqual([0, 5, 12, 25, 40])
     expect(levelFor(0)).toBe(1)
-    expect(levelFor(9)).toBe(1)
-    expect(levelFor(10)).toBe(2)
-    expect(levelFor(34)).toBe(3)
-    expect(levelFor(35)).toBe(4)
+    expect(levelFor(4)).toBe(1)
+    expect(levelFor(5)).toBe(2)
+    expect(levelFor(24)).toBe(3)
+    expect(levelFor(25)).toBe(4)
     expect(levelFor(500)).toBe(5)
     for (const { weights } of LEVELS) {
       expect(Object.values(weights).reduce((sum, weight) => sum + weight, 0)).toBeCloseTo(1)
     }
   })
 
-  it('ramps from easy-only to mostly expert as correct answers grow', () => {
+  it('ramps from easy-heavy to mostly expert as correct answers grow', () => {
     const bank = makeLargeBank()
     const counts = (correct: number) => {
       const tally: Record<Difficulty, number> = { easy: 0, medium: 0, hard: 0, expert: 0 }
@@ -329,19 +330,21 @@ describe('Classic question selection', () => {
       return tally
     }
 
-    expect(counts(0)).toEqual({ easy: 400, medium: 0, hard: 0, expert: 0 })
-    expect(counts(9).easy).toBe(400)
-    const level2 = counts(15)
-    expect(level2.easy + level2.medium).toBe(400)
-    expect(level2.medium).toBeGreaterThan(100)
-    const level3 = counts(25)
-    expect(level3.medium + level3.hard).toBe(400)
-    const level4 = counts(40)
-    expect(level4.hard + level4.expert).toBe(400)
+    const level1 = counts(0)
+    expect(level1.easy + level1.medium).toBe(400)
+    expect(level1.medium).toBeGreaterThan(60)
+    const level2 = counts(9)
+    expect(level2.expert).toBe(0)
+    expect(level2.medium + level2.hard).toBeGreaterThan(200)
+    const level3 = counts(18)
+    expect(level3.medium + level3.hard).toBeGreaterThan(300)
+    expect(level3.expert).toBe(0)
+    const level4 = counts(30)
+    expect(level4.easy).toBe(0)
     expect(counts(60).expert / 400).toBeGreaterThan(0.6)
   })
 
-  it('falls back to harder tiers before easier ones', () => {
+  it('falls back to the nearest tier, preferring harder on ties', () => {
     const bank = [
       makeQuestion(0, { sport: 'football', side: 'rules', difficulty: 'medium' }),
       makeQuestion(1, { sport: 'football', side: 'rules', difficulty: 'expert' }),
@@ -421,6 +424,20 @@ describe('Daily 10', () => {
     expect(tally).toEqual({ easy: 0, medium: 2, hard: 3, expert: 0 })
   })
 
+  it('prefers expert over extra easy questions when medium/hard run out', () => {
+    const sparse = bank.filter(
+      (question) =>
+        question.difficulty === 'easy' || question.difficulty === 'expert',
+    )
+    const tally = { easy: 0, medium: 0, hard: 0, expert: 0 }
+    dailyQuestions('2099-12-31', sparse).forEach((question) => {
+      tally[question.difficulty] += 1
+    })
+    expect(tally.medium + tally.hard).toBe(0)
+    expect(tally.easy).toBeLessThanOrEqual(2)
+    expect(tally.expert).toBeGreaterThanOrEqual(8)
+  })
+
   it('keeps the same questions when future-gated questions are appended', () => {
     const date = '2099-12-31'
     const extra = bank
@@ -481,18 +498,27 @@ function progressWith(overrides: Partial<RunProgress>): RunProgress {
 describe('Boss questions', () => {
   const bank = makeLargeBank(200)
 
-  it('maps correct counts to level indexes', () => {
-    expect(LEVELS.map(({ minCorrect }) => levelIndexFor(minCorrect))).toEqual([
-      0, 1, 2, 3, 4,
-    ])
-    expect(levelIndexFor(9)).toBe(0)
-    expect(levelIndexFor(19)).toBe(1)
+  it('maps correct counts to boss milestones', () => {
+    expect(bossMilestoneFor(4)).toBeNull()
+    expect(bossMilestoneFor(9)).toBeNull()
+    expect(bossMilestoneFor(10)).toBe(10)
+    expect(bossMilestoneFor(19)).toBe(10)
+    expect(bossMilestoneFor(50)).toBe(50)
+    expect(bossMilestoneFor(60)).toBe(50)
+    expect(bossMilestoneFor(75)).toBe(75)
+    expect(bossMilestoneFor(99)).toBe(75)
   })
 
-  it('triggers once at each level threshold after the first', () => {
+  it('rewrites legacy level indexes in stored boss milestones', () => {
+    expect(normalizeBossMilestones([1, 2, 3, 4])).toEqual([10, 20, 30, 50])
+    expect(normalizeBossMilestones([10, 40, 75])).toEqual([10, 40, 75])
+    expect(normalizeBossMilestones([])).toEqual([])
+  })
+
+  it('triggers once at each boss milestone', () => {
     const consumed: number[] = []
     const triggeredAt: number[] = []
-    for (let correct = 0; correct <= 60; correct += 1) {
+    for (let correct = 0; correct <= 110; correct += 1) {
       const selection = selectClassicQuestion(
         bank,
         new Set(),
@@ -502,17 +528,17 @@ describe('Boss questions', () => {
         bossOptions(consumed),
       )
       if (selection.type === 'boss') {
-        consumed.push(selection.level)
+        consumed.push(selection.milestone)
         triggeredAt.push(correct)
       }
     }
-    expect(triggeredAt).toEqual([10, 20, 35, 50])
-    expect(consumed).toEqual([1, 2, 3, 4])
+    expect(triggeredAt).toEqual([10, 20, 30, 40, 50, 75, 100])
+    expect(consumed).toEqual(triggeredAt)
   })
 
   it('serves a regular question once the level is consumed or bosses are off', () => {
     expect(
-      selectClassicQuestion(bank, new Set(), 10, defaultOptions, seededRandom(1), bossOptions([1]))
+      selectClassicQuestion(bank, new Set(), 10, defaultOptions, seededRandom(1), bossOptions([10]))
         .type,
     ).toBe('question')
     expect(
@@ -520,16 +546,16 @@ describe('Boss questions', () => {
     ).toBe('question')
   })
 
-  it('catches up on a level skipped by a legacy run', () => {
+  it('catches up on a milestone skipped by a legacy run', () => {
     const selection = selectClassicQuestion(
       bank,
       new Set(),
       23,
       defaultOptions,
       seededRandom(2),
-      bossOptions([1]),
+      bossOptions([10]),
     )
-    expect(selection.type === 'boss' && selection.level).toBe(2)
+    expect(selection.type === 'boss' && selection.milestone).toBe(20)
   })
 
   it('draws an unused boss with four shuffled choices from a category that has one', () => {

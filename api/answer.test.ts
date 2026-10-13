@@ -427,7 +427,7 @@ describe('answer handler', () => {
           streak: 10,
           bestStreak: 10,
           score: 3000,
-          bossLevelsConsumed: [1],
+          bossLevelsConsumed: [10],
           ...progress,
         },
       }
@@ -442,7 +442,7 @@ describe('answer handler', () => {
 
       expect(body.next).toEqual({ questionIndex: 10 })
       const { values, progress } = storedUpdate(sql)
-      expect(progress.bossLevelsConsumed).toEqual([1])
+      expect(progress.bossLevelsConsumed).toEqual([10])
       expect(values.some((value) => bossQuestions.some((question) => question.id === value))).toBe(
         true,
       )
@@ -461,11 +461,24 @@ describe('answer handler', () => {
 
     it('does not serve a second boss for a consumed level', async () => {
       vi.stubEnv('BOSS_QUESTIONS', 'true')
-      const sql = mockSql({ rows: [runAtCorrect(10, { bossLevelsConsumed: [1] })] })
+      const sql = mockSql({ rows: [runAtCorrect(10, { bossLevelsConsumed: [10] })] })
       await POST(makeRequest({ ...validBody, questionIndex: 10 }))
 
       const { values, progress } = storedUpdate(sql)
-      expect(progress.bossLevelsConsumed).toEqual([1])
+      expect(progress.bossLevelsConsumed).toEqual([10])
+      expect(values.some((value) => bossQuestions.some((question) => question.id === value))).toBe(
+        false,
+      )
+    })
+
+    it('treats a stored legacy level index as its milestone', async () => {
+      vi.stubEnv('BOSS_QUESTIONS', 'true')
+      // Pre-milestone runs stored LEVELS indexes: 4 meant the 50-correct boss.
+      const sql = mockSql({ rows: [runAtCorrect(49, { bossLevelsConsumed: [4] })] })
+      await POST(makeRequest({ ...validBody, questionIndex: 49 }))
+
+      const { values, progress } = storedUpdate(sql)
+      expect(progress.bossLevelsConsumed).toEqual([50])
       expect(values.some((value) => bossQuestions.some((question) => question.id === value))).toBe(
         false,
       )

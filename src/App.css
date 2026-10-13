@@ -411,27 +411,6 @@
   font-size: 0.65rem;
 }
 
-.difficulty-chip {
-  margin-left: 0.5rem;
-  padding: 0.12rem 0.45rem;
-  border: 1px solid var(--line-strong);
-  border-radius: 999px;
-  color: var(--muted);
-  font-size: 0.62rem;
-  letter-spacing: 0.04em;
-}
-
-.difficulty-chip[data-difficulty='hard'] {
-  border-color: var(--warn);
-  color: var(--warn-ink);
-}
-
-.difficulty-chip[data-difficulty='expert'] {
-  border-color: var(--error);
-  color: var(--error-ink);
-  background: var(--error-bg);
-}
-
 .clock-track {
   height: 0.35rem;
   overflow: hidden;

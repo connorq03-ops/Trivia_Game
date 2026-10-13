@@ -41,7 +41,7 @@ describe('howItWorks', () => {
 
   it('adds the boss rules only when boss questions are on', () => {
     expect(howItWorks({ bosses: true })).toContain(
-      `Each level-up brings a boss question on science, history, art or pop culture: ${BOSS_CLOCK_MS / 1000} seconds, +500 if right, −250 if wrong, no strike.`,
+      `Boss questions on science, history, art or pop culture hit every 10 correct up to 50, then every 25: ${BOSS_CLOCK_MS / 1000} seconds, +500 if right, −250 if wrong, no strike.`,
     )
     expect(howItWorks({ bosses: true })).toHaveLength(howItWorks().length + 2)
   })
@@ -115,14 +115,14 @@ describe('revealCallouts', () => {
 
 describe('level callouts', () => {
   it('announces a new level only in Classic when correct answers cross a threshold', () => {
-    const before = { streak: 3, strikes: 0, correct: 9 }
-    const after = { streak: 4, strikes: 0, correct: 10 }
+    const before = { streak: 3, strikes: 0, correct: 4 }
+    const after = { streak: 4, strikes: 0, correct: 5 }
     expect(revealCallouts(before, after, { levels: true })).toEqual([
       { kind: 'levelUp', text: 'Level 2! Tougher questions ahead.' },
     ])
     expect(revealCallouts(before, after)).toEqual([])
     expect(
-      revealCallouts({ ...before, correct: 10 }, { ...after, correct: 11 }, { levels: true }),
+      revealCallouts({ ...before, correct: 5 }, { ...after, correct: 6 }, { levels: true }),
     ).toEqual([])
   })
 
