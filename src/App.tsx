@@ -780,9 +780,11 @@ function App() {
       </p>
       {screen === 'home' && (
         <section className="home-panel">
-          <p className="eyebrow">Football · Basketball · Baseball trivia</p>
-          <h1>Streaking Sports</h1>
-          <p className="tagline">No rulebook when you’re streaking.</p>
+          <div className="home-hero">
+            <p className="eyebrow">Football · Basketball · Baseball trivia</p>
+            <h1>Streaking Sports</h1>
+            <p className="tagline">No rulebook when you’re streaking.</p>
+          </div>
           {startError && (
             <p className="connection-note" role="alert">
               Connection problem. Check your connection and try again.
@@ -1301,6 +1303,7 @@ function App() {
 
       <footer className="app-footer">
         <span>BUILT FOR THE LOVE OF THE GAME</span>
+        <span className="app-credit">APP BY CONNORCOMET</span>
         {apiStatus === 'error' && (
           <span className="api-status api-status--error" role="status">
             Can’t reach the server
