@@ -128,6 +128,23 @@ describe('App keyboard and screen-reader play', () => {
     )
   })
 
+  it('shows the streak ring in Classic but not in Daily 10', async () => {
+    mockApi([])
+    await startClassic()
+    expect(screen.getByRole('img', { name: /streak, strike back at/ })).toBeTruthy()
+    cleanup()
+
+    render(<App />)
+    fireEvent.click(screen.getByRole('button', { name: /Play Daily 10/ }))
+    await screen.findByRole(
+      'heading',
+      { level: 2, name: /Question 1:\s*Prompt 0\?/ },
+      { timeout: 3000 },
+    )
+    expect(screen.getByText('0 missed')).toBeTruthy()
+    expect(screen.queryByRole('img', { name: /streak/ })).toBeNull()
+  })
+
   it('answers with number keys and ignores modified keys', async () => {
     const { answerBodies } = mockApi([{ correct: true, strikes: 0, streak: 1 }])
     await startClassic()
