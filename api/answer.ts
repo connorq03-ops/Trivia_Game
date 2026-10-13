@@ -363,7 +363,7 @@ export async function POST(request: Request): Promise<Response> {
         ${outcome.answerMs},
         ${outcome.correct},
         ${input.choice},
-        ${outcome.progress.results.at(-1)}
+        ${outcome.progress.dailyBonusResult ?? outcome.progress.results.at(-1)}
       from updated
       returning run_id
     `) as { run_id: string }[]

@@ -531,7 +531,7 @@ describe('answer handler', () => {
         {},
         { mode: 'daily', daily_date: '2099-12-31', question_index: 10 },
       )
-      mockSql({ rows: [run] })
+      const sql = mockSql({ rows: [run] })
       const body = await (
         await POST(
           makeRequest({
@@ -546,6 +546,22 @@ describe('answer handler', () => {
       expect(body.points).toBe(0)
       expect(body.progress.score).toBe(3000)
       expect(body.summary.reason).toBe('complete')
+      expect(sql.mock.calls[1].slice(1)).toContain('miss')
+    })
+
+    it('logs a daily bonus timeout as timeout, not the tenth hit', async () => {
+      const run = bossRun(
+        {},
+        { mode: 'daily', daily_date: '2099-12-31', question_index: 10, server_ms: '3000000000' },
+      )
+      const sql = mockSql({ rows: [run] })
+      const body = await (
+        await POST(makeRequest({ ...validBody, questionIndex: 10, choice: null }))
+      ).json()
+
+      expect(body.correct).toBe(false)
+      expect(body.points).toBe(0)
+      expect(sql.mock.calls[1].slice(1)).toContain('timeout')
     })
 
     it('takes 250 for a boss miss without a strike or review entry', async () => {
