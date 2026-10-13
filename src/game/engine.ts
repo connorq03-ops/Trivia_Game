@@ -83,6 +83,8 @@ export type RunProgress = {
   bossLevelsConsumed: number[] // LEVELS indexes that already had their boss
   bossMisses: number
   bossMissed: Question[] // boss misses; kept out of `missed` so correctCount stays right
+  // Frozen at run creation so a mid-day deploy never reshuffles a live run.
+  dailyQuestionIds?: string[]
 }
 
 export type ClassicSelection =
@@ -411,6 +413,7 @@ export function answerQuestion(
     bossLevelsConsumed: progress.bossLevelsConsumed,
     bossMisses: progress.bossMisses,
     bossMissed: progress.bossMissed,
+    dailyQuestionIds: progress.dailyQuestionIds,
   }
 
   return {
