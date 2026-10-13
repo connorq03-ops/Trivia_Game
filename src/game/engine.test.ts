@@ -408,9 +408,12 @@ describe('Daily 10', () => {
       (question) => question.side === 'players',
     )
     expect(players).toHaveLength(5)
-    expect(
-      players.every((question) => question.difficulty !== 'easy'),
-    ).toBe(true)
+    // The two unfilled expert slots fall back to hard before medium.
+    const tally = { easy: 0, medium: 0, hard: 0, expert: 0 }
+    players.forEach((question) => {
+      tally[question.difficulty] += 1
+    })
+    expect(tally).toEqual({ easy: 0, medium: 2, hard: 3, expert: 0 })
   })
 
   it('keeps the same questions when future-gated questions are appended', () => {
