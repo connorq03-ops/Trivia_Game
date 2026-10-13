@@ -1174,5 +1174,2441 @@
       "season": 1973,
       "player": "Bert Blyleven"
     }
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "Country",
+    "prompt": "Adrián Beltré was born in which country?",
+    "answer": "Dominican Republic",
+    "wrong": [
+      "Venezuela",
+      "Cuba",
+      "Puerto Rico"
+    ],
+    "teach": "Beltré was born in Santo Domingo.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2004,
+      "player": "Adrián Beltré"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Adri%C3%A1n_Beltr%C3%A9",
+      "ref": "Wikipedia: Adrián Beltré page (saved API wikitext and prose), teach source: Adrián Beltré, checked 2026-10-13"
+    },
+    "id": "p-mlb-adrian-beltre-country",
+    "factId": "mlb-adrian-beltre-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Andruw Jones was born in which country?",
+    "answer": "Curaçao",
+    "wrong": [
+      "Cuba",
+      "Venezuela",
+      "Dominican Republic"
+    ],
+    "teach": "Jones was born in Willemstad.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2005,
+      "player": "Andruw Jones"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Andruw_Jones",
+      "ref": "Wikipedia: Andruw Jones page (saved API wikitext and prose), teach source: Andruw Jones, checked 2026-10-13"
+    },
+    "id": "p-mlb-andruw-jones-country",
+    "factId": "mlb-andruw-jones-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Country",
+    "prompt": "Aroldis Chapman was born in which country?",
+    "answer": "Cuba",
+    "wrong": [
+      "Dominican Republic",
+      "Venezuela",
+      "Puerto Rico"
+    ],
+    "teach": "Chapman was born in Holguín.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2012,
+      "player": "Aroldis Chapman"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Aroldis_Chapman",
+      "ref": "Wikipedia: Aroldis Chapman page (saved API wikitext and prose), teach source: Aroldis Chapman, checked 2026-10-13"
+    },
+    "id": "p-mlb-aroldis-chapman-country",
+    "factId": "mlb-aroldis-chapman-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "José Fernández was born in which country?",
+    "answer": "Cuba",
+    "wrong": [
+      "Dominican Republic",
+      "Venezuela",
+      "Puerto Rico"
+    ],
+    "teach": "Fernández was born in Santa Clara.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2013,
+      "player": "José Fernández"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Fern%C3%A1ndez_%28right-handed_pitcher%29",
+      "ref": "Wikipedia: José Fernández (right-handed pitcher) page (saved API wikitext and prose), teach source: José Fernández (right-handed pitcher), checked 2026-10-13"
+    },
+    "id": "p-mlb-jose-fernandez-country",
+    "factId": "mlb-jose-fernandez-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "José Ramírez was born in which country?",
+    "answer": "Dominican Republic",
+    "wrong": [
+      "Venezuela",
+      "Cuba",
+      "Puerto Rico"
+    ],
+    "teach": "Ramírez was born in Baní.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2016,
+      "player": "José Ramírez"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Ram%C3%ADrez_%28third_baseman%29",
+      "ref": "Wikipedia: José Ramírez (third baseman) page (saved API wikitext and prose), teach source: José Ramírez (third baseman), checked 2026-10-13"
+    },
+    "id": "p-mlb-jose-ramirez-country",
+    "factId": "mlb-jose-ramirez-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Country",
+    "prompt": "Fernando Tatís Jr. was born in which country?",
+    "answer": "Dominican Republic",
+    "wrong": [
+      "Venezuela",
+      "Cuba",
+      "Puerto Rico"
+    ],
+    "teach": "Tatís was born in San Pedro de Macorís.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2021,
+      "player": "Fernando Tatís Jr."
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Fernando_Tat%C3%ADs_Jr.",
+      "ref": "Wikipedia: Fernando Tatís Jr. page (saved API wikitext and prose), teach source: Fernando Tatís Jr., checked 2026-10-13"
+    },
+    "id": "p-mlb-fernando-tatis-jr-country",
+    "factId": "mlb-fernando-tatis-jr-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Francisco Lindor was born in which country?",
+    "answer": "Puerto Rico",
+    "wrong": [
+      "Cuba",
+      "Venezuela",
+      "Dominican Republic"
+    ],
+    "teach": "Lindor was born in Caguas.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2016,
+      "player": "Francisco Lindor"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Francisco_Lindor",
+      "ref": "Wikipedia: Francisco Lindor page (saved API wikitext and prose), teach source: Francisco Lindor, checked 2026-10-13"
+    },
+    "id": "p-mlb-francisco-lindor-country",
+    "factId": "mlb-francisco-lindor-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Félix Hernández was born in which country?",
+    "answer": "Venezuela",
+    "wrong": [
+      "Cuba",
+      "Dominican Republic",
+      "Puerto Rico"
+    ],
+    "teach": "Hernández was born in Valencia.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2010,
+      "player": "Félix Hernández"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/F%C3%A9lix_Hern%C3%A1ndez",
+      "ref": "Wikipedia: Félix Hernández page (saved API wikitext and prose), teach source: Félix Hernández, checked 2026-10-13"
+    },
+    "id": "p-mlb-felix-hernandez-country",
+    "factId": "mlb-felix-hernandez-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Robinson Canó was born in which country?",
+    "answer": "Dominican Republic",
+    "wrong": [
+      "Venezuela",
+      "Cuba",
+      "Puerto Rico"
+    ],
+    "teach": "Canó was born in San Pedro de Macorís.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2009,
+      "player": "Robinson Canó"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Robinson_Can%C3%B3",
+      "ref": "Wikipedia: Robinson Canó page (saved API wikitext and prose), teach source: Robinson Canó, checked 2026-10-13"
+    },
+    "id": "p-mlb-robinson-cano-country",
+    "factId": "mlb-robinson-cano-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Sammy Sosa was born in which country?",
+    "answer": "Dominican Republic",
+    "wrong": [
+      "Venezuela",
+      "Cuba",
+      "Puerto Rico"
+    ],
+    "teach": "Sosa was born in San Pedro de Macorís.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1998,
+      "player": "Sammy Sosa"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Sammy_Sosa",
+      "ref": "Wikipedia: Sammy Sosa page (saved API wikitext and prose), teach source: Sammy Sosa, checked 2026-10-13"
+    },
+    "id": "p-mlb-sammy-sosa-country",
+    "factId": "mlb-sammy-sosa-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Jorge Posada was born in which country?",
+    "answer": "Puerto Rico",
+    "wrong": [
+      "Cuba",
+      "Venezuela",
+      "Dominican Republic"
+    ],
+    "teach": "Posada was born in Santurce.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2000,
+      "player": "Jorge Posada"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jorge_Posada",
+      "ref": "Wikipedia: Jorge Posada page (saved API wikitext and prose), teach source: Jorge Posada, checked 2026-10-13"
+    },
+    "id": "p-mlb-jorge-posada-country",
+    "factId": "mlb-jorge-posada-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Carlos Beltrán was born in which country?",
+    "answer": "Puerto Rico",
+    "wrong": [
+      "Cuba",
+      "Venezuela",
+      "Dominican Republic"
+    ],
+    "teach": "Beltrán was born in Manatí.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2004,
+      "player": "Carlos Beltrán"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Carlos_Beltr%C3%A1n",
+      "ref": "Wikipedia: Carlos Beltrán page (saved API wikitext and prose), teach source: Carlos Beltrán, checked 2026-10-13"
+    },
+    "id": "p-mlb-carlos-beltran-country",
+    "factId": "mlb-carlos-beltran-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Orlando Cepeda was born in which country?",
+    "answer": "Puerto Rico",
+    "wrong": [
+      "Cuba",
+      "Venezuela",
+      "Dominican Republic"
+    ],
+    "teach": "Cepeda was born in Ponce.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1967,
+      "player": "Orlando Cepeda"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Orlando_Cepeda",
+      "ref": "Wikipedia: Orlando Cepeda page (saved API wikitext and prose), teach source: Orlando Cepeda, checked 2026-10-13"
+    },
+    "id": "p-mlb-orlando-cepeda-country",
+    "factId": "mlb-orlando-cepeda-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Tony Pérez was born in which country?",
+    "answer": "Cuba",
+    "wrong": [
+      "Dominican Republic",
+      "Venezuela",
+      "Puerto Rico"
+    ],
+    "teach": "Pérez was born in Ciego de Ávila.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1970,
+      "player": "Tony Pérez"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Tony_P%C3%A9rez",
+      "ref": "Wikipedia: Tony Pérez page (saved API wikitext and prose), teach source: Tony Pérez, checked 2026-10-13"
+    },
+    "id": "p-mlb-tony-perez-country",
+    "factId": "mlb-tony-perez-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Luis Aparicio was born in which country?",
+    "answer": "Venezuela",
+    "wrong": [
+      "Cuba",
+      "Dominican Republic",
+      "Puerto Rico"
+    ],
+    "teach": "Aparicio was born in Maracaibo.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1956,
+      "player": "Luis Aparicio"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Luis_Aparicio",
+      "ref": "Wikipedia: Luis Aparicio page (saved API wikitext and prose), teach source: Luis Aparicio, checked 2026-10-13"
+    },
+    "id": "p-mlb-luis-aparicio-country",
+    "factId": "mlb-luis-aparicio-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Country",
+    "prompt": "Didi Gregorius was born in which country?",
+    "answer": "Netherlands",
+    "wrong": [
+      "Cuba",
+      "Canada",
+      "Dominican Republic"
+    ],
+    "teach": "Gregorius was born in Amsterdam.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2018,
+      "player": "Didi Gregorius"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Didi_Gregorius",
+      "ref": "Wikipedia: Didi Gregorius page (saved API wikitext and prose), teach source: Didi Gregorius, checked 2026-10-13"
+    },
+    "id": "p-mlb-didi-gregorius-country",
+    "factId": "mlb-didi-gregorius-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Yasiel Puig was born in which country?",
+    "answer": "Cuba",
+    "wrong": [
+      "Dominican Republic",
+      "Venezuela",
+      "Puerto Rico"
+    ],
+    "teach": "Puig was born in Cienfuegos.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2013,
+      "player": "Yasiel Puig"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Yasiel_Puig",
+      "ref": "Wikipedia: Yasiel Puig page (saved API wikitext and prose), teach source: Yasiel Puig, checked 2026-10-13"
+    },
+    "id": "p-mlb-yasiel-puig-country",
+    "factId": "mlb-yasiel-puig-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Vladimir Guerrero was born in which country?",
+    "answer": "Dominican Republic",
+    "wrong": [
+      "Venezuela",
+      "Cuba",
+      "Puerto Rico"
+    ],
+    "teach": "Guerrero was born in Nizao.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2004,
+      "player": "Vladimir Guerrero"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Vladimir_Guerrero",
+      "ref": "Wikipedia: Vladimir Guerrero page (saved API wikitext and prose), teach source: Vladimir Guerrero, checked 2026-10-13"
+    },
+    "id": "p-mlb-vladimir-guerrero-country",
+    "factId": "mlb-vladimir-guerrero-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "Country",
+    "prompt": "Juan Soto was born in which country?",
+    "answer": "Dominican Republic",
+    "wrong": [
+      "Venezuela",
+      "Cuba",
+      "Puerto Rico"
+    ],
+    "teach": "Soto was born in Santo Domingo.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2019,
+      "player": "Juan Soto"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Juan_Soto",
+      "ref": "Wikipedia: Juan Soto page (saved API wikitext and prose), teach source: Juan Soto, checked 2026-10-13"
+    },
+    "id": "p-mlb-juan-soto-country",
+    "factId": "mlb-juan-soto-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Country",
+    "prompt": "Ronald Acuña Jr. was born in which country?",
+    "answer": "Venezuela",
+    "wrong": [
+      "Cuba",
+      "Dominican Republic",
+      "Puerto Rico"
+    ],
+    "teach": "Acuña was born in La Guaira.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2019,
+      "player": "Ronald Acuña Jr."
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Ronald_Acu%C3%B1a_Jr.",
+      "ref": "Wikipedia: Ronald Acuña Jr. page (saved API wikitext and prose), teach source: Ronald Acuña Jr., checked 2026-10-13"
+    },
+    "id": "p-mlb-ronald-acuna-jr-country",
+    "factId": "mlb-ronald-acuna-jr-country"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "Aroldis Chapman's jersey number in 2022?",
+    "answer": "54",
+    "wrong": [
+      "22",
+      "31",
+      "50"
+    ],
+    "teach": "The New York Yankees finished 99–63 in 2022.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2022,
+      "player": "Aroldis Chapman"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2022_New_York_Yankees_season",
+      "ref": "Wikipedia: 2022 New York Yankees season page (saved API wikitext and prose), teach source: 2022 New York Yankees season, checked 2026-10-13"
+    },
+    "id": "p-mlb-aroldis-chapman-jersey",
+    "factId": "mlb-aroldis-chapman-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Jersey number",
+    "prompt": "Bo Bichette's jersey number in 2023?",
+    "answer": "11",
+    "wrong": [
+      "10",
+      "7",
+      "15"
+    ],
+    "teach": "The Toronto Blue Jays finished 89–73 in 2023.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2023,
+      "player": "Bo Bichette"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2023_Toronto_Blue_Jays_season",
+      "ref": "Wikipedia: 2023 Toronto Blue Jays season page (saved API wikitext and prose), teach source: 2023 Toronto Blue Jays season, checked 2026-10-13"
+    },
+    "id": "p-mlb-bo-bichette-jersey",
+    "factId": "mlb-bo-bichette-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "Francisco Lindor's jersey number in 2023?",
+    "answer": "12",
+    "wrong": [
+      "1",
+      "7",
+      "13"
+    ],
+    "teach": "The New York Mets finished 75–87 in 2023.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2023,
+      "player": "Francisco Lindor"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2023_New_York_Mets_season",
+      "ref": "Wikipedia: 2023 New York Mets season page (saved API wikitext and prose), teach source: 2023 New York Mets season, checked 2026-10-13"
+    },
+    "id": "p-mlb-francisco-lindor-jersey",
+    "factId": "mlb-francisco-lindor-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "Gerrit Cole's jersey number in 2024?",
+    "answer": "45",
+    "wrong": [
+      "22",
+      "31",
+      "99"
+    ],
+    "teach": "The New York Yankees finished 94–68 in 2024.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2024,
+      "player": "Gerrit Cole"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2024_New_York_Yankees_season",
+      "ref": "Wikipedia: 2024 New York Yankees season page (saved API wikitext and prose), teach source: 2024 New York Yankees season, checked 2026-10-13"
+    },
+    "id": "p-mlb-gerrit-cole-jersey",
+    "factId": "mlb-gerrit-cole-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "Paul Goldschmidt's jersey number in 2023?",
+    "answer": "46",
+    "wrong": [
+      "44",
+      "25",
+      "31"
+    ],
+    "teach": "The St. Louis Cardinals finished 71–91 in 2023.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2023,
+      "player": "Paul Goldschmidt"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2023_St._Louis_Cardinals_season",
+      "ref": "Wikipedia: 2023 St. Louis Cardinals season page (saved API wikitext and prose), teach source: 2023 St. Louis Cardinals season, checked 2026-10-13"
+    },
+    "id": "p-mlb-paul-goldschmidt-jersey",
+    "factId": "mlb-paul-goldschmidt-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Jersey number",
+    "prompt": "Max Scherzer's jersey number in 2022?",
+    "answer": "21",
+    "wrong": [
+      "22",
+      "45",
+      "48"
+    ],
+    "teach": "The New York Mets finished 101–61 in 2022.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2022,
+      "player": "Max Scherzer"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2022_New_York_Mets_season",
+      "ref": "Wikipedia: 2022 New York Mets season page (saved API wikitext and prose), teach source: 2022 New York Mets season, checked 2026-10-13"
+    },
+    "id": "p-mlb-max-scherzer-jersey",
+    "factId": "mlb-max-scherzer-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "Manny Machado's jersey number in 2023?",
+    "answer": "13",
+    "wrong": [
+      "7",
+      "12",
+      "22"
+    ],
+    "teach": "The San Diego Padres finished 82–80 in 2023.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2023,
+      "player": "Manny Machado"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2023_San_Diego_Padres_season",
+      "ref": "Wikipedia: 2023 San Diego Padres season page (saved API wikitext and prose), teach source: 2023 San Diego Padres season, checked 2026-10-13"
+    },
+    "id": "p-mlb-manny-machado-jersey",
+    "factId": "mlb-manny-machado-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "Mookie Betts's jersey number in 2023?",
+    "answer": "50",
+    "wrong": [
+      "5",
+      "12",
+      "99"
+    ],
+    "teach": "The Los Angeles Dodgers finished 100–62 in 2023.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2023,
+      "player": "Mookie Betts"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2023_Los_Angeles_Dodgers_season",
+      "ref": "Wikipedia: 2023 Los Angeles Dodgers season page (saved API wikitext and prose), teach source: 2023 Los Angeles Dodgers season, checked 2026-10-13"
+    },
+    "id": "p-mlb-mookie-betts-jersey",
+    "factId": "mlb-mookie-betts-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "Nolan Arenado's jersey number in 2023?",
+    "answer": "28",
+    "wrong": [
+      "5",
+      "13",
+      "31"
+    ],
+    "teach": "The St. Louis Cardinals finished 71–91 in 2023.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2023,
+      "player": "Nolan Arenado"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2023_St._Louis_Cardinals_season",
+      "ref": "Wikipedia: 2023 St. Louis Cardinals season page (saved API wikitext and prose), teach source: 2023 St. Louis Cardinals season, checked 2026-10-13"
+    },
+    "id": "p-mlb-nolan-arenado-jersey",
+    "factId": "mlb-nolan-arenado-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "Kris Bryant's jersey number in 2022?",
+    "answer": "23",
+    "wrong": [
+      "17",
+      "24",
+      "44"
+    ],
+    "teach": "The Colorado Rockies finished 68–94 in 2022.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2022,
+      "player": "Kris Bryant"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2022_Colorado_Rockies_season",
+      "ref": "Wikipedia: 2022 Colorado Rockies season page (saved API wikitext and prose), teach source: 2022 Colorado Rockies season, checked 2026-10-13"
+    },
+    "id": "p-mlb-kris-bryant-jersey",
+    "factId": "mlb-kris-bryant-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "Juan Soto's jersey number in 2024?",
+    "answer": "22",
+    "wrong": [
+      "7",
+      "13",
+      "44"
+    ],
+    "teach": "The New York Yankees finished 94–68 in 2024.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2024,
+      "player": "Juan Soto"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2024_New_York_Yankees_season",
+      "ref": "Wikipedia: 2024 New York Yankees season page (saved API wikitext and prose), teach source: 2024 New York Yankees season, checked 2026-10-13"
+    },
+    "id": "p-mlb-juan-soto-jersey",
+    "factId": "mlb-juan-soto-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "Ronald Acuña Jr.'s jersey number in 2023?",
+    "answer": "13",
+    "wrong": [
+      "1",
+      "12",
+      "22"
+    ],
+    "teach": "The Atlanta Braves finished 104–58 in 2023.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2023,
+      "player": "Ronald Acuña Jr."
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2023_Atlanta_Braves_season",
+      "ref": "Wikipedia: 2023 Atlanta Braves season page (saved API wikitext and prose), teach source: 2023 Atlanta Braves season, checked 2026-10-13"
+    },
+    "id": "p-mlb-ronald-acuna-jr-jersey",
+    "factId": "mlb-ronald-acuna-jr-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "Fernando Tatís Jr.'s jersey number in 2023?",
+    "answer": "23",
+    "wrong": [
+      "7",
+      "11",
+      "13"
+    ],
+    "teach": "The San Diego Padres finished 82–80 in 2023.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2023,
+      "player": "Fernando Tatís Jr."
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2023_San_Diego_Padres_season",
+      "ref": "Wikipedia: 2023 San Diego Padres season page (saved API wikitext and prose), teach source: 2023 San Diego Padres season, checked 2026-10-13"
+    },
+    "id": "p-mlb-fernando-tatis-jr-jersey",
+    "factId": "mlb-fernando-tatis-jr-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "José Ramírez's jersey number in 2023?",
+    "answer": "11",
+    "wrong": [
+      "7",
+      "12",
+      "13"
+    ],
+    "teach": "The Cleveland Guardians finished 76–86 in 2023.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2023,
+      "player": "José Ramírez"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2023_Cleveland_Guardians_season",
+      "ref": "Wikipedia: 2023 Cleveland Guardians season page (saved API wikitext and prose), teach source: 2023 Cleveland Guardians season, checked 2026-10-13"
+    },
+    "id": "p-mlb-jose-ramirez-jersey",
+    "factId": "mlb-jose-ramirez-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Jersey number",
+    "prompt": "Robinson Canó's jersey number in 2019?",
+    "answer": "24",
+    "wrong": [
+      "12",
+      "31",
+      "10"
+    ],
+    "teach": "The New York Mets finished 86–76 in 2019.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2019,
+      "player": "Robinson Canó"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2019_New_York_Mets_season",
+      "ref": "Wikipedia: 2019 New York Mets season page (saved API wikitext and prose), teach source: 2019 New York Mets season, checked 2026-10-13"
+    },
+    "id": "p-mlb-robinson-cano-jersey",
+    "factId": "mlb-robinson-cano-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Jersey number",
+    "prompt": "Yasiel Puig's jersey number in 2018?",
+    "answer": "66",
+    "wrong": [
+      "13",
+      "22",
+      "44"
+    ],
+    "teach": "The Los Angeles Dodgers finished 92–71 in 2018.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2018,
+      "player": "Yasiel Puig"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2018_Los_Angeles_Dodgers_season",
+      "ref": "Wikipedia: 2018 Los Angeles Dodgers season page (saved API wikitext and prose), teach source: 2018 Los Angeles Dodgers season, checked 2026-10-13"
+    },
+    "id": "p-mlb-yasiel-puig-jersey",
+    "factId": "mlb-yasiel-puig-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Ken Griffey Jr.?",
+    "answer": "Mariners",
+    "wrong": [
+      "Reds",
+      "Yankees",
+      "Mets"
+    ],
+    "teach": "Born in Donora, Griffey went first overall to the Mariners in 1987.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1995,
+      "player": "Ken Griffey Jr."
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Ken_Griffey_Jr.",
+      "ref": "Wikipedia: Ken Griffey Jr. page (saved API wikitext and prose), teach source: Ken Griffey Jr., checked 2026-10-13"
+    },
+    "id": "p-mlb-ken-griffey-jr-draft",
+    "factId": "mlb-ken-griffey-jr-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Chipper Jones?",
+    "answer": "Braves",
+    "wrong": [
+      "Mets",
+      "Cubs",
+      "Reds"
+    ],
+    "teach": "Born in DeLand, Jones went first overall to the Braves in 1990.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1999,
+      "player": "Chipper Jones"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Chipper_Jones",
+      "ref": "Wikipedia: Chipper Jones page (saved API wikitext and prose), teach source: Chipper Jones, checked 2026-10-13"
+    },
+    "id": "p-mlb-chipper-jones-draft",
+    "factId": "mlb-chipper-jones-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Cal Ripken Jr.?",
+    "answer": "Orioles",
+    "wrong": [
+      "Yankees",
+      "Red Sox",
+      "Tigers"
+    ],
+    "teach": "Born in Havre de Grace, Ripken went in the second round to the Orioles in 1978.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1983,
+      "player": "Cal Ripken Jr."
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Cal_Ripken_Jr.",
+      "ref": "Wikipedia: Cal Ripken Jr. page (saved API wikitext and prose), teach source: Cal Ripken Jr., checked 2026-10-13"
+    },
+    "id": "p-mlb-cal-ripken-jr-draft",
+    "factId": "mlb-cal-ripken-jr-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Nolan Ryan?",
+    "answer": "Mets",
+    "wrong": [
+      "Astros",
+      "Rangers",
+      "Angels"
+    ],
+    "teach": "Born in Refugio, Ryan went 295th overall to the Mets in 1965.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1969,
+      "player": "Nolan Ryan"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Nolan_Ryan",
+      "ref": "Wikipedia: Nolan Ryan page (saved API wikitext and prose), teach source: Nolan Ryan, checked 2026-10-13"
+    },
+    "id": "p-mlb-nolan-ryan-draft",
+    "factId": "mlb-nolan-ryan-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Greg Maddux?",
+    "answer": "Cubs",
+    "wrong": [
+      "Braves",
+      "Dodgers",
+      "Mets"
+    ],
+    "teach": "Born in San Angelo, Maddux went in the second round to the Cubs in 1984.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1995,
+      "player": "Greg Maddux"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Greg_Maddux",
+      "ref": "Wikipedia: Greg Maddux page (saved API wikitext and prose), teach source: Greg Maddux, checked 2026-10-13"
+    },
+    "id": "p-mlb-greg-maddux-draft",
+    "factId": "mlb-greg-maddux-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted John Smoltz?",
+    "answer": "Tigers",
+    "wrong": [
+      "Braves",
+      "Red Sox",
+      "Blue Jays"
+    ],
+    "teach": "Born in Warren, Smoltz went in the 22nd round to the Tigers in 1985.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1996,
+      "player": "John Smoltz"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/John_Smoltz",
+      "ref": "Wikipedia: John Smoltz page (saved API wikitext and prose), teach source: John Smoltz, checked 2026-10-13"
+    },
+    "id": "p-mlb-john-smoltz-draft",
+    "factId": "mlb-john-smoltz-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Joe Mauer?",
+    "answer": "Twins",
+    "wrong": [
+      "Cubs",
+      "Cardinals",
+      "White Sox"
+    ],
+    "teach": "Born in Saint Paul, Mauer went first overall to the Twins in 2001.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2009,
+      "player": "Joe Mauer"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Joe_Mauer",
+      "ref": "Wikipedia: Joe Mauer page (saved API wikitext and prose), teach source: Joe Mauer, checked 2026-10-13"
+    },
+    "id": "p-mlb-joe-mauer-draft",
+    "factId": "mlb-joe-mauer-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Justin Morneau?",
+    "answer": "Twins",
+    "wrong": [
+      "Blue Jays",
+      "Red Sox",
+      "Mariners"
+    ],
+    "teach": "Born in New Westminster, Morneau went 89th overall to the Twins in 1999.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2006,
+      "player": "Justin Morneau"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Justin_Morneau",
+      "ref": "Wikipedia: Justin Morneau page (saved API wikitext and prose), teach source: Justin Morneau, checked 2026-10-13"
+    },
+    "id": "p-mlb-justin-morneau-draft",
+    "factId": "mlb-justin-morneau-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Jacob deGrom?",
+    "answer": "Mets",
+    "wrong": [
+      "Marlins",
+      "Rays",
+      "Braves"
+    ],
+    "teach": "Born in DeLand, deGrom went in the ninth round to the Mets in 2010.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2018,
+      "player": "Jacob deGrom"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jacob_deGrom",
+      "ref": "Wikipedia: Jacob deGrom page (saved API wikitext and prose), teach source: Jacob deGrom, checked 2026-10-13"
+    },
+    "id": "p-mlb-jacob-degrom-draft",
+    "factId": "mlb-jacob-degrom-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Jason Heyward?",
+    "answer": "Braves",
+    "wrong": [
+      "Cubs",
+      "Cardinals",
+      "Dodgers"
+    ],
+    "teach": "Born in Ridgewood, Heyward went in the first round to the Braves in 2007.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2010,
+      "player": "Jason Heyward"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jason_Heyward",
+      "ref": "Wikipedia: Jason Heyward page (saved API wikitext and prose), teach source: Jason Heyward, checked 2026-10-13"
+    },
+    "id": "p-mlb-jason-heyward-draft",
+    "factId": "mlb-jason-heyward-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Dustin Pedroia?",
+    "answer": "Red Sox",
+    "wrong": [
+      "Yankees",
+      "Orioles",
+      "Athletics"
+    ],
+    "teach": "Born in Woodland, Pedroia went 65th overall to the Red Sox in 2004.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2008,
+      "player": "Dustin Pedroia"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Dustin_Pedroia",
+      "ref": "Wikipedia: Dustin Pedroia page (saved API wikitext and prose), teach source: Dustin Pedroia, checked 2026-10-13"
+    },
+    "id": "p-mlb-dustin-pedroia-draft",
+    "factId": "mlb-dustin-pedroia-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Stephen Strasburg?",
+    "answer": "Nationals",
+    "wrong": [
+      "Padres",
+      "Dodgers",
+      "Angels"
+    ],
+    "teach": "Born in San Diego, Strasburg went first overall to the Nationals in 2009.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2019,
+      "player": "Stephen Strasburg"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Stephen_Strasburg",
+      "ref": "Wikipedia: Stephen Strasburg page (saved API wikitext and prose), teach source: Stephen Strasburg, checked 2026-10-13"
+    },
+    "id": "p-mlb-stephen-strasburg-draft",
+    "factId": "mlb-stephen-strasburg-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Mookie Betts?",
+    "answer": "Red Sox",
+    "wrong": [
+      "Dodgers",
+      "Yankees",
+      "Rays"
+    ],
+    "teach": "Born in Nashville, Betts went 172nd overall to the Red Sox in 2011.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2018,
+      "player": "Mookie Betts"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Mookie_Betts",
+      "ref": "Wikipedia: Mookie Betts page (saved API wikitext and prose), teach source: Mookie Betts, checked 2026-10-13"
+    },
+    "id": "p-mlb-mookie-betts-draft",
+    "factId": "mlb-mookie-betts-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Clayton Kershaw?",
+    "answer": "Dodgers",
+    "wrong": [
+      "Rangers",
+      "Astros",
+      "Angels"
+    ],
+    "teach": "Born in Dallas, Kershaw went seventh overall to the Dodgers in 2006.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2014,
+      "player": "Clayton Kershaw"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Clayton_Kershaw",
+      "ref": "Wikipedia: Clayton Kershaw page (saved API wikitext and prose), teach source: Clayton Kershaw, checked 2026-10-13"
+    },
+    "id": "p-mlb-clayton-kershaw-draft",
+    "factId": "mlb-clayton-kershaw-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Nolan Arenado?",
+    "answer": "Rockies",
+    "wrong": [
+      "Dodgers",
+      "Giants",
+      "Diamondbacks"
+    ],
+    "teach": "Born in Newport Beach, Arenado went in the second round to the Rockies in 2009.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2017,
+      "player": "Nolan Arenado"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Nolan_Arenado",
+      "ref": "Wikipedia: Nolan Arenado page (saved API wikitext and prose), teach source: Nolan Arenado, checked 2026-10-13"
+    },
+    "id": "p-mlb-nolan-arenado-draft",
+    "factId": "mlb-nolan-arenado-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Bo Bichette?",
+    "answer": "Blue Jays",
+    "wrong": [
+      "Marlins",
+      "Rays",
+      "Mets"
+    ],
+    "teach": "Born in Orlando, Bichette went in the second round to the Blue Jays in 2016.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2023,
+      "player": "Bo Bichette"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Bo_Bichette",
+      "ref": "Wikipedia: Bo Bichette page (saved API wikitext and prose), teach source: Bo Bichette, checked 2026-10-13"
+    },
+    "id": "p-mlb-bo-bichette-draft",
+    "factId": "mlb-bo-bichette-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Mike Piazza?",
+    "answer": "Dodgers",
+    "wrong": [
+      "Mets",
+      "Phillies",
+      "Reds"
+    ],
+    "teach": "Born in Norristown, Piazza went in the 62nd round to the Dodgers in 1988.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1997,
+      "player": "Mike Piazza"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Mike_Piazza",
+      "ref": "Wikipedia: Mike Piazza page (saved API wikitext and prose), teach source: Mike Piazza, checked 2026-10-13"
+    },
+    "id": "p-mlb-mike-piazza-draft",
+    "factId": "mlb-mike-piazza-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Alma mater",
+    "prompt": "Where did Frank Thomas play college ball?",
+    "answer": "Auburn",
+    "wrong": [
+      "Alabama",
+      "Florida State",
+      "Tennessee"
+    ],
+    "teach": "Thomas played tight end for Auburn before switching to baseball full-time.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1993,
+      "player": "Frank Thomas"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Frank_Thomas",
+      "ref": "Wikipedia: Frank Thomas page (saved API wikitext and prose), teach source: Frank Thomas, checked 2026-10-13"
+    },
+    "id": "p-mlb-frank-thomas-college",
+    "factId": "mlb-frank-thomas-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did Tony Gwynn play college ball?",
+    "answer": "San Diego State",
+    "wrong": [
+      "UCLA",
+      "Stanford",
+      "Arizona State"
+    ],
+    "teach": "Gwynn played three seasons of baseball and four of basketball at San Diego State.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1987,
+      "player": "Tony Gwynn"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Tony_Gwynn",
+      "ref": "Wikipedia: Tony Gwynn page (saved API wikitext and prose), teach source: Tony Gwynn, checked 2026-10-13"
+    },
+    "id": "p-mlb-tony-gwynn-college",
+    "factId": "mlb-tony-gwynn-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Mike Mussina play college ball?",
+    "answer": "Stanford",
+    "wrong": [
+      "UCLA",
+      "Arizona State",
+      "Michigan"
+    ],
+    "teach": "Mussina went 31–16 in three seasons at Stanford.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1992,
+      "player": "Mike Mussina"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Mike_Mussina",
+      "ref": "Wikipedia: Mike Mussina page (saved API wikitext and prose), teach source: Mike Mussina, checked 2026-10-13"
+    },
+    "id": "p-mlb-mike-mussina-college",
+    "factId": "mlb-mike-mussina-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Alma mater",
+    "prompt": "Where did Gerrit Cole play college ball?",
+    "answer": "UCLA",
+    "wrong": [
+      "USC",
+      "Stanford",
+      "Arizona State"
+    ],
+    "teach": "Cole turned down the Yankees after high school and went to UCLA.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2019,
+      "player": "Gerrit Cole"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Gerrit_Cole",
+      "ref": "Wikipedia: Gerrit Cole page (saved API wikitext and prose), teach source: Gerrit Cole, checked 2026-10-13"
+    },
+    "id": "p-mlb-gerrit-cole-college",
+    "factId": "mlb-gerrit-cole-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Alma mater",
+    "prompt": "Where did Dustin Pedroia play college ball?",
+    "answer": "Arizona State",
+    "wrong": [
+      "Arizona",
+      "UCLA",
+      "Stanford"
+    ],
+    "teach": "Pedroia never hit below .347 in three Arizona State seasons.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2008,
+      "player": "Dustin Pedroia"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Dustin_Pedroia",
+      "ref": "Wikipedia: Dustin Pedroia page (saved API wikitext and prose), teach source: Dustin Pedroia, checked 2026-10-13"
+    },
+    "id": "p-mlb-dustin-pedroia-college",
+    "factId": "mlb-dustin-pedroia-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Tim Lincecum play college ball?",
+    "answer": "Washington",
+    "wrong": [
+      "Oregon",
+      "UCLA",
+      "Stanford"
+    ],
+    "teach": "Lincecum won the 2006 Golden Spikes Award at Washington.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2008,
+      "player": "Tim Lincecum"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Tim_Lincecum",
+      "ref": "Wikipedia: Tim Lincecum page (saved API wikitext and prose), teach source: Tim Lincecum, checked 2026-10-13"
+    },
+    "id": "p-mlb-tim-lincecum-college",
+    "factId": "mlb-tim-lincecum-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Alma mater",
+    "prompt": "Where did Stephen Strasburg play college ball?",
+    "answer": "San Diego State",
+    "wrong": [
+      "UCLA",
+      "Stanford",
+      "Missouri"
+    ],
+    "teach": "Strasburg played for a San Diego State team coached by Tony Gwynn.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2019,
+      "player": "Stephen Strasburg"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Stephen_Strasburg",
+      "ref": "Wikipedia: Stephen Strasburg page (saved API wikitext and prose), teach source: Stephen Strasburg, checked 2026-10-13"
+    },
+    "id": "p-mlb-stephen-strasburg-college",
+    "factId": "mlb-stephen-strasburg-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Barry Larkin play college ball?",
+    "answer": "Michigan",
+    "wrong": [
+      "Ohio State",
+      "Notre Dame",
+      "Stanford"
+    ],
+    "teach": "Larkin left football for baseball during his freshman year at Michigan.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1995,
+      "player": "Barry Larkin"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Barry_Larkin",
+      "ref": "Wikipedia: Barry Larkin page (saved API wikitext and prose), teach source: Barry Larkin, checked 2026-10-13"
+    },
+    "id": "p-mlb-barry-larkin-college",
+    "factId": "mlb-barry-larkin-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Randy Johnson play college ball?",
+    "answer": "USC",
+    "wrong": [
+      "Stanford",
+      "UCLA",
+      "Arizona State"
+    ],
+    "teach": "Johnson also played two seasons of basketball at USC.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2001,
+      "player": "Randy Johnson"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Randy_Johnson",
+      "ref": "Wikipedia: Randy Johnson page (saved API wikitext and prose), teach source: Randy Johnson, checked 2026-10-13"
+    },
+    "id": "p-mlb-randy-johnson-college",
+    "factId": "mlb-randy-johnson-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Jason Giambi play college ball?",
+    "answer": "Long Beach State",
+    "wrong": [
+      "UCLA",
+      "Arizona State",
+      "Stanford"
+    ],
+    "teach": "The Athletics took Giambi 58th overall in 1992 after Long Beach State.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2000,
+      "player": "Jason Giambi"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jason_Giambi",
+      "ref": "Wikipedia: Jason Giambi page (saved API wikitext and prose), teach source: Jason Giambi, checked 2026-10-13"
+    },
+    "id": "p-mlb-jason-giambi-college",
+    "factId": "mlb-jason-giambi-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Matt Wieters play college ball?",
+    "answer": "Georgia Tech",
+    "wrong": [
+      "Florida State",
+      "Clemson",
+      "Virginia"
+    ],
+    "teach": "Wieters earned first-team All-America honors twice at Georgia Tech.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2011,
+      "player": "Matt Wieters"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Matt_Wieters",
+      "ref": "Wikipedia: Matt Wieters page (saved API wikitext and prose), teach source: Matt Wieters, checked 2026-10-13"
+    },
+    "id": "p-mlb-matt-wieters-college",
+    "factId": "mlb-matt-wieters-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Jacob deGrom play college ball?",
+    "answer": "Stetson",
+    "wrong": [
+      "Florida",
+      "Florida State",
+      "Miami (FL)"
+    ],
+    "teach": "Stetson converted deGrom from shortstop to pitcher in his junior year.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2014,
+      "player": "Jacob deGrom"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jacob_deGrom",
+      "ref": "Wikipedia: Jacob deGrom page (saved API wikitext and prose), teach source: Jacob deGrom, checked 2026-10-13"
+    },
+    "id": "p-mlb-jacob-degrom-college",
+    "factId": "mlb-jacob-degrom-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Jeff Bagwell?",
+    "answer": "Red Sox",
+    "wrong": [
+      "Astros",
+      "Cubs",
+      "Rangers"
+    ],
+    "teach": "Born in Boston, Bagwell went in the fourth round to the Red Sox in 1989.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1994,
+      "player": "Jeff Bagwell"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jeff_Bagwell",
+      "ref": "Wikipedia: Jeff Bagwell page (saved API wikitext and prose), teach source: Jeff Bagwell, checked 2026-10-13"
+    },
+    "id": "p-mlb-jeff-bagwell-draft",
+    "factId": "mlb-jeff-bagwell-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Craig Biggio?",
+    "answer": "Astros",
+    "wrong": [
+      "Mets",
+      "Dodgers",
+      "Blue Jays"
+    ],
+    "teach": "Born in Smithtown, Biggio went 22nd overall to the Astros in 1987.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1998,
+      "player": "Craig Biggio"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Craig_Biggio",
+      "ref": "Wikipedia: Craig Biggio page (saved API wikitext and prose), teach source: Craig Biggio, checked 2026-10-13"
+    },
+    "id": "p-mlb-craig-biggio-draft",
+    "factId": "mlb-craig-biggio-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Ryan Howard?",
+    "answer": "Phillies",
+    "wrong": [
+      "Mets",
+      "Yankees",
+      "Nationals"
+    ],
+    "teach": "Born in Florissant, Howard went in the fifth round to the Phillies in 2001.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2006,
+      "player": "Ryan Howard"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Ryan_Howard",
+      "ref": "Wikipedia: Ryan Howard page (saved API wikitext and prose), teach source: Ryan Howard, checked 2026-10-13"
+    },
+    "id": "p-mlb-ryan-howard-draft",
+    "factId": "mlb-ryan-howard-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Evan Longoria?",
+    "answer": "Rays",
+    "wrong": [
+      "Red Sox",
+      "Mets",
+      "Yankees"
+    ],
+    "teach": "Born in Downey, Longoria went third overall to the Rays in 2006.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2008,
+      "player": "Evan Longoria"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Evan_Longoria",
+      "ref": "Wikipedia: Evan Longoria page (saved API wikitext and prose), teach source: Evan Longoria, checked 2026-10-13"
+    },
+    "id": "p-mlb-evan-longoria-draft",
+    "factId": "mlb-evan-longoria-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Scott Rolen?",
+    "answer": "Phillies",
+    "wrong": [
+      "Cardinals",
+      "Reds",
+      "Cubs"
+    ],
+    "teach": "Born in Evansville, Rolen went in the second round to the Phillies in 1993.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2004,
+      "player": "Scott Rolen"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Scott_Rolen",
+      "ref": "Wikipedia: Scott Rolen page (saved API wikitext and prose), teach source: Scott Rolen, checked 2026-10-13"
+    },
+    "id": "p-mlb-scott-rolen-draft",
+    "factId": "mlb-scott-rolen-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "easy",
+    "category": "Drafted by",
+    "prompt": "Which team drafted Manny Machado?",
+    "answer": "Orioles",
+    "wrong": [
+      "Yankees",
+      "Red Sox",
+      "Padres"
+    ],
+    "teach": "Born in Miami, Machado went third overall to the Orioles in 2010.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2013,
+      "player": "Manny Machado"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Manny_Machado",
+      "ref": "Wikipedia: Manny Machado page (saved API wikitext and prose), teach source: Manny Machado, checked 2026-10-13"
+    },
+    "id": "p-mlb-manny-machado-draft",
+    "factId": "mlb-manny-machado-draft"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Alma mater",
+    "prompt": "Where did Reggie Jackson play college ball?",
+    "answer": "Arizona State",
+    "wrong": [
+      "Texas",
+      "Vanderbilt",
+      "UCLA"
+    ],
+    "teach": "Jackson nearly hit for the cycle in his final Arizona State game.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1973,
+      "player": "Reggie Jackson"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Reggie_Jackson",
+      "ref": "Wikipedia: Reggie Jackson page (saved API wikitext and prose), teach source: Reggie Jackson, checked 2026-10-13"
+    },
+    "id": "p-mlb-reggie-jackson-college",
+    "factId": "mlb-reggie-jackson-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Mark Teixeira play college ball?",
+    "answer": "Georgia Tech",
+    "wrong": [
+      "Texas",
+      "Auburn",
+      "Florida State"
+    ],
+    "teach": "Teixeira won the 2000 Dick Howser Trophy at Georgia Tech.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2004,
+      "player": "Mark Teixeira"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Mark_Teixeira",
+      "ref": "Wikipedia: Mark Teixeira page (saved API wikitext and prose), teach source: Mark Teixeira, checked 2026-10-13"
+    },
+    "id": "p-mlb-mark-teixeira-college",
+    "factId": "mlb-mark-teixeira-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Alma mater",
+    "prompt": "Where did Evan Longoria play college ball?",
+    "answer": "Long Beach State",
+    "wrong": [
+      "Arizona State",
+      "Florida",
+      "Florida State"
+    ],
+    "teach": "Longoria won the 2005 Cape Cod League MVP and 2006 Big West Co-Player award.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2008,
+      "player": "Evan Longoria"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Evan_Longoria",
+      "ref": "Wikipedia: Evan Longoria page (saved API wikitext and prose), teach source: Evan Longoria, checked 2026-10-13"
+    },
+    "id": "p-mlb-evan-longoria-college",
+    "factId": "mlb-evan-longoria-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did David Price play college ball?",
+    "answer": "Vanderbilt",
+    "wrong": [
+      "Texas",
+      "Florida",
+      "Georgia Tech"
+    ],
+    "teach": "Price won the 2007 Golden Spikes Award after three seasons at Vanderbilt.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2008,
+      "player": "David Price"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/David_Price_%28baseball%29",
+      "ref": "Wikipedia: David Price (baseball) page (saved API wikitext and prose), teach source: David Price (baseball), checked 2026-10-13"
+    },
+    "id": "p-mlb-david-price-college",
+    "factId": "mlb-david-price-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did Roger Clemens play college ball?",
+    "answer": "Texas",
+    "wrong": [
+      "Auburn",
+      "Florida State",
+      "UCLA"
+    ],
+    "teach": "Clemens went 25–7 in two All-American seasons at Texas.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1986,
+      "player": "Roger Clemens"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Roger_Clemens",
+      "ref": "Wikipedia: Roger Clemens page (saved API wikitext and prose), teach source: Roger Clemens, checked 2026-10-13"
+    },
+    "id": "p-mlb-roger-clemens-college",
+    "factId": "mlb-roger-clemens-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Chris Sale play college ball?",
+    "answer": "Florida Gulf Coast",
+    "wrong": [
+      "Florida",
+      "Florida State",
+      "Miami (FL)"
+    ],
+    "teach": "The White Sox drafted Sale 13th overall in 2010 after Florida Gulf Coast.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2012,
+      "player": "Chris Sale"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Chris_Sale",
+      "ref": "Wikipedia: Chris Sale page (saved API wikitext and prose), teach source: Chris Sale, checked 2026-10-13"
+    },
+    "id": "p-mlb-chris-sale-college",
+    "factId": "mlb-chris-sale-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Alma mater",
+    "prompt": "Where did Ryan Braun play college ball?",
+    "answer": "Miami (FL)",
+    "wrong": [
+      "LSU",
+      "Florida",
+      "Vanderbilt"
+    ],
+    "teach": "Braun was Baseball America's 2003 National Freshman of the Year at Miami.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2011,
+      "player": "Ryan Braun"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Ryan_Braun",
+      "ref": "Wikipedia: Ryan Braun page (saved API wikitext and prose), teach source: Ryan Braun, checked 2026-10-13"
+    },
+    "id": "p-mlb-ryan-braun-college",
+    "factId": "mlb-ryan-braun-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Alma mater",
+    "prompt": "Where did Jackie Robinson play college ball?",
+    "answer": "UCLA",
+    "wrong": [
+      "California",
+      "Florida",
+      "Michigan"
+    ],
+    "teach": "Robinson played four sports at UCLA before joining the Army.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1947,
+      "player": "Jackie Robinson"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jackie_Robinson",
+      "ref": "Wikipedia: Jackie Robinson page (saved API wikitext and prose), teach source: Jackie Robinson, checked 2026-10-13"
+    },
+    "id": "p-mlb-jackie-robinson-college",
+    "factId": "mlb-jackie-robinson-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did Pete Alonso play college ball?",
+    "answer": "Florida",
+    "wrong": [
+      "Vanderbilt",
+      "Georgia Tech",
+      "Tennessee"
+    ],
+    "teach": "Alonso competed for Florida in the 2015 and 2016 College World Series.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2019,
+      "player": "Pete Alonso"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Pete_Alonso",
+      "ref": "Wikipedia: Pete Alonso page (saved API wikitext and prose), teach source: Pete Alonso, checked 2026-10-13"
+    },
+    "id": "p-mlb-pete-alonso-college",
+    "factId": "mlb-pete-alonso-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Jersey number",
+    "prompt": "Reggie Jackson's jersey number in 1973?",
+    "answer": "9",
+    "wrong": [
+      "7",
+      "20",
+      "44"
+    ],
+    "teach": "The Oakland Athletics finished 94–68 in 1973.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1973,
+      "player": "Reggie Jackson"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/1973_Oakland_Athletics_season",
+      "ref": "Wikipedia: 1973 Oakland Athletics season page (saved API wikitext and prose), teach source: 1973 Oakland Athletics season, checked 2026-10-13"
+    },
+    "id": "p-mlb-reggie-jackson-jersey",
+    "factId": "mlb-reggie-jackson-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "Frank Thomas's jersey number in 1993?",
+    "answer": "35",
+    "wrong": [
+      "15",
+      "23",
+      "42"
+    ],
+    "teach": "The Chicago White Sox finished 94–68 in 1993.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1993,
+      "player": "Frank Thomas"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/1993_Chicago_White_Sox_season",
+      "ref": "Wikipedia: 1993 Chicago White Sox season page (saved API wikitext and prose), teach source: 1993 Chicago White Sox season, checked 2026-10-13"
+    },
+    "id": "p-mlb-frank-thomas-jersey",
+    "factId": "mlb-frank-thomas-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Jersey number",
+    "prompt": "Mike Piazza's jersey number in 1996?",
+    "answer": "31",
+    "wrong": [
+      "12",
+      "17",
+      "55"
+    ],
+    "teach": "The Los Angeles Dodgers finished 90–72 in 1996.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 1996,
+      "player": "Mike Piazza"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/1996_Los_Angeles_Dodgers_season",
+      "ref": "Wikipedia: 1996 Los Angeles Dodgers season page (saved API wikitext and prose), teach source: 1996 Los Angeles Dodgers season, checked 2026-10-13"
+    },
+    "id": "p-mlb-mike-piazza-jersey",
+    "factId": "mlb-mike-piazza-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Jersey number",
+    "prompt": "Jim Thome's jersey number in 2002?",
+    "answer": "25",
+    "wrong": [
+      "23",
+      "45",
+      "55"
+    ],
+    "teach": "The Cleveland Indians finished 74–88 in 2002.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2002,
+      "player": "Jim Thome"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/2002_Cleveland_Indians_season",
+      "ref": "Wikipedia: 2002 Cleveland Indians season page (saved API wikitext and prose), teach source: 2002 Cleveland Indians season, checked 2026-10-13"
+    },
+    "id": "p-mlb-jim-thome-jersey",
+    "factId": "mlb-jim-thome-jersey"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Max Scherzer play college ball?",
+    "answer": "Missouri",
+    "wrong": [
+      "UCLA",
+      "Vanderbilt",
+      "Florida State"
+    ],
+    "teach": "Scherzer won the 2005 Big 12 Pitcher of the Year award at Missouri.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2011,
+      "player": "Max Scherzer"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Max_Scherzer",
+      "ref": "Wikipedia: Max Scherzer page (saved API wikitext and prose), teach source: Max Scherzer, checked 2026-10-13"
+    },
+    "id": "p-mlb-max-scherzer-college",
+    "factId": "mlb-max-scherzer-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Alma mater",
+    "prompt": "Where did Troy Tulowitzki play college ball?",
+    "answer": "Long Beach State",
+    "wrong": [
+      "Florida State",
+      "Texas",
+      "Miami (FL)"
+    ],
+    "teach": "Tulowitzki played three seasons for Long Beach State.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2007,
+      "player": "Troy Tulowitzki"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Troy_Tulowitzki",
+      "ref": "Wikipedia: Troy Tulowitzki page (saved API wikitext and prose), teach source: Troy Tulowitzki, checked 2026-10-13"
+    },
+    "id": "p-mlb-troy-tulowitzki-college",
+    "factId": "mlb-troy-tulowitzki-college"
+  },
+  {
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Alma mater",
+    "prompt": "Where did Chase Utley play college ball?",
+    "answer": "UCLA",
+    "wrong": [
+      "Arizona State",
+      "Texas",
+      "Long Beach State"
+    ],
+    "teach": "Utley set UCLA's single-season home run record with 14.",
+    "dailyFrom": "2026-10-27",
+    "reel": {
+      "season": 2008,
+      "player": "Chase Utley"
+    },
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Chase_Utley",
+      "ref": "Wikipedia: Chase Utley page (saved API wikitext and prose), teach source: Chase Utley, checked 2026-10-13"
+    },
+    "id": "p-mlb-chase-utley-college",
+    "factId": "mlb-chase-utley-college"
   }
 ]
