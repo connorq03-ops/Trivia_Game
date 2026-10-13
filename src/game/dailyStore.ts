@@ -62,7 +62,12 @@ export function saveDailySummary(
 }
 
 export function dailyStreak(storage: StorageLike, today: string): number {
-  let date = readDailySummary(storage, today) ? today : dateOffset(today, -1)
+  const todaySummary = readDailySummary(storage, today)
+  // An untagged (UTC-era) summary under today's key doesn't count as played.
+  let date =
+    todaySummary && isCurrentDailySummary(todaySummary)
+      ? today
+      : dateOffset(today, -1)
   let streak = 0
 
   for (let day = 0; day < 366; day += 1) {

@@ -147,6 +147,20 @@ describe('daily store', () => {
     expect(dailyStreak(storage, '2026-06-03')).toBe(0)
   })
 
+  it('does not count an untagged today toward the streak until it is played', () => {
+    const { storage, values } = makeStorage()
+    const legacy = result(100)
+    delete legacy.schedule
+    values.set(dailyStorageKey(legacy.date), JSON.stringify(legacy))
+
+    // UTC-era summary under today's key: playable but not yet counted.
+    expect(dailyStreak(storage, legacy.date)).toBe(0)
+
+    // After the daily is finished the tagged result lands on the streak.
+    saveDailySummary(storage, legacy.date, { ...legacy, schedule: 'ct17' })
+    expect(dailyStreak(storage, legacy.date)).toBe(1)
+  })
+
   it('keeps a streak alive through today until a full day is missed', () => {
     const { storage, values } = makeStorage()
     values.set(dailyStorageKey('2026-06-02'), JSON.stringify(result(100)))
