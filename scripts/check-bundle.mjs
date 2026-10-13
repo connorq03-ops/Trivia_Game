@@ -13,7 +13,10 @@ async function filesUnder(directory) {
 }
 
 const candidates = []
-for (const file of ['content/rules.json', 'content/players.json']) {
+const contentFiles = (await readdir('content'))
+  .filter((name) => name.endsWith('.json'))
+  .map((name) => join('content', name))
+for (const file of contentFiles) {
   const questions = JSON.parse(await readFile(file, 'utf8'))
   for (const question of questions) {
     for (const field of ['answer', 'teach']) {

@@ -1284,7 +1284,7 @@
     "leagues": [
       "NBA"
     ],
-    "difficulty": "hard",
+    "difficulty": "expert",
     "category": "Numbers and dimensions",
     "prompt": "How tall is an NBA backboard, top to bottom?",
     "answer": "3½ feet",
@@ -1468,7 +1468,7 @@
     "leagues": [
       "NBA"
     ],
-    "difficulty": "hard",
+    "difficulty": "expert",
     "category": "Numbers and dimensions",
     "prompt": "NBA: fewest players a team must dress for a regular-season game?",
     "answer": "8",
@@ -1606,7 +1606,7 @@
     "leagues": [
       "MLB"
     ],
-    "difficulty": "hard",
+    "difficulty": "expert",
     "category": "Numbers and dimensions",
     "prompt": "MLB rules: minimum distance from home plate to the nearest fence?",
     "answer": "250 feet",
@@ -1675,7 +1675,7 @@
     "leagues": [
       "MLB"
     ],
-    "difficulty": "hard",
+    "difficulty": "expert",
     "category": "Numbers and dimensions",
     "prompt": "How much does an MLB baseball weigh?",
     "answer": "5 to 5¼ oz",
@@ -1698,7 +1698,7 @@
     "leagues": [
       "MLB"
     ],
-    "difficulty": "hard",
+    "difficulty": "expert",
     "category": "Numbers and dimensions",
     "prompt": "Circumference of an MLB baseball?",
     "answer": "9 to 9¼ inches",
@@ -1767,7 +1767,7 @@
     "leagues": [
       "MLB"
     ],
-    "difficulty": "hard",
+    "difficulty": "expert",
     "category": "Numbers and dimensions",
     "prompt": "MLB: max bat diameter at its thickest part?",
     "answer": "2.61 inches",
@@ -2135,7 +2135,7 @@
     "leagues": [
       "NFL"
     ],
-    "difficulty": "hard",
+    "difficulty": "expert",
     "category": "Numbers and dimensions",
     "prompt": "NFL hash marks: distance from each sideline?",
     "answer": "70 ft 9 in",
@@ -2782,7 +2782,7 @@
     "leagues": [
       "NFL"
     ],
-    "difficulty": "easy",
+    "difficulty": "medium",
     "category": "Numbers and dimensions",
     "prompt": "How high is an NFL crossbar above the ground?",
     "answer": "10 feet",
@@ -2806,7 +2806,7 @@
     "leagues": [
       "NFL"
     ],
-    "difficulty": "easy",
+    "difficulty": "medium",
     "category": "Numbers and dimensions",
     "prompt": "An NFL crossbar sits how many feet above the ground?",
     "answer": "10",
@@ -2878,7 +2878,7 @@
     "leagues": [
       "NFL"
     ],
-    "difficulty": "hard",
+    "difficulty": "expert",
     "category": "Numbers and dimensions",
     "prompt": "How far do NFL uprights extend above the crossbar?",
     "answer": "35 feet",
@@ -2902,7 +2902,7 @@
     "leagues": [
       "NFL"
     ],
-    "difficulty": "hard",
+    "difficulty": "expert",
     "category": "Numbers and dimensions",
     "prompt": "Weight range of an official NFL football?",
     "answer": "14 to 15 ounces",
@@ -2926,7 +2926,7 @@
     "leagues": [
       "NFL"
     ],
-    "difficulty": "hard",
+    "difficulty": "expert",
     "category": "Numbers and dimensions",
     "prompt": "Long-axis length of an official NFL football?",
     "answer": "11 to 11¼ inches",
@@ -3166,7 +3166,7 @@
     "leagues": [
       "MLB"
     ],
-    "difficulty": "hard",
+    "difficulty": "expert",
     "category": "Numbers and dimensions",
     "prompt": "An MLB base bag is 18 inches square. How thick can it be?",
     "answer": "3 to 5 inches",
@@ -3190,7 +3190,7 @@
     "leagues": [
       "MLB"
     ],
-    "difficulty": "hard",
+    "difficulty": "expert",
     "category": "Numbers and dimensions",
     "prompt": "Size of the MLB pitcher's plate (rubber)?",
     "answer": "24 x 6 inches",
@@ -3214,7 +3214,7 @@
     "leagues": [
       "MLB"
     ],
-    "difficulty": "hard",
+    "difficulty": "expert",
     "category": "Numbers and dimensions",
     "prompt": "The MLB pitcher's rubber is 6 inches deep. How wide is it?",
     "answer": "24 inches",
@@ -3238,7 +3238,7 @@
     "leagues": [
       "MLB"
     ],
-    "difficulty": "hard",
+    "difficulty": "expert",
     "category": "Numbers and dimensions",
     "prompt": "How far up the bat handle can an MLB hitter apply pine tar?",
     "answer": "18 inches",
@@ -3310,7 +3310,7 @@
     "leagues": [
       "MLB"
     ],
-    "difficulty": "hard",
+    "difficulty": "expert",
     "category": "Numbers and dimensions",
     "prompt": "Most pitchers an MLB club may carry for a game, Opening Day to Aug 31?",
     "answer": "13",

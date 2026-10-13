@@ -1,6 +1,6 @@
-import rules from '../../content/rules.json'
-import players from '../../content/players.json'
+import { readdirSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
+import { contentFiles, questionBank } from '../../lib/questions'
 import { dailyQuestions } from './engine'
 import type { Question } from './types'
 
@@ -18,8 +18,12 @@ const playerCategories = [
   'Country',
 ]
 const sports = ['football', 'basketball', 'baseball']
-const difficulties = ['easy', 'medium', 'hard']
-const allQuestions = [...rules, ...players] as Question[]
+const difficulties = ['easy', 'medium', 'hard', 'expert']
+const allQuestions = questionBank
+const filesFor = (side: Question['side']) =>
+  Object.entries(contentFiles).filter(([name]) => name.startsWith(`${side}`))
+const rules = filesFor('rules').flatMap(([, questions]) => questions)
+const players = filesFor('players').flatMap(([, questions]) => questions)
 
 const stopwords = new Set([
   'a', 'an', 'and', 'at', 'by', 'did', 'for', 'from', 'he', 'his', 'in',
@@ -36,6 +40,14 @@ const words = (text: string) =>
     ?.map((word) => word.replace(/(?<=\p{L}{3})(ed|es|s|ing)$/u, '')) ?? []
 
 describe('question content', () => {
+  it('loads every content/*.json file into the bank', () => {
+    const onDisk = readdirSync('content').filter((name) => name.endsWith('.json'))
+    expect(Object.keys(contentFiles).sort()).toEqual(onDisk.sort())
+    for (const name of onDisk) {
+      expect(name.startsWith('rules') || name.startsWith('players'), name).toBe(true)
+    }
+  })
+
   it('keeps the rules and players banks on their declared sides', () => {
     expect(rules.length).toBeGreaterThanOrEqual(30)
     expect(players.length).toBeGreaterThanOrEqual(100)

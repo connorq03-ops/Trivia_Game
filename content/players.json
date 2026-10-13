@@ -952,7 +952,7 @@
     "leagues": [
       "NFL"
     ],
-    "difficulty": "medium",
+    "difficulty": "hard",
     "category": "Drafted by",
     "prompt": "Which team drafted Marshall Faulk?",
     "answer": "Colts",
@@ -1546,7 +1546,7 @@
     "leagues": [
       "NFL"
     ],
-    "difficulty": "hard",
+    "difficulty": "expert",
     "category": "Alma mater",
     "prompt": "Where did Michael Strahan play college ball?",
     "answer": "Texas Southern",
@@ -1897,7 +1897,7 @@
     "leagues": [
       "NBA"
     ],
-    "difficulty": "hard",
+    "difficulty": "expert",
     "category": "Drafted by",
     "prompt": "Which team drafted Dirk Nowitzki?",
     "answer": "Bucks",
@@ -2140,7 +2140,7 @@
     "leagues": [
       "NBA"
     ],
-    "difficulty": "hard",
+    "difficulty": "expert",
     "category": "Drafted by",
     "prompt": "Which team drafted Pau Gasol?",
     "answer": "Hawks",
@@ -2761,7 +2761,7 @@
     "leagues": [
       "NBA"
     ],
-    "difficulty": "hard",
+    "difficulty": "expert",
     "category": "Drafted by",
     "prompt": "Which team drafted Ray Allen?",
     "answer": "Timberwolves",
@@ -2815,7 +2815,7 @@
     "leagues": [
       "NBA"
     ],
-    "difficulty": "hard",
+    "difficulty": "expert",
     "category": "Drafted by",
     "prompt": "Which team drafted Vince Carter?",
     "answer": "Warriors",
@@ -2950,7 +2950,7 @@
     "leagues": [
       "NBA"
     ],
-    "difficulty": "medium",
+    "difficulty": "hard",
     "category": "Country",
     "prompt": "Kyrie Irving was born in which country?",
     "answer": "Australia",
@@ -3004,7 +3004,7 @@
     "leagues": [
       "NBA"
     ],
-    "difficulty": "hard",
+    "difficulty": "expert",
     "category": "Drafted by",
     "prompt": "Which team drafted Shai Gilgeous-Alexander?",
     "answer": "Hornets",

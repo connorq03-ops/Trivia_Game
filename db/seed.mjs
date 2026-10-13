@@ -1,4 +1,4 @@
-import { readFile } from 'node:fs/promises'
+import { readFile, readdir } from 'node:fs/promises'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import 'dotenv/config'
@@ -25,14 +25,17 @@ async function seed() {
   let transactionOpen = false
 
   try {
-    const [rules, players] = await Promise.all(
-      ['rules.json', 'players.json'].map(async (filename) =>
-        JSON.parse(
-          await readFile(join(rootDirectory, 'content', filename), 'utf8'),
+    const contentDirectory = join(rootDirectory, 'content')
+    const filenames = (await readdir(contentDirectory))
+      .filter((filename) => filename.endsWith('.json'))
+      .sort()
+    const questions = (
+      await Promise.all(
+        filenames.map(async (filename) =>
+          JSON.parse(await readFile(join(contentDirectory, filename), 'utf8')),
         ),
-      ),
-    )
-    const questions = [...rules, ...players]
+      )
+    ).flat()
     client = new Client({ connectionString })
     await client.connect()
     await client.query('begin')

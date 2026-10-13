@@ -15,14 +15,26 @@ export const BASE: Record<Difficulty, number> = {
   easy: 100,
   medium: 150,
   hard: 200,
+  expert: 300,
 }
+export const LEVELS: readonly {
+  minCorrect: number
+  weights: Readonly<Record<Difficulty, number>>
+}[] = [
+  { minCorrect: 0, weights: { easy: 1, medium: 0, hard: 0, expert: 0 } },
+  { minCorrect: 10, weights: { easy: 0.6, medium: 0.4, hard: 0, expert: 0 } },
+  { minCorrect: 20, weights: { easy: 0, medium: 0.6, hard: 0.4, expert: 0 } },
+  { minCorrect: 35, weights: { easy: 0, medium: 0, hard: 0.6, expert: 0.4 } },
+  { minCorrect: 50, weights: { easy: 0, medium: 0, hard: 0.25, expert: 0.75 } },
+]
 
 const SPORTS: Sport[] = ['football', 'basketball', 'baseball']
-const DIFFICULTIES: Difficulty[] = ['easy', 'medium', 'hard']
+const DIFFICULTIES: Difficulty[] = ['easy', 'medium', 'hard', 'expert']
 const DIFFICULTY_RANK: Record<Difficulty, number> = {
   easy: 0,
   medium: 1,
   hard: 2,
+  expert: 3,
 }
 
 export type ClassicOptions = {
@@ -89,27 +101,43 @@ export function scoreAnswer(
   return Math.round(BASE[difficulty] * speed * streakMultiplier(streakBefore))
 }
 
-function drawDifficulty(questionNumber: number, rng: () => number): Difficulty {
-  const weights =
-    questionNumber <= 15
-      ? [0.7, 0.25, 0.05]
-      : questionNumber <= 40
-        ? [0.3, 0.45, 0.25]
-        : [0.1, 0.35, 0.55]
+export function levelFor(correctCount: number): number {
+  let level = 1
+  LEVELS.forEach((candidate, index) => {
+    if (correctCount >= candidate.minCorrect) level = index + 1
+  })
+  return level
+}
+
+export function correctCount(
+  progress: Pick<RunProgress, 'results' | 'questionsAnswered' | 'missed'>,
+): number {
+  // Runs started before per-answer results were stored only have a partial list.
+  if (progress.results.length < progress.questionsAnswered) {
+    return Math.max(0, progress.questionsAnswered - progress.missed.length)
+  }
+  return progress.results.filter((result) => result === 'hit').length
+}
+
+function drawDifficulty(correct: number, rng: () => number): Difficulty {
+  const { weights } = LEVELS[levelFor(correct) - 1]
   const draw = rng()
   let cumulative = 0
 
-  for (let index = 0; index < DIFFICULTIES.length; index += 1) {
-    cumulative += weights[index]
-    if (draw < cumulative) return DIFFICULTIES[index]
+  for (const difficulty of DIFFICULTIES) {
+    cumulative += weights[difficulty]
+    if (draw < cumulative) return difficulty
   }
-  return 'hard'
+  return DIFFICULTIES.findLast((difficulty) => weights[difficulty] > 0) ?? 'easy'
 }
 
+// Harder tiers first, so a run never drifts back to easy questions late.
 function fallbackOrder(difficulty: Difficulty): Difficulty[] {
-  if (difficulty === 'medium') return ['medium', 'easy', 'hard']
-  if (difficulty === 'easy') return ['easy', 'medium', 'hard']
-  return ['hard', 'medium', 'easy']
+  const rank = DIFFICULTY_RANK[difficulty]
+  return [
+    ...DIFFICULTIES.slice(rank),
+    ...DIFFICULTIES.slice(0, rank).reverse(),
+  ]
 }
 
 export function presentQuestion(
@@ -139,7 +167,7 @@ export function resolveAnswerMs(
 export function selectClassicQuestion(
   bank: Question[],
   usedFactIds: ReadonlySet<string>,
-  questionNumber: number,
+  correct: number,
   options: ClassicOptions,
   rng: () => number,
 ): ClassicSelection {
@@ -176,7 +204,7 @@ export function selectClassicQuestion(
 
   if (candidates.length === 0) return { type: 'end', reason: 'bank' }
 
-  const targetDifficulty = drawDifficulty(questionNumber, rng)
+  const targetDifficulty = drawDifficulty(correct, rng)
   const chosenDifficulty = fallbackOrder(targetDifficulty).find((difficulty) =>
     candidates.some((question) => question.difficulty === difficulty),
   )

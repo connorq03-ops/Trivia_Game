@@ -1,6 +1,6 @@
 export type Sport = 'football' | 'basketball' | 'baseball'
 export type Side = 'rules' | 'players'
-export type Difficulty = 'easy' | 'medium' | 'hard'
+export type Difficulty = 'easy' | 'medium' | 'hard' | 'expert'
 export interface Question {
   id: string // unique, stable
   factId: string // a run never shows two questions with the same factId

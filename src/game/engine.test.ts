@@ -4,6 +4,8 @@ import {
   CLOCK_MS,
   createRunProgress,
   dailyQuestions,
+  LEVELS,
+  levelFor,
   presentQuestion,
   resolveAnswerMs,
   scoreAnswer,
@@ -13,7 +15,7 @@ import {
 } from './engine'
 import type { Difficulty, Question, Side, Sport } from './types'
 
-const difficulties: Difficulty[] = ['easy', 'medium', 'hard']
+const difficulties: Difficulty[] = ['easy', 'medium', 'hard', 'expert']
 const sports: Sport[] = ['football', 'basketball', 'baseball']
 const defaultOptions: ClassicOptions = { sport: 'all', side: 'both' }
 
@@ -252,31 +254,59 @@ describe('Classic question selection', () => {
     }
   })
 
-  it('uses the ramp probabilities across many seeded runs', () => {
-    const bank = makeLargeBank()
-    const early = { easy: 0, medium: 0, hard: 0 }
-    const late = { easy: 0, medium: 0, hard: 0 }
+  it('levels up on correct answers at the configured thresholds', () => {
+    expect(LEVELS.map(({ minCorrect }) => minCorrect)).toEqual([0, 10, 20, 35, 50])
+    expect(levelFor(0)).toBe(1)
+    expect(levelFor(9)).toBe(1)
+    expect(levelFor(10)).toBe(2)
+    expect(levelFor(34)).toBe(3)
+    expect(levelFor(35)).toBe(4)
+    expect(levelFor(500)).toBe(5)
+    for (const { weights } of LEVELS) {
+      expect(Object.values(weights).reduce((sum, weight) => sum + weight, 0)).toBeCloseTo(1)
+    }
+  })
 
-    for (let run = 0; run < 100; run += 1) {
-      const rng = seededRandom(run + 100)
-      const used = new Set<string>()
-      for (let questionNumber = 1; questionNumber <= 60; questionNumber += 1) {
-        const selection = selectClassicQuestion(
-          bank,
-          used,
-          questionNumber,
-          defaultOptions,
-          rng,
-        )
-        if (selection.type === 'end') break
-        used.add(selection.question.factId)
-        if (questionNumber <= 15) early[selection.question.difficulty] += 1
-        if (questionNumber >= 41) late[selection.question.difficulty] += 1
+  it('ramps from easy-only to mostly expert as correct answers grow', () => {
+    const bank = makeLargeBank()
+    const counts = (correct: number) => {
+      const tally: Record<Difficulty, number> = { easy: 0, medium: 0, hard: 0, expert: 0 }
+      const rng = seededRandom(correct + 7)
+      for (let draw = 0; draw < 400; draw += 1) {
+        const selection = selectClassicQuestion(bank, new Set(), correct, defaultOptions, rng)
+        if (selection.type === 'question') tally[selection.question.difficulty] += 1
       }
+      return tally
     }
 
-    expect(early.easy / 1500).toBeGreaterThan(0.5)
-    expect(late.hard / 2000).toBeGreaterThan(0.4)
+    expect(counts(0)).toEqual({ easy: 400, medium: 0, hard: 0, expert: 0 })
+    expect(counts(9).easy).toBe(400)
+    const level2 = counts(15)
+    expect(level2.easy + level2.medium).toBe(400)
+    expect(level2.medium).toBeGreaterThan(100)
+    const level3 = counts(25)
+    expect(level3.medium + level3.hard).toBe(400)
+    const level4 = counts(40)
+    expect(level4.hard + level4.expert).toBe(400)
+    expect(counts(60).expert / 400).toBeGreaterThan(0.6)
+  })
+
+  it('falls back to harder tiers before easier ones', () => {
+    const bank = [
+      makeQuestion(0, { sport: 'football', side: 'rules', difficulty: 'medium' }),
+      makeQuestion(1, { sport: 'football', side: 'rules', difficulty: 'expert' }),
+      makeQuestion(2, { sport: 'football', side: 'rules', difficulty: 'easy' }),
+    ]
+    const options: ClassicOptions = { sport: 'football', side: 'rules' }
+    const pick = (correct: number, used: string[] = []) => {
+      const selection = selectClassicQuestion(bank, new Set(used), correct, options, seededRandom(1))
+      return selection.type === 'question' ? selection.question.difficulty : null
+    }
+
+    expect(pick(0, [bank[2].factId])).toBe('medium')
+    expect(pick(40)).toBe('expert')
+    expect(pick(40, [bank[1].factId])).toBe('medium')
+    expect(pick(40, [bank[0].factId, bank[1].factId])).toBe('easy')
   })
 
   it('ends with bank exhaustion when there are no eligible facts', () => {

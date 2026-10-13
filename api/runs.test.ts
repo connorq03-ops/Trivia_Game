@@ -119,7 +119,7 @@ describe('runs handler', () => {
     expect(insert.values).toContain(hashRunToken(body.runToken))
     expect(insert.values).not.toContain(body.runToken)
     expect(body.question.choices).toHaveLength(4)
-    expect(body.progress).toEqual({ score: 0, strikes: 0, streak: 0 })
+    expect(body.progress).toEqual({ score: 0, strikes: 0, streak: 0, correct: 0 })
     expect(body.total).toBeNull()
 
     const forbiddenKeys = new Set(['answer', 'teach', 'factId', 'wrong'])
