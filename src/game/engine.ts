@@ -82,7 +82,7 @@ export type RunProgress = {
   totalAnswerMs: number
   missed: Question[]
   results: AnswerResult[]
-  bossLevelsConsumed: number[] // LEVELS indexes that already had their boss
+  bossLevelsConsumed: number[] // boss milestones (correct counts) already served
   bossMisses: number
   bossMissed: Question[] // boss misses; kept out of `missed` so correctCount stays right
   // Frozen at run creation so a mid-day deploy never reshuffles a live run.
@@ -94,7 +94,7 @@ export type RunProgress = {
 
 export type ClassicSelection =
   | { type: 'question'; question: Question; choices: string[] }
-  | { type: 'boss'; question: BossQuestion; choices: string[]; level: number }
+  | { type: 'boss'; question: BossQuestion; choices: string[]; milestone: number }
   | { type: 'end'; reason: 'bank' }
 
 export type BossOptions = {
@@ -219,8 +219,12 @@ export function resolveAnswerMs(
   return Math.min(clockMs, Math.max(0, adjusted))
 }
 
-export function levelIndexFor(correctCount: number): number {
-  return levelFor(correctCount) - 1
+// Bosses run on their own schedule, decoupled from the difficulty levels:
+// every 10 correct through 50, then every 25.
+export function bossMilestoneFor(correctCount: number): number | null {
+  if (correctCount < 10) return null
+  if (correctCount <= 50) return Math.floor(correctCount / 10) * 10
+  return 50 + Math.floor((correctCount - 50) / 25) * 25
 }
 
 function selectBossQuestion(
@@ -229,8 +233,8 @@ function selectBossQuestion(
   boss: BossOptions,
   rng: () => number,
 ): ClassicSelection | null {
-  const level = levelIndexFor(correct)
-  if (level === 0 || boss.levelsConsumed.includes(level)) return null
+  const milestone = bossMilestoneFor(correct)
+  if (milestone === null || boss.levelsConsumed.includes(milestone)) return null
   const available = boss.bank.filter((question) => !usedFactIds.has(question.factId))
   const categories = BOSS_CATEGORIES.filter((category) =>
     available.some((question) => question.category === category),
@@ -245,7 +249,7 @@ function selectBossQuestion(
     type: 'boss',
     question,
     choices: shuffle([question.answer, ...question.wrong], rng),
-    level,
+    milestone,
   }
 }
 

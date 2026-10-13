@@ -255,7 +255,7 @@ export async function POST(request: Request): Promise<Response> {
                 ...answered.progress,
                 bossLevelsConsumed: [
                   ...answered.progress.bossLevelsConsumed,
-                  selection.level,
+                  selection.milestone,
                 ],
               },
             }

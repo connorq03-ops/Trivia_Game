@@ -41,7 +41,7 @@ describe('howItWorks', () => {
 
   it('adds the boss rules only when boss questions are on', () => {
     expect(howItWorks({ bosses: true })).toContain(
-      `Each level-up brings a boss question on science, history, art or pop culture: ${BOSS_CLOCK_MS / 1000} seconds, +500 if right, −250 if wrong, no strike.`,
+      `Boss questions on science, history, art or pop culture hit every 10 correct up to 50, then every 25: ${BOSS_CLOCK_MS / 1000} seconds, +500 if right, −250 if wrong, no strike.`,
     )
     expect(howItWorks({ bosses: true })).toHaveLength(howItWorks().length + 2)
   })

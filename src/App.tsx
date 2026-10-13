@@ -8,7 +8,6 @@ import {
   STRIKE_BACK_EVERY,
 } from './game/engine'
 import {
-  difficultyLabel,
   modeSubtitle,
   multiplierLabel,
   REVEAL_MS,
@@ -1063,9 +1062,6 @@ function App() {
                 ) : (
                   <span>
                     {question.sport} <i>·</i> {question.category}
-                    <b className="difficulty-chip" data-difficulty={question.difficulty}>
-                      {difficultyLabel(question.difficulty)}
-                    </b>
                   </span>
                 )}
                 <strong>{remainingSeconds}<small>s</small></strong>

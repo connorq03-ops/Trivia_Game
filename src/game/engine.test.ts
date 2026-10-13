@@ -16,7 +16,7 @@ import {
   dailyQuestions,
   LEVELS,
   levelFor,
-  levelIndexFor,
+  bossMilestoneFor,
   presentQuestion,
   resolveAnswerMs,
   scoreAnswer,
@@ -497,19 +497,21 @@ function progressWith(overrides: Partial<RunProgress>): RunProgress {
 describe('Boss questions', () => {
   const bank = makeLargeBank(200)
 
-  it('maps correct counts to level indexes', () => {
-    expect(LEVELS.map(({ minCorrect }) => levelIndexFor(minCorrect))).toEqual([
-      0, 1, 2, 3, 4,
-    ])
-    expect(levelIndexFor(4)).toBe(0)
-    expect(levelIndexFor(9)).toBe(1)
-    expect(levelIndexFor(20)).toBe(2)
+  it('maps correct counts to boss milestones', () => {
+    expect(bossMilestoneFor(4)).toBeNull()
+    expect(bossMilestoneFor(9)).toBeNull()
+    expect(bossMilestoneFor(10)).toBe(10)
+    expect(bossMilestoneFor(19)).toBe(10)
+    expect(bossMilestoneFor(50)).toBe(50)
+    expect(bossMilestoneFor(60)).toBe(50)
+    expect(bossMilestoneFor(75)).toBe(75)
+    expect(bossMilestoneFor(99)).toBe(75)
   })
 
-  it('triggers once at each level threshold after the first', () => {
+  it('triggers once at each boss milestone', () => {
     const consumed: number[] = []
     const triggeredAt: number[] = []
-    for (let correct = 0; correct <= 60; correct += 1) {
+    for (let correct = 0; correct <= 110; correct += 1) {
       const selection = selectClassicQuestion(
         bank,
         new Set(),
@@ -519,17 +521,17 @@ describe('Boss questions', () => {
         bossOptions(consumed),
       )
       if (selection.type === 'boss') {
-        consumed.push(selection.level)
+        consumed.push(selection.milestone)
         triggeredAt.push(correct)
       }
     }
-    expect(triggeredAt).toEqual([5, 12, 25, 40])
-    expect(consumed).toEqual([1, 2, 3, 4])
+    expect(triggeredAt).toEqual([10, 20, 30, 40, 50, 75, 100])
+    expect(consumed).toEqual(triggeredAt)
   })
 
   it('serves a regular question once the level is consumed or bosses are off', () => {
     expect(
-      selectClassicQuestion(bank, new Set(), 10, defaultOptions, seededRandom(1), bossOptions([1]))
+      selectClassicQuestion(bank, new Set(), 10, defaultOptions, seededRandom(1), bossOptions([10]))
         .type,
     ).toBe('question')
     expect(
@@ -537,16 +539,16 @@ describe('Boss questions', () => {
     ).toBe('question')
   })
 
-  it('catches up on a level skipped by a legacy run', () => {
+  it('catches up on a milestone skipped by a legacy run', () => {
     const selection = selectClassicQuestion(
       bank,
       new Set(),
       23,
       defaultOptions,
       seededRandom(2),
-      bossOptions([1]),
+      bossOptions([10]),
     )
-    expect(selection.type === 'boss' && selection.level).toBe(2)
+    expect(selection.type === 'boss' && selection.milestone).toBe(20)
   })
 
   it('draws an unused boss with four shuffled choices from a category that has one', () => {

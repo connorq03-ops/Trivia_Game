@@ -43,7 +43,7 @@ export function howItWorks({ bosses = false }: { bosses?: boolean } = {}): strin
     `Classic starts easy and levels up at ${levelSteps} correct answers. Harder questions score more.`,
     ...(bosses
       ? [
-          `Each level-up brings a boss question on science, history, art or pop culture: ${BOSS_CLOCK_MS / 1000} seconds, +${BOSS_HIT_POINTS} if right, −${BOSS_MISS_POINTS} if wrong, no strike.`,
+          `Boss questions on science, history, art or pop culture hit every 10 correct up to 50, then every 25: ${BOSS_CLOCK_MS / 1000} seconds, +${BOSS_HIT_POINTS} if right, −${BOSS_MISS_POINTS} if wrong, no strike.`,
           `A perfect, fast Daily 10 earns a bonus boss: all 10 right in under ${DAILY_BONUS_AVG_MS / 1000}s each on average, +${BOSS_HIT_POINTS} if right and no penalty if wrong.`,
         ]
       : []),
