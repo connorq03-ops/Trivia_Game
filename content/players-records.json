@@ -5861,14 +5861,14 @@
     ],
     "difficulty": "medium",
     "category": "Stats and records",
-    "prompt": "What is the NFL record for career rushing yards by a quarterback?",
+    "prompt": "How many career rushing yards did Michael Vick finish with, then a QB record?",
     "answer": "6,109",
     "wrong": [
       "5,241",
       "5,628",
       "6,622"
     ],
-    "teach": "Vick scrambled to the mark across his Atlanta and Philadelphia years.",
+    "teach": "Vick's mark stood until Lamar Jackson passed it in Baltimore.",
     "source": {
       "url": "https://en.wikipedia.org/wiki/Michael_Vick",
       "ref": "Wikipedia article and career stats, checked 2026-10-14"
@@ -5889,14 +5889,14 @@
     ],
     "difficulty": "medium",
     "category": "Stats and records",
-    "prompt": "What is the NFL record for career rushing touchdowns by a quarterback?",
+    "prompt": "How many career rushing touchdowns did Cam Newton score, long the QB record?",
     "answer": "75",
     "wrong": [
       "66",
       "70",
       "82"
     ],
-    "teach": "Newton bulldozed through goal-line defenses for Carolina and New England.",
+    "teach": "Newton bulldozed in for Carolina and New England before Josh Allen went past.",
     "source": {
       "url": "https://en.wikipedia.org/wiki/Cam_Newton",
       "ref": "Wikipedia article and career stats, checked 2026-10-14"
@@ -6204,7 +6204,7 @@
       "106",
       "124"
     ],
-    "teach": "Gates caught them all from Philip Rivers in San Diego after playing college hoops.",
+    "teach": "Gates caught them in San Diego from Brees and Rivers after playing college hoops.",
     "source": {
       "url": "https://en.wikipedia.org/wiki/Antonio_Gates",
       "ref": "Wikipedia article and career stats, checked 2026-10-14"
@@ -6730,10 +6730,10 @@
     "difficulty": "hard",
     "category": "Stats and records",
     "prompt": "Where does Steve Nash rank on the all-time assists list?",
-    "answer": "5th",
+    "answer": "6th",
     "wrong": [
       "4th",
-      "6th",
+      "5th",
       "7th"
     ],
     "teach": "Nash dished 10,335 dimes for Phoenix and Dallas across eighteen seasons.",
@@ -6758,11 +6758,11 @@
     "difficulty": "hard",
     "category": "Stats and records",
     "prompt": "Where does Magic Johnson rank on the all-time assists list?",
-    "answer": "7th",
+    "answer": "8th",
     "wrong": [
-      "5th",
       "6th",
-      "8th"
+      "7th",
+      "9th"
     ],
     "teach": "Magic finished with 10,141 despite retiring at 31 during his prime.",
     "source": {
@@ -7016,7 +7016,7 @@
       "57",
       "64"
     ],
-    "teach": "Baylor poured them in against Boston despite the Lakers falling in overtime.",
+    "teach": "Baylor poured them in during a Game 5 victory over Boston in Los Angeles.",
     "source": {
       "url": "https://en.wikipedia.org/wiki/Elgin_Baylor",
       "ref": "Wikipedia article and career stats, checked 2026-10-14"
@@ -7234,13 +7234,13 @@
     "difficulty": "easy",
     "category": "Stats and records",
     "prompt": "How many All-Star selections did LeBron James earn, the most ever?",
-    "answer": "21",
+    "answer": "22",
     "wrong": [
-      "18",
       "19",
-      "23"
+      "20",
+      "24"
     ],
-    "teach": "James's streak ran uninterrupted from his second season onward.",
+    "teach": "James's streak ran uninterrupted from his second season through the 2026 game.",
     "source": {
       "url": "https://en.wikipedia.org/wiki/LeBron_James",
       "ref": "Wikipedia article and career stats, checked 2026-10-14"
@@ -7318,10 +7318,10 @@
     "difficulty": "hard",
     "category": "Stats and records",
     "prompt": "Where does Karl Malone rank all-time in games played?",
-    "answer": "6th",
+    "answer": "7th",
     "wrong": [
-      "4th",
       "5th",
+      "6th",
       "8th"
     ],
     "teach": "The Mailman missed only ten games across eighteen seasons in Utah.",
@@ -7345,14 +7345,14 @@
     ],
     "difficulty": "medium",
     "category": "Stats and records",
-    "prompt": "How many NBA seasons did Vince Carter play, the most ever?",
+    "prompt": "How many NBA seasons did Vince Carter play across four decades?",
     "answer": "22",
     "wrong": [
       "20",
       "21",
       "23"
     ],
-    "teach": "Carter's run spanned four decades from Toronto's Air Canada days to Atlanta.",
+    "teach": "Carter spanned Toronto's Air Canada days to Atlanta; only LeBron has played longer.",
     "source": {
       "url": "https://en.wikipedia.org/wiki/Vince_Carter",
       "ref": "Wikipedia article and career stats, checked 2026-10-14"
@@ -8400,8 +8400,8 @@
     }
   },
   {
-    "id": "p-mlb-ty-cobb-batting-titles",
-    "factId": "mlb-ty-cobb-batting-titles",
+    "id": "p-mlb-ty-cobb-sb-rank",
+    "factId": "mlb-ty-cobb-sb-rank",
     "side": "players",
     "sport": "baseball",
     "leagues": [
@@ -8409,14 +8409,14 @@
     ],
     "difficulty": "medium",
     "category": "Stats and records",
-    "prompt": "How many batting titles did Ty Cobb win, the most ever?",
-    "answer": "11",
+    "prompt": "Where does Ty Cobb rank on the all-time stolen bases list?",
+    "answer": "4th",
     "wrong": [
-      "9",
-      "10",
-      "12"
+      "2nd",
+      "3rd",
+      "5th"
     ],
-    "teach": "Cobb claimed them for Detroit, including nine straight to open his prime.",
+    "teach": "Cobb swiped 897 bags for Detroit during the dead-ball era.",
     "source": {
       "url": "https://en.wikipedia.org/wiki/Ty_Cobb",
       "ref": "Wikipedia article and career stats, checked 2026-10-14"
