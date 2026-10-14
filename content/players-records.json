@@ -336,8 +336,8 @@
     }
   },
   {
-    "id": "p-nfl-justin-tucker-longest-fg",
-    "factId": "nfl-justin-tucker-longest-fg",
+    "id": "p-nfl-cam-little-longest-fg",
+    "factId": "nfl-cam-little-longest-fg",
     "side": "players",
     "sport": "football",
     "leagues": [
@@ -346,21 +346,21 @@
     "difficulty": "medium",
     "category": "Stats and records",
     "prompt": "How long was the longest field goal in NFL history?",
-    "answer": "66 yards",
+    "answer": "68 yards",
     "wrong": [
       "63 yards",
       "64 yards",
-      "68 yards"
+      "66 yards"
     ],
-    "teach": "Tucker's kick bounced off the crossbar to beat Detroit as time expired for Baltimore.",
+    "teach": "Little drilled it for Jacksonville against Las Vegas, topping Justin Tucker's prior mark.",
     "source": {
-      "url": "https://en.wikipedia.org/wiki/Justin_Tucker",
+      "url": "https://en.wikipedia.org/wiki/Cam_Little",
       "ref": "Wikipedia article and career stats, checked 2026-10-14"
     },
     "dailyFrom": "2026-11-03",
     "reel": {
-      "season": 2021,
-      "player": "Justin Tucker"
+      "season": 2025,
+      "player": "Cam Little"
     }
   },
   {
@@ -457,14 +457,14 @@
     ],
     "difficulty": "medium",
     "category": "Stats and records",
-    "prompt": "Who was the first player to rush for 2,000 yards in an NFL season?",
-    "answer": "O.J. Simpson",
+    "prompt": "How many rushing yards did O.J. Simpson post in 1973, the first 2,000-yard season?",
+    "answer": "2,003",
     "wrong": [
-      "Jim Brown",
-      "Eric Dickerson",
-      "Barry Sanders"
+      "1,997",
+      "2,008",
+      "2,105"
     ],
-    "teach": "Simpson did it in a 14-game schedule with Buffalo, averaging a record 143 per contest.",
+    "teach": "Simpson averaged a record 143 per contest over Buffalo's 14-game schedule.",
     "source": {
       "url": "https://en.wikipedia.org/wiki/O._J._Simpson",
       "ref": "Wikipedia article and career stats, checked 2026-10-14"
@@ -728,8 +728,8 @@
     }
   },
   {
-    "id": "p-nfl-derrick-henry-playoff-pace",
-    "factId": "nfl-derrick-henry-playoff-pace",
+    "id": "p-nfl-derrick-henry-season-rush",
+    "factId": "nfl-derrick-henry-season-rush",
     "side": "players",
     "sport": "football",
     "leagues": [
@@ -737,12 +737,12 @@
     ],
     "difficulty": "hard",
     "category": "Stats and records",
-    "prompt": "Whose 2,027 rushing yards in 2020 is the fifth-best single season ever?",
-    "answer": "Derrick Henry",
+    "prompt": "How many rushing yards did Derrick Henry post in 2020, the fifth-best season ever?",
+    "answer": "2,027",
     "wrong": [
-      "Jonathan Taylor",
-      "Dalvin Cook",
-      "Saquon Barkley"
+      "1,935",
+      "2,003",
+      "2,105"
     ],
     "teach": "Henry won Offensive Player of the Year while powering Tennessee's ground attack.",
     "source": {
@@ -765,14 +765,14 @@
     ],
     "difficulty": "medium",
     "category": "Stats and records",
-    "prompt": "Who rushed for 2,005 yards in 2024, the ninth 2,000-yard season ever?",
-    "answer": "Saquon Barkley",
+    "prompt": "How many rushing yards did Saquon Barkley post for Philadelphia in 2024?",
+    "answer": "2,005",
     "wrong": [
-      "Derrick Henry",
-      "Christian McCaffrey",
-      "Nick Chubb"
+      "1,975",
+      "2,003",
+      "2,027"
     ],
-    "teach": "Barkley hit the mark in his first year with Philadelphia, then won the Super Bowl.",
+    "teach": "Barkley eclipsed the plateau in his debut Eagles campaign before lifting the Lombardi Trophy.",
     "source": {
       "url": "https://en.wikipedia.org/wiki/Saquon_Barkley",
       "ref": "Wikipedia article and career stats, checked 2026-10-14"
@@ -1493,14 +1493,14 @@
     ],
     "difficulty": "medium",
     "category": "Stats and records",
-    "prompt": "Who is the youngest player ever to win NBA MVP?",
-    "answer": "Derrick Rose",
+    "prompt": "At what age did Derrick Rose win NBA MVP, the youngest ever?",
+    "answer": "22",
     "wrong": [
-      "LeBron James",
-      "Magic Johnson",
-      "Kevin Durant"
+      "21",
+      "23",
+      "24"
     ],
-    "teach": "Rose was 22 when he lifted the trophy after carrying Chicago to 62 wins.",
+    "teach": "Chicago's point guard steered the Bulls to 62 victories while taking the honor over LeBron James.",
     "source": {
       "url": "https://en.wikipedia.org/wiki/Derrick_Rose",
       "ref": "Wikipedia article and career stats, checked 2026-10-14"
@@ -1521,14 +1521,14 @@
     ],
     "difficulty": "medium",
     "category": "Stats and records",
-    "prompt": "Who holds the NBA record for career triple-doubles?",
-    "answer": "Russell Westbrook",
+    "prompt": "What NBA record did Russell Westbrook break in 2021?",
+    "answer": "Career triple-doubles",
     "wrong": [
-      "Oscar Robertson",
-      "Magic Johnson",
-      "Nikola Jokic"
+      "Career assists",
+      "Season scoring",
+      "Career steals"
     ],
-    "teach": "Westbrook passed Robertson's mark of 181 while playing for Washington.",
+    "teach": "Westbrook passed Oscar Robertson's longstanding mark of 181 while playing for Washington.",
     "source": {
       "url": "https://en.wikipedia.org/wiki/Russell_Westbrook",
       "ref": "Wikipedia article and career stats, checked 2026-10-14"
@@ -1997,7 +1997,7 @@
     ],
     "difficulty": "hard",
     "category": "Stats and records",
-    "prompt": "What is the MLB single-season record for stolen bases?",
+    "prompt": "What is the modern-era MLB single-season record for stolen bases?",
     "answer": "130",
     "wrong": [
       "118",
@@ -2697,14 +2697,14 @@
     ],
     "difficulty": "expert",
     "category": "Stats and records",
-    "prompt": "Who is the only pitcher to throw no-hitters in consecutive starts?",
-    "answer": "Johnny Vander Meer",
+    "prompt": "Johnny Vander Meer set an MLB record in 1938 with how many consecutive no-hitters?",
+    "answer": "2",
     "wrong": [
-      "Nolan Ryan",
-      "Sandy Koufax",
-      "Cy Young"
+      "3",
+      "4",
+      "5"
     ],
-    "teach": "Vander Meer did it for Cincinnati across starts against Boston and Brooklyn.",
+    "teach": "Vander Meer's back-to-back gems came for Cincinnati against Boston and Brooklyn.",
     "source": {
       "url": "https://en.wikipedia.org/wiki/Johnny_Vander_Meer",
       "ref": "Wikipedia article and career stats, checked 2026-10-14"
