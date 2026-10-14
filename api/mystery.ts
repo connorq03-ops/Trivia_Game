@@ -142,7 +142,7 @@ export async function POST(request: Request): Promise<Response> {
             set progress = jsonb_set(
               progress - 'pendingMystery',
               '{score}',
-              to_jsonb(coalesce((progress ->> 'score')::int, 0) + ${prize.points})
+              to_jsonb(coalesce((progress ->> 'score')::int, 0) + ${prize.points}::int)
             )
             where id = ${input.runId}
               and token_hash = ${hashRunToken(input.runToken)}
@@ -217,8 +217,8 @@ export async function POST(request: Request): Promise<Response> {
       await sql`
         update runs
         set last_response = jsonb_set(
-          jsonb_set(last_response, '{summary,score}', to_jsonb(${applied.score})),
-          '{progress,score}', to_jsonb(${applied.score})
+          jsonb_set(last_response, '{summary,score}', to_jsonb(${applied.score}::int)),
+          '{progress,score}', to_jsonb(${applied.score}::int)
         )
         where id = ${input.runId}
           and last_response ? 'summary'

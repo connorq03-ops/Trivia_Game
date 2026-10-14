@@ -133,7 +133,7 @@ export async function POST(request: Request): Promise<Response> {
             )
           ),
           '{lifelines,fiftyFiftyUsedOn}',
-          to_jsonb(${input.questionIndex})
+          to_jsonb(${input.questionIndex}::int)
         )
       where id = ${input.runId}
         and token_hash = ${hashRunToken(input.runToken)}
