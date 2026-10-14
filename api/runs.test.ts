@@ -1,5 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { getSql } from '../lib/db.js'
+import { questionBank } from '../lib/questions.js'
 import { hashRunToken } from '../lib/runToken.js'
 import { REEL_MS, selectClassicQuestion } from '../src/game/engine.js'
 import { POST } from './runs.js'
@@ -26,13 +27,16 @@ function makeRequest(
 
 const runId = '123e4567-e89b-12d3-a456-426614174000'
 
-function mockSql(inserted: unknown[] = [{ id: runId }]) {
+function mockSql(
+  inserted: unknown[] = [{ id: runId }],
+  resumed: unknown[] = [],
+) {
   const sql = Object.assign(
     vi.fn((strings: TemplateStringsArray, ...values: unknown[]) => ({
       query: strings.join('?'),
       values,
     })),
-    { transaction: vi.fn().mockResolvedValue([[], inserted]) },
+    { transaction: vi.fn().mockResolvedValue([[], resumed, inserted]) },
   )
   vi.mocked(getSql).mockReturnValue(sql as never)
   return sql
@@ -82,11 +86,12 @@ describe('runs handler', () => {
 
     await POST(makeRequest({ mode: 'classic', sport: 'all', side: 'both' }))
 
-    const [lock, insert] = insertQuery(sql)
+    const [lock, resume, insert] = insertQuery(sql)
     expect(lock.query).toContain('pg_advisory_xact_lock')
+    expect(resume.query).toMatch(/from runs[\s\S]*token_hash/)
     expect(insert.query).toMatch(/insert into runs[\s\S]*select[\s\S]*where \([\s\S]*count\(\*\)[\s\S]*\) </)
     expect(insert.values).toContain(7)
-    expect(lock.values[0]).toBe(insert.values.at(-2))
+    expect(insert.values).toContain(lock.values[0])
   })
 
   it('keys quota on x-real-ip and ignores a spoofed x-forwarded-for', async () => {
@@ -119,7 +124,7 @@ describe('runs handler', () => {
     expect(body.runId).toBe(runId)
     expect(body.runToken).toMatch(/^[A-Za-z0-9_-]{43}$/)
     expect(body.bosses).toBe(false)
-    const insert = insertQuery(sql)[1]
+    const insert = insertQuery(sql)[2]
     expect(insert.query).toContain('now() + make_interval(secs => ?)')
     expect(insert.values).toContain(REEL_MS / 1000)
     expect(insert.values).toContain(hashRunToken(body.runToken))
@@ -140,6 +145,72 @@ describe('runs handler', () => {
       }
     }
     visit(body)
+  })
+
+  it('resumes an active run for the stored-token holder instead of a fresh one', async () => {
+    const resumeToken = 'a'.repeat(43)
+    const liveQuestion = questionBank[0]
+    const sql = mockSql([], [
+      {
+        id: runId,
+        question_index: 4,
+        current_question_id: liveQuestion.id,
+        current_choices: [liveQuestion.answer, 'a', 'b', 'c'],
+        progress: {
+          score: 1200,
+          strikes: 1,
+          streak: 0,
+          results: ['hit', 'hit', 'hit', 'miss'],
+          questionsAnswered: 4,
+          missed: ['x'],
+        },
+        daily_date: null,
+      },
+    ])
+
+    const response = await POST(
+      makeRequest({
+        mode: 'classic',
+        sport: 'all',
+        side: 'both',
+        resume: { runId, runToken: resumeToken },
+      }),
+    )
+    const body = await response.json()
+
+    expect(response.status).toBe(200)
+    expect(body.runId).toBe(runId)
+    expect(body.runToken).toBe(resumeToken)
+    expect(body.questionIndex).toBe(4)
+    expect(body.question.id).toBe(liveQuestion.id)
+    expect(body.progress).toEqual({
+      score: 1200,
+      strikes: 1,
+      streak: 0,
+      correct: 3,
+    })
+    // Resume matched on the presented token hash, not just the ip.
+    const resume = insertQuery(sql)[1]
+    expect(resume.values).toContain(runId)
+    expect(resume.values).toContain(hashRunToken(resumeToken))
+    // No statement ends other runs by ip: a shared-IP start can't kill
+    // someone else's active run.
+    const queries = insertQuery(sql).map((q) => q.query)
+    expect(queries.some((q) => /update runs/.test(q))).toBe(false)
+  })
+
+  it('rejects a malformed resume payload', async () => {
+    const response = await POST(
+      makeRequest({
+        mode: 'classic',
+        sport: 'all',
+        side: 'both',
+        resume: { runId: 'not-a-uuid', runToken: 'a'.repeat(43) },
+      }),
+    )
+
+    expect(response.status).toBe(400)
+    expect(await response.json()).toEqual({ error: 'invalid_body' })
   })
 
   it('returns no_questions without inserting a run when filters have no bank', async () => {
