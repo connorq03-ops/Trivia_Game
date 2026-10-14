@@ -136,40 +136,25 @@ export async function POST(request: Request): Promise<Response> {
     // would let a shared-IP player take over someone else's run.
     const resumeId = input.resume?.runId ?? NO_RUN_ID
     const resumeTokenHash = hashRunToken(input.resume?.runToken ?? '')
-    const resumeQuery =
+    // A run is only resumable under the same game parameters: today's date for
+    // Daily, the same sport/side filters for Classic.
+    const resumeFilter =
       input.mode === 'daily'
-        ? sql`
-          select id, question_index, current_question_id, current_choices,
-            progress, daily_date
-          from runs
-          where id = ${resumeId}::uuid
-            and token_hash = ${resumeTokenHash}
-            and status = 'active'
-            and mode = 'daily'
-            and daily_date = ${date}::date
-          limit 1
-        `
-        : sql`
-          select id, question_index, current_question_id, current_choices,
-            progress, daily_date
-          from runs
-          where id = ${resumeId}::uuid
-            and token_hash = ${resumeTokenHash}
-            and status = 'active'
-            and mode = 'classic'
-          limit 1
-        `
-    const [, resumed, , inserted] = (await sql.transaction([
+        ? sql`and mode = 'daily' and daily_date = ${date}::date`
+        : sql`and mode = 'classic' and sport = ${input.sport} and side = ${input.side}`
+    const resumeQuery = sql`
+      select id, question_index, current_question_id, current_choices,
+        progress, daily_date
+      from runs
+      where id = ${resumeId}::uuid
+        and token_hash = ${resumeTokenHash}
+        and status = 'active'
+        ${resumeFilter}
+      limit 1
+    `
+    const [, resumed, inserted] = (await sql.transaction([
       sql`select pg_advisory_xact_lock(hashtextextended(${ipHash}, 0))`,
       resumeQuery,
-      sql`
-        update runs
-        set status = 'ended', ended_at = now()
-        where ip_hash = ${ipHash}
-          and status = 'active'
-          and mode = ${input.mode}
-          and id <> ${resumeId}::uuid
-      `,
       sql`
         insert into runs (
           mode,
@@ -209,7 +194,9 @@ export async function POST(request: Request): Promise<Response> {
           and not exists (
             select 1 from runs
             where id = ${resumeId}::uuid
+              and token_hash = ${resumeTokenHash}
               and status = 'active'
+              ${resumeFilter}
           )
         returning id
       `,
@@ -231,7 +218,6 @@ export async function POST(request: Request): Promise<Response> {
         } | string | null
         daily_date: string | Date | null
       }[],
-      unknown,
       { id: string }[],
     ]
     const resumedRun = resumed[0]

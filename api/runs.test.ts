@@ -36,7 +36,7 @@ function mockSql(
       query: strings.join('?'),
       values,
     })),
-    { transaction: vi.fn().mockResolvedValue([[], resumed, [], inserted]) },
+    { transaction: vi.fn().mockResolvedValue([[], resumed, inserted]) },
   )
   vi.mocked(getSql).mockReturnValue(sql as never)
   return sql
@@ -86,7 +86,7 @@ describe('runs handler', () => {
 
     await POST(makeRequest({ mode: 'classic', sport: 'all', side: 'both' }))
 
-    const [lock, resume, , insert] = insertQuery(sql)
+    const [lock, resume, insert] = insertQuery(sql)
     expect(lock.query).toContain('pg_advisory_xact_lock')
     expect(resume.query).toMatch(/from runs[\s\S]*token_hash/)
     expect(insert.query).toMatch(/insert into runs[\s\S]*select[\s\S]*where \([\s\S]*count\(\*\)[\s\S]*\) </)
@@ -124,7 +124,7 @@ describe('runs handler', () => {
     expect(body.runId).toBe(runId)
     expect(body.runToken).toMatch(/^[A-Za-z0-9_-]{43}$/)
     expect(body.bosses).toBe(false)
-    const insert = insertQuery(sql)[3]
+    const insert = insertQuery(sql)[2]
     expect(insert.query).toContain('now() + make_interval(secs => ?)')
     expect(insert.values).toContain(REEL_MS / 1000)
     expect(insert.values).toContain(hashRunToken(body.runToken))
@@ -193,10 +193,10 @@ describe('runs handler', () => {
     const resume = insertQuery(sql)[1]
     expect(resume.values).toContain(runId)
     expect(resume.values).toContain(hashRunToken(resumeToken))
-    // The end-stale update protects the resumed run.
-    const endStale = insertQuery(sql)[2]
-    expect(endStale.query).toMatch(/update runs[\s\S]*status = 'ended'/)
-    expect(endStale.values).toContain(runId)
+    // No statement ends other runs by ip: a shared-IP start can't kill
+    // someone else's active run.
+    const queries = insertQuery(sql).map((q) => q.query)
+    expect(queries.some((q) => /update runs/.test(q))).toBe(false)
   })
 
   it('rejects a malformed resume payload', async () => {
