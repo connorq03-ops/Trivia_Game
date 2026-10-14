@@ -12,7 +12,7 @@ export interface Question {
   sport: Sport | 'boss'
   leagues: string[] // e.g. ["NBA","NCAA"]; never "All"
   difficulty: Difficulty
-  category: string // rules: 'Clock and timing' | 'Numbers and dimensions' | "What's the call?" | 'Scoring'; players: 'Alma mater' | 'Drafted by' | 'Jersey number' | 'Position' | 'Country'
+  category: string // rules: 'Clock and timing' | 'Numbers and dimensions' | "What's the call?" | 'Scoring'; players: 'Alma mater' | 'Drafted by' | 'Jersey number' | 'Position' | 'Country' | 'Stats and records'
   prompt: string // <= 110 chars
   answer: string // <= 24 chars
   wrong: [string, string, string] // <= 24 chars each; distinct from answer and each other

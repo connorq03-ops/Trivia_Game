@@ -22,6 +22,7 @@ const playerCategories = [
   'Jersey number',
   'Position',
   'Country',
+  'Stats and records',
 ]
 const sports = ['football', 'basketball', 'baseball']
 const difficulties = ['easy', 'medium', 'hard', 'expert']

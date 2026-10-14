@@ -2,6 +2,7 @@ import boss from '../content/boss.json' with { type: 'json' }
 import playersNbaDeep from '../content/players-nba-deep.json' with { type: 'json' }
 import playersNflDeep from '../content/players-nfl-deep.json' with { type: 'json' }
 import playersMlb from '../content/players-mlb.json' with { type: 'json' }
+import playersRecords from '../content/players-records.json' with { type: 'json' }
 import players from '../content/players.json' with { type: 'json' }
 import rulesDeep from '../content/rules-deep.json' with { type: 'json' }
 import rules from '../content/rules.json' with { type: 'json' }
@@ -28,6 +29,7 @@ export const contentFiles: Record<string, Question[]> = {
   'players-mlb.json': playersMlb as Question[],
   'players-nfl-deep.json': playersNflDeep as Question[],
   'players-nba-deep.json': playersNbaDeep as Question[],
+  'players-records.json': playersRecords as Question[],
 }
 
 // Boss questions stay out of questionBank so Daily and normal Classic
