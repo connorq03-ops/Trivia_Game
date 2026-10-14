@@ -4434,9 +4434,9 @@
     "difficulty": "medium",
     "category": "Stats and records",
     "prompt": "Where does Jason Kidd rank on the all-time assists list?",
-    "answer": "2nd",
+    "answer": "3rd",
     "wrong": [
-      "3rd",
+      "2nd",
       "4th",
       "5th"
     ],
@@ -4462,13 +4462,13 @@
     "difficulty": "hard",
     "category": "Stats and records",
     "prompt": "Where does Jason Kidd rank on the all-time steals list?",
-    "answer": "2nd",
+    "answer": "3rd",
     "wrong": [
       "1st",
-      "3rd",
+      "2nd",
       "4th"
     ],
-    "teach": "Kidd trailed only Stockton while pilfering for four franchises.",
+    "teach": "Kidd trails only Stockton and Paul after pilfering for four franchises.",
     "source": {
       "url": "https://en.wikipedia.org/wiki/Jason_Kidd",
       "ref": "Wikipedia article and career stats, checked 2026-10-14"
@@ -4881,7 +4881,7 @@
     ],
     "difficulty": "medium",
     "category": "Stats and records",
-    "prompt": "What is the MLB record for strikeouts in a single game?",
+    "prompt": "What is the MLB record for strikeouts in a nine-inning game?",
     "answer": "20",
     "wrong": [
       "17",
