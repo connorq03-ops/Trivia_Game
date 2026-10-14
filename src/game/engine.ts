@@ -377,9 +377,11 @@ function harderFirstOrder(difficulty: Difficulty): Difficulty[] {
 }
 
 // The daily challenge ramps hard: one easy warm-up, then medium through expert.
+// Players-heavy on purpose: dry regulation questions wore on daily players,
+// so rules get three slots and players carry the other seven.
 const DAILY_SIDE_QUOTAS: Record<Side, Difficulty[]> = {
-  rules: ['easy', 'medium', 'hard', 'hard', 'expert'],
-  players: ['medium', 'medium', 'hard', 'expert', 'expert'],
+  rules: ['easy', 'medium', 'hard'],
+  players: ['medium', 'medium', 'hard', 'hard', 'expert', 'expert', 'expert'],
 }
 
 export function dailyQuestions(dateUtc: string, bank: Question[]): Question[] {
@@ -414,11 +416,17 @@ export function dailyQuestions(dateUtc: string, bank: Question[]): Question[] {
       }
       return pick
     }
-    for (const difficulty of DAILY_SIDE_QUOTAS[side]) take(difficulty)
+    const quota = DAILY_SIDE_QUOTAS[side]
+    for (const difficulty of quota) take(difficulty)
     // Tiny banks can miss a quota slot; top up with whatever is unused.
-    while (selected.filter((item) => item.side === side).length < 5 && take(null));
-    if (selected.filter((item) => item.side === side).length !== 5) {
-      throw new Error(`Daily 10 requires five distinct ${side} questions`)
+    while (
+      selected.filter((item) => item.side === side).length < quota.length &&
+      take(null)
+    );
+    if (selected.filter((item) => item.side === side).length !== quota.length) {
+      throw new Error(
+        `Daily 10 requires ${quota.length} distinct ${side} questions`,
+      )
     }
   }
 
