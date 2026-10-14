@@ -722,6 +722,7 @@ function App() {
         const body = (await response.json().catch(() => null)) as {
           progress?: PublicProgress
         } | null
+        if (activeRunId.current !== session.runId) return
         const applied = body?.progress
         if (applied) {
           setSession({ ...session, progress: applied })
@@ -732,7 +733,7 @@ function App() {
             previous ? { ...previous, score: applied.score } : previous,
           )
         }
-        continueAfterMystery()
+        continueAfterMystery(applied)
         return
       }
       if (!response.ok) throw new Error('Mystery pick failed')
@@ -763,20 +764,31 @@ function App() {
     }
   }
 
-  const continueAfterMystery = () => {
+  // recoveredProgress is passed in when a 409 reports an already-applied
+  // pick: the setState calls above haven't rendered yet, so build the
+  // session/summary this step uses directly from the recovered progress.
+  const continueAfterMystery = (recoveredProgress?: PublicProgress) => {
     setMystery(null)
-    if (pendingSummary) {
-      setSummary(pendingSummary)
+    const currentSession =
+      recoveredProgress && session
+        ? { ...session, progress: recoveredProgress }
+        : session
+    const currentSummary =
+      recoveredProgress && pendingSummary
+        ? { ...pendingSummary, score: recoveredProgress.score }
+        : pendingSummary
+    if (currentSummary) {
+      setSummary(currentSummary)
       setPendingSummary(null)
       setPendingNextIndex(null)
       setScreen('over')
-    } else if (pendingNextIndex !== null && session) {
+    } else if (pendingNextIndex !== null && currentSession) {
       const nextIndex = pendingNextIndex
       setPendingNextIndex(null)
-      void loadQuestion(session, nextIndex)
-    } else if (session) {
+      void loadQuestion(currentSession, nextIndex)
+    } else if (currentSession) {
       // Box restored after a refresh: the un-answered question is still live.
-      void loadQuestion(session, session.questionIndex)
+      void loadQuestion(currentSession, currentSession.questionIndex)
     } else {
       setScreen('over')
     }
@@ -1358,7 +1370,7 @@ function App() {
               {mystery.result && (
                 <button
                   className="classic-button"
-                  onClick={continueAfterMystery}
+                  onClick={() => continueAfterMystery()}
                 >
                   Continue
                 </button>
