@@ -3008,7 +3008,7 @@
       "3",
       "4"
     ],
-    "teach": "Win at least one and you get a third.",
+    "teach": "Win both of your first two challenges and you get a third.",
     "source": {
       "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
       "ref": "NFL Rule 15-1-1 — Coach’s challenge (2026)"
@@ -3025,14 +3025,14 @@
     ],
     "difficulty": "medium",
     "category": "Clock and timing",
-    "prompt": "An NFL coach wins one of his first two challenges. What does he earn?",
+    "prompt": "An NFL coach wins both of his first two challenges. What does he earn?",
     "answer": "A third challenge",
     "wrong": [
       "An extra timeout",
       "A free first down",
       "Nothing"
     ],
-    "teach": "Every team starts with two challenges per game.",
+    "teach": "Every team starts with two challenges; win both and you get a third.",
     "source": {
       "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
       "ref": "NFL Rule 15-1-1 — Coach’s challenge (2026)"
@@ -3056,7 +3056,7 @@
       "A down",
       "Nothing"
     ],
-    "teach": "Win at least one of your two challenges and you get a third.",
+    "teach": "Win both of your first two challenges and you get a third.",
     "source": {
       "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
       "ref": "NFL Rule 15-1-1 — Coach’s challenge (2026)"
