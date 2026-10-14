@@ -6,6 +6,7 @@ import {
   isBossQuestion,
   questionBank,
   questionsById,
+  retiredFactAliases,
 } from '../lib/questions.js'
 import {
   answerBonusBossQuestion,
@@ -238,6 +239,10 @@ export async function POST(request: Request): Promise<Response> {
     }
     const usedFactIds = new Set(run.used_fact_ids ?? [])
     usedFactIds.add(question.factId)
+    for (const factId of [...usedFactIds]) {
+      const alias = retiredFactAliases.get(factId)
+      if (alias) usedFactIds.add(alias)
+    }
 
     let next: { question: Question; choices: string[] } | null = null
     let endReason: 'strikes' | 'bank' | 'complete' | null = null

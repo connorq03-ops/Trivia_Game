@@ -46,6 +46,15 @@ export const retiredContentFiles: Record<string, Question[]> = {
   'retired.json': retired as Question[],
 }
 
+// Retired questions that were renamed rather than pulled: their old factIds
+// map to the active replacement's factId so a run that already used the old
+// fact never draws the same fact again under its new id.
+export const retiredFactAliases = new Map<string, string>([
+  ['nfl-justin-tucker-longest-fg', 'nfl-cam-little-longest-fg'],
+  ['nfl-derrick-henry-playoff-pace', 'nfl-derrick-henry-season-rush'],
+  ['mlb-ty-cobb-batting-titles', 'mlb-ty-cobb-sb-rank'],
+])
+
 export const questionBank = Object.values(contentFiles).flat()
 export const bossQuestions = Object.values(bossContentFiles).flat()
 export const questionsById = new Map<string, Question>(
