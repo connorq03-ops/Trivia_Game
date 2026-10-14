@@ -32,15 +32,25 @@ function makeRun(progress: Record<string, unknown> = {}, overrides: Record<strin
     },
     current_question_id: question.id,
     current_choices: [question.answer, ...question.wrong],
+    revealed: true,
     ...overrides,
   }
 }
 
-function mockSql({ rows = [makeRun()], updated = [{ id: runId }] } = {}) {
+const appliedLifelines = {
+  fiftyFifty: 0,
+  shield: false,
+  fiftyFiftyUsedOn: 0,
+}
+
+function mockSql({
+  rows = [makeRun()],
+  updated = [{ progress: { lifelines: appliedLifelines } }],
+} = {}) {
   const sql = vi.fn().mockImplementation((strings: TemplateStringsArray) => {
     const query = strings.join(' ').toLowerCase()
-    if (query.includes('from runs')) return Promise.resolve(rows)
     if (query.includes('update runs')) return Promise.resolve(updated)
+    if (query.includes('from runs')) return Promise.resolve(rows)
     return Promise.resolve([])
   })
   vi.mocked(getSql).mockReturnValue(sql as never)
@@ -73,6 +83,14 @@ describe('lifeline handler', () => {
     expect(response.status).toBe(404)
   })
 
+  it('409s before the question is revealed — no untimed 50/50', async () => {
+    const sql = mockSql({ rows: [makeRun({}, { revealed: false })] })
+    const response = await POST(makeRequest(validBody))
+    expect(response.status).toBe(409)
+    expect(await response.json()).toEqual({ error: 'not_revealed' })
+    expect(sql).toHaveBeenCalledTimes(1)
+  })
+
   it('409s when there are no stored charges', async () => {
     mockSql({ rows: [makeRun({ lifelines: { fiftyFifty: 0, shield: false } })] })
     const response = await POST(makeRequest(validBody))
@@ -96,6 +114,11 @@ describe('lifeline handler', () => {
     expect(body.lifelines.fiftyFifty).toBe(0)
     expect(body.lifelines.fiftyFiftyUsedOn).toBe(0)
     expect(sql).toHaveBeenCalledTimes(2)
+    // The charge is decremented in the UPDATE expression, not from a snapshot.
+    const [updateQuery] = sql.mock.calls[1]
+    expect((updateQuery as TemplateStringsArray).join(' ')).toContain(
+      'lifelines,fiftyFifty',
+    )
   })
 
   it('is idempotent on the same question: no second charge burned', async () => {

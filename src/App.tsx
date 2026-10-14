@@ -147,6 +147,7 @@ type RunResponse = {
   progress: PublicProgress
   total: number | null
   bosses?: boolean
+  mystery?: string[]
 }
 
 function browserStorage(): Pick<
@@ -443,7 +444,13 @@ function App() {
         question: result.question,
         total: result.total,
       })
-      setScreen('reel')
+      // A resumed run can still have an unopened mystery box waiting.
+      if (result.mystery && result.mystery.length === 2) {
+        setMystery({ picked: null, result: null })
+        setScreen('mystery')
+      } else {
+        setScreen('reel')
+      }
     } catch {
       if (generation !== startGeneration.current) return
       setStartError(true)
@@ -708,6 +715,12 @@ function App() {
         }),
       })
       if (activeRunId.current !== session.runId) return
+      if (response.status === 409) {
+        // The box is already gone — most likely this pick applied on an earlier
+        // attempt whose response was lost. Move on rather than reveal nothing.
+        continueAfterMystery()
+        return
+      }
       if (!response.ok) throw new Error('Mystery pick failed')
       const result = (await response.json()) as {
         prizes: MysteryPrizeDescriptor[]
@@ -716,12 +729,21 @@ function App() {
       }
       if (activeRunId.current !== session.runId) return
       setSession({ ...session, progress: result.progress })
+      // A box can be the run's last event; keep the end screen's score honest.
+      setPendingSummary((previous) =>
+        previous ? { ...previous, score: result.progress.score } : previous,
+      )
+      setSummary((previous) =>
+        previous ? { ...previous, score: result.progress.score } : previous,
+      )
       setMystery({ picked: pick, result })
       setAnnouncement(`Mystery box: ${result.applied.label}.`)
     } catch {
       if (activeRunId.current !== session.runId) return
-      // The pick may still have applied server-side; move on either way.
-      continueAfterMystery()
+      // Response lost or offline: the pick may not have applied, so put the
+      // boxes back and let the player try again instead of losing the prize.
+      setMystery({ picked: null, result: null })
+      setAnnouncement('Connection hiccup — tap a box to try again.')
     } finally {
       setIsSubmitting(false)
     }
@@ -738,6 +760,9 @@ function App() {
       const nextIndex = pendingNextIndex
       setPendingNextIndex(null)
       void loadQuestion(session, nextIndex)
+    } else if (session) {
+      // Box restored after a refresh: the un-answered question is still live.
+      void loadQuestion(session, session.questionIndex)
     } else {
       setScreen('over')
     }
@@ -765,12 +790,22 @@ function App() {
         lifelines: Lifelines
       }
       if (activeRunId.current !== session.runId) return
-      setSession({
-        ...session,
-        progress: { ...session.progress, lifelines: result.lifelines },
-        question: result.question,
-      })
-      setAnnouncement('50/50 used. Two choices left.')
+      // Merge into the latest session only while this question is still live —
+      // a late response must not resurrect a question the player already
+      // answered or timed out on while the lifeline request was in flight.
+      setSession((previous) =>
+        previous &&
+        previous.runId === session.runId &&
+        previous.questionIndex === session.questionIndex &&
+        !answered.current
+          ? {
+              ...previous,
+              progress: { ...previous.progress, lifelines: result.lifelines },
+              question: result.question,
+            }
+          : previous
+      )
+      if (!answered.current) setAnnouncement('50/50 used. Two choices left.')
     } catch {
       if (activeRunId.current !== session.runId) return
       setAnnouncement('Couldn’t use the lifeline. Try again.')

@@ -46,11 +46,21 @@ function makeRun(overrides: Record<string, unknown> = {}) {
   }
 }
 
-function mockSql({ rows = [makeRun()], updated = [{ id: runId }] } = {}) {
+const appliedProgress = {
+  ...baseProgress,
+  score: 3600,
+  lifelines: { fiftyFifty: 0, shield: true },
+}
+
+function mockSql({
+  rows = [makeRun()],
+  updated = [{ progress: appliedProgress }],
+} = {}) {
   const sql = vi.fn().mockImplementation((strings: TemplateStringsArray) => {
     const query = strings.join(' ').toLowerCase()
+    if (query.includes('returning progress')) return Promise.resolve(updated)
+    if (query.includes('update runs')) return Promise.resolve([])
     if (query.includes('from runs')) return Promise.resolve(rows)
-    if (query.includes('update runs')) return Promise.resolve(updated)
     return Promise.resolve([])
   })
   vi.mocked(getSql).mockReturnValue(sql as never)
@@ -58,17 +68,6 @@ function mockSql({ rows = [makeRun()], updated = [{ id: runId }] } = {}) {
 }
 
 const validBody = { runId, runToken, pick: 1 }
-
-function storedProgress(sql: ReturnType<typeof mockSql>) {
-  const call = sql.mock.calls.find(([strings]) =>
-    (strings as TemplateStringsArray).join(' ').toLowerCase().includes('update runs'),
-  )
-  const value = (call ?? []).slice(1).find(
-    (entry): entry is string =>
-      typeof entry === 'string' && entry.includes('"lifelines"'),
-  )
-  return JSON.parse(value ?? '{}')
-}
 
 describe('mystery pick handler', () => {
   beforeEach(() => {
@@ -100,20 +99,24 @@ describe('mystery pick handler', () => {
     }
   })
 
-  it('scopes the lookup and the update to active Classic runs with a pending box', async () => {
+  it('scopes the lookup to Classic runs and guards the update on a pending box', async () => {
     const sql = mockSql()
     await POST(makeRequest(validBody))
     const [selectQuery] = sql.mock.calls[0]
     const selectText = (selectQuery as TemplateStringsArray).join(' ')
     expect(selectText).toContain(`mode = 'classic'`)
-    expect(selectText).toContain(`status = 'active'`)
     const [updateQuery] = sql.mock.calls[1]
     const updateText = (updateQuery as TemplateStringsArray).join(' ')
     expect(updateText).toContain(`'pendingMystery'`)
-    expect(updateText).toContain(`status = 'active'`)
   })
 
-  it('applies the picked prize, clears the box, and reveals both prizes', async () => {
+  it('still allows the pick on a just-ended run holding a pending box', async () => {
+    mockSql({ rows: [makeRun({ status: 'ended' })] })
+    const response = await POST(makeRequest(validBody))
+    expect(response.status).toBe(200)
+  })
+
+  it('applies the picked prize and reveals both prizes', async () => {
     const sql = mockSql()
     const response = await POST(makeRequest(validBody))
     const body = await response.json()
@@ -123,9 +126,12 @@ describe('mystery pick handler', () => {
     expect(body.applied.kind).toBe('shield')
     expect(body.prizes).toHaveLength(2)
     expect(body.progress.lifelines.shield).toBe(true)
-    const persisted = storedProgress(sql)
-    expect(persisted.lifelines.shield).toBe(true)
-    expect(persisted.pendingMystery).toBeUndefined()
+    // The prize is applied in the UPDATE expression itself so it can't
+    // clobber a racing answer/lifeline write with a stale snapshot.
+    const [updateQuery] = sql.mock.calls[1]
+    const updateText = (updateQuery as TemplateStringsArray).join(' ')
+    expect(updateText).toContain(`progress - 'pendingMystery'`)
+    expect(updateText).toContain(`coalesce(progress -> 'lifelines'`)
   })
 
   it('cannot be replayed — the second pick finds no pending box', async () => {
@@ -133,6 +139,18 @@ describe('mystery pick handler', () => {
     const response = await POST(makeRequest(validBody))
     expect(response.status).toBe(409)
     expect(sql).toHaveBeenCalledTimes(2)
+  })
+
+  it('syncs the stored summary score after a points prize on an ended run', async () => {
+    const sql = mockSql()
+    await POST(makeRequest({ ...validBody, pick: 0 }))
+    const summaryCall = sql.mock.calls.find(([strings]) =>
+      (strings as TemplateStringsArray)
+        .join(' ')
+        .toLowerCase()
+        .includes('last_response'),
+    )
+    expect(summaryCall).toBeTruthy()
   })
 
   it('adds points to the score for a points prize', async () => {

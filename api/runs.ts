@@ -236,6 +236,7 @@ export async function POST(request: Request): Promise<Response> {
         missed?: Question[]
         bossMisses?: number
         lifelines?: Lifelines
+        pendingMystery?: unknown[]
       } | null
       const liveQuestion = resumedRun.current_question_id
         ? questionsById.get(resumedRun.current_question_id)
@@ -267,6 +268,11 @@ export async function POST(request: Request): Promise<Response> {
         },
         total: input.mode === 'daily' ? 10 : null,
         bosses: bossQuestionsEnabled(),
+        // An unresolved mystery box survives a refresh: opaque flag only, the
+        // prizes stay hidden until the pick.
+        ...(Array.isArray(stored?.pendingMystery) && stored.pendingMystery.length === 2
+          ? { mystery: ['a', 'b'] }
+          : {}),
       })
     }
     if (!inserted[0]) {

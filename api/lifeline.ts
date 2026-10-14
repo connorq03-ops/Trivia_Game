@@ -59,7 +59,8 @@ export async function POST(request: Request): Promise<Response> {
   try {
     const sql = getSql()
     const rows = (await sql`
-      select mode, progress, current_question_id, current_choices
+      select mode, progress, current_question_id, current_choices,
+        (issued_at is not null and issued_at <= now()) as revealed
       from runs
       where id = ${input.runId}
         and token_hash = ${hashRunToken(input.runToken)}
@@ -72,9 +73,17 @@ export async function POST(request: Request): Promise<Response> {
       progress: StoredLifelineProgress | string
       current_question_id: string | null
       current_choices: string[] | null
+      revealed: boolean
     }[]
     const run = rows[0]
     if (!run) return Response.json({ error: 'not_found' }, { status: 404 })
+
+    // The 50/50 is only fair while the question clock is running. Before the
+    // reveal (issued_at unset or still in the future while the reel spins), a
+    // narrowed 2-choice board could be studied untimed.
+    if (!run.revealed) {
+      return Response.json({ error: 'not_revealed' }, { status: 409 })
+    }
 
     const question = run.current_question_id
       ? questionsById.get(run.current_question_id)
@@ -109,19 +118,22 @@ export async function POST(request: Request): Promise<Response> {
       question.answer,
       question.wrong[Math.floor(Math.random() * question.wrong.length)],
     ].sort(() => Math.random() - 0.5)
-    const nextLifelines: Lifelines = {
-      ...lifelines,
-      fiftyFifty: lifelines.fiftyFifty - 1,
-      fiftyFiftyUsedOn: input.questionIndex,
-    }
+    // Decrement the charge and stamp the question index inside the UPDATE
+    // itself so a concurrent write to other lifelines fields isn't clobbered.
     const updated = (await sql`
       update runs
       set
         current_choices = ARRAY[${kept[0]}, ${kept[1]}]::text[],
         progress = jsonb_set(
-          progress,
-          '{lifelines}',
-          ${JSON.stringify(nextLifelines)}::jsonb
+          jsonb_set(
+            progress,
+            '{lifelines,fiftyFifty}',
+            to_jsonb(
+              coalesce((progress #>> '{lifelines,fiftyFifty}')::int, 0) - 1
+            )
+          ),
+          '{lifelines,fiftyFiftyUsedOn}',
+          to_jsonb(${input.questionIndex})
         )
       where id = ${input.runId}
         and token_hash = ${hashRunToken(input.runToken)}
@@ -131,9 +143,20 @@ export async function POST(request: Request): Promise<Response> {
         and coalesce(
           (progress -> 'lifelines' ->> 'fiftyFiftyUsedOn')::int, -1
         ) <> ${input.questionIndex}
-      returning id
-    `) as { id: string }[]
-    if (!updated[0]) return Response.json({ error: 'stale' }, { status: 409 })
+      returning progress
+    `) as { progress: StoredLifelineProgress | string }[]
+    const updatedRow = updated[0]
+    if (!updatedRow) return Response.json({ error: 'stale' }, { status: 409 })
+
+    const appliedProgress =
+      typeof updatedRow.progress === 'string'
+        ? (JSON.parse(updatedRow.progress) as StoredLifelineProgress)
+        : updatedRow.progress
+    const nextLifelines: Lifelines = {
+      fiftyFifty: 0,
+      shield: false,
+      ...appliedProgress.lifelines,
+    }
 
     return Response.json({
       question: publicQuestion(question, kept),

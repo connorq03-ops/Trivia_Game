@@ -1,11 +1,9 @@
 import { getSql } from '../lib/db.js'
 import { hashRunToken, isRunToken } from '../lib/runToken.js'
 import {
-  applyMysteryPrize,
   correctCount,
   type Lifelines,
   type MysteryPrize,
-  type RunProgress,
 } from '../src/game/engine.js'
 
 const UUID_PATTERN =
@@ -54,10 +52,10 @@ type StoredMysteryProgress = {
   score?: number
   strikes?: number
   streak?: number
-  bestStreak?: number
+  results?: string[]
   questionsAnswered?: number
-  answeredCount?: number
-  totalAnswerMs?: number
+  missed?: unknown[]
+  bossMisses?: number
   lifelines?: Lifelines
   pendingMystery?: [MysteryPrize, MysteryPrize]
   [key: string]: unknown
@@ -75,9 +73,25 @@ function prizeFromStored(value: unknown): MysteryPrize | null {
     : null
 }
 
+type ProgressRow = {
+  score: number
+  strikes: number
+  streak: number
+  results: string[]
+  questionsAnswered: number
+  missed: unknown[]
+  bossMisses?: number
+  lifelines?: Lifelines
+}
+
 // Applies the player's mystery-box pick. The two prizes were drawn and stored
 // on the boss hit; the pick is only valid while pendingMystery is set, so a
 // replayed or forged request gets a 409 and the prizes can't be redrawn.
+// The prize is applied inside the UPDATE expression itself (computed from the
+// row under its write lock), so a pick racing an answer or a 50/50 can't
+// overwrite either one's changes with a stale whole-progress snapshot.
+// A pending box is also claimable on a just-ended run (a final boss hit can
+// end the run), and the stored summary is updated to match.
 export async function POST(request: Request): Promise<Response> {
   let input: MysteryInput | null
   try {
@@ -90,18 +104,15 @@ export async function POST(request: Request): Promise<Response> {
   try {
     const sql = getSql()
     const rows = (await sql`
-      select mode, status, progress
+      select status, progress
       from runs
       where id = ${input.runId}
         and token_hash = ${hashRunToken(input.runToken)}
         and mode = 'classic'
-        and status = 'active'
       limit 1
     `) as {
-      mode: string
       status: string
       progress: StoredMysteryProgress | string
-      results_found?: boolean
     }[]
     const run = rows[0]
     if (!run) return Response.json({ error: 'no_mystery' }, { status: 409 })
@@ -114,44 +125,121 @@ export async function POST(request: Request): Promise<Response> {
     if (!pending || !Array.isArray(pending) || pending.length !== 2) {
       return Response.json({ error: 'no_mystery' }, { status: 409 })
     }
-    const prizes: [MysteryPrize, MysteryPrize] | null = pending.every(prizeFromStored)
-      ? [prizeFromStored(pending[0])!, prizeFromStored(pending[1])!]
-      : null
-    if (!prizes) return Response.json({ error: 'no_mystery' }, { status: 409 })
+    const prize0 = prizeFromStored(pending[0])
+    const prize1 = prizeFromStored(pending[1])
+    if (!prize0 || !prize1) {
+      return Response.json({ error: 'no_mystery' }, { status: 409 })
+    }
+    const prizes: [MysteryPrize, MysteryPrize] = [prize0, prize1]
+    const prize = prizes[input.pick]
 
-    const progress = {
-      ...stored,
-      lifelines: {
-        fiftyFifty: 0,
-        shield: false,
-        ...stored.lifelines,
-      },
-    } as unknown as RunProgress & StoredMysteryProgress
-    const applied = applyMysteryPrize(progress, prizes[input.pick])
-    const nextProgress: StoredMysteryProgress = { ...applied }
-    delete nextProgress.pendingMystery
+    // One guarded UPDATE per prize kind: the new value is computed from the
+    // locked row, never from the select's snapshot.
+    const update =
+      prize.kind === 'points'
+        ? sql`
+            update runs
+            set progress = jsonb_set(
+              progress - 'pendingMystery',
+              '{score}',
+              to_jsonb(coalesce((progress ->> 'score')::int, 0) + ${prize.points})
+            )
+            where id = ${input.runId}
+              and token_hash = ${hashRunToken(input.runToken)}
+              and (progress -> 'pendingMystery') is not null
+            returning progress
+          `
+        : prize.kind === 'fiftyFifty'
+          ? sql`
+              update runs
+              set progress = jsonb_set(
+                progress - 'pendingMystery',
+                '{lifelines}',
+                coalesce(progress -> 'lifelines', '{}'::jsonb)
+                  || jsonb_build_object(
+                    'fiftyFifty',
+                    coalesce((progress #>> '{lifelines,fiftyFifty}')::int, 0) + 1
+                  )
+              )
+              where id = ${input.runId}
+                and token_hash = ${hashRunToken(input.runToken)}
+                and (progress -> 'pendingMystery') is not null
+              returning progress
+            `
+          : prize.kind === 'strikeEraser'
+            ? sql`
+                update runs
+                set progress = jsonb_set(
+                  progress - 'pendingMystery',
+                  '{strikes}',
+                  to_jsonb(greatest((progress ->> 'strikes')::int - 1, 0))
+                )
+                where id = ${input.runId}
+                  and token_hash = ${hashRunToken(input.runToken)}
+                  and (progress -> 'pendingMystery') is not null
+                returning progress
+              `
+            : prize.kind === 'shield'
+              ? sql`
+                  update runs
+                  set progress = jsonb_set(
+                    progress - 'pendingMystery',
+                    '{lifelines}',
+                    coalesce(progress -> 'lifelines', '{}'::jsonb)
+                      || '{"shield": true}'::jsonb
+                  )
+                  where id = ${input.runId}
+                    and token_hash = ${hashRunToken(input.runToken)}
+                    and (progress -> 'pendingMystery') is not null
+                  returning progress
+                `
+              : sql`
+                  update runs
+                  set progress = progress - 'pendingMystery'
+                  where id = ${input.runId}
+                    and token_hash = ${hashRunToken(input.runToken)}
+                    and (progress -> 'pendingMystery') is not null
+                  returning progress
+                `
 
-    const updated = (await sql`
-      update runs
-      set progress = ${JSON.stringify(nextProgress)}::jsonb
-      where id = ${input.runId}
-        and token_hash = ${hashRunToken(input.runToken)}
-        and status = 'active'
-        and (progress -> 'pendingMystery') is not null
-      returning id
-    `) as { id: string }[]
-    if (!updated[0]) return Response.json({ error: 'no_mystery' }, { status: 409 })
+    const updated = (await update) as { progress: ProgressRow | string }[]
+    const updatedRow = updated[0]
+    if (!updatedRow) return Response.json({ error: 'no_mystery' }, { status: 409 })
+
+    const applied =
+      typeof updatedRow.progress === 'string'
+        ? (JSON.parse(updatedRow.progress) as ProgressRow)
+        : updatedRow.progress
+
+    // A final boss hit can end the run before the box opens; keep the stored
+    // summary's score in step so a replayed answer reports the same result.
+    if (prize.kind === 'points' || prize.kind === 'strikeEraser') {
+      await sql`
+        update runs
+        set last_response = jsonb_set(
+          jsonb_set(last_response, '{summary,score}', to_jsonb(${applied.score})),
+          '{progress,score}', to_jsonb(${applied.score})
+        )
+        where id = ${input.runId}
+          and last_response ? 'summary'
+      `
+    }
 
     return Response.json({
       picked: input.pick,
       prizes: prizes.map(describePrize),
-      applied: describePrize(prizes[input.pick]),
+      applied: describePrize(prize),
       progress: {
         score: applied.score,
         strikes: applied.strikes,
         streak: applied.streak,
-        correct: correctCount(applied),
-        lifelines: applied.lifelines,
+        correct: correctCount({
+          results: (applied.results ?? []) as ProgressRow['results'] & never[],
+          questionsAnswered: applied.questionsAnswered ?? 0,
+          missed: (applied.missed ?? []) as ProgressRow['missed'] & never[],
+          bossMisses: applied.bossMisses ?? 0,
+        } as Parameters<typeof correctCount>[0]),
+        lifelines: applied.lifelines ?? { fiftyFifty: 0, shield: false },
       },
     })
   } catch {
