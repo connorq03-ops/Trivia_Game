@@ -242,6 +242,131 @@ function elapsedSince(startedAt: number, clockMs: number): number {
   return Math.min(clockMs, Math.max(0, performance.now() - startedAt))
 }
 
+// Non-boss reel: cards slot-spin through decoys, then settle ~500ms before
+// the screen flips to the question (the useEffect on activeReelMs owns the flip).
+const REEL_TICK_MS = 80
+const REEL_SETTLE_STAGGER_MS = 180
+const REEL_SETTLE_PAUSE_MS = 500
+
+const SPORT_DECOYS = ['football', 'basketball', 'baseball', 'NFL', 'NBA', 'MLB', 'NHL', 'NCAA']
+const RULES_CATEGORY_DECOYS = [
+  'Clock and timing',
+  'Numbers and dimensions',
+  "What's the call?",
+  'Scoring',
+]
+const PLAYER_CATEGORY_DECOYS = [
+  'Alma mater',
+  'Drafted by',
+  'Jersey number',
+  'Position',
+  'Country',
+]
+const PLAYER_DECOYS = [
+  'LeBron James',
+  'Patrick Mahomes',
+  'Shohei Ohtani',
+  'Caitlin Clark',
+  'Lionel Messi',
+  'Serena Williams',
+  'Tiger Woods',
+  'Simone Biles',
+]
+
+type ReelCardSpec = { label: string; final: string; decoys: string[] }
+
+function reelCards(question: PublicQuestion): ReelCardSpec[] {
+  const without = (list: string[], keep: string) => list.filter((value) => value !== keep)
+  if (question.side === 'players') {
+    const season = question.reel?.season
+    const seasonDecoys = season
+      ? [season - 3, season - 1, season + 1, season + 2, season + 4].map(String)
+      : ['2019', '2020', '2021', '2023', '2024']
+    return [
+      { label: 'SEASON', final: season ? String(season) : '', decoys: seasonDecoys },
+      {
+        label: 'PLAYER',
+        final: question.reel?.player ?? '',
+        decoys: without(PLAYER_DECOYS, question.reel?.player ?? ''),
+      },
+      {
+        label: 'CATEGORY',
+        final: question.category,
+        decoys: without(PLAYER_CATEGORY_DECOYS, question.category),
+      },
+    ]
+  }
+  return [
+    {
+      label: 'SPORT',
+      final: question.sport,
+      decoys: without([...SPORT_DECOYS, ...question.leagues], question.sport),
+    },
+    {
+      label: 'CATEGORY',
+      final: question.category,
+      decoys: without(RULES_CATEGORY_DECOYS, question.category),
+    },
+  ]
+}
+
+function ReelCards({ question }: { question: PublicQuestion }) {
+  const cards = useMemo(() => reelCards(question), [question])
+  // Last card lands REEL_SETTLE_PAUSE_MS before the question screen.
+  const spinDoneMs = Math.max(0, REEL_MS - REEL_SETTLE_PAUSE_MS)
+  const settledAt = cards.map(
+    (_, index) => spinDoneMs - (cards.length - 1 - index) * REEL_SETTLE_STAGGER_MS,
+  )
+  const reduceMotion = useMemo(
+    () =>
+      typeof window !== 'undefined' &&
+      (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false),
+    [],
+  )
+  const [elapsed, setElapsed] = useState(() => (reduceMotion ? spinDoneMs : 0))
+
+  useEffect(() => {
+    if (reduceMotion) return
+    const startedAt = performance.now()
+    const interval = window.setInterval(
+      () => setElapsed(performance.now() - startedAt),
+      REEL_TICK_MS,
+    )
+    const stop = window.setTimeout(() => {
+      window.clearInterval(interval)
+      setElapsed(spinDoneMs)
+    }, spinDoneMs)
+    return () => {
+      window.clearInterval(interval)
+      window.clearTimeout(stop)
+    }
+  }, [cards, reduceMotion, spinDoneMs])
+
+  return (
+    <div className={`reel-stack ${question.side === 'players' ? 'reel-stack--player' : ''}`}>
+      {cards.map((card, index) => {
+        const settled = elapsed >= settledAt[index]
+        const value = settled
+          ? card.final
+          : card.decoys.length > 0
+            ? card.decoys[
+                (Math.floor(elapsed / REEL_TICK_MS) + index * 3) % card.decoys.length
+              ]
+            : card.final
+        return (
+          <div
+            className={`reel-card ${settled ? 'reel-card--settled' : 'reel-card--spinning'}`}
+            key={card.label}
+          >
+            <span>{card.label}</span>
+            <strong>{value}</strong>
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
 function Badge({ badge }: { badge: ChoiceBadge }) {
   if (badge.kind === 'flag') {
     return (
@@ -1233,20 +1358,7 @@ function App() {
           {screen === 'reel' && !question.boss && (
             <div className="reel-stage">
               <p className="eyebrow">Your next question</p>
-              <div className={`reel-stack ${question.side === 'players' ? 'reel-stack--player' : ''}`}>
-                {question.side === 'players' ? (
-                  <>
-                    <div className="reel-card"><span>SEASON</span><strong>{question.reel?.season}</strong></div>
-                    <div className="reel-card"><span>PLAYER</span><strong>{question.reel?.player}</strong></div>
-                    <div className="reel-card"><span>CATEGORY</span><strong>{question.category}</strong></div>
-                  </>
-                ) : (
-                  <>
-                    <div className="reel-card"><span>SPORT</span><strong>{question.sport}</strong></div>
-                    <div className="reel-card"><span>CATEGORY</span><strong>{question.category}</strong></div>
-                  </>
-                )}
-              </div>
+              <ReelCards key={question.id} question={question} />
               <p className="reel-caption">Lock in. The clock starts after the reveal.</p>
             </div>
           )}

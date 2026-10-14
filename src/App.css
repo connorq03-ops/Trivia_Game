@@ -312,6 +312,32 @@
   overflow-wrap: anywhere;
 }
 
+.reel-card--spinning strong {
+  animation: reel-cycle 0.16s linear infinite;
+}
+
+.reel-card--settled strong {
+  animation: reel-lock 0.22s ease-out;
+}
+
+@keyframes reel-cycle {
+  0% { transform: translateY(-35%); opacity: 0.1; filter: blur(1.5px); }
+  40% { transform: translateY(0); opacity: 1; filter: blur(0); }
+  100% { transform: translateY(35%); opacity: 0.1; filter: blur(1.5px); }
+}
+
+@keyframes reel-lock {
+  0% { transform: translateY(-10%); filter: blur(3px); }
+  100% { transform: translateY(0); filter: blur(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reel-card--spinning strong,
+  .reel-card--settled strong {
+    animation: none;
+  }
+}
+
 .reel-caption {
   color: var(--muted);
   font-size: 0.8rem;
