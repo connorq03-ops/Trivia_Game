@@ -95,7 +95,9 @@ describe('mystery pick handler', () => {
       mockSql({ rows })
       const response = await POST(makeRequest(validBody))
       expect(response.status).toBe(409)
-      expect(await response.json()).toEqual({ error: 'no_mystery' })
+      // Authoritative progress rides along so a lost pick response can
+      // still reflect an already-applied prize.
+      expect(await response.json()).toMatchObject({ error: 'no_mystery' })
     }
   })
 
@@ -138,6 +140,7 @@ describe('mystery pick handler', () => {
     const sql = mockSql({ updated: [] })
     const response = await POST(makeRequest(validBody))
     expect(response.status).toBe(409)
+    expect((await response.json()).error).toBe('no_mystery')
     expect(sql).toHaveBeenCalledTimes(2)
   })
 

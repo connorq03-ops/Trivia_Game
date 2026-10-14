@@ -121,14 +121,29 @@ export async function POST(request: Request): Promise<Response> {
       typeof run.progress === 'string'
         ? (JSON.parse(run.progress) as StoredMysteryProgress)
         : run.progress
+    const progressFor = (p: StoredMysteryProgress) => ({
+      score: p.score ?? 0,
+      strikes: p.strikes ?? 0,
+      streak: p.streak ?? 0,
+      lifelines: p.lifelines ?? { fiftyFifty: 0, shield: false },
+    })
     const pending = stored.pendingMystery
     if (!pending || !Array.isArray(pending) || pending.length !== 2) {
-      return Response.json({ error: 'no_mystery' }, { status: 409 })
+      // The box is gone — most often because the player's pick already applied
+      // and the response was lost. Send authoritative progress so the client
+      // can still reflect the prize (e.g. bonus points) before moving on.
+      return Response.json(
+        { error: 'no_mystery', progress: progressFor(stored) },
+        { status: 409 },
+      )
     }
     const prize0 = prizeFromStored(pending[0])
     const prize1 = prizeFromStored(pending[1])
     if (!prize0 || !prize1) {
-      return Response.json({ error: 'no_mystery' }, { status: 409 })
+      return Response.json(
+        { error: 'no_mystery', progress: progressFor(stored) },
+        { status: 409 },
+      )
     }
     const prizes: [MysteryPrize, MysteryPrize] = [prize0, prize1]
     const prize = prizes[input.pick]

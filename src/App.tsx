@@ -717,7 +717,21 @@ function App() {
       if (activeRunId.current !== session.runId) return
       if (response.status === 409) {
         // The box is already gone — most likely this pick applied on an earlier
-        // attempt whose response was lost. Move on rather than reveal nothing.
+        // attempt whose response was lost. The server sends authoritative
+        // progress so an applied prize (e.g. bonus points) isn't dropped.
+        const body = (await response.json().catch(() => null)) as {
+          progress?: PublicProgress
+        } | null
+        const applied = body?.progress
+        if (applied) {
+          setSession({ ...session, progress: applied })
+          setPendingSummary((previous) =>
+            previous ? { ...previous, score: applied.score } : previous,
+          )
+          setSummary((previous) =>
+            previous ? { ...previous, score: applied.score } : previous,
+          )
+        }
         continueAfterMystery()
         return
       }
