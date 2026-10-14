@@ -17,6 +17,7 @@ import {
   DAILY_STREAK_STEP,
   dailyBonusBoss,
   dailyQuestions,
+  drawMysteryPrizes,
   normalizeBossMilestones,
   presentQuestion,
   qualifiesForDailyBonus,
@@ -24,6 +25,8 @@ import {
   selectClassicQuestion,
   type AnswerResult,
   type ClassicOptions,
+  type Lifelines,
+  type MysteryPrize,
   type RunProgress,
 } from '../src/game/engine.js'
 import type { Question } from '../src/game/types.js'
@@ -41,13 +44,15 @@ type AnswerInput = {
 
 type StoredProgress = Omit<
   RunProgress,
-  'missed' | 'results' | 'bossLevelsConsumed' | 'bossMisses' | 'bossMissed'
+  'missed' | 'results' | 'bossLevelsConsumed' | 'bossMisses' | 'bossMissed' | 'lifelines' | 'pendingMystery'
 > & {
   missed: string[]
   results?: AnswerResult[]
   bossLevelsConsumed?: number[]
   bossMisses?: number
   bossMissed?: string[]
+  lifelines?: Lifelines
+  pendingMystery?: [MysteryPrize, MysteryPrize]
 }
 
 type RunRow = {
@@ -118,6 +123,8 @@ function deserializeProgress(value: RunRow['progress']): RunProgress {
     bossMissed: (stored.bossMissed ?? [])
       .map((id) => questionsById.get(id))
       .filter((question): question is Question => question !== undefined),
+    lifelines: stored.lifelines ?? { fiftyFifty: 0, shield: false },
+    pendingMystery: stored.pendingMystery,
   }
 }
 
@@ -218,6 +225,17 @@ export async function POST(request: Request): Promise<Response> {
           run.mode === 'daily' ? DAILY_STREAK_STEP : 0,
         )
     let outcome = answered
+    // A Classic boss hit drops a pick-one-of-two mystery box. The prizes are
+    // drawn and stored now; /api/mystery applies whichever one is picked.
+    if (run.mode === 'classic' && boss && outcome.correct) {
+      outcome = {
+        ...answered,
+        progress: {
+          ...answered.progress,
+          pendingMystery: drawMysteryPrizes(Math.random),
+        },
+      }
+    }
     const usedFactIds = new Set(run.used_fact_ids ?? [])
     usedFactIds.add(question.factId)
 
@@ -251,11 +269,11 @@ export async function POST(request: Request): Promise<Response> {
           next = { question: selection.question, choices: selection.choices }
           if (selection.type === 'boss') {
             outcome = {
-              ...answered,
+              ...outcome,
               progress: {
-                ...answered.progress,
+                ...outcome.progress,
                 bossLevelsConsumed: [
-                  ...answered.progress.bossLevelsConsumed,
+                  ...outcome.progress.bossLevelsConsumed,
                   selection.milestone,
                 ],
               },
@@ -322,7 +340,11 @@ export async function POST(request: Request): Promise<Response> {
         strikes: outcome.progress.strikes,
         streak: outcome.progress.streak,
         correct: correctCount(outcome.progress),
+        lifelines: outcome.progress.lifelines,
       },
+      ...(outcome.shielded ? { shielded: true } : {}),
+      // Opaque box labels: the prizes stay hidden until /api/mystery reveals.
+      ...(outcome.progress.pendingMystery ? { mystery: ['a', 'b'] } : {}),
       next: nextPublic,
       summary,
     }

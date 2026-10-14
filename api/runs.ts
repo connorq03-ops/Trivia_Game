@@ -17,6 +17,7 @@ import {
   selectClassicQuestion,
   type AnswerResult,
   type ClassicOptions,
+  type Lifelines,
 } from '../src/game/engine.js'
 import type { Question, Side, Sport } from '../src/game/types.js'
 
@@ -234,6 +235,7 @@ export async function POST(request: Request): Promise<Response> {
         questionsAnswered?: number
         missed?: Question[]
         bossMisses?: number
+        lifelines?: Lifelines
       } | null
       const liveQuestion = resumedRun.current_question_id
         ? questionsById.get(resumedRun.current_question_id)
@@ -261,6 +263,7 @@ export async function POST(request: Request): Promise<Response> {
             missed: stored?.missed ?? [],
             bossMisses: stored?.bossMisses ?? 0,
           }),
+          lifelines: stored?.lifelines ?? { fiftyFifty: 0, shield: false },
         },
         total: input.mode === 'daily' ? 10 : null,
         bosses: bossQuestionsEnabled(),
@@ -286,6 +289,7 @@ export async function POST(request: Request): Promise<Response> {
           strikes: initialProgress.strikes,
           streak: initialProgress.streak,
           correct: 0,
+          lifelines: initialProgress.lifelines,
         },
         total: input.mode === 'daily' ? 10 : null,
         bosses: bossQuestionsEnabled(),

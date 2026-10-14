@@ -43,7 +43,7 @@ describe('howItWorks', () => {
     expect(howItWorks({ bosses: true })).toContain(
       `Boss questions on science, history, art or pop culture hit every 10 correct up to 50, then every 25: ${BOSS_CLOCK_MS / 1000} seconds, +500 if right, −250 if wrong, no strike.`,
     )
-    expect(howItWorks({ bosses: true })).toHaveLength(howItWorks().length + 2)
+    expect(howItWorks({ bosses: true })).toHaveLength(howItWorks().length + 3)
   })
 })
 
