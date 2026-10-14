@@ -5626,5 +5626,2861 @@
       "season": 2005,
       "player": "Lenny Harris"
     }
+  },
+  {
+    "id": "p-nfl-peyton-manning-mvps",
+    "factId": "nfl-peyton-manning-mvps",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "How many NFL MVP awards did Peyton Manning win, the most ever?",
+    "answer": "5",
+    "wrong": [
+      "3",
+      "4",
+      "6"
+    ],
+    "teach": "Manning's hardware came with Indianapolis four times and Denver once.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Peyton_Manning",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-12",
+    "reel": {
+      "season": 2013,
+      "player": "Peyton Manning"
+    }
+  },
+  {
+    "id": "p-nfl-aaron-rodgers-mvps",
+    "factId": "nfl-aaron-rodgers-mvps",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "How many NFL MVP awards did Aaron Rodgers win?",
+    "answer": "4",
+    "wrong": [
+      "3",
+      "5",
+      "6"
+    ],
+    "teach": "Rodgers collected them all piloting Green Bay's offense.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Aaron_Rodgers",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-19",
+    "reel": {
+      "season": 2021,
+      "player": "Aaron Rodgers"
+    }
+  },
+  {
+    "id": "p-nfl-jim-brown-rushing-titles",
+    "factId": "nfl-jim-brown-rushing-titles",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "How many rushing titles did Jim Brown win, an NFL record?",
+    "answer": "8",
+    "wrong": [
+      "6",
+      "7",
+      "9"
+    ],
+    "teach": "Brown led the league in eight of his nine Cleveland campaigns.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jim_Brown",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-26",
+    "reel": {
+      "season": 1965,
+      "player": "Jim Brown"
+    }
+  },
+  {
+    "id": "p-nfl-jerry-rice-pro-bowls",
+    "factId": "nfl-jerry-rice-pro-bowls",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "How many Pro Bowl selections did Jerry Rice earn?",
+    "answer": "13",
+    "wrong": [
+      "10",
+      "11",
+      "15"
+    ],
+    "teach": "Rice made them mostly during his two decades in San Francisco.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jerry_Rice",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-02",
+    "reel": {
+      "season": 2002,
+      "player": "Jerry Rice"
+    }
+  },
+  {
+    "id": "p-nfl-tony-gonzalez-pro-bowls",
+    "factId": "nfl-tony-gonzalez-pro-bowls",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "How many Pro Bowl selections did Tony Gonzalez earn, the most for a tight end?",
+    "answer": "14",
+    "wrong": [
+      "11",
+      "12",
+      "16"
+    ],
+    "teach": "Gonzalez earned them catching for Kansas City and Atlanta.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Tony_Gonzalez",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-09",
+    "reel": {
+      "season": 2013,
+      "player": "Tony Gonzalez"
+    }
+  },
+  {
+    "id": "p-nfl-rod-woodson-pick-sixes",
+    "factId": "nfl-rod-woodson-pick-sixes",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "What is the NFL record for career interception-return touchdowns?",
+    "answer": "12",
+    "wrong": [
+      "9",
+      "10",
+      "14"
+    ],
+    "teach": "Woodson housed a dozen picks across his Pittsburgh, Baltimore, and Oakland years.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Rod_Woodson",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-16",
+    "reel": {
+      "season": 2003,
+      "player": "Rod Woodson"
+    }
+  },
+  {
+    "id": "p-nfl-rod-woodson-int-rank",
+    "factId": "nfl-rod-woodson-int-rank",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "Where does Rod Woodson rank on the all-time interceptions list?",
+    "answer": "3rd",
+    "wrong": [
+      "2nd",
+      "4th",
+      "5th"
+    ],
+    "teach": "Woodson's 71 picks trail only Krause and Tunnell across his 17 seasons.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Rod_Woodson",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-12",
+    "reel": {
+      "season": 2003,
+      "player": "Rod Woodson"
+    }
+  },
+  {
+    "id": "p-nfl-tony-dorsett-99-run",
+    "factId": "nfl-tony-dorsett-99-run",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "How long was Tony Dorsett's record-tying touchdown run from scrimmage?",
+    "answer": "99 yards",
+    "wrong": [
+      "95 yards",
+      "97 yards",
+      "98 yards"
+    ],
+    "teach": "Dorsett took it the distance for Dallas against Minnesota on Monday night.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Tony_Dorsett",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-19",
+    "reel": {
+      "season": 1983,
+      "player": "Tony Dorsett"
+    }
+  },
+  {
+    "id": "p-nfl-michael-vick-qb-rush",
+    "factId": "nfl-michael-vick-qb-rush",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "What is the NFL record for career rushing yards by a quarterback?",
+    "answer": "6,109",
+    "wrong": [
+      "5,241",
+      "5,628",
+      "6,622"
+    ],
+    "teach": "Vick scrambled to the mark across his Atlanta and Philadelphia years.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Michael_Vick",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-26",
+    "reel": {
+      "season": 2015,
+      "player": "Michael Vick"
+    }
+  },
+  {
+    "id": "p-nfl-cam-newton-qb-rush-tds",
+    "factId": "nfl-cam-newton-qb-rush-tds",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "What is the NFL record for career rushing touchdowns by a quarterback?",
+    "answer": "75",
+    "wrong": [
+      "66",
+      "70",
+      "82"
+    ],
+    "teach": "Newton bulldozed through goal-line defenses for Carolina and New England.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Cam_Newton",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-02",
+    "reel": {
+      "season": 2021,
+      "player": "Cam Newton"
+    }
+  },
+  {
+    "id": "p-nfl-lamar-jackson-qb-season-rush",
+    "factId": "nfl-lamar-jackson-qb-season-rush",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "What is the NFL single-season record for rushing yards by a quarterback?",
+    "answer": "1,206",
+    "wrong": [
+      "1,039",
+      "1,149",
+      "1,318"
+    ],
+    "teach": "Jackson broke Michael Vick's mark during Baltimore's MVP campaign.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Lamar_Jackson",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-09",
+    "reel": {
+      "season": 2019,
+      "player": "Lamar Jackson"
+    }
+  },
+  {
+    "id": "p-nfl-emmitt-smith-1k-seasons",
+    "factId": "nfl-emmitt-smith-1k-seasons",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "How many 1,000-yard rushing seasons did Emmitt Smith record, an NFL record?",
+    "answer": "11",
+    "wrong": [
+      "9",
+      "10",
+      "13"
+    ],
+    "teach": "Smith strung them together consecutively for Dallas from 1991 to 2001.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Emmitt_Smith",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-16",
+    "reel": {
+      "season": 2001,
+      "player": "Emmitt Smith"
+    }
+  },
+  {
+    "id": "p-nfl-brett-favre-consecutive-starts",
+    "factId": "nfl-brett-favre-consecutive-starts",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "How many consecutive regular-season starts did Brett Favre make, an NFL record?",
+    "answer": "297",
+    "wrong": [
+      "253",
+      "278",
+      "321"
+    ],
+    "teach": "Favre's ironman streak ran through Green Bay, the Jets, and Minnesota.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Brett_Favre",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-12",
+    "reel": {
+      "season": 2010,
+      "player": "Brett Favre"
+    }
+  },
+  {
+    "id": "p-nfl-tom-brady-4q-comebacks",
+    "factId": "nfl-tom-brady-4q-comebacks",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "What is the NFL record for career fourth-quarter comebacks?",
+    "answer": "55",
+    "wrong": [
+      "43",
+      "48",
+      "61"
+    ],
+    "teach": "Brady engineered them across his New England and Tampa Bay tenures.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Tom_Brady",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-19",
+    "reel": {
+      "season": 2022,
+      "player": "Tom Brady"
+    }
+  },
+  {
+    "id": "p-nfl-tom-brady-qb-wins",
+    "factId": "nfl-tom-brady-qb-wins",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "What is the NFL record for career regular-season wins by a quarterback?",
+    "answer": "251",
+    "wrong": [
+      "226",
+      "237",
+      "264"
+    ],
+    "teach": "Brady piled up victories across 23 seasons and two franchises.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Tom_Brady",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-26",
+    "reel": {
+      "season": 2022,
+      "player": "Tom Brady"
+    }
+  },
+  {
+    "id": "p-nfl-flipper-anderson-rec-game",
+    "factId": "nfl-flipper-anderson-rec-game",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "What is the NFL single-game record for receiving yards?",
+    "answer": "336",
+    "wrong": [
+      "309",
+      "322",
+      "348"
+    ],
+    "teach": "Anderson set it for the Rams against New Orleans during a Sunday night shootout.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Flipper_Anderson",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-02",
+    "reel": {
+      "season": 1989,
+      "player": "Flipper Anderson"
+    }
+  },
+  {
+    "id": "p-nfl-david-akers-season-fgs",
+    "factId": "nfl-david-akers-season-fgs",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "What is the NFL single-season record for made field goals?",
+    "answer": "44",
+    "wrong": [
+      "40",
+      "42",
+      "46"
+    ],
+    "teach": "Akers kicked them for San Francisco during their 13-win campaign.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/David_Akers_(American_football)",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-09",
+    "reel": {
+      "season": 2011,
+      "player": "David Akers"
+    }
+  },
+  {
+    "id": "p-nfl-steve-oneal-punt",
+    "factId": "nfl-steve-oneal-punt",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "How long was the longest punt in NFL history?",
+    "answer": "98 yards",
+    "wrong": [
+      "90 yards",
+      "93 yards",
+      "95 yards"
+    ],
+    "teach": "O'Neal boomed it out of his own end zone for the Jets against Denver.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Steve_O%27Neal",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-16",
+    "reel": {
+      "season": 1969,
+      "player": "Steve O'Neal"
+    }
+  },
+  {
+    "id": "p-nfl-aaron-rodgers-passer-rating",
+    "factId": "nfl-aaron-rodgers-passer-rating",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "What is the NFL single-season record for passer rating?",
+    "answer": "122.5",
+    "wrong": [
+      "119.2",
+      "121.1",
+      "124.8"
+    ],
+    "teach": "Rodgers posted it during Green Bay's 15-win campaign en route to MVP.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Aaron_Rodgers",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-12",
+    "reel": {
+      "season": 2011,
+      "player": "Aaron Rodgers"
+    }
+  },
+  {
+    "id": "p-nfl-tony-gonzalez-te-yards",
+    "factId": "nfl-tony-gonzalez-te-yards",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "How many career receiving yards did Tony Gonzalez post, the most by a tight end?",
+    "answer": "15,127",
+    "wrong": [
+      "13,512",
+      "14,209",
+      "15,934"
+    ],
+    "teach": "Gonzalez racked them up for Kansas City and Atlanta over seventeen seasons.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Tony_Gonzalez",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-19",
+    "reel": {
+      "season": 2013,
+      "player": "Tony Gonzalez"
+    }
+  },
+  {
+    "id": "p-nfl-antonio-gates-te-tds",
+    "factId": "nfl-antonio-gates-te-tds",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "What is the NFL record for career touchdown catches by a tight end?",
+    "answer": "116",
+    "wrong": [
+      "99",
+      "106",
+      "124"
+    ],
+    "teach": "Gates caught them all from Philip Rivers in San Diego after playing college hoops.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Antonio_Gates",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-26",
+    "reel": {
+      "season": 2019,
+      "player": "Antonio Gates"
+    }
+  },
+  {
+    "id": "p-nfl-jerry-rice-nonkicker-points",
+    "factId": "nfl-jerry-rice-nonkicker-points",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "What is the NFL record for career points by a non-kicker?",
+    "answer": "1,256",
+    "wrong": [
+      "1,136",
+      "1,192",
+      "1,310"
+    ],
+    "teach": "Rice reached the total on 208 touchdowns plus a pair of two-point conversions.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jerry_Rice",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-02",
+    "reel": {
+      "season": 2004,
+      "player": "Jerry Rice"
+    }
+  },
+  {
+    "id": "p-nfl-jerry-rice-allpurpose",
+    "factId": "nfl-jerry-rice-allpurpose",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "What is the NFL record for career all-purpose yards?",
+    "answer": "23,546",
+    "wrong": [
+      "21,264",
+      "22,318",
+      "24,802"
+    ],
+    "teach": "Rice's total combines his catches, rushes, and returns across twenty seasons.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jerry_Rice",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-09",
+    "reel": {
+      "season": 2004,
+      "player": "Jerry Rice"
+    }
+  },
+  {
+    "id": "p-nfl-jerry-rice-postseason-tds",
+    "factId": "nfl-jerry-rice-postseason-tds",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "What is the NFL record for career postseason touchdowns?",
+    "answer": "22",
+    "wrong": [
+      "19",
+      "20",
+      "25"
+    ],
+    "teach": "Rice scored them across San Francisco's deep January runs and Oakland's late run.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jerry_Rice",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-16",
+    "reel": {
+      "season": 2002,
+      "player": "Jerry Rice"
+    }
+  },
+  {
+    "id": "p-nfl-brandon-marshall-receptions-game",
+    "factId": "nfl-brandon-marshall-receptions-game",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "What is the NFL single-game record for receptions?",
+    "answer": "21",
+    "wrong": [
+      "18",
+      "19",
+      "23"
+    ],
+    "teach": "Marshall caught them all from Kyle Orton for Denver against Indianapolis.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Brandon_Marshall",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-12",
+    "reel": {
+      "season": 2009,
+      "player": "Brandon Marshall"
+    }
+  },
+  {
+    "id": "p-nfl-george-blanda-seasons",
+    "factId": "nfl-george-blanda-seasons",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "How many NFL seasons did George Blanda play, the most ever?",
+    "answer": "26",
+    "wrong": [
+      "22",
+      "24",
+      "28"
+    ],
+    "teach": "Blanda quarterbacked and kicked from 1949 through 1975 across four clubs.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/George_Blanda",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-19",
+    "reel": {
+      "season": 1975,
+      "player": "George Blanda"
+    }
+  },
+  {
+    "id": "p-nfl-jim-marshall-consecutive-games",
+    "factId": "nfl-jim-marshall-consecutive-games",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "How many consecutive games did Jim Marshall play, an NFL record for a position player?",
+    "answer": "282",
+    "wrong": [
+      "259",
+      "270",
+      "299"
+    ],
+    "teach": "Marshall never missed a game for Minnesota's Purple People Eaters front.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jim_Marshall_(defensive_end)",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-26",
+    "reel": {
+      "season": 1979,
+      "player": "Jim Marshall"
+    }
+  },
+  {
+    "id": "p-nfl-bruce-matthews-pro-bowls",
+    "factId": "nfl-bruce-matthews-pro-bowls",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "How many Pro Bowl selections did Bruce Matthews earn, tied for the record?",
+    "answer": "14",
+    "wrong": [
+      "11",
+      "13",
+      "15"
+    ],
+    "teach": "Matthews played every line position for the Oilers and Titans across 19 seasons.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Bruce_Matthews_(American_football)",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-02",
+    "reel": {
+      "season": 2001,
+      "player": "Bruce Matthews"
+    }
+  },
+  {
+    "id": "p-nfl-james-harrison-oldest-pick6",
+    "factId": "nfl-james-harrison-oldest-pick6",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "At what age did James Harrison return a Super Bowl interception 100 yards?",
+    "answer": "30",
+    "wrong": [
+      "28",
+      "32",
+      "34"
+    ],
+    "teach": "Harrison's sprint down the sideline came at the halftime gun against Arizona.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/James_Harrison_(American_football)",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-09",
+    "reel": {
+      "season": 2009,
+      "player": "James Harrison"
+    }
+  },
+  {
+    "id": "p-nfl-devin-hester-sb-return",
+    "factId": "nfl-devin-hester-sb-return",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "Devin Hester opened Super Bowl XLI with a touchdown on what play?",
+    "answer": "Kickoff return",
+    "wrong": [
+      "Punt return",
+      "Interception",
+      "Fumble return"
+    ],
+    "teach": "Hester took the opening kick back 92 yards for Chicago against Indianapolis.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Devin_Hester",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-16",
+    "reel": {
+      "season": 2007,
+      "player": "Devin Hester"
+    }
+  },
+  {
+    "id": "p-nba-wilt-season-rebounds",
+    "factId": "nba-wilt-season-rebounds",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "What is the NBA single-season record for total rebounds?",
+    "answer": "2,149",
+    "wrong": [
+      "1,982",
+      "2,061",
+      "2,304"
+    ],
+    "teach": "Chamberlain vacuumed them for the Philadelphia Warriors in 1960-61.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Wilt_Chamberlain",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-12",
+    "reel": {
+      "season": 1961,
+      "player": "Wilt Chamberlain"
+    }
+  },
+  {
+    "id": "p-nba-wilt-minutes-per-game",
+    "factId": "nba-wilt-minutes-per-game",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "What single-season minutes-per-game record did Wilt Chamberlain set in 1961-62?",
+    "answer": "48.5",
+    "wrong": [
+      "45.8",
+      "46.9",
+      "50.2"
+    ],
+    "teach": "Chamberlain barely sat, logging over a full game's worth of clock nightly.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Wilt_Chamberlain",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-19",
+    "reel": {
+      "season": 1962,
+      "player": "Wilt Chamberlain"
+    }
+  },
+  {
+    "id": "p-nba-lebron-minutes-rank",
+    "factId": "nba-lebron-minutes-rank",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "Where does LeBron James rank all-time in career minutes played?",
+    "answer": "1st",
+    "wrong": [
+      "2nd",
+      "3rd",
+      "4th"
+    ],
+    "teach": "James passed Kareem for the top spot in December 2023 with the Lakers.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/LeBron_James",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-26",
+    "reel": {
+      "season": 2023,
+      "player": "LeBron James"
+    }
+  },
+  {
+    "id": "p-nba-wilt-double-doubles",
+    "factId": "nba-wilt-double-doubles",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "What is the NBA record for career double-doubles?",
+    "answer": "968",
+    "wrong": [
+      "841",
+      "907",
+      "1,015"
+    ],
+    "teach": "Chamberlain notched nearly a thousand across fourteen seasons of dominance.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Wilt_Chamberlain",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-02",
+    "reel": {
+      "season": 1973,
+      "player": "Wilt Chamberlain"
+    }
+  },
+  {
+    "id": "p-nba-tim-duncan-rebounds-rank",
+    "factId": "nba-tim-duncan-rebounds-rank",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "Where does Tim Duncan rank on the all-time rebounding list?",
+    "answer": "6th",
+    "wrong": [
+      "4th",
+      "5th",
+      "8th"
+    ],
+    "teach": "Duncan pulled down 15,091 boards anchoring San Antonio's paint for 19 years.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Tim_Duncan",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-09",
+    "reel": {
+      "season": 2016,
+      "player": "Tim Duncan"
+    }
+  },
+  {
+    "id": "p-nba-lebron-assists-rank",
+    "factId": "nba-lebron-assists-rank",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "Where does LeBron James rank on the all-time assists list?",
+    "answer": "4th",
+    "wrong": [
+      "3rd",
+      "5th",
+      "6th"
+    ],
+    "teach": "James is the only non-guard in the top ten, dishing for three franchises.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/LeBron_James",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-16",
+    "reel": {
+      "season": 2024,
+      "player": "LeBron James"
+    }
+  },
+  {
+    "id": "p-nba-lebron-triples-rank",
+    "factId": "nba-lebron-triples-rank",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "Where does LeBron James rank all-time in career triple-doubles?",
+    "answer": "5th",
+    "wrong": [
+      "3rd",
+      "4th",
+      "6th"
+    ],
+    "teach": "James trails Westbrook, Robertson, Jokic, and Magic on the ledger.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/LeBron_James",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-12",
+    "reel": {
+      "season": 2024,
+      "player": "LeBron James"
+    }
+  },
+  {
+    "id": "p-nba-chris-paul-steals-rank",
+    "factId": "nba-chris-paul-steals-rank",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "Where does Chris Paul rank on the all-time steals list?",
+    "answer": "2nd",
+    "wrong": [
+      "1st",
+      "3rd",
+      "4th"
+    ],
+    "teach": "Paul passed Jason Kidd for the spot behind Stockton late in his run.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Chris_Paul",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-19",
+    "reel": {
+      "season": 2024,
+      "player": "Chris Paul"
+    }
+  },
+  {
+    "id": "p-nba-chris-paul-assists-rank",
+    "factId": "nba-chris-paul-assists-rank",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "Where does Chris Paul rank on the all-time assists list?",
+    "answer": "2nd",
+    "wrong": [
+      "1st",
+      "3rd",
+      "4th"
+    ],
+    "teach": "Paul trails only John Stockton after two decades of floor-general work.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Chris_Paul",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-26",
+    "reel": {
+      "season": 2024,
+      "player": "Chris Paul"
+    }
+  },
+  {
+    "id": "p-nba-steve-nash-assists-rank",
+    "factId": "nba-steve-nash-assists-rank",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "Where does Steve Nash rank on the all-time assists list?",
+    "answer": "5th",
+    "wrong": [
+      "4th",
+      "6th",
+      "7th"
+    ],
+    "teach": "Nash dished 10,335 dimes for Phoenix and Dallas across eighteen seasons.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Steve_Nash",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-02",
+    "reel": {
+      "season": 2014,
+      "player": "Steve Nash"
+    }
+  },
+  {
+    "id": "p-nba-magic-assists-rank",
+    "factId": "nba-magic-assists-rank",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "Where does Magic Johnson rank on the all-time assists list?",
+    "answer": "7th",
+    "wrong": [
+      "5th",
+      "6th",
+      "8th"
+    ],
+    "teach": "Magic finished with 10,141 despite retiring at 31 during his prime.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Magic_Johnson",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-09",
+    "reel": {
+      "season": 1996,
+      "player": "Magic Johnson"
+    }
+  },
+  {
+    "id": "p-nba-wilt-50pt-games",
+    "factId": "nba-wilt-50pt-games",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "How many 50-point games did Wilt Chamberlain record, an NBA record?",
+    "answer": "118",
+    "wrong": [
+      "96",
+      "104",
+      "131"
+    ],
+    "teach": "Chamberlain reached fifty nearly weekly during his Warriors scoring peak.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Wilt_Chamberlain",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-16",
+    "reel": {
+      "season": 1973,
+      "player": "Wilt Chamberlain"
+    }
+  },
+  {
+    "id": "p-nba-michael-jordan-scoring-titles",
+    "factId": "nba-michael-jordan-scoring-titles",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "How many scoring titles did Michael Jordan win, the most ever?",
+    "answer": "10",
+    "wrong": [
+      "8",
+      "9",
+      "12"
+    ],
+    "teach": "Jordan led the league in every full Chicago season he completed after 1986.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Michael_Jordan",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-12",
+    "reel": {
+      "season": 1998,
+      "player": "Michael Jordan"
+    }
+  },
+  {
+    "id": "p-nba-michael-jordan-all-def-first",
+    "factId": "nba-michael-jordan-all-def-first",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "How many All-Defensive First Team selections did Michael Jordan earn, tied for the record?",
+    "answer": "9",
+    "wrong": [
+      "7",
+      "8",
+      "11"
+    ],
+    "teach": "Jordan shared the mark with Payton, Garnett, and Bryant at his retirement.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Michael_Jordan",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-19",
+    "reel": {
+      "season": 2003,
+      "player": "Michael Jordan"
+    }
+  },
+  {
+    "id": "p-nba-dikembe-mutombo-dpoys",
+    "factId": "nba-dikembe-mutombo-dpoys",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "How many Defensive Player of the Year awards did Dikembe Mutombo win, tied for the record?",
+    "answer": "4",
+    "wrong": [
+      "3",
+      "5",
+      "6"
+    ],
+    "teach": "Mutombo wagged the finger for Denver and Atlanta; Wallace and Gobert matched him.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Dikembe_Mutombo",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-26",
+    "reel": {
+      "season": 2001,
+      "player": "Dikembe Mutombo"
+    }
+  },
+  {
+    "id": "p-nba-jamal-crawford-6moy",
+    "factId": "nba-jamal-crawford-6moy",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "How many Sixth Man of the Year awards did Jamal Crawford win, tied for the record?",
+    "answer": "3",
+    "wrong": [
+      "2",
+      "4",
+      "5"
+    ],
+    "teach": "Crawford took the honor with Atlanta and twice with the Clippers.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jamal_Crawford",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-02",
+    "reel": {
+      "season": 2016,
+      "player": "Jamal Crawford"
+    }
+  },
+  {
+    "id": "p-nba-mark-eaton-season-blocks",
+    "factId": "nba-mark-eaton-season-blocks",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "What is the NBA single-season record for total blocked shots?",
+    "answer": "456",
+    "wrong": [
+      "397",
+      "421",
+      "489"
+    ],
+    "teach": "Eaton swatted them all for Utah, averaging over five and a half per night.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Mark_Eaton",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-09",
+    "reel": {
+      "season": 1985,
+      "player": "Mark Eaton"
+    }
+  },
+  {
+    "id": "p-nba-single-game-steals",
+    "factId": "nba-single-game-steals",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "What is the NBA single-game record for steals?",
+    "answer": "11",
+    "wrong": [
+      "9",
+      "10",
+      "13"
+    ],
+    "teach": "Larry Kenon and Kendall Gill share the mark, set two decades apart.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Kendall_Gill",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-16",
+    "reel": {
+      "season": 1999,
+      "player": "Kendall Gill"
+    }
+  },
+  {
+    "id": "p-nba-stephen-curry-finals-threes",
+    "factId": "nba-stephen-curry-finals-threes",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "What is the record for three-pointers in a single NBA Finals game?",
+    "answer": "9",
+    "wrong": [
+      "7",
+      "8",
+      "10"
+    ],
+    "teach": "Curry drained them against Cleveland during Golden State's Game 2 rout.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Stephen_Curry",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-12",
+    "reel": {
+      "season": 2018,
+      "player": "Stephen Curry"
+    }
+  },
+  {
+    "id": "p-nba-elgin-baylor-finals-points",
+    "factId": "nba-elgin-baylor-finals-points",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "What is the record for points in a single NBA Finals game?",
+    "answer": "61",
+    "wrong": [
+      "55",
+      "57",
+      "64"
+    ],
+    "teach": "Baylor poured them in against Boston despite the Lakers falling in overtime.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Elgin_Baylor",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-19",
+    "reel": {
+      "season": 1962,
+      "player": "Elgin Baylor"
+    }
+  },
+  {
+    "id": "p-nba-bill-russell-finals-rebounds",
+    "factId": "nba-bill-russell-finals-rebounds",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "What is the record for rebounds in a single NBA Finals game?",
+    "answer": "40",
+    "wrong": [
+      "35",
+      "37",
+      "43"
+    ],
+    "teach": "Russell vacuumed them against St. Louis during a Game 2 masterpiece.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Bill_Russell",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-26",
+    "reel": {
+      "season": 1960,
+      "player": "Bill Russell"
+    }
+  },
+  {
+    "id": "p-nba-magic-finals-assists",
+    "factId": "nba-magic-finals-assists",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "What is the record for assists in a single NBA Finals game?",
+    "answer": "21",
+    "wrong": [
+      "17",
+      "19",
+      "24"
+    ],
+    "teach": "Magic dished them in a losing Game 3 effort against Boston.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Magic_Johnson",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-02",
+    "reel": {
+      "season": 1984,
+      "player": "Magic Johnson"
+    }
+  },
+  {
+    "id": "p-nba-robert-horry-finals-steals",
+    "factId": "nba-robert-horry-finals-steals",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "What is the record for steals in a single NBA Finals game?",
+    "answer": "7",
+    "wrong": [
+      "5",
+      "6",
+      "8"
+    ],
+    "teach": "Horry swiped them for Houston during a sweep of Orlando.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Robert_Horry",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-09",
+    "reel": {
+      "season": 1995,
+      "player": "Robert Horry"
+    }
+  },
+  {
+    "id": "p-nba-michael-jordan-playoff-40s",
+    "factId": "nba-michael-jordan-playoff-40s",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "How many 40-point playoff games did Michael Jordan record, an NBA record?",
+    "answer": "38",
+    "wrong": [
+      "29",
+      "33",
+      "42"
+    ],
+    "teach": "Jordan hit the mark across thirteen postseason runs with Chicago.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Michael_Jordan",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-16",
+    "reel": {
+      "season": 1998,
+      "player": "Michael Jordan"
+    }
+  },
+  {
+    "id": "p-nba-lebron-playoff-wins",
+    "factId": "nba-lebron-playoff-wins",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "Where does LeBron James rank all-time in playoff games won?",
+    "answer": "1st",
+    "wrong": [
+      "2nd",
+      "3rd",
+      "4th"
+    ],
+    "teach": "James piled up victories across sixteen postseason trips with three franchises.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/LeBron_James",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-12",
+    "reel": {
+      "season": 2023,
+      "player": "LeBron James"
+    }
+  },
+  {
+    "id": "p-nba-stephen-curry-playoff-threes",
+    "factId": "nba-stephen-curry-playoff-threes",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "Where does Stephen Curry rank all-time in playoff three-pointers?",
+    "answer": "1st",
+    "wrong": [
+      "2nd",
+      "3rd",
+      "4th"
+    ],
+    "teach": "Curry built the lead raining triples across Golden State's dynasty run.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Stephen_Curry",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-19",
+    "reel": {
+      "season": 2022,
+      "player": "Stephen Curry"
+    }
+  },
+  {
+    "id": "p-nba-micheal-williams-ft-streak",
+    "factId": "nba-micheal-williams-ft-streak",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "How many consecutive free throws did Micheal Williams make, an NBA record?",
+    "answer": "97",
+    "wrong": [
+      "84",
+      "90",
+      "103"
+    ],
+    "teach": "Williams's streak for Minnesota spanned nearly two calendar years.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Micheal_Williams",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-26",
+    "reel": {
+      "season": 1993,
+      "player": "Micheal Williams"
+    }
+  },
+  {
+    "id": "p-nba-lebron-allstar-selections",
+    "factId": "nba-lebron-allstar-selections",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "easy",
+    "category": "Stats and records",
+    "prompt": "How many All-Star selections did LeBron James earn, the most ever?",
+    "answer": "21",
+    "wrong": [
+      "18",
+      "19",
+      "23"
+    ],
+    "teach": "James's streak ran uninterrupted from his second season onward.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/LeBron_James",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-02",
+    "reel": {
+      "season": 2025,
+      "player": "LeBron James"
+    }
+  },
+  {
+    "id": "p-nba-bill-russell-mvps",
+    "factId": "nba-bill-russell-mvps",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "How many MVP awards did Bill Russell win?",
+    "answer": "5",
+    "wrong": [
+      "4",
+      "6",
+      "7"
+    ],
+    "teach": "Russell took the honor five times despite finishing behind Chamberlain in stats.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Bill_Russell",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-09",
+    "reel": {
+      "season": 1965,
+      "player": "Bill Russell"
+    }
+  },
+  {
+    "id": "p-nba-lebron-allnba-total",
+    "factId": "nba-lebron-allnba-total",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "How many total All-NBA selections did LeBron James earn, the most ever?",
+    "answer": "21",
+    "wrong": [
+      "18",
+      "19",
+      "23"
+    ],
+    "teach": "James's selections covered the Cavaliers, Heat, and Lakers eras.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/LeBron_James",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-16",
+    "reel": {
+      "season": 2025,
+      "player": "LeBron James"
+    }
+  },
+  {
+    "id": "p-nba-karl-malone-games-rank",
+    "factId": "nba-karl-malone-games-rank",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "Where does Karl Malone rank all-time in games played?",
+    "answer": "6th",
+    "wrong": [
+      "4th",
+      "5th",
+      "8th"
+    ],
+    "teach": "The Mailman missed only ten games across eighteen seasons in Utah.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Karl_Malone",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-12",
+    "reel": {
+      "season": 2004,
+      "player": "Karl Malone"
+    }
+  },
+  {
+    "id": "p-nba-vince-carter-seasons",
+    "factId": "nba-vince-carter-seasons",
+    "side": "players",
+    "sport": "basketball",
+    "leagues": [
+      "NBA"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "How many NBA seasons did Vince Carter play, the most ever?",
+    "answer": "22",
+    "wrong": [
+      "20",
+      "21",
+      "23"
+    ],
+    "teach": "Carter's run spanned four decades from Toronto's Air Canada days to Atlanta.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Vince_Carter",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-19",
+    "reel": {
+      "season": 2020,
+      "player": "Vince Carter"
+    }
+  },
+  {
+    "id": "p-mlb-barry-bonds-season-obp",
+    "factId": "mlb-barry-bonds-season-obp",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "What is the MLB single-season record for on-base percentage?",
+    "answer": ".609",
+    "wrong": [
+      ".553",
+      ".582",
+      ".648"
+    ],
+    "teach": "Bonds reached it with pitchers terrified to throw strikes, walking constantly.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Barry_Bonds",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-26",
+    "reel": {
+      "season": 2004,
+      "player": "Barry Bonds"
+    }
+  },
+  {
+    "id": "p-mlb-babe-ruth-season-slg",
+    "factId": "mlb-babe-ruth-season-slg",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "What is the MLB single-season record for slugging percentage?",
+    "answer": ".847",
+    "wrong": [
+      ".782",
+      ".815",
+      ".901"
+    ],
+    "teach": "Ruth set it for New York in the year the live-ball era dawned.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Babe_Ruth",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-02",
+    "reel": {
+      "season": 1920,
+      "player": "Babe Ruth"
+    }
+  },
+  {
+    "id": "p-mlb-barry-bonds-season-ops",
+    "factId": "mlb-barry-bonds-season-ops",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "What is the MLB single-season record for OPS?",
+    "answer": "1.422",
+    "wrong": [
+      "1.258",
+      "1.310",
+      "1.516"
+    ],
+    "teach": "Bonds posted it for San Francisco while drawing those 232 walks.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Barry_Bonds",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-09",
+    "reel": {
+      "season": 2004,
+      "player": "Barry Bonds"
+    }
+  },
+  {
+    "id": "p-mlb-barry-bonds-season-ibb",
+    "factId": "mlb-barry-bonds-season-ibb",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "What is the MLB single-season record for intentional walks?",
+    "answer": "120",
+    "wrong": [
+      "98",
+      "107",
+      "133"
+    ],
+    "teach": "Opponents put Bonds on freely for San Francisco rather than risk the long ball.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Barry_Bonds",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-16",
+    "reel": {
+      "season": 2004,
+      "player": "Barry Bonds"
+    }
+  },
+  {
+    "id": "p-mlb-hughie-jennings-hbp",
+    "factId": "mlb-hughie-jennings-hbp",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "What is the MLB record for career hit-by-pitches?",
+    "answer": "287",
+    "wrong": [
+      "243",
+      "265",
+      "305"
+    ],
+    "teach": "Jennings leaned into them for Baltimore's rough nineteenth-century clubs.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Hughie_Jennings",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-12",
+    "reel": {
+      "season": 1909,
+      "player": "Hughie Jennings"
+    }
+  },
+  {
+    "id": "p-mlb-eddie-murray-sac-flies",
+    "factId": "mlb-eddie-murray-sac-flies",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "What is the MLB record for career sacrifice flies?",
+    "answer": "128",
+    "wrong": [
+      "119",
+      "122",
+      "135"
+    ],
+    "teach": "Murray lifted them for Baltimore and Los Angeles across 21 seasons.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Eddie_Murray",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-19",
+    "reel": {
+      "season": 1997,
+      "player": "Eddie Murray"
+    }
+  },
+  {
+    "id": "p-mlb-hank-aaron-xbh",
+    "factId": "mlb-hank-aaron-xbh",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "What is the MLB record for career extra-base hits?",
+    "answer": "1,477",
+    "wrong": [
+      "1,356",
+      "1,405",
+      "1,552"
+    ],
+    "teach": "Aaron's doubles, triples, and homers piled up over 23 seasons.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Hank_Aaron",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-26",
+    "reel": {
+      "season": 1976,
+      "player": "Hank Aaron"
+    }
+  },
+  {
+    "id": "p-mlb-pete-rose-atbats",
+    "factId": "mlb-pete-rose-atbats",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "What is the MLB record for career at-bats?",
+    "answer": "14,053",
+    "wrong": [
+      "12,364",
+      "13,180",
+      "14,961"
+    ],
+    "teach": "Rose crowded the box for 24 seasons wearing three uniforms.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Pete_Rose",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-02",
+    "reel": {
+      "season": 1986,
+      "player": "Pete Rose"
+    }
+  },
+  {
+    "id": "p-mlb-pete-rose-200-hit-seasons",
+    "factId": "mlb-pete-rose-200-hit-seasons",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "How many 200-hit seasons did Pete Rose record, an MLB record?",
+    "answer": "10",
+    "wrong": [
+      "8",
+      "9",
+      "11"
+    ],
+    "teach": "Rose collected them for Cincinnati between 1965 and 1979.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Pete_Rose",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-09",
+    "reel": {
+      "season": 1986,
+      "player": "Pete Rose"
+    }
+  },
+  {
+    "id": "p-mlb-derek-jeter-postseason-hits",
+    "factId": "mlb-derek-jeter-postseason-hits",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "What is the MLB record for career postseason hits?",
+    "answer": "200",
+    "wrong": [
+      "184",
+      "191",
+      "214"
+    ],
+    "teach": "Jeter collected them across sixteen October trips in pinstripes.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Derek_Jeter",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-16",
+    "reel": {
+      "season": 2014,
+      "player": "Derek Jeter"
+    }
+  },
+  {
+    "id": "p-mlb-manny-ramirez-postseason-hrs",
+    "factId": "mlb-manny-ramirez-postseason-hrs",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "What is the MLB record for career postseason home runs?",
+    "answer": "29",
+    "wrong": [
+      "25",
+      "27",
+      "31"
+    ],
+    "teach": "Ramirez crushed them for Cleveland and Boston's championship squads.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Manny_Ramirez",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-12",
+    "reel": {
+      "season": 2011,
+      "player": "Manny Ramirez"
+    }
+  },
+  {
+    "id": "p-mlb-bernie-williams-postseason-rbis",
+    "factId": "mlb-bernie-williams-postseason-rbis",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "What is the MLB record for career postseason RBIs?",
+    "answer": "80",
+    "wrong": [
+      "72",
+      "75",
+      "86"
+    ],
+    "teach": "Williams drove them in batting third for New York's dynasty lineup.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Bernie_Williams",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-19",
+    "reel": {
+      "season": 2006,
+      "player": "Bernie Williams"
+    }
+  },
+  {
+    "id": "p-mlb-billy-wagner-lefty-saves",
+    "factId": "mlb-billy-wagner-lefty-saves",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "How many career saves did Billy Wagner record, the most by a left-hander?",
+    "answer": "422",
+    "wrong": [
+      "368",
+      "390",
+      "454"
+    ],
+    "teach": "Wagner slammed the door for Houston, New York, and three other clubs.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Billy_Wagner",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-26",
+    "reel": {
+      "season": 2010,
+      "player": "Billy Wagner"
+    }
+  },
+  {
+    "id": "p-mlb-eric-gagne-save-streak",
+    "factId": "mlb-eric-gagne-save-streak",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "How many consecutive saves did Eric Gagne convert, an MLB record?",
+    "answer": "84",
+    "wrong": [
+      "72",
+      "78",
+      "91"
+    ],
+    "teach": "Gagne's streak for Los Angeles was immaculate across two-plus seasons.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/%C3%89ric_Gagn%C3%A9",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-02",
+    "reel": {
+      "season": 2004,
+      "player": "Eric Gagne"
+    }
+  },
+  {
+    "id": "p-mlb-jack-chesbro-season-wins",
+    "factId": "mlb-jack-chesbro-season-wins",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "What is the modern-era MLB single-season record for wins?",
+    "answer": "41",
+    "wrong": [
+      "37",
+      "39",
+      "44"
+    ],
+    "teach": "Chesbro won them for the New York Highlanders during the dead-ball era.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Jack_Chesbro",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-09",
+    "reel": {
+      "season": 1904,
+      "player": "Jack Chesbro"
+    }
+  },
+  {
+    "id": "p-mlb-ed-walsh-season-innings",
+    "factId": "mlb-ed-walsh-season-innings",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "What is the modern-era single-season record for innings pitched?",
+    "answer": "464",
+    "wrong": [
+      "424",
+      "448",
+      "490"
+    ],
+    "teach": "Walsh threw them for the White Sox, also notching a 1.42 ERA that year.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Ed_Walsh",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-16",
+    "reel": {
+      "season": 1908,
+      "player": "Ed Walsh"
+    }
+  },
+  {
+    "id": "p-mlb-nolan-ryan-season-ks",
+    "factId": "mlb-nolan-ryan-season-ks",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "What is the modern-era single-season record for strikeouts?",
+    "answer": "383",
+    "wrong": [
+      "352",
+      "367",
+      "401"
+    ],
+    "teach": "Ryan fanned them for the Angels while averaging nearly eleven per nine innings.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Nolan_Ryan",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-12",
+    "reel": {
+      "season": 1973,
+      "player": "Nolan Ryan"
+    }
+  },
+  {
+    "id": "p-mlb-wes-ferrell-pitcher-hrs",
+    "factId": "mlb-wes-ferrell-pitcher-hrs",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "What is the MLB record for career home runs by a pitcher?",
+    "answer": "37",
+    "wrong": [
+      "28",
+      "33",
+      "41"
+    ],
+    "teach": "Ferrell swung a real bat for Cleveland and Boston during the thirties.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Wes_Ferrell",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-19",
+    "reel": {
+      "season": 1941,
+      "player": "Wes Ferrell"
+    }
+  },
+  {
+    "id": "p-mlb-matt-stairs-pinch-hrs",
+    "factId": "mlb-matt-stairs-pinch-hrs",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "What is the MLB record for career pinch-hit home runs?",
+    "answer": "23",
+    "wrong": [
+      "19",
+      "21",
+      "26"
+    ],
+    "teach": "Stairs hit them off the bench for a dozen clubs across nineteen seasons.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Matt_Stairs",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-26",
+    "reel": {
+      "season": 2011,
+      "player": "Matt Stairs"
+    }
+  },
+  {
+    "id": "p-mlb-earl-webb-season-doubles",
+    "factId": "mlb-earl-webb-season-doubles",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "What is the MLB single-season record for doubles?",
+    "answer": "67",
+    "wrong": [
+      "59",
+      "63",
+      "72"
+    ],
+    "teach": "Webb sprayed them off Fenway's wall for Boston, a mark from the thirties.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Earl_Webb",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-02",
+    "reel": {
+      "season": 1931,
+      "player": "Earl Webb"
+    }
+  },
+  {
+    "id": "p-mlb-babe-ruth-season-runs",
+    "factId": "mlb-babe-ruth-season-runs",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "What is the modern-era single-season record for runs scored?",
+    "answer": "177",
+    "wrong": [
+      "158",
+      "167",
+      "189"
+    ],
+    "teach": "Ruth crossed home at that clip for New York while hitting 59 homers.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Babe_Ruth",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-09",
+    "reel": {
+      "season": 1921,
+      "player": "Babe Ruth"
+    }
+  },
+  {
+    "id": "p-mlb-babe-ruth-40hr-seasons",
+    "factId": "mlb-babe-ruth-40hr-seasons",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "How many 40-homer seasons did Babe Ruth post, an MLB record?",
+    "answer": "11",
+    "wrong": [
+      "9",
+      "10",
+      "13"
+    ],
+    "teach": "Ruth did it for both Boston and New York across the twenties and thirties.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Babe_Ruth",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-16",
+    "reel": {
+      "season": 1935,
+      "player": "Babe Ruth"
+    }
+  },
+  {
+    "id": "p-mlb-hank-aaron-30hr-seasons",
+    "factId": "mlb-hank-aaron-30hr-seasons",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "How many 30-homer seasons did Hank Aaron post, an MLB record?",
+    "answer": "15",
+    "wrong": [
+      "12",
+      "13",
+      "17"
+    ],
+    "teach": "Aaron reached the plateau with quiet consistency for the Braves for two decades.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Hank_Aaron",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-12",
+    "reel": {
+      "season": 1976,
+      "player": "Hank Aaron"
+    }
+  },
+  {
+    "id": "p-mlb-alex-rodriguez-100rbi-streak",
+    "factId": "mlb-alex-rodriguez-100rbi-streak",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "How many consecutive 100-RBI seasons did Alex Rodriguez post, an MLB record?",
+    "answer": "14",
+    "wrong": [
+      "11",
+      "12",
+      "16"
+    ],
+    "teach": "Rodriguez drove them in every year for Seattle, Texas, and New York.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Alex_Rodriguez",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-19",
+    "reel": {
+      "season": 2010,
+      "player": "Alex Rodriguez"
+    }
+  },
+  {
+    "id": "p-mlb-vince-coleman-rookie-sbs",
+    "factId": "mlb-vince-coleman-rookie-sbs",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "How many bases did Vince Coleman steal as a rookie, an MLB record?",
+    "answer": "110",
+    "wrong": [
+      "98",
+      "104",
+      "117"
+    ],
+    "teach": "Coleman swiped them for St. Louis en route to Rookie of the Year.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Vince_Coleman",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-26",
+    "reel": {
+      "season": 1985,
+      "player": "Vince Coleman"
+    }
+  },
+  {
+    "id": "p-mlb-roberto-clemente-gold-gloves",
+    "factId": "mlb-roberto-clemente-gold-gloves",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "How many Gold Gloves did Roberto Clemente win, tied for the outfield record?",
+    "answer": "12",
+    "wrong": [
+      "10",
+      "11",
+      "14"
+    ],
+    "teach": "Clemente's cannon arm earned them every year of the sixties for Pittsburgh.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Roberto_Clemente",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-02",
+    "reel": {
+      "season": 1972,
+      "player": "Roberto Clemente"
+    }
+  },
+  {
+    "id": "p-mlb-keith-hernandez-gold-gloves",
+    "factId": "mlb-keith-hernandez-gold-gloves",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "How many Gold Gloves did Keith Hernandez win, the most by a first baseman?",
+    "answer": "11",
+    "wrong": [
+      "9",
+      "10",
+      "13"
+    ],
+    "teach": "Hernandez vacuumed throws at the bag for St. Louis and New York.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Keith_Hernandez",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-09",
+    "reel": {
+      "season": 1987,
+      "player": "Keith Hernandez"
+    }
+  },
+  {
+    "id": "p-mlb-whitey-ford-postseason-shutout-inn",
+    "factId": "mlb-whitey-ford-postseason-shutout-inn",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "How many consecutive scoreless World Series innings did Whitey Ford throw, an MLB record?",
+    "answer": "33",
+    "wrong": [
+      "28",
+      "30",
+      "37"
+    ],
+    "teach": "Ford's run for the Yankees broke Babe Ruth's longstanding mark.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Whitey_Ford",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-16",
+    "reel": {
+      "season": 1962,
+      "player": "Whitey Ford"
+    }
+  },
+  {
+    "id": "p-mlb-mariano-rivera-postseason-apps",
+    "factId": "mlb-mariano-rivera-postseason-apps",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "What is the MLB record for career postseason appearances by a pitcher?",
+    "answer": "96",
+    "wrong": [
+      "82",
+      "88",
+      "104"
+    ],
+    "teach": "Rivera jogged in from the bullpen across sixteen Yankee Octobers.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Mariano_Rivera",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-12",
+    "reel": {
+      "season": 2013,
+      "player": "Mariano Rivera"
+    }
+  },
+  {
+    "id": "p-mlb-lou-brock-nl-sbs",
+    "factId": "mlb-lou-brock-nl-sbs",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "What was the NL single-season stolen base record that Lou Brock set?",
+    "answer": "118",
+    "wrong": [
+      "104",
+      "111",
+      "124"
+    ],
+    "teach": "Brock swiped them for St. Louis before Henderson's modern marks arrived.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Lou_Brock",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-19",
+    "reel": {
+      "season": 1974,
+      "player": "Lou Brock"
+    }
+  },
+  {
+    "id": "p-mlb-ozzie-smith-gold-gloves",
+    "factId": "mlb-ozzie-smith-gold-gloves",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "How many consecutive Gold Gloves did Ozzie Smith win at shortstop?",
+    "answer": "13",
+    "wrong": [
+      "10",
+      "11",
+      "15"
+    ],
+    "teach": "The Wizard vacuumed grounders for St. Louis every year of the eighties.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Ozzie_Smith",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-26",
+    "reel": {
+      "season": 1992,
+      "player": "Ozzie Smith"
+    }
+  },
+  {
+    "id": "p-mlb-ivan-rodriguez-gold-gloves",
+    "factId": "mlb-ivan-rodriguez-gold-gloves",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "How many Gold Gloves did Ivan Rodriguez win, the most by a catcher?",
+    "answer": "13",
+    "wrong": [
+      "10",
+      "11",
+      "15"
+    ],
+    "teach": "Pudge erased running games for Texas and Detroit across two decades.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Iv%C3%A1n_Rodr%C3%ADguez",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-02",
+    "reel": {
+      "season": 2007,
+      "player": "Ivan Rodriguez"
+    }
+  },
+  {
+    "id": "p-mlb-brooks-robinson-gold-gloves",
+    "factId": "mlb-brooks-robinson-gold-gloves",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "How many consecutive Gold Gloves did Brooks Robinson win at third base?",
+    "answer": "16",
+    "wrong": [
+      "13",
+      "14",
+      "18"
+    ],
+    "teach": "Robinson's vacuum at the hot corner anchored Baltimore's dynasty defense.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Brooks_Robinson",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-09",
+    "reel": {
+      "season": 1975,
+      "player": "Brooks Robinson"
+    }
+  },
+  {
+    "id": "p-mlb-sandy-koufax-nl-triple-crowns",
+    "factId": "mlb-sandy-koufax-nl-triple-crowns",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "expert",
+    "category": "Stats and records",
+    "prompt": "How many pitching Triple Crowns did Sandy Koufax win?",
+    "answer": "3",
+    "wrong": [
+      "2",
+      "4",
+      "5"
+    ],
+    "teach": "Koufax led the NL in wins, ERA, and strikeouts three times for Los Angeles.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Sandy_Koufax",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-16",
+    "reel": {
+      "season": 1966,
+      "player": "Sandy Koufax"
+    }
+  },
+  {
+    "id": "p-mlb-mickey-mantle-triple-crown-year",
+    "factId": "mlb-mickey-mantle-triple-crown-year",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "In what year did Mickey Mantle win the Triple Crown?",
+    "answer": "1956",
+    "wrong": [
+      "1953",
+      "1958",
+      "1961"
+    ],
+    "teach": "Mantle hit .353 with 52 homers and 130 RBIs for the Yankees.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Mickey_Mantle",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-12",
+    "reel": {
+      "season": 1956,
+      "player": "Mickey Mantle"
+    }
+  },
+  {
+    "id": "p-mlb-miguel-cabrera-triple-crown-year",
+    "factId": "mlb-miguel-cabrera-triple-crown-year",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "In what year did Miguel Cabrera win the Triple Crown, the first in 45 years?",
+    "answer": "2012",
+    "wrong": [
+      "2009",
+      "2014",
+      "2016"
+    ],
+    "teach": "Cabrera hit .330 with 44 homers for Detroit, ending the drought since Yastrzemski.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Miguel_Cabrera",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-19",
+    "reel": {
+      "season": 2012,
+      "player": "Miguel Cabrera"
+    }
+  },
+  {
+    "id": "p-mlb-carl-yastrzemski-tc-year",
+    "factId": "mlb-carl-yastrzemski-tc-year",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "In what year did Carl Yastrzemski win the Triple Crown?",
+    "answer": "1967",
+    "wrong": [
+      "1961",
+      "1964",
+      "1970"
+    ],
+    "teach": "Yaz hit .326 with 44 homers during Boston's Impossible Dream campaign.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Carl_Yastrzemski",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-01-26",
+    "reel": {
+      "season": 1967,
+      "player": "Carl Yastrzemski"
+    }
+  },
+  {
+    "id": "p-mlb-ty-cobb-batting-titles",
+    "factId": "mlb-ty-cobb-batting-titles",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "How many batting titles did Ty Cobb win, the most ever?",
+    "answer": "11",
+    "wrong": [
+      "9",
+      "10",
+      "12"
+    ],
+    "teach": "Cobb claimed them for Detroit, including nine straight to open his prime.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Ty_Cobb",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-02",
+    "reel": {
+      "season": 1928,
+      "player": "Ty Cobb"
+    }
+  },
+  {
+    "id": "p-mlb-willie-mays-mvps",
+    "factId": "mlb-willie-mays-mvps",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "How many MVP awards did Willie Mays win?",
+    "answer": "2",
+    "wrong": [
+      "1",
+      "3",
+      "4"
+    ],
+    "teach": "Mays took the honor eleven years apart for the Giants in New York and SF.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Willie_Mays",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-09",
+    "reel": {
+      "season": 1965,
+      "player": "Willie Mays"
+    }
+  },
+  {
+    "id": "p-mlb-stan-musial-batting-titles",
+    "factId": "mlb-stan-musial-batting-titles",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "How many batting titles did Stan Musial win?",
+    "answer": "7",
+    "wrong": [
+      "5",
+      "6",
+      "8"
+    ],
+    "teach": "Musial hit over .300 for eighteen straight seasons in St. Louis.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Stan_Musial",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-16",
+    "reel": {
+      "season": 1957,
+      "player": "Stan Musial"
+    }
   }
 ]
