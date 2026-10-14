@@ -317,13 +317,20 @@ function ReelCards({ question }: { question: PublicQuestion }) {
   const settledAt = cards.map(
     (_, index) => spinDoneMs - (cards.length - 1 - index) * REEL_SETTLE_STAGGER_MS,
   )
-  const reduceMotion = useMemo(
+  const [reduceMotion, setReduceMotion] = useState(
     () =>
       typeof window !== 'undefined' &&
       (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false),
-    [],
   )
-  const [elapsed, setElapsed] = useState(() => (reduceMotion ? spinDoneMs : 0))
+  const [elapsed, setElapsed] = useState(0)
+
+  useEffect(() => {
+    const media = window.matchMedia?.('(prefers-reduced-motion: reduce)')
+    if (!media) return
+    const onChange = (event: MediaQueryListEvent) => setReduceMotion(event.matches)
+    media.addEventListener('change', onChange)
+    return () => media.removeEventListener('change', onChange)
+  }, [])
 
   useEffect(() => {
     if (reduceMotion) return
@@ -345,7 +352,7 @@ function ReelCards({ question }: { question: PublicQuestion }) {
   return (
     <div className={`reel-stack ${question.side === 'players' ? 'reel-stack--player' : ''}`}>
       {cards.map((card, index) => {
-        const settled = elapsed >= settledAt[index]
+        const settled = reduceMotion || elapsed >= settledAt[index]
         const value = settled
           ? card.final
           : card.decoys.length > 0
