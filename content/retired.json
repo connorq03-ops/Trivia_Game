@@ -231,5 +231,89 @@
       "season": 2014,
       "player": "Anthony Davis"
     }
+  },
+  {
+    "id": "p-nfl-justin-tucker-longest-fg",
+    "factId": "nfl-justin-tucker-longest-fg",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "How long was the longest field goal in NFL history?",
+    "answer": "66 yards",
+    "wrong": [
+      "63 yards",
+      "64 yards",
+      "68 yards"
+    ],
+    "teach": "Tucker's kick bounced off the crossbar to beat Detroit as time expired for Baltimore.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Justin_Tucker",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2026-11-03",
+    "reel": {
+      "season": 2021,
+      "player": "Justin Tucker"
+    }
+  },
+  {
+    "id": "p-nfl-derrick-henry-playoff-pace",
+    "factId": "nfl-derrick-henry-playoff-pace",
+    "side": "players",
+    "sport": "football",
+    "leagues": [
+      "NFL"
+    ],
+    "difficulty": "hard",
+    "category": "Stats and records",
+    "prompt": "Whose 2,027 rushing yards in 2020 is the fifth-best single season ever?",
+    "answer": "Derrick Henry",
+    "wrong": [
+      "Jonathan Taylor",
+      "Dalvin Cook",
+      "Saquon Barkley"
+    ],
+    "teach": "Henry won Offensive Player of the Year while powering Tennessee's ground attack.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Derrick_Henry",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2026-11-17",
+    "reel": {
+      "season": 2020,
+      "player": "Derrick Henry"
+    }
+  },
+  {
+    "id": "p-mlb-ty-cobb-batting-titles",
+    "factId": "mlb-ty-cobb-batting-titles",
+    "side": "players",
+    "sport": "baseball",
+    "leagues": [
+      "MLB"
+    ],
+    "difficulty": "medium",
+    "category": "Stats and records",
+    "prompt": "How many batting titles did Ty Cobb win, the most ever?",
+    "answer": "11",
+    "wrong": [
+      "9",
+      "10",
+      "12"
+    ],
+    "teach": "Cobb claimed them for Detroit, including nine straight to open his prime.",
+    "source": {
+      "url": "https://en.wikipedia.org/wiki/Ty_Cobb",
+      "ref": "Wikipedia article and career stats, checked 2026-10-14"
+    },
+    "dailyFrom": "2027-02-02",
+    "reel": {
+      "season": 1928,
+      "player": "Ty Cobb"
+    }
   }
 ]
