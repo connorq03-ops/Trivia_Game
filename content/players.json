@@ -1,32 +1,5 @@
 [
   {
-    "id": "p-nfl-tom-brady-college",
-    "factId": "nfl-tom-brady-college",
-    "side": "players",
-    "sport": "football",
-    "leagues": [
-      "NFL"
-    ],
-    "difficulty": "easy",
-    "category": "Alma mater",
-    "prompt": "Where did Tom Brady play college ball?",
-    "answer": "Michigan",
-    "wrong": [
-      "Ohio State",
-      "Notre Dame",
-      "Purdue"
-    ],
-    "teach": "Brady redshirted at Michigan in 1995 and played there through 1999, after high school in San Mateo, California.",
-    "source": {
-      "url": "https://en.wikipedia.org/wiki/Tom_Brady",
-      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
-    },
-    "reel": {
-      "season": 2007,
-      "player": "Tom Brady"
-    }
-  },
-  {
     "id": "p-nfl-tom-brady-draft",
     "factId": "nfl-tom-brady-draft",
     "side": "players",
@@ -459,33 +432,6 @@
     }
   },
   {
-    "id": "p-nfl-randy-moss-draft",
-    "factId": "nfl-randy-moss-draft",
-    "side": "players",
-    "sport": "football",
-    "leagues": [
-      "NFL"
-    ],
-    "difficulty": "easy",
-    "category": "Drafted by",
-    "prompt": "Which team drafted Randy Moss?",
-    "answer": "Vikings",
-    "wrong": [
-      "Cowboys",
-      "Packers",
-      "Patriots"
-    ],
-    "teach": "Minnesota took Moss 21st overall in 1998; he played there through 2004.",
-    "source": {
-      "url": "https://en.wikipedia.org/wiki/Randy_Moss",
-      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
-    },
-    "reel": {
-      "season": 2003,
-      "player": "Randy Moss"
-    }
-  },
-  {
     "id": "p-nfl-calvin-johnson-college",
     "factId": "nfl-calvin-johnson-college",
     "side": "players",
@@ -833,33 +779,6 @@
     },
     "reel": {
       "season": 2006,
-      "player": "LaDainian Tomlinson"
-    }
-  },
-  {
-    "id": "p-nfl-ladainian-tomlinson-draft",
-    "factId": "nfl-ladainian-tomlinson-draft",
-    "side": "players",
-    "sport": "football",
-    "leagues": [
-      "NFL"
-    ],
-    "difficulty": "medium",
-    "category": "Drafted by",
-    "prompt": "Which team drafted LaDainian Tomlinson?",
-    "answer": "Chargers",
-    "wrong": [
-      "Chiefs",
-      "Cowboys",
-      "Jets"
-    ],
-    "teach": "The San Diego Chargers took Tomlinson 5th in 2001.",
-    "source": {
-      "url": "https://en.wikipedia.org/wiki/LaDainian_Tomlinson",
-      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
-    },
-    "reel": {
-      "season": 2004,
       "player": "LaDainian Tomlinson"
     }
   },
@@ -2295,33 +2214,6 @@
     }
   },
   {
-    "id": "p-nba-allen-iverson-college",
-    "factId": "nba-allen-iverson-college",
-    "side": "players",
-    "sport": "basketball",
-    "leagues": [
-      "NBA"
-    ],
-    "difficulty": "easy",
-    "category": "Alma mater",
-    "prompt": "Where did Allen Iverson play college ball?",
-    "answer": "Georgetown",
-    "wrong": [
-      "Villanova",
-      "Syracuse",
-      "UConn"
-    ],
-    "teach": "Iverson, from Hampton, Virginia, played at Georgetown from 1994 to 1996.",
-    "source": {
-      "url": "https://en.wikipedia.org/wiki/Allen_Iverson",
-      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
-    },
-    "reel": {
-      "season": 2001,
-      "player": "Allen Iverson"
-    }
-  },
-  {
     "id": "p-nba-allen-iverson-jersey",
     "factId": "nba-allen-iverson-jersey",
     "side": "players",
@@ -2366,33 +2258,6 @@
       "Michigan State"
     ],
     "teach": "Wade, from Chicago, played at Marquette from 2001 to 2003.",
-    "source": {
-      "url": "https://en.wikipedia.org/wiki/Dwyane_Wade",
-      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
-    },
-    "reel": {
-      "season": 2006,
-      "player": "Dwyane Wade"
-    }
-  },
-  {
-    "id": "p-nba-dwyane-wade-draft",
-    "factId": "nba-dwyane-wade-draft",
-    "side": "players",
-    "sport": "basketball",
-    "leagues": [
-      "NBA"
-    ],
-    "difficulty": "easy",
-    "category": "Drafted by",
-    "prompt": "Which team drafted Dwyane Wade?",
-    "answer": "Heat",
-    "wrong": [
-      "Nuggets",
-      "Pistons",
-      "Raptors"
-    ],
-    "teach": "Miami took Wade 5th overall in 2003; he played his first 13 seasons there.",
     "source": {
       "url": "https://en.wikipedia.org/wiki/Dwyane_Wade",
       "ref": "Wikipedia infobox and lead, checked 2026-10-08"
@@ -2643,33 +2508,6 @@
     "reel": {
       "season": 2019,
       "player": "Damian Lillard"
-    }
-  },
-  {
-    "id": "p-nba-anthony-davis-college",
-    "factId": "nba-anthony-davis-college",
-    "side": "players",
-    "sport": "basketball",
-    "leagues": [
-      "NBA"
-    ],
-    "difficulty": "easy",
-    "category": "Alma mater",
-    "prompt": "Where did Anthony Davis play college ball?",
-    "answer": "Kentucky",
-    "wrong": [
-      "Louisville",
-      "Kansas",
-      "Duke"
-    ],
-    "teach": "Davis played one season at Kentucky (2011–12), then went 1st overall in 2012.",
-    "source": {
-      "url": "https://en.wikipedia.org/wiki/Anthony_Davis",
-      "ref": "Wikipedia infobox and lead, checked 2026-10-08"
-    },
-    "reel": {
-      "season": 2014,
-      "player": "Anthony Davis"
     }
   },
   {

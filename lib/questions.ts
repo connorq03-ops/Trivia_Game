@@ -4,6 +4,7 @@ import playersNflDeep from '../content/players-nfl-deep.json' with { type: 'json
 import playersMlb from '../content/players-mlb.json' with { type: 'json' }
 import playersRecords from '../content/players-records.json' with { type: 'json' }
 import players from '../content/players.json' with { type: 'json' }
+import retired from '../content/retired.json' with { type: 'json' }
 import rulesDeep from '../content/rules-deep.json' with { type: 'json' }
 import rules from '../content/rules.json' with { type: 'json' }
 import {
@@ -38,10 +39,19 @@ export const bossContentFiles: Record<string, BossQuestion[]> = {
   'boss.json': boss as unknown as BossQuestion[],
 }
 
+// Retired questions stay out of questionBank so no selection draws them,
+// but questionsById still resolves them so runs in progress when they were
+// pulled keep working (current question, frozen Daily lists, missed recap).
+export const retiredContentFiles: Record<string, Question[]> = {
+  'retired.json': retired as Question[],
+}
+
 export const questionBank = Object.values(contentFiles).flat()
 export const bossQuestions = Object.values(bossContentFiles).flat()
 export const questionsById = new Map<string, Question>(
-  [...questionBank, ...bossQuestions].map((question) => [question.id, question]),
+  [...questionBank, ...bossQuestions, ...Object.values(retiredContentFiles).flat()].map(
+    (question) => [question.id, question],
+  ),
 )
 
 export function isBossQuestion(question: Question): question is BossQuestion {

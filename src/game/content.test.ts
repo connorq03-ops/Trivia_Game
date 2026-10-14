@@ -6,6 +6,7 @@ import {
   contentFiles,
   questionBank,
   questionsById,
+  retiredContentFiles,
 } from '../../lib/questions'
 import { BOSS_CATEGORIES, dailyQuestions } from './engine'
 import type { Question } from './types'
@@ -50,13 +51,29 @@ describe('question content', () => {
   it('loads every content/*.json file into the bank', () => {
     const onDisk = readdirSync('content').filter((name) => name.endsWith('.json'))
     expect(
-      [...Object.keys(contentFiles), ...Object.keys(bossContentFiles)].sort(),
+      [
+        ...Object.keys(contentFiles),
+        ...Object.keys(bossContentFiles),
+        ...Object.keys(retiredContentFiles),
+      ].sort(),
     ).toEqual(onDisk.sort())
     for (const name of Object.keys(contentFiles)) {
       expect(name.startsWith('rules') || name.startsWith('players'), name).toBe(true)
     }
     for (const name of Object.keys(bossContentFiles)) {
       expect(name.startsWith('boss'), name).toBe(true)
+    }
+    for (const name of Object.keys(retiredContentFiles)) {
+      expect(name.startsWith('retired'), name).toBe(true)
+    }
+  })
+
+  it('keeps retired questions resolvable for in-progress runs but out of the bank', () => {
+    const retired = Object.values(retiredContentFiles).flat()
+    const bankIds = new Set(questionBank.map((question) => question.id))
+    for (const question of retired) {
+      expect(bankIds.has(question.id)).toBe(false)
+      expect(questionsById.get(question.id)).toEqual(question)
     }
   })
 
