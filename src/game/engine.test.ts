@@ -3,6 +3,8 @@ import {
   answerBonusBossQuestion,
   answerBossQuestion,
   answerQuestion,
+  applyMysteryPrize,
+  drawMysteryPrizes,
   BOSS_CATEGORIES,
   BOSS_CLOCK_MS,
   BOSS_HIT_POINTS,
@@ -750,5 +752,107 @@ describe('Daily bonus boss', () => {
         outcome.progress.results.every((result) => result === 'hit'),
       ).toBe(true)
     }
+  })
+})
+
+describe('Mystery prizes', () => {
+  function seeded(values: number[]): () => number {
+    let index = 0
+    return () => values[index++ % values.length]
+  }
+
+  it('draws two prizes and every table entry is reachable', () => {
+    const prizes = drawMysteryPrizes(seeded([0.0, 0.99]))
+    expect(prizes).toHaveLength(2)
+    const seen = new Set<string>()
+    for (let index = 0; index < 2000; index += 1) {
+      const rng = seeded([index / 2000 + 0.0001])
+      const [prize] = drawMysteryPrizes(rng)
+      seen.add(prize.kind)
+    }
+    expect(seen).toEqual(
+      new Set(['nothing', 'points', 'fiftyFifty', 'strikeEraser', 'shield']),
+    )
+  })
+
+  it('is deterministic for a seeded rng', () => {
+    const rng = () => 0.35 // second entry: +100 points
+    expect(drawMysteryPrizes(rng)).toEqual([
+      { kind: 'points', points: 100 },
+      { kind: 'points', points: 100 },
+    ])
+    expect(drawMysteryPrizes(() => 0.0)).toEqual([
+      { kind: 'nothing' },
+      { kind: 'nothing' },
+    ])
+    expect(drawMysteryPrizes(() => 0.999)).toEqual([
+      { kind: 'shield' },
+      { kind: 'shield' },
+    ])
+  })
+
+  it('applies each prize to the run progress', () => {
+    const base = {
+      ...createRunProgress(),
+      score: 1000,
+      strikes: 2,
+      lifelines: { fiftyFifty: 0, shield: false },
+    }
+    expect(applyMysteryPrize(base, { kind: 'nothing' })).toBe(base)
+    expect(applyMysteryPrize(base, { kind: 'points', points: 200 }).score).toBe(1200)
+    expect(
+      applyMysteryPrize(base, { kind: 'fiftyFifty' }).lifelines.fiftyFifty,
+    ).toBe(1)
+    expect(applyMysteryPrize(base, { kind: 'strikeEraser' }).strikes).toBe(1)
+    expect(
+      applyMysteryPrize(
+        { ...base, strikes: 0 },
+        { kind: 'strikeEraser' },
+      ).strikes,
+    ).toBe(0)
+    expect(applyMysteryPrize(base, { kind: 'shield' }).lifelines.shield).toBe(
+      true,
+    )
+  })
+
+  it('starts each run with empty lifelines', () => {
+    expect(createRunProgress().lifelines).toEqual({
+      fiftyFifty: 0,
+      shield: false,
+    })
+  })
+})
+
+describe('Score shield', () => {
+  const question = makeQuestion(0, { side: 'rules', difficulty: 'medium' })
+  const shielded = () => ({
+    ...createRunProgress(),
+    lifelines: { fiftyFifty: 0, shield: true },
+  })
+
+  it('absorbs a miss instead of costing a strike, then clears', () => {
+    const outcome = answerQuestion(shielded(), question, false, 1000)
+    expect(outcome.shielded).toBe(true)
+    expect(outcome.progress.strikes).toBe(0)
+    expect(outcome.progress.streak).toBe(0)
+    expect(outcome.progress.lifelines.shield).toBe(false)
+    expect(outcome.progress.results).toEqual(['miss'])
+    // The shield is spent: the next miss costs a strike again.
+    const second = answerQuestion(outcome.progress, question, false, 1000)
+    expect(second.shielded).toBeUndefined()
+    expect(second.progress.strikes).toBe(1)
+  })
+
+  it('absorbs a timeout too', () => {
+    const outcome = answerQuestion(shielded(), question, true, null)
+    expect(outcome.shielded).toBe(true)
+    expect(outcome.progress.strikes).toBe(0)
+    expect(outcome.progress.lifelines.shield).toBe(false)
+  })
+
+  it('survives a correct answer — only a miss spends it', () => {
+    const outcome = answerQuestion(shielded(), question, true, 1000)
+    expect(outcome.shielded).toBeUndefined()
+    expect(outcome.progress.lifelines.shield).toBe(true)
   })
 })

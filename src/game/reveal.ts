@@ -44,6 +44,7 @@ export function howItWorks({ bosses = false }: { bosses?: boolean } = {}): strin
     ...(bosses
       ? [
           `Boss questions on science, history, art or pop culture hit every 10 correct up to 50, then every 25: ${BOSS_CLOCK_MS / 1000} seconds, +${BOSS_HIT_POINTS} if right, −${BOSS_MISS_POINTS} if wrong, no strike.`,
+          `Beat a boss in Classic and you get a mystery box: pick one of two — points, a 50/50 lifeline, a strike eraser, a score shield, or nothing.`,
           `A perfect, fast Daily 10 earns a bonus boss: all 10 right in under ${DAILY_BONUS_AVG_MS / 1000}s each on average, +${BOSS_HIT_POINTS} if right and no penalty if wrong.`,
         ]
       : []),
@@ -77,16 +78,19 @@ export function difficultyLabel(difficulty: Difficulty): string {
   return DIFFICULTY_LABELS[difficulty]
 }
 
-export type Callout = 'multiplier' | 'strikeCleared' | 'levelUp'
+export type Callout = 'multiplier' | 'strikeCleared' | 'levelUp' | 'mysteryBox'
 
 type CalloutProgress = { streak: number; strikes: number; correct?: number }
 
 export function revealCallouts(
   before: CalloutProgress,
   after: CalloutProgress,
-  { levels = false }: { levels?: boolean } = {},
+  { levels = false, mystery = false }: { levels?: boolean; mystery?: boolean } = {},
 ): { kind: Callout; text: string }[] {
   const callouts: { kind: Callout; text: string }[] = []
+  if (mystery) {
+    callouts.push({ kind: 'mysteryBox', text: 'Mystery box — pick one!' })
+  }
   if (
     levels &&
     before.correct !== undefined &&

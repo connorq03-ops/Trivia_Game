@@ -17,6 +17,7 @@ import {
   selectClassicQuestion,
   type AnswerResult,
   type ClassicOptions,
+  type Lifelines,
 } from '../src/game/engine.js'
 import type { Question, Side, Sport } from '../src/game/types.js'
 
@@ -234,6 +235,8 @@ export async function POST(request: Request): Promise<Response> {
         questionsAnswered?: number
         missed?: Question[]
         bossMisses?: number
+        lifelines?: Lifelines
+        pendingMystery?: unknown[]
       } | null
       const liveQuestion = resumedRun.current_question_id
         ? questionsById.get(resumedRun.current_question_id)
@@ -261,9 +264,15 @@ export async function POST(request: Request): Promise<Response> {
             missed: stored?.missed ?? [],
             bossMisses: stored?.bossMisses ?? 0,
           }),
+          lifelines: stored?.lifelines ?? { fiftyFifty: 0, shield: false },
         },
         total: input.mode === 'daily' ? 10 : null,
         bosses: bossQuestionsEnabled(),
+        // An unresolved mystery box survives a refresh: opaque flag only, the
+        // prizes stay hidden until the pick.
+        ...(Array.isArray(stored?.pendingMystery) && stored.pendingMystery.length === 2
+          ? { mystery: ['a', 'b'] }
+          : {}),
       })
     }
     if (!inserted[0]) {
@@ -286,6 +295,7 @@ export async function POST(request: Request): Promise<Response> {
           strikes: initialProgress.strikes,
           streak: initialProgress.streak,
           correct: 0,
+          lifelines: initialProgress.lifelines,
         },
         total: input.mode === 'daily' ? 10 : null,
         bosses: bossQuestionsEnabled(),

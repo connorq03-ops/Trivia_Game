@@ -40,11 +40,18 @@ type Screen =
   | 'question'
   | 'reveal'
   | 'teach'
+  | 'mystery'
   | 'over'
   | 'connection'
   | 'serverError'
   | 'noQuestions'
 type Mode = 'classic' | 'daily'
+
+type Lifelines = {
+  fiftyFifty: number
+  shield: boolean
+  fiftyFiftyUsedOn?: number
+}
 
 type PublicQuestion = Pick<
   Question,
@@ -67,6 +74,7 @@ type PublicProgress = {
   strikes: number
   streak: number
   correct?: number
+  lifelines?: Lifelines
 }
 
 type GameSession = {
@@ -95,8 +103,20 @@ type AnswerResponse = {
   teach: string
   source: Question['source']
   progress: PublicProgress
+  shielded?: boolean
+  mystery?: string[]
   next: { questionIndex: number } | null
   summary: GameSummary | null
+}
+
+type MysteryPrizeDescriptor = { kind: string; points?: number; label: string }
+
+type MysteryState = {
+  picked: number | null
+  result: {
+    prizes: MysteryPrizeDescriptor[]
+    applied: MysteryPrizeDescriptor
+  } | null
 }
 
 type AnswerReveal = {
@@ -127,6 +147,7 @@ type RunResponse = {
   progress: PublicProgress
   total: number | null
   bosses?: boolean
+  mystery?: string[]
 }
 
 function browserStorage(): Pick<
@@ -274,6 +295,7 @@ function App() {
   } | null>(null)
   const [picked, setPicked] = useState<string | null>(null)
   const [reveal, setReveal] = useState<AnswerReveal | null>(null)
+  const [mystery, setMystery] = useState<MysteryState | null>(null)
   const [announcement, setAnnouncement] = useState('')
   const [pendingNextIndex, setPendingNextIndex] = useState<number | null>(null)
   const [pendingSummary, setPendingSummary] = useState<GameSummary | null>(null)
@@ -383,6 +405,7 @@ function App() {
     setIsSubmitting(false)
     setPicked(null)
     setReveal(null)
+    setMystery(null)
     setIsStarting(true)
     setStartError(false)
     setSummary(null)
@@ -421,7 +444,13 @@ function App() {
         question: result.question,
         total: result.total,
       })
-      setScreen('reel')
+      // A resumed run can still have an unopened mystery box waiting.
+      if (result.mystery && result.mystery.length === 2) {
+        setMystery({ picked: null, result: null })
+        setScreen('mystery')
+      } else {
+        setScreen('reel')
+      }
     } catch {
       if (generation !== startGeneration.current) return
       setStartError(true)
@@ -488,6 +517,7 @@ function App() {
       setTeachInfo(null)
       setPicked(null)
       setReveal(null)
+      setMystery(null)
       questionClockOffset.current = Math.min(
         clockMsFor(result.question),
         Math.max(0, result.elapsedMs),
@@ -568,11 +598,13 @@ function App() {
         callouts: result.correct
           ? revealCallouts(current.progress, result.progress, {
               levels: current.mode === 'classic',
+              mystery: !!result.mystery,
             }).filter(
               (callout) => !current.question.boss || callout.kind !== 'multiplier',
             )
           : [],
       })
+      setMystery(result.mystery ? { picked: null, result: null } : null)
       if (timedOut) setElapsedMs(clockMsFor(current.question))
       setScreen('reveal')
       setAnnouncement(
@@ -584,7 +616,9 @@ function App() {
                 : current.question.boss
                 ? `Minus ${-result.points}.`
                 : current.mode === 'classic'
-                ? `Strike ${result.progress.strikes} of ${STRIKES}.`
+                ? result.shielded
+                  ? 'Shield held — no strike.'
+                  : `Strike ${result.progress.strikes} of ${STRIKES}.`
                 : `${result.progress.strikes} missed.`
             }`,
       )
@@ -660,10 +694,151 @@ function App() {
     setSession(null)
     setSummary(null)
     setAnnouncement('')
+    setMystery(null)
     setScreen('home')
   }
 
   const playAgain = () => startClassic()
+
+  const pickMystery = async (pick: 0 | 1) => {
+    if (!session || !mystery || mystery.picked !== null || isSubmitting) return
+    setIsSubmitting(true)
+    setMystery({ picked: pick, result: null })
+    try {
+      const response = await fetch('/api/mystery', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          runId: session.runId,
+          runToken: session.runToken,
+          pick,
+        }),
+      })
+      if (activeRunId.current !== session.runId) return
+      if (response.status === 409) {
+        // The box is already gone — most likely this pick applied on an earlier
+        // attempt whose response was lost. The server sends authoritative
+        // progress so an applied prize (e.g. bonus points) isn't dropped.
+        const body = (await response.json().catch(() => null)) as {
+          progress?: PublicProgress
+        } | null
+        if (activeRunId.current !== session.runId) return
+        const applied = body?.progress
+        if (applied) {
+          setSession({ ...session, progress: applied })
+          setPendingSummary((previous) =>
+            previous ? { ...previous, score: applied.score } : previous,
+          )
+          setSummary((previous) =>
+            previous ? { ...previous, score: applied.score } : previous,
+          )
+        }
+        continueAfterMystery(applied)
+        return
+      }
+      if (!response.ok) throw new Error('Mystery pick failed')
+      const result = (await response.json()) as {
+        prizes: MysteryPrizeDescriptor[]
+        applied: MysteryPrizeDescriptor
+        progress: PublicProgress
+      }
+      if (activeRunId.current !== session.runId) return
+      setSession({ ...session, progress: result.progress })
+      // A box can be the run's last event; keep the end screen's score honest.
+      setPendingSummary((previous) =>
+        previous ? { ...previous, score: result.progress.score } : previous,
+      )
+      setSummary((previous) =>
+        previous ? { ...previous, score: result.progress.score } : previous,
+      )
+      setMystery({ picked: pick, result })
+      setAnnouncement(`Mystery box: ${result.applied.label}.`)
+    } catch {
+      if (activeRunId.current !== session.runId) return
+      // Response lost or offline: the pick may not have applied, so put the
+      // boxes back and let the player try again instead of losing the prize.
+      setMystery({ picked: null, result: null })
+      setAnnouncement('Connection hiccup — tap a box to try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  // recoveredProgress is passed in when a 409 reports an already-applied
+  // pick: the setState calls above haven't rendered yet, so build the
+  // session/summary this step uses directly from the recovered progress.
+  const continueAfterMystery = (recoveredProgress?: PublicProgress) => {
+    setMystery(null)
+    const currentSession =
+      recoveredProgress && session
+        ? { ...session, progress: recoveredProgress }
+        : session
+    const currentSummary =
+      recoveredProgress && pendingSummary
+        ? { ...pendingSummary, score: recoveredProgress.score }
+        : pendingSummary
+    if (currentSummary) {
+      setSummary(currentSummary)
+      setPendingSummary(null)
+      setPendingNextIndex(null)
+      setScreen('over')
+    } else if (pendingNextIndex !== null && currentSession) {
+      const nextIndex = pendingNextIndex
+      setPendingNextIndex(null)
+      void loadQuestion(currentSession, nextIndex)
+    } else if (currentSession) {
+      // Box restored after a refresh: the un-answered question is still live.
+      void loadQuestion(currentSession, currentSession.questionIndex)
+    } else {
+      setScreen('over')
+    }
+  }
+
+  const useFiftyFifty = async () => {
+    if (!session || screen !== 'question' || isSubmitting) return
+    if ((session.progress.lifelines?.fiftyFifty ?? 0) < 1) return
+    setIsSubmitting(true)
+    try {
+      const response = await fetch('/api/lifeline', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          runId: session.runId,
+          runToken: session.runToken,
+          questionIndex: session.questionIndex,
+          kind: 'fiftyFifty',
+        }),
+      })
+      if (activeRunId.current !== session.runId) return
+      if (!response.ok) throw new Error('Lifeline failed')
+      const result = (await response.json()) as {
+        question: PublicQuestion
+        lifelines: Lifelines
+      }
+      if (activeRunId.current !== session.runId) return
+      // Merge into the latest session only while this question is still live —
+      // a late response must not resurrect a question the player already
+      // answered or timed out on while the lifeline request was in flight.
+      setSession((previous) =>
+        previous &&
+        previous.runId === session.runId &&
+        previous.questionIndex === session.questionIndex &&
+        !answered.current
+          ? {
+              ...previous,
+              progress: { ...previous.progress, lifelines: result.lifelines },
+              question: result.question,
+            }
+          : previous
+      )
+      if (!answered.current) setAnnouncement('50/50 used. Two choices left.')
+    } catch {
+      if (activeRunId.current !== session.runId) return
+      setAnnouncement('Couldn’t use the lifeline. Try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   const activeQuestionId = session?.question.id
   const activeClockMs = clockMsFor(session?.question)
@@ -684,6 +859,8 @@ function App() {
       setReveal(null)
       if (!reveal.correct) {
         setScreen('teach')
+      } else if (mystery) {
+        setScreen('mystery')
       } else if (pendingSummary) {
         setPendingSummary(null)
         setPendingNextIndex(null)
@@ -697,7 +874,7 @@ function App() {
       }
     }, REVEAL_MS)
     return () => window.clearTimeout(timeout)
-  }, [screen, reveal, pendingSummary, pendingNextIndex, session])
+  }, [screen, reveal, mystery, pendingSummary, pendingNextIndex, session])
 
   useEffect(() => {
     if (screen !== 'question' || !activeQuestionId) return
@@ -957,6 +1134,37 @@ function App() {
                   <div className="daily-misses">{progress.strikes} missed</div>
                 </>
               )}
+              {session.mode === 'classic' &&
+                ((progress.lifelines?.fiftyFifty ?? 0) > 0 ||
+                  progress.lifelines?.shield) && (
+                  <div className="lifeline-row">
+                    {(progress.lifelines?.fiftyFifty ?? 0) > 0 && (
+                      <button
+                        className="lifeline-button"
+                        onClick={useFiftyFifty}
+                        disabled={
+                          screen !== 'question' ||
+                          isSubmitting ||
+                          progress.lifelines?.fiftyFiftyUsedOn ===
+                            session.questionIndex
+                        }
+                        aria-label={`Use 50/50 lifeline, ${progress.lifelines?.fiftyFifty} left`}
+                      >
+                        50/50
+                        {(progress.lifelines?.fiftyFifty ?? 0) > 1 &&
+                          ` ×${progress.lifelines?.fiftyFifty}`}
+                      </button>
+                    )}
+                    {progress.lifelines?.shield && (
+                      <span
+                        className="lifeline-chip"
+                        title="Your next miss won't cost a strike"
+                      >
+                        Shield
+                      </span>
+                    )}
+                  </div>
+                )}
               {session.mode === 'classic' && (
                 <div
                   className={`streak-ring ${screen === 'reveal' && reveal?.correct ? 'is-pulsing' : ''}`}
@@ -1129,6 +1337,44 @@ function App() {
                   Press A–D or 1–4 to answer
                 </p>
               </article>
+            </section>
+          )}
+
+          {screen === 'mystery' && mystery && (
+            <section className="mystery-stage" aria-live="polite">
+              <p className="eyebrow">Boss beaten</p>
+              <h2 className="mystery-title">
+                {mystery.result ? 'You got:' : 'Pick a mystery box'}
+              </h2>
+              <div className="mystery-boxes">
+                {[0, 1].map((index) => (
+                  <button
+                    key={index}
+                    className="mystery-box"
+                    data-picked={
+                      mystery.picked === index
+                        ? 'true'
+                        : mystery.result
+                          ? 'false'
+                          : undefined
+                    }
+                    onClick={() => pickMystery(index as 0 | 1)}
+                    disabled={isSubmitting || mystery.picked !== null}
+                  >
+                    {mystery.result
+                      ? (mystery.result.prizes[index]?.label ?? '?')
+                      : '?'}
+                  </button>
+                ))}
+              </div>
+              {mystery.result && (
+                <button
+                  className="classic-button"
+                  onClick={() => continueAfterMystery()}
+                >
+                  Continue
+                </button>
+              )}
             </section>
           )}
 

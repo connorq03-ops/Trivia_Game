@@ -624,3 +624,112 @@ describe('answer handler', () => {
     })
   })
 })
+
+describe('mystery box', () => {
+  const boss = bossQuestions[0]
+  const bossRun = (progress: Record<string, unknown>, overrides: Record<string, unknown> = {}) => {
+    const run = makeRun(boss, { question_index: 10, ...overrides })
+    return {
+      ...run,
+      progress: {
+        ...run.progress,
+        questionsAnswered: 10,
+        results: Array(10).fill('hit'),
+        streak: 10,
+        bestStreak: 10,
+        score: 3000,
+        bossLevelsConsumed: [10],
+        ...progress,
+      },
+    }
+  }
+
+  it('stores two pending prizes and returns opaque labels on a Classic boss hit', async () => {
+    const sql = mockSql({ rows: [bossRun({}, { server_ms: 12_500 })] })
+    const body = await (
+      await POST(
+        makeRequest({ ...validBody, questionIndex: 10, choice: boss.answer, clientMs: 12_000 }),
+      )
+    ).json()
+
+    expect(body.mystery).toEqual(['a', 'b'])
+    const { progress } = storedUpdate(sql)
+    expect(progress.pendingMystery).toHaveLength(2)
+    for (const prize of progress.pendingMystery) {
+      expect(['nothing', 'points', 'fiftyFifty', 'strikeEraser', 'shield']).toContain(
+        prize.kind,
+      )
+    }
+  })
+
+  it('awards no mystery box on a boss miss or a daily bonus boss', async () => {
+    const missSql = mockSql({ rows: [bossRun({})] })
+    const missBody = await (
+      await POST(
+        makeRequest({ ...validBody, questionIndex: 10, choice: boss.wrong[0] }),
+      )
+    ).json()
+    expect(missBody.mystery).toBeUndefined()
+    expect(storedUpdate(missSql).progress.pendingMystery).toBeUndefined()
+
+    const dailyRun = bossRun({}, {
+      mode: 'daily',
+      daily_date: '2099-12-31',
+      question_index: 10,
+      server_ms: 5_000,
+    })
+    const dailySql = mockSql({ rows: [dailyRun] })
+    const dailyBody = await (
+      await POST(
+        makeRequest({ ...validBody, questionIndex: 10, choice: boss.answer, clientMs: 4_000 }),
+      )
+    ).json()
+    expect(dailyBody.mystery).toBeUndefined()
+    expect(storedUpdate(dailySql).progress.pendingMystery).toBeUndefined()
+  })
+
+  it('keeps the pending box through the persisted progress update', async () => {
+    const sql = mockSql({ rows: [bossRun({}, { server_ms: 12_500 })] })
+    await POST(
+      makeRequest({ ...validBody, questionIndex: 10, choice: boss.answer, clientMs: 12_000 }),
+    )
+    const { values, progress } = storedUpdate(sql)
+    expect(progress.pendingMystery).toHaveLength(2)
+    expect(progress.lifelines).toEqual({ fiftyFifty: 0, shield: false })
+    expect(values.some((value) => typeof value === 'string' && value.includes('pendingMystery'))).toBe(true)
+  })
+})
+
+describe('lifelines', () => {
+  const question = questionBank[0]
+  const shieldedRun = () => ({
+    ...makeRun(question),
+    progress: {
+      ...makeRun(question).progress,
+      strikes: 1,
+      lifelines: { fiftyFifty: 1, shield: true },
+    },
+  })
+
+  it('defaults lifelines for legacy rows that never stored them', async () => {
+    mockSql()
+    const body = await (await POST(makeRequest(validBody))).json()
+    expect(body.progress.lifelines).toEqual({ fiftyFifty: 0, shield: false })
+  })
+
+  it('lets a stored shield absorb a miss instead of adding a strike', async () => {
+    const sql = mockSql({ rows: [shieldedRun()] })
+    const body = await (
+      await POST(makeRequest({ ...validBody, choice: question.wrong[0] }))
+    ).json()
+
+    expect(body.correct).toBe(false)
+    expect(body.shielded).toBe(true)
+    expect(body.progress.strikes).toBe(1)
+    expect(body.progress.lifelines.shield).toBe(false)
+    const { progress } = storedUpdate(sql)
+    expect(progress.strikes).toBe(1)
+    expect(progress.lifelines.shield).toBe(false)
+    expect(progress.lifelines.fiftyFifty).toBe(1)
+  })
+})

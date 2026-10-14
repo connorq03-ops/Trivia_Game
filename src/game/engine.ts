@@ -27,6 +27,45 @@ export const MULTIPLIER_TIERS = [
   { streak: 20, multiplier: 1.5 },
   { streak: 10, multiplier: 1.25 },
 ] as const
+
+export type MysteryPrize =
+  | { kind: 'nothing' }
+  | { kind: 'points'; points: number }
+  | { kind: 'fiftyFifty' }
+  | { kind: 'strikeEraser' }
+  | { kind: 'shield' }
+
+// Weights are out of 100. A Classic boss hit awards a pick-one-of-two box.
+export const MYSTERY_PRIZES: readonly { prize: MysteryPrize; weight: number }[] = [
+  { prize: { kind: 'nothing' }, weight: 30 },
+  { prize: { kind: 'points', points: 100 }, weight: 20 },
+  { prize: { kind: 'points', points: 200 }, weight: 10 },
+  { prize: { kind: 'fiftyFifty' }, weight: 20 },
+  { prize: { kind: 'strikeEraser' }, weight: 12 },
+  { prize: { kind: 'shield' }, weight: 8 },
+]
+
+function drawMysteryPrize(rng: () => number): MysteryPrize {
+  const total = MYSTERY_PRIZES.reduce((sum, entry) => sum + entry.weight, 0)
+  let draw = rng() * total
+  for (const entry of MYSTERY_PRIZES) {
+    draw -= entry.weight
+    if (draw < 0) return entry.prize
+  }
+  return MYSTERY_PRIZES[0].prize
+}
+
+export function drawMysteryPrizes(rng: () => number): [MysteryPrize, MysteryPrize] {
+  return [drawMysteryPrize(rng), drawMysteryPrize(rng)]
+}
+
+export type Lifelines = {
+  fiftyFifty: number
+  shield: boolean
+  // Question index a 50/50 was already spent on, so a replayed lifeline
+  // request can't burn a second charge on the same question.
+  fiftyFiftyUsedOn?: number
+}
 export const BOSS_CATEGORIES: readonly BossCategory[] = [
   'science',
   'history',
@@ -85,6 +124,9 @@ export type RunProgress = {
   bossLevelsConsumed: number[] // boss milestones (correct counts) already served
   bossMisses: number
   bossMissed: Question[] // boss misses; kept out of `missed` so correctCount stays right
+  lifelines: Lifelines
+  // Two mystery prizes waiting on the player's pick after a Classic boss hit.
+  pendingMystery?: [MysteryPrize, MysteryPrize]
   // Frozen at run creation so a mid-day deploy never reshuffles a live run.
   dailyQuestionIds?: string[]
   // Daily bonus outcome lives outside `results` so a miss never dirties a
@@ -108,6 +150,7 @@ export type AnswerOutcome = {
   points: number
   answerMs: number | null
   endReason?: 'strikes'
+  shielded?: boolean
 }
 
 function randomIndex(length: number, rng: () => number): number {
@@ -399,6 +442,7 @@ export function createRunProgress(): RunProgress {
     bossLevelsConsumed: [],
     bossMisses: 0,
     bossMissed: [],
+    lifelines: { fiftyFifty: 0, shield: false },
   }
 }
 
@@ -424,10 +468,12 @@ export function answerQuestion(
     : 0
   const streak = correct ? progress.streak + 1 : 0
   let strikes = progress.strikes
+  // A stored score shield eats one miss instead of costing a strike.
+  const shielded = !correct && progress.lifelines.shield
 
   if (correct) {
     if (streak % STRIKE_BACK_EVERY === 0 && strikes > 0) strikes -= 1
-  } else {
+  } else if (!shielded) {
     strikes += 1
   }
 
@@ -447,6 +493,11 @@ export function answerQuestion(
     bossLevelsConsumed: progress.bossLevelsConsumed,
     bossMisses: progress.bossMisses,
     bossMissed: progress.bossMissed,
+    lifelines: {
+      ...progress.lifelines,
+      shield: correct ? progress.lifelines.shield : false,
+    },
+    pendingMystery: progress.pendingMystery,
     dailyQuestionIds: progress.dailyQuestionIds,
   }
 
@@ -455,7 +506,40 @@ export function answerQuestion(
     correct,
     points,
     answerMs: normalizedAnswerMs,
+    ...(shielded ? { shielded: true } : {}),
     ...(strikes >= STRIKES ? { endReason: 'strikes' } : {}),
+  }
+}
+
+// Applies the picked mystery prize server-side. A strike eraser on zero
+// strikes is a dud — the box is still consumed.
+export function applyMysteryPrize(
+  progress: RunProgress,
+  prize: MysteryPrize,
+): RunProgress {
+  switch (prize.kind) {
+    case 'points':
+      return { ...progress, score: progress.score + prize.points }
+    case 'fiftyFifty':
+      return {
+        ...progress,
+        lifelines: {
+          ...progress.lifelines,
+          fiftyFifty: progress.lifelines.fiftyFifty + 1,
+        },
+      }
+    case 'strikeEraser':
+      return {
+        ...progress,
+        strikes: progress.strikes > 0 ? progress.strikes - 1 : progress.strikes,
+      }
+    case 'shield':
+      return {
+        ...progress,
+        lifelines: { ...progress.lifelines, shield: true },
+      }
+    case 'nothing':
+      return progress
   }
 }
 

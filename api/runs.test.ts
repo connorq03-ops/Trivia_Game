@@ -130,7 +130,13 @@ describe('runs handler', () => {
     expect(insert.values).toContain(hashRunToken(body.runToken))
     expect(insert.values).not.toContain(body.runToken)
     expect(body.question.choices).toHaveLength(4)
-    expect(body.progress).toEqual({ score: 0, strikes: 0, streak: 0, correct: 0 })
+    expect(body.progress).toEqual({
+      score: 0,
+      strikes: 0,
+      streak: 0,
+      correct: 0,
+      lifelines: { fiftyFifty: 0, shield: false },
+    })
     expect(body.total).toBeNull()
 
     const forbiddenKeys = new Set(['answer', 'teach', 'factId', 'wrong'])
@@ -188,6 +194,7 @@ describe('runs handler', () => {
       strikes: 1,
       streak: 0,
       correct: 3,
+      lifelines: { fiftyFifty: 0, shield: false },
     })
     // Resume matched on the presented token hash, not just the ip.
     const resume = insertQuery(sql)[1]
