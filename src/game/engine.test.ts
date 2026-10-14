@@ -381,15 +381,15 @@ describe('Classic question selection', () => {
 describe('Daily 10', () => {
   const bank = makeLargeBank(90)
 
-  it('is deterministic with five questions per side and distinct, ramped facts', () => {
+  it('is deterministic with three rules and seven players, ramped facts', () => {
     const first = dailyQuestions('2099-12-31', bank)
     const second = dailyQuestions('2099-12-31', bank)
     expect(first.map((question) => question.id)).toEqual(
       second.map((question) => question.id),
     )
     expect(first).toHaveLength(10)
-    expect(first.filter((question) => question.side === 'rules')).toHaveLength(5)
-    expect(first.filter((question) => question.side === 'players')).toHaveLength(5)
+    expect(first.filter((question) => question.side === 'rules')).toHaveLength(3)
+    expect(first.filter((question) => question.side === 'players')).toHaveLength(7)
     expect(new Set(first.map((question) => question.factId)).size).toBe(10)
     expect(
       first.every(
@@ -417,13 +417,13 @@ describe('Daily 10', () => {
     const players = dailyQuestions('2099-12-31', sparse).filter(
       (question) => question.side === 'players',
     )
-    expect(players).toHaveLength(5)
-    // The two unfilled expert slots fall back to hard before medium.
+    expect(players).toHaveLength(7)
+    // The three unfilled expert slots fall back to hard before medium.
     const tally = { easy: 0, medium: 0, hard: 0, expert: 0 }
     players.forEach((question) => {
       tally[question.difficulty] += 1
     })
-    expect(tally).toEqual({ easy: 0, medium: 2, hard: 3, expert: 0 })
+    expect(tally).toEqual({ easy: 0, medium: 2, hard: 5, expert: 0 })
   })
 
   it('prefers expert over extra easy questions when medium/hard run out', () => {
@@ -467,7 +467,7 @@ describe('Daily 10', () => {
       dailyQuestions(date, eligibleBank).filter(
         (question) => question.side === 'rules',
       ),
-    ).toHaveLength(5)
+    ).toHaveLength(3)
   })
 })
 
