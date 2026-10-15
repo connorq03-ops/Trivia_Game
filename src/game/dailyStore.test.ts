@@ -79,14 +79,12 @@ describe('daily store', () => {
     expect(readDailySummary(storage, fresh.date)).toEqual(fresh)
   })
 
-  it('treats a stale-deal summary as unplayed and lets the new deal overwrite it', () => {
+  it('lets a redeal overwrite a stale-deal summary but not a same-deal replay', () => {
     const { storage, values } = makeStorage()
     const stale = { ...result(100), deal: 'old-deal' }
     values.set(dailyStorageKey(stale.date), JSON.stringify(stale))
 
-    expect(isCurrentDailySummary(stale, 'new-deal')).toBe(false)
-    expect(isCurrentDailySummary(stale, 'old-deal')).toBe(true)
-
+    // The redealt run's result replaces the old deal's saved score.
     const fresh = { ...result(200), deal: 'new-deal' }
     expect(saveDailySummary(storage, fresh.date, fresh)).toEqual(fresh)
     expect(readDailySummary(storage, fresh.date)).toEqual(fresh)
@@ -94,11 +92,6 @@ describe('daily store', () => {
     // A replay of the same deal still can't overwrite the first result.
     const replay = { ...result(300), deal: 'new-deal' }
     expect(saveDailySummary(storage, replay.date, replay)).toEqual(fresh)
-
-    // The stale deal doesn't count today toward the streak.
-    values.set(dailyStorageKey(stale.date), JSON.stringify(stale))
-    expect(dailyStreak(storage, stale.date, 'new-deal')).toBe(0)
-    expect(dailyStreak(storage, stale.date, 'old-deal')).toBe(1)
   })
 
   it('labels the daily date by the 5pm Central reset', () => {

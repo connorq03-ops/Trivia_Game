@@ -104,12 +104,19 @@ export async function POST(request: Request): Promise<Response> {
     let options: ClassicOptions = { sport: 'all', side: 'both' }
     let dailyDate: string | null = null
     let dailyQuestionIds: string[] | undefined
+    let deal: string | undefined
 
     if (input.mode === 'daily') {
       dailyDate = date
       const questions = dailyQuestions(date, questionBank)
       question = questions[0]
       dailyQuestionIds = questions.map((item) => item.id)
+      // The dealt set is the Daily's identity: a redeal (quota or bank
+      // change) produces a different deal, so saved results and unfinished
+      // runs from the old set can no longer pose as today's Daily.
+      deal = createHash('sha256')
+        .update(dailyQuestionIds.join('|'))
+        .digest('hex')
       ;({ choices } = presentQuestion(question, Math.random))
     } else {
       options = { sport: input.sport, side: input.side }
@@ -137,11 +144,13 @@ export async function POST(request: Request): Promise<Response> {
     // would let a shared-IP player take over someone else's run.
     const resumeId = input.resume?.runId ?? NO_RUN_ID
     const resumeTokenHash = hashRunToken(input.resume?.runToken ?? '')
-    // A run is only resumable under the same game parameters: today's date for
-    // Daily, the same sport/side filters for Classic.
+    // A run is only resumable under the same game parameters: today's dealt
+    // set for Daily (an old run abandoned mid-play can't block a redeal),
+    // the same sport/side filters for Classic.
     const resumeFilter =
       input.mode === 'daily'
-        ? sql`and mode = 'daily' and daily_date = ${date}::date`
+        ? sql`and mode = 'daily' and daily_date = ${date}::date
+              and progress->'dailyQuestionIds' = ${JSON.stringify(dailyQuestionIds)}::jsonb`
         : sql`and mode = 'classic' and sport = ${input.sport} and side = ${input.side}`
     const resumeQuery = sql`
       select id, question_index, current_question_id, current_choices,
@@ -268,6 +277,7 @@ export async function POST(request: Request): Promise<Response> {
         },
         total: input.mode === 'daily' ? 10 : null,
         bosses: bossQuestionsEnabled(),
+        ...(deal ? { deal } : {}),
         // An unresolved mystery box survives a refresh: opaque flag only, the
         // prizes stay hidden until the pick.
         ...(Array.isArray(stored?.pendingMystery) && stored.pendingMystery.length === 2
@@ -299,6 +309,7 @@ export async function POST(request: Request): Promise<Response> {
         },
         total: input.mode === 'daily' ? 10 : null,
         bosses: bossQuestionsEnabled(),
+        ...(deal ? { deal } : {}),
       },
       { status: 201 },
     )

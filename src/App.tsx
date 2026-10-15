@@ -29,7 +29,6 @@ import {
   type GameSummary,
 } from './game/dailyStore'
 import { formatCountdown } from './game/share'
-import { DAILY_DEAL } from './game/deal'
 import { badgeInk } from './game/badgeInk'
 import type { ChoiceBadge, Question, Side, Sport } from './game/types'
 import { ResultShare } from './ResultShare'
@@ -87,6 +86,7 @@ type GameSession = {
   questionIndex: number
   question: PublicQuestion
   total: number | null
+  deal?: string
 }
 
 type AnswerBody = {
@@ -149,6 +149,7 @@ type RunResponse = {
   total: number | null
   bosses?: boolean
   mystery?: string[]
+  deal?: string
 }
 
 function browserStorage(): Pick<
@@ -201,9 +202,7 @@ function storedSummary(date: string): GameSummary | null {
   const storage = browserStorage()
   if (!storage) return null
   const summary = readDailySummary(storage, date)
-  // A summary saved under a different deal was playing a different set, so
-  // it no longer counts as having played today's Daily.
-  return summary && isCurrentDailySummary(summary, DAILY_DEAL) ? summary : null
+  return summary && isCurrentDailySummary(summary) ? summary : null
 }
 
 function formatDuration(milliseconds: number): string {
@@ -417,7 +416,7 @@ function App() {
   const [dailyStorageVersion, setDailyStorageVersion] = useState(0)
   const dayStreak = useMemo(() => {
     const storage = browserStorage()
-    return storage ? dailyStreak(storage, today, DAILY_DEAL) : 0
+    return storage ? dailyStreak(storage, today) : 0
     // todaySummary and dailyStorageVersion trigger recomputation for storage changes.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [today, todaySummary, dailyStorageVersion])
@@ -567,6 +566,18 @@ function App() {
 
       activeRunId.current = result.runId
       saveRun(input.mode, { runId: result.runId, runToken: result.runToken })
+      // A stored result earned on today's dealt set still counts as played;
+      // a redeal has a different deal, so the fresh run opens like a new
+      // Daily. The just-created run doubles as the next replay.
+      if (input.mode === 'daily') {
+        const played = storedSummary(result.date)
+        if (played && played.deal === result.deal) {
+          setSession(null)
+          setSummary(played)
+          setScreen('over')
+          return
+        }
+      }
       questionClockOffset.current = 0
       setBossesEnabled(result.bosses === true)
       setSession({
@@ -578,6 +589,7 @@ function App() {
         questionIndex: result.questionIndex,
         question: result.question,
         total: result.total,
+        deal: result.deal,
       })
       // A resumed run can still have an unopened mystery box waiting.
       if (result.mystery && result.mystery.length === 2) {
@@ -603,14 +615,9 @@ function App() {
   const openDaily = () => {
     const date = dailyDateKey()
     setToday(date)
-    const previous = storedSummary(date)
-    setTodaySummary(previous)
-    if (previous) {
-      setSession(null)
-      setSummary(previous)
-      setScreen('over')
-      return
-    }
+    setTodaySummary(storedSummary(date))
+    // Always ask the server: it returns today's deal, and a saved result only
+    // blocks the run when it was earned on that same dealt set.
     void startRun({ mode: 'daily' })
   }
 
@@ -621,10 +628,10 @@ function App() {
     void startRun({ mode: 'daily' })
   }
 
-  const saveDailyResult = (result: GameSummary) => {
+  const saveDailyResult = (result: GameSummary, deal?: string) => {
     if (result.mode !== 'daily') return
     const storage = browserStorage()
-    const tagged = { ...result, schedule: 'ct17' as const, deal: DAILY_DEAL }
+    const tagged = { ...result, schedule: 'ct17' as const, deal }
     const winner = storage
       ? saveDailySummary(storage, result.date, tagged)
       : tagged
@@ -716,7 +723,7 @@ function App() {
       setSession(updatedCurrent)
       setSummary(result.summary)
       if (result.summary) {
-        saveDailyResult(result.summary)
+        saveDailyResult(result.summary, current.deal)
         clearRun(current.mode)
       }
       setPendingSummary(result.summary)

@@ -7,9 +7,9 @@ export type GameSummary = {
   // Marks summaries written under the 5pm-CT schedule so results saved under
   // the old UTC-midnight schedule can't block a same-labeled new Daily.
   schedule?: 'ct17'
-  // Build-time fingerprint of the dealt set (src/game/deal.ts). A summary
-  // saved under a different deal was playing a different set of questions,
-  // so it neither blocks nor overwrites the current Daily.
+  // Server-issued fingerprint of the dealt set (sha256 of the dealt
+  // question ids). A summary saved under a different deal was playing a
+  // different set of questions, so a redeal can overwrite it.
   deal?: string
   score: number
   bestStreak: number
@@ -72,16 +72,11 @@ export function saveDailySummary(
   return result
 }
 
-export function dailyStreak(
-  storage: StorageLike,
-  today: string,
-  deal?: string,
-): number {
+export function dailyStreak(storage: StorageLike, today: string): number {
   const todaySummary = readDailySummary(storage, today)
-  // An untagged (UTC-era) or stale-deal summary under today's key doesn't
-  // count as played.
+  // An untagged (UTC-era) summary under today's key doesn't count as played.
   let date =
-    todaySummary && isCurrentDailySummary(todaySummary, deal)
+    todaySummary && isCurrentDailySummary(todaySummary)
       ? today
       : dateOffset(today, -1)
   let streak = 0
@@ -150,16 +145,8 @@ export function dailyDateKey(nowMs: number = Date.now()): string {
 
 // True when a stored summary was written under the current schedule; a
 // same-labeled summary from the UTC-midnight era doesn't count as played.
-// When a deal fingerprint is given, the summary must come from the same
-// dealt set — a redeal makes old summaries stop counting.
-export function isCurrentDailySummary(
-  summary: GameSummary,
-  deal?: string,
-): boolean {
-  return (
-    summary.schedule === 'ct17' &&
-    (deal === undefined || summary.deal === deal)
-  )
+export function isCurrentDailySummary(summary: GameSummary): boolean {
+  return summary.schedule === 'ct17'
 }
 
 export function msUntilNextDailyReset(nowMs: number): number {
