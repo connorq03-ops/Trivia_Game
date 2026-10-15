@@ -572,7 +572,7 @@ function App() {
       // Daily. Replay explicitly bypasses this gate for the same deal.
       if (input.mode === 'daily' && !options?.replay) {
         const played = storedSummary(result.date)
-        if (played && played.deal === result.deal) {
+        if (played && result.deal && played.deal === result.deal) {
           setSession(null)
           setSummary(played)
           setScreen('over')
