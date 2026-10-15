@@ -29,6 +29,7 @@ import {
   type GameSummary,
 } from './game/dailyStore'
 import { formatCountdown } from './game/share'
+import { DAILY_DEAL } from './game/deal'
 import { badgeInk } from './game/badgeInk'
 import type { ChoiceBadge, Question, Side, Sport } from './game/types'
 import { ResultShare } from './ResultShare'
@@ -200,7 +201,9 @@ function storedSummary(date: string): GameSummary | null {
   const storage = browserStorage()
   if (!storage) return null
   const summary = readDailySummary(storage, date)
-  return summary && isCurrentDailySummary(summary) ? summary : null
+  // A summary saved under a different deal was playing a different set, so
+  // it no longer counts as having played today's Daily.
+  return summary && isCurrentDailySummary(summary, DAILY_DEAL) ? summary : null
 }
 
 function formatDuration(milliseconds: number): string {
@@ -414,7 +417,7 @@ function App() {
   const [dailyStorageVersion, setDailyStorageVersion] = useState(0)
   const dayStreak = useMemo(() => {
     const storage = browserStorage()
-    return storage ? dailyStreak(storage, today) : 0
+    return storage ? dailyStreak(storage, today, DAILY_DEAL) : 0
     // todaySummary and dailyStorageVersion trigger recomputation for storage changes.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [today, todaySummary, dailyStorageVersion])
@@ -621,7 +624,7 @@ function App() {
   const saveDailyResult = (result: GameSummary) => {
     if (result.mode !== 'daily') return
     const storage = browserStorage()
-    const tagged = { ...result, schedule: 'ct17' as const }
+    const tagged = { ...result, schedule: 'ct17' as const, deal: DAILY_DEAL }
     const winner = storage
       ? saveDailySummary(storage, result.date, tagged)
       : tagged

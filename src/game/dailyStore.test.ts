@@ -79,6 +79,28 @@ describe('daily store', () => {
     expect(readDailySummary(storage, fresh.date)).toEqual(fresh)
   })
 
+  it('treats a stale-deal summary as unplayed and lets the new deal overwrite it', () => {
+    const { storage, values } = makeStorage()
+    const stale = { ...result(100), deal: 'old-deal' }
+    values.set(dailyStorageKey(stale.date), JSON.stringify(stale))
+
+    expect(isCurrentDailySummary(stale, 'new-deal')).toBe(false)
+    expect(isCurrentDailySummary(stale, 'old-deal')).toBe(true)
+
+    const fresh = { ...result(200), deal: 'new-deal' }
+    expect(saveDailySummary(storage, fresh.date, fresh)).toEqual(fresh)
+    expect(readDailySummary(storage, fresh.date)).toEqual(fresh)
+
+    // A replay of the same deal still can't overwrite the first result.
+    const replay = { ...result(300), deal: 'new-deal' }
+    expect(saveDailySummary(storage, replay.date, replay)).toEqual(fresh)
+
+    // The stale deal doesn't count today toward the streak.
+    values.set(dailyStorageKey(stale.date), JSON.stringify(stale))
+    expect(dailyStreak(storage, stale.date, 'new-deal')).toBe(0)
+    expect(dailyStreak(storage, stale.date, 'old-deal')).toBe(1)
+  })
+
   it('labels the daily date by the 5pm Central reset', () => {
     // 4:54pm CT on Oct 13 (CDT, UTC-5) -> still the previous daily date.
     expect(dailyDateKey(Date.parse('2026-10-13T21:54:00.000Z'))).toBe(
