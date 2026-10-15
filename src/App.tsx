@@ -611,6 +611,13 @@ function App() {
     void startRun({ mode: 'daily' })
   }
 
+  // A saved summary normally short-circuits openDaily; replay skips that so a
+  // redealt set (or a just-for-fun rerun) can start a fresh run. The stored
+  // summary is first-write-wins, so the replay can't overwrite the score.
+  const replayDaily = () => {
+    void startRun({ mode: 'daily' })
+  }
+
   const saveDailyResult = (result: GameSummary) => {
     if (result.mode !== 'daily') return
     const storage = browserStorage()
@@ -1582,6 +1589,9 @@ function App() {
                 ) : (
                   <button className="classic-button" onClick={playAgain}>Play again</button>
                 )}
+                {currentSummary.mode === 'daily' && (
+                  <button className="secondary-button" onClick={replayDaily}>Replay Daily</button>
+                )}
                 <button className="secondary-button" onClick={goHome}>Home</button>
               </div>
               {currentSummary.missed.length > 0 && (
@@ -1633,6 +1643,7 @@ function App() {
             <ResultShare summary={currentSummary} dayStreak={dayStreak} />
             <div className="result-actions">
               <button className="classic-button" onClick={startClassic}>Play Classic Mode</button>
+              <button className="secondary-button" onClick={replayDaily}>Replay Daily</button>
               <button className="secondary-button" onClick={goHome}>Home</button>
             </div>
             {currentSummary.missed.length > 0 && (
