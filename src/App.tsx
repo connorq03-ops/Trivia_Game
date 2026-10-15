@@ -86,6 +86,7 @@ type GameSession = {
   questionIndex: number
   question: PublicQuestion
   total: number | null
+  deal?: string
 }
 
 type AnswerBody = {
@@ -148,6 +149,7 @@ type RunResponse = {
   total: number | null
   bosses?: boolean
   mystery?: string[]
+  deal?: string
 }
 
 function browserStorage(): Pick<
@@ -530,6 +532,7 @@ function App() {
     input:
       | { mode: 'classic'; sport: 'all' | Sport; side: 'both' | Side }
       | { mode: 'daily' },
+    options?: { replay?: boolean },
   ) => {
     const generation = ++startGeneration.current
     activeRunId.current = null
@@ -564,6 +567,18 @@ function App() {
 
       activeRunId.current = result.runId
       saveRun(input.mode, { runId: result.runId, runToken: result.runToken })
+      // A stored result earned on today's dealt set still counts as played;
+      // a redeal has a different deal, so the fresh run opens like a new
+      // Daily. Replay explicitly bypasses this gate for the same deal.
+      if (input.mode === 'daily' && !options?.replay) {
+        const played = storedSummary(result.date)
+        if (played && result.deal && played.deal === result.deal) {
+          setSession(null)
+          setSummary(played)
+          setScreen('over')
+          return
+        }
+      }
       questionClockOffset.current = 0
       setBossesEnabled(result.bosses === true)
       setSession({
@@ -575,6 +590,7 @@ function App() {
         questionIndex: result.questionIndex,
         question: result.question,
         total: result.total,
+        deal: result.deal,
       })
       // A resumed run can still have an unopened mystery box waiting.
       if (result.mystery && result.mystery.length === 2) {
@@ -585,6 +601,17 @@ function App() {
       }
     } catch {
       if (generation !== startGeneration.current) return
+      // A saved Daily result stays viewable when the run request fails
+      // (offline, rate-limited); it may just be from an older deal.
+      if (input.mode === 'daily') {
+        const played = storedSummary(dailyDateKey())
+        if (played) {
+          setSession(null)
+          setSummary(played)
+          setScreen('over')
+          return
+        }
+      }
       setStartError(true)
       setApiStatus('error')
       setScreen('home')
@@ -600,14 +627,9 @@ function App() {
   const openDaily = () => {
     const date = dailyDateKey()
     setToday(date)
-    const previous = storedSummary(date)
-    setTodaySummary(previous)
-    if (previous) {
-      setSession(null)
-      setSummary(previous)
-      setScreen('over')
-      return
-    }
+    setTodaySummary(storedSummary(date))
+    // Always ask the server: it returns today's deal, and a saved result only
+    // blocks the run when it was earned on that same dealt set.
     void startRun({ mode: 'daily' })
   }
 
@@ -615,13 +637,13 @@ function App() {
   // redealt set (or a just-for-fun rerun) can start a fresh run. The stored
   // summary is first-write-wins, so the replay can't overwrite the score.
   const replayDaily = () => {
-    void startRun({ mode: 'daily' })
+    void startRun({ mode: 'daily' }, { replay: true })
   }
 
-  const saveDailyResult = (result: GameSummary) => {
+  const saveDailyResult = (result: GameSummary, deal?: string) => {
     if (result.mode !== 'daily') return
     const storage = browserStorage()
-    const tagged = { ...result, schedule: 'ct17' as const }
+    const tagged = { ...result, schedule: 'ct17' as const, deal }
     const winner = storage
       ? saveDailySummary(storage, result.date, tagged)
       : tagged
@@ -713,7 +735,7 @@ function App() {
       setSession(updatedCurrent)
       setSummary(result.summary)
       if (result.summary) {
-        saveDailyResult(result.summary)
+        saveDailyResult(result.summary, current.deal)
         clearRun(current.mode)
       }
       setPendingSummary(result.summary)

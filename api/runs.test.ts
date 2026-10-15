@@ -1,8 +1,10 @@
+import { createHash } from 'node:crypto'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { getSql } from '../lib/db.js'
 import { questionBank } from '../lib/questions.js'
 import { hashRunToken } from '../lib/runToken.js'
-import { REEL_MS, selectClassicQuestion } from '../src/game/engine.js'
+import { REEL_MS, dailyQuestions, selectClassicQuestion } from '../src/game/engine.js'
+import { dailyDateKey } from '../src/game/dailyStore.js'
 import { POST } from './runs.js'
 
 vi.mock('../lib/db.js', () => ({
@@ -204,6 +206,36 @@ describe('runs handler', () => {
     // someone else's active run.
     const queries = insertQuery(sql).map((q) => q.query)
     expect(queries.some((q) => /update runs/.test(q))).toBe(false)
+  })
+
+  it('returns the dealt-set deal and scopes daily resume to it', async () => {
+    const sql = mockSql()
+    const response = await POST(makeRequest({ mode: 'daily' }))
+
+    expect(response.status).toBe(201)
+    const body = await response.json()
+    expect(body.deal).toMatch(/^[0-9a-f]{64}$/)
+
+    // Resume only matches a run stamped with today's deal, so a redeal
+    // abandons an unfinished old set instead of replaying it.
+    const insert = insertQuery(sql)[2]
+    const dealt = dailyQuestions(dailyDateKey(), questionBank)
+    const deal = createHash('sha256')
+      .update(JSON.stringify(dealt))
+      .digest('hex')
+    expect(body.deal).toBe(deal)
+    const filter = insert.values.find(
+      (value) =>
+        value &&
+        typeof value === 'object' &&
+        'query' in value &&
+        /progress->>'deal'/.test((value as { query: string }).query),
+    ) as { query: string; values: unknown[] } | undefined
+    expect(filter?.values).toContain(deal)
+    // Unstamped legacy runs fall back to matching their frozen ids.
+    expect(filter?.values).toContain(
+      JSON.stringify(dealt.map((item) => item.id)),
+    )
   })
 
   it('rejects a malformed resume payload', async () => {

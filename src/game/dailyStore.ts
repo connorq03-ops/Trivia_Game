@@ -7,6 +7,10 @@ export type GameSummary = {
   // Marks summaries written under the 5pm-CT schedule so results saved under
   // the old UTC-midnight schedule can't block a same-labeled new Daily.
   schedule?: 'ct17'
+  // Server-issued fingerprint of the dealt set (sha256 of the dealt
+  // question ids). A summary saved under a different deal was playing a
+  // different set of questions, so a redeal can overwrite it.
+  deal?: string
   score: number
   bestStreak: number
   questionsAnswered: number
@@ -44,15 +48,22 @@ export function readDailySummary(
   }
 }
 
-// First-write-wins among current-schedule summaries: a same-labeled
-// UTC-era summary is overwritten so the new Daily's result still saves.
+// First-write-wins among current-schedule summaries of the same deal: a
+// same-labeled UTC-era or stale-deal summary is overwritten so a redealt
+// Daily's result still saves.
 export function saveDailySummary(
   storage: StorageLike,
   date: string,
   result: GameSummary,
 ): GameSummary {
   const existing = readDailySummary(storage, date)
-  if (existing && isCurrentDailySummary(existing)) return existing
+  if (
+    existing &&
+    isCurrentDailySummary(existing) &&
+    existing.deal === result.deal
+  ) {
+    return existing
+  }
   try {
     storage.setItem(dailyStorageKey(date), JSON.stringify(result))
   } catch {

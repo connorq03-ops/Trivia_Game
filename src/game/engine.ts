@@ -129,6 +129,9 @@ export type RunProgress = {
   pendingMystery?: [MysteryPrize, MysteryPrize]
   // Frozen at run creation so a mid-day deploy never reshuffles a live run.
   dailyQuestionIds?: string[]
+  // Fingerprint of the dealt Daily set (question ids + content). A run only
+  // resumes while the live deal matches.
+  deal?: string
   // Daily bonus outcome lives outside `results` so a miss never dirties a
   // perfect 10/10 summary or adds an eleventh share square.
   dailyBonusResult?: AnswerResult
@@ -507,6 +510,7 @@ export function answerQuestion(
     },
     pendingMystery: progress.pendingMystery,
     dailyQuestionIds: progress.dailyQuestionIds,
+    deal: progress.deal,
   }
 
   return {
