@@ -112,11 +112,10 @@ export async function POST(request: Request): Promise<Response> {
       question = questions[0]
       dailyQuestionIds = questions.map((item) => item.id)
       // The dealt set is the Daily's identity: a redeal (quota or bank
-      // change) produces a different deal, so saved results and unfinished
-      // runs from the old set can no longer pose as today's Daily.
-      deal = createHash('sha256')
-        .update(dailyQuestionIds.join('|'))
-        .digest('hex')
+      // change) or a content edit to a dealt question produces a different
+      // deal, so saved results and unfinished runs from the old set can no
+      // longer pose as today's Daily.
+      deal = createHash('sha256').update(JSON.stringify(questions)).digest('hex')
       ;({ choices } = presentQuestion(question, Math.random))
     } else {
       options = { sport: input.sport, side: input.side }
@@ -136,6 +135,7 @@ export async function POST(request: Request): Promise<Response> {
 
     const initialProgress = createRunProgress()
     if (dailyQuestionIds) initialProgress.dailyQuestionIds = dailyQuestionIds
+    if (deal) initialProgress.deal = deal
     const [choice0, choice1, choice2, choice3] = choices
     const runToken = createRunToken()
     // Resume instead of replace: a client that still holds the runToken for
@@ -150,7 +150,7 @@ export async function POST(request: Request): Promise<Response> {
     const resumeFilter =
       input.mode === 'daily'
         ? sql`and mode = 'daily' and daily_date = ${date}::date
-              and progress->'dailyQuestionIds' = ${JSON.stringify(dailyQuestionIds)}::jsonb`
+              and progress->>'deal' = ${deal}`
         : sql`and mode = 'classic' and sport = ${input.sport} and side = ${input.side}`
     const resumeQuery = sql`
       select id, question_index, current_question_id, current_choices,

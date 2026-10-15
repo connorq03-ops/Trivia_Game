@@ -216,23 +216,22 @@ describe('runs handler', () => {
     const body = await response.json()
     expect(body.deal).toMatch(/^[0-9a-f]{64}$/)
 
-    // Resume only matches a run frozen on today's dealt ids, so a redeal
+    // Resume only matches a run stamped with today's deal, so a redeal
     // abandons an unfinished old set instead of replaying it.
     const insert = insertQuery(sql)[2]
-    const dealtIds = dailyQuestions(dailyDateKey(), questionBank).map(
-      (item) => item.id,
-    )
+    const dealt = dailyQuestions(dailyDateKey(), questionBank)
+    const deal = createHash('sha256')
+      .update(JSON.stringify(dealt))
+      .digest('hex')
+    expect(body.deal).toBe(deal)
     const filter = insert.values.find(
       (value) =>
         value &&
         typeof value === 'object' &&
         'query' in value &&
-        /dailyQuestionIds/.test((value as { query: string }).query),
+        /progress->>'deal'/.test((value as { query: string }).query),
     ) as { query: string; values: unknown[] } | undefined
-    expect(filter?.values).toContain(JSON.stringify(dealtIds))
-    expect(body.deal).toBe(
-      createHash('sha256').update(dealtIds.join('|')).digest('hex'),
-    )
+    expect(filter?.values).toContain(deal)
   })
 
   it('rejects a malformed resume payload', async () => {

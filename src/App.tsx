@@ -532,6 +532,7 @@ function App() {
     input:
       | { mode: 'classic'; sport: 'all' | Sport; side: 'both' | Side }
       | { mode: 'daily' },
+    options?: { replay?: boolean },
   ) => {
     const generation = ++startGeneration.current
     activeRunId.current = null
@@ -568,8 +569,8 @@ function App() {
       saveRun(input.mode, { runId: result.runId, runToken: result.runToken })
       // A stored result earned on today's dealt set still counts as played;
       // a redeal has a different deal, so the fresh run opens like a new
-      // Daily. The just-created run doubles as the next replay.
-      if (input.mode === 'daily') {
+      // Daily. Replay explicitly bypasses this gate for the same deal.
+      if (input.mode === 'daily' && !options?.replay) {
         const played = storedSummary(result.date)
         if (played && played.deal === result.deal) {
           setSession(null)
@@ -600,6 +601,17 @@ function App() {
       }
     } catch {
       if (generation !== startGeneration.current) return
+      // A saved Daily result stays viewable when the run request fails
+      // (offline, rate-limited); it may just be from an older deal.
+      if (input.mode === 'daily') {
+        const played = storedSummary(dailyDateKey())
+        if (played) {
+          setSession(null)
+          setSummary(played)
+          setScreen('over')
+          return
+        }
+      }
       setStartError(true)
       setApiStatus('error')
       setScreen('home')
@@ -625,7 +637,7 @@ function App() {
   // redealt set (or a just-for-fun rerun) can start a fresh run. The stored
   // summary is first-write-wins, so the replay can't overwrite the score.
   const replayDaily = () => {
-    void startRun({ mode: 'daily' })
+    void startRun({ mode: 'daily' }, { replay: true })
   }
 
   const saveDailyResult = (result: GameSummary, deal?: string) => {
