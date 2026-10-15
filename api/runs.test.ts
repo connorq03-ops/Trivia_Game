@@ -232,6 +232,10 @@ describe('runs handler', () => {
         /progress->>'deal'/.test((value as { query: string }).query),
     ) as { query: string; values: unknown[] } | undefined
     expect(filter?.values).toContain(deal)
+    // Unstamped legacy runs fall back to matching their frozen ids.
+    expect(filter?.values).toContain(
+      JSON.stringify(dealt.map((item) => item.id)),
+    )
   })
 
   it('rejects a malformed resume payload', async () => {

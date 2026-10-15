@@ -146,11 +146,18 @@ export async function POST(request: Request): Promise<Response> {
     const resumeTokenHash = hashRunToken(input.resume?.runToken ?? '')
     // A run is only resumable under the same game parameters: today's dealt
     // set for Daily (an old run abandoned mid-play can't block a redeal),
-    // the same sport/side filters for Classic.
+    // the same sport/side filters for Classic. Runs stamped before `deal`
+    // existed fall back to matching their frozen question ids.
     const resumeFilter =
       input.mode === 'daily'
         ? sql`and mode = 'daily' and daily_date = ${date}::date
-              and progress->>'deal' = ${deal}`
+              and (
+                progress->>'deal' = ${deal}
+                or (
+                  progress->>'deal' is null
+                  and progress->'dailyQuestionIds' = ${JSON.stringify(dailyQuestionIds)}::jsonb
+                )
+              )`
         : sql`and mode = 'classic' and sport = ${input.sport} and side = ${input.side}`
     const resumeQuery = sql`
       select id, question_index, current_question_id, current_choices,
