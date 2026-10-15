@@ -244,6 +244,7 @@ export async function POST(request: Request): Promise<Response> {
           ? JSON.parse(resumedRun.progress)
           : resumedRun.progress
       ) as {
+        deal?: string
         score?: number
         strikes?: number
         streak?: number
@@ -284,7 +285,10 @@ export async function POST(request: Request): Promise<Response> {
         },
         total: input.mode === 'daily' ? 10 : null,
         bosses: bossQuestionsEnabled(),
-        ...(deal ? { deal } : {}),
+        // Echo the run's own deal, not the live one: a stamped run always
+        // matches, but a legacy run resumed by frozen ids carries no deal,
+        // so its result must not count as today's dealt set.
+        ...(stored?.deal ? { deal: stored.deal } : {}),
         // An unresolved mystery box survives a refresh: opaque flag only, the
         // prizes stay hidden until the pick.
         ...(Array.isArray(stored?.pendingMystery) && stored.pendingMystery.length === 2
